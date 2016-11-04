@@ -1,0 +1,26 @@
+# Dependencies
+markdown:         redcarpet
+highlighter:         true
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            Everest
+tagline:          'Kefeng''s Blog'
+description:      'This is a blog written by Kefeng. Writing blog is good.'
+url:              http://zkf85.github.io
+
+author:
+  name:           'Kefeng Zhu'
+  url:            https//zkf85.github.io
+
+paginate:         5
+
+# Custom vars
+#version:          
+
+#github: 
+#repo:    
+
+gems: [jekyll-paginate]

@@ -8,7 +8,10 @@ permalink:        pretty
 # Setup
 title:            Everest
 tagline:          'Kefeng''s Blog'
-description:      'This is a blog written by Kefeng. Writing blog is good.'
+description:      '
+
+
+This is a blog written by Kefeng. Writing blog is good.'
 url:              http://zkf85.github.io
 
 author:

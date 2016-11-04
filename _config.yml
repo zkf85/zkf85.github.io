@@ -1,29 +1,59 @@
-# Dependencies
-markdown:         redcarpet
-highlighter:         true
+# Site Info
+title: Everest
+tagline: 'Kefeng''s blog'
+description: 'A Jekyll theme adapted from <a href="http://lanyon.getpoole.com/" target="_blank">Lanyon</a>. Made by <a href="http://codinfox.github.io" target="_blank">@codinfox</a>.'
+baseurl: 
 
-# Permalinks
-permalink:        pretty
+url: http://zkf85.github.io
+#logo: '/public/logo.png'
 
-# Setup
-title:            Everest
-tagline:          'Kefeng''s Blog'
-description:      '
+# Site configurations
+gems:
+  - jekyll-paginate
+markdown: kramdown
+kramdown:
+  input: GFM
+excerpt_separator: "<!-- more -->"
+sass:
+  style: compressed
+  sass_dir: _scss    
+paginate: 5
+paginate_path: '/blog/page:num'
+permalink: pretty
 
+version: 1.0.0
 
-This is a blog written by Kefeng. Writing blog is good.'
-url:              http://zkf85.github.io
-
+# About/contact
 author:
-  name:           'Kefeng Zhu'
-  url:            https//zkf85.github.io
+  name: Kefeng
+  description: A passionate <strong>developer and designer</strong>. Blogging is good.
+  contact:
+    github:    https://github.com/codinfox
+    #email:     
 
-paginate:         5
+# Navigation (2nd level links supported)
+nav:
+  Home:           
+    - '/'
+  Blog:           
+    - '/blog/'
+    - { Categories: '/blog/categories/' }
+    - { Tags: '/blog/tags/' }
+  About:          
+    - '/about/'
+  #Github Project: 
+  #  - 'http://zkf85.github.io/'
 
-# Custom vars
-#version:          
+# Where are tags and categories displayed
+tag_page: '/blog/tags/'
+category_page: '/blog/categories/'
 
-#github: 
-#repo:    
+#hero:
+#  image: /public/img/we_will_be_giants_by_yalestewart.jpg
+#  caption: Original Artwork &copy; <a href="http://yalestewart.deviantart.com/art/We-Will-Be-Giants-370176475">Yale Stewart</a>
 
-gems: [jekyll-paginate]
+# Puglins
+mathjax: true # whether support mathjax
+google_analytics_token: 'UA-00000000-1' # leave blank if you don't want google analytics
+disqus_short_name: 'your_short_name' # leave blank if you don't want disqus
+

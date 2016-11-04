@@ -5,13 +5,11 @@
 <!-- Toggleable sidebar -->
 <div class="sidebar" id="sidebar">
   <div class="sidebar-item">
-  <br><br>
+
+  <br><br><br><br>
+
     <div class="sidebar-personal-info">
-      <!-- <div class="sidebar-personal-info-section">
-        <a href="http://gravatar.com/{{ site.author.gravatar }}">
-          <img src="http://www.gravatar.com/avatar/{{ site.author.gravatar }}?s=350" title="View on Gravatar" alt="View on Gravatar" />
-        </a>
-      </div> -->
+      
       <div class="sidebar-personal-info-section">
         <p>{{ site.author.description }}</p>
       </div>
@@ -37,6 +35,8 @@
       {% endif %}
     </div>
   </div>
+
+<br><br>
 
   <nav class="sidebar-nav">
 
@@ -73,15 +73,14 @@
     <!-- <span class="sidebar-nav-item">Currently v{{ site.version }}</span> -->
   </nav>
 
-  <div class="sidebar-item">
-    <p>
-    &copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. 
-    </p>
-  </div>
 
   <div class="sidebar-item">
+    <br><br><br><br><br>
     <p>
-    Powered by <a href="http://jekyllrb.com">jekyll</a> 
+    &copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. <br>
+    All Rights Reserved.
+    <br><br>
+    Powered by <a href="http://jekyllrb.com">jekyll</a>. 
     </p>
   </div>
 </div>

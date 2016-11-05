@@ -4,7 +4,7 @@
  <title>Everest</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2016-11-04T20:04:29+08:00</updated>
+ <updated>2016-11-05T10:32:56+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Kefeng Zhu</name>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>This is my first blog</title>
-   <link href="http://localhost:4000/2016/11/04/This-is-my-first-blog/"/>
+   <link href="http://localhost:4000/note/2016/11/04/This-is-my-first-blog/"/>
    <updated>2016-11-04T00:00:00+08:00</updated>
-   <id>http://localhost:4000/2016/11/04/This-is-my-first-blog</id>
+   <id>http://localhost:4000/note/2016/11/04/This-is-my-first-blog</id>
    <content type="html">&lt;h2 id=&quot;try-writing-markdown-blogs-with-macdown&quot;&gt;Try writing markdown blogs with MacDown&lt;/h2&gt;
 
 &lt;p&gt;Oh! This is really an awesome editor as I’m typing these words. I can see what it looks like as published on the right. As long I wanna try some syntax in markdown that I’m not quite familiar, I just try it, and take a look:&lt;/p&gt;
@@ -32,6 +32,25 @@ this is a block
 &lt;p&gt;Now, it’s time to start my technical blog writing.&lt;/p&gt;
 
 &lt;p&gt;KF&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Core Data</title>
+   <link href="http://localhost:4000/ios/2016/11/04/Learning-Core-Data-in-iOS-Developing/"/>
+   <updated>2016-11-04T00:00:00+08:00</updated>
+   <id>http://localhost:4000/ios/2016/11/04/Learning-Core-Data-in-iOS-Developing</id>
+   <content type="html">&lt;h2 id=&quot;database&quot;&gt;Database&lt;/h2&gt;
+&lt;p&gt;Some times you need to store large amount of data or query it in a sophisticated manner. And we want it to be object-oriented.&lt;/p&gt;
+
+&lt;p&gt;Core data framework is very powerful.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-does-it-work&quot;&gt;How does it work?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Create a visual mapping between database and objects;&lt;/li&gt;
+  &lt;li&gt;Create and query for objects using object-oriented API;&lt;/li&gt;
+  &lt;li&gt;Access the “columns in the database table” using &lt;strong&gt;@property&lt;/strong&gt;s on those objects.&lt;/li&gt;
+&lt;/ul&gt;
 </content>
  </entry>
  

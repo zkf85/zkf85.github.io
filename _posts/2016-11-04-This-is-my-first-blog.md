@@ -1,6 +1,8 @@
 ---
 layout: post
 title:  "This is my first blog"
+category: [Note]
+tag: [Markdown]
 ---
 
 ## Try writing markdown blogs with MacDown

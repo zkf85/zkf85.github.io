@@ -177,7 +177,7 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
       <div class="container content">
         <div class="post">
   <h1 class="post-title">This is my first blog</h1>
-  <span class="post-date">04 Nov 2016</span>
+  <span class="post-date">03 Nov 2016</span>
    | 
   
     <a href="/blog/tags/#markdown" class="post-tag">Markdown</a>
@@ -198,6 +198,28 @@ this is a block
 
 <p>Now, it’s time to start my technical blog writing.</p>
 
+<h2 id="how-to-insert-an-image-in-the-blog">How to insert an image in the blog?</h2>
+
+<p>Example:
+add the following code:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>![My first image inserted](/public/img/ios-10-nimblechapps.png)
+</code></pre>
+</div>
+
+<p>the path in the parentheses is the image local url.</p>
+
+<p>The result is like this:
+<img src="/public/img/20161103-0-ios10.png" alt="My first image inserted" /></p>
+
+<p>add snippet:</p>
+
+<pre><code class="language-objective-c">#import &lt;Foundation/Foundation.h&gt;
+@interface
+
+@property (nonatomic, strong) UITableView *tableView;
+@end
+</code></pre>
 <p>KF</p>
 
   </article>
@@ -206,6 +228,24 @@ this is a block
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/ios/2016/11/06/Photomania-Demo-Note/">
+            iOS7 CS193P 13/14 Photomania Demo Note
+            <small>06 Nov 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/ios/2016/11/05/All-About-Delegate/">
+            All About Delegate
+            <small>05 Nov 2016</small>
+          </a>
+        </h3>
+      </li>
     
       <li>
         <h3>
@@ -225,8 +265,8 @@ this is a block
   <div id="disqus_thread"></div>
   <script>
 var disqus_config = function () {
-  this.page.url = 'http://localhost:4000/note/2016/11/04/This-is-my-first-blog/'; // Replace PAGE_URL with your page's canonical URL variable
-  this.page.identifier = '/note/2016/11/04/This-is-my-first-blog'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  this.page.url = 'http://localhost:4000/note/2016/11/03/This-is-my-first-blog/'; // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = '/note/2016/11/03/This-is-my-first-blog'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 (function() {
   var d = document, s = d.createElement('script');

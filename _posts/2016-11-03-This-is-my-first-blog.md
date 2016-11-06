@@ -17,4 +17,27 @@ This is really nice, and efficiency.The inline block is like `this is an inline 
 
 Now, it's time to start my technical blog writing.
 
+## How to insert an image in the blog?
+
+Example:
+add the following code:
+
+```
+![My first image inserted](/public/img/ios-10-nimblechapps.png)
+```
+
+the path in the parentheses is the image local url.
+
+The result is like this:
+![My first image inserted](/public/img/20161103-0-ios10.png)
+
+add snippet:
+
+```objective-c
+#import <Foundation/Foundation.h>
+@interface
+
+@property (nonatomic, strong) UITableView *tableView;
+@end
+```
 KF 

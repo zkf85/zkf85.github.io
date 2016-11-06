@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Core Data"
-category: [iOS]
+category: iOS
 tag: [ios, core data, multitask]
 ---
 
@@ -14,3 +14,4 @@ Core data framework is very powerful.
 * Create a visual mapping between database and objects;
 * Create and query for objects using object-oriented API;
 * Access the "columns in the database table" using **@property**s on those objects.
+

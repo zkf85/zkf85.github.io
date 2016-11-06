@@ -179,41 +179,125 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/note/2016/11/04/This-is-my-first-blog/">
-        This is my first blog
+      <a href="/ios/2016/11/06/Photomania-Demo-Note/">
+        iOS7 CS193P 13/14 Photomania Demo Note
       </a>
     </h1>
 
-    <span class="post-date">04 Nov 2016</span>
+    <span class="post-date">06 Nov 2016</span>
      | 
     
-    <a href="/blog/tags/#markdown" class="post-tag">Markdown</a>
+    <a href="/blog/tags/#ios" class="post-tag">ios</a>
+    
+    <a href="/blog/tags/#core-data" class="post-tag">core data</a>
+    
+    <a href="/blog/tags/#multitask" class="post-tag">multitask</a>
+    
+    <a href="/blog/tags/#uitableview" class="post-tag">UITableView</a>
+    
+    <a href="/blog/tags/#delegate" class="post-tag">delegate</a>
     
     
 
     <article>
-      <h2 id="try-writing-markdown-blogs-with-macdown">Try writing markdown blogs with MacDown</h2>
-
-<p>Oh! This is really an awesome editor as I’m typing these words. I can see what it looks like as published on the right. As long I wanna try some syntax in markdown that I’m not quite familiar, I just try it, and take a look:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>this is a block
-this is a block
-this is a block
-</code></pre>
+      <div class="message">
+This might be the toughest and the biggest demo in this iOS course. Here I put my note collection here as reference for later use.
 </div>
 
-<p>This is really nice, and efficiency.The inline block is like <code class="highlighter-rouge">this is an inline block</code>. this is a link: <a href="http://google.com">google</a> This is really awesome!!! I like it.</p>
+<h1 id="i-create-the-project">I. Create the Project</h1>
+<ul>
+  <li>Create a project with single view as normal.</li>
+</ul>
 
-<p>Now, it’s time to start my technical blog writing.</p>
+<h1 id="ii-database-setup">II. Database Setup</h1>
 
-<p>KF</p>
+<h2 id="create-the-database">1. Create the Database</h2>
+<p>Create a database file. Then, add the following two entities into the database:</p>
+
+<ul>
+  <li><strong>Photo</strong></li>
+  <li><strong>Photographer</strong></li>
+</ul>
+
+<h2 id="define-the-schema-schema-visually">2. Define the Schema <sup id="fnref:schema"><a href="#fn:schema" class="footnote">1</a></sup> visually.</h2>
+
+<ul>
+  <li>
+    <p>Add properties to them respectively. (e.g. title, url, data, name etc.)</p>
+  </li>
+  <li>
+    <p>Add relationship between the two entities:</p>
+    <ul>
+      <li>For <strong>Photographer</strong> in <strong>Photo</strong>, the relationship is <strong><em>whoTook</em></strong></li>
+      <li>
+        <p>For <strong>Photo</strong> in <strong>Photographer</strong> the relationship is the same one, but called <strong><em>photos</em></strong>.</p>
+
+        <p>(<strong>NOTICE</strong>: The relationship type here should be set as <strong><em>To Many</em></strong>, because one photographer may take multiple photos.)</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="create-nsmanagedobject-subclasses">3. Create NSManagedObject Subclasses</h2>
+<ul>
+  <li>Create NSManagedObject Subclasses automatically using XCode.
+    <ul>
+      <li>Select both entities;</li>
+      <li>click “Editor”, then “Create NSManagedObject Subclasses”;</li>
+      <li>The correspondent subclasses <strong>Photo.h/Photo.m</strong> and <strong>Photographer.h/Photographer.m</strong> are created in the project and can be found in the project navigator.</li>
+      <li>
+        <p>Notice that in XCode 7 and later, the generated new subclasses include: entity and their CoreDataProperties category like this:</p>
+
+        <p><img src="/public/img/20161106-0.png" alt="subclasses" /></p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:schema">
+      <p>A <strong>schema</strong> is a collection of database objects (as far as this hour is concerned—tables) associated with one particular database username. This username is called the schema owner, or the owner of the related group of objects. You may have one or multiple schemas in a database. Jul 1, 2008 <a href="http://www.informit.com/articles/article.aspx?p=1216889&amp;seqNum=2">Managing Database Objects in SQL</a> <a href="#fnref:schema" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
     <article>
     <div class="post-more">
       
-      <a href="/note/2016/11/04/This-is-my-first-blog/#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+      <a href="/ios/2016/11/06/Photomania-Demo-Note/#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
       
-      <a href="/note/2016/11/04/This-is-my-first-blog/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+      <a href="/ios/2016/11/06/Photomania-Demo-Note/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+    </div>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/ios/2016/11/05/All-About-Delegate/">
+        All About Delegate
+      </a>
+    </h1>
+
+    <span class="post-date">05 Nov 2016</span>
+     | 
+    
+    <a href="/blog/tags/#ios" class="post-tag">ios</a>
+    
+    <a href="/blog/tags/#delegate" class="post-tag">delegate</a>
+    
+    
+
+    <article>
+      <h1 id="what-is-a-delegate">What is a delegate?</h1>
+
+    <article>
+    <div class="post-more">
+      
+      <a href="/ios/2016/11/05/All-About-Delegate/#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+      
+      <a href="/ios/2016/11/05/All-About-Delegate/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
     </div>
   </div>
   
@@ -248,12 +332,75 @@ this is a block
   <li>Access the “columns in the database table” using <strong>@property</strong>s on those objects.</li>
 </ul>
 
+
     <article>
     <div class="post-more">
       
       <a href="/ios/2016/11/04/Learning-Core-Data-in-iOS-Developing/#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
       
       <a href="/ios/2016/11/04/Learning-Core-Data-in-iOS-Developing/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+    </div>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/note/2016/11/03/This-is-my-first-blog/">
+        This is my first blog
+      </a>
+    </h1>
+
+    <span class="post-date">03 Nov 2016</span>
+     | 
+    
+    <a href="/blog/tags/#markdown" class="post-tag">Markdown</a>
+    
+    
+
+    <article>
+      <h2 id="try-writing-markdown-blogs-with-macdown">Try writing markdown blogs with MacDown</h2>
+
+<p>Oh! This is really an awesome editor as I’m typing these words. I can see what it looks like as published on the right. As long I wanna try some syntax in markdown that I’m not quite familiar, I just try it, and take a look:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>this is a block
+this is a block
+this is a block
+</code></pre>
+</div>
+
+<p>This is really nice, and efficiency.The inline block is like <code class="highlighter-rouge">this is an inline block</code>. this is a link: <a href="http://google.com">google</a> This is really awesome!!! I like it.</p>
+
+<p>Now, it’s time to start my technical blog writing.</p>
+
+<h2 id="how-to-insert-an-image-in-the-blog">How to insert an image in the blog?</h2>
+
+<p>Example:
+add the following code:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>![My first image inserted](/public/img/ios-10-nimblechapps.png)
+</code></pre>
+</div>
+
+<p>the path in the parentheses is the image local url.</p>
+
+<p>The result is like this:
+<img src="/public/img/20161103-0-ios10.png" alt="My first image inserted" /></p>
+
+<p>add snippet:</p>
+
+<pre><code class="language-objective-c">#import &lt;Foundation/Foundation.h&gt;
+@interface
+
+@property (nonatomic, strong) UITableView *tableView;
+@end
+</code></pre>
+<p>KF</p>
+
+    <article>
+    <div class="post-more">
+      
+      <a href="/note/2016/11/03/This-is-my-first-blog/#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+      
+      <a href="/note/2016/11/03/This-is-my-first-blog/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
     </div>
   </div>
   

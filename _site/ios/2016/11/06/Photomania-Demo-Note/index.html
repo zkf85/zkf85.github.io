@@ -11,7 +11,7 @@
 
   <title>
     
-      Categories &middot; Everest
+      iOS7 CS193P 13/14 Photomania Demo Note &middot; Everest
     
   </title>
 
@@ -110,7 +110,7 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
             
             
             
-              <a class="sidebar-nav-item sidebar-nav-item-sub active" href="/blog/categories/">
+              <a class="sidebar-nav-item sidebar-nav-item-sub " href="/blog/categories/">
                 Categories
               </a>
           
@@ -175,61 +175,142 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
       </div>
 
       <div class="container content">
-        <div class="page">
-  <h1 class="page-title">Categories</h1>
-  <div class="tags-expo">
-  <div class="tags-expo-list">
-    
-    <a href="#note" class="post-tag">Note</a>
-    
-    <a href="#ios" class="post-tag">iOS</a>
-    
-  </div>
-  <hr/>
-  <div class="tags-expo-section">
-    
-    <h2 id="note">Note</h2>
-    <ul class="tags-expo-posts">
-      
-        <a class="post-title" href="/note/2016/11/03/This-is-my-first-blog/">
-      <li>
-        This is my first blog
-      <small class="post-date">03 Nov 2016</small>
-      </li>
-      </a>
-      
-    </ul>
-    
-    <h2 id="ios">iOS</h2>
-    <ul class="tags-expo-posts">
-      
-        <a class="post-title" href="/ios/2016/11/06/Photomania-Demo-Note/">
-      <li>
-        iOS7 CS193P 13/14 Photomania Demo Note
-      <small class="post-date">06 Nov 2016</small>
-      </li>
-      </a>
-      
-        <a class="post-title" href="/ios/2016/11/05/All-About-Delegate/">
-      <li>
-        All About Delegate
-      <small class="post-date">05 Nov 2016</small>
-      </li>
-      </a>
-      
-        <a class="post-title" href="/ios/2016/11/04/Learning-Core-Data-in-iOS-Developing/">
-      <li>
-        Core Data
-      <small class="post-date">04 Nov 2016</small>
-      </li>
-      </a>
-      
-    </ul>
-    
-  </div>
+        <div class="post">
+  <h1 class="post-title">iOS7 CS193P 13/14 Photomania Demo Note</h1>
+  <span class="post-date">06 Nov 2016</span>
+   | 
+  
+    <a href="/blog/tags/#ios" class="post-tag">ios</a>
+  
+    <a href="/blog/tags/#core-data" class="post-tag">core data</a>
+  
+    <a href="/blog/tags/#multitask" class="post-tag">multitask</a>
+  
+    <a href="/blog/tags/#uitableview" class="post-tag">UITableView</a>
+  
+    <a href="/blog/tags/#delegate" class="post-tag">delegate</a>
+  
+  
+  <article>
+    <div class="message">
+This might be the toughest and the biggest demo in this iOS course. Here I put my note collection here as reference for later use.
 </div>
 
+<h1 id="i-create-the-project">I. Create the Project</h1>
+<ul>
+  <li>Create a project with single view as normal.</li>
+</ul>
+
+<h1 id="ii-database-setup">II. Database Setup</h1>
+
+<h2 id="create-the-database">1. Create the Database</h2>
+<p>Create a database file. Then, add the following two entities into the database:</p>
+
+<ul>
+  <li><strong>Photo</strong></li>
+  <li><strong>Photographer</strong></li>
+</ul>
+
+<h2 id="define-the-schema-schema-visually">2. Define the Schema <sup id="fnref:schema"><a href="#fn:schema" class="footnote">1</a></sup> visually.</h2>
+
+<ul>
+  <li>
+    <p>Add properties to them respectively. (e.g. title, url, data, name etc.)</p>
+  </li>
+  <li>
+    <p>Add relationship between the two entities:</p>
+    <ul>
+      <li>For <strong>Photographer</strong> in <strong>Photo</strong>, the relationship is <strong><em>whoTook</em></strong></li>
+      <li>
+        <p>For <strong>Photo</strong> in <strong>Photographer</strong> the relationship is the same one, but called <strong><em>photos</em></strong>.</p>
+
+        <p>(<strong>NOTICE</strong>: The relationship type here should be set as <strong><em>To Many</em></strong>, because one photographer may take multiple photos.)</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="create-nsmanagedobject-subclasses">3. Create NSManagedObject Subclasses</h2>
+<ul>
+  <li>Create NSManagedObject Subclasses automatically using XCode.
+    <ul>
+      <li>Select both entities;</li>
+      <li>click “Editor”, then “Create NSManagedObject Subclasses”;</li>
+      <li>The correspondent subclasses <strong>Photo.h/Photo.m</strong> and <strong>Photographer.h/Photographer.m</strong> are created in the project and can be found in the project navigator.</li>
+      <li>
+        <p>Notice that in XCode 7 and later, the generated new subclasses include: entity and their CoreDataProperties category like this:</p>
+
+        <p><img src="/public/img/20161106-0.png" alt="subclasses" /></p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+<div class="footnotes">
+  <ol>
+    <li id="fn:schema">
+      <p>A <strong>schema</strong> is a collection of database objects (as far as this hour is concerned—tables) associated with one particular database username. This username is called the schema owner, or the owner of the related group of objects. You may have one or multiple schemas in a database. Jul 1, 2008 <a href="http://www.informit.com/articles/article.aspx?p=1216889&amp;seqNum=2">Managing Database Objects in SQL</a> <a href="#fnref:schema" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
 </div>
+
+  </article>
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/ios/2016/11/05/All-About-Delegate/">
+            All About Delegate
+            <small>05 Nov 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/ios/2016/11/04/Learning-Core-Data-in-iOS-Developing/">
+            Core Data
+            <small>04 Nov 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/note/2016/11/03/This-is-my-first-blog/">
+            This is my first blog
+            <small>03 Nov 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+
+<div class="comments">
+  <h2>Comments</h2>
+  <div id="disqus_thread"></div>
+  <script>
+var disqus_config = function () {
+  this.page.url = 'http://localhost:4000/ios/2016/11/06/Photomania-Demo-Note/'; // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = '/ios/2016/11/06/Photomania-Demo-Note'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() {
+  var d = document, s = d.createElement('script');
+  s.src = '//zkf85githubio.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</div>
+
 
       </div>
     </div>

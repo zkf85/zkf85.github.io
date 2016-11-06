@@ -4,7 +4,7 @@
  <title>Everest</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2016-11-05T10:32:56+08:00</updated>
+ <updated>2016-11-06T14:21:38+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Kefeng Zhu</name>
@@ -13,25 +13,81 @@
 
  
  <entry>
-   <title>This is my first blog</title>
-   <link href="http://localhost:4000/note/2016/11/04/This-is-my-first-blog/"/>
-   <updated>2016-11-04T00:00:00+08:00</updated>
-   <id>http://localhost:4000/note/2016/11/04/This-is-my-first-blog</id>
-   <content type="html">&lt;h2 id=&quot;try-writing-markdown-blogs-with-macdown&quot;&gt;Try writing markdown blogs with MacDown&lt;/h2&gt;
-
-&lt;p&gt;Oh! This is really an awesome editor as I’m typing these words. I can see what it looks like as published on the right. As long I wanna try some syntax in markdown that I’m not quite familiar, I just try it, and take a look:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;this is a block
-this is a block
-this is a block
-&lt;/code&gt;&lt;/pre&gt;
+   <title>iOS7 CS193P 13/14 Photomania Demo Note</title>
+   <link href="http://localhost:4000/ios/2016/11/06/Photomania-Demo-Note/"/>
+   <updated>2016-11-06T00:00:00+08:00</updated>
+   <id>http://localhost:4000/ios/2016/11/06/Photomania-Demo-Note</id>
+   <content type="html">&lt;div class=&quot;message&quot;&gt;
+This might be the toughest and the biggest demo in this iOS course. Here I put my note collection here as reference for later use.
 &lt;/div&gt;
 
-&lt;p&gt;This is really nice, and efficiency.The inline block is like &lt;code class=&quot;highlighter-rouge&quot;&gt;this is an inline block&lt;/code&gt;. this is a link: &lt;a href=&quot;http://google.com&quot;&gt;google&lt;/a&gt; This is really awesome!!! I like it.&lt;/p&gt;
+&lt;h1 id=&quot;i-create-the-project&quot;&gt;I. Create the Project&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;Create a project with single view as normal.&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;Now, it’s time to start my technical blog writing.&lt;/p&gt;
+&lt;h1 id=&quot;ii-database-setup&quot;&gt;II. Database Setup&lt;/h1&gt;
 
-&lt;p&gt;KF&lt;/p&gt;
+&lt;h2 id=&quot;create-the-database&quot;&gt;1. Create the Database&lt;/h2&gt;
+&lt;p&gt;Create a database file. Then, add the following two entities into the database:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Photo&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Photographer&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;define-the-schema-schema-visually&quot;&gt;2. Define the Schema &lt;sup id=&quot;fnref:schema&quot;&gt;&lt;a href=&quot;#fn:schema&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; visually.&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Add properties to them respectively. (e.g. title, url, data, name etc.)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Add relationship between the two entities:&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;For &lt;strong&gt;Photographer&lt;/strong&gt; in &lt;strong&gt;Photo&lt;/strong&gt;, the relationship is &lt;strong&gt;&lt;em&gt;whoTook&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;For &lt;strong&gt;Photo&lt;/strong&gt; in &lt;strong&gt;Photographer&lt;/strong&gt; the relationship is the same one, but called &lt;strong&gt;&lt;em&gt;photos&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
+
+        &lt;p&gt;(&lt;strong&gt;NOTICE&lt;/strong&gt;: The relationship type here should be set as &lt;strong&gt;&lt;em&gt;To Many&lt;/em&gt;&lt;/strong&gt;, because one photographer may take multiple photos.)&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;create-nsmanagedobject-subclasses&quot;&gt;3. Create NSManagedObject Subclasses&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Create NSManagedObject Subclasses automatically using XCode.
+    &lt;ul&gt;
+      &lt;li&gt;Select both entities;&lt;/li&gt;
+      &lt;li&gt;click “Editor”, then “Create NSManagedObject Subclasses”;&lt;/li&gt;
+      &lt;li&gt;The correspondent subclasses &lt;strong&gt;Photo.h/Photo.m&lt;/strong&gt; and &lt;strong&gt;Photographer.h/Photographer.m&lt;/strong&gt; are created in the project and can be found in the project navigator.&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Notice that in XCode 7 and later, the generated new subclasses include: entity and their CoreDataProperties category like this:&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;/public/img/20161106-0.png&quot; alt=&quot;subclasses&quot; /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:schema&quot;&gt;
+      &lt;p&gt;A &lt;strong&gt;schema&lt;/strong&gt; is a collection of database objects (as far as this hour is concerned—tables) associated with one particular database username. This username is called the schema owner, or the owner of the related group of objects. You may have one or multiple schemas in a database. Jul 1, 2008 &lt;a href=&quot;http://www.informit.com/articles/article.aspx?p=1216889&amp;amp;seqNum=2&quot;&gt;Managing Database Objects in SQL&lt;/a&gt; &lt;a href=&quot;#fnref:schema&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>All About Delegate</title>
+   <link href="http://localhost:4000/ios/2016/11/05/All-About-Delegate/"/>
+   <updated>2016-11-05T00:00:00+08:00</updated>
+   <id>http://localhost:4000/ios/2016/11/05/All-About-Delegate</id>
+   <content type="html">&lt;h1 id=&quot;what-is-a-delegate&quot;&gt;What is a delegate?&lt;/h1&gt;
 </content>
  </entry>
  
@@ -51,6 +107,52 @@ this is a block
   &lt;li&gt;Create and query for objects using object-oriented API;&lt;/li&gt;
   &lt;li&gt;Access the “columns in the database table” using &lt;strong&gt;@property&lt;/strong&gt;s on those objects.&lt;/li&gt;
 &lt;/ul&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>This is my first blog</title>
+   <link href="http://localhost:4000/note/2016/11/03/This-is-my-first-blog/"/>
+   <updated>2016-11-03T00:00:00+08:00</updated>
+   <id>http://localhost:4000/note/2016/11/03/This-is-my-first-blog</id>
+   <content type="html">&lt;h2 id=&quot;try-writing-markdown-blogs-with-macdown&quot;&gt;Try writing markdown blogs with MacDown&lt;/h2&gt;
+
+&lt;p&gt;Oh! This is really an awesome editor as I’m typing these words. I can see what it looks like as published on the right. As long I wanna try some syntax in markdown that I’m not quite familiar, I just try it, and take a look:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;this is a block
+this is a block
+this is a block
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This is really nice, and efficiency.The inline block is like &lt;code class=&quot;highlighter-rouge&quot;&gt;this is an inline block&lt;/code&gt;. this is a link: &lt;a href=&quot;http://google.com&quot;&gt;google&lt;/a&gt; This is really awesome!!! I like it.&lt;/p&gt;
+
+&lt;p&gt;Now, it’s time to start my technical blog writing.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-to-insert-an-image-in-the-blog&quot;&gt;How to insert an image in the blog?&lt;/h2&gt;
+
+&lt;p&gt;Example:
+add the following code:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;![My first image inserted](/public/img/ios-10-nimblechapps.png)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;the path in the parentheses is the image local url.&lt;/p&gt;
+
+&lt;p&gt;The result is like this:
+&lt;img src=&quot;/public/img/20161103-0-ios10.png&quot; alt=&quot;My first image inserted&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;add snippet:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;#import &amp;lt;Foundation/Foundation.h&amp;gt;
+@interface
+
+@property (nonatomic, strong) UITableView *tableView;
+@end
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;KF&lt;/p&gt;
 </content>
  </entry>
  

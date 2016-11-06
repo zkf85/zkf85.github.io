@@ -1,8 +1,8 @@
 --- 
 layout: post
 title: "iOS7 CS193P 13/14 Photomania Demo Note"
-category: iOS
-tag: [ios, core data, multitask, UITableView, delegate]
+category: iOS Development
+tag: [ios, core data, multitask, uitableview, delegate]
 ---
 <div class = "message">
 This might be the toughest and the biggest demo in this iOS course. Here I put my note collection here as reference for later use.
@@ -19,7 +19,7 @@ Create a database file. Then, add the following two entities into the database:
 - **Photo**
 - **Photographer**
 
-## 2. Define the Schema [^schema] visually.
+## 2. Define the Schema [^schema] Visually.
 
 - Add properties to them respectively. (e.g. title, url, data, name etc.)
 
@@ -37,6 +37,8 @@ Create a database file. Then, add the following two entities into the database:
 	- Notice that in XCode 7 and later, the generated new subclasses include: entity and their CoreDataProperties category like this:
 
 		![subclasses](/public/img/20161106-0.png)
+	
+		To understand this, check [this Q&A on Stack Overflow](http://stackoverflow.com/questions/33106098/xcode-7-generates-core-data-entity-with-additional-coredataproperties-category). The gist is that you can use  the two files *without* "properties" to add some custom methods or properties. In this way, whenever you update your database property setup and regenerate these supclasses, these custom methods will still be there.
 
 
 

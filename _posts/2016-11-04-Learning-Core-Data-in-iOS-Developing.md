@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Core Data"
-category: iOS
+category: iOS Development
 tag: [ios, core data, multitask]
 ---
 

@@ -4,7 +4,7 @@
  <title>Everest</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2016-11-06T14:21:38+08:00</updated>
+ <updated>2016-11-06T15:54:27+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Kefeng Zhu</name>
@@ -13,10 +13,54 @@
 
  
  <entry>
-   <title>iOS7 CS193P 13/14 Photomania Demo Note</title>
-   <link href="http://localhost:4000/ios/2016/11/06/Photomania-Demo-Note/"/>
+   <title>Class Renaming Issue</title>
+   <link href="http://localhost:4000/ios%20development/2016/11/06/rename-issue/"/>
    <updated>2016-11-06T00:00:00+08:00</updated>
-   <id>http://localhost:4000/ios/2016/11/06/Photomania-Demo-Note</id>
+   <id>http://localhost:4000/ios%20development/2016/11/06/rename-issue</id>
+   <content type="html">&lt;div class=&quot;message&quot;&gt;
+This is a common issue that anybody using XCode may encounter. It's usually very annoying when you want to change the names of the classes because file names and includes are all related when you do it. Here I gather some correct (should be) way to make it happen. 
+&lt;/div&gt;
+
+&lt;h2 id=&quot;change-default-view-controller-name&quot;&gt;1. Change Default View Controller Name&lt;/h2&gt;
+
+&lt;p&gt;Check this: &lt;a href=&quot;http://rshankar.com/how-to-rename-default-view-controllers-in-xcode/&quot;&gt;How to rename default view controllers in XCode&lt;/a&gt;
+In short, it looks like this:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Step 1:&lt;/strong&gt; Navigate to FirstViewController.h and select the name after interface keyword.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Step 2:&lt;/strong&gt; Click the Edit menu then Refactor and select Rename from the list of available option.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Step 3:&lt;/strong&gt; Enter the name then select Rename related files and click the Preview button. This would display the list of files and location where the rename would affect.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Step 4:&lt;/strong&gt; If you are happy with Preview then save the changes.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I tried the steps above and it works fine.&lt;/p&gt;
+
+&lt;p&gt;According to personal experience, you’d better change your default controller name right after you create your new  application. As more files and classes are added, there might be more problems emerge.&lt;/p&gt;
+
+&lt;p&gt;Oh, by the way, DON’T FORGET to change your controller class name to the new one in the identity inspector in storyboard.&lt;/p&gt;
+
+&lt;h2 id=&quot;change-default-appdelegate-name&quot;&gt;2. Change Default AppDelegate Name&lt;/h2&gt;
+
+&lt;p&gt;I applied the same steps to rename my default &lt;code class=&quot;highlighter-rouge&quot;&gt;AppDelegate.h/AppDelegate.m&lt;/code&gt; class. It works fine, but you need to change the app delegate include name in &lt;code class=&quot;highlighter-rouge&quot;&gt;main.m&lt;/code&gt; manually, or there’ll be an error.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>iOS7 CS193P 13/14 Photomania Demo Note</title>
+   <link href="http://localhost:4000/ios%20development/2016/11/06/Photomania-Demo-Note/"/>
+   <updated>2016-11-06T00:00:00+08:00</updated>
+   <id>http://localhost:4000/ios%20development/2016/11/06/Photomania-Demo-Note</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 This might be the toughest and the biggest demo in this iOS course. Here I put my note collection here as reference for later use.
 &lt;/div&gt;
@@ -36,7 +80,7 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
   &lt;li&gt;&lt;strong&gt;Photographer&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;define-the-schema-schema-visually&quot;&gt;2. Define the Schema &lt;sup id=&quot;fnref:schema&quot;&gt;&lt;a href=&quot;#fn:schema&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; visually.&lt;/h2&gt;
+&lt;h2 id=&quot;define-the-schema-schema-visually&quot;&gt;2. Define the Schema &lt;sup id=&quot;fnref:schema&quot;&gt;&lt;a href=&quot;#fn:schema&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; Visually.&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -66,6 +110,8 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
         &lt;p&gt;Notice that in XCode 7 and later, the generated new subclasses include: entity and their CoreDataProperties category like this:&lt;/p&gt;
 
         &lt;p&gt;&lt;img src=&quot;/public/img/20161106-0.png&quot; alt=&quot;subclasses&quot; /&gt;&lt;/p&gt;
+
+        &lt;p&gt;To understand this, check &lt;a href=&quot;http://stackoverflow.com/questions/33106098/xcode-7-generates-core-data-entity-with-additional-coredataproperties-category&quot;&gt;this Q&amp;amp;A on Stack Overflow&lt;/a&gt;. The gist is that you can use  the two files &lt;em&gt;without&lt;/em&gt; “properties” to add some custom methods or properties. In this way, whenever you update your database property setup and regenerate these supclasses, these custom methods will still be there.&lt;/p&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
@@ -93,9 +139,9 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
  
  <entry>
    <title>Core Data</title>
-   <link href="http://localhost:4000/ios/2016/11/04/Learning-Core-Data-in-iOS-Developing/"/>
+   <link href="http://localhost:4000/ios%20development/2016/11/04/Learning-Core-Data-in-iOS-Developing/"/>
    <updated>2016-11-04T00:00:00+08:00</updated>
-   <id>http://localhost:4000/ios/2016/11/04/Learning-Core-Data-in-iOS-Developing</id>
+   <id>http://localhost:4000/ios%20development/2016/11/04/Learning-Core-Data-in-iOS-Developing</id>
    <content type="html">&lt;h2 id=&quot;database&quot;&gt;Database&lt;/h2&gt;
 &lt;p&gt;Some times you need to store large amount of data or query it in a sophisticated manner. And we want it to be object-oriented.&lt;/p&gt;
 

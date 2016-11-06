@@ -186,7 +186,7 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
   
     <a href="/blog/tags/#multitask" class="post-tag">multitask</a>
   
-    <a href="/blog/tags/#uitableview" class="post-tag">UITableView</a>
+    <a href="/blog/tags/#uitableview" class="post-tag">uitableview</a>
   
     <a href="/blog/tags/#delegate" class="post-tag">delegate</a>
   
@@ -211,7 +211,7 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
   <li><strong>Photographer</strong></li>
 </ul>
 
-<h2 id="define-the-schema-schema-visually">2. Define the Schema <sup id="fnref:schema"><a href="#fn:schema" class="footnote">1</a></sup> visually.</h2>
+<h2 id="define-the-schema-schema-visually">2. Define the Schema <sup id="fnref:schema"><a href="#fn:schema" class="footnote">1</a></sup> Visually.</h2>
 
 <ul>
   <li>
@@ -241,6 +241,8 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
         <p>Notice that in XCode 7 and later, the generated new subclasses include: entity and their CoreDataProperties category like this:</p>
 
         <p><img src="/public/img/20161106-0.png" alt="subclasses" /></p>
+
+        <p>To understand this, check <a href="http://stackoverflow.com/questions/33106098/xcode-7-generates-core-data-entity-with-additional-coredataproperties-category">this Q&amp;A on Stack Overflow</a>. The gist is that you can use  the two files <em>without</em> “properties” to add some custom methods or properties. In this way, whenever you update your database property setup and regenerate these supclasses, these custom methods will still be there.</p>
       </li>
     </ul>
   </li>
@@ -264,6 +266,15 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
     
       <li>
         <h3>
+          <a href="/ios%20development/2016/11/06/rename-issue/">
+            Class Renaming Issue
+            <small>06 Nov 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
           <a href="/ios/2016/11/05/All-About-Delegate/">
             All About Delegate
             <small>05 Nov 2016</small>
@@ -273,18 +284,9 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
     
       <li>
         <h3>
-          <a href="/ios/2016/11/04/Learning-Core-Data-in-iOS-Developing/">
+          <a href="/ios%20development/2016/11/04/Learning-Core-Data-in-iOS-Developing/">
             Core Data
             <small>04 Nov 2016</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/note/2016/11/03/This-is-my-first-blog/">
-            This is my first blog
-            <small>03 Nov 2016</small>
           </a>
         </h3>
       </li>
@@ -298,8 +300,8 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
   <div id="disqus_thread"></div>
   <script>
 var disqus_config = function () {
-  this.page.url = 'http://localhost:4000/ios/2016/11/06/Photomania-Demo-Note/'; // Replace PAGE_URL with your page's canonical URL variable
-  this.page.identifier = '/ios/2016/11/06/Photomania-Demo-Note'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  this.page.url = 'http://localhost:4000/ios%20development/2016/11/06/Photomania-Demo-Note/'; // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = '/ios%20development/2016/11/06/Photomania-Demo-Note'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 (function() {
   var d = document, s = d.createElement('script');

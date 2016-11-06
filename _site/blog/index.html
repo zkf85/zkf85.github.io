@@ -179,7 +179,74 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/ios/2016/11/06/Photomania-Demo-Note/">
+      <a href="/ios%20development/2016/11/06/rename-issue/">
+        Class Renaming Issue
+      </a>
+    </h1>
+
+    <span class="post-date">06 Nov 2016</span>
+     | 
+    
+    <a href="/blog/tags/#ios" class="post-tag">ios</a>
+    
+    <a href="/blog/tags/#objective-c" class="post-tag">objective-c</a>
+    
+    <a href="/blog/tags/#xcode" class="post-tag">xcode</a>
+    
+    <a href="/blog/tags/#technical-problem" class="post-tag">technical problem</a>
+    
+    
+
+    <article>
+      <div class="message">
+This is a common issue that anybody using XCode may encounter. It's usually very annoying when you want to change the names of the classes because file names and includes are all related when you do it. Here I gather some correct (should be) way to make it happen. 
+</div>
+
+<h2 id="change-default-view-controller-name">1. Change Default View Controller Name</h2>
+
+<p>Check this: <a href="http://rshankar.com/how-to-rename-default-view-controllers-in-xcode/">How to rename default view controllers in XCode</a>
+In short, it looks like this:</p>
+
+<ul>
+  <li>
+    <p><strong>Step 1:</strong> Navigate to FirstViewController.h and select the name after interface keyword.</p>
+  </li>
+  <li>
+    <p><strong>Step 2:</strong> Click the Edit menu then Refactor and select Rename from the list of available option.</p>
+  </li>
+  <li>
+    <p><strong>Step 3:</strong> Enter the name then select Rename related files and click the Preview button. This would display the list of files and location where the rename would affect.</p>
+  </li>
+  <li>
+    <p><strong>Step 4:</strong> If you are happy with Preview then save the changes.</p>
+  </li>
+</ul>
+
+<p>I tried the steps above and it works fine.</p>
+
+<p>According to personal experience, you’d better change your default controller name right after you create your new  application. As more files and classes are added, there might be more problems emerge.</p>
+
+<p>Oh, by the way, DON’T FORGET to change your controller class name to the new one in the identity inspector in storyboard.</p>
+
+<h2 id="change-default-appdelegate-name">2. Change Default AppDelegate Name</h2>
+
+<p>I applied the same steps to rename my default <code class="highlighter-rouge">AppDelegate.h/AppDelegate.m</code> class. It works fine, but you need to change the app delegate include name in <code class="highlighter-rouge">main.m</code> manually, or there’ll be an error.</p>
+
+<p><br />
+<strong><em>KF</em></strong></p>
+
+    <article>
+    <div class="post-more">
+      
+      <a href="/ios%20development/2016/11/06/rename-issue/#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+      
+      <a href="/ios%20development/2016/11/06/rename-issue/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+    </div>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/ios%20development/2016/11/06/Photomania-Demo-Note/">
         iOS7 CS193P 13/14 Photomania Demo Note
       </a>
     </h1>
@@ -193,7 +260,7 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
     
     <a href="/blog/tags/#multitask" class="post-tag">multitask</a>
     
-    <a href="/blog/tags/#uitableview" class="post-tag">UITableView</a>
+    <a href="/blog/tags/#uitableview" class="post-tag">uitableview</a>
     
     <a href="/blog/tags/#delegate" class="post-tag">delegate</a>
     
@@ -219,7 +286,7 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
   <li><strong>Photographer</strong></li>
 </ul>
 
-<h2 id="define-the-schema-schema-visually">2. Define the Schema <sup id="fnref:schema"><a href="#fn:schema" class="footnote">1</a></sup> visually.</h2>
+<h2 id="define-the-schema-schema-visually">2. Define the Schema <sup id="fnref:schema"><a href="#fn:schema" class="footnote">1</a></sup> Visually.</h2>
 
 <ul>
   <li>
@@ -249,6 +316,8 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
         <p>Notice that in XCode 7 and later, the generated new subclasses include: entity and their CoreDataProperties category like this:</p>
 
         <p><img src="/public/img/20161106-0.png" alt="subclasses" /></p>
+
+        <p>To understand this, check <a href="http://stackoverflow.com/questions/33106098/xcode-7-generates-core-data-entity-with-additional-coredataproperties-category">this Q&amp;A on Stack Overflow</a>. The gist is that you can use  the two files <em>without</em> “properties” to add some custom methods or properties. In this way, whenever you update your database property setup and regenerate these supclasses, these custom methods will still be there.</p>
       </li>
     </ul>
   </li>
@@ -267,9 +336,9 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
     <article>
     <div class="post-more">
       
-      <a href="/ios/2016/11/06/Photomania-Demo-Note/#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+      <a href="/ios%20development/2016/11/06/Photomania-Demo-Note/#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
       
-      <a href="/ios/2016/11/06/Photomania-Demo-Note/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+      <a href="/ios%20development/2016/11/06/Photomania-Demo-Note/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
     </div>
   </div>
   
@@ -303,7 +372,7 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/ios/2016/11/04/Learning-Core-Data-in-iOS-Developing/">
+      <a href="/ios%20development/2016/11/04/Learning-Core-Data-in-iOS-Developing/">
         Core Data
       </a>
     </h1>
@@ -336,9 +405,9 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
     <article>
     <div class="post-more">
       
-      <a href="/ios/2016/11/04/Learning-Core-Data-in-iOS-Developing/#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+      <a href="/ios%20development/2016/11/04/Learning-Core-Data-in-iOS-Developing/#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
       
-      <a href="/ios/2016/11/04/Learning-Core-Data-in-iOS-Developing/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+      <a href="/ios%20development/2016/11/04/Learning-Core-Data-in-iOS-Developing/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
     </div>
   </div>
   
@@ -352,7 +421,7 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
     <span class="post-date">03 Nov 2016</span>
      | 
     
-    <a href="/blog/tags/#markdown" class="post-tag">Markdown</a>
+    <a href="/blog/tags/#markdown" class="post-tag">markdown</a>
     
     
 

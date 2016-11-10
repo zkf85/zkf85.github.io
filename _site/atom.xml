@@ -4,7 +4,7 @@
  <title>Everest</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2016-11-10T14:56:50+08:00</updated>
+ <updated>2016-11-10T14:58:11+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Kefeng Zhu</name>
@@ -21,7 +21,9 @@
 
 &lt;p&gt;&lt;img src=&quot;/public/img/20161110-election-map.jpg&quot; alt=&quot;Trump has better coverage than Verizon&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;The original &lt;a href=&quot;http://www.npr.org/2016/08/18/490240652/is-rural-resentment-driving-voters-to-donald-trump&quot;&gt;article on NPR.com is here&lt;/a&gt;. This article was published months before the general election.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;The original &lt;a href=&quot;http://www.npr.org/2016/08/18/490240652/is-rural-resentment-driving-voters-to-donald-trump&quot;&gt;article on NPR.com is here&lt;/a&gt;. This article was published months before the general election.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h1 id=&quot;is-rural-resentment-driving-voters-to-donald-trump&quot;&gt;Is ‘Rural Resentment’ Driving Voters To Donald Trump?&lt;/h1&gt;
 

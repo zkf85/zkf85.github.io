@@ -45,3 +45,6 @@ There's this sense that people in those communities are not getting their fair s
 Trump's rhetoric may similarly appeal to America's rural populations.
 
 "The resources, the people, the respect seem to be going somewhere else, or to other types of people, and here comes someone who says 'You're right, you're not getting your fair share. It's going to people who aren't deserving, and you vote me in and we're going to make America great again," she said.
+
+<br>
+***KF***

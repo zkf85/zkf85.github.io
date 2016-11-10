@@ -4,7 +4,7 @@
  <title>Everest</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2016-11-06T15:54:27+08:00</updated>
+ <updated>2016-11-10T14:42:20+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Kefeng Zhu</name>
@@ -13,56 +13,61 @@
 
  
  <entry>
-   <title>Class Renaming Issue</title>
-   <link href="http://localhost:4000/ios%20development/2016/11/06/rename-issue/"/>
-   <updated>2016-11-06T00:00:00+08:00</updated>
-   <id>http://localhost:4000/ios%20development/2016/11/06/rename-issue</id>
-   <content type="html">&lt;div class=&quot;message&quot;&gt;
-This is a common issue that anybody using XCode may encounter. It's usually very annoying when you want to change the names of the classes because file names and includes are all related when you do it. Here I gather some correct (should be) way to make it happen. 
-&lt;/div&gt;
+   <title>The Role of 'Rural Resentment' in the Election 2016</title>
+   <link href="http://localhost:4000/thoughts/2016/11/10/rural-resentment/"/>
+   <updated>2016-11-10T00:00:00+08:00</updated>
+   <id>http://localhost:4000/thoughts/2016/11/10/rural-resentment</id>
+   <content type="html">&lt;div class=&quot;message&quot;&gt;There is an obvious phenomenon when I was watching the results popping out with the votes' distribution geographically: most people in urban area supported Hillary while there was a landslide winning in favor of Trump in rural area all over the country. An article stressed this topic and I take a summary here.&lt;/div&gt;
 
-&lt;h2 id=&quot;change-default-view-controller-name&quot;&gt;1. Change Default View Controller Name&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;/public/img/20161110-election-map.jpg&quot; alt=&quot;Trump has better coverage than Verizon&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Check this: &lt;a href=&quot;http://rshankar.com/how-to-rename-default-view-controllers-in-xcode/&quot;&gt;How to rename default view controllers in XCode&lt;/a&gt;
-In short, it looks like this:&lt;/p&gt;
+&lt;p&gt;The original &lt;a href=&quot;http://www.npr.org/2016/08/18/490240652/is-rural-resentment-driving-voters-to-donald-trump&quot;&gt;article on NPR.com is here&lt;/a&gt;. This article was published months before the general election.&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Step 1:&lt;/strong&gt; Navigate to FirstViewController.h and select the name after interface keyword.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Step 2:&lt;/strong&gt; Click the Edit menu then Refactor and select Rename from the list of available option.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Step 3:&lt;/strong&gt; Enter the name then select Rename related files and click the Preview button. This would display the list of files and location where the rename would affect.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Step 4:&lt;/strong&gt; If you are happy with Preview then save the changes.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+&lt;h1 id=&quot;is-rural-resentment-driving-voters-to-donald-trump&quot;&gt;Is ‘Rural Resentment’ Driving Voters To Donald Trump?&lt;/h1&gt;
 
-&lt;p&gt;I tried the steps above and it works fine.&lt;/p&gt;
+&lt;p&gt;The rural-urban divide persists nationwide. Hillary Clinton led Trump by 26 points in urban areas in a recent poll, also from the Washington Post. But in rural areas, Trump led Clinton by 20 points.&lt;/p&gt;
 
-&lt;p&gt;According to personal experience, you’d better change your default controller name right after you create your new  application. As more files and classes are added, there might be more problems emerge.&lt;/p&gt;
+&lt;p&gt;Four years ago, Obama won urban areas by 26 points, according to exit polls, while Romney won rural areas by 20 points.&lt;/p&gt;
 
-&lt;p&gt;Oh, by the way, DON’T FORGET to change your controller class name to the new one in the identity inspector in storyboard.&lt;/p&gt;
+&lt;h2 id=&quot;why&quot;&gt;Why?&lt;/h2&gt;
 
-&lt;h2 id=&quot;change-default-appdelegate-name&quot;&gt;2. Change Default AppDelegate Name&lt;/h2&gt;
+&lt;p&gt;Rural voters heavily lean toward supporting Trump, so it’s no surprise that the stats that describe America’s rural areas also happen to describe Trump supporters quite well. Trump does particularly well among older, white and non-college-educated Americans.&lt;/p&gt;
 
-&lt;p&gt;I applied the same steps to rename my default &lt;code class=&quot;highlighter-rouge&quot;&gt;AppDelegate.h/AppDelegate.m&lt;/code&gt; class. It works fine, but you need to change the app delegate include name in &lt;code class=&quot;highlighter-rouge&quot;&gt;main.m&lt;/code&gt; manually, or there’ll be an error.&lt;/p&gt;
+&lt;p&gt;And as it happens, &lt;strong&gt;rural areas are older than the rest of the nation&lt;/strong&gt; — the median age in rural areas is around 40, compared to 37 for the rest of the country, according to a report from the Housing Assistance Council, a group that promotes affordable housing in rural areas.&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;
-&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Likewise, rural areas tend to be less educated than urban areas.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/img/20161110-npr-rural-diversity.png&quot; alt=&quot;rural less diverse&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Rural areas are whiter, as well. Nearly 80 percent of people in rural areas are white non-Hispanics, compared to around 64 percent among the U.S. as a whol&lt;/p&gt;
+
+&lt;h2 id=&quot;does-rural-ness-drive-peoples-votes&quot;&gt;Does Rural-Ness Drive People’s Votes?&lt;/h2&gt;
+
+&lt;p&gt;All these stats might make it seem that it’s demographics that cause rural voters to choose Trump, or other Republican candidates: that there’s something about being white or about being older or not having a college diploma that makes a person vote for him, and that those people also just happen to live in rural areas.&lt;/p&gt;
+
+&lt;p&gt;Or, perhaps, that there’s something about being conservative that makes a person choose a rural area.&lt;/p&gt;
+
+&lt;p&gt;There’s this sense that people in those communities are not getting their fair share compared to people in the cities,” said Katherine Cramer, a political science professor at the University of Wisconsin.&lt;/p&gt;
+
+&lt;p&gt;“They feel like their communities are dying, and they perceive that all that stuff — the young people, the money, the livelihood — is going somewhere, and it’s going to the cities,” she said.&lt;/p&gt;
+
+&lt;p&gt;“Many voters have racial and economic resentments, but the thing that surprised me in my research was how common it was for people in small towns to talk about these resentments with reference to their towns,” she said.&lt;/p&gt;
+
+&lt;h2 id=&quot;trumps-favorable&quot;&gt;Trump’s Favorable&lt;/h2&gt;
+
+&lt;p&gt;Trump’s rhetoric may similarly appeal to America’s rural populations.&lt;/p&gt;
+
+&lt;p&gt;“The resources, the people, the respect seem to be going somewhere else, or to other types of people, and here comes someone who says ‘You’re right, you’re not getting your fair share. It’s going to people who aren’t deserving, and you vote me in and we’re going to make America great again,” she said.&lt;/p&gt;
 </content>
  </entry>
  
  <entry>
    <title>iOS7 CS193P 13/14 Photomania Demo Note</title>
-   <link href="http://localhost:4000/ios%20development/2016/11/06/Photomania-Demo-Note/"/>
-   <updated>2016-11-06T00:00:00+08:00</updated>
-   <id>http://localhost:4000/ios%20development/2016/11/06/Photomania-Demo-Note</id>
+   <link href="http://localhost:4000/ios%20development/2016/11/07/Photomania-Demo-Note/"/>
+   <updated>2016-11-07T00:00:00+08:00</updated>
+   <id>http://localhost:4000/ios%20development/2016/11/07/Photomania-Demo-Note</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
-This might be the toughest and the biggest demo in this iOS course. Here I put my note collection here as reference for later use.
+This might be the toughest and the biggest demo in this iOS course. Here I put my note collection here as reference for later use. 11/06/2016
 &lt;/div&gt;
 
 &lt;h1 id=&quot;i-create-the-project&quot;&gt;I. Create the Project&lt;/h1&gt;
@@ -114,8 +119,24 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
         &lt;p&gt;To understand this, check &lt;a href=&quot;http://stackoverflow.com/questions/33106098/xcode-7-generates-core-data-entity-with-additional-coredataproperties-category&quot;&gt;this Q&amp;amp;A on Stack Overflow&lt;/a&gt;. The gist is that you can use  the two files &lt;em&gt;without&lt;/em&gt; “properties” to add some custom methods or properties. In this way, whenever you update your database property setup and regenerate these supclasses, these custom methods will still be there.&lt;/p&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;continue on 11/07/2016&lt;/code&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Also another thing to mention is that don’t forget to choose your data model and go to the file inspector, then choose the code generation language to what you desired. Here I use OC. If don’t do this, language compatibility issue may occur.&lt;/li&gt;
+    &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h2 id=&quot;add-custom-methods-to-the-subclasses&quot;&gt;4. Add Custom Methods to the Subclasses&lt;/h2&gt;
+&lt;p&gt;Add these too class methods to &lt;code class=&quot;highlighter-rouge&quot;&gt;Photos+CoreDataClass&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;+ (Photo *)photoWithFlickrInfo:(NSDictionary *)photoDictionary
+        inManagedObjectContext:(NSManagedObjectContext *)context;
+
++ (void)loadPhotosFromFlickrArray:(NSArray *)photos
+         intoManagedObjectContext:(NSManagedObjectContext *)context;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;hr /&gt;
 &lt;div class=&quot;footnotes&quot;&gt;
@@ -129,10 +150,54 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
  </entry>
  
  <entry>
+   <title>Class Renaming Issue</title>
+   <link href="http://localhost:4000/ios%20development/2016/11/06/rename-issue/"/>
+   <updated>2016-11-06T00:00:00+08:00</updated>
+   <id>http://localhost:4000/ios%20development/2016/11/06/rename-issue</id>
+   <content type="html">&lt;div class=&quot;message&quot;&gt;
+This is a common issue that anybody using XCode may encounter. It's usually very annoying when you want to change the names of the classes because file names and includes are all related when you do it. Here I gather some correct (should be) way to make it happen. 
+&lt;/div&gt;
+
+&lt;h2 id=&quot;change-default-view-controller-name&quot;&gt;1. Change Default View Controller Name&lt;/h2&gt;
+
+&lt;p&gt;Check this: &lt;a href=&quot;http://rshankar.com/how-to-rename-default-view-controllers-in-xcode/&quot;&gt;How to rename default view controllers in XCode&lt;/a&gt;
+In short, it looks like this:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Step 1:&lt;/strong&gt; Navigate to FirstViewController.h and select the name after interface keyword.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Step 2:&lt;/strong&gt; Click the Edit menu then Refactor and select Rename from the list of available option.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Step 3:&lt;/strong&gt; Enter the name then select Rename related files and click the Preview button. This would display the list of files and location where the rename would affect.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Step 4:&lt;/strong&gt; If you are happy with Preview then save the changes.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I tried the steps above and it works fine.&lt;/p&gt;
+
+&lt;p&gt;According to personal experience, you’d better change your default controller name right after you create your new  application. As more files and classes are added, there might be more problems emerge.&lt;/p&gt;
+
+&lt;p&gt;Oh, by the way, DON’T FORGET to change your controller class name to the new one in the identity inspector in storyboard.&lt;/p&gt;
+
+&lt;h2 id=&quot;change-default-appdelegate-name&quot;&gt;2. Change Default AppDelegate Name&lt;/h2&gt;
+
+&lt;p&gt;I applied the same steps to rename my default &lt;code class=&quot;highlighter-rouge&quot;&gt;AppDelegate.h/AppDelegate.m&lt;/code&gt; class. It works fine, but you need to change the app delegate include name in &lt;code class=&quot;highlighter-rouge&quot;&gt;main.m&lt;/code&gt; manually, or there’ll be an error.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>All About Delegate</title>
-   <link href="http://localhost:4000/ios/2016/11/05/All-About-Delegate/"/>
+   <link href="http://localhost:4000/ios%20development/2016/11/05/All-About-Delegate/"/>
    <updated>2016-11-05T00:00:00+08:00</updated>
-   <id>http://localhost:4000/ios/2016/11/05/All-About-Delegate</id>
+   <id>http://localhost:4000/ios%20development/2016/11/05/All-About-Delegate</id>
    <content type="html">&lt;h1 id=&quot;what-is-a-delegate&quot;&gt;What is a delegate?&lt;/h1&gt;
 </content>
  </entry>

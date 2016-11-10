@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "All About Delegate"
-category: [iOS]
+category: [iOS Development]
 tag: [ios, delegate]
 ---
 

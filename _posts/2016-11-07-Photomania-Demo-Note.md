@@ -5,7 +5,7 @@ category: iOS Development
 tag: [ios, core data, multitask, uitableview, delegate]
 ---
 <div class = "message">
-This might be the toughest and the biggest demo in this iOS course. Here I put my note collection here as reference for later use.
+This might be the toughest and the biggest demo in this iOS course. Here I put my note collection here as reference for later use. 11/06/2016
 </div>
 
 # I. Create the Project
@@ -40,7 +40,20 @@ Create a database file. Then, add the following two entities into the database:
 	
 		To understand this, check [this Q&A on Stack Overflow](http://stackoverflow.com/questions/33106098/xcode-7-generates-core-data-entity-with-additional-coredataproperties-category). The gist is that you can use  the two files *without* "properties" to add some custom methods or properties. In this way, whenever you update your database property setup and regenerate these supclasses, these custom methods will still be there.
 
+	`continue on 11/07/2016`
 
+	- Also another thing to mention is that don't forget to choose your data model and go to the file inspector, then choose the code generation language to what you desired. Here I use OC. If don't do this, language compatibility issue may occur. 
+
+## 4. Add Custom Methods to the Subclasses
+Add these too class methods to `Photos+CoreDataClass`
+
+```objective-c
++ (Photo *)photoWithFlickrInfo:(NSDictionary *)photoDictionary
+        inManagedObjectContext:(NSManagedObjectContext *)context;
+
++ (void)loadPhotosFromFlickrArray:(NSArray *)photos
+         intoManagedObjectContext:(NSManagedObjectContext *)context;
+```
 
 ---
 [^schema]: A **schema** is a collection of database objects (as far as this hour is concerned—tables) associated with one particular database username. This username is called the schema owner, or the owner of the related group of objects. You may have one or multiple schemas in a database. Jul 1, 2008 [Managing Database Objects in SQL](http://www.informit.com/articles/article.aspx?p=1216889&seqNum=2)

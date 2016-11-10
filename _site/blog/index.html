@@ -179,6 +179,186 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
   
   <div class="post">
     <h1 class="post-title">
+      <a href="/thoughts/2016/11/10/rural-resentment/">
+        The Role of 'Rural Resentment' in the Election 2016
+      </a>
+    </h1>
+
+    <span class="post-date">10 Nov 2016</span>
+     | 
+    
+    <a href="/blog/tags/#politics" class="post-tag">politics</a>
+    
+    
+
+    <article>
+      <div class="message">There is an obvious phenomenon when I was watching the results popping out with the votes' distribution geographically: most people in urban area supported Hillary while there was a landslide winning in favor of Trump in rural area all over the country. An article stressed this topic and I take a summary here.</div>
+
+<p><img src="/public/img/20161110-election-map.jpg" alt="Trump has better coverage than Verizon" /></p>
+
+<p>The original <a href="http://www.npr.org/2016/08/18/490240652/is-rural-resentment-driving-voters-to-donald-trump">article on NPR.com is here</a>. This article was published months before the general election.</p>
+
+<h1 id="is-rural-resentment-driving-voters-to-donald-trump">Is ‘Rural Resentment’ Driving Voters To Donald Trump?</h1>
+
+<p>The rural-urban divide persists nationwide. Hillary Clinton led Trump by 26 points in urban areas in a recent poll, also from the Washington Post. But in rural areas, Trump led Clinton by 20 points.</p>
+
+<p>Four years ago, Obama won urban areas by 26 points, according to exit polls, while Romney won rural areas by 20 points.</p>
+
+<h2 id="why">Why?</h2>
+
+<p>Rural voters heavily lean toward supporting Trump, so it’s no surprise that the stats that describe America’s rural areas also happen to describe Trump supporters quite well. Trump does particularly well among older, white and non-college-educated Americans.</p>
+
+<p>And as it happens, <strong>rural areas are older than the rest of the nation</strong> — the median age in rural areas is around 40, compared to 37 for the rest of the country, according to a report from the Housing Assistance Council, a group that promotes affordable housing in rural areas.</p>
+
+<p><strong>Likewise, rural areas tend to be less educated than urban areas.</strong></p>
+
+<p><img src="/public/img/20161110-npr-rural-diversity.png" alt="rural less diverse" /></p>
+
+<p>Rural areas are whiter, as well. Nearly 80 percent of people in rural areas are white non-Hispanics, compared to around 64 percent among the U.S. as a whol</p>
+
+<h2 id="does-rural-ness-drive-peoples-votes">Does Rural-Ness Drive People’s Votes?</h2>
+
+<p>All these stats might make it seem that it’s demographics that cause rural voters to choose Trump, or other Republican candidates: that there’s something about being white or about being older or not having a college diploma that makes a person vote for him, and that those people also just happen to live in rural areas.</p>
+
+<p>Or, perhaps, that there’s something about being conservative that makes a person choose a rural area.</p>
+
+<p>There’s this sense that people in those communities are not getting their fair share compared to people in the cities,” said Katherine Cramer, a political science professor at the University of Wisconsin.</p>
+
+<p>“They feel like their communities are dying, and they perceive that all that stuff — the young people, the money, the livelihood — is going somewhere, and it’s going to the cities,” she said.</p>
+
+<p>“Many voters have racial and economic resentments, but the thing that surprised me in my research was how common it was for people in small towns to talk about these resentments with reference to their towns,” she said.</p>
+
+<h2 id="trumps-favorable">Trump’s Favorable</h2>
+
+<p>Trump’s rhetoric may similarly appeal to America’s rural populations.</p>
+
+<p>“The resources, the people, the respect seem to be going somewhere else, or to other types of people, and here comes someone who says ‘You’re right, you’re not getting your fair share. It’s going to people who aren’t deserving, and you vote me in and we’re going to make America great again,” she said.</p>
+
+    <article>
+    <div class="post-more">
+      
+      <a href="/thoughts/2016/11/10/rural-resentment/#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+      
+      <a href="/thoughts/2016/11/10/rural-resentment/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+    </div>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/ios%20development/2016/11/07/Photomania-Demo-Note/">
+        iOS7 CS193P 13/14 Photomania Demo Note
+      </a>
+    </h1>
+
+    <span class="post-date">07 Nov 2016</span>
+     | 
+    
+    <a href="/blog/tags/#ios" class="post-tag">ios</a>
+    
+    <a href="/blog/tags/#core-data" class="post-tag">core data</a>
+    
+    <a href="/blog/tags/#multitask" class="post-tag">multitask</a>
+    
+    <a href="/blog/tags/#uitableview" class="post-tag">uitableview</a>
+    
+    <a href="/blog/tags/#delegate" class="post-tag">delegate</a>
+    
+    
+
+    <article>
+      <div class="message">
+This might be the toughest and the biggest demo in this iOS course. Here I put my note collection here as reference for later use. 11/06/2016
+</div>
+
+<h1 id="i-create-the-project">I. Create the Project</h1>
+<ul>
+  <li>Create a project with single view as normal.</li>
+</ul>
+
+<h1 id="ii-database-setup">II. Database Setup</h1>
+
+<h2 id="create-the-database">1. Create the Database</h2>
+<p>Create a database file. Then, add the following two entities into the database:</p>
+
+<ul>
+  <li><strong>Photo</strong></li>
+  <li><strong>Photographer</strong></li>
+</ul>
+
+<h2 id="define-the-schema-schema-visually">2. Define the Schema <sup id="fnref:schema"><a href="#fn:schema" class="footnote">1</a></sup> Visually.</h2>
+
+<ul>
+  <li>
+    <p>Add properties to them respectively. (e.g. title, url, data, name etc.)</p>
+  </li>
+  <li>
+    <p>Add relationship between the two entities:</p>
+    <ul>
+      <li>For <strong>Photographer</strong> in <strong>Photo</strong>, the relationship is <strong><em>whoTook</em></strong></li>
+      <li>
+        <p>For <strong>Photo</strong> in <strong>Photographer</strong> the relationship is the same one, but called <strong><em>photos</em></strong>.</p>
+
+        <p>(<strong>NOTICE</strong>: The relationship type here should be set as <strong><em>To Many</em></strong>, because one photographer may take multiple photos.)</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="create-nsmanagedobject-subclasses">3. Create NSManagedObject Subclasses</h2>
+<ul>
+  <li>Create NSManagedObject Subclasses automatically using XCode.
+    <ul>
+      <li>Select both entities;</li>
+      <li>click “Editor”, then “Create NSManagedObject Subclasses”;</li>
+      <li>The correspondent subclasses <strong>Photo.h/Photo.m</strong> and <strong>Photographer.h/Photographer.m</strong> are created in the project and can be found in the project navigator.</li>
+      <li>
+        <p>Notice that in XCode 7 and later, the generated new subclasses include: entity and their CoreDataProperties category like this:</p>
+
+        <p><img src="/public/img/20161106-0.png" alt="subclasses" /></p>
+
+        <p>To understand this, check <a href="http://stackoverflow.com/questions/33106098/xcode-7-generates-core-data-entity-with-additional-coredataproperties-category">this Q&amp;A on Stack Overflow</a>. The gist is that you can use  the two files <em>without</em> “properties” to add some custom methods or properties. In this way, whenever you update your database property setup and regenerate these supclasses, these custom methods will still be there.</p>
+      </li>
+    </ul>
+
+    <p><code class="highlighter-rouge">continue on 11/07/2016</code></p>
+
+    <ul>
+      <li>Also another thing to mention is that don’t forget to choose your data model and go to the file inspector, then choose the code generation language to what you desired. Here I use OC. If don’t do this, language compatibility issue may occur.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="add-custom-methods-to-the-subclasses">4. Add Custom Methods to the Subclasses</h2>
+<p>Add these too class methods to <code class="highlighter-rouge">Photos+CoreDataClass</code></p>
+
+<pre><code class="language-objective-c">+ (Photo *)photoWithFlickrInfo:(NSDictionary *)photoDictionary
+        inManagedObjectContext:(NSManagedObjectContext *)context;
+
++ (void)loadPhotosFromFlickrArray:(NSArray *)photos
+         intoManagedObjectContext:(NSManagedObjectContext *)context;
+</code></pre>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:schema">
+      <p>A <strong>schema</strong> is a collection of database objects (as far as this hour is concerned—tables) associated with one particular database username. This username is called the schema owner, or the owner of the related group of objects. You may have one or multiple schemas in a database. Jul 1, 2008 <a href="http://www.informit.com/articles/article.aspx?p=1216889&amp;seqNum=2">Managing Database Objects in SQL</a> <a href="#fnref:schema" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+    <article>
+    <div class="post-more">
+      
+      <a href="/ios%20development/2016/11/07/Photomania-Demo-Note/#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+      
+      <a href="/ios%20development/2016/11/07/Photomania-Demo-Note/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+    </div>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="/ios%20development/2016/11/06/rename-issue/">
         Class Renaming Issue
       </a>
@@ -246,105 +426,7 @@ In short, it looks like this:</p>
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/ios%20development/2016/11/06/Photomania-Demo-Note/">
-        iOS7 CS193P 13/14 Photomania Demo Note
-      </a>
-    </h1>
-
-    <span class="post-date">06 Nov 2016</span>
-     | 
-    
-    <a href="/blog/tags/#ios" class="post-tag">ios</a>
-    
-    <a href="/blog/tags/#core-data" class="post-tag">core data</a>
-    
-    <a href="/blog/tags/#multitask" class="post-tag">multitask</a>
-    
-    <a href="/blog/tags/#uitableview" class="post-tag">uitableview</a>
-    
-    <a href="/blog/tags/#delegate" class="post-tag">delegate</a>
-    
-    
-
-    <article>
-      <div class="message">
-This might be the toughest and the biggest demo in this iOS course. Here I put my note collection here as reference for later use.
-</div>
-
-<h1 id="i-create-the-project">I. Create the Project</h1>
-<ul>
-  <li>Create a project with single view as normal.</li>
-</ul>
-
-<h1 id="ii-database-setup">II. Database Setup</h1>
-
-<h2 id="create-the-database">1. Create the Database</h2>
-<p>Create a database file. Then, add the following two entities into the database:</p>
-
-<ul>
-  <li><strong>Photo</strong></li>
-  <li><strong>Photographer</strong></li>
-</ul>
-
-<h2 id="define-the-schema-schema-visually">2. Define the Schema <sup id="fnref:schema"><a href="#fn:schema" class="footnote">1</a></sup> Visually.</h2>
-
-<ul>
-  <li>
-    <p>Add properties to them respectively. (e.g. title, url, data, name etc.)</p>
-  </li>
-  <li>
-    <p>Add relationship between the two entities:</p>
-    <ul>
-      <li>For <strong>Photographer</strong> in <strong>Photo</strong>, the relationship is <strong><em>whoTook</em></strong></li>
-      <li>
-        <p>For <strong>Photo</strong> in <strong>Photographer</strong> the relationship is the same one, but called <strong><em>photos</em></strong>.</p>
-
-        <p>(<strong>NOTICE</strong>: The relationship type here should be set as <strong><em>To Many</em></strong>, because one photographer may take multiple photos.)</p>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="create-nsmanagedobject-subclasses">3. Create NSManagedObject Subclasses</h2>
-<ul>
-  <li>Create NSManagedObject Subclasses automatically using XCode.
-    <ul>
-      <li>Select both entities;</li>
-      <li>click “Editor”, then “Create NSManagedObject Subclasses”;</li>
-      <li>The correspondent subclasses <strong>Photo.h/Photo.m</strong> and <strong>Photographer.h/Photographer.m</strong> are created in the project and can be found in the project navigator.</li>
-      <li>
-        <p>Notice that in XCode 7 and later, the generated new subclasses include: entity and their CoreDataProperties category like this:</p>
-
-        <p><img src="/public/img/20161106-0.png" alt="subclasses" /></p>
-
-        <p>To understand this, check <a href="http://stackoverflow.com/questions/33106098/xcode-7-generates-core-data-entity-with-additional-coredataproperties-category">this Q&amp;A on Stack Overflow</a>. The gist is that you can use  the two files <em>without</em> “properties” to add some custom methods or properties. In this way, whenever you update your database property setup and regenerate these supclasses, these custom methods will still be there.</p>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<hr />
-
-<div class="footnotes">
-  <ol>
-    <li id="fn:schema">
-      <p>A <strong>schema</strong> is a collection of database objects (as far as this hour is concerned—tables) associated with one particular database username. This username is called the schema owner, or the owner of the related group of objects. You may have one or multiple schemas in a database. Jul 1, 2008 <a href="http://www.informit.com/articles/article.aspx?p=1216889&amp;seqNum=2">Managing Database Objects in SQL</a> <a href="#fnref:schema" class="reversefootnote">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
-
-    <article>
-    <div class="post-more">
-      
-      <a href="/ios%20development/2016/11/06/Photomania-Demo-Note/#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
-      
-      <a href="/ios%20development/2016/11/06/Photomania-Demo-Note/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
-    </div>
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/ios/2016/11/05/All-About-Delegate/">
+      <a href="/ios%20development/2016/11/05/All-About-Delegate/">
         All About Delegate
       </a>
     </h1>
@@ -364,9 +446,9 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
     <article>
     <div class="post-more">
       
-      <a href="/ios/2016/11/05/All-About-Delegate/#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+      <a href="/ios%20development/2016/11/05/All-About-Delegate/#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
       
-      <a href="/ios/2016/11/05/All-About-Delegate/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+      <a href="/ios%20development/2016/11/05/All-About-Delegate/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
     </div>
   </div>
   
@@ -411,73 +493,11 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
     </div>
   </div>
   
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/note/2016/11/03/This-is-my-first-blog/">
-        This is my first blog
-      </a>
-    </h1>
-
-    <span class="post-date">03 Nov 2016</span>
-     | 
-    
-    <a href="/blog/tags/#markdown" class="post-tag">markdown</a>
-    
-    
-
-    <article>
-      <h2 id="try-writing-markdown-blogs-with-macdown">Try writing markdown blogs with MacDown</h2>
-
-<p>Oh! This is really an awesome editor as I’m typing these words. I can see what it looks like as published on the right. As long I wanna try some syntax in markdown that I’m not quite familiar, I just try it, and take a look:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>this is a block
-this is a block
-this is a block
-</code></pre>
-</div>
-
-<p>This is really nice, and efficiency.The inline block is like <code class="highlighter-rouge">this is an inline block</code>. this is a link: <a href="http://google.com">google</a> This is really awesome!!! I like it.</p>
-
-<p>Now, it’s time to start my technical blog writing.</p>
-
-<h2 id="how-to-insert-an-image-in-the-blog">How to insert an image in the blog?</h2>
-
-<p>Example:
-add the following code:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>![My first image inserted](/public/img/ios-10-nimblechapps.png)
-</code></pre>
-</div>
-
-<p>the path in the parentheses is the image local url.</p>
-
-<p>The result is like this:
-<img src="/public/img/20161103-0-ios10.png" alt="My first image inserted" /></p>
-
-<p>add snippet:</p>
-
-<pre><code class="language-objective-c">#import &lt;Foundation/Foundation.h&gt;
-@interface
-
-@property (nonatomic, strong) UITableView *tableView;
-@end
-</code></pre>
-<p>KF</p>
-
-    <article>
-    <div class="post-more">
-      
-      <a href="/note/2016/11/03/This-is-my-first-blog/#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
-      
-      <a href="/note/2016/11/03/This-is-my-first-blog/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
-    </div>
-  </div>
-  
 </div>
 
 <div class="pagination">
   
-    <span class="pagination-item older">Older</span>
+    <a class="pagination-item older" href="/blog/page2">Older</a>
   
   
     <span class="pagination-item newer">Newer</span>

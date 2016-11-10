@@ -31,5 +31,9 @@ Oh, by the way, DON'T FORGET to change your controller class name to the new one
 
 I applied the same steps to rename my default `AppDelegate.h/AppDelegate.m` class. It works fine, but you need to change the app delegate include name in `main.m` manually, or there'll be an error.
 
+
+
+
+
 <br>
 ***KF***

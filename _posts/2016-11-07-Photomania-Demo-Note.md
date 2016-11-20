@@ -47,7 +47,7 @@ Create a database file. Then, add the following two entities into the database:
 ## 4. Add Custom Methods to the Subclasses
 Add these too class methods to `Photos+CoreDataClass`
 
-```objective-c
+```objc
 + (Photo *)photoWithFlickrInfo:(NSDictionary *)photoDictionary
         inManagedObjectContext:(NSManagedObjectContext *)context;
 

@@ -179,6 +179,80 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
 
   <div class="post">
     <h1 class="post-title">
+      <a href="/ios/2016/11/20/core-data/">
+        Core Data
+      </a>
+    </h1>
+
+    <span class="post-date">20 Nov 2016</span>
+     | 
+    
+    <a href="/blog/tags/#ios" class="post-tag">ios</a>
+    
+    <a href="/blog/tags/#core-data" class="post-tag">core data</a>
+    
+    <a href="/blog/tags/#icloud" class="post-tag">icloud</a>
+    
+    <a href="/blog/tags/#uimanageddocument" class="post-tag">uimanageddocument</a>
+    
+    
+
+    <article>
+      <div class="message">
+It's all about how core data works.
+</div>
+<h2 id="database">Database</h2>
+<p>Some times you need to store large amount of data or query it in a sophisticated manner. And we want it to be object-oriented.</p>
+
+<p>Core data framework is very powerful.</p>
+
+<h2 id="how-does-it-work">How does it work?</h2>
+<ul>
+  <li>Create a visual mapping between database and objects;</li>
+  <li>Create and query for objects using object-oriented API;</li>
+  <li>Access the “columns in the database table” using <strong>@property</strong>s on those objects.</li>
+  <li>Create a core data model, the visual map in xcode.</li>
+</ul>
+
+<h2 id="an-object-context">An Object Context</h2>
+<p>You need an <code class="highlighter-rouge">NSManagedObjectContext</code>.</p>
+
+<p>It is the hub around which all Core Data activity turns.</p>
+
+<h3 id="how-do-i-get-one">How do I get one?</h3>
+<p>There are two ways:</p>
+
+<ol>
+  <li>
+    <p>Create a <code class="highlighter-rouge">UIMangedDocument</code> and ask for its <code class="highlighter-rouge">managedObjectContext</code> (a <code class="highlighter-rouge"><span class="k">@property</span></code>).</p>
+  </li>
+  <li>
+    <p>Click the “Use Core Data” button when you create a project (only works with certain templates, then you AppDelegate will have a managedObjectContext @property).</p>
+  </li>
+</ol>
+
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n">NSPersistentContainer</span> <span class="o">*</span><span class="n">persistentContainer</span><span class="p">;</span>
+<span class="c1">// The persistent container for the application. This implementation creates and returns a container, having loaded the store for the application to it.
+</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">saveContext</span><span class="p">;</span>
+</code></pre>
+</div>
+
+<p><br />
+<strong><em>KF</em></strong></p>
+
+    <article>
+    <div class="post-more">
+      
+      <a href="/ios/2016/11/20/core-data/#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+      
+      <a href="/ios/2016/11/20/core-data/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+    </div>
+  </div>
+  
+
+  <div class="post">
+    <h1 class="post-title">
       <a href="/thoughts/2016/11/10/rural-resentment/">
         The Role of 'Rural Resentment' in the Election 2016
       </a>
@@ -337,12 +411,13 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
 <h2 id="add-custom-methods-to-the-subclasses">4. Add Custom Methods to the Subclasses</h2>
 <p>Add these too class methods to <code class="highlighter-rouge">Photos+CoreDataClass</code></p>
 
-<pre><code class="language-objective-c">+ (Photo *)photoWithFlickrInfo:(NSDictionary *)photoDictionary
-        inManagedObjectContext:(NSManagedObjectContext *)context;
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">Photo</span> <span class="o">*</span><span class="p">)</span><span class="nf">photoWithFlickrInfo</span><span class="p">:(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">photoDictionary</span>
+        <span class="nf">inManagedObjectContext</span><span class="p">:(</span><span class="n">NSManagedObjectContext</span> <span class="o">*</span><span class="p">)</span><span class="nv">context</span><span class="p">;</span>
 
-+ (void)loadPhotosFromFlickrArray:(NSArray *)photos
-         intoManagedObjectContext:(NSManagedObjectContext *)context;
+<span class="k">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">loadPhotosFromFlickrArray</span><span class="p">:(</span><span class="n">NSArray</span> <span class="o">*</span><span class="p">)</span><span class="nv">photos</span>
+         <span class="nf">intoManagedObjectContext</span><span class="p">:(</span><span class="n">NSManagedObjectContext</span> <span class="o">*</span><span class="p">)</span><span class="nv">context</span><span class="p">;</span>
 </code></pre>
+</div>
 
 <hr />
 
@@ -457,48 +532,6 @@ In short, it looks like this:</p>
       <a href="/ios%20development/2016/11/05/All-About-Delegate/#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
       
       <a href="/ios%20development/2016/11/05/All-About-Delegate/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
-    </div>
-  </div>
-  
-
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/ios%20development/2016/11/04/Learning-Core-Data-in-iOS-Developing/">
-        Core Data
-      </a>
-    </h1>
-
-    <span class="post-date">04 Nov 2016</span>
-     | 
-    
-    <a href="/blog/tags/#ios" class="post-tag">ios</a>
-    
-    <a href="/blog/tags/#core-data" class="post-tag">core data</a>
-    
-    <a href="/blog/tags/#multitask" class="post-tag">multitask</a>
-    
-    
-
-    <article>
-      <h2 id="database">Database</h2>
-<p>Some times you need to store large amount of data or query it in a sophisticated manner. And we want it to be object-oriented.</p>
-
-<p>Core data framework is very powerful.</p>
-
-<h2 id="how-does-it-work">How does it work?</h2>
-<ul>
-  <li>Create a visual mapping between database and objects;</li>
-  <li>Create and query for objects using object-oriented API;</li>
-  <li>Access the “columns in the database table” using <strong>@property</strong>s on those objects.</li>
-</ul>
-
-
-    <article>
-    <div class="post-more">
-      
-      <a href="/ios%20development/2016/11/04/Learning-Core-Data-in-iOS-Developing/#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
-      
-      <a href="/ios%20development/2016/11/04/Learning-Core-Data-in-iOS-Developing/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
     </div>
   </div>
   

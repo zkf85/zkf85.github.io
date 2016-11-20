@@ -166,12 +166,16 @@ pre {
   margin-top: 0;
   margin-bottom: 1rem;
   padding: 1rem;
-  font-size: .8rem;
+  // KF edited 11/20/2016
+  font-size: .65rem;
+  //font-size: .8rem;
   line-height: 1.4;
   white-space: pre;
   white-space: pre;
   word-break: break-all;
   word-wrap: break-word;
+  // KF 11/20/2016
+  //background-color: #f0f0f0;
   background-color: #f9f9f9;
 }
 pre code {

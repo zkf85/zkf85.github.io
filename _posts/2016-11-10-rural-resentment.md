@@ -8,7 +8,7 @@ tags: [politics]
 
 ![Trump has better coverage than Verizon](/public/img/20161110-election-map.jpg)
 
->The original [article on NPR.com is here](http://www.npr.org/2016/08/18/490240652/is-rural-resentment-driving-voters-to-donald-trump). This article was published months before the general election.
+> The original [article on NPR.com is here](http://www.npr.org/2016/08/18/490240652/is-rural-resentment-driving-voters-to-donald-trump). This article was published months before the general election.
 
 # Is 'Rural Resentment' Driving Voters To Donald Trump?
 

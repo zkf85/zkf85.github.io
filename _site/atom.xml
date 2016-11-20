@@ -4,13 +4,63 @@
  <title>Everest</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2016-11-10T14:58:11+08:00</updated>
+ <updated>2016-11-20T16:03:30+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Kefeng Zhu</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Core Data</title>
+   <link href="http://localhost:4000/ios/2016/11/20/core-data/"/>
+   <updated>2016-11-20T00:00:00+08:00</updated>
+   <id>http://localhost:4000/ios/2016/11/20/core-data</id>
+   <content type="html">&lt;div class=&quot;message&quot;&gt;
+It's all about how core data works.
+&lt;/div&gt;
+&lt;h2 id=&quot;database&quot;&gt;Database&lt;/h2&gt;
+&lt;p&gt;Some times you need to store large amount of data or query it in a sophisticated manner. And we want it to be object-oriented.&lt;/p&gt;
+
+&lt;p&gt;Core data framework is very powerful.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-does-it-work&quot;&gt;How does it work?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Create a visual mapping between database and objects;&lt;/li&gt;
+  &lt;li&gt;Create and query for objects using object-oriented API;&lt;/li&gt;
+  &lt;li&gt;Access the “columns in the database table” using &lt;strong&gt;@property&lt;/strong&gt;s on those objects.&lt;/li&gt;
+  &lt;li&gt;Create a core data model, the visual map in xcode.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;an-object-context&quot;&gt;An Object Context&lt;/h2&gt;
+&lt;p&gt;You need an &lt;code class=&quot;highlighter-rouge&quot;&gt;NSManagedObjectContext&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;It is the hub around which all Core Data activity turns.&lt;/p&gt;
+
+&lt;h3 id=&quot;how-do-i-get-one&quot;&gt;How do I get one?&lt;/h3&gt;
+&lt;p&gt;There are two ways:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Create a &lt;code class=&quot;highlighter-rouge&quot;&gt;UIMangedDocument&lt;/code&gt; and ask for its &lt;code class=&quot;highlighter-rouge&quot;&gt;managedObjectContext&lt;/code&gt; (a &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt;&lt;/code&gt;).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Click the “Use Core Data” button when you create a project (only works with certain templates, then you AppDelegate will have a managedObjectContext @property).&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;readonly&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSPersistentContainer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;persistentContainer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// The persistent container for the application. This implementation creates and returns a container, having loaded the store for the application to it.
+&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;saveContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>The Role of 'Rural Resentment' in the Election 2016</title>
@@ -136,12 +186,13 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
 &lt;h2 id=&quot;add-custom-methods-to-the-subclasses&quot;&gt;4. Add Custom Methods to the Subclasses&lt;/h2&gt;
 &lt;p&gt;Add these too class methods to &lt;code class=&quot;highlighter-rouge&quot;&gt;Photos+CoreDataClass&lt;/code&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;+ (Photo *)photoWithFlickrInfo:(NSDictionary *)photoDictionary
-        inManagedObjectContext:(NSManagedObjectContext *)context;
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Photo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;photoWithFlickrInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSDictionary&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;photoDictionary&lt;/span&gt;
+        &lt;span class=&quot;nf&quot;&gt;inManagedObjectContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSManagedObjectContext&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-+ (void)loadPhotosFromFlickrArray:(NSArray *)photos
-         intoManagedObjectContext:(NSManagedObjectContext *)context;
+&lt;span class=&quot;k&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;loadPhotosFromFlickrArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;photos&lt;/span&gt;
+         &lt;span class=&quot;nf&quot;&gt;intoManagedObjectContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSManagedObjectContext&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;hr /&gt;
 &lt;div class=&quot;footnotes&quot;&gt;
@@ -204,26 +255,6 @@ In short, it looks like this:&lt;/p&gt;
    <updated>2016-11-05T00:00:00+08:00</updated>
    <id>http://localhost:4000/ios%20development/2016/11/05/All-About-Delegate</id>
    <content type="html">&lt;h1 id=&quot;what-is-a-delegate&quot;&gt;What is a delegate?&lt;/h1&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Core Data</title>
-   <link href="http://localhost:4000/ios%20development/2016/11/04/Learning-Core-Data-in-iOS-Developing/"/>
-   <updated>2016-11-04T00:00:00+08:00</updated>
-   <id>http://localhost:4000/ios%20development/2016/11/04/Learning-Core-Data-in-iOS-Developing</id>
-   <content type="html">&lt;h2 id=&quot;database&quot;&gt;Database&lt;/h2&gt;
-&lt;p&gt;Some times you need to store large amount of data or query it in a sophisticated manner. And we want it to be object-oriented.&lt;/p&gt;
-
-&lt;p&gt;Core data framework is very powerful.&lt;/p&gt;
-
-&lt;h2 id=&quot;how-does-it-work&quot;&gt;How does it work?&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;Create a visual mapping between database and objects;&lt;/li&gt;
-  &lt;li&gt;Create and query for objects using object-oriented API;&lt;/li&gt;
-  &lt;li&gt;Access the “columns in the database table” using &lt;strong&gt;@property&lt;/strong&gt;s on those objects.&lt;/li&gt;
-&lt;/ul&gt;
-
 </content>
  </entry>
  

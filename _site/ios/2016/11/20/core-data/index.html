@@ -177,18 +177,23 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
       <div class="container content">
         <div class="post">
   <h1 class="post-title">Core Data</h1>
-  <span class="post-date">04 Nov 2016</span>
+  <span class="post-date">20 Nov 2016</span>
    | 
   
     <a href="/blog/tags/#ios" class="post-tag">ios</a>
   
     <a href="/blog/tags/#core-data" class="post-tag">core data</a>
   
-    <a href="/blog/tags/#multitask" class="post-tag">multitask</a>
+    <a href="/blog/tags/#icloud" class="post-tag">icloud</a>
+  
+    <a href="/blog/tags/#uimanageddocument" class="post-tag">uimanageddocument</a>
   
   
   <article>
-    <h2 id="database">Database</h2>
+    <div class="message">
+It's all about how core data works.
+</div>
+<h2 id="database">Database</h2>
 <p>Some times you need to store large amount of data or query it in a sophisticated manner. And we want it to be object-oriented.</p>
 
 <p>Core data framework is very powerful.</p>
@@ -198,41 +203,68 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
   <li>Create a visual mapping between database and objects;</li>
   <li>Create and query for objects using object-oriented API;</li>
   <li>Access the “columns in the database table” using <strong>@property</strong>s on those objects.</li>
+  <li>Create a core data model, the visual map in xcode.</li>
 </ul>
 
+<h2 id="an-object-context">An Object Context</h2>
+<p>You need an <code class="highlighter-rouge">NSManagedObjectContext</code>.</p>
+
+<p>It is the hub around which all Core Data activity turns.</p>
+
+<h3 id="how-do-i-get-one">How do I get one?</h3>
+<p>There are two ways:</p>
+
+<ol>
+  <li>
+    <p>Create a <code class="highlighter-rouge">UIMangedDocument</code> and ask for its <code class="highlighter-rouge">managedObjectContext</code> (a <code class="highlighter-rouge"><span class="k">@property</span></code>).</p>
+  </li>
+  <li>
+    <p>Click the “Use Core Data” button when you create a project (only works with certain templates, then you AppDelegate will have a managedObjectContext @property).</p>
+  </li>
+</ol>
+
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n">NSPersistentContainer</span> <span class="o">*</span><span class="n">persistentContainer</span><span class="p">;</span>
+<span class="c1">// The persistent container for the application. This implementation creates and returns a container, having loaded the store for the application to it.
+</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">saveContext</span><span class="p">;</span>
+</code></pre>
+</div>
+
+<p><br />
+<strong><em>KF</em></strong></p>
 
   </article>
 </div>
 
 <div class="related">
-  <h2>Related Posts</h2>
+  <h3>Related Posts</h3>
   <ul class="related-posts">
     
       <li>
-        <h3>
+        <h4>
           <a href="/thoughts/2016/11/10/rural-resentment/">
             The Role of 'Rural Resentment' in the Election 2016
             <small>10 Nov 2016</small>
           </a>
-        </h3>
+        </h4>
       </li>
     
       <li>
-        <h3>
+        <h4>
           <a href="/ios%20development/2016/11/07/Photomania-Demo-Note/">
             iOS7 CS193P 13/14 Photomania Demo Note
             <small>07 Nov 2016</small>
           </a>
-        </h3>
+        </h4>
       </li>
     
       <li>
-        <h3>
+        <h4>
           <a href="/ios%20development/2016/11/06/rename-issue/">
             Class Renaming Issue
             <small>06 Nov 2016</small>
           </a>
-        </h3>
+        </h4>
       </li>
     
   </ul>
@@ -240,12 +272,12 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
 
 
 <div class="comments">
-  <h2>Comments</h2>
+  <h3>Comments</h3>
   <div id="disqus_thread"></div>
   <script>
 var disqus_config = function () {
-  this.page.url = 'http://localhost:4000/ios%20development/2016/11/04/Learning-Core-Data-in-iOS-Developing/'; // Replace PAGE_URL with your page's canonical URL variable
-  this.page.identifier = '/ios%20development/2016/11/04/Learning-Core-Data-in-iOS-Developing'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  this.page.url = 'http://localhost:4000/ios/2016/11/20/core-data/'; // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = '/ios/2016/11/20/core-data'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 (function() {
   var d = document, s = d.createElement('script');

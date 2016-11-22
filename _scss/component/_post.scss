@@ -10,12 +10,12 @@
 
     h1 { font-size: 1.6rem; }
     h2 {
-      margin: 2em 0 1em 0;
+      margin: 1.5em 0 1em 0;
       font-size: 1.0rem;
       border-bottom: 1px solid #cccccc;
     }
     h3, h4, h5, h6 {
-      margin: 2em 0 1em 0;
+      margin: 1.2em 0 0.5em 0;
       font-size: 0.8rem;
     }
   }
@@ -47,8 +47,8 @@
 
 /* Related posts */
 .related {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   border-top: 1px solid $lightgrey;
 }
 .related-posts {

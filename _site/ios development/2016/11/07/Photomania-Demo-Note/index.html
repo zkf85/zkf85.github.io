@@ -196,14 +196,14 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
 This might be the toughest and the biggest demo in this iOS course. Here I put my note collection here as reference for later use. 11/06/2016
 </div>
 
-<h1 id="i-create-the-project">I. Create the Project</h1>
+<h2 id="create-the-project">Create the Project</h2>
 <ul>
   <li>Create a project with single view as normal.</li>
 </ul>
 
-<h1 id="ii-database-setup">II. Database Setup</h1>
+<h2 id="database-setup">Database Setup</h2>
 
-<h2 id="create-the-database">1. Create the Database</h2>
+<h3 id="create-the-database">1. Create the Database</h3>
 <p>Create a database file. Then, add the following two entities into the database:</p>
 
 <ul>
@@ -211,7 +211,7 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
   <li><strong>Photographer</strong></li>
 </ul>
 
-<h2 id="define-the-schema-schema-visually">2. Define the Schema <sup id="fnref:schema"><a href="#fn:schema" class="footnote">1</a></sup> Visually.</h2>
+<h3 id="define-the-schema-schema-visually">2. Define the Schema <sup id="fnref:schema"><a href="#fn:schema" class="footnote">1</a></sup> Visually.</h3>
 
 <ul>
   <li>
@@ -230,7 +230,7 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
   </li>
 </ul>
 
-<h2 id="create-nsmanagedobject-subclasses">3. Create NSManagedObject Subclasses</h2>
+<h3 id="create-nsmanagedobject-subclasses">3. Create NSManagedObject Subclasses</h3>
 <ul>
   <li>Create NSManagedObject Subclasses automatically using XCode.
     <ul>
@@ -254,7 +254,7 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
   </li>
 </ul>
 
-<h2 id="add-custom-methods-to-the-subclasses">4. Add Custom Methods to the Subclasses</h2>
+<h3 id="add-custom-methods-to-the-subclasses">4. Add Custom Methods to the Subclasses</h3>
 <p>Add these too class methods to <code class="highlighter-rouge">Photos+CoreDataClass</code></p>
 
 <div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">Photo</span> <span class="o">*</span><span class="p">)</span><span class="nf">photoWithFlickrInfo</span><span class="p">:(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">photoDictionary</span>
@@ -264,6 +264,8 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
          <span class="nf">intoManagedObjectContext</span><span class="p">:(</span><span class="n">NSManagedObjectContext</span> <span class="o">*</span><span class="p">)</span><span class="nv">context</span><span class="p">;</span>
 </code></pre>
 </div>
+
+<p><br /><strong><em>KF</em></strong></p>
 
 <hr />
 <div class="footnotes">

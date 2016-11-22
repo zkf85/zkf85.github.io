@@ -199,7 +199,8 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
 
     <article>
       <div class="message">
-It's all about how core data works.
+"It's all about how core data works."
+<br />KF 11/20/2016
 </div>
 <h2 id="database">Database</h2>
 <p>Some times you need to store large amount of data or query it in a sophisticated manner. And we want it to be object-oriented.</p>
@@ -228,6 +229,8 @@ It's all about how core data works.
   </li>
   <li>
     <p>Click the “Use Core Data” button when you create a project (only works with certain templates, then you AppDelegate will have a managedObjectContext @property).</p>
+
+    <p>There will be an <code class="highlighter-rouge"><span class="k">@property</span></code> and a method <code class="highlighter-rouge">saveContext</code> generated for managing the core data.</p>
   </li>
 </ol>
 
@@ -237,6 +240,54 @@ It's all about how core data works.
 <span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">saveContext</span><span class="p">;</span>
 </code></pre>
 </div>
+<p>We’re going to focus on doing the first one <code class="highlighter-rouge">UIManagedDocument</code>.</p>
+
+<h2 id="uimanageddocument">UIManagedDocument</h2>
+<p><code class="highlighter-rouge">UIManagedDocument</code> inherits from UIDocument which provides a lot of mechanism for the management of storage. It also good for iCloud support. Think of a <code class="highlighter-rouge">UIManagedDocument</code> as simply a container for your Core Data database.</p>
+
+<h3 id="create-a-uimanageddocument">1. Create a UIManagedDocument</h3>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kt">NSFileManager</span> <span class="o">*</span><span class="n">fileManager</span> <span class="o">=</span> <span class="p">[</span><span class="kt">NSFileManager</span> <span class="n">defaultManager</span><span class="p">];</span>
+  <span class="kt">NSURL</span> <span class="o">*</span><span class="n">documentsDirectory</span> <span class="o">=</span> <span class="p">[[</span><span class="n">fileManager</span> <span class="kt">URLsForDirectory</span><span class="p">:</span><span class="kt">NSDocumentDirectory</span>
+  <span class="nv">inDomains</span><span class="p">:</span><span class="kt">NSUserDomainMask</span><span class="p">]</span> <span class="n">firstObject</span><span class="p">];</span>
+  <span class="kt">NSString</span> <span class="o">*</span><span class="n">documentName</span> <span class="o">=</span> <span class="s">@"MyDocument"</span><span class="p">;</span> 
+  <span class="kt">NSURL</span> <span class="o">*</span><span class="n">url</span> <span class="o">=</span> <span class="p">[</span><span class="n">documentsDirectory</span> <span class="kt">URLByAppendingPathComponent</span><span class="p">:</span><span class="n">documentName</span><span class="p">];</span>
+<span class="kt">UIManagedDocument</span> <span class="o">*</span><span class="n">document</span> <span class="o">=</span> <span class="p">[[</span><span class="kt">UIManagedDocument</span> <span class="n">alloc</span><span class="p">]</span> <span class="nv">initWithFileURL</span><span class="p">:</span><span class="n">url</span><span class="p">];</span>
+</code></pre>
+</div>
+<p>This creates the UIManagedDocument instance, but does not open nor create the underlying file.</p>
+<h3 id="open-or-create-a-uimanageddocument">2. Open or Create a UIManagedDocument</h3>
+<p>Check if the <code class="highlighter-rouge">UIManagedDocument</code>’s underlying file exists on disk:</p>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kt">BOOL</span> <span class="n">fileExists</span> <span class="o">=</span> <span class="p">[[</span><span class="kt">NSFileManager</span> <span class="n">defaultManager</span><span class="p">]</span> <span class="nv">fileExistsAtPath</span><span class="p">:[</span><span class="n">url</span> <span class="n">path</span><span class="p">]];</span> 
+</code></pre>
+</div>
+<p>Here is an example:</p>
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">self</span><span class="p">.</span><span class="n">document</span> <span class="o">=</span> <span class="p">[[</span><span class="n">UIManagedDocument</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithFileURL</span><span class="p">:(</span><span class="n">URL</span> <span class="o">*</span><span class="p">)</span><span class="n">url</span><span class="p">];</span>
+<span class="k">if</span> <span class="p">([[</span><span class="n">NSFileManager</span> <span class="nf">defaultManager</span><span class="p">]</span> <span class="nf">fileExistsAtPath</span><span class="p">:[</span><span class="n">url</span> <span class="nf">path</span><span class="p">]])</span> <span class="p">{</span>
+    <span class="p">[</span><span class="n">document</span> <span class="nf">openWithCompletionHandler</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">BOOL</span> <span class="n">success</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">success</span><span class="p">)</span> <span class="p">[</span><span class="n">self</span> <span class="nf">documentIsReady</span><span class="p">];</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">success</span><span class="p">)</span> <span class="n">NSLog</span><span class="p">(</span><span class="s">@"couldn’t open document at %@"</span><span class="p">,</span> <span class="n">url</span><span class="p">);</span>
+    <span class="p">}];</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="p">[</span><span class="n">document</span> <span class="nf">saveToURL</span><span class="p">:</span><span class="n">url</span> <span class="nf">forSaveOperation</span><span class="p">:</span><span class="n">UIDocumentSaveForCreating</span>
+      <span class="n">completionHandler</span><span class="o">:^</span><span class="p">(</span><span class="n">BOOL</span> <span class="n">success</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">if</span> <span class="p">(</span><span class="n">success</span><span class="p">)</span> <span class="p">[</span><span class="n">self</span> <span class="nf">documentIsReady</span><span class="p">];</span>
+          <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">success</span><span class="p">)</span> <span class="n">NSLog</span><span class="p">(</span><span class="s">@"couldn't create document at %@"</span><span class="p">,</span> <span class="n">url</span><span class="p">);</span>
+      <span class="p">}];</span>
+<span class="p">}</span>
+
+<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">documentIsReady</span> <span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">document</span><span class="p">.</span><span class="n">documentState</span> <span class="o">==</span> <span class="n">UIDocumentStateNormal</span><span class="p">)</span> <span class="p">{</span> 
+	<span class="c1">// start using document
+</span>	<span class="n">NSManagedObjectContext</span> <span class="o">*</span><span class="n">context</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">document</span><span class="p">.</span><span class="n">managedObjectContext</span><span class="p">;</span>
+   <span class="p">}</span> 
+<span class="p">}</span>
+</code></pre>
+</div>
+<h3 id="saving--closing">3. Saving &amp; Closing</h3>
+<ul>
+  <li>Notice that <code class="highlighter-rouge">UIManagedDocument</code>s AUTOSAVE themselves!</li>
+  <li>Will automatically close if there are no strong pointers left to it.</li>
+</ul>
 
 <p><br />
 <strong><em>KF</em></strong></p>
@@ -348,14 +399,14 @@ It's all about how core data works.
 This might be the toughest and the biggest demo in this iOS course. Here I put my note collection here as reference for later use. 11/06/2016
 </div>
 
-<h1 id="i-create-the-project">I. Create the Project</h1>
+<h2 id="create-the-project">Create the Project</h2>
 <ul>
   <li>Create a project with single view as normal.</li>
 </ul>
 
-<h1 id="ii-database-setup">II. Database Setup</h1>
+<h2 id="database-setup">Database Setup</h2>
 
-<h2 id="create-the-database">1. Create the Database</h2>
+<h3 id="create-the-database">1. Create the Database</h3>
 <p>Create a database file. Then, add the following two entities into the database:</p>
 
 <ul>
@@ -363,7 +414,7 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
   <li><strong>Photographer</strong></li>
 </ul>
 
-<h2 id="define-the-schema-schema-visually">2. Define the Schema <sup id="fnref:schema"><a href="#fn:schema" class="footnote">1</a></sup> Visually.</h2>
+<h3 id="define-the-schema-schema-visually">2. Define the Schema <sup id="fnref:schema"><a href="#fn:schema" class="footnote">1</a></sup> Visually.</h3>
 
 <ul>
   <li>
@@ -382,7 +433,7 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
   </li>
 </ul>
 
-<h2 id="create-nsmanagedobject-subclasses">3. Create NSManagedObject Subclasses</h2>
+<h3 id="create-nsmanagedobject-subclasses">3. Create NSManagedObject Subclasses</h3>
 <ul>
   <li>Create NSManagedObject Subclasses automatically using XCode.
     <ul>
@@ -406,7 +457,7 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
   </li>
 </ul>
 
-<h2 id="add-custom-methods-to-the-subclasses">4. Add Custom Methods to the Subclasses</h2>
+<h3 id="add-custom-methods-to-the-subclasses">4. Add Custom Methods to the Subclasses</h3>
 <p>Add these too class methods to <code class="highlighter-rouge">Photos+CoreDataClass</code></p>
 
 <div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">Photo</span> <span class="o">*</span><span class="p">)</span><span class="nf">photoWithFlickrInfo</span><span class="p">:(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">photoDictionary</span>
@@ -416,6 +467,8 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
          <span class="nf">intoManagedObjectContext</span><span class="p">:(</span><span class="n">NSManagedObjectContext</span> <span class="o">*</span><span class="p">)</span><span class="nv">context</span><span class="p">;</span>
 </code></pre>
 </div>
+
+<p><br /><strong><em>KF</em></strong></p>
 
 <hr />
 
@@ -505,29 +558,64 @@ In short, it looks like this:</p>
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/ios%20development/2016/11/05/All-About-Delegate/">
-        All About Delegate
+      <a href="/note/2016/11/03/This-is-my-first-blog/">
+        This is my first blog
       </a>
     </h1>
 
-    <span class="post-date">05 Nov 2016</span>
+    <span class="post-date">03 Nov 2016</span>
      | 
     
-    <a href="/blog/tags/#ios" class="post-tag">ios</a>
-    
-    <a href="/blog/tags/#delegate" class="post-tag">delegate</a>
+    <a href="/blog/tags/#markdown" class="post-tag">markdown</a>
     
     
 
     <article>
-      <h1 id="what-is-a-delegate">What is a delegate?</h1>
+      <h2 id="try-writing-markdown-blogs-with-macdown">Try writing markdown blogs with MacDown</h2>
+
+<p>Oh! This is really an awesome editor as I’m typing these words. I can see what it looks like as published on the right. As long I wanna try some syntax in markdown that I’m not quite familiar, I just try it, and take a look:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>this is a block
+this is a block
+this is a block
+</code></pre>
+</div>
+
+<p>This is really nice, and efficiency.The inline block is like <code class="highlighter-rouge">this is an inline block</code>. this is a link: <a href="http://google.com">google</a> This is really awesome!!! I like it.</p>
+
+<p>Now, it’s time to start my technical blog writing.</p>
+
+<h2 id="how-to-insert-an-image-in-the-blog">How to insert an image in the blog?</h2>
+
+<p>Example:
+add the following code:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>![My first image inserted](/public/img/ios-10-nimblechapps.png)
+</code></pre>
+</div>
+
+<p>the path in the parentheses is the image local url.</p>
+
+<p>The result is like this:
+<img src="/public/img/20161103-0-ios10.png" alt="My first image inserted" /></p>
+
+<p>add snippet:</p>
+
+<pre><code class="language-objective-c">#import &lt;Foundation/Foundation.h&gt;
+@interface
+
+@property (nonatomic, strong) UITableView *tableView;
+@end
+</code></pre>
+
+<p><br /><strong><em>KF</em></strong></p>
 
     <article>
     <div class="post-more">
       
-      <a href="/ios%20development/2016/11/05/All-About-Delegate/#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+      <a href="/note/2016/11/03/This-is-my-first-blog/#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
       
-      <a href="/ios%20development/2016/11/05/All-About-Delegate/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+      <a href="/note/2016/11/03/This-is-my-first-blog/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
     </div>
   </div>
   
@@ -535,7 +623,7 @@ In short, it looks like this:</p>
 
 <div class="pagination">
   
-    <a class="pagination-item older" href="/blog/page2">Older</a>
+    <span class="pagination-item older">Older</span>
   
   
     <span class="pagination-item newer">Newer</span>

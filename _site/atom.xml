@@ -4,7 +4,7 @@
  <title>Everest</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2016-11-20T16:03:30+08:00</updated>
+ <updated>2016-11-20T22:18:19+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Kefeng Zhu</name>
@@ -18,7 +18,8 @@
    <updated>2016-11-20T00:00:00+08:00</updated>
    <id>http://localhost:4000/ios/2016/11/20/core-data</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
-It's all about how core data works.
+&quot;It's all about how core data works.&quot;
+&lt;br /&gt;KF 11/20/2016
 &lt;/div&gt;
 &lt;h2 id=&quot;database&quot;&gt;Database&lt;/h2&gt;
 &lt;p&gt;Some times you need to store large amount of data or query it in a sophisticated manner. And we want it to be object-oriented.&lt;/p&gt;
@@ -47,6 +48,8 @@ It's all about how core data works.
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Click the “Use Core Data” button when you create a project (only works with certain templates, then you AppDelegate will have a managedObjectContext @property).&lt;/p&gt;
+
+    &lt;p&gt;There will be an &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt;&lt;/code&gt; and a method &lt;code class=&quot;highlighter-rouge&quot;&gt;saveContext&lt;/code&gt; generated for managing the core data.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
@@ -56,6 +59,54 @@ It's all about how core data works.
 &lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;saveContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+&lt;p&gt;We’re going to focus on doing the first one &lt;code class=&quot;highlighter-rouge&quot;&gt;UIManagedDocument&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;uimanageddocument&quot;&gt;UIManagedDocument&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;UIManagedDocument&lt;/code&gt; inherits from UIDocument which provides a lot of mechanism for the management of storage. It also good for iCloud support. Think of a &lt;code class=&quot;highlighter-rouge&quot;&gt;UIManagedDocument&lt;/code&gt; as simply a container for your Core Data database.&lt;/p&gt;
+
+&lt;h3 id=&quot;create-a-uimanageddocument&quot;&gt;1. Create a UIManagedDocument&lt;/h3&gt;
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;NSFileManager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fileManager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;NSFileManager&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;defaultManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;NSURL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;documentsDirectory&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fileManager&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;URLsForDirectory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;NSDocumentDirectory&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;inDomains&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;NSUserDomainMask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;firstObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;documentName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&quot;MyDocument&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
+  &lt;span class=&quot;kt&quot;&gt;NSURL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;documentsDirectory&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;URLByAppendingPathComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;documentName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;UIManagedDocument&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;document&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;UIManagedDocument&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;initWithFileURL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;This creates the UIManagedDocument instance, but does not open nor create the underlying file.&lt;/p&gt;
+&lt;h3 id=&quot;open-or-create-a-uimanageddocument&quot;&gt;2. Open or Create a UIManagedDocument&lt;/h3&gt;
+&lt;p&gt;Check if the &lt;code class=&quot;highlighter-rouge&quot;&gt;UIManagedDocument&lt;/code&gt;’s underlying file exists on disk:&lt;/p&gt;
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;BOOL&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fileExists&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;NSFileManager&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;defaultManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;fileExistsAtPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]];&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Here is an example:&lt;/p&gt;
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;document&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIManagedDocument&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initWithFileURL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;URL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;([[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSFileManager&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;defaultManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;fileExistsAtPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;document&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;openWithCompletionHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BOOL&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;success&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;success&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;documentIsReady&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;success&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;couldn’t open document at %@&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;document&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;saveToURL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;forSaveOperation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIDocumentSaveForCreating&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;completionHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BOOL&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;success&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;success&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;documentIsReady&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+          &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;success&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;couldn't create document at %@&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;documentIsReady&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;documentState&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UIDocumentStateNormal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; 
+	&lt;span class=&quot;c1&quot;&gt;// start using document
+&lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;NSManagedObjectContext&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;context&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;managedObjectContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; 
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h3 id=&quot;saving--closing&quot;&gt;3. Saving &amp;amp; Closing&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Notice that &lt;code class=&quot;highlighter-rouge&quot;&gt;UIManagedDocument&lt;/code&gt;s AUTOSAVE themselves!&lt;/li&gt;
+  &lt;li&gt;Will automatically close if there are no strong pointers left to it.&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;
 &lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
@@ -125,14 +176,14 @@ It's all about how core data works.
 This might be the toughest and the biggest demo in this iOS course. Here I put my note collection here as reference for later use. 11/06/2016
 &lt;/div&gt;
 
-&lt;h1 id=&quot;i-create-the-project&quot;&gt;I. Create the Project&lt;/h1&gt;
+&lt;h2 id=&quot;create-the-project&quot;&gt;Create the Project&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;Create a project with single view as normal.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1 id=&quot;ii-database-setup&quot;&gt;II. Database Setup&lt;/h1&gt;
+&lt;h2 id=&quot;database-setup&quot;&gt;Database Setup&lt;/h2&gt;
 
-&lt;h2 id=&quot;create-the-database&quot;&gt;1. Create the Database&lt;/h2&gt;
+&lt;h3 id=&quot;create-the-database&quot;&gt;1. Create the Database&lt;/h3&gt;
 &lt;p&gt;Create a database file. Then, add the following two entities into the database:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -140,7 +191,7 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
   &lt;li&gt;&lt;strong&gt;Photographer&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;define-the-schema-schema-visually&quot;&gt;2. Define the Schema &lt;sup id=&quot;fnref:schema&quot;&gt;&lt;a href=&quot;#fn:schema&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; Visually.&lt;/h2&gt;
+&lt;h3 id=&quot;define-the-schema-schema-visually&quot;&gt;2. Define the Schema &lt;sup id=&quot;fnref:schema&quot;&gt;&lt;a href=&quot;#fn:schema&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; Visually.&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -159,7 +210,7 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;create-nsmanagedobject-subclasses&quot;&gt;3. Create NSManagedObject Subclasses&lt;/h2&gt;
+&lt;h3 id=&quot;create-nsmanagedobject-subclasses&quot;&gt;3. Create NSManagedObject Subclasses&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;Create NSManagedObject Subclasses automatically using XCode.
     &lt;ul&gt;
@@ -183,7 +234,7 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;add-custom-methods-to-the-subclasses&quot;&gt;4. Add Custom Methods to the Subclasses&lt;/h2&gt;
+&lt;h3 id=&quot;add-custom-methods-to-the-subclasses&quot;&gt;4. Add Custom Methods to the Subclasses&lt;/h3&gt;
 &lt;p&gt;Add these too class methods to &lt;code class=&quot;highlighter-rouge&quot;&gt;Photos+CoreDataClass&lt;/code&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Photo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;photoWithFlickrInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSDictionary&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;photoDictionary&lt;/span&gt;
@@ -193,6 +244,8 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
          &lt;span class=&quot;nf&quot;&gt;intoManagedObjectContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSManagedObjectContext&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 &lt;div class=&quot;footnotes&quot;&gt;
@@ -250,15 +303,6 @@ In short, it looks like this:&lt;/p&gt;
  </entry>
  
  <entry>
-   <title>All About Delegate</title>
-   <link href="http://localhost:4000/ios%20development/2016/11/05/All-About-Delegate/"/>
-   <updated>2016-11-05T00:00:00+08:00</updated>
-   <id>http://localhost:4000/ios%20development/2016/11/05/All-About-Delegate</id>
-   <content type="html">&lt;h1 id=&quot;what-is-a-delegate&quot;&gt;What is a delegate?&lt;/h1&gt;
-</content>
- </entry>
- 
- <entry>
    <title>This is my first blog</title>
    <link href="http://localhost:4000/note/2016/11/03/This-is-my-first-blog/"/>
    <updated>2016-11-03T00:00:00+08:00</updated>
@@ -299,7 +343,8 @@ add the following code:&lt;/p&gt;
 @property (nonatomic, strong) UITableView *tableView;
 @end
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;KF&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 </content>
  </entry>
  

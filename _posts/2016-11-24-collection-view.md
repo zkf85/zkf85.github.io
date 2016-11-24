@@ -1,15 +1,16 @@
 ---
 layout: post
-title: "Collection View"
+title: "Collection View I - Intro & Basics"
+date: "2016-11-24 16:00:00"
 category: [iOS]
 tags: [ios, uicollectionview, objective-c]
 ---
 <div class = "message">
-"Collection View is super powerful."
+"Collection View is super powerful." This article includes notes on reading Apple Guide Document " Collection View Programming Guide for iOS".
 <br>KF 11/24/2016
 </div>
 
-## About iOS Collection Views
+# About iOS Collection Views
 - A collection view is a way to present an ordered set of data items using a flexible and changeable layout.
 
 - Collection views keep a strict separation between the data being presented and the visual elements used to present that data.
@@ -20,10 +21,12 @@ tags: [ios, uicollectionview, objective-c]
 
 - The **Flow Layout** Supports Grids and Other Line-Oriented Presentations
 
-## Collection View Basics
+# Collection View Basics
  - your app must provide a data source object that tells the collection view how many items there are to display. 
 
-### The Classes and Protocols for Implementing Collection Views
+## The Classes and Protocols for Implementing Collection Views
+
+**Table 1-1** The classes and protocols for implementing collection views
 
  Purpose | Classes/Protocols 
 :------- |:-----------------
@@ -60,9 +63,18 @@ Flow Layout 	| `UICollectionViewFlowLayout`<br>`UICollectionViewDelegateFlowLayo
 ### `UICollectionViewFlowLayout` & `UICollectionViewDelegateFlowLayout` protocol
 > The `UICollectionViewFlowLayout` class is a concrete layout object that you use to implement grids or other line-based layouts. You can use the class as-is or in conjunction with the flow delegate object, which allows you to customize the layout information dynamically.
 
-Figure 1-1 shows the relationship between the core objects associated with a collection view. The collection view gets information about the cells to display from its data source. The data source and delegate objects are custom objects provided by your app and used to manage the content, including the selection and highlighting of cells. The layout object is responsible for deciding where those cells belong and for sending that information to the collection view in the form of one or more layout attribute objects. The collection view then merges the layout information with the actual cells (and other views) to create the final visual presentation.
+**Figure 1-1** shows the relationship between the core objects associated with a collection view. The collection view gets information about the cells to display from its data source. The data source and delegate objects are custom objects provided by your app and used to manage the content, including the selection and highlighting of cells. The layout object is responsible for deciding where those cells belong and for sending that information to the collection view in the form of one or more layout attribute objects. The collection view then merges the layout information with the actual cells (and other views) to create the final visual presentation.
 
+
+#### <center> Figure 1-1. Merging content and layout to create the final presentation </center>
 ![figure-1-1](/public/img/20161124-1-1.png)
+
+
+When creating a collection view interface, you first add a UICollectionView object to your storyboard or nib file. Think of the collection view as the central hub, from which all other objects emanate. After adding that object, you can begin to configure any related objects, such as the data source or delegate. All configurations are centered around the collection view itself. For example, you never create a layout object without also creating a collection view object.
+
+## Reusable Views Improve Performance
+Collection views employ a view recycling program to improve efficiency. As views move offscreen, they are removed from view and placed in a **reuse queue** instead of being deleted. As new content is scrolled onscreen, views are removed from the queue and repurposed with new content. To facilitate this recycling and reuse, all views displayed by the collection view must descend from the `UICollectionReusableView` class.
+
 
 <br><br>
 ***KF***

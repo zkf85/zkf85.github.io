@@ -5,12 +5,17 @@ comment: true
 
 <div class="post">
   <h1 class="post-title">{{ page.title }}</h1>
-  <span class="post-date">{{ page.date | date_to_string }}</span>
-  {% if page.tags %} | 
+
+  <!-- <span class="post-date">{{ page.date | date_to_string }}</span> -->
+  <div class="post-date">{{ page.date | date_to_rfc822 }}</div>
+  <span class="post-tag-kf">
+  {% if page.tags %}
   {% for tag in page.tags %}
     <a href="{{ site.baseurl }}{{ site.tag_page }}#{{ tag | slugify }}" class="post-tag">{{ tag }}</a>
   {% endfor %}
   {% endif %}
+  </span>
+  <hr>
   <article>
     {{ content }}
   </article>

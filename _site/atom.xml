@@ -4,7 +4,7 @@
  <title>Everest</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2016-11-24T11:48:29+08:00</updated>
+ <updated>2016-11-24T23:42:39+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Kefeng Zhu</name>
@@ -13,16 +13,16 @@
 
  
  <entry>
-   <title>Collection View</title>
+   <title>Collection View I - Intro & Basics</title>
    <link href="http://localhost:4000/ios/2016/11/24/collection-view/"/>
-   <updated>2016-11-24T00:00:00+08:00</updated>
+   <updated>2016-11-24T16:00:00+08:00</updated>
    <id>http://localhost:4000/ios/2016/11/24/collection-view</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
-&quot;Collection View is super powerful.&quot;
+&quot;Collection View is super powerful.&quot; This article includes notes on reading Apple Guide Document &quot; Collection View Programming Guide for iOS&quot;.
 &lt;br /&gt;KF 11/24/2016
 &lt;/div&gt;
 
-&lt;h2 id=&quot;about-ios-collection-views&quot;&gt;About iOS Collection Views&lt;/h2&gt;
+&lt;h1 id=&quot;about-ios-collection-views&quot;&gt;About iOS Collection Views&lt;/h1&gt;
 &lt;ul&gt;
   &lt;li&gt;
     &lt;p&gt;A collection view is a way to present an ordered set of data items using a flexible and changeable layout.&lt;/p&gt;
@@ -41,12 +41,14 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;collection-view-basics&quot;&gt;Collection View Basics&lt;/h2&gt;
+&lt;h1 id=&quot;collection-view-basics&quot;&gt;Collection View Basics&lt;/h1&gt;
 &lt;ul&gt;
   &lt;li&gt;your app must provide a data source object that tells the collection view how many items there are to display.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;the-classes-and-protocols-for-implementing-collection-views&quot;&gt;The Classes and Protocols for Implementing Collection Views&lt;/h3&gt;
+&lt;h2 id=&quot;the-classes-and-protocols-for-implementing-collection-views&quot;&gt;The Classes and Protocols for Implementing Collection Views&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Table 1-1&lt;/strong&gt; The classes and protocols for implementing collection views&lt;/p&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
@@ -126,9 +128,15 @@
   &lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;UICollectionViewFlowLayout&lt;/code&gt; class is a concrete layout object that you use to implement grids or other line-based layouts. You can use the class as-is or in conjunction with the flow delegate object, which allows you to customize the layout information dynamically.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Figure 1-1 shows the relationship between the core objects associated with a collection view. The collection view gets information about the cells to display from its data source. The data source and delegate objects are custom objects provided by your app and used to manage the content, including the selection and highlighting of cells. The layout object is responsible for deciding where those cells belong and for sending that information to the collection view in the form of one or more layout attribute objects. The collection view then merges the layout information with the actual cells (and other views) to create the final visual presentation.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Figure 1-1&lt;/strong&gt; shows the relationship between the core objects associated with a collection view. The collection view gets information about the cells to display from its data source. The data source and delegate objects are custom objects provided by your app and used to manage the content, including the selection and highlighting of cells. The layout object is responsible for deciding where those cells belong and for sending that information to the collection view in the form of one or more layout attribute objects. The collection view then merges the layout information with the actual cells (and other views) to create the final visual presentation.&lt;/p&gt;
 
+&lt;h4 id=&quot;center-figure-1-1-merging-content-and-layout-to-create-the-final-presentation-center&quot;&gt;&lt;center&gt; Figure 1-1. Merging content and layout to create the final presentation &lt;/center&gt;&lt;/h4&gt;
 &lt;p&gt;&lt;img src=&quot;/public/img/20161124-1-1.png&quot; alt=&quot;figure-1-1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;When creating a collection view interface, you first add a UICollectionView object to your storyboard or nib file. Think of the collection view as the central hub, from which all other objects emanate. After adding that object, you can begin to configure any related objects, such as the data source or delegate. All configurations are centered around the collection view itself. For example, you never create a layout object without also creating a collection view object.&lt;/p&gt;
+
+&lt;h2 id=&quot;reusable-views-improve-performance&quot;&gt;Reusable Views Improve Performance&lt;/h2&gt;
+&lt;p&gt;Collection views employ a view recycling program to improve efficiency. As views move offscreen, they are removed from view and placed in a &lt;strong&gt;reuse queue&lt;/strong&gt; instead of being deleted. As new content is scrolled onscreen, views are removed from the queue and repurposed with new content. To facilitate this recycling and reuse, all views displayed by the collection view must descend from the &lt;code class=&quot;highlighter-rouge&quot;&gt;UICollectionReusableView&lt;/code&gt; class.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;
 &lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;

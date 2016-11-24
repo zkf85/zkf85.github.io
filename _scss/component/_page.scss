@@ -1,8 +1,13 @@
 .page {
   margin-bottom: 4em;
   .page-title {
-    color: $theme-color;
+    font-family: Helvetica;
+    font-weight:bold;
+    font-size: 1.8em;
+    color: $gray;
     margin-top: 0;
+    margin-bottom: 1em;
+    border-bottom: 1px solid $lightgrey;
     text-transform: uppercase;
   }
 }

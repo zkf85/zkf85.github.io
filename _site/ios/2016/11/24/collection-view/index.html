@@ -11,7 +11,7 @@
 
   <title>
     
-      Collection View &middot; Everest
+      Collection View I - Intro & Basics &middot; Everest
     
   </title>
 
@@ -176,9 +176,12 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">Collection View</h1>
-  <span class="post-date">24 Nov 2016</span>
-   | 
+  <h1 class="post-title">Collection View I - Intro & Basics</h1>
+
+  <!-- <span class="post-date">24 Nov 2016</span> -->
+  <div class="post-date">Thu, 24 Nov 2016 16:00:00 +0800</div>
+  <span class="post-tag-kf">
+  
   
     <a href="/blog/tags/#ios" class="post-tag">ios</a>
   
@@ -187,13 +190,15 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
     <a href="/blog/tags/#objective-c" class="post-tag">objective-c</a>
   
   
+  </span>
+  <hr>
   <article>
     <div class="message">
-"Collection View is super powerful."
+"Collection View is super powerful." This article includes notes on reading Apple Guide Document " Collection View Programming Guide for iOS".
 <br />KF 11/24/2016
 </div>
 
-<h2 id="about-ios-collection-views">About iOS Collection Views</h2>
+<h1 id="about-ios-collection-views">About iOS Collection Views</h1>
 <ul>
   <li>
     <p>A collection view is a way to present an ordered set of data items using a flexible and changeable layout.</p>
@@ -212,12 +217,14 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
   </li>
 </ul>
 
-<h2 id="collection-view-basics">Collection View Basics</h2>
+<h1 id="collection-view-basics">Collection View Basics</h1>
 <ul>
   <li>your app must provide a data source object that tells the collection view how many items there are to display.</li>
 </ul>
 
-<h3 id="the-classes-and-protocols-for-implementing-collection-views">The Classes and Protocols for Implementing Collection Views</h3>
+<h2 id="the-classes-and-protocols-for-implementing-collection-views">The Classes and Protocols for Implementing Collection Views</h2>
+
+<p><strong>Table 1-1</strong> The classes and protocols for implementing collection views</p>
 
 <table>
   <thead>
@@ -297,9 +304,15 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
   <p>The <code class="highlighter-rouge">UICollectionViewFlowLayout</code> class is a concrete layout object that you use to implement grids or other line-based layouts. You can use the class as-is or in conjunction with the flow delegate object, which allows you to customize the layout information dynamically.</p>
 </blockquote>
 
-<p>Figure 1-1 shows the relationship between the core objects associated with a collection view. The collection view gets information about the cells to display from its data source. The data source and delegate objects are custom objects provided by your app and used to manage the content, including the selection and highlighting of cells. The layout object is responsible for deciding where those cells belong and for sending that information to the collection view in the form of one or more layout attribute objects. The collection view then merges the layout information with the actual cells (and other views) to create the final visual presentation.</p>
+<p><strong>Figure 1-1</strong> shows the relationship between the core objects associated with a collection view. The collection view gets information about the cells to display from its data source. The data source and delegate objects are custom objects provided by your app and used to manage the content, including the selection and highlighting of cells. The layout object is responsible for deciding where those cells belong and for sending that information to the collection view in the form of one or more layout attribute objects. The collection view then merges the layout information with the actual cells (and other views) to create the final visual presentation.</p>
 
+<h4 id="center-figure-1-1-merging-content-and-layout-to-create-the-final-presentation-center"><center> Figure 1-1. Merging content and layout to create the final presentation </center></h4>
 <p><img src="/public/img/20161124-1-1.png" alt="figure-1-1" /></p>
+
+<p>When creating a collection view interface, you first add a UICollectionView object to your storyboard or nib file. Think of the collection view as the central hub, from which all other objects emanate. After adding that object, you can begin to configure any related objects, such as the data source or delegate. All configurations are centered around the collection view itself. For example, you never create a layout object without also creating a collection view object.</p>
+
+<h2 id="reusable-views-improve-performance">Reusable Views Improve Performance</h2>
+<p>Collection views employ a view recycling program to improve efficiency. As views move offscreen, they are removed from view and placed in a <strong>reuse queue</strong> instead of being deleted. As new content is scrolled onscreen, views are removed from the queue and repurposed with new content. To facilitate this recycling and reuse, all views displayed by the collection view must descend from the <code class="highlighter-rouge">UICollectionReusableView</code> class.</p>
 
 <p><br /><br />
 <strong><em>KF</em></strong></p>

@@ -36,6 +36,12 @@
     }
   }
   .tags-expo-section {
+    h2 {
+      font-size: 1.2rem;
+      color: #888;
+      margin-top: 3rem;
+      border-bottom: 1px solid $lightgrey;
+    }
     ul {
       list-style-type: circle;
       list-style-position: inside;
@@ -62,4 +68,3 @@
     font-family: $font-sans;
   }
 }
-

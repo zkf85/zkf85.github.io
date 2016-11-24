@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Collection View &middot; Everest
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/main.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+<!-- 
+  
+  <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"> </script>
+  <script type="text/x-mathjax-config">
+MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true } });
+  </script>
+  
+</head>
+ -->
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+
+  <br><br><br><br>
+
+    <div class="sidebar-personal-info">
+      
+      <div class="sidebar-personal-info-section">
+        <p>An <strong>iOS developer and designer</strong>. Blogging is good.</p>
+      </div>
+
+      
+      
+      
+      <div class="sidebar-personal-info-section">
+        <p> Follow me: 
+        
+        
+        
+        <a href="https://github.com/zkf85">
+          <i class="fa fa-github" aria-hidden="true"></i>
+        </a>
+        
+        
+        
+        </p>
+      </div>
+      
+    </div>
+  </div>
+
+<br><br>
+
+  <nav class="sidebar-nav">
+
+    
+      
+      
+      
+
+      
+
+      <span class="">
+        <a class="sidebar-nav-item " href="/">
+          Home
+        </a>
+
+        
+      </span>
+
+    
+      
+      
+      
+
+      
+
+      <span class="foldable">
+        <a class="sidebar-nav-item " href="/blog/">
+          Blog
+        </a>
+
+        
+          
+            
+            
+            
+              <a class="sidebar-nav-item sidebar-nav-item-sub " href="/blog/categories/">
+                Categories
+              </a>
+          
+        
+          
+            
+            
+            
+              <a class="sidebar-nav-item sidebar-nav-item-sub " href="/blog/tags/">
+                Tags
+              </a>
+          
+        
+      </span>
+
+    
+      
+      
+      
+
+      
+
+      <span class="">
+        <a class="sidebar-nav-item " href="/about/">
+          About
+        </a>
+
+        
+      </span>
+
+    
+
+    <!-- <span class="sidebar-nav-item">Currently v1.0.0</span> -->
+  </nav>
+
+
+  <div class="sidebar-item">
+    <br><br>
+    <p>
+    &copy; 2016 Kefeng Zhu. <br>
+    All Rights Reserved.
+    <br><br>
+    Powered by <a href="http://jekyllrb.com">jekyll</a>. 
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <!-- <a href="/" title="Home" title="Everest">
+              <img class="masthead-logo" src=""/>
+            </a> -->
+            <a href="/" title="Home">Everest</a>
+            <small>Kefeng's blog</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">Collection View</h1>
+  <span class="post-date">24 Nov 2016</span>
+   | 
+  
+    <a href="/blog/tags/#ios" class="post-tag">ios</a>
+  
+    <a href="/blog/tags/#uicollectionview" class="post-tag">uicollectionview</a>
+  
+    <a href="/blog/tags/#objective-c" class="post-tag">objective-c</a>
+  
+  
+  <article>
+    <div class="message">
+"Collection View is super powerful."
+<br />KF 11/24/2016
+</div>
+
+<h2 id="about-ios-collection-views">About iOS Collection Views</h2>
+<ul>
+  <li>
+    <p>A collection view is a way to present an ordered set of data items using a flexible and changeable layout.</p>
+  </li>
+  <li>
+    <p>Collection views keep a strict separation between the data being presented and the visual elements used to present that data.</p>
+  </li>
+  <li>
+    <p>In most cases, your app is solely responsible for managing the data. Your app also provides the view objects used to present that data.</p>
+  </li>
+  <li>
+    <p>The collection view is all about the presentation and arrangement of your views and not about their content.</p>
+  </li>
+  <li>
+    <p>The <strong>Flow Layout</strong> Supports Grids and Other Line-Oriented Presentations</p>
+  </li>
+</ul>
+
+<h2 id="collection-view-basics">Collection View Basics</h2>
+<ul>
+  <li>your app must provide a data source object that tells the collection view how many items there are to display.</li>
+</ul>
+
+<h3 id="the-classes-and-protocols-for-implementing-collection-views">The Classes and Protocols for Implementing Collection Views</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Purpose</th>
+      <th style="text-align: left">Classes/Protocols</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Top-level containment <br />and management</td>
+      <td style="text-align: left"><code class="highlighter-rouge">UICollectionView</code><br /><code class="highlighter-rouge">UICollectionViewController</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Content <br />management</td>
+      <td style="text-align: left"><code class="highlighter-rouge">UICollectionViewDataSource</code> protocol<br /><code class="highlighter-rouge">UICollectionViewDelegate</code> protocol</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Presentation</td>
+      <td style="text-align: left"><code class="highlighter-rouge">UICollectionReusableView</code><br /><code class="highlighter-rouge">UICollectionViewCell</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Layout</td>
+      <td style="text-align: left"><code class="highlighter-rouge">UICollectionViewLayout</code><br /><code class="highlighter-rouge">UICollectionViewLayoutAttributes</code><br /> <code class="highlighter-rouge">UICollectionViewUpdateItem</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Flow Layout</td>
+      <td style="text-align: left"><code class="highlighter-rouge">UICollectionViewFlowLayout</code><br /><code class="highlighter-rouge">UICollectionViewDelegateFlowLayout</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="uicollectionview"><code class="highlighter-rouge">UICollectionView</code></h3>
+<blockquote>
+  <p>A <code class="highlighter-rouge">UICollectionView</code> object defines the visible area for your collection view’s content. This class also facilitates the presentation of your data based on the layout information it receives from its layout object.</p>
+</blockquote>
+
+<h3 id="uicollectionviewcontroller"><code class="highlighter-rouge">UICollectionViewController</code></h3>
+<blockquote>
+  <p>A <code class="highlighter-rouge">UICollectionViewController</code> object provides view controller–level management support for a collection view. Its use is optional.</p>
+</blockquote>
+
+<h3 id="uicollectionviewdatasource-protocol"><code class="highlighter-rouge">UICollectionViewDataSource</code> protocol</h3>
+<blockquote>
+  <p>The data source object is the most important object associated with the collection view and is one that you must provide. The data source manages the content of the collection view and creates the views needed to present that content. To implement a data source object, you must create an object that conforms to the <code class="highlighter-rouge">UICollectionViewDataSource</code> protocol.</p>
+</blockquote>
+
+<h3 id="uicollectionviewdelegate-protocol"><code class="highlighter-rouge">UICollectionViewDelegate</code> protocol</h3>
+<blockquote>
+  <p>The collection view delegate object lets you intercept interesting messages from the collection view and customize the view’s behavior. For example, you use a delegate object to track the selection and highlighting of items in the collection view. Unlike the data source object, the delegate object is optional.</p>
+</blockquote>
+
+<h3 id="uicollectionreusableview--uicollectionviewcell"><code class="highlighter-rouge">UICollectionReusableView</code> &amp; <code class="highlighter-rouge">UICollectionViewCell</code></h3>
+<blockquote>
+  <p>All views displayed in a collection view must be instances of the <code class="highlighter-rouge">UICollectionReusableView</code> class. This class supports a recycling mechanism in use by collection views. Recycling views (instead of creating new ones) improves performance in general and especially improves it during scrolling.</p>
+</blockquote>
+
+<blockquote>
+  <p>A <code class="highlighter-rouge">UICollectionViewCell</code> object is a specific type of reusable view that you use for your main data items.</p>
+</blockquote>
+
+<h3 id="uicollectionviewlayout-uicollectionviewlayoutattributes-uicollectionviewupdateitem"><code class="highlighter-rouge">UICollectionViewLayout</code>, <code class="highlighter-rouge">UICollectionViewLayoutAttributes</code>, <code class="highlighter-rouge">UICollectionViewUpdateItem</code></h3>
+<blockquote>
+  <p>Subclasses of <code class="highlighter-rouge">UICollectionViewLayout</code> are referred to as layout objects and are responsible for defining the location, size, and visual attributes of the cells and reusable views inside a collection view.</p>
+</blockquote>
+
+<blockquote>
+  <p>During the layout process, a layout object creates layout attribute objects (instances of the <code class="highlighter-rouge">UICollectionViewLayoutAttributes</code> class) that tell the collection view where and how to display cells and reusable views.</p>
+</blockquote>
+
+<blockquote>
+  <p>The layout object receives instances of the <code class="highlighter-rouge">UICollectionViewUpdateItem</code> class whenever data items are inserted, deleted, or moved within the collection view. You never need to create instances of this class yourself.</p>
+</blockquote>
+
+<h3 id="uicollectionviewflowlayout--uicollectionviewdelegateflowlayout-protocol"><code class="highlighter-rouge">UICollectionViewFlowLayout</code> &amp; <code class="highlighter-rouge">UICollectionViewDelegateFlowLayout</code> protocol</h3>
+<blockquote>
+  <p>The <code class="highlighter-rouge">UICollectionViewFlowLayout</code> class is a concrete layout object that you use to implement grids or other line-based layouts. You can use the class as-is or in conjunction with the flow delegate object, which allows you to customize the layout information dynamically.</p>
+</blockquote>
+
+<p>Figure 1-1 shows the relationship between the core objects associated with a collection view. The collection view gets information about the cells to display from its data source. The data source and delegate objects are custom objects provided by your app and used to manage the content, including the selection and highlighting of cells. The layout object is responsible for deciding where those cells belong and for sending that information to the collection view in the form of one or more layout attribute objects. The collection view then merges the layout information with the actual cells (and other views) to create the final visual presentation.</p>
+
+<p><img src="/public/img/20161124-1-1.png" alt="figure-1-1" /></p>
+
+<p><br /><br />
+<strong><em>KF</em></strong></p>
+
+  </article>
+</div>
+
+<div class="related">
+  <h3>Related Posts</h3>
+  <ul class="related-posts">
+    
+      <li>
+        <h4>
+          <a href="/ios/2016/11/20/core-data/">
+            Core Data
+            <small>20 Nov 2016</small>
+          </a>
+        </h4>
+      </li>
+    
+      <li>
+        <h4>
+          <a href="/thoughts/2016/11/10/rural-resentment/">
+            The Role of 'Rural Resentment' in the Election 2016
+            <small>10 Nov 2016</small>
+          </a>
+        </h4>
+      </li>
+    
+      <li>
+        <h4>
+          <a href="/ios%20development/2016/11/07/Photomania-Demo-Note/">
+            iOS7 CS193P 13/14 Photomania Demo Note
+            <small>07 Nov 2016</small>
+          </a>
+        </h4>
+      </li>
+    
+  </ul>
+</div>
+
+
+<div class="comments">
+  <h3>Comments</h3>
+  <div id="disqus_thread"></div>
+  <script>
+var disqus_config = function () {
+  this.page.url = 'http://localhost:4000/ios/2016/11/24/collection-view/'; // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = '/ios/2016/11/24/collection-view'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() {
+  var d = document, s = d.createElement('script');
+  s.src = '//zkf85githubio.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</div>
+
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if (target === toggle) {
+            checkbox.checked = !checkbox.checked;
+            e.preventDefault();
+          } else if (checkbox.checked && !sidebar.contains(target)) {
+            /* click outside the sidebar when sidebar is open */
+            checkbox.checked = false;
+          }
+        }, false);
+      })(document);
+    </script>
+    
+  </body>
+  
+  <script id="dsq-count-scr" src="//zkf85githubio.disqus.com/count.js" async></script>
+  
+</html>

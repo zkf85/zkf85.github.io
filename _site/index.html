@@ -179,6 +179,151 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
 
   <div class="post">
     <h1 class="post-title">
+      <a href="/ios/2016/11/24/collection-view/">
+        Collection View
+      </a>
+    </h1>
+
+    <span class="post-date">24 Nov 2016</span>
+     | 
+    
+    <a href="/blog/tags/#ios" class="post-tag">ios</a>
+    
+    <a href="/blog/tags/#uicollectionview" class="post-tag">uicollectionview</a>
+    
+    <a href="/blog/tags/#objective-c" class="post-tag">objective-c</a>
+    
+    
+
+    <article>
+      <div class="message">
+"Collection View is super powerful."
+<br />KF 11/24/2016
+</div>
+
+<h2 id="about-ios-collection-views">About iOS Collection Views</h2>
+<ul>
+  <li>
+    <p>A collection view is a way to present an ordered set of data items using a flexible and changeable layout.</p>
+  </li>
+  <li>
+    <p>Collection views keep a strict separation between the data being presented and the visual elements used to present that data.</p>
+  </li>
+  <li>
+    <p>In most cases, your app is solely responsible for managing the data. Your app also provides the view objects used to present that data.</p>
+  </li>
+  <li>
+    <p>The collection view is all about the presentation and arrangement of your views and not about their content.</p>
+  </li>
+  <li>
+    <p>The <strong>Flow Layout</strong> Supports Grids and Other Line-Oriented Presentations</p>
+  </li>
+</ul>
+
+<h2 id="collection-view-basics">Collection View Basics</h2>
+<ul>
+  <li>your app must provide a data source object that tells the collection view how many items there are to display.</li>
+</ul>
+
+<h3 id="the-classes-and-protocols-for-implementing-collection-views">The Classes and Protocols for Implementing Collection Views</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Purpose</th>
+      <th style="text-align: left">Classes/Protocols</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Top-level containment <br />and management</td>
+      <td style="text-align: left"><code class="highlighter-rouge">UICollectionView</code><br /><code class="highlighter-rouge">UICollectionViewController</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Content <br />management</td>
+      <td style="text-align: left"><code class="highlighter-rouge">UICollectionViewDataSource</code> protocol<br /><code class="highlighter-rouge">UICollectionViewDelegate</code> protocol</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Presentation</td>
+      <td style="text-align: left"><code class="highlighter-rouge">UICollectionReusableView</code><br /><code class="highlighter-rouge">UICollectionViewCell</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Layout</td>
+      <td style="text-align: left"><code class="highlighter-rouge">UICollectionViewLayout</code><br /><code class="highlighter-rouge">UICollectionViewLayoutAttributes</code><br /> <code class="highlighter-rouge">UICollectionViewUpdateItem</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Flow Layout</td>
+      <td style="text-align: left"><code class="highlighter-rouge">UICollectionViewFlowLayout</code><br /><code class="highlighter-rouge">UICollectionViewDelegateFlowLayout</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="uicollectionview"><code class="highlighter-rouge">UICollectionView</code></h3>
+<blockquote>
+  <p>A <code class="highlighter-rouge">UICollectionView</code> object defines the visible area for your collection view’s content. This class also facilitates the presentation of your data based on the layout information it receives from its layout object.</p>
+</blockquote>
+
+<h3 id="uicollectionviewcontroller"><code class="highlighter-rouge">UICollectionViewController</code></h3>
+<blockquote>
+  <p>A <code class="highlighter-rouge">UICollectionViewController</code> object provides view controller–level management support for a collection view. Its use is optional.</p>
+</blockquote>
+
+<h3 id="uicollectionviewdatasource-protocol"><code class="highlighter-rouge">UICollectionViewDataSource</code> protocol</h3>
+<blockquote>
+  <p>The data source object is the most important object associated with the collection view and is one that you must provide. The data source manages the content of the collection view and creates the views needed to present that content. To implement a data source object, you must create an object that conforms to the <code class="highlighter-rouge">UICollectionViewDataSource</code> protocol.</p>
+</blockquote>
+
+<h3 id="uicollectionviewdelegate-protocol"><code class="highlighter-rouge">UICollectionViewDelegate</code> protocol</h3>
+<blockquote>
+  <p>The collection view delegate object lets you intercept interesting messages from the collection view and customize the view’s behavior. For example, you use a delegate object to track the selection and highlighting of items in the collection view. Unlike the data source object, the delegate object is optional.</p>
+</blockquote>
+
+<h3 id="uicollectionreusableview--uicollectionviewcell"><code class="highlighter-rouge">UICollectionReusableView</code> &amp; <code class="highlighter-rouge">UICollectionViewCell</code></h3>
+<blockquote>
+  <p>All views displayed in a collection view must be instances of the <code class="highlighter-rouge">UICollectionReusableView</code> class. This class supports a recycling mechanism in use by collection views. Recycling views (instead of creating new ones) improves performance in general and especially improves it during scrolling.</p>
+</blockquote>
+
+<blockquote>
+  <p>A <code class="highlighter-rouge">UICollectionViewCell</code> object is a specific type of reusable view that you use for your main data items.</p>
+</blockquote>
+
+<h3 id="uicollectionviewlayout-uicollectionviewlayoutattributes-uicollectionviewupdateitem"><code class="highlighter-rouge">UICollectionViewLayout</code>, <code class="highlighter-rouge">UICollectionViewLayoutAttributes</code>, <code class="highlighter-rouge">UICollectionViewUpdateItem</code></h3>
+<blockquote>
+  <p>Subclasses of <code class="highlighter-rouge">UICollectionViewLayout</code> are referred to as layout objects and are responsible for defining the location, size, and visual attributes of the cells and reusable views inside a collection view.</p>
+</blockquote>
+
+<blockquote>
+  <p>During the layout process, a layout object creates layout attribute objects (instances of the <code class="highlighter-rouge">UICollectionViewLayoutAttributes</code> class) that tell the collection view where and how to display cells and reusable views.</p>
+</blockquote>
+
+<blockquote>
+  <p>The layout object receives instances of the <code class="highlighter-rouge">UICollectionViewUpdateItem</code> class whenever data items are inserted, deleted, or moved within the collection view. You never need to create instances of this class yourself.</p>
+</blockquote>
+
+<h3 id="uicollectionviewflowlayout--uicollectionviewdelegateflowlayout-protocol"><code class="highlighter-rouge">UICollectionViewFlowLayout</code> &amp; <code class="highlighter-rouge">UICollectionViewDelegateFlowLayout</code> protocol</h3>
+<blockquote>
+  <p>The <code class="highlighter-rouge">UICollectionViewFlowLayout</code> class is a concrete layout object that you use to implement grids or other line-based layouts. You can use the class as-is or in conjunction with the flow delegate object, which allows you to customize the layout information dynamically.</p>
+</blockquote>
+
+<p>Figure 1-1 shows the relationship between the core objects associated with a collection view. The collection view gets information about the cells to display from its data source. The data source and delegate objects are custom objects provided by your app and used to manage the content, including the selection and highlighting of cells. The layout object is responsible for deciding where those cells belong and for sending that information to the collection view in the form of one or more layout attribute objects. The collection view then merges the layout information with the actual cells (and other views) to create the final visual presentation.</p>
+
+<p><img src="/public/img/20161124-1-1.png" alt="figure-1-1" /></p>
+
+<p><br /><br />
+<strong><em>KF</em></strong></p>
+
+    <article>
+    <div class="post-more">
+      
+      <a href="/ios/2016/11/24/collection-view/#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+      
+      <a href="/ios/2016/11/24/collection-view/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+    </div>
+  </div>
+  
+
+  <div class="post">
+    <h1 class="post-title">
       <a href="/ios/2016/11/20/core-data/">
         Core Data
       </a>
@@ -247,12 +392,11 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
 <p><code class="highlighter-rouge">UIManagedDocument</code> inherits from UIDocument which provides a lot of mechanism for the management of storage. It also good for iCloud support. Think of a <code class="highlighter-rouge">UIManagedDocument</code> as simply a container for your Core Data database.</p>
 
 <h3 id="create-a-uimanageddocument">1. Create a UIManagedDocument</h3>
-<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kt">NSFileManager</span> <span class="o">*</span><span class="n">fileManager</span> <span class="o">=</span> <span class="p">[</span><span class="kt">NSFileManager</span> <span class="n">defaultManager</span><span class="p">];</span>
-  <span class="kt">NSURL</span> <span class="o">*</span><span class="n">documentsDirectory</span> <span class="o">=</span> <span class="p">[[</span><span class="n">fileManager</span> <span class="kt">URLsForDirectory</span><span class="p">:</span><span class="kt">NSDocumentDirectory</span>
-  <span class="nv">inDomains</span><span class="p">:</span><span class="kt">NSUserDomainMask</span><span class="p">]</span> <span class="n">firstObject</span><span class="p">];</span>
-  <span class="kt">NSString</span> <span class="o">*</span><span class="n">documentName</span> <span class="o">=</span> <span class="s">@"MyDocument"</span><span class="p">;</span> 
-  <span class="kt">NSURL</span> <span class="o">*</span><span class="n">url</span> <span class="o">=</span> <span class="p">[</span><span class="n">documentsDirectory</span> <span class="kt">URLByAppendingPathComponent</span><span class="p">:</span><span class="n">documentName</span><span class="p">];</span>
-<span class="kt">UIManagedDocument</span> <span class="o">*</span><span class="n">document</span> <span class="o">=</span> <span class="p">[[</span><span class="kt">UIManagedDocument</span> <span class="n">alloc</span><span class="p">]</span> <span class="nv">initWithFileURL</span><span class="p">:</span><span class="n">url</span><span class="p">];</span>
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">NSFileManager</span> <span class="o">*</span><span class="n">fileManager</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSFileManager</span> <span class="nf">defaultManager</span><span class="p">];</span>
+<span class="n">NSURL</span> <span class="o">*</span><span class="n">documentsDirectory</span> <span class="o">=</span> <span class="p">[[</span><span class="n">fileManager</span> <span class="nf">URLsForDirectory</span><span class="p">:</span><span class="n">NSDocumentDirectory</span> <span class="nf">inDomains</span><span class="p">:</span><span class="nf">NSUserDomainMask</span><span class="p">]</span> <span class="n">firstObject</span><span class="p">];</span>
+<span class="n">NSString</span> <span class="o">*</span><span class="n">documentName</span> <span class="o">=</span> <span class="s">@"MyDocument"</span><span class="p">;</span> 
+<span class="n">NSURL</span> <span class="o">*</span><span class="n">url</span> <span class="o">=</span> <span class="p">[</span><span class="n">documentsDirectory</span> <span class="nf">URLByAppendingPathComponent</span><span class="p">:</span><span class="n">documentName</span><span class="p">];</span>
+<span class="n">UIManagedDocument</span> <span class="o">*</span><span class="n">document</span> <span class="o">=</span> <span class="p">[[</span><span class="n">UIManagedDocument</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithFileURL</span><span class="p">:</span><span class="n">url</span><span class="p">];</span>
 </code></pre>
 </div>
 <p>This creates the UIManagedDocument instance, but does not open nor create the underlying file.</p>
@@ -260,7 +404,7 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
 <h3 id="open-or-create-a-uimanageddocument">2. Open or Create a UIManagedDocument</h3>
 <p>Check if the <code class="highlighter-rouge">UIManagedDocument</code>’s underlying file exists on disk:</p>
 
-<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kt">BOOL</span> <span class="n">fileExists</span> <span class="o">=</span> <span class="p">[[</span><span class="kt">NSFileManager</span> <span class="n">defaultManager</span><span class="p">]</span> <span class="nv">fileExistsAtPath</span><span class="p">:[</span><span class="n">url</span> <span class="n">path</span><span class="p">]];</span> 
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">BOOL</span> <span class="n">fileExists</span> <span class="o">=</span> <span class="p">[[</span><span class="n">NSFileManager</span> <span class="nf">defaultManager</span><span class="p">]</span> <span class="nf">fileExistsAtPath</span><span class="p">:[</span><span class="n">url</span> <span class="nf">path</span><span class="p">]];</span> 
 </code></pre>
 </div>
 <p>Here is an example:</p>
@@ -294,7 +438,64 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
   <li>Will automatically close if there are no strong pointers left to it.</li>
 </ul>
 
-<p><br />
+<h2 id="nsnotification">NSNotification</h2>
+
+<h3 id="how-would-you-watch-a-documents-managedobjectcontext">How would you watch a document’s managedObjectContext?</h3>
+
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">viewDidAppear</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">animated</span>
+ <span class="p">{</span>
+     <span class="p">[</span><span class="n">super</span> <span class="nf">viewDidAppear</span><span class="p">:</span><span class="n">animated</span><span class="p">];</span>
+     <span class="p">[</span><span class="n">center</span> <span class="nf">addObserver</span><span class="p">:</span><span class="n">self</span>
+                <span class="nf">selector</span><span class="p">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">contextChanged</span><span class="o">:</span><span class="p">)</span>
+                    <span class="nl">name:</span><span class="n">NSManagedObjectContextDidSaveNotification</span>
+                  <span class="nl">object:</span><span class="n">document</span><span class="p">.</span><span class="n">managedObjectContext</span><span class="p">];</span> <span class="c1">//don’t pass nil here!
+</span> <span class="p">}</span>
+ <span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">viewWillDisappear</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">animated</span>
+ <span class="p">{</span>
+     <span class="p">[</span><span class="n">center</span> <span class="nf">removeObserver</span><span class="p">:</span><span class="n">self</span>
+                       <span class="nf">name</span><span class="p">:</span><span class="n">NSManagedObjectContextDidSaveNotification</span>
+                     <span class="nl">object:</span><span class="n">document</span><span class="p">.</span><span class="n">managedObjectContext</span><span class="p">];</span>
+     <span class="p">[</span><span class="n">super</span> <span class="nf">viewWillDisappear</span><span class="p">:</span><span class="n">animated</span><span class="p">];</span>
+ <span class="p">}</span>
+</code></pre>
+</div>
+
+<h2 id="core-data">Core Data</h2>
+<p>Now we use the <code class="highlighter-rouge">UIManagedDocument</code>’s <code class="highlighter-rouge">managedObjectContext</code> <code class="highlighter-rouge"><span class="k">@property</span></code> to insert/delete objects in the database and query for objects in the database.</p>
+
+<h2 id="query">Query</h2>
+<p>We can do this by executing an <code class="highlighter-rouge">NSFetchRequest</code> in our <code class="highlighter-rouge">NSManagedObjectContext</code>.</p>
+
+<h3 id="four-important-things-involved-in-creating-an-nsfetchrequest">Four important things involved in creating an <code class="highlighter-rouge">NSFetchRequest</code></h3>
+<ol>
+  <li><code class="highlighter-rouge">Entity</code> to fetch (required);</li>
+  <li>How many objects to fetch at a time and/or maximum to fetch (optional, default: all);</li>
+  <li><code class="highlighter-rouge">NSSortDescriptor</code> to specify the order in which the array of fetched objects are returned;</li>
+  <li><code class="highlighter-rouge">NSPredicate</code>* specifying which of those Entities of those Entities to fetch (optional, default is all of them).</li>
+</ol>
+
+<h2 id="dependency-injection">Dependency Injection</h2>
+
+<h3 id="q-how-to-get-managedobjectcontext-for-viewcontroller-other-than-getting-it-from-appdelegate">Q: How to get managedObjectContext for viewController other than getting it from appDelegate?</h3>
+
+<h3 id="a-use-dependency-injection">A: Use Dependency Injection</h3>
+<p><a href="http://stackoverflow.com/questions/21050408/how-to-get-managedobjectcontext-for-viewcontroller-other-than-getting-it-from-ap">answer on stackoverflow</a></p>
+
+<p>Basically the caller/constructor should be setting the NSManagedObjectContext onto the called/constructed.</p>
+
+<p>In your <code class="highlighter-rouge">AppDelegat</code>e you should set the <code class="highlighter-rouge">NSManagedObjectContext</code> into the <code class="highlighter-rouge">rootViewController</code> that is associated with the <code class="highlighter-rouge">UIWindow</code>.</p>
+
+<p>Your <code class="highlighter-rouge">rootViewController</code> should then set the <code class="highlighter-rouge">NSManagedObjectContext</code> into the next view controller and so on.</p>
+
+<p>How? It is just a simple proper on the view controller class and the caller uses:</p>
+
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="n">nextViewController</span> <span class="nf">setManagedObjectContext</span><span class="p">:[</span><span class="n">self</span> <span class="nf">managedObjectContext</span><span class="p">]];</span>
+</code></pre>
+</div>
+
+<p>Some others may recommend a singleton but that is another deep dark pit that is best avoided.</p>
+
+<p><br /><br />
 <strong><em>KF</em></strong></p>
 
     <article>

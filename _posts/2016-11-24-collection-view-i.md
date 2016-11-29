@@ -75,6 +75,25 @@ When creating a collection view interface, you first add a UICollectionView obje
 ## Reusable Views Improve Performance
 Collection views employ a view recycling program to improve efficiency. As views move offscreen, they are removed from view and placed in a **reuse queue** instead of being deleted. As new content is scrolled onscreen, views are removed from the queue and repurposed with new content. To facilitate this recycling and reuse, all views displayed by the collection view must descend from the `UICollectionReusableView` class.
 
+Collection views support three distinct types of reusable views, each of which has a specific intended usage:
+
+- *Cells* present the main content of your collection view. The job of a cell is to present the content for a single item from your data source object. Each cell must be an instance of the `UICollectionViewCell` class, which you may subclass as needed to present your content. Cell objects provide inherent support for managing their own selection and highlight state. To actually apply a highlight to a cell, you must write some custom code. For information on implementing cell highlighting/selecting, see Managing the Visual State for Selections and Highlights.
+- *Supplementary* views display information about a section. Like cells, supplementary views are data driven. Unlike cells, supplementary views are not mandatory, and their usage and placement is controlled by the layout object being used. For example, the flow layout supports **headers** and **footers** as optional supplementary views.
+- *Decoration* views are visual adornments that are wholly owned by the layout object and are not tied to any data in your data source object. For example, a layout object might use decoration views to implement a custom background appearance.
+
+Unlike table views, collection views impose no specific style on the cells and supplementary views provided by your data source. Instead, the basic reusable view classes are blank canvases for you to modify. 
+
+## The Layout Object Controls the Visual Presentation
+The layout object is solely responsible for determining the placement and visual styling of items within the collection view. Although your data source object provides the views and the actual content, the layout object determines the size, location, and other appearance-related attributes of those views. This separation of responsibilities makes it possible to change layouts dynamically without changing any of the data objects managed by your app.
+
+The layout process used by collection views is related to, but distinct from, the layout process used by the rest of your app’s views. A layout object never touches the views it manages directly because it does not actually own any of those views. Instead, it generates attributes that describe the location, size, and visual appearance of the cells, supplementary views, and decoration views in the collection view. It is then the job of the collection view to apply those attributes to the actual view objects.
+
+**Figure 1-2** shows how a vertically scrolling flow layout arranges its cells and supplementary views. In a vertically scrolling flow layout, the width of the content area remains fixed and the height grows to accommodate the content. To compute the area, the layout object places views and cells one at a time, choosing the most appropriate location for each. In the case of the flow layout, the size of the cells and supplementary views are specified as properties, either on the layout object or by using a delegate. Computing the layout is just a matter of using those properties to place each view.
+
+#### <center>Figure 1-2  The layout object provides layout metrics</center>
+![figure-1-2](/public/img/20161128-1-1.png)
+
+Layout objects control more than just the size and position of their views. The layout object can specify other view-related attributes, such as its **transparency**, its **transform in 3D space**, and its **visibility** (if any) above or below other views. These attributes let you create more interesting layouts. For example, you might create stacks of cells by placing the views on top of one another and changing their z-ordering, or you might use a transform to rotate them on any axis.
 
 <br><br>
 ***KF***

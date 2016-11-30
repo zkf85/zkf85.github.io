@@ -9,8 +9,10 @@ tags: [ios, uicollectionview, objective-c]
 Continue - Collection View learning notes on reading Apple Guide Document " Collection View Programming Guide for iOS".
 <br>KF 11/28/2016
 </div>
+
 # II.Designing Your Data Source and Delegate
 The **data source** object is the content that your app displays. The only requirement of the data source is that it must be able to provide information that the collection view needs, such as
+
 - how many items there are and 
 - which views to use when displaying those items.
 

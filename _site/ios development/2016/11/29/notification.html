@@ -225,10 +225,13 @@ An example of a notification is as follows:
 <p>In this example one object is registering itself as an observer for the MyThingHappened notification, limiting it to when that notification occurs on the exact object, <code class="highlighter-rouge">_myObject</code>. Then, another object is posting that notification with itself as the object and nothing as the metadata dictionary, <code class="highlighter-rouge">userInfo</code>. So in this case, if the object that’s posting the notification is <code class="highlighter-rouge">_myObject</code> from the context of the registering object, then the notification will cause thingHappened: to be called.</p>
 
 <h2 id="why-and-when-to-use-notification">Why and When to Use Notification?</h2>
+
 <h3 id="coupling">Coupling</h3>
 <p>Notifications result in loose coupling between objects. The coupling is <strong>loose</strong> because the object sending a notification doesn’t know what is listening to the notification. This loose coupling can be extremely powerful because multiple objects can all register to listen to the same notification, from different parts of an application. However, loose coupling can also make the use of notifications a nightmare to debug, since code can easily become entangled. Following the code paths produced when a notification is broadcast can become a daunting experience.</p>
+
 <h3 id="multiple-listeners">Multiple Listeners</h3>
 <p>By design, notifications offer multiple listeners. There can be zero, one or many listeners for any one notification. If you are certain that you’ll need multiple listeners, a notification is the correct route to go down. The instance above of login state handling is a perfect example of this. It’s likely that multiple objects are going to care about login state changing, so a notification makes sense.</p>
+
 <h3 id="is-the-object-known">Is the Object Known?</h3>
 <p>Sometimes you don’t actually know the precise object you want to communicate with. An example of such a scenario is the keyboard in iOS, which is a view which is handled entirely by iOS for you.</p>
 

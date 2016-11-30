@@ -11,7 +11,9 @@ Unordered tags make a Jekyll tag list look sloppy, so if you care about the deta
 </div>
 
 ## Sort Tags A ~ Z
+
 ### Reference
+
 - [Michael Lanyon - Alphabetizing Jekyll Page Tags In Pure Liquid (Without Plugins)](https://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-tags-pure-liquid.html)
 - [Advanced Liquid: Sort](https://www.siteleaf.com/blog/advanced-liquid-sort/)
 
@@ -74,11 +76,14 @@ This is not a bug , but a [caveat of using a templating language with markdown](
 
 
 ## Advanced - Sort Tags A~Z Case Insensitive
+
 ### Reference
+
 - [Add case-insensitive sort #529](https://github.com/Shopify/liquid/issues/529)
 [Sort only sorts in binary #2135](https://github.com/jekyll/jekyll/issues/2135)
 
 ### Solution is simple:
+
 - `some_list | sort: 'downcase'` for strings
 
 

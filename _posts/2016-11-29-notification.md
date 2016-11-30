@@ -35,10 +35,13 @@ An example of a notification is as follows:
 In this example one object is registering itself as an observer for the MyThingHappened notification, limiting it to when that notification occurs on the exact object, `_myObject`. Then, another object is posting that notification with itself as the object and nothing as the metadata dictionary, `userInfo`. So in this case, if the object that's posting the notification is `_myObject` from the context of the registering object, then the notification will cause thingHappened: to be called.
 
 ## Why and When to Use Notification?
+
 ### Coupling
 Notifications result in loose coupling between objects. The coupling is **loose** because the object sending a notification doesn't know what is listening to the notification. This loose coupling can be extremely powerful because multiple objects can all register to listen to the same notification, from different parts of an application. However, loose coupling can also make the use of notifications a nightmare to debug, since code can easily become entangled. Following the code paths produced when a notification is broadcast can become a daunting experience.
+
 ### Multiple Listeners
 By design, notifications offer multiple listeners. There can be zero, one or many listeners for any one notification. If you are certain that you'll need multiple listeners, a notification is the correct route to go down. The instance above of login state handling is a perfect example of this. It's likely that multiple objects are going to care about login state changing, so a notification makes sense.
+
 ### Is the Object Known?
 Sometimes you don't actually know the precise object you want to communicate with. An example of such a scenario is the keyboard in iOS, which is a view which is handled entirely by iOS for you.
 

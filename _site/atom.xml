@@ -4,7 +4,7 @@
  <title>Everest</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2016-11-30T23:49:49+08:00</updated>
+ <updated>2016-11-30T23:54:34+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Kefeng Zhu</name>
@@ -23,7 +23,9 @@ Unordered tags make a Jekyll tag list look sloppy, so if you care about the deta
 &lt;/div&gt;
 
 &lt;h2 id=&quot;sort-tags-a--z&quot;&gt;Sort Tags A ~ Z&lt;/h2&gt;
+
 &lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
+
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-tags-pure-liquid.html&quot;&gt;Michael Lanyon - Alphabetizing Jekyll Page Tags In Pure Liquid (Without Plugins)&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.siteleaf.com/blog/advanced-liquid-sort/&quot;&gt;Advanced Liquid: Sort&lt;/a&gt;&lt;/li&gt;
@@ -87,13 +89,16 @@ title: Tags
 &lt;/blockquote&gt;
 
 &lt;h2 id=&quot;advanced---sort-tags-az-case-insensitive&quot;&gt;Advanced - Sort Tags A~Z Case Insensitive&lt;/h2&gt;
+
 &lt;h3 id=&quot;reference-1&quot;&gt;Reference&lt;/h3&gt;
+
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/Shopify/liquid/issues/529&quot;&gt;Add case-insensitive sort #529&lt;/a&gt;
 &lt;a href=&quot;https://github.com/jekyll/jekyll/issues/2135&quot;&gt;Sort only sorts in binary #2135&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;solution-is-simple&quot;&gt;Solution is simple:&lt;/h3&gt;
+
 &lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;some_list | sort: 'downcase'&lt;/code&gt; for strings&lt;/li&gt;
 &lt;/ul&gt;
@@ -132,6 +137,7 @@ I have a header that is fixed to the top of the page, so when you link to an anc
 What is the concept of singleton in iOS development?
 &lt;br /&gt;KF 11/30/2016
 &lt;/div&gt;
+
 &lt;h2 id=&quot;what-is-singleton&quot;&gt;What is Singleton&lt;/h2&gt;
 &lt;p&gt;A singleton object provides a global point of access to the resources of its class. Singletons are used in situations where this single point of control is desirable, such as with classes that offer some general service or resource. You obtain the global instance from a singleton class through a factory method.&lt;/p&gt;
 
@@ -146,6 +152,7 @@ What is the concept of singleton in iOS development?
 &lt;p&gt;You can implement a singleton class in Objective-C using the following code:&lt;/p&gt;
 
 &lt;p&gt;in &lt;code class=&quot;highlighter-rouge&quot;&gt;MyManager.h&lt;/code&gt;:&lt;/p&gt;
+
 &lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#import &amp;lt;foundation/Foundation.h&amp;gt;
 &lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MyManager&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;NSObject&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -161,6 +168,7 @@ What is the concept of singleton in iOS development?
 &lt;/div&gt;
 
 &lt;p&gt;in &lt;code class=&quot;highlighter-rouge&quot;&gt;MyManager.m&lt;/code&gt;:&lt;/p&gt;
+
 &lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#import &quot;MyManager.h&quot;
 &lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MyManager&lt;/span&gt;
@@ -298,10 +306,13 @@ An example of a notification is as follows:
 &lt;p&gt;In this example one object is registering itself as an observer for the MyThingHappened notification, limiting it to when that notification occurs on the exact object, &lt;code class=&quot;highlighter-rouge&quot;&gt;_myObject&lt;/code&gt;. Then, another object is posting that notification with itself as the object and nothing as the metadata dictionary, &lt;code class=&quot;highlighter-rouge&quot;&gt;userInfo&lt;/code&gt;. So in this case, if the object that’s posting the notification is &lt;code class=&quot;highlighter-rouge&quot;&gt;_myObject&lt;/code&gt; from the context of the registering object, then the notification will cause thingHappened: to be called.&lt;/p&gt;
 
 &lt;h2 id=&quot;why-and-when-to-use-notification&quot;&gt;Why and When to Use Notification?&lt;/h2&gt;
+
 &lt;h3 id=&quot;coupling&quot;&gt;Coupling&lt;/h3&gt;
 &lt;p&gt;Notifications result in loose coupling between objects. The coupling is &lt;strong&gt;loose&lt;/strong&gt; because the object sending a notification doesn’t know what is listening to the notification. This loose coupling can be extremely powerful because multiple objects can all register to listen to the same notification, from different parts of an application. However, loose coupling can also make the use of notifications a nightmare to debug, since code can easily become entangled. Following the code paths produced when a notification is broadcast can become a daunting experience.&lt;/p&gt;
+
 &lt;h3 id=&quot;multiple-listeners&quot;&gt;Multiple Listeners&lt;/h3&gt;
 &lt;p&gt;By design, notifications offer multiple listeners. There can be zero, one or many listeners for any one notification. If you are certain that you’ll need multiple listeners, a notification is the correct route to go down. The instance above of login state handling is a perfect example of this. It’s likely that multiple objects are going to care about login state changing, so a notification makes sense.&lt;/p&gt;
+
 &lt;h3 id=&quot;is-the-object-known&quot;&gt;Is the Object Known?&lt;/h3&gt;
 &lt;p&gt;Sometimes you don’t actually know the precise object you want to communicate with. An example of such a scenario is the keyboard in iOS, which is a view which is handled entirely by iOS for you.&lt;/p&gt;
 
@@ -359,8 +370,10 @@ In the file add the following two constants:&lt;/p&gt;
 Continue - Collection View learning notes on reading Apple Guide Document &quot; Collection View Programming Guide for iOS&quot;.
 &lt;br /&gt;KF 11/28/2016
 &lt;/div&gt;
+
 &lt;h1 id=&quot;iidesigning-your-data-source-and-delegate&quot;&gt;II.Designing Your Data Source and Delegate&lt;/h1&gt;
 &lt;p&gt;The &lt;strong&gt;data source&lt;/strong&gt; object is the content that your app displays. The only requirement of the data source is that it must be able to provide information that the collection view needs, such as&lt;/p&gt;
+
 &lt;ul&gt;
   &lt;li&gt;how many items there are and&lt;/li&gt;
   &lt;li&gt;which views to use when displaying those items.&lt;/li&gt;

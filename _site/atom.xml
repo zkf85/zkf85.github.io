@@ -4,7 +4,7 @@
  <title>Everest</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2016-11-29T13:21:56+08:00</updated>
+ <updated>2016-11-30T23:38:13+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Kefeng Zhu</name>
@@ -13,10 +13,259 @@
 
  
  <entry>
+   <title>Sort Tags Alphabetically</title>
+   <link href="http://localhost:4000/web%20development/2016/11/30/sort-tag-alphabetically.html"/>
+   <updated>2016-11-30T20:32:00+08:00</updated>
+   <id>http://localhost:4000/web%20development/2016/11/30/sort-tag-alphabetically</id>
+   <content type="html">&lt;div class=&quot;message&quot;&gt;
+Unordered tags make a Jekyll tag list look sloppy, so if you care about the details, you likely want your tag list to be alphabetized.
+&lt;br /&gt;KF 11/30/2016
+&lt;/div&gt;
+
+&lt;h2 id=&quot;sort-tags-a--z&quot;&gt;Sort Tags A ~ Z&lt;/h2&gt;
+&lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-tags-pure-liquid.html&quot;&gt;Michael Lanyon - Alphabetizing Jekyll Page Tags In Pure Liquid (Without Plugins)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.siteleaf.com/blog/advanced-liquid-sort/&quot;&gt;Advanced Liquid: Sort&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Based on the notes from &lt;a href=&quot;https://blog.lanyonm.org&quot;&gt;Michael Lanyon&lt;/a&gt;, I modified my &lt;code class=&quot;highlighter-rouge&quot;&gt;tags.html&lt;/code&gt; to the version below:&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
+layout: page
+title: Tags
+---
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- tag sorted - kf 11/30/2016 --&amp;gt;&lt;/span&gt;
+
+{% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- site_tags: {{ site_tags }} --&amp;gt;&lt;/span&gt;
+{% assign tag_words = site_tags | split:',' | sort %}
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- tag_words: {{ tag_words }} --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;tags-expo&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;tags-expo-list&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  {% for tag in tag_words %}
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#{{ tag | cgi_escape }}&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;post-tag&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ tag }} &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;font-size:80%; color:gray;&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ site.tags[tag] | size }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+  {% endfor %}
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;tags-expo-section&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    {% for item in (0..site.tags.size) %}{% unless forloop.last %}
+    {% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ this_word | cgi_escape }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ this_word }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;tags-expo-posts&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      {% for post in site.tags[this_word] %}{% if post.title != null %}
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;post-title&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ site.baseurl }}{{ post.url }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
+        {{ post.title }} &lt;span class=&quot;err&quot;&gt;&amp;amp;&lt;/span&gt;laquo 
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;small&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;post-date&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ post.date | date_to_string }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/small&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+      {% endif %}{% endfor %}
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+    {% endunless %}{% endfor %}
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;For &lt;code class=&quot;highlighter-rouge&quot;&gt;categories.html&lt;/code&gt; the basic idea is the same.&lt;/p&gt;
+
+&lt;p&gt;When Adding the code block above, I came across a curious problem when writing liquid template code in this markdown file. When Jekyll compiles the static web files, it tries to process all the curly brackets like: &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;This is not a bug , but a &lt;a href=&quot;https://github.com/jekyll/jekyll/issues/814&quot;&gt;caveat of using a templating language with markdown&lt;/a&gt;. The workarounds are provided by&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://ozzieliu.com/2016/04/26/writing-liquid-template-in-markdown-with-jekyll/&quot;&gt;Ozzie Liu - Writing Liquid Template in Markdown Code Blocks with Jekyll&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Simply put, just add&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;raw&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;endraw&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt; on the both end when &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;/code&gt; appears.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;It is pretty confused to render the above line!!!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;advanced---sort-tags-az-case-insensitive&quot;&gt;Advanced - Sort Tags A~Z Case Insensitive&lt;/h2&gt;
+&lt;h3 id=&quot;reference-1&quot;&gt;Reference&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Shopify/liquid/issues/529&quot;&gt;Add case-insensitive sort #529&lt;/a&gt;
+&lt;a href=&quot;https://github.com/jekyll/jekyll/issues/2135&quot;&gt;Sort only sorts in binary #2135&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;solution-is-simple&quot;&gt;Solution is simple:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;some_list | sort: 'downcase'&lt;/code&gt; for strings&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>How to Offset an HTML Anchor to Adjust for Fixed Header?</title>
+   <link href="http://localhost:4000/web%20development/2016/11/30/anchor-link-back-position-setting.html"/>
+   <updated>2016-11-30T20:32:00+08:00</updated>
+   <id>http://localhost:4000/web%20development/2016/11/30/anchor-link-back-position-setting</id>
+   <content type="html">&lt;div class=&quot;message&quot;&gt;
+I have a header that is fixed to the top of the page, so when you link to an anchor elsewhere in the page, the page jumps so the anchor is at the top of the page, leaving the content behind the fixed header (I hope that makes sense). I need a way to offset the anchor by some pixels from the height of the header. I would prefer HTML or CSS, but Javascript would be acceptable as well.
+&lt;br /&gt;KF 11/30/2016
+&lt;/div&gt;
+
+&lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/4086107/html-positionfixed-page-header-and-in-page-anchors&quot;&gt;HTML position:fixed page header and in-page anchors&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/10732690/offsetting-an-html-anchor-to-adjust-for-fixed-header&quot;&gt;offsetting an html anchor to adjust for fixed header [duplicate]&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Singleton in iOS</title>
+   <link href="http://localhost:4000/ios%20development/2016/11/30/singleton.html"/>
+   <updated>2016-11-30T14:53:00+08:00</updated>
+   <id>http://localhost:4000/ios%20development/2016/11/30/singleton</id>
+   <content type="html">&lt;div class=&quot;message&quot;&gt;
+What is the concept of singleton in iOS development?
+&lt;br /&gt;KF 11/30/2016
+&lt;/div&gt;
+&lt;h2 id=&quot;what-is-singleton&quot;&gt;What is Singleton&lt;/h2&gt;
+&lt;p&gt;A singleton object provides a global point of access to the resources of its class. Singletons are used in situations where this single point of control is desirable, such as with classes that offer some general service or resource. You obtain the global instance from a singleton class through a factory method.&lt;/p&gt;
+
+&lt;h2 id=&quot;why-and-when-we-use-it&quot;&gt;Why and When We Use It?&lt;/h2&gt;
+&lt;p&gt;You obtain the global instance from a singleton class through a factory method. The class lazily creates its sole instance the first time it is requested and thereafter ensures that no other instance can be created.&lt;sup id=&quot;fnref:apple&quot;&gt;&lt;a href=&quot;#fn:apple&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; It’s an extremely powerful way to share data between different parts of code without having to pass the data around manually.&lt;sup id=&quot;fnref:matt&quot;&gt;&lt;a href=&quot;#fn:matt&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;Singleton classes are an important concept to understand because they exhibit an extremely useful design pattern. This idea is used throughout the iPhone SDK, for example, UIApplication has a method called sharedApplication which when called from anywhere will return the UIApplication instance which relates to the currently running application.&lt;sup id=&quot;fnref:matt:1&quot;&gt;&lt;a href=&quot;#fn:matt&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;how-to-implementmatt&quot;&gt;How to Implement?&lt;sup id=&quot;fnref:matt:2&quot;&gt;&lt;a href=&quot;#fn:matt&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+&lt;p&gt;You can implement a singleton class in Objective-C using the following code:&lt;/p&gt;
+
+&lt;p&gt;in &lt;code class=&quot;highlighter-rouge&quot;&gt;MyManager.h&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#import &amp;lt;foundation/Foundation.h&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MyManager&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;NSObject&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;someProperty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nonatomic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;retain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;someProperty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sharedManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;in &lt;code class=&quot;highlighter-rouge&quot;&gt;MyManager.m&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#import &quot;MyManager.h&quot;
+&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MyManager&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@synthesize&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;someProperty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;#pragma mark Singleton Methods
+&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sharedManager&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MyManager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sharedMyManager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dispatch_once_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onceToken&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;dispatch_once&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;onceToken&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;sharedMyManager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sharedMyManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;init&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;super&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;someProperty&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initWithString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;Default Property Value&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dealloc&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Should never be called, but just here for clarity really.
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;What this does is it defines a static variable (but only global to this &lt;a href=&quot;http://en.wikipedia.org/wiki/Translation_unit_(programming)&quot;&gt;translation unit&lt;/a&gt;) called &lt;code class=&quot;highlighter-rouge&quot;&gt;sharedMyManager&lt;/code&gt; which is then initialized once and only once in &lt;code class=&quot;highlighter-rouge&quot;&gt;sharedManager&lt;/code&gt;. The way we ensure that it’s only created once is by using the &lt;code class=&quot;highlighter-rouge&quot;&gt;dispatch_once&lt;/code&gt; method from &lt;a href=&quot;http://developer.apple.com/library/ios/#documentation/Performance/Reference/GCD_libdispatch_Ref/Reference/reference.html&quot;&gt;Grand Central Dispatch (GCD)&lt;/a&gt;. This is thread safe and handled entirely by the OS for you so that you don’t have to worry about it at all.&lt;/p&gt;
+
+&lt;p&gt;However, if you would rather not use GCD then you should use the following code for sharedManager:&lt;/p&gt;
+
+&lt;p&gt;Non-GCD based code:&lt;/p&gt;
+
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sharedManager&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MyManager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sharedMyManager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;@synchronized&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sharedMyManager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;sharedMyManager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sharedMyManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Then you can reference the singleton from anywhere by calling the following function:&lt;/p&gt;
+
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;MyManager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sharedManager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MyManager&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sharedManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I’ve used this extensively throughout my code for things such as creating a singleton to handle CoreLocation or CoreData functions.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:apple&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://developer.apple.com/library/content/documentation/General/Conceptual/DevPedia-CocoaCore/Singleton.html&quot;&gt;Singleton - Apple Developer&lt;/a&gt; &lt;a href=&quot;#fnref:apple&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:matt&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;http://www.galloway.me.uk/tutorials/singleton-classes/&quot;&gt;Singletons in Objective-C - Matt Galloway&lt;/a&gt; &lt;a href=&quot;#fnref:matt&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:matt:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:matt:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>What is the difference between a static and const variable</title>
+   <link href="http://localhost:4000/ios%20development/2016/11/30/static-constant.html"/>
+   <updated>2016-11-30T14:42:00+08:00</updated>
+   <id>http://localhost:4000/ios%20development/2016/11/30/static-constant</id>
+   <content type="html">&lt;div class=&quot;message&quot;&gt;
+Static VS. Constant
+&lt;br /&gt;KF 11/30/2016
+&lt;/div&gt;
+
+&lt;p&gt;A &lt;code class=&quot;highlighter-rouge&quot;&gt;static&lt;/code&gt; variable means that the object’s lifetime is the entire execution of the program and it’s value is initialized only once before the program startup. All statics are initialized if you do not explicitly set a value to them.The manner and timing of static initialization is unspecified.&lt;/p&gt;
+
+&lt;p&gt;A &lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt; is a promise that you will not try to modify the value once set.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt; is equivalent to &lt;code class=&quot;highlighter-rouge&quot;&gt;#define&lt;/code&gt; but only for value statements(e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;#define myvalue 2&lt;/code&gt;). The value declared replaces the name of the variable before compilation.&lt;/p&gt;
+
+&lt;h3 id=&quot;reference&quot;&gt;Reference:&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://msdn.microsoft.com/en-us/library/y5f6w579.aspx#static&quot;&gt;Static (C++) - on MSDN&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/2216239/what-is-the-difference-between-a-static-and-const-variable&quot;&gt;static vs. const - on StackOverflow&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>Notifications - Example</title>
-   <link href="http://localhost:4000/ios/2016/11/29/notification/"/>
+   <link href="http://localhost:4000/ios%20development/2016/11/29/notification.html"/>
    <updated>2016-11-29T12:30:00+08:00</updated>
-   <id>http://localhost:4000/ios/2016/11/29/notification</id>
+   <id>http://localhost:4000/ios%20development/2016/11/29/notification</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 This is a simple example of how to post and listen to a notification radio.
 &lt;br /&gt;KF 11/29/2016
@@ -30,7 +279,8 @@ This is a simple example of how to post and listen to a notification radio.
 &lt;p&gt;Notifications provide a means of broadcasting a message from anywhere to anywhere. The &lt;code class=&quot;highlighter-rouge&quot;&gt;NSNotification&lt;/code&gt; class provides this functionality in Objective-C. It is not strictly a part of the language, but rather the Foundation framework. Instances of NSNotification are broadcast through an &lt;code class=&quot;highlighter-rouge&quot;&gt;NSNotificationCenter&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Notifications contain a name, an object and a dictionary of metadata. The object and metadata are optional, but the name is required. An object can register with the notification center to receive certain notifications, filtered by name, object or both name and object. Additionally, a selector is passed, which is called when a notification matching the filter is broadcast.
-An example of a notification is as follows:&lt;/p&gt;
+An example of a notification is as follows:
+&lt;!--more--&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Registering as observer from one object
 &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSNotificationCenter&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;defaultCenter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addObserver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;
@@ -102,9 +352,9 @@ In the file add the following two constants:&lt;/p&gt;
  
  <entry>
    <title>Collection View II - Designing Your Data Source and Delegate</title>
-   <link href="http://localhost:4000/ios/2016/11/28/collection-view-ii/"/>
+   <link href="http://localhost:4000/ios%20development/2016/11/28/collection-view-ii.html"/>
    <updated>2016-11-28T14:00:00+08:00</updated>
-   <id>http://localhost:4000/ios/2016/11/28/collection-view-ii</id>
+   <id>http://localhost:4000/ios%20development/2016/11/28/collection-view-ii</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 Continue - Collection View learning notes on reading Apple Guide Document &quot; Collection View Programming Guide for iOS&quot;.
 &lt;br /&gt;KF 11/28/2016
@@ -116,7 +366,8 @@ Continue - Collection View learning notes on reading Apple Guide Document &quot;
   &lt;li&gt;which views to use when displaying those items.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;The &lt;strong&gt;delegate object&lt;/strong&gt; is an optional (but recommended) object that manages aspects related to the presentation of and interaction with your content.  Although the delegate’s main job is to manage cell highlighting and selection, it can be extended to provide additional information. For example, the flow layout extends the basic delegate behavior to customize layout metrics, such as the size of cells and the spacing between them.&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;delegate object&lt;/strong&gt; is an optional (but recommended) object that manages aspects related to the presentation of and interaction with your content.  Although the delegate’s main job is to manage cell highlighting and selection, it can be extended to provide additional information. For example, the flow layout extends the basic delegate behavior to customize layout metrics, such as the size of cells and the spacing between them.
+&lt;!--more--&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;the-data-source-manages-your-content&quot;&gt;The Data Source Manages Your Content&lt;/h2&gt;
 &lt;p&gt;The data source object is the object responsible for managing the content you are presenting using a collection view. The data source object must conform to the &lt;code class=&quot;highlighter-rouge&quot;&gt;UICollectionViewDataSource&lt;/code&gt; protocol, which defines the basic behavior and methods that you must support. The job of the data source is to provide the collection view with answers to the following questions:&lt;/p&gt;
@@ -197,9 +448,9 @@ A collection view typically has &lt;strong&gt;at least one section&lt;/strong&gt
  
  <entry>
    <title>Collection View I - Intro & Basics</title>
-   <link href="http://localhost:4000/ios/2016/11/24/collection-view-i/"/>
+   <link href="http://localhost:4000/ios%20development/2016/11/24/collection-view-i.html"/>
    <updated>2016-11-24T16:00:00+08:00</updated>
-   <id>http://localhost:4000/ios/2016/11/24/collection-view-i</id>
+   <id>http://localhost:4000/ios%20development/2016/11/24/collection-view-i</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 &quot;Collection View is super powerful.&quot; This article includes notes on reading Apple Guide Document &quot; Collection View Programming Guide for iOS&quot;.
 &lt;br /&gt;KF 11/24/2016
@@ -220,7 +471,8 @@ A collection view typically has &lt;strong&gt;at least one section&lt;/strong&gt
     &lt;p&gt;The collection view is all about the presentation and arrangement of your views and not about their content.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;The &lt;strong&gt;Flow Layout&lt;/strong&gt; Supports Grids and Other Line-Oriented Presentations&lt;/p&gt;
+    &lt;p&gt;The &lt;strong&gt;Flow Layout&lt;/strong&gt; Supports Grids and Other Line-Oriented Presentations
+&lt;!--more--&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -350,9 +602,9 @@ A collection view typically has &lt;strong&gt;at least one section&lt;/strong&gt
  
  <entry>
    <title>Core Data</title>
-   <link href="http://localhost:4000/ios/2016/11/20/core-data/"/>
+   <link href="http://localhost:4000/ios%20development/2016/11/20/core-data.html"/>
    <updated>2016-11-20T00:00:00+08:00</updated>
-   <id>http://localhost:4000/ios/2016/11/20/core-data</id>
+   <id>http://localhost:4000/ios%20development/2016/11/20/core-data</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 &quot;It's all about how core data works.&quot;
 &lt;br /&gt;KF 11/20/2016
@@ -397,6 +649,8 @@ A collection view typically has &lt;strong&gt;at least one section&lt;/strong&gt
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;We’re going to focus on doing the first one &lt;code class=&quot;highlighter-rouge&quot;&gt;UIManagedDocument&lt;/code&gt;.&lt;/p&gt;
+
+&lt;!--more--&gt;
 
 &lt;h2 id=&quot;uimanageddocument&quot;&gt;UIManagedDocument&lt;/h2&gt;
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;UIManagedDocument&lt;/code&gt; inherits from UIDocument which provides a lot of mechanism for the management of storage. It also good for iCloud support. Think of a &lt;code class=&quot;highlighter-rouge&quot;&gt;UIManagedDocument&lt;/code&gt; as simply a container for your Core Data database.&lt;/p&gt;
@@ -512,7 +766,7 @@ A collection view typically has &lt;strong&gt;at least one section&lt;/strong&gt
  
  <entry>
    <title>The Role of 'Rural Resentment' in the Election 2016</title>
-   <link href="http://localhost:4000/thoughts/2016/11/10/rural-resentment/"/>
+   <link href="http://localhost:4000/thoughts/2016/11/10/rural-resentment.html"/>
    <updated>2016-11-10T00:00:00+08:00</updated>
    <id>http://localhost:4000/thoughts/2016/11/10/rural-resentment</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;There is an obvious phenomenon when I was watching the results popping out with the votes' distribution geographically: most people in urban area supported Hillary while there was a landslide winning in favor of Trump in rural area all over the country. An article stressed this topic and I take a summary here.&lt;/div&gt;
@@ -527,7 +781,8 @@ A collection view typically has &lt;strong&gt;at least one section&lt;/strong&gt
 
 &lt;p&gt;The rural-urban divide persists nationwide. Hillary Clinton led Trump by 26 points in urban areas in a recent poll, also from the Washington Post. But in rural areas, Trump led Clinton by 20 points.&lt;/p&gt;
 
-&lt;p&gt;Four years ago, Obama won urban areas by 26 points, according to exit polls, while Romney won rural areas by 20 points.&lt;/p&gt;
+&lt;p&gt;Four years ago, Obama won urban areas by 26 points, according to exit polls, while Romney won rural areas by 20 points.
+&lt;!--more--&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;why&quot;&gt;Why?&lt;/h2&gt;
 
@@ -566,7 +821,7 @@ A collection view typically has &lt;strong&gt;at least one section&lt;/strong&gt
  
  <entry>
    <title>iOS7 CS193P 13/14 Photomania Demo Note</title>
-   <link href="http://localhost:4000/ios%20development/2016/11/07/Photomania-Demo-Note/"/>
+   <link href="http://localhost:4000/ios%20development/2016/11/07/Photomania-Demo-Note.html"/>
    <updated>2016-11-07T00:00:00+08:00</updated>
    <id>http://localhost:4000/ios%20development/2016/11/07/Photomania-Demo-Note</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
@@ -585,7 +840,8 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;Photo&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Photographer&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Photographer&lt;/strong&gt;
+&lt;!--more--&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;define-the-schema-schema-visually&quot;&gt;2. Define the Schema &lt;sup id=&quot;fnref:schema&quot;&gt;&lt;a href=&quot;#fn:schema&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; Visually.&lt;/h3&gt;
@@ -657,7 +913,7 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
  
  <entry>
    <title>Class Renaming Issue</title>
-   <link href="http://localhost:4000/ios%20development/2016/11/06/rename-issue/"/>
+   <link href="http://localhost:4000/ios%20development/2016/11/06/rename-issue.html"/>
    <updated>2016-11-06T00:00:00+08:00</updated>
    <id>http://localhost:4000/ios%20development/2016/11/06/rename-issue</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
@@ -688,7 +944,8 @@ In short, it looks like this:&lt;/p&gt;
 
 &lt;p&gt;According to personal experience, you’d better change your default controller name right after you create your new  application. As more files and classes are added, there might be more problems emerge.&lt;/p&gt;
 
-&lt;p&gt;Oh, by the way, DON’T FORGET to change your controller class name to the new one in the identity inspector in storyboard.&lt;/p&gt;
+&lt;p&gt;Oh, by the way, DON’T FORGET to change your controller class name to the new one in the identity inspector in storyboard.
+&lt;!--more--&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;change-default-appdelegate-name&quot;&gt;2. Change Default AppDelegate Name&lt;/h2&gt;
 
@@ -701,7 +958,7 @@ In short, it looks like this:&lt;/p&gt;
  
  <entry>
    <title>This is my first blog</title>
-   <link href="http://localhost:4000/note/2016/11/03/This-is-my-first-blog/"/>
+   <link href="http://localhost:4000/note/2016/11/03/This-is-my-first-blog.html"/>
    <updated>2016-11-03T00:00:00+08:00</updated>
    <id>http://localhost:4000/note/2016/11/03/This-is-my-first-blog</id>
    <content type="html">&lt;h2 id=&quot;try-writing-markdown-blogs-with-macdown&quot;&gt;Try writing markdown blogs with MacDown&lt;/h2&gt;
@@ -716,7 +973,8 @@ this is a block
 
 &lt;p&gt;This is really nice, and efficiency.The inline block is like &lt;code class=&quot;highlighter-rouge&quot;&gt;this is an inline block&lt;/code&gt;. this is a link: &lt;a href=&quot;http://google.com&quot;&gt;google&lt;/a&gt; This is really awesome!!! I like it.&lt;/p&gt;
 
-&lt;p&gt;Now, it’s time to start my technical blog writing.&lt;/p&gt;
+&lt;p&gt;Now, it’s time to start my technical blog writing.
+&lt;!--more--&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;how-to-insert-an-image-in-the-blog&quot;&gt;How to insert an image in the blog?&lt;/h2&gt;
 

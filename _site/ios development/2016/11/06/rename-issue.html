@@ -11,7 +11,7 @@
 
   <title>
     
-      Categories &middot; Everest
+      Class Renaming Issue &middot; Everest
     
   </title>
 
@@ -110,7 +110,7 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
             
             
             
-              <a class="sidebar-nav-item sidebar-nav-item-sub active" href="/blog/categories/">
+              <a class="sidebar-nav-item sidebar-nav-item-sub " href="/blog/categories/">
                 Categories
               </a>
           
@@ -175,104 +175,120 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
       </div>
 
       <div class="container content">
-        <div class="page">
-  <h1 class="page-title">Categories</h1>
-  <div class="tags-expo">
-  <div class="tags-expo-list">
-    
-    <a href="#note" class="post-tag">Note</a>
-    
-    <a href="#ios-development" class="post-tag">iOS Development</a>
-    
-    <a href="#thoughts" class="post-tag">Thoughts</a>
-    
-    <a href="#ios" class="post-tag">iOS</a>
-    
-  </div>
+        <div class="post">
+  <h1 class="post-title">Class Renaming Issue</h1>
+
+  <!-- <span class="post-date">06 Nov 2016</span> -->
+  <div class="post-date">Sun, 06 Nov 2016 00:00:00 +0800</div>
+  <span class="post-tag-kf">
   
-
-  <div class="tags-expo-section">
-    
-    <h2 id="note">Note</h2>
-    <ul class="tags-expo-posts">
-      
-        <a class="post-title" href="/note/2016/11/03/This-is-my-first-blog/">
-      <li>
-        This is my first blog
-      <small class="post-date">03 Nov 2016</small>
-      </li>
-      </a>
-      
-    </ul>
-    
-    <h2 id="ios-development">iOS Development</h2>
-    <ul class="tags-expo-posts">
-      
-        <a class="post-title" href="/ios%20development/2016/11/07/Photomania-Demo-Note/">
-      <li>
-        iOS7 CS193P 13/14 Photomania Demo Note
-      <small class="post-date">07 Nov 2016</small>
-      </li>
-      </a>
-      
-        <a class="post-title" href="/ios%20development/2016/11/06/rename-issue/">
-      <li>
-        Class Renaming Issue
-      <small class="post-date">06 Nov 2016</small>
-      </li>
-      </a>
-      
-    </ul>
-    
-    <h2 id="thoughts">Thoughts</h2>
-    <ul class="tags-expo-posts">
-      
-        <a class="post-title" href="/thoughts/2016/11/10/rural-resentment/">
-      <li>
-        The Role of 'Rural Resentment' in the Election 2016
-      <small class="post-date">10 Nov 2016</small>
-      </li>
-      </a>
-      
-    </ul>
-    
-    <h2 id="ios">iOS</h2>
-    <ul class="tags-expo-posts">
-      
-        <a class="post-title" href="/ios/2016/11/29/notification/">
-      <li>
-        Notifications - Example
-      <small class="post-date">29 Nov 2016</small>
-      </li>
-      </a>
-      
-        <a class="post-title" href="/ios/2016/11/28/collection-view-ii/">
-      <li>
-        Collection View II - Designing Your Data Source and Delegate
-      <small class="post-date">28 Nov 2016</small>
-      </li>
-      </a>
-      
-        <a class="post-title" href="/ios/2016/11/24/collection-view-i/">
-      <li>
-        Collection View I - Intro & Basics
-      <small class="post-date">24 Nov 2016</small>
-      </li>
-      </a>
-      
-        <a class="post-title" href="/ios/2016/11/20/core-data/">
-      <li>
-        Core Data
-      <small class="post-date">20 Nov 2016</small>
-      </li>
-      </a>
-      
-    </ul>
-    
-  </div>
+  
+    <a href="/blog/tags/#ios" class="post-tag">ios</a>
+  
+    <a href="/blog/tags/#objective-c" class="post-tag">objective-c</a>
+  
+    <a href="/blog/tags/#xcode" class="post-tag">xcode</a>
+  
+    <a href="/blog/tags/#technical-problem" class="post-tag">technical problem</a>
+  
+  
+  </span>
+  <hr>
+  <article>
+    <div class="message">
+This is a common issue that anybody using XCode may encounter. It's usually very annoying when you want to change the names of the classes because file names and includes are all related when you do it. Here I gather some correct (should be) way to make it happen. 
 </div>
 
+<h2 id="change-default-view-controller-name">1. Change Default View Controller Name</h2>
+
+<p>Check this: <a href="http://rshankar.com/how-to-rename-default-view-controllers-in-xcode/">How to rename default view controllers in XCode</a>
+In short, it looks like this:</p>
+
+<ul>
+  <li>
+    <p><strong>Step 1:</strong> Navigate to FirstViewController.h and select the name after interface keyword.</p>
+  </li>
+  <li>
+    <p><strong>Step 2:</strong> Click the Edit menu then Refactor and select Rename from the list of available option.</p>
+  </li>
+  <li>
+    <p><strong>Step 3:</strong> Enter the name then select Rename related files and click the Preview button. This would display the list of files and location where the rename would affect.</p>
+  </li>
+  <li>
+    <p><strong>Step 4:</strong> If you are happy with Preview then save the changes.</p>
+  </li>
+</ul>
+
+<p>I tried the steps above and it works fine.</p>
+
+<p>According to personal experience, you’d better change your default controller name right after you create your new  application. As more files and classes are added, there might be more problems emerge.</p>
+
+<p>Oh, by the way, DON’T FORGET to change your controller class name to the new one in the identity inspector in storyboard.
+<!--more--></p>
+
+<h2 id="change-default-appdelegate-name">2. Change Default AppDelegate Name</h2>
+
+<p>I applied the same steps to rename my default <code class="highlighter-rouge">AppDelegate.h/AppDelegate.m</code> class. It works fine, but you need to change the app delegate include name in <code class="highlighter-rouge">main.m</code> manually, or there’ll be an error.</p>
+
+<p><br />
+<strong><em>KF</em></strong></p>
+
+  </article>
 </div>
+
+<div class="related">
+  <h3>Related Posts</h3>
+  <ul class="related-posts">
+    
+      <li>
+        <h4>
+          <a href="/web%20development/2016/11/30/sort-tag-alphabetically.html">
+            Sort Tags Alphabetically
+            <small>30 Nov 2016</small>
+          </a>
+        </h4>
+      </li>
+    
+      <li>
+        <h4>
+          <a href="/web%20development/2016/11/30/anchor-link-back-position-setting.html">
+            How to Offset an HTML Anchor to Adjust for Fixed Header?
+            <small>30 Nov 2016</small>
+          </a>
+        </h4>
+      </li>
+    
+      <li>
+        <h4>
+          <a href="/ios%20development/2016/11/30/singleton.html">
+            Singleton in iOS
+            <small>30 Nov 2016</small>
+          </a>
+        </h4>
+      </li>
+    
+  </ul>
+</div>
+
+
+<div class="comments">
+  <h3>Comments</h3>
+  <div id="disqus_thread"></div>
+  <script>
+var disqus_config = function () {
+  this.page.url = 'http://localhost:4000/ios%20development/2016/11/06/rename-issue.html'; // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = '/ios%20development/2016/11/06/rename-issue'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() {
+  var d = document, s = d.createElement('script');
+  s.src = '//zkf85githubio.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</div>
+
 
       </div>
     </div>

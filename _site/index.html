@@ -179,7 +179,201 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
 
   <div class="post">
     <h1 class="post-title">
-      <a href="/ios/2016/11/29/notification/">
+      <a href="/web%20development/2016/11/30/sort-tag-alphabetically.html">
+        Sort Tags Alphabetically
+      </a>
+    </h1>
+
+    <span class="post-date">30 Nov 2016</span>
+     | 
+    
+    <a href="/blog/tags/#jekyll" class="post-tag">jekyll</a>
+    
+    <a href="/blog/tags/#html" class="post-tag">html</a>
+    
+    <a href="/blog/tags/#css" class="post-tag">css</a>
+    
+    <a href="/blog/tags/#liquid" class="post-tag">liquid</a>
+    
+    <a href="/blog/tags/#tag" class="post-tag">tag</a>
+    
+    <a href="/blog/tags/#sort" class="post-tag">sort</a>
+    
+    
+    <hr>
+    
+      <div class="message">
+Unordered tags make a Jekyll tag list look sloppy, so if you care about the details, you likely want your tag list to be alphabetized.
+<br />KF 11/30/2016
+</div>
+
+<h2 id="sort-tags-a--z">Sort Tags A ~ Z</h2>
+<h3 id="reference">Reference</h3>
+<ul>
+  <li><a href="https://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-tags-pure-liquid.html">Michael Lanyon - Alphabetizing Jekyll Page Tags In Pure Liquid (Without Plugins)</a></li>
+  <li><a href="https://www.siteleaf.com/blog/advanced-liquid-sort/">Advanced Liquid: Sort</a></li>
+</ul>
+
+<p>Based on the notes from <a href="https://blog.lanyonm.org">Michael Lanyon</a>, I modified my <code class="highlighter-rouge">tags.html</code> to the version below:</p>
+
+
+    
+    <div class="post-more">
+      
+      <a href="/web%20development/2016/11/30/sort-tag-alphabetically.html#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+      
+      <a href="/web%20development/2016/11/30/sort-tag-alphabetically.html"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+    </div>
+  </div>
+  
+
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/web%20development/2016/11/30/anchor-link-back-position-setting.html">
+        How to Offset an HTML Anchor to Adjust for Fixed Header?
+      </a>
+    </h1>
+
+    <span class="post-date">30 Nov 2016</span>
+     | 
+    
+    <a href="/blog/tags/#jekyll" class="post-tag">jekyll</a>
+    
+    <a href="/blog/tags/#html" class="post-tag">html</a>
+    
+    <a href="/blog/tags/#css" class="post-tag">css</a>
+    
+    <a href="/blog/tags/#markdown" class="post-tag">markdown</a>
+    
+    <a href="/blog/tags/#anchor" class="post-tag">anchor</a>
+    
+    
+    <hr>
+    
+      <div class="message">
+I have a header that is fixed to the top of the page, so when you link to an anchor elsewhere in the page, the page jumps so the anchor is at the top of the page, leaving the content behind the fixed header (I hope that makes sense). I need a way to offset the anchor by some pixels from the height of the header. I would prefer HTML or CSS, but Javascript would be acceptable as well.
+<br />KF 11/30/2016
+</div>
+
+<h3 id="reference">Reference</h3>
+<p><a href="http://stackoverflow.com/questions/4086107/html-positionfixed-page-header-and-in-page-anchors">HTML position:fixed page header and in-page anchors</a></p>
+
+<p><a href="http://stackoverflow.com/questions/10732690/offsetting-an-html-anchor-to-adjust-for-fixed-header">offsetting an html anchor to adjust for fixed header [duplicate]</a></p>
+
+<p><br /><br />
+<strong><em>KF</em></strong></p>
+
+    
+    <div class="post-more">
+      
+      <a href="/web%20development/2016/11/30/anchor-link-back-position-setting.html#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+      
+      <a href="/web%20development/2016/11/30/anchor-link-back-position-setting.html"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+    </div>
+  </div>
+  
+
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/ios%20development/2016/11/30/singleton.html">
+        Singleton in iOS
+      </a>
+    </h1>
+
+    <span class="post-date">30 Nov 2016</span>
+     | 
+    
+    <a href="/blog/tags/#ios" class="post-tag">ios</a>
+    
+    <a href="/blog/tags/#objective-c" class="post-tag">objective-c</a>
+    
+    <a href="/blog/tags/#singleton" class="post-tag">singleton</a>
+    
+    
+    <hr>
+    
+      <div class="message">
+What is the concept of singleton in iOS development?
+<br />KF 11/30/2016
+</div>
+<h2 id="what-is-singleton">What is Singleton</h2>
+<p>A singleton object provides a global point of access to the resources of its class. Singletons are used in situations where this single point of control is desirable, such as with classes that offer some general service or resource. You obtain the global instance from a singleton class through a factory method.</p>
+
+<h2 id="why-and-when-we-use-it">Why and When We Use It?</h2>
+<p>You obtain the global instance from a singleton class through a factory method. The class lazily creates its sole instance the first time it is requested and thereafter ensures that no other instance can be created.<sup id="fnref:apple"><a href="#fn:apple" class="footnote">1</a></sup> It’s an extremely powerful way to share data between different parts of code without having to pass the data around manually.<sup id="fnref:matt"><a href="#fn:matt" class="footnote">2</a></sup></p>
+
+<p>Singleton classes are an important concept to understand because they exhibit an extremely useful design pattern. This idea is used throughout the iPhone SDK, for example, UIApplication has a method called sharedApplication which when called from anywhere will return the UIApplication instance which relates to the currently running application.<sup id="fnref:matt:1"><a href="#fn:matt" class="footnote">2</a></sup></p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:apple">
+      <p><a href="https://developer.apple.com/library/content/documentation/General/Conceptual/DevPedia-CocoaCore/Singleton.html">Singleton - Apple Developer</a> <a href="#fnref:apple" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:matt">
+      <p><a href="http://www.galloway.me.uk/tutorials/singleton-classes/">Singletons in Objective-C - Matt Galloway</a> <a href="#fnref:matt" class="reversefootnote">&#8617;</a> <a href="#fnref:matt:1" class="reversefootnote">&#8617;<sup>2</sup></a></p>
+    </li>
+  </ol>
+</div>
+
+    
+    <div class="post-more">
+      
+      <a href="/ios%20development/2016/11/30/singleton.html#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+      
+      <a href="/ios%20development/2016/11/30/singleton.html"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+    </div>
+  </div>
+  
+
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/ios%20development/2016/11/30/static-constant.html">
+        What is the difference between a static and const variable
+      </a>
+    </h1>
+
+    <span class="post-date">30 Nov 2016</span>
+     | 
+    
+    <a href="/blog/tags/#ios" class="post-tag">ios</a>
+    
+    <a href="/blog/tags/#objective-c" class="post-tag">objective-c</a>
+    
+    
+    <hr>
+    
+      <div class="message">
+Static VS. Constant
+<br />KF 11/30/2016
+</div>
+
+<p>A <code class="highlighter-rouge">static</code> variable means that the object’s lifetime is the entire execution of the program and it’s value is initialized only once before the program startup. All statics are initialized if you do not explicitly set a value to them.The manner and timing of static initialization is unspecified.</p>
+
+<p>A <code class="highlighter-rouge">const</code> is a promise that you will not try to modify the value once set.</p>
+
+<p><code class="highlighter-rouge">const</code> is equivalent to <code class="highlighter-rouge">#define</code> but only for value statements(e.g. <code class="highlighter-rouge">#define myvalue 2</code>). The value declared replaces the name of the variable before compilation.</p>
+
+<h3 id="reference">Reference:</h3>
+<p><a href="https://msdn.microsoft.com/en-us/library/y5f6w579.aspx#static">Static (C++) - on MSDN</a></p>
+
+<p><a href="http://stackoverflow.com/questions/2216239/what-is-the-difference-between-a-static-and-const-variable">static vs. const - on StackOverflow</a></p>
+
+<p><br /><br />
+<strong><em>KF</em></strong></p>
+
+    
+    <div class="post-more">
+      
+      <a href="/ios%20development/2016/11/30/static-constant.html#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+      
+      <a href="/ios%20development/2016/11/30/static-constant.html"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+    </div>
+  </div>
+  
+
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/ios%20development/2016/11/29/notification.html">
         Notifications - Example
       </a>
     </h1>
@@ -195,7 +389,7 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
     
     
     <hr>
-    <article>
+    
       <div class="message">
 This is a simple example of how to post and listen to a notification radio.
 <br />KF 11/29/2016
@@ -211,85 +405,20 @@ This is a simple example of how to post and listen to a notification radio.
 <p>Notifications contain a name, an object and a dictionary of metadata. The object and metadata are optional, but the name is required. An object can register with the notification center to receive certain notifications, filtered by name, object or both name and object. Additionally, a selector is passed, which is called when a notification matching the filter is broadcast.
 An example of a notification is as follows:</p>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="c1">// Registering as observer from one object
-</span><span class="p">[[</span><span class="n">NSNotificationCenter</span> <span class="nf">defaultCenter</span><span class="p">]</span> <span class="nf">addObserver</span><span class="p">:</span><span class="n">self</span>
-                                         <span class="nf">selector</span><span class="p">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">thingHappened</span><span class="o">:</span><span class="p">)</span>
-                                             <span class="n">name</span><span class="o">:</span><span class="n">MyThingHappened</span>
-                                           <span class="n">object</span><span class="o">:</span><span class="n">_myObject</span><span class="p">];</span>
 
-<span class="c1">// Posting notification from another object
-</span><span class="p">[[</span><span class="n">NSNotificationCenter</span> <span class="nf">defaultCenter</span><span class="p">]</span> <span class="nf">postNotificationName</span><span class="p">:</span><span class="n">MyThingHappened</span>
-                                                    <span class="nf">object</span><span class="p">:</span><span class="n">self</span>
-                                                  <span class="n">userInfo</span><span class="o">:</span><span class="nb">nil</span><span class="p">];</span>
-</code></pre>
-</div>
-
-<p>In this example one object is registering itself as an observer for the MyThingHappened notification, limiting it to when that notification occurs on the exact object, <code class="highlighter-rouge">_myObject</code>. Then, another object is posting that notification with itself as the object and nothing as the metadata dictionary, <code class="highlighter-rouge">userInfo</code>. So in this case, if the object that’s posting the notification is <code class="highlighter-rouge">_myObject</code> from the context of the registering object, then the notification will cause thingHappened: to be called.</p>
-
-<h2 id="why-and-when-to-use-notification">Why and When to Use Notification?</h2>
-<h3 id="coupling">Coupling</h3>
-<p>Notifications result in loose coupling between objects. The coupling is <strong>loose</strong> because the object sending a notification doesn’t know what is listening to the notification. This loose coupling can be extremely powerful because multiple objects can all register to listen to the same notification, from different parts of an application. However, loose coupling can also make the use of notifications a nightmare to debug, since code can easily become entangled. Following the code paths produced when a notification is broadcast can become a daunting experience.</p>
-<h3 id="multiple-listeners">Multiple Listeners</h3>
-<p>By design, notifications offer multiple listeners. There can be zero, one or many listeners for any one notification. If you are certain that you’ll need multiple listeners, a notification is the correct route to go down. The instance above of login state handling is a perfect example of this. It’s likely that multiple objects are going to care about login state changing, so a notification makes sense.</p>
-<h3 id="is-the-object-known">Is the Object Known?</h3>
-<p>Sometimes you don’t actually know the precise object you want to communicate with. An example of such a scenario is the keyboard in iOS, which is a view which is handled entirely by iOS for you.</p>
-
-<h2 id="example-in-my-project---timepocket">Example in my project - TimePocket</h2>
-<p>In my project ‘TimePocket’, I use notification to pass <code class="highlighter-rouge">managedObjectContext</code> from <code class="highlighter-rouge">AppDelegate</code> to the <code class="highlighter-rouge">ViewController</code> at a proper time during the life cycle.</p>
-
-<h3 id="create-a-header-file---preparing-for-the-notification">1. Create a Header File - Preparing for the Notification</h3>
-<p>Create a header file called <code class="highlighter-rouge">EventDatabaseAvailability.h</code>
-In the file add the following two constants:</p>
-
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="cp">#define EventDatabaseAvailabilityNotification @"EventDatabaseAvailabilityNotification"
-#define EventDatabaseAvailabilityContext @"Context"
-</span></code></pre>
-</div>
-<h3 id="post-notification">2. Post Notification</h3>
-<p>When the initialization of my database is completed, I post my notification there in order to pass the <code class="highlighter-rouge">managedObjectContext</code>.</p>
-
-<p>Post notification code:</p>
-
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">userInfo</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">eventDatabaseContext</span> <span class="p">?</span> <span class="p">@{</span> <span class="n">EventDatabaseAvailabilityContext</span> <span class="o">:</span> <span class="n">self</span><span class="p">.</span><span class="n">eventDatabaseContext</span> <span class="p">}</span> <span class="p">:</span> <span class="nb">nil</span><span class="p">;</span>
-        <span class="p">[[</span><span class="n">NSNotificationCenter</span> <span class="nf">defaultCenter</span><span class="p">]</span> <span class="nf">postNotificationName</span><span class="p">:</span><span class="n">EventDatabaseAvailabilityNotification</span> <span class="nf">object</span><span class="p">:</span><span class="n">self</span> <span class="n">userInfo</span><span class="o">:</span><span class="n">userInfo</span><span class="p">];</span>
-</code></pre>
-</div>
-<h3 id="listen-to-the-notification">3. Listen to the Notification</h3>
-<p>In my <code class="highlighter-rouge">ViewController</code>, the notification observer should be added as early as possible in its life cycle. Therefore, it’s added in <code class="highlighter-rouge">awakeFromNib</code>, which is the earliest part in the controller’s life cycle.</p>
-
-<p>Add the notification observer in <code class="highlighter-rouge">- (void)awakeFromNib</code> to listen to the notification.</p>
-
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">awakeFromNib</span> <span class="p">{</span>
-    <span class="p">[</span><span class="n">super</span> <span class="nf">awakeFromNib</span><span class="p">];</span>
-    <span class="c1">// KF 11/28/2016
-</span>    <span class="c1">// Listen to the Notification from AppDelegate
-</span>    <span class="p">[[</span><span class="n">NSNotificationCenter</span> <span class="nf">defaultCenter</span><span class="p">]</span>
-     <span class="nf">addObserverForName</span><span class="p">:</span><span class="n">EventDatabaseAvailabilityNotification</span>
-     <span class="nf">object</span><span class="p">:</span><span class="nb">nil</span>
-     <span class="n">queue</span><span class="o">:</span><span class="nb">nil</span>
-     <span class="n">usingBlock</span><span class="o">:^</span><span class="p">(</span><span class="n">NSNotification</span> <span class="o">*</span> <span class="n">_Nonnull</span> <span class="n">note</span><span class="p">)</span> <span class="p">{</span>
-         <span class="n">self</span><span class="p">.</span><span class="n">managedObjectContext</span> <span class="o">=</span> <span class="n">note</span><span class="p">.</span><span class="n">userInfo</span><span class="p">[</span><span class="nf">EventDatabaseAvailabilityContext</span><span class="p">];</span>
-     <span class="p">}];</span>
-<span class="p">}</span>
-</code></pre>
-</div>
-
-<p><br /><br />
-<strong><em>KF</em></strong></p>
-
-    <article>
+    
     <div class="post-more">
       
-      <a href="/ios/2016/11/29/notification/#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+      <a href="/ios%20development/2016/11/29/notification.html#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
       
-      <a href="/ios/2016/11/29/notification/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+      <a href="/ios%20development/2016/11/29/notification.html"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
     </div>
   </div>
   
 
   <div class="post">
     <h1 class="post-title">
-      <a href="/ios/2016/11/28/collection-view-ii/">
+      <a href="/ios%20development/2016/11/28/collection-view-ii.html">
         Collection View II - Designing Your Data Source and Delegate
       </a>
     </h1>
@@ -305,7 +434,7 @@ In the file add the following two constants:</p>
     
     
     <hr>
-    <article>
+    
       <div class="message">
 Continue - Collection View learning notes on reading Apple Guide Document " Collection View Programming Guide for iOS".
 <br />KF 11/28/2016
@@ -319,94 +448,20 @@ Continue - Collection View learning notes on reading Apple Guide Document " Coll
 
 <p>The <strong>delegate object</strong> is an optional (but recommended) object that manages aspects related to the presentation of and interaction with your content.  Although the delegate’s main job is to manage cell highlighting and selection, it can be extended to provide additional information. For example, the flow layout extends the basic delegate behavior to customize layout metrics, such as the size of cells and the spacing between them.</p>
 
-<h2 id="the-data-source-manages-your-content">The Data Source Manages Your Content</h2>
-<p>The data source object is the object responsible for managing the content you are presenting using a collection view. The data source object must conform to the <code class="highlighter-rouge">UICollectionViewDataSource</code> protocol, which defines the basic behavior and methods that you must support. The job of the data source is to provide the collection view with answers to the following questions:</p>
 
-<ul>
-  <li>How many sections does the collection view contain?</li>
-  <li>For a given section, how many items does a section contain?</li>
-  <li>For a given section or item, what views should be used to display the corresponding content?</li>
-</ul>
-
-<p><strong>Sections</strong> and <strong>items</strong> are the fundamental organizing principle for collection view content.
-A collection view typically has <strong>at least one section</strong> and may contain more. Each section, in turn, contains <strong>zero</strong> or more items. Items represent the main content you want to present, whereas sections organize those items into logical groups. For example, a photo app might use sections to represent a single album of photos or a set of photos taken on the same day.</p>
-
-<p>The collection view refers to the data it contains using NSIndexPath objects. When trying to locate an item, the collection view uses the index path information provided to it by the layout object. For items, the index path contains a section number and an item number. For supplementary and decoration views, the index path contains whichever values were provided by the layout object.</p>
-
-<blockquote>
-  <p><strong>Note:</strong> Although standard index paths support multiple levels, the collection view’s cells only supports index paths that are 2-levels deep with “section” and “item” parameters, much like the index paths for the UITableView class.</p>
-</blockquote>
-
-<p>Different layout objects could present section and item data very differently, as shown in <strong>Figure 2-1</strong>.</p>
-
-<h4 id="centerfigure-2-1-sections-arranged-according-to-the-arrangement-of-layout-objectscenter"><center>Figure 2-1. Sections arranged according to the arrangement of layout objects</center></h4>
-<p><img src="/public/img/20161128-2-1.png" alt="figure-2-1" /></p>
-
-<h3 id="designing-your-data-objects">Designing Your Data Objects</h3>
-<p>Organizing your data into sections and items makes it much easier to implement your data source methods later. And because your data source methods are called frequently, you want to make sure that your implementations of those methods are able to retrieve data as quickly as possible.</p>
-
-<p>One simple solution (but certainly not the only solution) is for your data source to use a set of nested arrays, as shown in <strong>Figure 2-2</strong>.</p>
-
-<h4 id="centerfigure-2-2-arranging-data-objects-using-nested-arrayscenter"><center>Figure 2-2. Arranging data objects using nested arrays</center></h4>
-
-<center><img src="/public/img/20161128-2-2.png" width="5000" /></center>
-
-<blockquote>
-  <p><strong>Note:</strong> In general, your data objects should never be a performance bottleneck. The collection view usually accesses your data source only to calculate how many objects there are in total and to obtain views for elements that are currently onscreen. If the layout object relies only on data from your data objects, performance could be severely impacted when the data source contains thousands of objects.</p>
-</blockquote>
-
-<h3 id="telling-the-collection-view-about-your-content">Telling the Collection View About Your Content</h3>
-<p>Among the questions asked of your data source by the collection view are how many sections it contains and how many items each section contains. The collection view asks your data source to provide this information when any of the following actions occur:</p>
-
-<ul>
-  <li>The collection view is displayed for the first time.</li>
-  <li>You assign a different data source object to the collection view.</li>
-  <li>You explicitly call the collection view’s <code class="highlighter-rouge">reloadData</code> method.</li>
-  <li>The collection view delegate executes a block using <code class="highlighter-rouge">performBatchUpdates:completion:</code> or any of the move, insert, or delete methods.</li>
-</ul>
-
-<p>You provide the number of sections using the <code class="highlighter-rouge">numberOfSectionsInCollectionView:</code> method, and the number of items in each section using the <code class="highlighter-rouge">collectionView:numberOfItemsInSection:</code> method. You must implement the <code class="highlighter-rouge">collectionView:numberOfItemsInSection:</code> method, but if your collection view has only one section, implementing the <code class="highlighter-rouge">numberOfSectionsInCollectionView:</code> method is optional. Both methods return integer values with the appropriate information.</p>
-
-<p>If you implemented your data source as shown in Figure 2-2, the implementation of your data source methods could be as simple as those shown below:</p>
-
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nf">numberOfSectionsInCollectionView</span><span class="p">:(</span><span class="n">UICollectionView</span><span class="o">*</span><span class="p">)</span><span class="nv">collectionView</span> <span class="p">{</span>
-    <span class="c1">// _data is a class member variable that contains one array per section.
-</span>    <span class="k">return</span> <span class="p">[</span><span class="n">_data</span> <span class="nf">count</span><span class="p">];</span>
-<span class="p">}</span>
- 
-<span class="k">-</span> <span class="p">(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nf">collectionView</span><span class="p">:(</span><span class="n">UICollectionView</span><span class="o">*</span><span class="p">)</span><span class="nv">collectionView</span> <span class="nf">numberOfItemsInSection</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">section</span> <span class="p">{</span>
-    <span class="n">NSArray</span><span class="o">*</span> <span class="n">sectionArray</span> <span class="o">=</span> <span class="p">[</span><span class="n">_data</span> <span class="nf">objectAtIndex</span><span class="p">:</span><span class="n">section</span><span class="p">];</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">sectionArray</span> <span class="nf">count</span><span class="p">];</span>
-<span class="p">}</span>
-</code></pre>
-</div>
-
-<h2 id="configuring-cells-and-supplementary-views">Configuring Cells and Supplementary Views</h2>
-<p>Another important task of your data source is to provide the views that the collection view uses to display your content. The collection view does not track your app’s content. It simply takes the views you give it and applies the current layout information to them. Therefore, everything that is displayed by the views is your responsibility.</p>
-
-<p>After your data source reports how many sections and items it manages, the collection view asks the layout object to provide layout attributes for the collection view’s content. At some point, the collection view asks the layout object to provide the list of elements in a specific rectangle (often this is the visible rectangle). The collection view uses that list to ask your data source for the corresponding cells and supplementary views. To provide those cells and supplementary views, your code must do the following:</p>
-
-<ol>
-  <li>Embed your template cells and views in your storyboard file. (Alternatively, register a class or nib file for each type of supported cell or view.)</li>
-  <li>In your data source, dequeue and configure the appropriate cell or view when asked.</li>
-</ol>
-
-<p><br /><br />
-<strong><em>KF</em></strong></p>
-
-    <article>
+    
     <div class="post-more">
       
-      <a href="/ios/2016/11/28/collection-view-ii/#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+      <a href="/ios%20development/2016/11/28/collection-view-ii.html#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
       
-      <a href="/ios/2016/11/28/collection-view-ii/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+      <a href="/ios%20development/2016/11/28/collection-view-ii.html"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
     </div>
   </div>
   
 
   <div class="post">
     <h1 class="post-title">
-      <a href="/ios/2016/11/24/collection-view-i/">
+      <a href="/ios%20development/2016/11/24/collection-view-i.html">
         Collection View I - Intro & Basics
       </a>
     </h1>
@@ -422,7 +477,7 @@ A collection view typically has <strong>at least one section</strong> and may co
     
     
     <hr>
-    <article>
+    
       <div class="message">
 "Collection View is super powerful." This article includes notes on reading Apple Guide Document " Collection View Programming Guide for iOS".
 <br />KF 11/24/2016
@@ -447,141 +502,20 @@ A collection view typically has <strong>at least one section</strong> and may co
   </li>
 </ul>
 
-<h1 id="collection-view-basics">Collection View Basics</h1>
-<ul>
-  <li>your app must provide a data source object that tells the collection view how many items there are to display.</li>
-</ul>
 
-<h2 id="the-classes-and-protocols-for-implementing-collection-views">The Classes and Protocols for Implementing Collection Views</h2>
-
-<p><strong>Table 1-1</strong> The classes and protocols for implementing collection views</p>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">Purpose</th>
-      <th style="text-align: left">Classes/Protocols</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">Top-level containment <br />and management</td>
-      <td style="text-align: left"><code class="highlighter-rouge">UICollectionView</code><br /><code class="highlighter-rouge">UICollectionViewController</code></td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Content <br />management</td>
-      <td style="text-align: left"><code class="highlighter-rouge">UICollectionViewDataSource</code> protocol<br /><code class="highlighter-rouge">UICollectionViewDelegate</code> protocol</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Presentation</td>
-      <td style="text-align: left"><code class="highlighter-rouge">UICollectionReusableView</code><br /><code class="highlighter-rouge">UICollectionViewCell</code></td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Layout</td>
-      <td style="text-align: left"><code class="highlighter-rouge">UICollectionViewLayout</code><br /><code class="highlighter-rouge">UICollectionViewLayoutAttributes</code><br /> <code class="highlighter-rouge">UICollectionViewUpdateItem</code></td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Flow Layout</td>
-      <td style="text-align: left"><code class="highlighter-rouge">UICollectionViewFlowLayout</code><br /><code class="highlighter-rouge">UICollectionViewDelegateFlowLayout</code></td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="uicollectionview"><code class="highlighter-rouge">UICollectionView</code></h3>
-<blockquote>
-  <p>A <code class="highlighter-rouge">UICollectionView</code> object defines the visible area for your collection view’s content. This class also facilitates the presentation of your data based on the layout information it receives from its layout object.</p>
-</blockquote>
-
-<h3 id="uicollectionviewcontroller"><code class="highlighter-rouge">UICollectionViewController</code></h3>
-<blockquote>
-  <p>A <code class="highlighter-rouge">UICollectionViewController</code> object provides view controller–level management support for a collection view. Its use is optional.</p>
-</blockquote>
-
-<h3 id="uicollectionviewdatasource-protocol"><code class="highlighter-rouge">UICollectionViewDataSource</code> protocol</h3>
-<blockquote>
-  <p>The data source object is the most important object associated with the collection view and is one that you must provide. The data source manages the content of the collection view and creates the views needed to present that content. To implement a data source object, you must create an object that conforms to the <code class="highlighter-rouge">UICollectionViewDataSource</code> protocol.</p>
-</blockquote>
-
-<h3 id="uicollectionviewdelegate-protocol"><code class="highlighter-rouge">UICollectionViewDelegate</code> protocol</h3>
-<blockquote>
-  <p>The collection view delegate object lets you intercept interesting messages from the collection view and customize the view’s behavior. For example, you use a delegate object to track the selection and highlighting of items in the collection view. Unlike the data source object, the delegate object is optional.</p>
-</blockquote>
-
-<h3 id="uicollectionreusableview--uicollectionviewcell"><code class="highlighter-rouge">UICollectionReusableView</code> &amp; <code class="highlighter-rouge">UICollectionViewCell</code></h3>
-<blockquote>
-  <p>All views displayed in a collection view must be instances of the <code class="highlighter-rouge">UICollectionReusableView</code> class. This class supports a recycling mechanism in use by collection views. Recycling views (instead of creating new ones) improves performance in general and especially improves it during scrolling.</p>
-</blockquote>
-
-<blockquote>
-  <p>A <code class="highlighter-rouge">UICollectionViewCell</code> object is a specific type of reusable view that you use for your main data items.</p>
-</blockquote>
-
-<h3 id="uicollectionviewlayout-uicollectionviewlayoutattributes-uicollectionviewupdateitem"><code class="highlighter-rouge">UICollectionViewLayout</code>, <code class="highlighter-rouge">UICollectionViewLayoutAttributes</code>, <code class="highlighter-rouge">UICollectionViewUpdateItem</code></h3>
-<blockquote>
-  <p>Subclasses of <code class="highlighter-rouge">UICollectionViewLayout</code> are referred to as layout objects and are responsible for defining the location, size, and visual attributes of the cells and reusable views inside a collection view.</p>
-</blockquote>
-
-<blockquote>
-  <p>During the layout process, a layout object creates layout attribute objects (instances of the <code class="highlighter-rouge">UICollectionViewLayoutAttributes</code> class) that tell the collection view where and how to display cells and reusable views.</p>
-</blockquote>
-
-<blockquote>
-  <p>The layout object receives instances of the <code class="highlighter-rouge">UICollectionViewUpdateItem</code> class whenever data items are inserted, deleted, or moved within the collection view. You never need to create instances of this class yourself.</p>
-</blockquote>
-
-<h3 id="uicollectionviewflowlayout--uicollectionviewdelegateflowlayout-protocol"><code class="highlighter-rouge">UICollectionViewFlowLayout</code> &amp; <code class="highlighter-rouge">UICollectionViewDelegateFlowLayout</code> protocol</h3>
-<blockquote>
-  <p>The <code class="highlighter-rouge">UICollectionViewFlowLayout</code> class is a concrete layout object that you use to implement grids or other line-based layouts. You can use the class as-is or in conjunction with the flow delegate object, which allows you to customize the layout information dynamically.</p>
-</blockquote>
-
-<p><strong>Figure 1-1</strong> shows the relationship between the core objects associated with a collection view. The collection view gets information about the cells to display from its data source. The data source and delegate objects are custom objects provided by your app and used to manage the content, including the selection and highlighting of cells. The layout object is responsible for deciding where those cells belong and for sending that information to the collection view in the form of one or more layout attribute objects. The collection view then merges the layout information with the actual cells (and other views) to create the final visual presentation.</p>
-
-<h4 id="center-figure-1-1-merging-content-and-layout-to-create-the-final-presentation-center"><center> Figure 1-1. Merging content and layout to create the final presentation </center></h4>
-<p><img src="/public/img/20161124-1-1.png" alt="figure-1-1" /></p>
-
-<p>When creating a collection view interface, you first add a UICollectionView object to your storyboard or nib file. Think of the collection view as the central hub, from which all other objects emanate. After adding that object, you can begin to configure any related objects, such as the data source or delegate. All configurations are centered around the collection view itself. For example, you never create a layout object without also creating a collection view object.</p>
-
-<h2 id="reusable-views-improve-performance">Reusable Views Improve Performance</h2>
-<p>Collection views employ a view recycling program to improve efficiency. As views move offscreen, they are removed from view and placed in a <strong>reuse queue</strong> instead of being deleted. As new content is scrolled onscreen, views are removed from the queue and repurposed with new content. To facilitate this recycling and reuse, all views displayed by the collection view must descend from the <code class="highlighter-rouge">UICollectionReusableView</code> class.</p>
-
-<p>Collection views support three distinct types of reusable views, each of which has a specific intended usage:</p>
-
-<ul>
-  <li><em>Cells</em> present the main content of your collection view. The job of a cell is to present the content for a single item from your data source object. Each cell must be an instance of the <code class="highlighter-rouge">UICollectionViewCell</code> class, which you may subclass as needed to present your content. Cell objects provide inherent support for managing their own selection and highlight state. To actually apply a highlight to a cell, you must write some custom code. For information on implementing cell highlighting/selecting, see Managing the Visual State for Selections and Highlights.</li>
-  <li><em>Supplementary</em> views display information about a section. Like cells, supplementary views are data driven. Unlike cells, supplementary views are not mandatory, and their usage and placement is controlled by the layout object being used. For example, the flow layout supports <strong>headers</strong> and <strong>footers</strong> as optional supplementary views.</li>
-  <li><em>Decoration</em> views are visual adornments that are wholly owned by the layout object and are not tied to any data in your data source object. For example, a layout object might use decoration views to implement a custom background appearance.</li>
-</ul>
-
-<p>Unlike table views, collection views impose no specific style on the cells and supplementary views provided by your data source. Instead, the basic reusable view classes are blank canvases for you to modify.</p>
-
-<h2 id="the-layout-object-controls-the-visual-presentation">The Layout Object Controls the Visual Presentation</h2>
-<p>The layout object is solely responsible for determining the placement and visual styling of items within the collection view. Although your data source object provides the views and the actual content, the layout object determines the size, location, and other appearance-related attributes of those views. This separation of responsibilities makes it possible to change layouts dynamically without changing any of the data objects managed by your app.</p>
-
-<p>The layout process used by collection views is related to, but distinct from, the layout process used by the rest of your app’s views. A layout object never touches the views it manages directly because it does not actually own any of those views. Instead, it generates attributes that describe the location, size, and visual appearance of the cells, supplementary views, and decoration views in the collection view. It is then the job of the collection view to apply those attributes to the actual view objects.</p>
-
-<p><strong>Figure 1-2</strong> shows how a vertically scrolling flow layout arranges its cells and supplementary views. In a vertically scrolling flow layout, the width of the content area remains fixed and the height grows to accommodate the content. To compute the area, the layout object places views and cells one at a time, choosing the most appropriate location for each. In the case of the flow layout, the size of the cells and supplementary views are specified as properties, either on the layout object or by using a delegate. Computing the layout is just a matter of using those properties to place each view.</p>
-
-<h4 id="centerfigure-1-2--the-layout-object-provides-layout-metricscenter"><center>Figure 1-2  The layout object provides layout metrics</center></h4>
-<p><img src="/public/img/20161128-1-1.png" alt="figure-1-2" /></p>
-
-<p>Layout objects control more than just the size and position of their views. The layout object can specify other view-related attributes, such as its <strong>transparency</strong>, its <strong>transform in 3D space</strong>, and its <strong>visibility</strong> (if any) above or below other views. These attributes let you create more interesting layouts. For example, you might create stacks of cells by placing the views on top of one another and changing their z-ordering, or you might use a transform to rotate them on any axis.</p>
-
-<p><br /><br />
-<strong><em>KF</em></strong></p>
-
-    <article>
+    
     <div class="post-more">
       
-      <a href="/ios/2016/11/24/collection-view-i/#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+      <a href="/ios%20development/2016/11/24/collection-view-i.html#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
       
-      <a href="/ios/2016/11/24/collection-view-i/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+      <a href="/ios%20development/2016/11/24/collection-view-i.html"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
     </div>
   </div>
   
 
   <div class="post">
     <h1 class="post-title">
-      <a href="/ios/2016/11/20/core-data/">
+      <a href="/ios%20development/2016/11/20/core-data.html">
         Core Data
       </a>
     </h1>
@@ -599,7 +533,7 @@ A collection view typically has <strong>at least one section</strong> and may co
     
     
     <hr>
-    <article>
+    
       <div class="message">
 "It's all about how core data works."
 <br />KF 11/20/2016
@@ -645,129 +579,20 @@ A collection view typically has <strong>at least one section</strong> and may co
 </div>
 <p>We’re going to focus on doing the first one <code class="highlighter-rouge">UIManagedDocument</code>.</p>
 
-<h2 id="uimanageddocument">UIManagedDocument</h2>
-<p><code class="highlighter-rouge">UIManagedDocument</code> inherits from UIDocument which provides a lot of mechanism for the management of storage. It also good for iCloud support. Think of a <code class="highlighter-rouge">UIManagedDocument</code> as simply a container for your Core Data database.</p>
 
-<h3 id="create-a-uimanageddocument">1. Create a UIManagedDocument</h3>
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">NSFileManager</span> <span class="o">*</span><span class="n">fileManager</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSFileManager</span> <span class="nf">defaultManager</span><span class="p">];</span>
-<span class="n">NSURL</span> <span class="o">*</span><span class="n">documentsDirectory</span> <span class="o">=</span> <span class="p">[[</span><span class="n">fileManager</span> <span class="nf">URLsForDirectory</span><span class="p">:</span><span class="n">NSDocumentDirectory</span> <span class="nf">inDomains</span><span class="p">:</span><span class="nf">NSUserDomainMask</span><span class="p">]</span> <span class="n">firstObject</span><span class="p">];</span>
-<span class="n">NSString</span> <span class="o">*</span><span class="n">documentName</span> <span class="o">=</span> <span class="s">@"MyDocument"</span><span class="p">;</span> 
-<span class="n">NSURL</span> <span class="o">*</span><span class="n">url</span> <span class="o">=</span> <span class="p">[</span><span class="n">documentsDirectory</span> <span class="nf">URLByAppendingPathComponent</span><span class="p">:</span><span class="n">documentName</span><span class="p">];</span>
-<span class="n">UIManagedDocument</span> <span class="o">*</span><span class="n">document</span> <span class="o">=</span> <span class="p">[[</span><span class="n">UIManagedDocument</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithFileURL</span><span class="p">:</span><span class="n">url</span><span class="p">];</span>
-</code></pre>
-</div>
-<p>This creates the UIManagedDocument instance, but does not open nor create the underlying file.</p>
-
-<h3 id="open-or-create-a-uimanageddocument">2. Open or Create a UIManagedDocument</h3>
-<p>Check if the <code class="highlighter-rouge">UIManagedDocument</code>’s underlying file exists on disk:</p>
-
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">BOOL</span> <span class="n">fileExists</span> <span class="o">=</span> <span class="p">[[</span><span class="n">NSFileManager</span> <span class="nf">defaultManager</span><span class="p">]</span> <span class="nf">fileExistsAtPath</span><span class="p">:[</span><span class="n">url</span> <span class="nf">path</span><span class="p">]];</span> 
-</code></pre>
-</div>
-<p>Here is an example:</p>
-
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">self</span><span class="p">.</span><span class="n">document</span> <span class="o">=</span> <span class="p">[[</span><span class="n">UIManagedDocument</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithFileURL</span><span class="p">:(</span><span class="n">URL</span> <span class="o">*</span><span class="p">)</span><span class="n">url</span><span class="p">];</span>
-<span class="k">if</span> <span class="p">([[</span><span class="n">NSFileManager</span> <span class="nf">defaultManager</span><span class="p">]</span> <span class="nf">fileExistsAtPath</span><span class="p">:[</span><span class="n">url</span> <span class="nf">path</span><span class="p">]])</span> <span class="p">{</span>
-    <span class="p">[</span><span class="n">document</span> <span class="nf">openWithCompletionHandler</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">BOOL</span> <span class="n">success</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">success</span><span class="p">)</span> <span class="p">[</span><span class="n">self</span> <span class="nf">documentIsReady</span><span class="p">];</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">success</span><span class="p">)</span> <span class="n">NSLog</span><span class="p">(</span><span class="s">@"couldn’t open document at %@"</span><span class="p">,</span> <span class="n">url</span><span class="p">);</span>
-    <span class="p">}];</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="p">[</span><span class="n">document</span> <span class="nf">saveToURL</span><span class="p">:</span><span class="n">url</span> <span class="nf">forSaveOperation</span><span class="p">:</span><span class="n">UIDocumentSaveForCreating</span>
-      <span class="n">completionHandler</span><span class="o">:^</span><span class="p">(</span><span class="n">BOOL</span> <span class="n">success</span><span class="p">)</span> <span class="p">{</span>
-          <span class="k">if</span> <span class="p">(</span><span class="n">success</span><span class="p">)</span> <span class="p">[</span><span class="n">self</span> <span class="nf">documentIsReady</span><span class="p">];</span>
-          <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">success</span><span class="p">)</span> <span class="n">NSLog</span><span class="p">(</span><span class="s">@"couldn't create document at %@"</span><span class="p">,</span> <span class="n">url</span><span class="p">);</span>
-      <span class="p">}];</span>
-<span class="p">}</span>
-
-<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">documentIsReady</span> <span class="p">{</span>
-   <span class="k">if</span> <span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">document</span><span class="p">.</span><span class="n">documentState</span> <span class="o">==</span> <span class="n">UIDocumentStateNormal</span><span class="p">)</span> <span class="p">{</span> 
-	<span class="c1">// start using document
-</span>	<span class="n">NSManagedObjectContext</span> <span class="o">*</span><span class="n">context</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">document</span><span class="p">.</span><span class="n">managedObjectContext</span><span class="p">;</span>
-   <span class="p">}</span> 
-<span class="p">}</span>
-</code></pre>
-</div>
-
-<h3 id="saving--closing">3. Saving &amp; Closing</h3>
-<ul>
-  <li>Notice that <code class="highlighter-rouge">UIManagedDocument</code>s AUTOSAVE themselves!</li>
-  <li>Will automatically close if there are no strong pointers left to it.</li>
-</ul>
-
-<h2 id="nsnotification">NSNotification</h2>
-
-<h3 id="how-would-you-watch-a-documents-managedobjectcontext">How would you watch a document’s managedObjectContext?</h3>
-
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">viewDidAppear</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">animated</span>
- <span class="p">{</span>
-     <span class="p">[</span><span class="n">super</span> <span class="nf">viewDidAppear</span><span class="p">:</span><span class="n">animated</span><span class="p">];</span>
-     <span class="p">[</span><span class="n">center</span> <span class="nf">addObserver</span><span class="p">:</span><span class="n">self</span>
-                <span class="nf">selector</span><span class="p">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">contextChanged</span><span class="o">:</span><span class="p">)</span>
-                    <span class="nl">name:</span><span class="n">NSManagedObjectContextDidSaveNotification</span>
-                  <span class="nl">object:</span><span class="n">document</span><span class="p">.</span><span class="n">managedObjectContext</span><span class="p">];</span> <span class="c1">//don’t pass nil here!
-</span> <span class="p">}</span>
- <span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">viewWillDisappear</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">animated</span>
- <span class="p">{</span>
-     <span class="p">[</span><span class="n">center</span> <span class="nf">removeObserver</span><span class="p">:</span><span class="n">self</span>
-                       <span class="nf">name</span><span class="p">:</span><span class="n">NSManagedObjectContextDidSaveNotification</span>
-                     <span class="nl">object:</span><span class="n">document</span><span class="p">.</span><span class="n">managedObjectContext</span><span class="p">];</span>
-     <span class="p">[</span><span class="n">super</span> <span class="nf">viewWillDisappear</span><span class="p">:</span><span class="n">animated</span><span class="p">];</span>
- <span class="p">}</span>
-</code></pre>
-</div>
-
-<h2 id="core-data">Core Data</h2>
-<p>Now we use the <code class="highlighter-rouge">UIManagedDocument</code>’s <code class="highlighter-rouge">managedObjectContext</code> <code class="highlighter-rouge"><span class="k">@property</span></code> to insert/delete objects in the database and query for objects in the database.</p>
-
-<h2 id="query">Query</h2>
-<p>We can do this by executing an <code class="highlighter-rouge">NSFetchRequest</code> in our <code class="highlighter-rouge">NSManagedObjectContext</code>.</p>
-
-<h3 id="four-important-things-involved-in-creating-an-nsfetchrequest">Four important things involved in creating an <code class="highlighter-rouge">NSFetchRequest</code></h3>
-<ol>
-  <li><code class="highlighter-rouge">Entity</code> to fetch (required);</li>
-  <li>How many objects to fetch at a time and/or maximum to fetch (optional, default: all);</li>
-  <li><code class="highlighter-rouge">NSSortDescriptor</code> to specify the order in which the array of fetched objects are returned;</li>
-  <li><code class="highlighter-rouge">NSPredicate</code>* specifying which of those Entities of those Entities to fetch (optional, default is all of them).</li>
-</ol>
-
-<h2 id="dependency-injection">Dependency Injection</h2>
-
-<h3 id="q-how-to-get-managedobjectcontext-for-viewcontroller-other-than-getting-it-from-appdelegate">Q: How to get managedObjectContext for viewController other than getting it from appDelegate?</h3>
-
-<h3 id="a-use-dependency-injection">A: Use Dependency Injection</h3>
-<p><a href="http://stackoverflow.com/questions/21050408/how-to-get-managedobjectcontext-for-viewcontroller-other-than-getting-it-from-ap">answer on stackoverflow</a></p>
-
-<p>Basically the caller/constructor should be setting the NSManagedObjectContext onto the called/constructed.</p>
-
-<p>In your <code class="highlighter-rouge">AppDelegat</code>e you should set the <code class="highlighter-rouge">NSManagedObjectContext</code> into the <code class="highlighter-rouge">rootViewController</code> that is associated with the <code class="highlighter-rouge">UIWindow</code>.</p>
-
-<p>Your <code class="highlighter-rouge">rootViewController</code> should then set the <code class="highlighter-rouge">NSManagedObjectContext</code> into the next view controller and so on.</p>
-
-<p>How? It is just a simple proper on the view controller class and the caller uses:</p>
-
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="n">nextViewController</span> <span class="nf">setManagedObjectContext</span><span class="p">:[</span><span class="n">self</span> <span class="nf">managedObjectContext</span><span class="p">]];</span>
-</code></pre>
-</div>
-
-<p>Some others may recommend a singleton but that is another deep dark pit that is best avoided.</p>
-
-<p><br /><br />
-<strong><em>KF</em></strong></p>
-
-    <article>
+    
     <div class="post-more">
       
-      <a href="/ios/2016/11/20/core-data/#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+      <a href="/ios%20development/2016/11/20/core-data.html#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
       
-      <a href="/ios/2016/11/20/core-data/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+      <a href="/ios%20development/2016/11/20/core-data.html"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
     </div>
   </div>
   
 
   <div class="post">
     <h1 class="post-title">
-      <a href="/thoughts/2016/11/10/rural-resentment/">
+      <a href="/thoughts/2016/11/10/rural-resentment.html">
         The Role of 'Rural Resentment' in the Election 2016
       </a>
     </h1>
@@ -779,7 +604,7 @@ A collection view typically has <strong>at least one section</strong> and may co
     
     
     <hr>
-    <article>
+    
       <div class="message">There is an obvious phenomenon when I was watching the results popping out with the votes' distribution geographically: most people in urban area supported Hillary while there was a landslide winning in favor of Trump in rural area all over the country. An article stressed this topic and I take a summary here.</div>
 
 <p><img src="/public/img/20161110-election-map.jpg" alt="Trump has better coverage than Verizon" /></p>
@@ -794,52 +619,20 @@ A collection view typically has <strong>at least one section</strong> and may co
 
 <p>Four years ago, Obama won urban areas by 26 points, according to exit polls, while Romney won rural areas by 20 points.</p>
 
-<h2 id="why">Why?</h2>
 
-<p>Rural voters heavily lean toward supporting Trump, so it’s no surprise that the stats that describe America’s rural areas also happen to describe Trump supporters quite well. Trump does particularly well among older, white and non-college-educated Americans.</p>
-
-<p>And as it happens, <strong>rural areas are older than the rest of the nation</strong> — the median age in rural areas is around 40, compared to 37 for the rest of the country, according to a report from the Housing Assistance Council, a group that promotes affordable housing in rural areas.</p>
-
-<p><strong>Likewise, rural areas tend to be less educated than urban areas.</strong></p>
-
-<p><img src="/public/img/20161110-npr-rural-diversity.png" alt="rural less diverse" /></p>
-
-<p>Rural areas are whiter, as well. Nearly 80 percent of people in rural areas are white non-Hispanics, compared to around 64 percent among the U.S. as a whol</p>
-
-<h2 id="does-rural-ness-drive-peoples-votes">Does Rural-Ness Drive People’s Votes?</h2>
-
-<p>All these stats might make it seem that it’s demographics that cause rural voters to choose Trump, or other Republican candidates: that there’s something about being white or about being older or not having a college diploma that makes a person vote for him, and that those people also just happen to live in rural areas.</p>
-
-<p>Or, perhaps, that there’s something about being conservative that makes a person choose a rural area.</p>
-
-<p>There’s this sense that people in those communities are not getting their fair share compared to people in the cities,” said Katherine Cramer, a political science professor at the University of Wisconsin.</p>
-
-<p>“They feel like their communities are dying, and they perceive that all that stuff — the young people, the money, the livelihood — is going somewhere, and it’s going to the cities,” she said.</p>
-
-<p>“Many voters have racial and economic resentments, but the thing that surprised me in my research was how common it was for people in small towns to talk about these resentments with reference to their towns,” she said.</p>
-
-<h2 id="trumps-favorable">Trump’s Favorable</h2>
-
-<p>Trump’s rhetoric may similarly appeal to America’s rural populations.</p>
-
-<p>“The resources, the people, the respect seem to be going somewhere else, or to other types of people, and here comes someone who says ‘You’re right, you’re not getting your fair share. It’s going to people who aren’t deserving, and you vote me in and we’re going to make America great again,” she said.</p>
-
-<p><br />
-<strong><em>KF</em></strong></p>
-
-    <article>
+    
     <div class="post-more">
       
-      <a href="/thoughts/2016/11/10/rural-resentment/#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+      <a href="/thoughts/2016/11/10/rural-resentment.html#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
       
-      <a href="/thoughts/2016/11/10/rural-resentment/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+      <a href="/thoughts/2016/11/10/rural-resentment.html"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
     </div>
   </div>
   
 
   <div class="post">
     <h1 class="post-title">
-      <a href="/ios%20development/2016/11/07/Photomania-Demo-Note/">
+      <a href="/ios%20development/2016/11/07/Photomania-Demo-Note.html">
         iOS7 CS193P 13/14 Photomania Demo Note
       </a>
     </h1>
@@ -859,7 +652,7 @@ A collection view typically has <strong>at least one section</strong> and may co
     
     
     <hr>
-    <article>
+    
       <div class="message">
 This might be the toughest and the biggest demo in this iOS course. Here I put my note collection here as reference for later use. 11/06/2016
 </div>
@@ -879,85 +672,20 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
   <li><strong>Photographer</strong></li>
 </ul>
 
-<h3 id="define-the-schema-schema-visually">2. Define the Schema <sup id="fnref:schema"><a href="#fn:schema" class="footnote">1</a></sup> Visually.</h3>
 
-<ul>
-  <li>
-    <p>Add properties to them respectively. (e.g. title, url, data, name etc.)</p>
-  </li>
-  <li>
-    <p>Add relationship between the two entities:</p>
-    <ul>
-      <li>For <strong>Photographer</strong> in <strong>Photo</strong>, the relationship is <strong><em>whoTook</em></strong></li>
-      <li>
-        <p>For <strong>Photo</strong> in <strong>Photographer</strong> the relationship is the same one, but called <strong><em>photos</em></strong>.</p>
-
-        <p>(<strong>NOTICE</strong>: The relationship type here should be set as <strong><em>To Many</em></strong>, because one photographer may take multiple photos.)</p>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="create-nsmanagedobject-subclasses">3. Create NSManagedObject Subclasses</h3>
-<ul>
-  <li>Create NSManagedObject Subclasses automatically using XCode.
-    <ul>
-      <li>Select both entities;</li>
-      <li>click “Editor”, then “Create NSManagedObject Subclasses”;</li>
-      <li>The correspondent subclasses <strong>Photo.h/Photo.m</strong> and <strong>Photographer.h/Photographer.m</strong> are created in the project and can be found in the project navigator.</li>
-      <li>
-        <p>Notice that in XCode 7 and later, the generated new subclasses include: entity and their CoreDataProperties category like this:</p>
-
-        <p><img src="/public/img/20161106-0.png" alt="subclasses" /></p>
-
-        <p>To understand this, check <a href="http://stackoverflow.com/questions/33106098/xcode-7-generates-core-data-entity-with-additional-coredataproperties-category">this Q&amp;A on Stack Overflow</a>. The gist is that you can use  the two files <em>without</em> “properties” to add some custom methods or properties. In this way, whenever you update your database property setup and regenerate these supclasses, these custom methods will still be there.</p>
-      </li>
-    </ul>
-
-    <p><code class="highlighter-rouge">continue on 11/07/2016</code></p>
-
-    <ul>
-      <li>Also another thing to mention is that don’t forget to choose your data model and go to the file inspector, then choose the code generation language to what you desired. Here I use OC. If don’t do this, language compatibility issue may occur.</li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="add-custom-methods-to-the-subclasses">4. Add Custom Methods to the Subclasses</h3>
-<p>Add these too class methods to <code class="highlighter-rouge">Photos+CoreDataClass</code></p>
-
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">Photo</span> <span class="o">*</span><span class="p">)</span><span class="nf">photoWithFlickrInfo</span><span class="p">:(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">photoDictionary</span>
-        <span class="nf">inManagedObjectContext</span><span class="p">:(</span><span class="n">NSManagedObjectContext</span> <span class="o">*</span><span class="p">)</span><span class="nv">context</span><span class="p">;</span>
-
-<span class="k">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">loadPhotosFromFlickrArray</span><span class="p">:(</span><span class="n">NSArray</span> <span class="o">*</span><span class="p">)</span><span class="nv">photos</span>
-         <span class="nf">intoManagedObjectContext</span><span class="p">:(</span><span class="n">NSManagedObjectContext</span> <span class="o">*</span><span class="p">)</span><span class="nv">context</span><span class="p">;</span>
-</code></pre>
-</div>
-
-<p><br /><strong><em>KF</em></strong></p>
-
-<hr />
-
-<div class="footnotes">
-  <ol>
-    <li id="fn:schema">
-      <p>A <strong>schema</strong> is a collection of database objects (as far as this hour is concerned—tables) associated with one particular database username. This username is called the schema owner, or the owner of the related group of objects. You may have one or multiple schemas in a database. Jul 1, 2008 <a href="http://www.informit.com/articles/article.aspx?p=1216889&amp;seqNum=2">Managing Database Objects in SQL</a> <a href="#fnref:schema" class="reversefootnote">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
-
-    <article>
+    
     <div class="post-more">
       
-      <a href="/ios%20development/2016/11/07/Photomania-Demo-Note/#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+      <a href="/ios%20development/2016/11/07/Photomania-Demo-Note.html#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
       
-      <a href="/ios%20development/2016/11/07/Photomania-Demo-Note/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+      <a href="/ios%20development/2016/11/07/Photomania-Demo-Note.html"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
     </div>
   </div>
   
 
   <div class="post">
     <h1 class="post-title">
-      <a href="/ios%20development/2016/11/06/rename-issue/">
+      <a href="/ios%20development/2016/11/06/rename-issue.html">
         Class Renaming Issue
       </a>
     </h1>
@@ -975,7 +703,7 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
     
     
     <hr>
-    <article>
+    
       <div class="message">
 This is a common issue that anybody using XCode may encounter. It's usually very annoying when you want to change the names of the classes because file names and includes are all related when you do it. Here I gather some correct (should be) way to make it happen. 
 </div>
@@ -1006,26 +734,20 @@ In short, it looks like this:</p>
 
 <p>Oh, by the way, DON’T FORGET to change your controller class name to the new one in the identity inspector in storyboard.</p>
 
-<h2 id="change-default-appdelegate-name">2. Change Default AppDelegate Name</h2>
 
-<p>I applied the same steps to rename my default <code class="highlighter-rouge">AppDelegate.h/AppDelegate.m</code> class. It works fine, but you need to change the app delegate include name in <code class="highlighter-rouge">main.m</code> manually, or there’ll be an error.</p>
-
-<p><br />
-<strong><em>KF</em></strong></p>
-
-    <article>
+    
     <div class="post-more">
       
-      <a href="/ios%20development/2016/11/06/rename-issue/#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+      <a href="/ios%20development/2016/11/06/rename-issue.html#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
       
-      <a href="/ios%20development/2016/11/06/rename-issue/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+      <a href="/ios%20development/2016/11/06/rename-issue.html"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
     </div>
   </div>
   
 
   <div class="post">
     <h1 class="post-title">
-      <a href="/note/2016/11/03/This-is-my-first-blog/">
+      <a href="/note/2016/11/03/This-is-my-first-blog.html">
         This is my first blog
       </a>
     </h1>
@@ -1037,7 +759,7 @@ In short, it looks like this:</p>
     
     
     <hr>
-    <article>
+    
       <h2 id="try-writing-markdown-blogs-with-macdown">Try writing markdown blogs with MacDown</h2>
 
 <p>Oh! This is really an awesome editor as I’m typing these words. I can see what it looks like as published on the right. As long I wanna try some syntax in markdown that I’m not quite familiar, I just try it, and take a look:</p>
@@ -1052,37 +774,13 @@ this is a block
 
 <p>Now, it’s time to start my technical blog writing.</p>
 
-<h2 id="how-to-insert-an-image-in-the-blog">How to insert an image in the blog?</h2>
 
-<p>Example:
-add the following code:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>![My first image inserted](/public/img/ios-10-nimblechapps.png)
-</code></pre>
-</div>
-
-<p>the path in the parentheses is the image local url.</p>
-
-<p>The result is like this:
-<img src="/public/img/20161103-0-ios10.png" alt="My first image inserted" /></p>
-
-<p>add snippet:</p>
-
-<pre><code class="language-objective-c">#import &lt;Foundation/Foundation.h&gt;
-@interface
-
-@property (nonatomic, strong) UITableView *tableView;
-@end
-</code></pre>
-
-<p><br /><strong><em>KF</em></strong></p>
-
-    <article>
+    
     <div class="post-more">
       
-      <a href="/note/2016/11/03/This-is-my-first-blog/#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+      <a href="/note/2016/11/03/This-is-my-first-blog.html#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
       
-      <a href="/note/2016/11/03/This-is-my-first-blog/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+      <a href="/note/2016/11/03/This-is-my-first-blog.html"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
     </div>
   </div>
   

@@ -11,7 +11,7 @@
 
   <title>
     
-      Class Renaming Issue &middot; Everest
+      This is my first blog &middot; Everest
     
   </title>
 
@@ -176,61 +176,58 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">Class Renaming Issue</h1>
+  <h1 class="post-title">This is my first blog</h1>
 
-  <!-- <span class="post-date">06 Nov 2016</span> -->
-  <div class="post-date">Sun, 06 Nov 2016 00:00:00 +0800</div>
+  <!-- <span class="post-date">03 Nov 2016</span> -->
+  <div class="post-date">Thu, 03 Nov 2016 00:00:00 +0800</div>
   <span class="post-tag-kf">
   
   
-    <a href="/blog/tags/#ios" class="post-tag">ios</a>
-  
-    <a href="/blog/tags/#objective-c" class="post-tag">objective-c</a>
-  
-    <a href="/blog/tags/#xcode" class="post-tag">xcode</a>
-  
-    <a href="/blog/tags/#technical-problem" class="post-tag">technical problem</a>
+    <a href="/blog/tags/#markdown" class="post-tag">markdown</a>
   
   
   </span>
   <hr>
   <article>
-    <div class="message">
-This is a common issue that anybody using XCode may encounter. It's usually very annoying when you want to change the names of the classes because file names and includes are all related when you do it. Here I gather some correct (should be) way to make it happen. 
+    <h2 id="try-writing-markdown-blogs-with-macdown">Try writing markdown blogs with MacDown</h2>
+
+<p>Oh! This is really an awesome editor as I’m typing these words. I can see what it looks like as published on the right. As long I wanna try some syntax in markdown that I’m not quite familiar, I just try it, and take a look:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>this is a block
+this is a block
+this is a block
+</code></pre>
 </div>
 
-<h2 id="change-default-view-controller-name">1. Change Default View Controller Name</h2>
+<p>This is really nice, and efficiency.The inline block is like <code class="highlighter-rouge">this is an inline block</code>. this is a link: <a href="http://google.com">google</a> This is really awesome!!! I like it.</p>
 
-<p>Check this: <a href="http://rshankar.com/how-to-rename-default-view-controllers-in-xcode/">How to rename default view controllers in XCode</a>
-In short, it looks like this:</p>
+<p>Now, it’s time to start my technical blog writing.
+<!--more--></p>
 
-<ul>
-  <li>
-    <p><strong>Step 1:</strong> Navigate to FirstViewController.h and select the name after interface keyword.</p>
-  </li>
-  <li>
-    <p><strong>Step 2:</strong> Click the Edit menu then Refactor and select Rename from the list of available option.</p>
-  </li>
-  <li>
-    <p><strong>Step 3:</strong> Enter the name then select Rename related files and click the Preview button. This would display the list of files and location where the rename would affect.</p>
-  </li>
-  <li>
-    <p><strong>Step 4:</strong> If you are happy with Preview then save the changes.</p>
-  </li>
-</ul>
+<h2 id="how-to-insert-an-image-in-the-blog">How to insert an image in the blog?</h2>
 
-<p>I tried the steps above and it works fine.</p>
+<p>Example:
+add the following code:</p>
 
-<p>According to personal experience, you’d better change your default controller name right after you create your new  application. As more files and classes are added, there might be more problems emerge.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>![My first image inserted](/public/img/ios-10-nimblechapps.png)
+</code></pre>
+</div>
 
-<p>Oh, by the way, DON’T FORGET to change your controller class name to the new one in the identity inspector in storyboard.</p>
+<p>the path in the parentheses is the image local url.</p>
 
-<h2 id="change-default-appdelegate-name">2. Change Default AppDelegate Name</h2>
+<p>The result is like this:
+<img src="/public/img/20161103-0-ios10.png" alt="My first image inserted" /></p>
 
-<p>I applied the same steps to rename my default <code class="highlighter-rouge">AppDelegate.h/AppDelegate.m</code> class. It works fine, but you need to change the app delegate include name in <code class="highlighter-rouge">main.m</code> manually, or there’ll be an error.</p>
+<p>add snippet:</p>
 
-<p><br />
-<strong><em>KF</em></strong></p>
+<pre><code class="language-objective-c">#import &lt;Foundation/Foundation.h&gt;
+@interface
+
+@property (nonatomic, strong) UITableView *tableView;
+@end
+</code></pre>
+
+<p><br /><strong><em>KF</em></strong></p>
 
   </article>
 </div>
@@ -241,27 +238,27 @@ In short, it looks like this:</p>
     
       <li>
         <h4>
-          <a href="/ios/2016/11/29/notification/">
-            Notifications - Example
-            <small>29 Nov 2016</small>
+          <a href="/web%20development/2016/11/30/sort-tag-alphabetically.html">
+            Sort Tags Alphabetically
+            <small>30 Nov 2016</small>
           </a>
         </h4>
       </li>
     
       <li>
         <h4>
-          <a href="/ios/2016/11/28/collection-view-ii/">
-            Collection View II - Designing Your Data Source and Delegate
-            <small>28 Nov 2016</small>
+          <a href="/web%20development/2016/11/30/anchor-link-back-position-setting.html">
+            How to Offset an HTML Anchor to Adjust for Fixed Header?
+            <small>30 Nov 2016</small>
           </a>
         </h4>
       </li>
     
       <li>
         <h4>
-          <a href="/ios/2016/11/24/collection-view-i/">
-            Collection View I - Intro & Basics
-            <small>24 Nov 2016</small>
+          <a href="/ios%20development/2016/11/30/singleton.html">
+            Singleton in iOS
+            <small>30 Nov 2016</small>
           </a>
         </h4>
       </li>
@@ -275,8 +272,8 @@ In short, it looks like this:</p>
   <div id="disqus_thread"></div>
   <script>
 var disqus_config = function () {
-  this.page.url = 'http://localhost:4000/ios%20development/2016/11/06/rename-issue/'; // Replace PAGE_URL with your page's canonical URL variable
-  this.page.identifier = '/ios%20development/2016/11/06/rename-issue'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  this.page.url = 'http://localhost:4000/note/2016/11/03/This-is-my-first-blog.html'; // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = '/note/2016/11/03/This-is-my-first-blog'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 (function() {
   var d = document, s = d.createElement('script');

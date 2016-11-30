@@ -18,6 +18,7 @@ Create a database file. Then, add the following two entities into the database:
 	 
 - **Photo**
 - **Photographer**
+<!--more-->
 
 ### 2. Define the Schema [^schema] Visually.
 

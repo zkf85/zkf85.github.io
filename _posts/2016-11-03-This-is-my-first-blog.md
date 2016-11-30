@@ -16,6 +16,7 @@ Oh! This is really an awesome editor as I'm typing these words. I can see what i
 This is really nice, and efficiency.The inline block is like `this is an inline block`. this is a link: [google](http://google.com) This is really awesome!!! I like it.
 
 Now, it's time to start my technical blog writing.
+<!--more-->
 
 ## How to insert an image in the blog?
 

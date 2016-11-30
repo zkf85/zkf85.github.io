@@ -26,6 +26,7 @@ I tried the steps above and it works fine.
 According to personal experience, you'd better change your default controller name right after you create your new  application. As more files and classes are added, there might be more problems emerge.
 
 Oh, by the way, DON'T FORGET to change your controller class name to the new one in the identity inspector in storyboard.
+<!--more-->
 
 ## 2. Change Default AppDelegate Name
 

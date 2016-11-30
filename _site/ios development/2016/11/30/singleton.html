@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Singleton in iOS &middot; Everest
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/main.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+<!-- 
+  
+  <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"> </script>
+  <script type="text/x-mathjax-config">
+MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true } });
+  </script>
+  
+</head>
+ -->
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+
+  <br><br><br><br>
+
+    <div class="sidebar-personal-info">
+      
+      <div class="sidebar-personal-info-section">
+        <p>An <strong>iOS developer and designer</strong>. Blogging is good.</p>
+      </div>
+
+      
+      
+      
+      <div class="sidebar-personal-info-section">
+        <p> Follow me: 
+        
+        
+        
+        <a href="https://github.com/zkf85">
+          <i class="fa fa-github" aria-hidden="true"></i>
+        </a>
+        
+        
+        
+        </p>
+      </div>
+      
+    </div>
+  </div>
+
+<br><br>
+
+  <nav class="sidebar-nav">
+
+    
+      
+      
+      
+
+      
+
+      <span class="">
+        <a class="sidebar-nav-item " href="/">
+          Home
+        </a>
+
+        
+      </span>
+
+    
+      
+      
+      
+
+      
+
+      <span class="foldable">
+        <a class="sidebar-nav-item " href="/blog/">
+          Blog
+        </a>
+
+        
+          
+            
+            
+            
+              <a class="sidebar-nav-item sidebar-nav-item-sub " href="/blog/categories/">
+                Categories
+              </a>
+          
+        
+          
+            
+            
+            
+              <a class="sidebar-nav-item sidebar-nav-item-sub " href="/blog/tags/">
+                Tags
+              </a>
+          
+        
+      </span>
+
+    
+      
+      
+      
+
+      
+
+      <span class="">
+        <a class="sidebar-nav-item " href="/about/">
+          About
+        </a>
+
+        
+      </span>
+
+    
+
+    <!-- <span class="sidebar-nav-item">Currently v1.0.0</span> -->
+  </nav>
+
+
+  <div class="sidebar-item">
+    <br><br>
+    <p>
+    &copy; 2016 Kefeng Zhu. <br>
+    All Rights Reserved.
+    <br><br>
+    Powered by <a href="http://jekyllrb.com">jekyll</a>. 
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <!-- <a href="/" title="Home" title="Everest">
+              <img class="masthead-logo" src=""/>
+            </a> -->
+            <a href="/" title="Home">Everest</a>
+            <small>Kefeng's blog</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">Singleton in iOS</h1>
+
+  <!-- <span class="post-date">30 Nov 2016</span> -->
+  <div class="post-date">Wed, 30 Nov 2016 14:53:00 +0800</div>
+  <span class="post-tag-kf">
+  
+  
+    <a href="/blog/tags/#ios" class="post-tag">ios</a>
+  
+    <a href="/blog/tags/#objective-c" class="post-tag">objective-c</a>
+  
+    <a href="/blog/tags/#singleton" class="post-tag">singleton</a>
+  
+  
+  </span>
+  <hr>
+  <article>
+    <div class="message">
+What is the concept of singleton in iOS development?
+<br />KF 11/30/2016
+</div>
+<h2 id="what-is-singleton">What is Singleton</h2>
+<p>A singleton object provides a global point of access to the resources of its class. Singletons are used in situations where this single point of control is desirable, such as with classes that offer some general service or resource. You obtain the global instance from a singleton class through a factory method.</p>
+
+<h2 id="why-and-when-we-use-it">Why and When We Use It?</h2>
+<p>You obtain the global instance from a singleton class through a factory method. The class lazily creates its sole instance the first time it is requested and thereafter ensures that no other instance can be created.<sup id="fnref:apple"><a href="#fn:apple" class="footnote">1</a></sup> It’s an extremely powerful way to share data between different parts of code without having to pass the data around manually.<sup id="fnref:matt"><a href="#fn:matt" class="footnote">2</a></sup></p>
+
+<p>Singleton classes are an important concept to understand because they exhibit an extremely useful design pattern. This idea is used throughout the iPhone SDK, for example, UIApplication has a method called sharedApplication which when called from anywhere will return the UIApplication instance which relates to the currently running application.<sup id="fnref:matt:1"><a href="#fn:matt" class="footnote">2</a></sup></p>
+
+<!--more-->
+
+<h2 id="how-to-implementmatt">How to Implement?<sup id="fnref:matt:2"><a href="#fn:matt" class="footnote">2</a></sup></h2>
+<p>You can implement a singleton class in Objective-C using the following code:</p>
+
+<p>in <code class="highlighter-rouge">MyManager.h</code>:</p>
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="cp">#import &lt;foundation/Foundation.h&gt;
+</span>
+<span class="k">@interface</span> <span class="nc">MyManager</span> <span class="p">:</span> <span class="nc">NSObject</span> <span class="p">{</span>
+    <span class="n">NSString</span> <span class="o">*</span><span class="n">someProperty</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">retain</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">someProperty</span><span class="p">;</span>
+
+<span class="k">+</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="n">sharedManager</span><span class="p">;</span>
+
+<span class="k">@end</span>
+</code></pre>
+</div>
+
+<p>in <code class="highlighter-rouge">MyManager.m</code>:</p>
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="cp">#import "MyManager.h"
+</span>
+<span class="k">@implementation</span> <span class="nc">MyManager</span>
+
+<span class="k">@synthesize</span> <span class="n">someProperty</span><span class="p">;</span>
+
+<span class="cp">#pragma mark Singleton Methods
+</span>
+<span class="k">+</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="n">sharedManager</span> <span class="p">{</span>
+    <span class="k">static</span> <span class="n">MyManager</span> <span class="o">*</span><span class="n">sharedMyManager</span> <span class="o">=</span> <span class="nb">nil</span><span class="p">;</span>
+    <span class="k">static</span> <span class="n">dispatch_once_t</span> <span class="n">onceToken</span><span class="p">;</span>
+    <span class="n">dispatch_once</span><span class="p">(</span><span class="o">&amp;</span><span class="n">onceToken</span><span class="p">,</span> <span class="o">^</span><span class="p">{</span>
+        <span class="n">sharedMyManager</span> <span class="o">=</span> <span class="p">[[</span><span class="n">self</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">init</span><span class="p">];</span>
+    <span class="p">});</span>
+    <span class="k">return</span> <span class="n">sharedMyManager</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">-</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="n">init</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">self</span> <span class="o">=</span> <span class="p">[</span><span class="n">super</span> <span class="nf">init</span><span class="p">])</span> <span class="p">{</span>
+      <span class="n">someProperty</span> <span class="o">=</span> <span class="p">[[</span><span class="n">NSString</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithString</span><span class="p">:</span><span class="s">@"Default Property Value"</span><span class="p">];</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="n">self</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">dealloc</span> <span class="p">{</span>
+  <span class="c1">// Should never be called, but just here for clarity really.
+</span><span class="p">}</span>
+
+<span class="k">@end</span>
+</code></pre>
+</div>
+
+<p>What this does is it defines a static variable (but only global to this <a href="http://en.wikipedia.org/wiki/Translation_unit_(programming)">translation unit</a>) called <code class="highlighter-rouge">sharedMyManager</code> which is then initialized once and only once in <code class="highlighter-rouge">sharedManager</code>. The way we ensure that it’s only created once is by using the <code class="highlighter-rouge">dispatch_once</code> method from <a href="http://developer.apple.com/library/ios/#documentation/Performance/Reference/GCD_libdispatch_Ref/Reference/reference.html">Grand Central Dispatch (GCD)</a>. This is thread safe and handled entirely by the OS for you so that you don’t have to worry about it at all.</p>
+
+<p>However, if you would rather not use GCD then you should use the following code for sharedManager:</p>
+
+<p>Non-GCD based code:</p>
+
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="n">sharedManager</span> <span class="p">{</span>
+    <span class="k">static</span> <span class="n">MyManager</span> <span class="o">*</span><span class="n">sharedMyManager</span> <span class="o">=</span> <span class="nb">nil</span><span class="p">;</span>
+    <span class="k">@synchronized</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">sharedMyManager</span> <span class="o">==</span> <span class="nb">nil</span><span class="p">)</span>
+            <span class="n">sharedMyManager</span> <span class="o">=</span> <span class="p">[[</span><span class="n">self</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">init</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">sharedMyManager</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Then you can reference the singleton from anywhere by calling the following function:</p>
+
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">MyManager</span> <span class="o">*</span><span class="n">sharedManager</span> <span class="o">=</span> <span class="p">[</span><span class="n">MyManager</span> <span class="nf">sharedManager</span><span class="p">];</span>
+</code></pre>
+</div>
+
+<p>I’ve used this extensively throughout my code for things such as creating a singleton to handle CoreLocation or CoreData functions.</p>
+
+<p><br /><br />
+<strong><em>KF</em></strong></p>
+
+<h3 id="reference">Reference</h3>
+<div class="footnotes">
+  <ol>
+    <li id="fn:apple">
+      <p><a href="https://developer.apple.com/library/content/documentation/General/Conceptual/DevPedia-CocoaCore/Singleton.html">Singleton - Apple Developer</a> <a href="#fnref:apple" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:matt">
+      <p><a href="http://www.galloway.me.uk/tutorials/singleton-classes/">Singletons in Objective-C - Matt Galloway</a> <a href="#fnref:matt" class="reversefootnote">&#8617;</a> <a href="#fnref:matt:1" class="reversefootnote">&#8617;<sup>2</sup></a> <a href="#fnref:matt:2" class="reversefootnote">&#8617;<sup>3</sup></a></p>
+    </li>
+  </ol>
+</div>
+
+  </article>
+</div>
+
+<div class="related">
+  <h3>Related Posts</h3>
+  <ul class="related-posts">
+    
+      <li>
+        <h4>
+          <a href="/web%20development/2016/11/30/sort-tag-alphabetically.html">
+            Sort Tags Alphabetically
+            <small>30 Nov 2016</small>
+          </a>
+        </h4>
+      </li>
+    
+      <li>
+        <h4>
+          <a href="/web%20development/2016/11/30/anchor-link-back-position-setting.html">
+            How to Offset an HTML Anchor to Adjust for Fixed Header?
+            <small>30 Nov 2016</small>
+          </a>
+        </h4>
+      </li>
+    
+      <li>
+        <h4>
+          <a href="/ios%20development/2016/11/30/static-constant.html">
+            What is the difference between a static and const variable
+            <small>30 Nov 2016</small>
+          </a>
+        </h4>
+      </li>
+    
+  </ul>
+</div>
+
+
+<div class="comments">
+  <h3>Comments</h3>
+  <div id="disqus_thread"></div>
+  <script>
+var disqus_config = function () {
+  this.page.url = 'http://localhost:4000/ios%20development/2016/11/30/singleton.html'; // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = '/ios%20development/2016/11/30/singleton'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() {
+  var d = document, s = d.createElement('script');
+  s.src = '//zkf85githubio.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</div>
+
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if (target === toggle) {
+            checkbox.checked = !checkbox.checked;
+            e.preventDefault();
+          } else if (checkbox.checked && !sidebar.contains(target)) {
+            /* click outside the sidebar when sidebar is open */
+            checkbox.checked = false;
+          }
+        }, false);
+      })(document);
+    </script>
+    
+  </body>
+  
+  <script id="dsq-count-scr" src="//zkf85githubio.disqus.com/count.js" async></script>
+  
+</html>

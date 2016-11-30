@@ -15,6 +15,7 @@ tags: [politics]
 The rural-urban divide persists nationwide. Hillary Clinton led Trump by 26 points in urban areas in a recent poll, also from the Washington Post. But in rural areas, Trump led Clinton by 20 points.
 
 Four years ago, Obama won urban areas by 26 points, according to exit polls, while Romney won rural areas by 20 points.
+<!--more-->
 
 ## Why?
 

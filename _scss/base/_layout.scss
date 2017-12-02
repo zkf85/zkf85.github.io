@@ -34,6 +34,9 @@
 }
 @media (min-width: 56em) {
   .container {
-    max-width: 38rem;
+    // modifier the container max-width here
+    // kf 12/01/2016
+    max-width: 42rem;
+    //max-width: 38rem;
   }
 }

@@ -1,0 +1,276 @@
+---
+layout: post
+title: "Objective-C 消息机制与动态绑定"
+date: "2017-12-02 18:37:00"
+category: [iOS Development]
+tags: [ios, objective-c]
+---
+<div class = "message">
+Objective-C 的消息机制与动态绑定的理解
+</div>
+
+## I. Objective-C的消息机制 
+
+
+
+## Resources:
+[How I treat Philadelphia chromosome–positive acute lymphoblastic leukemia](http://www.bloodjournal.org/content/116/18/3409?sso-checked=true)
+
+
+
+
+
+> Important Excerpt from an In-Depth Report on ALL[^maryland-report]
+> This is an in-depth report on the causes, diagnosis, treatment, and prevention of leukemia:
+>>[**Acute Lymphocytic Leukemia - An in-depth Report** - University of Maryland Medical Center](http://umm.edu/health/medical/reports/articles/acute-lymphocytic-leukemia)
+>
+>There are some key information and factors in the report and are listed below:
+
+## I. Acute Lymphocytic Leukemia[^maryland-report]
+
+Acute lymphocytic leukemia (ALL) is also known as acute lymphoid leukemia or acute lymphoblastic leukemia. The majority of childhood leukemias are of the ALL type.
+
+Lymphocytes are the body’s primary immune cells. Among other vital functions, lymphocytes produce antibodies, factors that can target and attack specific foreign substances (antigens) and fight infections.
+
+Lymphocytes develop in the thymus gland or bone marrow and are therefore categorized as either B cells (bone marrow-derived cells) or T cells (thymus gland-derived cells).  ALL can arise from either T-cell or **B-cell** lymphocytes. Most cases of ALL involve **B cells**.
+
+## II. Causes[^maryland-report]
+
+Doctors do not know exactly what causes acute lymphocytic leukemia (ALL). It is likely that ALL develops from a combination of genetic, biologic, and environmental factors.
+
+### Genetic Translocations
+
+Up to 65% of leukemias contain genetic rearrangements, called translocations, in which some of the genetic material (genes) on a chromosome may be shuffled or swapped between a pair of chromosomes.
+
+The most common genetic translocation in ALL is the Philadelphia (Ph) chromosome where DNA is swapped between chromosomes 9 and 22 [t(9:22)]. It occurs in about 20 - 30% of adults and 3 - 5% of children with ALL.
+
+## III. Risk Factors[^maryland-report]
+
+### Hereditary Disorders
+ALL does not appear to run in families. Still, certain genetic disorders may increase risk. For example, children with Down syndrome have a 20-times greater risk of developing ALL than the general population. Other rare genetic disorders associated with increased risk include Klinefelter syndrome, Bloom syndrome, Fanconi anemia, ataxia-telangiectasia, neurofibromatosis, Shwachman syndrome, IgA deficiency, and congenital X-linked agammaglobulinemia.
+
+### Radiation and Chemical Exposure
+
+Previous cancer treatment with high doses of radiation or chemotherapy can increase the risk for developing ALL. Prenatal exposure to x-rays may also increase risk in children. Lower levels of radiation (living near power lines, video screen emissions, small appliances, cell phones) are unlikely to pose any cancer risk.
+
+## IV. Symptoms[^maryland-report]
+
+The symptoms of ALL may be difficult to recognize. ALL usually begins abruptly and intensely, but in some cases symptoms may develop slowly. They may be present one day, and absent the next, particularly in children. Symptoms develop when:
+
+* There are not enough healthy mature white blood cells (leukocytes) to mount a defense against infection.
+* There are not enough healthy blood-clotting cells (platelets) to prevent bleeding.
+* The depleted oxygen-bearing red blood cells can't provide enough oxygen to organs.
+
+Symptoms include:
+
+* Fatigue
+* Paleness -- patients may have poor coloring from anemia caused by insufficient red blood cells
+* Recurrent minor infections
+* Fever without known cause
+* Bone pain
+* Abdominal swelling
+* Bruising -- may result from only slight injury
+* Poor healing of minor cuts
+* Uncontrolled bleeding -- bleeding events increase as the bone marrow fails to produce enough platelets to make a normal blood clot, a condition called thrombocytopenia.
+* Small, red spots on the skin (petechiae)
+* Vision changes (rare)
+
+## V. Prognosis[^maryland-report]
+ALL is one of the most curable cancers and survival rates are now at an all-time high.
+
+According to the American Cancer Society, certain factors can help determine prognosis:
+
+* Age. Younger patients (especially those younger than age 50) have a better prognosis than older patients.
+
+* Initial white blood cell (WBC) count. People diagnosed with a WBC count below 50,000 tend to do better than people with higher WBC counts.
+
+* Response to chemotherapy. Patients who achieve complete remission (absence of active cancer) within 4 - 5 weeks of starting treatment tend to have a better prognosis than those who take longer. 
+
+## VI. Treatment[^maryland-report]
+
+### 1. Treatment Phases
+
+There are typically **three treatment stages** for the average-risk patient with ALL:
+
+* **Induction** therapy is given in order to achieve a first remission (the absence of active cancer)
+
+* **Consolidation** (intensification) therapy is given to prevent relapse after remission has been achieved
+
+* **Maintenance** treatment is lower intensity therapy given for several years to prevent relapse after remission
+
+Because leukemia can also spread to the brain and spinal cord, where chemotherapy that is given intravenously or orally does not penetrate very well, most patients also need radiation to the brain and spinal cord, or chemotherapy that is injected into the layers around them. This is called central nervous system prophylaxis (preventive treatment) and is given during all treatment phases to prevent the cancer from spreading to the brain and spinal cord.
+
+### 2. Specific Treatments Used in ALL
+
+The following are specific treatments used for ALL:
+
+* **Chemotherapy is the primary treatment** for each stage. Newer drugs known as biological therapies are also being used.
+
+* Radiation to the brain and spinal cord is also administered in some cases.
+
+* A **bone marrow transplant** may be recommended for some adult patients after treatment when there is no active cancer (remission) or for adults and children if the cancer has returned after treatment (relapsed).
+
+### 3. Drugs Used for Induction Chemotherapy
+Both children and adults typically start with a 3-drug regimen. Imatinib (Gleevec) or dasatinib (Sprycel) may be added for patients with Philadelphia chromosome-positive ALL.
+
+For **adults**, the standard drugs are:
+
+* Vincristine
+* Prednisone
+* Anthracycline drug, such as such as doxorubicin, daunorubicin, or epirubicin. Some adult chemotherapy regimens also add on an asparaginase drug or cyclophosphamide (Cytoxan).
+
+### 4. Preventing Central Nervous System Disease (CNS Prophylaxis)
+
+Adult CNS prophylaxis is performed in one of three ways:
+
+* Cranial radiation plus intrathecal chemotherapy with methotrexate
+* High-dose systemic infusion of methotrexate plus intrathecal methotrexate without cranial radiation
+* Intrathecal methotrexate chemotherapy alone
+
+### 5. Evidence of Remission after Induction Treatment
+
+Survival in acute leukemia depends on complete remission (no signs of active cancer). Although not always clear-cut, remission is indicated by the following:
+
+* All signs and symptoms of leukemia disappear.
+* There are no abnormal cells in the blood, bone marrow, and cerebrospinal fluid.
+* The percentage of blast cells in the bone marrow is less than 5%.
+* Blood platelet count returns to normal.
+
+Induction can produce extremely rapid results. Nearly all children with ALL achieve remission after a month of induction treatment. The shorter the time to remission the better the outlook:
+
+* A complete remission usually occurs within the first 4 weeks. Patients who show low disease levels within 7 - 14 days have an excellent outlook, particularly if they have favorable genetic factors, and may need less-intensive treatments afterward.
+* Patients with high disease levels at 14 days or who require more than 4 weeks to achieve remission are at higher risk for relapse and most likely need more aggressive treatment.
+
+### 6. Side Effects and Complications
+*Common Side Effects*. Typical side effects include:
+
+* Nausea and vomiting. Drugs known as serotonin antagonists, such as ondansetron (Zofran) or granisteron (Kyril), can relieve these side effects.
+* Diarrhea
+* Hair loss
+* Mouth sores
+* Weight loss
+* Depression
+
+
+## VII. Transplantation
+
+### 1. Transplantation
+
+Stem cells that are made in the bone marrow are the early form of all blood cells in the body. They normally mature into red, white, or immune cells. To help the patient survive high dose chemotherapy needed to cure leukemia that has returned treatment, or not responded to treatment, a stem cell transplantation procedure may be used. Stem cell transplantation replaces blood stem cells that were lost during the initial chemotherapy treatment. The lost stem cells are replaced by transplanting them from a donor into the patient.
+
+### 2. The Blood Stem Cell Collection Procedure
+
+*Sources of Cells*. Stem cells can be obtained either from the donor’s:
+
+* (Bone marrow (bone marrow transplantation)
+
+* Blood (peripheral blood stem cell transplantation)
+
+
+### 3. The Transplant Procedure
+1. The patient with ALL is given high-dose chemotherapy with or without radiation -- a treatment known as conditioning. The point is to inactivate the immune system and to kill any remaining leukemia cells.
+
+2. A few days after treatment, the patient is *rescued* using the stored stem cells, which are administered through a vein. This may take several hours. Patients may experience fever, chills, hives, shortness of breath, or a fall in blood pressure during the procedure.
+
+3. The patient is kept in a protected environment to minimize infection, and the patient usually needs blood cell replacement and nutritional support.
+
+### 4. Side Effects and Complications
+Stem-cell transplantation is a serious and complex procedure that can cause many short- and long-term side effects and complications. 
+
+Early side effects of transplantation are similar to chemotherapy and include nausea, vomiting, fatigue, mouth sores, and loss of appetite. 
+
+Bleeding because of reduced platelets is a high risk during the first four weeks and may require transfusions. Later side effects include fertility problems (if the ovaries are affected), thyroid gland problems (which can affect metabolism), lung damage (which can cause breathing problems) and bone damage.
+
+## Home Management (IMPORTANT)[^maryland-report] 
+A parent should call the doctor if the child has any symptoms that are out of the ordinary, including (but not limited) to:
+
+* Any fever of 101 °F or higher
+* Any signs of a flu or cold
+* Shortness of breath
+* Severe diarrhea
+* Blood in the urine or stools
+* Trouble urinating
+
+**Tracking Neutrophils**. Family should track their patients absolute neutrophil count. This measurement for the **amount of white blood cells** is an important gauge of his **ability to fight infection**.
+
+* Counts over 1,000 usually provide sufficient protection so that children can engage in normal activities, including school and other functions where they are exposed to other children.
+* If the count is between 500 - 1,000, the child should avoid large groups.
+* If it falls between 200 - 500, the child should stay at home and should see only healthy visitors who have washed their hands vigorously.
+* Neutrophil counts below 200 indicate that the child is at high risk for infection and should have no visitors.
+
+### Preventing Infection
+
+It is **very important** to take precautions to prevent infection following chemotherapy or transplantation. Guidelines for infection prevention and control include:
+
+1. Discuss with the doctor what vaccinations are needed and when. Patient with ALL may need reimmunization. In general, it is best to have immunizations prior to chemotherapy and to avoid live virus vaccines during treatment,
+
+2. Avoid crowds, especially during cold and flu season.
+
+3. Be diligent about hand washing and make sure that visitors wash their hands. Alcohol-based handrubs are best.
+
+4. Avoid eating raw fruits and vegetables. Poultry, meat, fish, eggs and other foods should be cooked thoroughly. Do not eat foods purchased at salad bars or buffets. In the first few months after the transplant, be sure to eat protein-rich foods to help restore muscle mass and repair cell damage caused by chemotherapy and radiation.
+
+5. Boil tap water before drinking it.
+
+6. Dental hygiene is very important, including daily brushing and flossing. Use a soft toothbrush to prevent gum bleeding. Schedule regular visits with your dentist.
+
+7. Do not sleep with pets. Avoid contact with pets' excrement.
+
+8. Avoid fresh flowers and plants as they may carry mold. Do not garden.
+
+9. Swimming may increase exposure to infection. If you swim, do not submerge your face in water. Do not use hot tubs.
+
+10. Report to the doctor any symptoms of fever, chills, cough, difficulty breathing, rash or changes in skin, and severe diarrhea or vomiting. Fever is one of the first signs of infection. Some of these symptoms can also indicate graft-versus-host disease.
+
+11. Report to the ophthalmologist any signs of eye discharge or changes in vision. Patients who undergo radiation or who are on long-term steroid therapy have an increased risk for cataracts.
+
+12. Some of the drugs used for leukemia cause extreme sun sensitivity. Sunburn can cause skin infection. Children should wear sunblock and sun-protective clothing when going outside.
+
+
+## About Ph-Positive ALL
+
+### What is Ph+ ALL? [^ph-positive-CML]
+- "Ph" is an abbreviation for “Philadelphia chromosome,” the name given to the abnormal chromosome that can lead to the overproduction of white blood cells. 
+
+- The plus sign (+) means that your laboratory tests show your bone marrow and white blood cells contain the abnormal Philadelphia chromosome. 
+
+### How Does Ph+ Happen?[^ph-positive-CML]
+The soft tissue inside our bones, called the bone marrow, produces a type of cell called a stem cell. As stem cells mature, they can turn into platelets, red blood cells, or white blood cells. Ph+ CML happens because of changes in the genetic material of these stem cells.
+
+Chromosomes are the parts of our cells that carry our DNA and genes—the things that give us our physical traits, such as blue eyes or brown hair, and that tell our body how to handle all the functions of life, including the process of making blood cells. Humans have 23 pairs of chromosomes. Ph+ CML happens when some genetic material from one chromosome (chromosome 9) switches position with some genetic material from another chromosome (chromosome 22).
+
+The new genetic material on chromosome 22 is called BCR-ABL and leads to abnormalities in your body's process for making blood cells. When chromosome 22 has this abnormal BCR-ABL gene, scientists call it the Philadelphia chromosome. People with Ph+ CML have the BCR-ABL gene in their stem cells and white blood cells. The BCR-ABL gene produces a protein called Bcr-Abl. Scientists distinguish between the name of the gene and protein by how they are written.
+
+The Bcr-Abl protein causes your bone marrow to produce more and more white blood cells, and these white blood cells are often damaged. It acts like a switch that keeps your white blood cell production in the "on" position. Normally, your body would stop producing white blood cells that weren't needed and damaged blood cells would die off, but the Bcr-Abl protein interferes with these processes. Instead, your bone marrow keeps making damaged white blood cells that, over time, crowd out healthy red blood cells and platelets.
+
+Scientists do not know exactly why the genetic material switches between the 2 chromosomes and continue to search for causes of Ph+ CML. Although Ph+ CML involves genetic material, be assured that it is not inherited. The abnormal gene is not passed down from parent to child.
+
+
+[Ph-Positive ALL Therapy](https://www.lls.org/leukemia/acute-lymphoblastic-leukemia/treatment/ph-positive-all-therapy)
+
+
+
+## Philadelphia Chromosome [^phil-chromo]
+The Philadelphia chromosome or Philadelphia translocation is a specific genetic abnormality in chromosome 22 of leukemia cancer cells (particularly chronic myelogenous leukemia (CML) cells). This chromosome is defective and unusually short because of reciprocal translocation of genetic material between chromosome 9 and chromosome 22, and contains a fusion gene called BCR-ABL1. 
+
+(ABL represents "Abelson", the name of a leukemia virus[^abelson].)
+
+Translocation results in an oncogenic BCR-ABL gene fusion that can be found on the shorter derivative 22 chromosome. This gene encodes for a Bcr-abl fusion protein. Depending on the precise location of fusion, the molecular weight of this protein can range from 185 to 210 kDa. Consequently, bcr-abl is referred to as p210 or p185.
+
+Three clinically important variants are the p190, p210, and p230 isoforms. p190 is generally associated with acute lymphoblastic leukemia (ALL), while **p210** is generally associated with chronic myeloid leukemia but can also be associated with ALL.[6] p230 is usually associated with chronic myelogenous leukemia associated with neutrophilia and thrombocytosis.[6] Additionally, the p190 isoform can also be expressed as a splice variant of p210.[7]
+
+<center><img src="/public/img/20161218-1-1.png" width="400"/></center>
+
+### Nomenclature
+The Philadelphia chromosome is designated Ph (or Ph') chromosome and designates the shortened chromosome 22. It arises from the translocation, which is termed t(9;22)(q34.1;q11.2). This means there is a translocation between chromosome 9 and chromosome 22, with breaks happening in region (3), band (4), sub-band (1) of the long arm (q) of chromosome 9 and region (1), band (1), sub-band (2) of the long arm (q) of chromosome 22. Hence the chromosome breakpoints are written as (9q34.1) and (22q11.2), respectively, using ISCN standards. Notation omitting the sub-bands is also commonly seen: t(9;22)(q34;q11).
+
+[^all-wiki]: [Acute lymphoblastic leukemia - Wikipedia](https://en.wikipedia.org/wiki/Acute_lymphoblastic_leukemia)
+[^phil-chromo]: [Philadelphia chromosome - Wikipedia](https://en.wikipedia.org/wiki/Philadelphia_chromosome)
+[^abelson]: [Abelson murine leukemia virus - Wikipedia](https://en.wikipedia.org/wiki/Abelson_murine_leukemia_virus)
+[^ph-positive-CML]: [What is Ph+ CML? - GLEEVEC](http://www.gleevec.com/patient/ph-cml-treatment.jsp?usertrack.filter_applied=true&NovaId=4029462192126550515)
+[^maryland-report]: [**Acute Lymphocytic Leukemia - An in-depth Report** - University of Maryland Medical Center](http://umm.edu/health/medical/reports/articles/acute-lymphocytic-leukemia)
+
+<br><br>
+***KF***
+
+## Reference

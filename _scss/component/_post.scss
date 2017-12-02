@@ -1,12 +1,12 @@
 .post {
   // kf added 11/30/2016
   // to modify the anchor position of the footnote backlink.
-    :target:before {
-      content:"";
-      display:inline-block;
-      height:144px; /* fixed header height*/
-      margin:-144px 0 0; /* negative fixed header height */
-    }
+    // :target:before {
+    //   content:"";
+    //   display:inline-block;
+    //   height:144px; /* fixed header height*/
+    //   margin:-144px 0 0; /* negative fixed header height */
+    // }
 
   margin-top: 0em;
   margin-bottom: 4em;

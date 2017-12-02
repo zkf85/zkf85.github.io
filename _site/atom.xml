@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>Everest</title>
- <link href="http://localhost:4000/atom.xml" rel="self"/>
- <link href="http://localhost:4000/"/>
- <updated>2017-12-02T18:57:41+08:00</updated>
- <id>http://localhost:4000</id>
+ <link href="http://zkf85.github.io/atom.xml" rel="self"/>
+ <link href="http://zkf85.github.io/"/>
+ <updated>2017-12-02T19:01:28+08:00</updated>
+ <id>http://zkf85.github.io</id>
  <author>
    <name>Kefeng Zhu</name>
    <email></email>
@@ -14,355 +14,29 @@
  
  <entry>
    <title>Objective-C 消息机制与动态绑定</title>
-   <link href="http://localhost:4000/ios%20development/2017/12/02/message-dynamic-binding.html"/>
+   <link href="http://zkf85.github.io/ios%20development/2017/12/02/message-dynamic-binding.html"/>
    <updated>2017-12-02T18:37:00+08:00</updated>
-   <id>http://localhost:4000/ios%20development/2017/12/02/message-dynamic-binding</id>
+   <id>http://zkf85.github.io/ios%20development/2017/12/02/message-dynamic-binding</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 Objective-C 的消息机制与动态绑定的理解
 &lt;/div&gt;
 
+&lt;h2 id=&quot;section&quot;&gt;亲爱的，看见这句话没？？嘿嘿嘿&lt;/h2&gt;
+
 &lt;h2 id=&quot;i-objective-c&quot;&gt;I. Objective-C的消息机制&lt;/h2&gt;
-
-&lt;h2 id=&quot;resources&quot;&gt;Resources:&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.bloodjournal.org/content/116/18/3409?sso-checked=true&quot;&gt;How I treat Philadelphia chromosome–positive acute lymphoblastic leukemia&lt;/a&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Important Excerpt from an In-Depth Report on ALL&lt;sup id=&quot;fnref:maryland-report&quot;&gt;&lt;a href=&quot;#fn:maryland-report&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;
-This is an in-depth report on the causes, diagnosis, treatment, and prevention of leukemia:&lt;/p&gt;
-  &lt;blockquote&gt;
-    &lt;p&gt;&lt;a href=&quot;http://umm.edu/health/medical/reports/articles/acute-lymphocytic-leukemia&quot;&gt;&lt;strong&gt;Acute Lymphocytic Leukemia - An in-depth Report&lt;/strong&gt; - University of Maryland Medical Center&lt;/a&gt;&lt;/p&gt;
-  &lt;/blockquote&gt;
-
-  &lt;p&gt;There are some key information and factors in the report and are listed below:&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;i-acute-lymphocytic-leukemiamaryland-report&quot;&gt;I. Acute Lymphocytic Leukemia&lt;sup id=&quot;fnref:maryland-report:1&quot;&gt;&lt;a href=&quot;#fn:maryland-report&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
-
-&lt;p&gt;Acute lymphocytic leukemia (ALL) is also known as acute lymphoid leukemia or acute lymphoblastic leukemia. The majority of childhood leukemias are of the ALL type.&lt;/p&gt;
-
-&lt;p&gt;Lymphocytes are the body’s primary immune cells. Among other vital functions, lymphocytes produce antibodies, factors that can target and attack specific foreign substances (antigens) and fight infections.&lt;/p&gt;
-
-&lt;p&gt;Lymphocytes develop in the thymus gland or bone marrow and are therefore categorized as either B cells (bone marrow-derived cells) or T cells (thymus gland-derived cells).  ALL can arise from either T-cell or &lt;strong&gt;B-cell&lt;/strong&gt; lymphocytes. Most cases of ALL involve &lt;strong&gt;B cells&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;ii-causesmaryland-report&quot;&gt;II. Causes&lt;sup id=&quot;fnref:maryland-report:2&quot;&gt;&lt;a href=&quot;#fn:maryland-report&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
-
-&lt;p&gt;Doctors do not know exactly what causes acute lymphocytic leukemia (ALL). It is likely that ALL develops from a combination of genetic, biologic, and environmental factors.&lt;/p&gt;
-
-&lt;h3 id=&quot;genetic-translocations&quot;&gt;Genetic Translocations&lt;/h3&gt;
-
-&lt;p&gt;Up to 65% of leukemias contain genetic rearrangements, called translocations, in which some of the genetic material (genes) on a chromosome may be shuffled or swapped between a pair of chromosomes.&lt;/p&gt;
-
-&lt;p&gt;The most common genetic translocation in ALL is the Philadelphia (Ph) chromosome where DNA is swapped between chromosomes 9 and 22 [t(9:22)]. It occurs in about 20 - 30% of adults and 3 - 5% of children with ALL.&lt;/p&gt;
-
-&lt;h2 id=&quot;iii-risk-factorsmaryland-report&quot;&gt;III. Risk Factors&lt;sup id=&quot;fnref:maryland-report:3&quot;&gt;&lt;a href=&quot;#fn:maryland-report&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
-
-&lt;h3 id=&quot;hereditary-disorders&quot;&gt;Hereditary Disorders&lt;/h3&gt;
-&lt;p&gt;ALL does not appear to run in families. Still, certain genetic disorders may increase risk. For example, children with Down syndrome have a 20-times greater risk of developing ALL than the general population. Other rare genetic disorders associated with increased risk include Klinefelter syndrome, Bloom syndrome, Fanconi anemia, ataxia-telangiectasia, neurofibromatosis, Shwachman syndrome, IgA deficiency, and congenital X-linked agammaglobulinemia.&lt;/p&gt;
-
-&lt;h3 id=&quot;radiation-and-chemical-exposure&quot;&gt;Radiation and Chemical Exposure&lt;/h3&gt;
-
-&lt;p&gt;Previous cancer treatment with high doses of radiation or chemotherapy can increase the risk for developing ALL. Prenatal exposure to x-rays may also increase risk in children. Lower levels of radiation (living near power lines, video screen emissions, small appliances, cell phones) are unlikely to pose any cancer risk.&lt;/p&gt;
-
-&lt;h2 id=&quot;iv-symptomsmaryland-report&quot;&gt;IV. Symptoms&lt;sup id=&quot;fnref:maryland-report:4&quot;&gt;&lt;a href=&quot;#fn:maryland-report&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
-
-&lt;p&gt;The symptoms of ALL may be difficult to recognize. ALL usually begins abruptly and intensely, but in some cases symptoms may develop slowly. They may be present one day, and absent the next, particularly in children. Symptoms develop when:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;There are not enough healthy mature white blood cells (leukocytes) to mount a defense against infection.&lt;/li&gt;
-  &lt;li&gt;There are not enough healthy blood-clotting cells (platelets) to prevent bleeding.&lt;/li&gt;
-  &lt;li&gt;The depleted oxygen-bearing red blood cells can’t provide enough oxygen to organs.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Symptoms include:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Fatigue&lt;/li&gt;
-  &lt;li&gt;Paleness – patients may have poor coloring from anemia caused by insufficient red blood cells&lt;/li&gt;
-  &lt;li&gt;Recurrent minor infections&lt;/li&gt;
-  &lt;li&gt;Fever without known cause&lt;/li&gt;
-  &lt;li&gt;Bone pain&lt;/li&gt;
-  &lt;li&gt;Abdominal swelling&lt;/li&gt;
-  &lt;li&gt;Bruising – may result from only slight injury&lt;/li&gt;
-  &lt;li&gt;Poor healing of minor cuts&lt;/li&gt;
-  &lt;li&gt;Uncontrolled bleeding – bleeding events increase as the bone marrow fails to produce enough platelets to make a normal blood clot, a condition called thrombocytopenia.&lt;/li&gt;
-  &lt;li&gt;Small, red spots on the skin (petechiae)&lt;/li&gt;
-  &lt;li&gt;Vision changes (rare)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;v-prognosismaryland-report&quot;&gt;V. Prognosis&lt;sup id=&quot;fnref:maryland-report:5&quot;&gt;&lt;a href=&quot;#fn:maryland-report&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
-&lt;p&gt;ALL is one of the most curable cancers and survival rates are now at an all-time high.&lt;/p&gt;
-
-&lt;p&gt;According to the American Cancer Society, certain factors can help determine prognosis:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Age. Younger patients (especially those younger than age 50) have a better prognosis than older patients.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Initial white blood cell (WBC) count. People diagnosed with a WBC count below 50,000 tend to do better than people with higher WBC counts.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Response to chemotherapy. Patients who achieve complete remission (absence of active cancer) within 4 - 5 weeks of starting treatment tend to have a better prognosis than those who take longer.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;vi-treatmentmaryland-report&quot;&gt;VI. Treatment&lt;sup id=&quot;fnref:maryland-report:6&quot;&gt;&lt;a href=&quot;#fn:maryland-report&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
-
-&lt;h3 id=&quot;treatment-phases&quot;&gt;1. Treatment Phases&lt;/h3&gt;
-
-&lt;p&gt;There are typically &lt;strong&gt;three treatment stages&lt;/strong&gt; for the average-risk patient with ALL:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Induction&lt;/strong&gt; therapy is given in order to achieve a first remission (the absence of active cancer)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Consolidation&lt;/strong&gt; (intensification) therapy is given to prevent relapse after remission has been achieved&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Maintenance&lt;/strong&gt; treatment is lower intensity therapy given for several years to prevent relapse after remission&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Because leukemia can also spread to the brain and spinal cord, where chemotherapy that is given intravenously or orally does not penetrate very well, most patients also need radiation to the brain and spinal cord, or chemotherapy that is injected into the layers around them. This is called central nervous system prophylaxis (preventive treatment) and is given during all treatment phases to prevent the cancer from spreading to the brain and spinal cord.&lt;/p&gt;
-
-&lt;h3 id=&quot;specific-treatments-used-in-all&quot;&gt;2. Specific Treatments Used in ALL&lt;/h3&gt;
-
-&lt;p&gt;The following are specific treatments used for ALL:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Chemotherapy is the primary treatment&lt;/strong&gt; for each stage. Newer drugs known as biological therapies are also being used.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Radiation to the brain and spinal cord is also administered in some cases.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;A &lt;strong&gt;bone marrow transplant&lt;/strong&gt; may be recommended for some adult patients after treatment when there is no active cancer (remission) or for adults and children if the cancer has returned after treatment (relapsed).&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;drugs-used-for-induction-chemotherapy&quot;&gt;3. Drugs Used for Induction Chemotherapy&lt;/h3&gt;
-&lt;p&gt;Both children and adults typically start with a 3-drug regimen. Imatinib (Gleevec) or dasatinib (Sprycel) may be added for patients with Philadelphia chromosome-positive ALL.&lt;/p&gt;
-
-&lt;p&gt;For &lt;strong&gt;adults&lt;/strong&gt;, the standard drugs are:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Vincristine&lt;/li&gt;
-  &lt;li&gt;Prednisone&lt;/li&gt;
-  &lt;li&gt;Anthracycline drug, such as such as doxorubicin, daunorubicin, or epirubicin. Some adult chemotherapy regimens also add on an asparaginase drug or cyclophosphamide (Cytoxan).&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;preventing-central-nervous-system-disease-cns-prophylaxis&quot;&gt;4. Preventing Central Nervous System Disease (CNS Prophylaxis)&lt;/h3&gt;
-
-&lt;p&gt;Adult CNS prophylaxis is performed in one of three ways:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Cranial radiation plus intrathecal chemotherapy with methotrexate&lt;/li&gt;
-  &lt;li&gt;High-dose systemic infusion of methotrexate plus intrathecal methotrexate without cranial radiation&lt;/li&gt;
-  &lt;li&gt;Intrathecal methotrexate chemotherapy alone&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;evidence-of-remission-after-induction-treatment&quot;&gt;5. Evidence of Remission after Induction Treatment&lt;/h3&gt;
-
-&lt;p&gt;Survival in acute leukemia depends on complete remission (no signs of active cancer). Although not always clear-cut, remission is indicated by the following:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;All signs and symptoms of leukemia disappear.&lt;/li&gt;
-  &lt;li&gt;There are no abnormal cells in the blood, bone marrow, and cerebrospinal fluid.&lt;/li&gt;
-  &lt;li&gt;The percentage of blast cells in the bone marrow is less than 5%.&lt;/li&gt;
-  &lt;li&gt;Blood platelet count returns to normal.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Induction can produce extremely rapid results. Nearly all children with ALL achieve remission after a month of induction treatment. The shorter the time to remission the better the outlook:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;A complete remission usually occurs within the first 4 weeks. Patients who show low disease levels within 7 - 14 days have an excellent outlook, particularly if they have favorable genetic factors, and may need less-intensive treatments afterward.&lt;/li&gt;
-  &lt;li&gt;Patients with high disease levels at 14 days or who require more than 4 weeks to achieve remission are at higher risk for relapse and most likely need more aggressive treatment.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;side-effects-and-complications&quot;&gt;6. Side Effects and Complications&lt;/h3&gt;
-&lt;p&gt;&lt;em&gt;Common Side Effects&lt;/em&gt;. Typical side effects include:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Nausea and vomiting. Drugs known as serotonin antagonists, such as ondansetron (Zofran) or granisteron (Kyril), can relieve these side effects.&lt;/li&gt;
-  &lt;li&gt;Diarrhea&lt;/li&gt;
-  &lt;li&gt;Hair loss&lt;/li&gt;
-  &lt;li&gt;Mouth sores&lt;/li&gt;
-  &lt;li&gt;Weight loss&lt;/li&gt;
-  &lt;li&gt;Depression&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;vii-transplantation&quot;&gt;VII. Transplantation&lt;/h2&gt;
-
-&lt;h3 id=&quot;transplantation&quot;&gt;1. Transplantation&lt;/h3&gt;
-
-&lt;p&gt;Stem cells that are made in the bone marrow are the early form of all blood cells in the body. They normally mature into red, white, or immune cells. To help the patient survive high dose chemotherapy needed to cure leukemia that has returned treatment, or not responded to treatment, a stem cell transplantation procedure may be used. Stem cell transplantation replaces blood stem cells that were lost during the initial chemotherapy treatment. The lost stem cells are replaced by transplanting them from a donor into the patient.&lt;/p&gt;
-
-&lt;h3 id=&quot;the-blood-stem-cell-collection-procedure&quot;&gt;2. The Blood Stem Cell Collection Procedure&lt;/h3&gt;
-
-&lt;p&gt;&lt;em&gt;Sources of Cells&lt;/em&gt;. Stem cells can be obtained either from the donor’s:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;(Bone marrow (bone marrow transplantation)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Blood (peripheral blood stem cell transplantation)&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-transplant-procedure&quot;&gt;3. The Transplant Procedure&lt;/h3&gt;
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;The patient with ALL is given high-dose chemotherapy with or without radiation – a treatment known as conditioning. The point is to inactivate the immune system and to kill any remaining leukemia cells.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;A few days after treatment, the patient is &lt;em&gt;rescued&lt;/em&gt; using the stored stem cells, which are administered through a vein. This may take several hours. Patients may experience fever, chills, hives, shortness of breath, or a fall in blood pressure during the procedure.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;The patient is kept in a protected environment to minimize infection, and the patient usually needs blood cell replacement and nutritional support.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;side-effects-and-complications-1&quot;&gt;4. Side Effects and Complications&lt;/h3&gt;
-&lt;p&gt;Stem-cell transplantation is a serious and complex procedure that can cause many short- and long-term side effects and complications.&lt;/p&gt;
-
-&lt;p&gt;Early side effects of transplantation are similar to chemotherapy and include nausea, vomiting, fatigue, mouth sores, and loss of appetite.&lt;/p&gt;
-
-&lt;p&gt;Bleeding because of reduced platelets is a high risk during the first four weeks and may require transfusions. Later side effects include fertility problems (if the ovaries are affected), thyroid gland problems (which can affect metabolism), lung damage (which can cause breathing problems) and bone damage.&lt;/p&gt;
-
-&lt;h2 id=&quot;home-management-importantmaryland-report&quot;&gt;Home Management (IMPORTANT)&lt;sup id=&quot;fnref:maryland-report:7&quot;&gt;&lt;a href=&quot;#fn:maryland-report&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
-&lt;p&gt;A parent should call the doctor if the child has any symptoms that are out of the ordinary, including (but not limited) to:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Any fever of 101 °F or higher&lt;/li&gt;
-  &lt;li&gt;Any signs of a flu or cold&lt;/li&gt;
-  &lt;li&gt;Shortness of breath&lt;/li&gt;
-  &lt;li&gt;Severe diarrhea&lt;/li&gt;
-  &lt;li&gt;Blood in the urine or stools&lt;/li&gt;
-  &lt;li&gt;Trouble urinating&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Tracking Neutrophils&lt;/strong&gt;. Family should track their patients absolute neutrophil count. This measurement for the &lt;strong&gt;amount of white blood cells&lt;/strong&gt; is an important gauge of his &lt;strong&gt;ability to fight infection&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Counts over 1,000 usually provide sufficient protection so that children can engage in normal activities, including school and other functions where they are exposed to other children.&lt;/li&gt;
-  &lt;li&gt;If the count is between 500 - 1,000, the child should avoid large groups.&lt;/li&gt;
-  &lt;li&gt;If it falls between 200 - 500, the child should stay at home and should see only healthy visitors who have washed their hands vigorously.&lt;/li&gt;
-  &lt;li&gt;Neutrophil counts below 200 indicate that the child is at high risk for infection and should have no visitors.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;preventing-infection&quot;&gt;Preventing Infection&lt;/h3&gt;
-
-&lt;p&gt;It is &lt;strong&gt;very important&lt;/strong&gt; to take precautions to prevent infection following chemotherapy or transplantation. Guidelines for infection prevention and control include:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Discuss with the doctor what vaccinations are needed and when. Patient with ALL may need reimmunization. In general, it is best to have immunizations prior to chemotherapy and to avoid live virus vaccines during treatment,&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Avoid crowds, especially during cold and flu season.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Be diligent about hand washing and make sure that visitors wash their hands. Alcohol-based handrubs are best.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Avoid eating raw fruits and vegetables. Poultry, meat, fish, eggs and other foods should be cooked thoroughly. Do not eat foods purchased at salad bars or buffets. In the first few months after the transplant, be sure to eat protein-rich foods to help restore muscle mass and repair cell damage caused by chemotherapy and radiation.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Boil tap water before drinking it.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Dental hygiene is very important, including daily brushing and flossing. Use a soft toothbrush to prevent gum bleeding. Schedule regular visits with your dentist.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Do not sleep with pets. Avoid contact with pets’ excrement.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Avoid fresh flowers and plants as they may carry mold. Do not garden.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Swimming may increase exposure to infection. If you swim, do not submerge your face in water. Do not use hot tubs.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Report to the doctor any symptoms of fever, chills, cough, difficulty breathing, rash or changes in skin, and severe diarrhea or vomiting. Fever is one of the first signs of infection. Some of these symptoms can also indicate graft-versus-host disease.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Report to the ophthalmologist any signs of eye discharge or changes in vision. Patients who undergo radiation or who are on long-term steroid therapy have an increased risk for cataracts.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Some of the drugs used for leukemia cause extreme sun sensitivity. Sunburn can cause skin infection. Children should wear sunblock and sun-protective clothing when going outside.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;about-ph-positive-all&quot;&gt;About Ph-Positive ALL&lt;/h2&gt;
-
-&lt;h3 id=&quot;what-is-ph-all-ph-positive-cml&quot;&gt;What is Ph+ ALL? &lt;sup id=&quot;fnref:ph-positive-CML&quot;&gt;&lt;a href=&quot;#fn:ph-positive-CML&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;“Ph” is an abbreviation for “Philadelphia chromosome,” the name given to the abnormal chromosome that can lead to the overproduction of white blood cells.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;The plus sign (+) means that your laboratory tests show your bone marrow and white blood cells contain the abnormal Philadelphia chromosome.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;how-does-ph-happenph-positive-cml&quot;&gt;How Does Ph+ Happen?&lt;sup id=&quot;fnref:ph-positive-CML:1&quot;&gt;&lt;a href=&quot;#fn:ph-positive-CML&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/h3&gt;
-&lt;p&gt;The soft tissue inside our bones, called the bone marrow, produces a type of cell called a stem cell. As stem cells mature, they can turn into platelets, red blood cells, or white blood cells. Ph+ CML happens because of changes in the genetic material of these stem cells.&lt;/p&gt;
-
-&lt;p&gt;Chromosomes are the parts of our cells that carry our DNA and genes—the things that give us our physical traits, such as blue eyes or brown hair, and that tell our body how to handle all the functions of life, including the process of making blood cells. Humans have 23 pairs of chromosomes. Ph+ CML happens when some genetic material from one chromosome (chromosome 9) switches position with some genetic material from another chromosome (chromosome 22).&lt;/p&gt;
-
-&lt;p&gt;The new genetic material on chromosome 22 is called BCR-ABL and leads to abnormalities in your body’s process for making blood cells. When chromosome 22 has this abnormal BCR-ABL gene, scientists call it the Philadelphia chromosome. People with Ph+ CML have the BCR-ABL gene in their stem cells and white blood cells. The BCR-ABL gene produces a protein called Bcr-Abl. Scientists distinguish between the name of the gene and protein by how they are written.&lt;/p&gt;
-
-&lt;p&gt;The Bcr-Abl protein causes your bone marrow to produce more and more white blood cells, and these white blood cells are often damaged. It acts like a switch that keeps your white blood cell production in the “on” position. Normally, your body would stop producing white blood cells that weren’t needed and damaged blood cells would die off, but the Bcr-Abl protein interferes with these processes. Instead, your bone marrow keeps making damaged white blood cells that, over time, crowd out healthy red blood cells and platelets.&lt;/p&gt;
-
-&lt;p&gt;Scientists do not know exactly why the genetic material switches between the 2 chromosomes and continue to search for causes of Ph+ CML. Although Ph+ CML involves genetic material, be assured that it is not inherited. The abnormal gene is not passed down from parent to child.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.lls.org/leukemia/acute-lymphoblastic-leukemia/treatment/ph-positive-all-therapy&quot;&gt;Ph-Positive ALL Therapy&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;philadelphia-chromosome-phil-chromo&quot;&gt;Philadelphia Chromosome &lt;sup id=&quot;fnref:phil-chromo&quot;&gt;&lt;a href=&quot;#fn:phil-chromo&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
-&lt;p&gt;The Philadelphia chromosome or Philadelphia translocation is a specific genetic abnormality in chromosome 22 of leukemia cancer cells (particularly chronic myelogenous leukemia (CML) cells). This chromosome is defective and unusually short because of reciprocal translocation of genetic material between chromosome 9 and chromosome 22, and contains a fusion gene called BCR-ABL1.&lt;/p&gt;
-
-&lt;p&gt;(ABL represents “Abelson”, the name of a leukemia virus&lt;sup id=&quot;fnref:abelson&quot;&gt;&lt;a href=&quot;#fn:abelson&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;.)&lt;/p&gt;
-
-&lt;p&gt;Translocation results in an oncogenic BCR-ABL gene fusion that can be found on the shorter derivative 22 chromosome. This gene encodes for a Bcr-abl fusion protein. Depending on the precise location of fusion, the molecular weight of this protein can range from 185 to 210 kDa. Consequently, bcr-abl is referred to as p210 or p185.&lt;/p&gt;
-
-&lt;p&gt;Three clinically important variants are the p190, p210, and p230 isoforms. p190 is generally associated with acute lymphoblastic leukemia (ALL), while &lt;strong&gt;p210&lt;/strong&gt; is generally associated with chronic myeloid leukemia but can also be associated with ALL.[6] p230 is usually associated with chronic myelogenous leukemia associated with neutrophilia and thrombocytosis.[6] Additionally, the p190 isoform can also be expressed as a splice variant of p210.[7]&lt;/p&gt;
-
-&lt;center&gt;&lt;img src=&quot;/public/img/20161218-1-1.png&quot; width=&quot;400&quot; /&gt;&lt;/center&gt;
-
-&lt;h3 id=&quot;nomenclature&quot;&gt;Nomenclature&lt;/h3&gt;
-&lt;p&gt;The Philadelphia chromosome is designated Ph (or Ph’) chromosome and designates the shortened chromosome 22. It arises from the translocation, which is termed t(9;22)(q34.1;q11.2). This means there is a translocation between chromosome 9 and chromosome 22, with breaks happening in region (3), band (4), sub-band (1) of the long arm (q) of chromosome 9 and region (1), band (1), sub-band (2) of the long arm (q) of chromosome 22. Hence the chromosome breakpoints are written as (9q34.1) and (22q11.2), respectively, using ISCN standards. Notation omitting the sub-bands is also commonly seen: t(9;22)(q34;q11).&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;
 &lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
-&lt;div class=&quot;footnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:maryland-report&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;http://umm.edu/health/medical/reports/articles/acute-lymphocytic-leukemia&quot;&gt;&lt;strong&gt;Acute Lymphocytic Leukemia - An in-depth Report&lt;/strong&gt; - University of Maryland Medical Center&lt;/a&gt; &lt;a href=&quot;#fnref:maryland-report&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:maryland-report:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:maryland-report:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:maryland-report:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:maryland-report:4&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;5&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:maryland-report:5&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;6&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:maryland-report:6&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;7&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:maryland-report:7&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;8&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:ph-positive-CML&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;http://www.gleevec.com/patient/ph-cml-treatment.jsp?usertrack.filter_applied=true&amp;amp;NovaId=4029462192126550515&quot;&gt;What is Ph+ CML? - GLEEVEC&lt;/a&gt; &lt;a href=&quot;#fnref:ph-positive-CML&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:ph-positive-CML:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:phil-chromo&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Philadelphia_chromosome&quot;&gt;Philadelphia chromosome - Wikipedia&lt;/a&gt; &lt;a href=&quot;#fnref:phil-chromo&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:abelson&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Abelson_murine_leukemia_virus&quot;&gt;Abelson murine leukemia virus - Wikipedia&lt;/a&gt; &lt;a href=&quot;#fnref:abelson&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;
 </content>
  </entry>
  
  <entry>
    <title>Knowledge of Leukemia</title>
-   <link href="http://localhost:4000/life/2016/12/18/leukemia.html"/>
+   <link href="http://zkf85.github.io/life/2016/12/18/leukemia.html"/>
    <updated>2016-12-18T09:37:00+08:00</updated>
-   <id>http://localhost:4000/life/2016/12/18/leukemia</id>
+   <id>http://zkf85.github.io/life/2016/12/18/leukemia</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 在这里汇总一下关于这个病的一些知识和其他信息。要战胜敌人就得充分了解敌人。盼望南哥战胜它，早日康复！
 &lt;/div&gt;
@@ -704,9 +378,9 @@ This is an in-depth report on the causes, diagnosis, treatment, and prevention o
  
  <entry>
    <title>Masonry</title>
-   <link href="http://localhost:4000/ios%20development/2016/12/03/masonry.html"/>
+   <link href="http://zkf85.github.io/ios%20development/2016/12/03/masonry.html"/>
    <updated>2016-12-03T21:18:00+08:00</updated>
-   <id>http://localhost:4000/ios%20development/2016/12/03/masonry</id>
+   <id>http://zkf85.github.io/ios%20development/2016/12/03/masonry</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 Use Masonry to implement autolayout programmatically. Learn how to use it. A detailed note here!
 &lt;/div&gt;
@@ -888,9 +562,9 @@ make.left.greaterThanOrEqualTo(label.mas_left);
  
  <entry>
    <title>Should I Use Storyboards or Not?</title>
-   <link href="http://localhost:4000/ios%20development/2016/12/03/storyboard-or-not.html"/>
+   <link href="http://zkf85.github.io/ios%20development/2016/12/03/storyboard-or-not.html"/>
    <updated>2016-12-03T20:08:00+08:00</updated>
-   <id>http://localhost:4000/ios%20development/2016/12/03/storyboard-or-not</id>
+   <id>http://zkf85.github.io/ios%20development/2016/12/03/storyboard-or-not</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 Storyboards are a quick and easy way to start building a simple app. But should you use Storyboards on more complex apps? Or on a team? What are the pros and cons of using them? Do experienced iOS developers use them? Are any mainstream apps built with Storyboards?
 &lt;/div&gt;
@@ -1027,9 +701,9 @@ Storyboards are a quick and easy way to start building a simple app. But should 
  
  <entry>
    <title>Sort Tags Alphabetically</title>
-   <link href="http://localhost:4000/web%20development/2016/11/30/sort-tag-alphabetically.html"/>
+   <link href="http://zkf85.github.io/web%20development/2016/11/30/sort-tag-alphabetically.html"/>
    <updated>2016-11-30T20:32:00+08:00</updated>
-   <id>http://localhost:4000/web%20development/2016/11/30/sort-tag-alphabetically</id>
+   <id>http://zkf85.github.io/web%20development/2016/11/30/sort-tag-alphabetically</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 Unordered tags make a Jekyll tag list look sloppy, so if you care about the details, you likely want your tag list to be alphabetized.
 &lt;br /&gt;KF 11/30/2016
@@ -1123,9 +797,9 @@ title: Tags
  
  <entry>
    <title>How to Offset an HTML Anchor to Adjust for Fixed Header?</title>
-   <link href="http://localhost:4000/web%20development/2016/11/30/anchor-link-back-position-setting.html"/>
+   <link href="http://zkf85.github.io/web%20development/2016/11/30/anchor-link-back-position-setting.html"/>
    <updated>2016-11-30T20:32:00+08:00</updated>
-   <id>http://localhost:4000/web%20development/2016/11/30/anchor-link-back-position-setting</id>
+   <id>http://zkf85.github.io/web%20development/2016/11/30/anchor-link-back-position-setting</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 I have a header that is fixed to the top of the page, so when you link to an anchor elsewhere in the page, the page jumps so the anchor is at the top of the page, leaving the content behind the fixed header (I hope that makes sense). I need a way to offset the anchor by some pixels from the height of the header. I would prefer HTML or CSS, but Javascript would be acceptable as well.
 &lt;br /&gt;KF 11/30/2016
@@ -1143,9 +817,9 @@ I have a header that is fixed to the top of the page, so when you link to an anc
  
  <entry>
    <title>Singleton in iOS</title>
-   <link href="http://localhost:4000/ios%20development/2016/11/30/singleton.html"/>
+   <link href="http://zkf85.github.io/ios%20development/2016/11/30/singleton.html"/>
    <updated>2016-11-30T14:53:00+08:00</updated>
-   <id>http://localhost:4000/ios%20development/2016/11/30/singleton</id>
+   <id>http://zkf85.github.io/ios%20development/2016/11/30/singleton</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 What is the concept of singleton in iOS development?
 &lt;br /&gt;KF 11/30/2016
@@ -1258,9 +932,9 @@ What is the concept of singleton in iOS development?
  
  <entry>
    <title>What is the difference between a static and const variable</title>
-   <link href="http://localhost:4000/ios%20development/2016/11/30/static-constant.html"/>
+   <link href="http://zkf85.github.io/ios%20development/2016/11/30/static-constant.html"/>
    <updated>2016-11-30T14:42:00+08:00</updated>
-   <id>http://localhost:4000/ios%20development/2016/11/30/static-constant</id>
+   <id>http://zkf85.github.io/ios%20development/2016/11/30/static-constant</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 Static VS. Constant
 &lt;br /&gt;KF 11/30/2016
@@ -1284,9 +958,9 @@ Static VS. Constant
  
  <entry>
    <title>Notifications - Example</title>
-   <link href="http://localhost:4000/ios%20development/2016/11/29/notification.html"/>
+   <link href="http://zkf85.github.io/ios%20development/2016/11/29/notification.html"/>
    <updated>2016-11-29T12:30:00+08:00</updated>
-   <id>http://localhost:4000/ios%20development/2016/11/29/notification</id>
+   <id>http://zkf85.github.io/ios%20development/2016/11/29/notification</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 This is a simple example of how to post and listen to a notification radio.
 &lt;br /&gt;KF 11/29/2016
@@ -1376,9 +1050,9 @@ In the file add the following two constants:&lt;/p&gt;
  
  <entry>
    <title>Collection View II - Designing Your Data Source and Delegate</title>
-   <link href="http://localhost:4000/ios%20development/2016/11/28/collection-view-ii.html"/>
+   <link href="http://zkf85.github.io/ios%20development/2016/11/28/collection-view-ii.html"/>
    <updated>2016-11-28T14:00:00+08:00</updated>
-   <id>http://localhost:4000/ios%20development/2016/11/28/collection-view-ii</id>
+   <id>http://zkf85.github.io/ios%20development/2016/11/28/collection-view-ii</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 Continue - Collection View learning notes on reading Apple Guide Document &quot; Collection View Programming Guide for iOS&quot;.
 &lt;br /&gt;KF 11/28/2016
@@ -1474,9 +1148,9 @@ A collection view typically has &lt;strong&gt;at least one section&lt;/strong&gt
  
  <entry>
    <title>Collection View I - Intro & Basics</title>
-   <link href="http://localhost:4000/ios%20development/2016/11/24/collection-view-i.html"/>
+   <link href="http://zkf85.github.io/ios%20development/2016/11/24/collection-view-i.html"/>
    <updated>2016-11-24T16:00:00+08:00</updated>
-   <id>http://localhost:4000/ios%20development/2016/11/24/collection-view-i</id>
+   <id>http://zkf85.github.io/ios%20development/2016/11/24/collection-view-i</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 &quot;Collection View is super powerful.&quot; This article includes notes on reading Apple Guide Document &quot; Collection View Programming Guide for iOS&quot;.
 &lt;br /&gt;KF 11/24/2016
@@ -1628,9 +1302,9 @@ A collection view typically has &lt;strong&gt;at least one section&lt;/strong&gt
  
  <entry>
    <title>Core Data</title>
-   <link href="http://localhost:4000/ios%20development/2016/11/20/core-data.html"/>
+   <link href="http://zkf85.github.io/ios%20development/2016/11/20/core-data.html"/>
    <updated>2016-11-20T00:00:00+08:00</updated>
-   <id>http://localhost:4000/ios%20development/2016/11/20/core-data</id>
+   <id>http://zkf85.github.io/ios%20development/2016/11/20/core-data</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 &quot;It's all about how core data works.&quot;
 &lt;br /&gt;KF 11/20/2016
@@ -1792,9 +1466,9 @@ A collection view typically has &lt;strong&gt;at least one section&lt;/strong&gt
  
  <entry>
    <title>The Role of 'Rural Resentment' in the Election 2016</title>
-   <link href="http://localhost:4000/thoughts/2016/11/10/rural-resentment.html"/>
+   <link href="http://zkf85.github.io/thoughts/2016/11/10/rural-resentment.html"/>
    <updated>2016-11-10T00:00:00+08:00</updated>
-   <id>http://localhost:4000/thoughts/2016/11/10/rural-resentment</id>
+   <id>http://zkf85.github.io/thoughts/2016/11/10/rural-resentment</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;There is an obvious phenomenon when I was watching the results popping out with the votes' distribution geographically: most people in urban area supported Hillary while there was a landslide winning in favor of Trump in rural area all over the country. An article stressed this topic and I take a summary here.&lt;/div&gt;
 
 &lt;p&gt;&lt;img src=&quot;/public/img/20161110-election-map.jpg&quot; alt=&quot;Trump has better coverage than Verizon&quot; /&gt;&lt;/p&gt;
@@ -1847,9 +1521,9 @@ A collection view typically has &lt;strong&gt;at least one section&lt;/strong&gt
  
  <entry>
    <title>iOS7 CS193P 13/14 Photomania Demo Note</title>
-   <link href="http://localhost:4000/ios%20development/2016/11/07/Photomania-Demo-Note.html"/>
+   <link href="http://zkf85.github.io/ios%20development/2016/11/07/Photomania-Demo-Note.html"/>
    <updated>2016-11-07T00:00:00+08:00</updated>
-   <id>http://localhost:4000/ios%20development/2016/11/07/Photomania-Demo-Note</id>
+   <id>http://zkf85.github.io/ios%20development/2016/11/07/Photomania-Demo-Note</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 This might be the toughest and the biggest demo in this iOS course. Here I put my note collection here as reference for later use. 11/06/2016
 &lt;/div&gt;
@@ -1939,9 +1613,9 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
  
  <entry>
    <title>Class Renaming Issue</title>
-   <link href="http://localhost:4000/ios%20development/2016/11/06/rename-issue.html"/>
+   <link href="http://zkf85.github.io/ios%20development/2016/11/06/rename-issue.html"/>
    <updated>2016-11-06T00:00:00+08:00</updated>
-   <id>http://localhost:4000/ios%20development/2016/11/06/rename-issue</id>
+   <id>http://zkf85.github.io/ios%20development/2016/11/06/rename-issue</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 This is a common issue that anybody using XCode may encounter. It's usually very annoying when you want to change the names of the classes because file names and includes are all related when you do it. Here I gather some correct (should be) way to make it happen. 
 &lt;/div&gt;
@@ -1984,9 +1658,9 @@ In short, it looks like this:&lt;/p&gt;
  
  <entry>
    <title>This is my first blog</title>
-   <link href="http://localhost:4000/note/2016/11/03/This-is-my-first-blog.html"/>
+   <link href="http://zkf85.github.io/note/2016/11/03/This-is-my-first-blog.html"/>
    <updated>2016-11-03T00:00:00+08:00</updated>
-   <id>http://localhost:4000/note/2016/11/03/This-is-my-first-blog</id>
+   <id>http://zkf85.github.io/note/2016/11/03/This-is-my-first-blog</id>
    <content type="html">&lt;h2 id=&quot;try-writing-markdown-blogs-with-macdown&quot;&gt;Try writing markdown blogs with MacDown&lt;/h2&gt;
 
 &lt;p&gt;Oh! This is really an awesome editor as I’m typing these words. I can see what it looks like as published on the right. As long I wanna try some syntax in markdown that I’m not quite familiar, I just try it, and take a look:&lt;/p&gt;

@@ -4,7 +4,7 @@
  <title>Everest</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-06-11T15:33:47+08:00</updated>
+ <updated>2018-06-11T15:42:03+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Kefeng Zhu</name>
@@ -89,34 +89,6 @@ class_foo
 foo
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>人工智能复习</title>
-   <link href="http://localhost:4000/ai/2018/05/21/AI_course_revision_1.html"/>
-   <updated>2018-05-21T09:37:00+08:00</updated>
-   <id>http://localhost:4000/ai/2018/05/21/AI_course_revision_1</id>
-   <content type="html">&lt;div class=&quot;message&quot;&gt;
-&quot;从这里开始人工智能课程总结。贵在坚持！&quot;
-&lt;br /&gt;KF 05/21/2018
-&lt;/div&gt;
-
-&lt;h2 id=&quot;python&quot;&gt;Python&lt;/h2&gt;
-&lt;h3 id=&quot;pycharmide&quot;&gt;使用Pycharm作为IDE&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.jetbrains.com/help/pycharm/tool-windows.html&quot;&gt;PyCharm Help - Official
-&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;pandas-&quot;&gt;Pandas 资料&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://pandas.pydata.org/pandas-docs/stable/#&quot;&gt;Pandas Documentation&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;/li&gt;
-&lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 </content>

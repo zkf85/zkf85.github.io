@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "人工智能复习"
+title: "人工智能复习"
 date: "2018-05-21 09:37:00"
 category: [AI]
 tag: [machine_learning, python]

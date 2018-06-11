@@ -11,7 +11,7 @@
 
   <title>
     
-      How to Offset an HTML Anchor to Adjust for Fixed Header? &middot; Everest
+      @staticmethod和@classmethod的作用与区别 &middot; Everest
     
   </title>
 
@@ -176,39 +176,93 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">How to Offset an HTML Anchor to Adjust for Fixed Header?</h1>
+  <h1 class="post-title">@staticmethod和@classmethod的作用与区别</h1>
 
-  <!-- <span class="post-date">30 Nov 2016</span> -->
-  <div class="post-date">Wed, 30 Nov 2016 20:32:00 +0800</div>
+  <!-- <span class="post-date">11 Jun 2018</span> -->
+  <div class="post-date">Mon, 11 Jun 2018 00:00:00 +0800</div>
   <span class="post-tag-kf">
   
   
-    <a href="/blog/tags/#jekyll" class="post-tag">jekyll</a>
-  
-    <a href="/blog/tags/#html" class="post-tag">html</a>
-  
-    <a href="/blog/tags/#css" class="post-tag">css</a>
-  
-    <a href="/blog/tags/#markdown" class="post-tag">markdown</a>
-  
-    <a href="/blog/tags/#anchor" class="post-tag">anchor</a>
+    <a href="/blog/tags/#python" class="post-tag">python</a>
   
   
   </span>
   <hr>
   <article>
-    <div class="message">
-I have a header that is fixed to the top of the page, so when you link to an anchor elsewhere in the page, the page jumps so the anchor is at the top of the page, leaving the content behind the fixed header (I hope that makes sense). I need a way to offset the anchor by some pixels from the height of the header. I would prefer HTML or CSS, but Javascript would be acceptable as well.
-<br />KF 11/30/2016
+    <h3 id="section">相同点：</h3>
+<p>一般来说，要使用某个类的方法，需要先实例化一个对象再调用方法。
+e.g.:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="n">bar</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  
+        <span class="k">print</span> <span class="s">'foo'</span> 
+	<span class="nd">@staticmethod</span>
+	<span class="k">def</span> <span class="nf">static_foo</span><span class="p">():</span>
+		<span class="k">print</span><span class="p">(</span><span class="s">"static_foo"</span><span class="p">)</span>
+		
+	<span class="nd">@classmethod</span>
+	<span class="k">def</span> <span class="nf">class_foo</span><span class="p">():</span>
+		<span class="k">print</span><span class="p">(</span><span class="s">"class_foo"</span><span class="p">)</span>
+</code></pre>
 </div>
 
-<h3 id="reference">Reference</h3>
-<p><a href="http://stackoverflow.com/questions/4086107/html-positionfixed-page-header-and-in-page-anchors">HTML position:fixed page header and in-page anchors</a></p>
+<p>而使用<code class="highlighter-rouge">@staticmethod</code>或<code class="highlighter-rouge">@classmethod</code>，就可以不需要实例化，直接<strong>类名.方法名()</strong>来调用。e.g. <code class="highlighter-rouge">A.static_foo</code> 或者 <code class="highlighter-rouge">A.class_foo</code></p>
 
-<p><a href="http://stackoverflow.com/questions/10732690/offsetting-an-html-anchor-to-adjust-for-fixed-header">offsetting an html anchor to adjust for fixed header [duplicate]</a></p>
+<p>这有利于组织代码，把某些应该属于某个类的函数给放到那个类里去，同时有利于命名空间的整洁。</p>
 
-<p><br /><br />
-<strong><em>KF</em></strong></p>
+<h3 id="section-1">不同点：</h3>
+
+<p>既然@staticmethod和@classmethod都可以直接类名.方法名()来调用，那他们有什么区别呢</p>
+
+<p>从它们的使用上来看,</p>
+
+<ul>
+  <li>
+    <p>@staticmethod<strong>不需要</strong>表示自身对象的self和自身类的cls<strong>参数</strong>，就跟使用函数一样。</p>
+  </li>
+  <li>
+    <p>@classmethod也不需要self参数，但<strong>第一个参数</strong>需要是表示自身类的cls参数。</p>
+  </li>
+</ul>
+
+<p>如果在@staticmethod中要调用到这个类的一些属性方法，只能直接类名.属性名或类名.方法名, e.g. <code class="highlighter-rouge">A.bar</code></p>
+
+<p>而@classmethod因为持有cls参数，可以来调用类的属性，类的方法，实例化对象等，避免硬编码, e.g. <code class="highlighter-rouge">cls.bar</code>以及<code class="highlighter-rouge">cls().foo()</code></p>
+
+<h4 id="section-2">测试代码</h4>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>  
+    <span class="n">bar</span> <span class="o">=</span> <span class="mi">1</span>  
+    <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  
+        <span class="k">print</span><span class="p">(</span><span class="s">"oo"</span><span class="p">)</span>
+ 
+    <span class="nd">@staticmethod</span>  
+    <span class="k">def</span> <span class="nf">static_foo</span><span class="p">():</span>  
+        <span class="k">print</span><span class="p">(</span><span class="s">"static_foo"</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">bar</span><span class="p">)</span>
+ 
+    <span class="nd">@classmethod</span>  
+    <span class="k">def</span> <span class="nf">class_foo</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>  
+        <span class="k">print</span><span class="p">(</span><span class="s">"class_foo"</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">cls</span><span class="o">.</span><span class="n">bar</span><span class="p">)</span>
+        <span class="n">cls</span><span class="p">()</span><span class="o">.</span><span class="n">foo</span><span class="p">()</span>  
+  
+<span class="n">A</span><span class="o">.</span><span class="n">static_foo</span><span class="p">()</span>  
+<span class="n">A</span><span class="o">.</span><span class="n">class_foo</span><span class="p">()</span>  
+</code></pre>
+</div>
+<p>输出</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>static_foo
+1
+class_foo
+1
+foo
+</code></pre>
+</div>
+
+<p><br /><strong><em>KF</em></strong></p>
 
   </article>
 </div>
@@ -216,15 +270,6 @@ I have a header that is fixed to the top of the page, so when you link to an anc
 <div class="related">
   <h3>Related Posts</h3>
   <ul class="related-posts">
-    
-      <li>
-        <h4>
-          <a href="/python/2018/06/11/python_diff_between_staticmethod_and_classmethod.html">
-            @staticmethod和@classmethod的作用与区别
-            <small>11 Jun 2018</small>
-          </a>
-        </h4>
-      </li>
     
       <li>
         <h4>
@@ -244,6 +289,15 @@ I have a header that is fixed to the top of the page, so when you link to an anc
         </h4>
       </li>
     
+      <li>
+        <h4>
+          <a href="/ios%20development/2016/12/03/masonry.html">
+            Masonry
+            <small>03 Dec 2016</small>
+          </a>
+        </h4>
+      </li>
+    
   </ul>
 </div>
 
@@ -253,8 +307,8 @@ I have a header that is fixed to the top of the page, so when you link to an anc
   <div id="disqus_thread"></div>
   <script>
 var disqus_config = function () {
-  this.page.url = 'http://localhost:4000/web%20development/2016/11/30/anchor-link-back-position-setting.html'; // Replace PAGE_URL with your page's canonical URL variable
-  this.page.identifier = '/web%20development/2016/11/30/anchor-link-back-position-setting'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  this.page.url = 'http://localhost:4000/python/2018/06/11/python_diff_between_staticmethod_and_classmethod.html'; // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = '/python/2018/06/11/python_diff_between_staticmethod_and_classmethod'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 (function() {
   var d = document, s = d.createElement('script');

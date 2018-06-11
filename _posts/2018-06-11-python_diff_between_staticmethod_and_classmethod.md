@@ -68,12 +68,13 @@ class A(object):
   
 A.static_foo()  
 A.class_foo()  
-输出
-static_foo
-1
-class_foo
-1
-foo
 ```
+输出
+
+	static_foo
+	1
+	class_foo
+	1
+	foo
 
 <br>***KF*** 

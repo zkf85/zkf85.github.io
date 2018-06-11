@@ -4,7 +4,7 @@
  <title>Everest</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-06-11T15:42:03+08:00</updated>
+ <updated>2018-06-11T15:48:01+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Kefeng Zhu</name>
@@ -419,6 +419,7 @@ This is an in-depth report on the causes, diagnosis, treatment, and prevention o
 &lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+
 &lt;div class=&quot;footnotes&quot;&gt;
   &lt;ol&gt;
     &lt;li id=&quot;fn:maryland-report&quot;&gt;

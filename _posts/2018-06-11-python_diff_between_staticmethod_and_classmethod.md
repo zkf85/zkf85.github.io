@@ -5,11 +5,6 @@ category: [Python]
 tag: [python]
 ---
 
-<div class = "message">
-@staticmethod和@classmethod的作用与区别
-<br>KF 06/11/2018
-</div>
-
 ### 相同点：
 一般来说，要使用某个类的方法，需要先实例化一个对象再调用方法。
 e.g.:

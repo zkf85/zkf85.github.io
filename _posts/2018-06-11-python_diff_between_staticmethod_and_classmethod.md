@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "@staticmethod和@classmethod的作用与区别"
+date: "2018-06-11 15:24:00"
 category: [Python]
 tag: [python]
 ---

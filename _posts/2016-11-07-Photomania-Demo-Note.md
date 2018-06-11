@@ -59,4 +59,4 @@ Add these too class methods to `Photos+CoreDataClass`
 <br>***KF***
 
 ---
-[^schema]: A **schema** is a collection of database objects (as far as this hour is concerned—tables) associated with one particular database username. This username is called the schema owner, or the owner of the related group of objects. You may have one or multiple schemas in a database. Jul 1, 2008 [Managing Database Objects in SQL](http://www.informit.com/articles/article.aspx?p=1216889&seqNum=2)
+[^schema]: A **schema** is a collection of database objects (as far as this hour is concerned—tables) associated with one particular database username. This username is called the schema owner, or the owner of the related group of objects. You may have one or multiple schemas in a database. Jul 1, 2008 [Managing Database Objects in SQL](http://www.informit.com/articles/article.aspx?p=1216889&seqNum=2)  

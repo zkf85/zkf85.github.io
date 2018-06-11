@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>Everest</title>
- <link href="http://zkf85.github.io/atom.xml" rel="self"/>
- <link href="http://zkf85.github.io/"/>
- <updated>2017-12-02T19:03:25+08:00</updated>
- <id>http://zkf85.github.io</id>
+ <link href="http://localhost:4000/atom.xml" rel="self"/>
+ <link href="http://localhost:4000/"/>
+ <updated>2018-05-21T20:00:39+08:00</updated>
+ <id>http://localhost:4000</id>
  <author>
    <name>Kefeng Zhu</name>
    <email></email>
@@ -13,28 +13,38 @@
 
  
  <entry>
-   <title>亲爱的，看见这句话没？？嘿嘿嘿</title>
-   <link href="http://zkf85.github.io/ios%20development/2017/12/02/message-dynamic-binding.html"/>
-   <updated>2017-12-02T18:37:00+08:00</updated>
-   <id>http://zkf85.github.io/ios%20development/2017/12/02/message-dynamic-binding</id>
+   <title>人工智能复习</title>
+   <link href="http://localhost:4000/ai/2018/05/21/AI_course_revision_1.html"/>
+   <updated>2018-05-21T00:00:00+08:00</updated>
+   <id>http://localhost:4000/ai/2018/05/21/AI_course_revision_1</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
-Objective-C 的消息机制与动态绑定的理解
+&quot;从这里开始人工智能课程总结。贵在坚持！&quot;
+&lt;br /&gt;KF 05/21/2018
 &lt;/div&gt;
 
-&lt;h2 id=&quot;i-objective-c&quot;&gt;I. Objective-C的消息机制&lt;/h2&gt;
+&lt;h2 id=&quot;python&quot;&gt;Python&lt;/h2&gt;
+&lt;h3 id=&quot;pycharmide&quot;&gt;使用Pycharm作为IDE&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.jetbrains.com/help/pycharm/tool-windows.html&quot;&gt;PyCharm Help - Official
+&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
-&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;pandas-&quot;&gt;Pandas 资料&lt;/h3&gt;
 
-&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pandas.pydata.org/pandas-docs/stable/#&quot;&gt;Pandas Documentation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 </content>
  </entry>
  
  <entry>
    <title>Knowledge of Leukemia</title>
-   <link href="http://zkf85.github.io/life/2016/12/18/leukemia.html"/>
+   <link href="http://localhost:4000/life/2016/12/18/leukemia.html"/>
    <updated>2016-12-18T09:37:00+08:00</updated>
-   <id>http://zkf85.github.io/life/2016/12/18/leukemia</id>
+   <id>http://localhost:4000/life/2016/12/18/leukemia</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 在这里汇总一下关于这个病的一些知识和其他信息。要战胜敌人就得充分了解敌人。盼望南哥战胜它，早日康复！
 &lt;/div&gt;
@@ -376,9 +386,9 @@ This is an in-depth report on the causes, diagnosis, treatment, and prevention o
  
  <entry>
    <title>Masonry</title>
-   <link href="http://zkf85.github.io/ios%20development/2016/12/03/masonry.html"/>
+   <link href="http://localhost:4000/ios%20development/2016/12/03/masonry.html"/>
    <updated>2016-12-03T21:18:00+08:00</updated>
-   <id>http://zkf85.github.io/ios%20development/2016/12/03/masonry</id>
+   <id>http://localhost:4000/ios%20development/2016/12/03/masonry</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 Use Masonry to implement autolayout programmatically. Learn how to use it. A detailed note here!
 &lt;/div&gt;
@@ -560,9 +570,9 @@ make.left.greaterThanOrEqualTo(label.mas_left);
  
  <entry>
    <title>Should I Use Storyboards or Not?</title>
-   <link href="http://zkf85.github.io/ios%20development/2016/12/03/storyboard-or-not.html"/>
+   <link href="http://localhost:4000/ios%20development/2016/12/03/storyboard-or-not.html"/>
    <updated>2016-12-03T20:08:00+08:00</updated>
-   <id>http://zkf85.github.io/ios%20development/2016/12/03/storyboard-or-not</id>
+   <id>http://localhost:4000/ios%20development/2016/12/03/storyboard-or-not</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 Storyboards are a quick and easy way to start building a simple app. But should you use Storyboards on more complex apps? Or on a team? What are the pros and cons of using them? Do experienced iOS developers use them? Are any mainstream apps built with Storyboards?
 &lt;/div&gt;
@@ -699,9 +709,9 @@ Storyboards are a quick and easy way to start building a simple app. But should 
  
  <entry>
    <title>Sort Tags Alphabetically</title>
-   <link href="http://zkf85.github.io/web%20development/2016/11/30/sort-tag-alphabetically.html"/>
+   <link href="http://localhost:4000/web%20development/2016/11/30/sort-tag-alphabetically.html"/>
    <updated>2016-11-30T20:32:00+08:00</updated>
-   <id>http://zkf85.github.io/web%20development/2016/11/30/sort-tag-alphabetically</id>
+   <id>http://localhost:4000/web%20development/2016/11/30/sort-tag-alphabetically</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 Unordered tags make a Jekyll tag list look sloppy, so if you care about the details, you likely want your tag list to be alphabetized.
 &lt;br /&gt;KF 11/30/2016
@@ -795,9 +805,9 @@ title: Tags
  
  <entry>
    <title>How to Offset an HTML Anchor to Adjust for Fixed Header?</title>
-   <link href="http://zkf85.github.io/web%20development/2016/11/30/anchor-link-back-position-setting.html"/>
+   <link href="http://localhost:4000/web%20development/2016/11/30/anchor-link-back-position-setting.html"/>
    <updated>2016-11-30T20:32:00+08:00</updated>
-   <id>http://zkf85.github.io/web%20development/2016/11/30/anchor-link-back-position-setting</id>
+   <id>http://localhost:4000/web%20development/2016/11/30/anchor-link-back-position-setting</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 I have a header that is fixed to the top of the page, so when you link to an anchor elsewhere in the page, the page jumps so the anchor is at the top of the page, leaving the content behind the fixed header (I hope that makes sense). I need a way to offset the anchor by some pixels from the height of the header. I would prefer HTML or CSS, but Javascript would be acceptable as well.
 &lt;br /&gt;KF 11/30/2016
@@ -815,9 +825,9 @@ I have a header that is fixed to the top of the page, so when you link to an anc
  
  <entry>
    <title>Singleton in iOS</title>
-   <link href="http://zkf85.github.io/ios%20development/2016/11/30/singleton.html"/>
+   <link href="http://localhost:4000/ios%20development/2016/11/30/singleton.html"/>
    <updated>2016-11-30T14:53:00+08:00</updated>
-   <id>http://zkf85.github.io/ios%20development/2016/11/30/singleton</id>
+   <id>http://localhost:4000/ios%20development/2016/11/30/singleton</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 What is the concept of singleton in iOS development?
 &lt;br /&gt;KF 11/30/2016
@@ -930,9 +940,9 @@ What is the concept of singleton in iOS development?
  
  <entry>
    <title>What is the difference between a static and const variable</title>
-   <link href="http://zkf85.github.io/ios%20development/2016/11/30/static-constant.html"/>
+   <link href="http://localhost:4000/ios%20development/2016/11/30/static-constant.html"/>
    <updated>2016-11-30T14:42:00+08:00</updated>
-   <id>http://zkf85.github.io/ios%20development/2016/11/30/static-constant</id>
+   <id>http://localhost:4000/ios%20development/2016/11/30/static-constant</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 Static VS. Constant
 &lt;br /&gt;KF 11/30/2016
@@ -956,9 +966,9 @@ Static VS. Constant
  
  <entry>
    <title>Notifications - Example</title>
-   <link href="http://zkf85.github.io/ios%20development/2016/11/29/notification.html"/>
+   <link href="http://localhost:4000/ios%20development/2016/11/29/notification.html"/>
    <updated>2016-11-29T12:30:00+08:00</updated>
-   <id>http://zkf85.github.io/ios%20development/2016/11/29/notification</id>
+   <id>http://localhost:4000/ios%20development/2016/11/29/notification</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 This is a simple example of how to post and listen to a notification radio.
 &lt;br /&gt;KF 11/29/2016
@@ -1048,9 +1058,9 @@ In the file add the following two constants:&lt;/p&gt;
  
  <entry>
    <title>Collection View II - Designing Your Data Source and Delegate</title>
-   <link href="http://zkf85.github.io/ios%20development/2016/11/28/collection-view-ii.html"/>
+   <link href="http://localhost:4000/ios%20development/2016/11/28/collection-view-ii.html"/>
    <updated>2016-11-28T14:00:00+08:00</updated>
-   <id>http://zkf85.github.io/ios%20development/2016/11/28/collection-view-ii</id>
+   <id>http://localhost:4000/ios%20development/2016/11/28/collection-view-ii</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 Continue - Collection View learning notes on reading Apple Guide Document &quot; Collection View Programming Guide for iOS&quot;.
 &lt;br /&gt;KF 11/28/2016
@@ -1146,9 +1156,9 @@ A collection view typically has &lt;strong&gt;at least one section&lt;/strong&gt
  
  <entry>
    <title>Collection View I - Intro & Basics</title>
-   <link href="http://zkf85.github.io/ios%20development/2016/11/24/collection-view-i.html"/>
+   <link href="http://localhost:4000/ios%20development/2016/11/24/collection-view-i.html"/>
    <updated>2016-11-24T16:00:00+08:00</updated>
-   <id>http://zkf85.github.io/ios%20development/2016/11/24/collection-view-i</id>
+   <id>http://localhost:4000/ios%20development/2016/11/24/collection-view-i</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 &quot;Collection View is super powerful.&quot; This article includes notes on reading Apple Guide Document &quot; Collection View Programming Guide for iOS&quot;.
 &lt;br /&gt;KF 11/24/2016
@@ -1300,9 +1310,9 @@ A collection view typically has &lt;strong&gt;at least one section&lt;/strong&gt
  
  <entry>
    <title>Core Data</title>
-   <link href="http://zkf85.github.io/ios%20development/2016/11/20/core-data.html"/>
+   <link href="http://localhost:4000/ios%20development/2016/11/20/core-data.html"/>
    <updated>2016-11-20T00:00:00+08:00</updated>
-   <id>http://zkf85.github.io/ios%20development/2016/11/20/core-data</id>
+   <id>http://localhost:4000/ios%20development/2016/11/20/core-data</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 &quot;It's all about how core data works.&quot;
 &lt;br /&gt;KF 11/20/2016
@@ -1464,9 +1474,9 @@ A collection view typically has &lt;strong&gt;at least one section&lt;/strong&gt
  
  <entry>
    <title>The Role of 'Rural Resentment' in the Election 2016</title>
-   <link href="http://zkf85.github.io/thoughts/2016/11/10/rural-resentment.html"/>
+   <link href="http://localhost:4000/thoughts/2016/11/10/rural-resentment.html"/>
    <updated>2016-11-10T00:00:00+08:00</updated>
-   <id>http://zkf85.github.io/thoughts/2016/11/10/rural-resentment</id>
+   <id>http://localhost:4000/thoughts/2016/11/10/rural-resentment</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;There is an obvious phenomenon when I was watching the results popping out with the votes' distribution geographically: most people in urban area supported Hillary while there was a landslide winning in favor of Trump in rural area all over the country. An article stressed this topic and I take a summary here.&lt;/div&gt;
 
 &lt;p&gt;&lt;img src=&quot;/public/img/20161110-election-map.jpg&quot; alt=&quot;Trump has better coverage than Verizon&quot; /&gt;&lt;/p&gt;
@@ -1519,9 +1529,9 @@ A collection view typically has &lt;strong&gt;at least one section&lt;/strong&gt
  
  <entry>
    <title>iOS7 CS193P 13/14 Photomania Demo Note</title>
-   <link href="http://zkf85.github.io/ios%20development/2016/11/07/Photomania-Demo-Note.html"/>
+   <link href="http://localhost:4000/ios%20development/2016/11/07/Photomania-Demo-Note.html"/>
    <updated>2016-11-07T00:00:00+08:00</updated>
-   <id>http://zkf85.github.io/ios%20development/2016/11/07/Photomania-Demo-Note</id>
+   <id>http://localhost:4000/ios%20development/2016/11/07/Photomania-Demo-Note</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 This might be the toughest and the biggest demo in this iOS course. Here I put my note collection here as reference for later use. 11/06/2016
 &lt;/div&gt;
@@ -1611,9 +1621,9 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
  
  <entry>
    <title>Class Renaming Issue</title>
-   <link href="http://zkf85.github.io/ios%20development/2016/11/06/rename-issue.html"/>
+   <link href="http://localhost:4000/ios%20development/2016/11/06/rename-issue.html"/>
    <updated>2016-11-06T00:00:00+08:00</updated>
-   <id>http://zkf85.github.io/ios%20development/2016/11/06/rename-issue</id>
+   <id>http://localhost:4000/ios%20development/2016/11/06/rename-issue</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 This is a common issue that anybody using XCode may encounter. It's usually very annoying when you want to change the names of the classes because file names and includes are all related when you do it. Here I gather some correct (should be) way to make it happen. 
 &lt;/div&gt;
@@ -1656,9 +1666,9 @@ In short, it looks like this:&lt;/p&gt;
  
  <entry>
    <title>This is my first blog</title>
-   <link href="http://zkf85.github.io/note/2016/11/03/This-is-my-first-blog.html"/>
+   <link href="http://localhost:4000/note/2016/11/03/This-is-my-first-blog.html"/>
    <updated>2016-11-03T00:00:00+08:00</updated>
-   <id>http://zkf85.github.io/note/2016/11/03/This-is-my-first-blog</id>
+   <id>http://localhost:4000/note/2016/11/03/This-is-my-first-blog</id>
    <content type="html">&lt;h2 id=&quot;try-writing-markdown-blogs-with-macdown&quot;&gt;Try writing markdown blogs with MacDown&lt;/h2&gt;
 
 &lt;p&gt;Oh! This is really an awesome editor as I’m typing these words. I can see what it looks like as published on the right. As long I wanna try some syntax in markdown that I’m not quite familiar, I just try it, and take a look:&lt;/p&gt;

@@ -20,7 +20,7 @@ class A(object):
 		print("static_foo")
 		
 	@classmethod
-	def class_foo():
+	def class_foo(cls):
 		print("class_foo")
 ```
 

@@ -38,16 +38,16 @@ nav:
     - '/'
   Blog:           
     - '/blog/'
-    - { Categories: '/blog/categories/' }
-    - { Tags: '/blog/tags/' }
+    - { Categories: '/blog/categories_list/' }
+    - { Tags: '/blog/tags_list/' }
   About:          
     - '/about/'
   #Github Project: 
   #  - 'http://zkf85.github.io/'
 
 # Where are tags and categories displayed
-tag_page: '/blog/tags/'
-category_page: '/blog/categories/'
+tag_page: '/blog/tags_list/'
+category_page: '/blog/categories_list/'
 
 #hero:
 #  image: /public/img/we_will_be_giants_by_yalestewart.jpg

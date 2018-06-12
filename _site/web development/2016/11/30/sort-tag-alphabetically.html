@@ -217,7 +217,7 @@ Unordered tags make a Jekyll tag list look sloppy, so if you care about the deta
 
 <!--more-->
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code>---
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
 layout: page
 title: Tags
 ---
@@ -251,12 +251,11 @@ title: Tags
     {% endunless %}{% endfor %}
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>For <code class="highlighter-rouge">categories.html</code> the basic idea is the same.</p>
 
-<p>When Adding the code block above, I came across a curious problem when writing liquid template code in this markdown file. When Jekyll compiles the static web files, it tries to process all the curly brackets like: <code class="highlighter-rouge"><span class="p">{</span><span class="err">{</span></code> and <code class="highlighter-rouge"><span class="p">{</span><span class="err">%</span></code>.</p>
+<p>When Adding the code block above, I came across a curious problem when writing liquid template code in this markdown file. When Jekyll compiles the static web files, it tries to process all the curly brackets like: <code class="highlighter-rouge">{{</code> and <code class="highlighter-rouge">{%</code>.</p>
 
 <p>This is not a bug , but a <a href="https://github.com/jekyll/jekyll/issues/814">caveat of using a templating language with markdown</a>. The workarounds are provided by</p>
 
@@ -264,7 +263,7 @@ title: Tags
   <li><a href="http://ozzieliu.com/2016/04/26/writing-liquid-template-in-markdown-with-jekyll/">Ozzie Liu - Writing Liquid Template in Markdown Code Blocks with Jekyll</a>.</li>
 </ul>
 
-<p><strong>Simply put, just add<code class="highlighter-rouge"><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">raw</span><span class="w"> </span><span class="err">%</span><span class="p">}</span></code> and <code class="highlighter-rouge"><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endraw</span><span class="w"> </span><span class="err">%</span><span class="p">}</span></code> on the both end when <code class="highlighter-rouge"><span class="p">{</span><span class="err">{</span></code> or <code class="highlighter-rouge"><span class="p">{</span><span class="err">%</span></code> appears.</strong></p>
+<p><strong>Simply put, just add<code class="highlighter-rouge">{% raw %}</code> and <code class="highlighter-rouge">{% endraw %}</code> on the both end when <code class="highlighter-rouge">{{</code> or <code class="highlighter-rouge">{%</code> appears.</strong></p>
 
 <blockquote>
   <p>It is pretty confused to render the above line!!!</p>

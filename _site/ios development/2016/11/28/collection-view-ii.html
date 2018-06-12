@@ -229,7 +229,7 @@ A collection view typically has <strong>at least one section</strong> and may co
 
 <p>Different layout objects could present section and item data very differently, as shown in <strong>Figure 2-1</strong>.</p>
 
-<h4 id="centerfigure-2-1-sections-arranged-according-to-the-arrangement-of-layout-objectscenter"><center>Figure 2-1. Sections arranged according to the arrangement of layout objects</center></h4>
+<h4 id="figure-2-1-sections-arranged-according-to-the-arrangement-of-layout-objects"><center>Figure 2-1. Sections arranged according to the arrangement of layout objects</center></h4>
 <p><img src="/public/img/20161128-2-1.png" alt="figure-2-1" /></p>
 
 <h3 id="designing-your-data-objects">Designing Your Data Objects</h3>
@@ -237,7 +237,7 @@ A collection view typically has <strong>at least one section</strong> and may co
 
 <p>One simple solution (but certainly not the only solution) is for your data source to use a set of nested arrays, as shown in <strong>Figure 2-2</strong>.</p>
 
-<h4 id="centerfigure-2-2-arranging-data-objects-using-nested-arrayscenter"><center>Figure 2-2. Arranging data objects using nested arrays</center></h4>
+<h4 id="figure-2-2-arranging-data-objects-using-nested-arrays"><center>Figure 2-2. Arranging data objects using nested arrays</center></h4>
 
 <center><img src="/public/img/20161128-2-2.png" width="5000" /></center>
 
@@ -259,7 +259,7 @@ A collection view typically has <strong>at least one section</strong> and may co
 
 <p>If you implemented your data source as shown in Figure 2-2, the implementation of your data source methods could be as simple as those shown below:</p>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nf">numberOfSectionsInCollectionView</span><span class="p">:(</span><span class="n">UICollectionView</span><span class="o">*</span><span class="p">)</span><span class="nv">collectionView</span> <span class="p">{</span>
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nf">numberOfSectionsInCollectionView</span><span class="p">:(</span><span class="n">UICollectionView</span><span class="o">*</span><span class="p">)</span><span class="nv">collectionView</span> <span class="p">{</span>
     <span class="c1">// _data is a class member variable that contains one array per section.
 </span>    <span class="k">return</span> <span class="p">[</span><span class="n">_data</span> <span class="nf">count</span><span class="p">];</span>
 <span class="p">}</span>
@@ -268,8 +268,7 @@ A collection view typically has <strong>at least one section</strong> and may co
     <span class="n">NSArray</span><span class="o">*</span> <span class="n">sectionArray</span> <span class="o">=</span> <span class="p">[</span><span class="n">_data</span> <span class="nf">objectAtIndex</span><span class="p">:</span><span class="n">section</span><span class="p">];</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">sectionArray</span> <span class="nf">count</span><span class="p">];</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="configuring-cells-and-supplementary-views">Configuring Cells and Supplementary Views</h2>
 <p>Another important task of your data source is to provide the views that the collection view uses to display your content. The collection view does not track your app’s content. It simply takes the views you give it and applies the current layout information to them. Therefore, everything that is displayed by the views is your responsibility.</p>

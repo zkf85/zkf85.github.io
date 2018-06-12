@@ -197,7 +197,7 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
 Storyboards are a quick and easy way to start building a simple app. But should you use Storyboards on more complex apps? Or on a team? What are the pros and cons of using them? Do experienced iOS developers use them? Are any mainstream apps built with Storyboards?
 </div>
 
-<h2 id="i-what-are-the-pros-and-cons-of-using-storyboardsroadfire">I. What are the pros and cons of using Storyboards?<sup id="fnref:roadfire"><a href="#fn:roadfire" class="footnote">1</a></sup></h2>
+<h2 id="i-what-are-the-pros-and-cons-of-using-storyboards">I. What are the pros and cons of using Storyboards?<sup id="fnref:roadfire"><a href="#fn:roadfire" class="footnote">1</a></sup></h2>
 
 <h3 id="pros">Pros:</h3>
 <p>The biggest benefit of using Storyboards (especially over nibs/xibs) is that <strong>you can see how the screens in your app are related</strong>. When you’re just starting on an existing project (or coming back to an old one), Storyboards give you an easy way to follow the flow through the app and zoom out to get a high level overview of what the app does.</p>
@@ -225,29 +225,29 @@ Storyboards are a quick and easy way to start building a simple app. But should 
 
 <p>Whenever I’ve worked on a team, we’ve agreed to <strong>create separate Storyboards for different flows to avoid the confusion and performance issues of massive Storyboards.</strong> And we’ve always been careful to communicate about which Storyboard we’re working on before we start to make changes so we can avoid having to deal with messy merge conflicts. The code review issue exists, and will continue to exist, until Apple changes the format of the XML in the Storyboard file.</p>
 
-<h2 id="ii-why-im-abandoning-storyboardsgopalkri">II. Why I’m Abandoning Storyboards<sup id="fnref:gopalkri"><a href="#fn:gopalkri" class="footnote">2</a></sup></h2>
+<h2 id="ii-why-im-abandoning-storyboards">II. Why I’m Abandoning Storyboards<sup id="fnref:gopalkri"><a href="#fn:gopalkri" class="footnote">2</a></sup></h2>
 <p>Here’s a list of reasons as to why I’m abandoning the storyboard:</p>
 
-<h3 id="diffs">1. Diffs</h3>
+<h3 id="1-diffs">1. Diffs</h3>
 <p>Storyboards can’t be diffed meaningfully. Since they serialize to unreadable XML, it’s more or less impossible to look at a diff of a storyboard and figure out what really changed.</p>
 
-<h3 id="merges">2. Merges</h3>
+<h3 id="2-merges">2. Merges</h3>
 <p>Because storyboards can’t be read by human beings, merging or rebasing storyboards across branches is an absolute nightmare. It often results in re-creating the work on one of the branches manually.</p>
 
-<h3 id="opening-a-file-modifies-it">3. Opening a file modifies it</h3>
+<h3 id="3-opening-a-file-modifies-it">3. Opening a file modifies it</h3>
 <p>I’m not sure why this happens, and it doesn’t happen all the time, but I’ve often found that merely opening a Storyboard file modifies it. This is super irritating, because I’m no longer sure about whether or not I made a change to it that matters.</p>
 
-<h3 id="code-review">4. Code review</h3>
+<h3 id="4-code-review">4. Code review</h3>
 <p>A broken storyboard can completely break the app (like say, if you’ve got an ambiguous constraint), so it must be code reviewed like all other code. However, because of the above reasons, it is really hard to do a proper code review.</p>
 
-<h3 id="usefulness">5. Usefulness</h3>
+<h3 id="5-usefulness">5. Usefulness</h3>
 <p>One of the goals of using Storyboards is to be able to visualize what the app will look like without actually running it. In reality, though, storyboards don’t really come close. 
 <img src="http://gopalkri.com/assets/images/2016-05-27-Storyboards-Visualization.png" alt="image" /></p>
 
 <h2 id="what-im-doing-instead">What I’m doing instead</h2>
 <p>I’m going to be using AutoLayout in code. While NSLayoutConstraint is incredibly verbose, there’re a few open source libraries that appear to make it significantly less painful: SnapKit, EasyPeasy, SwiftAutoLayout, etc. I’m not a big fan of the ASCII art version of NSLayoutConstraint. As awesome as it is, it’s stringly typed, and I try and avoid stringly typed code whenever possible.</p>
 
-<h2 id="iii-ios-user-interfaces-storyboards-vs-nibs-vs-custom-codetoptal">III. iOS User Interfaces: Storyboards vs. NIBs vs. Custom Code<sup id="fnref:toptal"><a href="#fn:toptal" class="footnote">3</a></sup></h2>
+<h2 id="iii-ios-user-interfaces-storyboards-vs-nibs-vs-custom-code">III. iOS User Interfaces: Storyboards vs. NIBs vs. Custom Code<sup id="fnref:toptal"><a href="#fn:toptal" class="footnote">3</a></sup></h2>
 
 <h3 id="ios-storyboards">iOS Storyboards</h3>
 <blockquote>
@@ -314,13 +314,13 @@ Storyboards are a quick and easy way to start building a simple app. But should 
 <div class="footnotes">
   <ol>
     <li id="fn:roadfire">
-      <p><a href="http://roadfiresoftware.com/2015/03/the-pros-and-cons-of-using-storyboards/">Should you use Storyboards on more complex apps?</a> <a href="#fnref:roadfire" class="reversefootnote">&#8617;</a></p>
+      <p><a href="http://roadfiresoftware.com/2015/03/the-pros-and-cons-of-using-storyboards/">Should you use Storyboards on more complex apps?</a> <a href="#fnref:roadfire" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:gopalkri">
-      <p><a href="http://gopalkri.com/2016/05/27/why-im-abandoning-storyboards/">Why I’m Abandoning Storyboards</a> <a href="#fnref:gopalkri" class="reversefootnote">&#8617;</a></p>
+      <p><a href="http://gopalkri.com/2016/05/27/why-im-abandoning-storyboards/">Why I’m Abandoning Storyboards</a> <a href="#fnref:gopalkri" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:toptal">
-      <p><a href="https://www.toptal.com/ios/ios-user-interfaces-storyboards-vs-nibs-vs-custom-code">iOS User Interfaces: Storyboards vs. NIBs vs. Custom Code</a> <a href="#fnref:toptal" class="reversefootnote">&#8617;</a></p>
+      <p><a href="https://www.toptal.com/ios/ios-user-interfaces-storyboards-vs-nibs-vs-custom-code">iOS User Interfaces: Storyboards vs. NIBs vs. Custom Code</a> <a href="#fnref:toptal" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>

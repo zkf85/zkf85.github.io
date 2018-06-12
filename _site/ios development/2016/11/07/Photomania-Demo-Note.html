@@ -208,7 +208,7 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
 
 <h2 id="database-setup">Database Setup</h2>
 
-<h3 id="create-the-database">1. Create the Database</h3>
+<h3 id="1-create-the-database">1. Create the Database</h3>
 <p>Create a database file. Then, add the following two entities into the database:</p>
 
 <ul>
@@ -217,7 +217,7 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
 <!--more--></li>
 </ul>
 
-<h3 id="define-the-schema-schema-visually">2. Define the Schema <sup id="fnref:schema"><a href="#fn:schema" class="footnote">1</a></sup> Visually.</h3>
+<h3 id="2-define-the-schema--visually">2. Define the Schema <sup id="fnref:schema"><a href="#fn:schema" class="footnote">1</a></sup> Visually.</h3>
 
 <ul>
   <li>
@@ -236,7 +236,7 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
   </li>
 </ul>
 
-<h3 id="create-nsmanagedobject-subclasses">3. Create NSManagedObject Subclasses</h3>
+<h3 id="3-create-nsmanagedobject-subclasses">3. Create NSManagedObject Subclasses</h3>
 <ul>
   <li>Create NSManagedObject Subclasses automatically using XCode.
     <ul>
@@ -260,16 +260,15 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
   </li>
 </ul>
 
-<h3 id="add-custom-methods-to-the-subclasses">4. Add Custom Methods to the Subclasses</h3>
+<h3 id="4-add-custom-methods-to-the-subclasses">4. Add Custom Methods to the Subclasses</h3>
 <p>Add these too class methods to <code class="highlighter-rouge">Photos+CoreDataClass</code></p>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">Photo</span> <span class="o">*</span><span class="p">)</span><span class="nf">photoWithFlickrInfo</span><span class="p">:(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">photoDictionary</span>
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">Photo</span> <span class="o">*</span><span class="p">)</span><span class="nf">photoWithFlickrInfo</span><span class="p">:(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">photoDictionary</span>
         <span class="nf">inManagedObjectContext</span><span class="p">:(</span><span class="n">NSManagedObjectContext</span> <span class="o">*</span><span class="p">)</span><span class="nv">context</span><span class="p">;</span>
 
 <span class="k">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">loadPhotosFromFlickrArray</span><span class="p">:(</span><span class="n">NSArray</span> <span class="o">*</span><span class="p">)</span><span class="nv">photos</span>
          <span class="nf">intoManagedObjectContext</span><span class="p">:(</span><span class="n">NSManagedObjectContext</span> <span class="o">*</span><span class="p">)</span><span class="nv">context</span><span class="p">;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><br /><strong><em>KF</em></strong></p>
 
@@ -277,7 +276,7 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
 <div class="footnotes">
   <ol>
     <li id="fn:schema">
-      <p>A <strong>schema</strong> is a collection of database objects (as far as this hour is concerned—tables) associated with one particular database username. This username is called the schema owner, or the owner of the related group of objects. You may have one or multiple schemas in a database. Jul 1, 2008 <a href="http://www.informit.com/articles/article.aspx?p=1216889&amp;seqNum=2">Managing Database Objects in SQL</a> <a href="#fnref:schema" class="reversefootnote">&#8617;</a></p>
+      <p>A <strong>schema</strong> is a collection of database objects (as far as this hour is concerned—tables) associated with one particular database username. This username is called the schema owner, or the owner of the related group of objects. You may have one or multiple schemas in a database. Jul 1, 2008 <a href="http://www.informit.com/articles/article.aspx?p=1216889&amp;seqNum=2">Managing Database Objects in SQL</a> <a href="#fnref:schema" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>

@@ -4,7 +4,7 @@
  <title>Everest</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-06-12T11:19:06+08:00</updated>
+ <updated>2018-06-12T12:14:25+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Kefeng Zhu</name>
@@ -17,11 +17,11 @@
    <link href="http://localhost:4000/python/2018/06/10/python-staticmethod.html"/>
    <updated>2018-06-10T15:24:00+08:00</updated>
    <id>http://localhost:4000/python/2018/06/10/python-staticmethod</id>
-   <content type="html">&lt;h3 id=&quot;section&quot;&gt;相同点：&lt;/h3&gt;
+   <content type="html">&lt;h3 id=&quot;相同点&quot;&gt;相同点：&lt;/h3&gt;
 &lt;p&gt;一般来说，要使用某个类的方法，需要先实例化一个对象再调用方法。
 e.g.:&lt;/p&gt;
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
 	&lt;span class=&quot;n&quot;&gt;bar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
 	&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;  
         &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'foo'&lt;/span&gt; 
@@ -32,14 +32,13 @@ e.g.:&lt;/p&gt;
 	&lt;span class=&quot;nd&quot;&gt;@classmethod&lt;/span&gt;
 	&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;class_foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
 		&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;class_foo&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;而使用&lt;code class=&quot;highlighter-rouge&quot;&gt;@staticmethod&lt;/code&gt;或&lt;code class=&quot;highlighter-rouge&quot;&gt;@classmethod&lt;/code&gt;，就可以不需要实例化，直接&lt;strong&gt;类名.方法名()&lt;/strong&gt;来调用。e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;A.static_foo&lt;/code&gt; 或者 &lt;code class=&quot;highlighter-rouge&quot;&gt;A.class_foo&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;这有利于组织代码，把某些应该属于某个类的函数给放到那个类里去，同时有利于命名空间的整洁。&lt;/p&gt;
 
-&lt;h3 id=&quot;section-1&quot;&gt;不同点：&lt;/h3&gt;
+&lt;h3 id=&quot;不同点&quot;&gt;不同点：&lt;/h3&gt;
 
 &lt;p&gt;既然@staticmethod和@classmethod都可以直接类名.方法名()来调用，那他们有什么区别呢&lt;/p&gt;
 
@@ -58,9 +57,9 @@ e.g.:&lt;/p&gt;
 
 &lt;p&gt;而@classmethod因为持有cls参数，可以来调用类的属性，类的方法，实例化对象等，避免硬编码, e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;cls.bar&lt;/code&gt;以及&lt;code class=&quot;highlighter-rouge&quot;&gt;cls().foo()&lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;section-2&quot;&gt;测试代码&lt;/h4&gt;
+&lt;h4 id=&quot;测试代码&quot;&gt;测试代码&lt;/h4&gt;
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;  
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;  
     &lt;span class=&quot;n&quot;&gt;bar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;  
     &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;  
         &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;oo&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
@@ -78,17 +77,15 @@ e.g.:&lt;/p&gt;
   
 &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;static_foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  
 &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;class_foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;输出&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;static_foo
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;static_foo
 1
 class_foo
 1
 foo
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 </content>
@@ -116,7 +113,7 @@ This is an in-depth report on the causes, diagnosis, treatment, and prevention o
   &lt;p&gt;There are some key information and factors in the report and are listed below:&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&quot;i-acute-lymphocytic-leukemiamaryland-report&quot;&gt;I. Acute Lymphocytic Leukemia&lt;sup id=&quot;fnref:maryland-report:1&quot;&gt;&lt;a href=&quot;#fn:maryland-report&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;i-acute-lymphocytic-leukemia&quot;&gt;I. Acute Lymphocytic Leukemia&lt;sup id=&quot;fnref:maryland-report:1&quot;&gt;&lt;a href=&quot;#fn:maryland-report&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
 
 &lt;p&gt;Acute lymphocytic leukemia (ALL) is also known as acute lymphoid leukemia or acute lymphoblastic leukemia. The majority of childhood leukemias are of the ALL type.&lt;/p&gt;
 
@@ -124,7 +121,7 @@ This is an in-depth report on the causes, diagnosis, treatment, and prevention o
 
 &lt;p&gt;Lymphocytes develop in the thymus gland or bone marrow and are therefore categorized as either B cells (bone marrow-derived cells) or T cells (thymus gland-derived cells).  ALL can arise from either T-cell or &lt;strong&gt;B-cell&lt;/strong&gt; lymphocytes. Most cases of ALL involve &lt;strong&gt;B cells&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;h2 id=&quot;ii-causesmaryland-report&quot;&gt;II. Causes&lt;sup id=&quot;fnref:maryland-report:2&quot;&gt;&lt;a href=&quot;#fn:maryland-report&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;ii-causes&quot;&gt;II. Causes&lt;sup id=&quot;fnref:maryland-report:2&quot;&gt;&lt;a href=&quot;#fn:maryland-report&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
 
 &lt;p&gt;Doctors do not know exactly what causes acute lymphocytic leukemia (ALL). It is likely that ALL develops from a combination of genetic, biologic, and environmental factors.&lt;/p&gt;
 
@@ -134,7 +131,7 @@ This is an in-depth report on the causes, diagnosis, treatment, and prevention o
 
 &lt;p&gt;The most common genetic translocation in ALL is the Philadelphia (Ph) chromosome where DNA is swapped between chromosomes 9 and 22 [t(9:22)]. It occurs in about 20 - 30% of adults and 3 - 5% of children with ALL.&lt;/p&gt;
 
-&lt;h2 id=&quot;iii-risk-factorsmaryland-report&quot;&gt;III. Risk Factors&lt;sup id=&quot;fnref:maryland-report:3&quot;&gt;&lt;a href=&quot;#fn:maryland-report&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;iii-risk-factors&quot;&gt;III. Risk Factors&lt;sup id=&quot;fnref:maryland-report:3&quot;&gt;&lt;a href=&quot;#fn:maryland-report&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
 
 &lt;h3 id=&quot;hereditary-disorders&quot;&gt;Hereditary Disorders&lt;/h3&gt;
 &lt;p&gt;ALL does not appear to run in families. Still, certain genetic disorders may increase risk. For example, children with Down syndrome have a 20-times greater risk of developing ALL than the general population. Other rare genetic disorders associated with increased risk include Klinefelter syndrome, Bloom syndrome, Fanconi anemia, ataxia-telangiectasia, neurofibromatosis, Shwachman syndrome, IgA deficiency, and congenital X-linked agammaglobulinemia.&lt;/p&gt;
@@ -143,7 +140,7 @@ This is an in-depth report on the causes, diagnosis, treatment, and prevention o
 
 &lt;p&gt;Previous cancer treatment with high doses of radiation or chemotherapy can increase the risk for developing ALL. Prenatal exposure to x-rays may also increase risk in children. Lower levels of radiation (living near power lines, video screen emissions, small appliances, cell phones) are unlikely to pose any cancer risk.&lt;/p&gt;
 
-&lt;h2 id=&quot;iv-symptomsmaryland-report&quot;&gt;IV. Symptoms&lt;sup id=&quot;fnref:maryland-report:4&quot;&gt;&lt;a href=&quot;#fn:maryland-report&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;iv-symptoms&quot;&gt;IV. Symptoms&lt;sup id=&quot;fnref:maryland-report:4&quot;&gt;&lt;a href=&quot;#fn:maryland-report&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
 
 &lt;p&gt;The symptoms of ALL may be difficult to recognize. ALL usually begins abruptly and intensely, but in some cases symptoms may develop slowly. They may be present one day, and absent the next, particularly in children. Symptoms develop when:&lt;/p&gt;
 
@@ -169,7 +166,7 @@ This is an in-depth report on the causes, diagnosis, treatment, and prevention o
   &lt;li&gt;Vision changes (rare)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;v-prognosismaryland-report&quot;&gt;V. Prognosis&lt;sup id=&quot;fnref:maryland-report:5&quot;&gt;&lt;a href=&quot;#fn:maryland-report&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;v-prognosis&quot;&gt;V. Prognosis&lt;sup id=&quot;fnref:maryland-report:5&quot;&gt;&lt;a href=&quot;#fn:maryland-report&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
 &lt;p&gt;ALL is one of the most curable cancers and survival rates are now at an all-time high.&lt;/p&gt;
 
 &lt;p&gt;According to the American Cancer Society, certain factors can help determine prognosis:&lt;/p&gt;
@@ -186,9 +183,9 @@ This is an in-depth report on the causes, diagnosis, treatment, and prevention o
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;vi-treatmentmaryland-report&quot;&gt;VI. Treatment&lt;sup id=&quot;fnref:maryland-report:6&quot;&gt;&lt;a href=&quot;#fn:maryland-report&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;vi-treatment&quot;&gt;VI. Treatment&lt;sup id=&quot;fnref:maryland-report:6&quot;&gt;&lt;a href=&quot;#fn:maryland-report&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
 
-&lt;h3 id=&quot;treatment-phases&quot;&gt;1. Treatment Phases&lt;/h3&gt;
+&lt;h3 id=&quot;1-treatment-phases&quot;&gt;1. Treatment Phases&lt;/h3&gt;
 
 &lt;p&gt;There are typically &lt;strong&gt;three treatment stages&lt;/strong&gt; for the average-risk patient with ALL:&lt;/p&gt;
 
@@ -206,7 +203,7 @@ This is an in-depth report on the causes, diagnosis, treatment, and prevention o
 
 &lt;p&gt;Because leukemia can also spread to the brain and spinal cord, where chemotherapy that is given intravenously or orally does not penetrate very well, most patients also need radiation to the brain and spinal cord, or chemotherapy that is injected into the layers around them. This is called central nervous system prophylaxis (preventive treatment) and is given during all treatment phases to prevent the cancer from spreading to the brain and spinal cord.&lt;/p&gt;
 
-&lt;h3 id=&quot;specific-treatments-used-in-all&quot;&gt;2. Specific Treatments Used in ALL&lt;/h3&gt;
+&lt;h3 id=&quot;2-specific-treatments-used-in-all&quot;&gt;2. Specific Treatments Used in ALL&lt;/h3&gt;
 
 &lt;p&gt;The following are specific treatments used for ALL:&lt;/p&gt;
 
@@ -222,7 +219,7 @@ This is an in-depth report on the causes, diagnosis, treatment, and prevention o
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;drugs-used-for-induction-chemotherapy&quot;&gt;3. Drugs Used for Induction Chemotherapy&lt;/h3&gt;
+&lt;h3 id=&quot;3-drugs-used-for-induction-chemotherapy&quot;&gt;3. Drugs Used for Induction Chemotherapy&lt;/h3&gt;
 &lt;p&gt;Both children and adults typically start with a 3-drug regimen. Imatinib (Gleevec) or dasatinib (Sprycel) may be added for patients with Philadelphia chromosome-positive ALL.&lt;/p&gt;
 
 &lt;p&gt;For &lt;strong&gt;adults&lt;/strong&gt;, the standard drugs are:&lt;/p&gt;
@@ -233,7 +230,7 @@ This is an in-depth report on the causes, diagnosis, treatment, and prevention o
   &lt;li&gt;Anthracycline drug, such as such as doxorubicin, daunorubicin, or epirubicin. Some adult chemotherapy regimens also add on an asparaginase drug or cyclophosphamide (Cytoxan).&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;preventing-central-nervous-system-disease-cns-prophylaxis&quot;&gt;4. Preventing Central Nervous System Disease (CNS Prophylaxis)&lt;/h3&gt;
+&lt;h3 id=&quot;4-preventing-central-nervous-system-disease-cns-prophylaxis&quot;&gt;4. Preventing Central Nervous System Disease (CNS Prophylaxis)&lt;/h3&gt;
 
 &lt;p&gt;Adult CNS prophylaxis is performed in one of three ways:&lt;/p&gt;
 
@@ -243,7 +240,7 @@ This is an in-depth report on the causes, diagnosis, treatment, and prevention o
   &lt;li&gt;Intrathecal methotrexate chemotherapy alone&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;evidence-of-remission-after-induction-treatment&quot;&gt;5. Evidence of Remission after Induction Treatment&lt;/h3&gt;
+&lt;h3 id=&quot;5-evidence-of-remission-after-induction-treatment&quot;&gt;5. Evidence of Remission after Induction Treatment&lt;/h3&gt;
 
 &lt;p&gt;Survival in acute leukemia depends on complete remission (no signs of active cancer). Although not always clear-cut, remission is indicated by the following:&lt;/p&gt;
 
@@ -261,7 +258,7 @@ This is an in-depth report on the causes, diagnosis, treatment, and prevention o
   &lt;li&gt;Patients with high disease levels at 14 days or who require more than 4 weeks to achieve remission are at higher risk for relapse and most likely need more aggressive treatment.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;side-effects-and-complications&quot;&gt;6. Side Effects and Complications&lt;/h3&gt;
+&lt;h3 id=&quot;6-side-effects-and-complications&quot;&gt;6. Side Effects and Complications&lt;/h3&gt;
 &lt;p&gt;&lt;em&gt;Common Side Effects&lt;/em&gt;. Typical side effects include:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -275,11 +272,11 @@ This is an in-depth report on the causes, diagnosis, treatment, and prevention o
 
 &lt;h2 id=&quot;vii-transplantation&quot;&gt;VII. Transplantation&lt;/h2&gt;
 
-&lt;h3 id=&quot;transplantation&quot;&gt;1. Transplantation&lt;/h3&gt;
+&lt;h3 id=&quot;1-transplantation&quot;&gt;1. Transplantation&lt;/h3&gt;
 
 &lt;p&gt;Stem cells that are made in the bone marrow are the early form of all blood cells in the body. They normally mature into red, white, or immune cells. To help the patient survive high dose chemotherapy needed to cure leukemia that has returned treatment, or not responded to treatment, a stem cell transplantation procedure may be used. Stem cell transplantation replaces blood stem cells that were lost during the initial chemotherapy treatment. The lost stem cells are replaced by transplanting them from a donor into the patient.&lt;/p&gt;
 
-&lt;h3 id=&quot;the-blood-stem-cell-collection-procedure&quot;&gt;2. The Blood Stem Cell Collection Procedure&lt;/h3&gt;
+&lt;h3 id=&quot;2-the-blood-stem-cell-collection-procedure&quot;&gt;2. The Blood Stem Cell Collection Procedure&lt;/h3&gt;
 
 &lt;p&gt;&lt;em&gt;Sources of Cells&lt;/em&gt;. Stem cells can be obtained either from the donor’s:&lt;/p&gt;
 
@@ -292,7 +289,7 @@ This is an in-depth report on the causes, diagnosis, treatment, and prevention o
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;the-transplant-procedure&quot;&gt;3. The Transplant Procedure&lt;/h3&gt;
+&lt;h3 id=&quot;3-the-transplant-procedure&quot;&gt;3. The Transplant Procedure&lt;/h3&gt;
 &lt;ol&gt;
   &lt;li&gt;
     &lt;p&gt;The patient with ALL is given high-dose chemotherapy with or without radiation – a treatment known as conditioning. The point is to inactivate the immune system and to kill any remaining leukemia cells.&lt;/p&gt;
@@ -305,14 +302,14 @@ This is an in-depth report on the causes, diagnosis, treatment, and prevention o
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&quot;side-effects-and-complications-1&quot;&gt;4. Side Effects and Complications&lt;/h3&gt;
+&lt;h3 id=&quot;4-side-effects-and-complications&quot;&gt;4. Side Effects and Complications&lt;/h3&gt;
 &lt;p&gt;Stem-cell transplantation is a serious and complex procedure that can cause many short- and long-term side effects and complications.&lt;/p&gt;
 
 &lt;p&gt;Early side effects of transplantation are similar to chemotherapy and include nausea, vomiting, fatigue, mouth sores, and loss of appetite.&lt;/p&gt;
 
 &lt;p&gt;Bleeding because of reduced platelets is a high risk during the first four weeks and may require transfusions. Later side effects include fertility problems (if the ovaries are affected), thyroid gland problems (which can affect metabolism), lung damage (which can cause breathing problems) and bone damage.&lt;/p&gt;
 
-&lt;h2 id=&quot;home-management-importantmaryland-report&quot;&gt;Home Management (IMPORTANT)&lt;sup id=&quot;fnref:maryland-report:7&quot;&gt;&lt;a href=&quot;#fn:maryland-report&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;home-management-important&quot;&gt;Home Management (IMPORTANT)&lt;sup id=&quot;fnref:maryland-report:7&quot;&gt;&lt;a href=&quot;#fn:maryland-report&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
 &lt;p&gt;A parent should call the doctor if the child has any symptoms that are out of the ordinary, including (but not limited) to:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -378,7 +375,7 @@ This is an in-depth report on the causes, diagnosis, treatment, and prevention o
 
 &lt;h2 id=&quot;about-ph-positive-all&quot;&gt;About Ph-Positive ALL&lt;/h2&gt;
 
-&lt;h3 id=&quot;what-is-ph-all-ph-positive-cml&quot;&gt;What is Ph+ ALL? &lt;sup id=&quot;fnref:ph-positive-CML&quot;&gt;&lt;a href=&quot;#fn:ph-positive-CML&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;what-is-ph-all-&quot;&gt;What is Ph+ ALL? &lt;sup id=&quot;fnref:ph-positive-CML&quot;&gt;&lt;a href=&quot;#fn:ph-positive-CML&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;
     &lt;p&gt;“Ph” is an abbreviation for “Philadelphia chromosome,” the name given to the abnormal chromosome that can lead to the overproduction of white blood cells.&lt;/p&gt;
@@ -388,7 +385,7 @@ This is an in-depth report on the causes, diagnosis, treatment, and prevention o
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;how-does-ph-happenph-positive-cml&quot;&gt;How Does Ph+ Happen?&lt;sup id=&quot;fnref:ph-positive-CML:1&quot;&gt;&lt;a href=&quot;#fn:ph-positive-CML&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;how-does-ph-happen&quot;&gt;How Does Ph+ Happen?&lt;sup id=&quot;fnref:ph-positive-CML:1&quot;&gt;&lt;a href=&quot;#fn:ph-positive-CML&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/h3&gt;
 &lt;p&gt;The soft tissue inside our bones, called the bone marrow, produces a type of cell called a stem cell. As stem cells mature, they can turn into platelets, red blood cells, or white blood cells. Ph+ CML happens because of changes in the genetic material of these stem cells.&lt;/p&gt;
 
 &lt;p&gt;Chromosomes are the parts of our cells that carry our DNA and genes—the things that give us our physical traits, such as blue eyes or brown hair, and that tell our body how to handle all the functions of life, including the process of making blood cells. Humans have 23 pairs of chromosomes. Ph+ CML happens when some genetic material from one chromosome (chromosome 9) switches position with some genetic material from another chromosome (chromosome 22).&lt;/p&gt;
@@ -401,7 +398,7 @@ This is an in-depth report on the causes, diagnosis, treatment, and prevention o
 
 &lt;p&gt;&lt;a href=&quot;https://www.lls.org/leukemia/acute-lymphoblastic-leukemia/treatment/ph-positive-all-therapy&quot;&gt;Ph-Positive ALL Therapy&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;philadelphia-chromosome-phil-chromo&quot;&gt;Philadelphia Chromosome &lt;sup id=&quot;fnref:phil-chromo&quot;&gt;&lt;a href=&quot;#fn:phil-chromo&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;philadelphia-chromosome-&quot;&gt;Philadelphia Chromosome &lt;sup id=&quot;fnref:phil-chromo&quot;&gt;&lt;a href=&quot;#fn:phil-chromo&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
 &lt;p&gt;The Philadelphia chromosome or Philadelphia translocation is a specific genetic abnormality in chromosome 22 of leukemia cancer cells (particularly chronic myelogenous leukemia (CML) cells). This chromosome is defective and unusually short because of reciprocal translocation of genetic material between chromosome 9 and chromosome 22, and contains a fusion gene called BCR-ABL1.&lt;/p&gt;
 
 &lt;p&gt;(ABL represents “Abelson”, the name of a leukemia virus&lt;sup id=&quot;fnref:abelson&quot;&gt;&lt;a href=&quot;#fn:abelson&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;.)&lt;/p&gt;
@@ -423,16 +420,16 @@ This is an in-depth report on the causes, diagnosis, treatment, and prevention o
 &lt;div class=&quot;footnotes&quot;&gt;
   &lt;ol&gt;
     &lt;li id=&quot;fn:maryland-report&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;http://umm.edu/health/medical/reports/articles/acute-lymphocytic-leukemia&quot;&gt;&lt;strong&gt;Acute Lymphocytic Leukemia - An in-depth Report&lt;/strong&gt; - University of Maryland Medical Center&lt;/a&gt; &lt;a href=&quot;#fnref:maryland-report&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:maryland-report:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:maryland-report:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:maryland-report:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:maryland-report:4&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;5&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:maryland-report:5&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;6&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:maryland-report:6&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;7&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:maryland-report:7&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;8&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;a href=&quot;http://umm.edu/health/medical/reports/articles/acute-lymphocytic-leukemia&quot;&gt;&lt;strong&gt;Acute Lymphocytic Leukemia - An in-depth Report&lt;/strong&gt; - University of Maryland Medical Center&lt;/a&gt; &lt;a href=&quot;#fnref:maryland-report&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:maryland-report:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:maryland-report:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:maryland-report:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:maryland-report:4&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;5&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:maryland-report:5&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;6&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:maryland-report:6&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;7&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:maryland-report:7&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;8&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:ph-positive-CML&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;http://www.gleevec.com/patient/ph-cml-treatment.jsp?usertrack.filter_applied=true&amp;amp;NovaId=4029462192126550515&quot;&gt;What is Ph+ CML? - GLEEVEC&lt;/a&gt; &lt;a href=&quot;#fnref:ph-positive-CML&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:ph-positive-CML:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;a href=&quot;http://www.gleevec.com/patient/ph-cml-treatment.jsp?usertrack.filter_applied=true&amp;amp;NovaId=4029462192126550515&quot;&gt;What is Ph+ CML? - GLEEVEC&lt;/a&gt; &lt;a href=&quot;#fnref:ph-positive-CML&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:ph-positive-CML:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:phil-chromo&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Philadelphia_chromosome&quot;&gt;Philadelphia chromosome - Wikipedia&lt;/a&gt; &lt;a href=&quot;#fnref:phil-chromo&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Philadelphia_chromosome&quot;&gt;Philadelphia chromosome - Wikipedia&lt;/a&gt; &lt;a href=&quot;#fnref:phil-chromo&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:abelson&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Abelson_murine_leukemia_virus&quot;&gt;Abelson murine leukemia virus - Wikipedia&lt;/a&gt; &lt;a href=&quot;#fnref:abelson&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Abelson_murine_leukemia_virus&quot;&gt;Abelson murine leukemia virus - Wikipedia&lt;/a&gt; &lt;a href=&quot;#fnref:abelson&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
@@ -462,7 +459,7 @@ Use Masonry to implement autolayout programmatically. Learn how to use it. A det
 &lt;h2 id=&quot;prepare-to-meet-your-maker&quot;&gt;Prepare to meet your Maker!&lt;/h2&gt;
 &lt;p&gt;Create constraints using MASConstraintMaker:&lt;/p&gt;
 
-&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;UIEdgeInsets&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;padding&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UIEdgeInsetsMake&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;UIEdgeInsets&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;padding&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UIEdgeInsetsMake&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 
 &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view1&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;mas_makeConstraints&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MASConstraintMaker&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;superview&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mas_top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;offset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//with is an optional semantic filler
@@ -470,16 +467,14 @@ Use Masonry to implement autolayout programmatically. Learn how to use it. A det
     &lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;superview&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mas_bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;offset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;superview&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mas_right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;offset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Or even shorter&lt;/p&gt;
 
-&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view1&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;mas_makeConstraints&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MASConstraintMaker&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view1&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;mas_makeConstraints&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MASConstraintMaker&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;edges&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;superview&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;insets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h4 id=&quot;important-notes&quot;&gt;IMPORTANT NOTES:&lt;/h4&gt;
 &lt;blockquote&gt;
@@ -502,7 +497,7 @@ Use Masonry to implement autolayout programmatically. Learn how to use it. A det
 &lt;p&gt;.&lt;code class=&quot;highlighter-rouge&quot;&gt;greaterThanOrEqualTo&lt;/code&gt; equivalent to NSLayoutRelationGreaterThanOrEqual
 These three equality constraints accept one argument which can be any of the following:&lt;/p&gt;
 
-&lt;h3 id=&quot;masviewattribute&quot;&gt;1. MASViewAttribute&lt;/h3&gt;
+&lt;h3 id=&quot;1-masviewattribute&quot;&gt;1. MASViewAttribute&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&quot;language-make.centerX.lessThanOrEqualTo(view2.mas_left);```&quot;&gt;
 ### 2. UIView/NSView
 
@@ -514,48 +509,44 @@ make.left.greaterThanOrEqualTo(label);
 make.left.greaterThanOrEqualTo(label.mas_left);
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&quot;nsnumber&quot;&gt;3. NSNumber&lt;/h3&gt;
+&lt;h3 id=&quot;3-nsnumber&quot;&gt;3. NSNumber&lt;/h3&gt;
 
 &lt;p&gt;Auto Layout allows width and height to be set to constant values. if you want to set view to have a minimum and maximum width you could pass a number to the equality blocks:&lt;/p&gt;
 
-&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//width &amp;gt;= 200 &amp;amp;&amp;amp; width &amp;lt;= 400
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//width &amp;gt;= 200 &amp;amp;&amp;amp; width &amp;lt;= 400
 &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;greaterThanOrEqualTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;@200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lessThanOrEqualTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;@400&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;However Auto Layout does not allow alignment attributes such as left, right, centerY etc to be set to constant values. So if you pass a NSNumber for these attributes Masonry will turn these into constraints relative to the view’s superview ie:&lt;/p&gt;
 
-&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//creates view.left = view.superview.left + 10
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//creates view.left = view.superview.left + 10
 &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lessThanOrEqualTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;@10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Instead of using NSNumber, you can use primitives and structs to build your constraints, like so:&lt;/p&gt;
 
-&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mas_equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mas_equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mas_equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mas_equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CGSizeMake&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;edges&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mas_equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIEdgeInsetsMake&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mas_equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mas_offset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIEdgeInsetsMake&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;By default, macros which support autoboxing are prefixed with mas_. Unprefixed versions are available by defining MAS_SHORTHAND_GLOBALS before importing Masonry.&lt;/p&gt;
 
-&lt;h3 id=&quot;nsarray&quot;&gt;4. NSArray&lt;/h3&gt;
+&lt;h3 id=&quot;4-nsarray&quot;&gt;4. NSArray&lt;/h3&gt;
 
 &lt;p&gt;An array of a mixture of any of the previous types&lt;/p&gt;
 
-&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(@[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mas_height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;view2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mas_height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(@[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mas_height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;view2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mas_height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(@[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;view2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(@[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;@100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;view3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;where-should-i-create-my-constraints&quot;&gt;Where should I create my constraints?&lt;/h2&gt;
 
-&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;DIYCustomView&lt;/span&gt;
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;DIYCustomView&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;init&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;super&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
@@ -594,14 +585,13 @@ make.left.greaterThanOrEqualTo(label.mas_left);
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h2 id=&quot;liuyanwei-lijichuan&quot;&gt;中文资料&lt;sup id=&quot;fnref:liuyanwei&quot;&gt;&lt;a href=&quot;#fn:liuyanwei&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; &lt;sup id=&quot;fnref:lijichuan&quot;&gt;&lt;a href=&quot;#fn:lijichuan&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;中文资料-&quot;&gt;中文资料&lt;sup id=&quot;fnref:liuyanwei&quot;&gt;&lt;a href=&quot;#fn:liuyanwei&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; &lt;sup id=&quot;fnref:lijichuan&quot;&gt;&lt;a href=&quot;#fn:lijichuan&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
 
-&lt;h4 id=&quot;masonry---httpliuyanweijumppocom20150614ios-library-masonryhtml&quot;&gt;&lt;a href=&quot;http://liuyanwei.jumppo.com/2015/06/14/ios-library-masonry.html&quot;&gt;Masonry的使用 - 刘彦玮&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;masonry的使用---刘彦玮&quot;&gt;&lt;a href=&quot;http://liuyanwei.jumppo.com/2015/06/14/ios-library-masonry.html&quot;&gt;Masonry的使用 - 刘彦玮&lt;/a&gt;&lt;/h4&gt;
 
-&lt;h4 id=&quot;masonryautolayout---httpadad184com20140928use-masonry-to-quick-solve-autolayout&quot;&gt;&lt;a href=&quot;http://adad184.com/2014/09/28/use-masonry-to-quick-solve-autolayout/&quot;&gt;Masonry介绍与使用实践(快速上手Autolayout) - 里脊串&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;masonry介绍与使用实践快速上手autolayout---里脊串&quot;&gt;&lt;a href=&quot;http://adad184.com/2014/09/28/use-masonry-to-quick-solve-autolayout/&quot;&gt;Masonry介绍与使用实践(快速上手Autolayout) - 里脊串&lt;/a&gt;&lt;/h4&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;
 &lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
@@ -610,13 +600,13 @@ make.left.greaterThanOrEqualTo(label.mas_left);
 &lt;div class=&quot;footnotes&quot;&gt;
   &lt;ol&gt;
     &lt;li id=&quot;fn:masonry&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://github.com/SnapKit/Masonry&quot;&gt;Masonry - Github&lt;/a&gt; &lt;a href=&quot;#fnref:masonry&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:masonry:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;a href=&quot;https://github.com/SnapKit/Masonry&quot;&gt;Masonry - Github&lt;/a&gt; &lt;a href=&quot;#fnref:masonry&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:masonry:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:liuyanwei&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;http://liuyanwei.jumppo.com/2015/06/14/ios-library-masonry.html&quot;&gt;Masonry的使用 - 刘彦玮&lt;/a&gt; &lt;a href=&quot;#fnref:liuyanwei&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;a href=&quot;http://liuyanwei.jumppo.com/2015/06/14/ios-library-masonry.html&quot;&gt;Masonry的使用 - 刘彦玮&lt;/a&gt; &lt;a href=&quot;#fnref:liuyanwei&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:lijichuan&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;http://adad184.com/2014/09/28/use-masonry-to-quick-solve-autolayout/&quot;&gt;Masonry介绍与使用实践(快速上手Autolayout) - 里脊串&lt;/a&gt; &lt;a href=&quot;#fnref:lijichuan&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;a href=&quot;http://adad184.com/2014/09/28/use-masonry-to-quick-solve-autolayout/&quot;&gt;Masonry介绍与使用实践(快速上手Autolayout) - 里脊串&lt;/a&gt; &lt;a href=&quot;#fnref:lijichuan&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
@@ -632,7 +622,7 @@ make.left.greaterThanOrEqualTo(label.mas_left);
 Storyboards are a quick and easy way to start building a simple app. But should you use Storyboards on more complex apps? Or on a team? What are the pros and cons of using them? Do experienced iOS developers use them? Are any mainstream apps built with Storyboards?
 &lt;/div&gt;
 
-&lt;h2 id=&quot;i-what-are-the-pros-and-cons-of-using-storyboardsroadfire&quot;&gt;I. What are the pros and cons of using Storyboards?&lt;sup id=&quot;fnref:roadfire&quot;&gt;&lt;a href=&quot;#fn:roadfire&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;i-what-are-the-pros-and-cons-of-using-storyboards&quot;&gt;I. What are the pros and cons of using Storyboards?&lt;sup id=&quot;fnref:roadfire&quot;&gt;&lt;a href=&quot;#fn:roadfire&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
 
 &lt;h3 id=&quot;pros&quot;&gt;Pros:&lt;/h3&gt;
 &lt;p&gt;The biggest benefit of using Storyboards (especially over nibs/xibs) is that &lt;strong&gt;you can see how the screens in your app are related&lt;/strong&gt;. When you’re just starting on an existing project (or coming back to an old one), Storyboards give you an easy way to follow the flow through the app and zoom out to get a high level overview of what the app does.&lt;/p&gt;
@@ -660,29 +650,29 @@ Storyboards are a quick and easy way to start building a simple app. But should 
 
 &lt;p&gt;Whenever I’ve worked on a team, we’ve agreed to &lt;strong&gt;create separate Storyboards for different flows to avoid the confusion and performance issues of massive Storyboards.&lt;/strong&gt; And we’ve always been careful to communicate about which Storyboard we’re working on before we start to make changes so we can avoid having to deal with messy merge conflicts. The code review issue exists, and will continue to exist, until Apple changes the format of the XML in the Storyboard file.&lt;/p&gt;
 
-&lt;h2 id=&quot;ii-why-im-abandoning-storyboardsgopalkri&quot;&gt;II. Why I’m Abandoning Storyboards&lt;sup id=&quot;fnref:gopalkri&quot;&gt;&lt;a href=&quot;#fn:gopalkri&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;ii-why-im-abandoning-storyboards&quot;&gt;II. Why I’m Abandoning Storyboards&lt;sup id=&quot;fnref:gopalkri&quot;&gt;&lt;a href=&quot;#fn:gopalkri&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
 &lt;p&gt;Here’s a list of reasons as to why I’m abandoning the storyboard:&lt;/p&gt;
 
-&lt;h3 id=&quot;diffs&quot;&gt;1. Diffs&lt;/h3&gt;
+&lt;h3 id=&quot;1-diffs&quot;&gt;1. Diffs&lt;/h3&gt;
 &lt;p&gt;Storyboards can’t be diffed meaningfully. Since they serialize to unreadable XML, it’s more or less impossible to look at a diff of a storyboard and figure out what really changed.&lt;/p&gt;
 
-&lt;h3 id=&quot;merges&quot;&gt;2. Merges&lt;/h3&gt;
+&lt;h3 id=&quot;2-merges&quot;&gt;2. Merges&lt;/h3&gt;
 &lt;p&gt;Because storyboards can’t be read by human beings, merging or rebasing storyboards across branches is an absolute nightmare. It often results in re-creating the work on one of the branches manually.&lt;/p&gt;
 
-&lt;h3 id=&quot;opening-a-file-modifies-it&quot;&gt;3. Opening a file modifies it&lt;/h3&gt;
+&lt;h3 id=&quot;3-opening-a-file-modifies-it&quot;&gt;3. Opening a file modifies it&lt;/h3&gt;
 &lt;p&gt;I’m not sure why this happens, and it doesn’t happen all the time, but I’ve often found that merely opening a Storyboard file modifies it. This is super irritating, because I’m no longer sure about whether or not I made a change to it that matters.&lt;/p&gt;
 
-&lt;h3 id=&quot;code-review&quot;&gt;4. Code review&lt;/h3&gt;
+&lt;h3 id=&quot;4-code-review&quot;&gt;4. Code review&lt;/h3&gt;
 &lt;p&gt;A broken storyboard can completely break the app (like say, if you’ve got an ambiguous constraint), so it must be code reviewed like all other code. However, because of the above reasons, it is really hard to do a proper code review.&lt;/p&gt;
 
-&lt;h3 id=&quot;usefulness&quot;&gt;5. Usefulness&lt;/h3&gt;
+&lt;h3 id=&quot;5-usefulness&quot;&gt;5. Usefulness&lt;/h3&gt;
 &lt;p&gt;One of the goals of using Storyboards is to be able to visualize what the app will look like without actually running it. In reality, though, storyboards don’t really come close. 
 &lt;img src=&quot;http://gopalkri.com/assets/images/2016-05-27-Storyboards-Visualization.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;what-im-doing-instead&quot;&gt;What I’m doing instead&lt;/h2&gt;
 &lt;p&gt;I’m going to be using AutoLayout in code. While NSLayoutConstraint is incredibly verbose, there’re a few open source libraries that appear to make it significantly less painful: SnapKit, EasyPeasy, SwiftAutoLayout, etc. I’m not a big fan of the ASCII art version of NSLayoutConstraint. As awesome as it is, it’s stringly typed, and I try and avoid stringly typed code whenever possible.&lt;/p&gt;
 
-&lt;h2 id=&quot;iii-ios-user-interfaces-storyboards-vs-nibs-vs-custom-codetoptal&quot;&gt;III. iOS User Interfaces: Storyboards vs. NIBs vs. Custom Code&lt;sup id=&quot;fnref:toptal&quot;&gt;&lt;a href=&quot;#fn:toptal&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;iii-ios-user-interfaces-storyboards-vs-nibs-vs-custom-code&quot;&gt;III. iOS User Interfaces: Storyboards vs. NIBs vs. Custom Code&lt;sup id=&quot;fnref:toptal&quot;&gt;&lt;a href=&quot;#fn:toptal&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
 
 &lt;h3 id=&quot;ios-storyboards&quot;&gt;iOS Storyboards&lt;/h3&gt;
 &lt;blockquote&gt;
@@ -749,13 +739,13 @@ Storyboards are a quick and easy way to start building a simple app. But should 
 &lt;div class=&quot;footnotes&quot;&gt;
   &lt;ol&gt;
     &lt;li id=&quot;fn:roadfire&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;http://roadfiresoftware.com/2015/03/the-pros-and-cons-of-using-storyboards/&quot;&gt;Should you use Storyboards on more complex apps?&lt;/a&gt; &lt;a href=&quot;#fnref:roadfire&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;a href=&quot;http://roadfiresoftware.com/2015/03/the-pros-and-cons-of-using-storyboards/&quot;&gt;Should you use Storyboards on more complex apps?&lt;/a&gt; &lt;a href=&quot;#fnref:roadfire&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:gopalkri&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;http://gopalkri.com/2016/05/27/why-im-abandoning-storyboards/&quot;&gt;Why I’m Abandoning Storyboards&lt;/a&gt; &lt;a href=&quot;#fnref:gopalkri&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;a href=&quot;http://gopalkri.com/2016/05/27/why-im-abandoning-storyboards/&quot;&gt;Why I’m Abandoning Storyboards&lt;/a&gt; &lt;a href=&quot;#fnref:gopalkri&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:toptal&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://www.toptal.com/ios/ios-user-interfaces-storyboards-vs-nibs-vs-custom-code&quot;&gt;iOS User Interfaces: Storyboards vs. NIBs vs. Custom Code&lt;/a&gt; &lt;a href=&quot;#fnref:toptal&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;a href=&quot;https://www.toptal.com/ios/ios-user-interfaces-storyboards-vs-nibs-vs-custom-code&quot;&gt;iOS User Interfaces: Storyboards vs. NIBs vs. Custom Code&lt;/a&gt; &lt;a href=&quot;#fnref:toptal&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
@@ -785,7 +775,7 @@ Unordered tags make a Jekyll tag list look sloppy, so if you care about the deta
 
 &lt;!--more--&gt;
 
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
 layout: page
 title: Tags
 ---
@@ -819,12 +809,11 @@ title: Tags
     {% endunless %}{% endfor %}
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;For &lt;code class=&quot;highlighter-rouge&quot;&gt;categories.html&lt;/code&gt; the basic idea is the same.&lt;/p&gt;
 
-&lt;p&gt;When Adding the code block above, I came across a curious problem when writing liquid template code in this markdown file. When Jekyll compiles the static web files, it tries to process all the curly brackets like: &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;When Adding the code block above, I came across a curious problem when writing liquid template code in this markdown file. When Jekyll compiles the static web files, it tries to process all the curly brackets like: &lt;code class=&quot;highlighter-rouge&quot;&gt;{{&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;{%&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;This is not a bug , but a &lt;a href=&quot;https://github.com/jekyll/jekyll/issues/814&quot;&gt;caveat of using a templating language with markdown&lt;/a&gt;. The workarounds are provided by&lt;/p&gt;
 
@@ -832,7 +821,7 @@ title: Tags
   &lt;li&gt;&lt;a href=&quot;http://ozzieliu.com/2016/04/26/writing-liquid-template-in-markdown-with-jekyll/&quot;&gt;Ozzie Liu - Writing Liquid Template in Markdown Code Blocks with Jekyll&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;Simply put, just add&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;raw&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;endraw&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt; on the both end when &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;/code&gt; appears.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Simply put, just add&lt;code class=&quot;highlighter-rouge&quot;&gt;{% raw %}&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;{% endraw %}&lt;/code&gt; on the both end when &lt;code class=&quot;highlighter-rouge&quot;&gt;{{&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;{%&lt;/code&gt; appears.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;It is pretty confused to render the above line!!!&lt;/p&gt;
@@ -898,12 +887,12 @@ What is the concept of singleton in iOS development?
 
 &lt;!--more--&gt;
 
-&lt;h2 id=&quot;how-to-implementmatt&quot;&gt;How to Implement?&lt;sup id=&quot;fnref:matt:2&quot;&gt;&lt;a href=&quot;#fn:matt&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;how-to-implement&quot;&gt;How to Implement?&lt;sup id=&quot;fnref:matt:2&quot;&gt;&lt;a href=&quot;#fn:matt&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
 &lt;p&gt;You can implement a singleton class in Objective-C using the following code:&lt;/p&gt;
 
 &lt;p&gt;in &lt;code class=&quot;highlighter-rouge&quot;&gt;MyManager.h&lt;/code&gt;:&lt;/p&gt;
 
-&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#import &amp;lt;foundation/Foundation.h&amp;gt;
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#import &amp;lt;foundation/Foundation.h&amp;gt;
 &lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MyManager&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;NSObject&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;someProperty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -914,12 +903,11 @@ What is the concept of singleton in iOS development?
 &lt;span class=&quot;k&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sharedManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;in &lt;code class=&quot;highlighter-rouge&quot;&gt;MyManager.m&lt;/code&gt;:&lt;/p&gt;
 
-&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#import &quot;MyManager.h&quot;
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#import &quot;MyManager.h&quot;
 &lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MyManager&lt;/span&gt;
 
@@ -948,8 +936,7 @@ What is the concept of singleton in iOS development?
 &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;What this does is it defines a static variable (but only global to this &lt;a href=&quot;http://en.wikipedia.org/wiki/Translation_unit_(programming)&quot;&gt;translation unit&lt;/a&gt;) called &lt;code class=&quot;highlighter-rouge&quot;&gt;sharedMyManager&lt;/code&gt; which is then initialized once and only once in &lt;code class=&quot;highlighter-rouge&quot;&gt;sharedManager&lt;/code&gt;. The way we ensure that it’s only created once is by using the &lt;code class=&quot;highlighter-rouge&quot;&gt;dispatch_once&lt;/code&gt; method from &lt;a href=&quot;http://developer.apple.com/library/ios/#documentation/Performance/Reference/GCD_libdispatch_Ref/Reference/reference.html&quot;&gt;Grand Central Dispatch (GCD)&lt;/a&gt;. This is thread safe and handled entirely by the OS for you so that you don’t have to worry about it at all.&lt;/p&gt;
 
@@ -957,7 +944,7 @@ What is the concept of singleton in iOS development?
 
 &lt;p&gt;Non-GCD based code:&lt;/p&gt;
 
-&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sharedManager&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sharedManager&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MyManager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sharedMyManager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;@synchronized&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sharedMyManager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
@@ -965,14 +952,12 @@ What is the concept of singleton in iOS development?
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sharedMyManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Then you can reference the singleton from anywhere by calling the following function:&lt;/p&gt;
 
-&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;MyManager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sharedManager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MyManager&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sharedManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;MyManager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sharedManager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MyManager&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sharedManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;I’ve used this extensively throughout my code for things such as creating a singleton to handle CoreLocation or CoreData functions.&lt;/p&gt;
 
@@ -983,10 +968,10 @@ What is the concept of singleton in iOS development?
 &lt;div class=&quot;footnotes&quot;&gt;
   &lt;ol&gt;
     &lt;li id=&quot;fn:apple&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://developer.apple.com/library/content/documentation/General/Conceptual/DevPedia-CocoaCore/Singleton.html&quot;&gt;Singleton - Apple Developer&lt;/a&gt; &lt;a href=&quot;#fnref:apple&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;a href=&quot;https://developer.apple.com/library/content/documentation/General/Conceptual/DevPedia-CocoaCore/Singleton.html&quot;&gt;Singleton - Apple Developer&lt;/a&gt; &lt;a href=&quot;#fnref:apple&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:matt&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;http://www.galloway.me.uk/tutorials/singleton-classes/&quot;&gt;Singletons in Objective-C - Matt Galloway&lt;/a&gt; &lt;a href=&quot;#fnref:matt&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:matt:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:matt:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;a href=&quot;http://www.galloway.me.uk/tutorials/singleton-classes/&quot;&gt;Singletons in Objective-C - Matt Galloway&lt;/a&gt; &lt;a href=&quot;#fnref:matt&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:matt:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:matt:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
@@ -1040,7 +1025,7 @@ This is a simple example of how to post and listen to a notification radio.
 An example of a notification is as follows:
 &lt;!--more--&gt;&lt;/p&gt;
 
-&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Registering as observer from one object
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Registering as observer from one object
 &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSNotificationCenter&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;defaultCenter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addObserver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;
                                          &lt;span class=&quot;nf&quot;&gt;selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;@selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;thingHappened&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
                                              &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MyThingHappened&lt;/span&gt;
@@ -1050,8 +1035,7 @@ An example of a notification is as follows:
 &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSNotificationCenter&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;defaultCenter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;postNotificationName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MyThingHappened&lt;/span&gt;
                                                     &lt;span class=&quot;nf&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;
                                                   &lt;span class=&quot;n&quot;&gt;userInfo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;In this example one object is registering itself as an observer for the MyThingHappened notification, limiting it to when that notification occurs on the exact object, &lt;code class=&quot;highlighter-rouge&quot;&gt;_myObject&lt;/code&gt;. Then, another object is posting that notification with itself as the object and nothing as the metadata dictionary, &lt;code class=&quot;highlighter-rouge&quot;&gt;userInfo&lt;/code&gt;. So in this case, if the object that’s posting the notification is &lt;code class=&quot;highlighter-rouge&quot;&gt;_myObject&lt;/code&gt; from the context of the registering object, then the notification will cause thingHappened: to be called.&lt;/p&gt;
 
@@ -1069,29 +1053,27 @@ An example of a notification is as follows:
 &lt;h2 id=&quot;example-in-my-project---timepocket&quot;&gt;Example in my project - TimePocket&lt;/h2&gt;
 &lt;p&gt;In my project ‘TimePocket’, I use notification to pass &lt;code class=&quot;highlighter-rouge&quot;&gt;managedObjectContext&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;AppDelegate&lt;/code&gt; to the &lt;code class=&quot;highlighter-rouge&quot;&gt;ViewController&lt;/code&gt; at a proper time during the life cycle.&lt;/p&gt;
 
-&lt;h3 id=&quot;create-a-header-file---preparing-for-the-notification&quot;&gt;1. Create a Header File - Preparing for the Notification&lt;/h3&gt;
+&lt;h3 id=&quot;1-create-a-header-file---preparing-for-the-notification&quot;&gt;1. Create a Header File - Preparing for the Notification&lt;/h3&gt;
 &lt;p&gt;Create a header file called &lt;code class=&quot;highlighter-rouge&quot;&gt;EventDatabaseAvailability.h&lt;/code&gt;
 In the file add the following two constants:&lt;/p&gt;
 
-&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#define EventDatabaseAvailabilityNotification @&quot;EventDatabaseAvailabilityNotification&quot;
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#define EventDatabaseAvailabilityNotification @&quot;EventDatabaseAvailabilityNotification&quot;
 #define EventDatabaseAvailabilityContext @&quot;Context&quot;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;h3 id=&quot;post-notification&quot;&gt;2. Post Notification&lt;/h3&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;2-post-notification&quot;&gt;2. Post Notification&lt;/h3&gt;
 &lt;p&gt;When the initialization of my database is completed, I post my notification there in order to pass the &lt;code class=&quot;highlighter-rouge&quot;&gt;managedObjectContext&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Post notification code:&lt;/p&gt;
 
-&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;NSDictionary&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;userInfo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eventDatabaseContext&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;@{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EventDatabaseAvailabilityContext&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eventDatabaseContext&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;NSDictionary&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;userInfo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eventDatabaseContext&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;@{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EventDatabaseAvailabilityContext&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eventDatabaseContext&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSNotificationCenter&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;defaultCenter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;postNotificationName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EventDatabaseAvailabilityNotification&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;userInfo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;userInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;h3 id=&quot;listen-to-the-notification&quot;&gt;3. Listen to the Notification&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;3-listen-to-the-notification&quot;&gt;3. Listen to the Notification&lt;/h3&gt;
 &lt;p&gt;In my &lt;code class=&quot;highlighter-rouge&quot;&gt;ViewController&lt;/code&gt;, the notification observer should be added as early as possible in its life cycle. Therefore, it’s added in &lt;code class=&quot;highlighter-rouge&quot;&gt;awakeFromNib&lt;/code&gt;, which is the earliest part in the controller’s life cycle.&lt;/p&gt;
 
 &lt;p&gt;Add the notification observer in &lt;code class=&quot;highlighter-rouge&quot;&gt;- (void)awakeFromNib&lt;/code&gt; to listen to the notification.&lt;/p&gt;
 
-&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;awakeFromNib&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;awakeFromNib&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;super&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;awakeFromNib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
     &lt;span class=&quot;c1&quot;&gt;// KF 11/28/2016
 &lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// Listen to the Notification from AppDelegate
@@ -1103,8 +1085,7 @@ In the file add the following two constants:&lt;/p&gt;
          &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;managedObjectContext&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;note&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;userInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;EventDatabaseAvailabilityContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
      &lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;
 &lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
@@ -1152,7 +1133,7 @@ A collection view typically has &lt;strong&gt;at least one section&lt;/strong&gt
 
 &lt;p&gt;Different layout objects could present section and item data very differently, as shown in &lt;strong&gt;Figure 2-1&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;h4 id=&quot;centerfigure-2-1-sections-arranged-according-to-the-arrangement-of-layout-objectscenter&quot;&gt;&lt;center&gt;Figure 2-1. Sections arranged according to the arrangement of layout objects&lt;/center&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;figure-2-1-sections-arranged-according-to-the-arrangement-of-layout-objects&quot;&gt;&lt;center&gt;Figure 2-1. Sections arranged according to the arrangement of layout objects&lt;/center&gt;&lt;/h4&gt;
 &lt;p&gt;&lt;img src=&quot;/public/img/20161128-2-1.png&quot; alt=&quot;figure-2-1&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;designing-your-data-objects&quot;&gt;Designing Your Data Objects&lt;/h3&gt;
@@ -1160,7 +1141,7 @@ A collection view typically has &lt;strong&gt;at least one section&lt;/strong&gt
 
 &lt;p&gt;One simple solution (but certainly not the only solution) is for your data source to use a set of nested arrays, as shown in &lt;strong&gt;Figure 2-2&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;h4 id=&quot;centerfigure-2-2-arranging-data-objects-using-nested-arrayscenter&quot;&gt;&lt;center&gt;Figure 2-2. Arranging data objects using nested arrays&lt;/center&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;figure-2-2-arranging-data-objects-using-nested-arrays&quot;&gt;&lt;center&gt;Figure 2-2. Arranging data objects using nested arrays&lt;/center&gt;&lt;/h4&gt;
 
 &lt;center&gt;&lt;img src=&quot;/public/img/20161128-2-2.png&quot; width=&quot;5000&quot; /&gt;&lt;/center&gt;
 
@@ -1182,7 +1163,7 @@ A collection view typically has &lt;strong&gt;at least one section&lt;/strong&gt
 
 &lt;p&gt;If you implemented your data source as shown in Figure 2-2, the implementation of your data source methods could be as simple as those shown below:&lt;/p&gt;
 
-&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSInteger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;numberOfSectionsInCollectionView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UICollectionView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;collectionView&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSInteger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;numberOfSectionsInCollectionView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UICollectionView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;collectionView&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;c1&quot;&gt;// _data is a class member variable that contains one array per section.
 &lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_data&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -1191,8 +1172,7 @@ A collection view typically has &lt;strong&gt;at least one section&lt;/strong&gt
     &lt;span class=&quot;n&quot;&gt;NSArray&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sectionArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_data&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;objectAtIndex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;section&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sectionArray&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;configuring-cells-and-supplementary-views&quot;&gt;Configuring Cells and Supplementary Views&lt;/h2&gt;
 &lt;p&gt;Another important task of your data source is to provide the views that the collection view uses to display your content. The collection view does not track your app’s content. It simply takes the views you give it and applies the current layout information to them. Therefore, everything that is displayed by the views is your responsibility.&lt;/p&gt;
@@ -1328,7 +1308,7 @@ A collection view typically has &lt;strong&gt;at least one section&lt;/strong&gt
 
 &lt;p&gt;&lt;strong&gt;Figure 1-1&lt;/strong&gt; shows the relationship between the core objects associated with a collection view. The collection view gets information about the cells to display from its data source. The data source and delegate objects are custom objects provided by your app and used to manage the content, including the selection and highlighting of cells. The layout object is responsible for deciding where those cells belong and for sending that information to the collection view in the form of one or more layout attribute objects. The collection view then merges the layout information with the actual cells (and other views) to create the final visual presentation.&lt;/p&gt;
 
-&lt;h4 id=&quot;center-figure-1-1-merging-content-and-layout-to-create-the-final-presentation-center&quot;&gt;&lt;center&gt; Figure 1-1. Merging content and layout to create the final presentation &lt;/center&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;-figure-1-1-merging-content-and-layout-to-create-the-final-presentation-&quot;&gt;&lt;center&gt; Figure 1-1. Merging content and layout to create the final presentation &lt;/center&gt;&lt;/h4&gt;
 &lt;p&gt;&lt;img src=&quot;/public/img/20161124-1-1.png&quot; alt=&quot;figure-1-1&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;When creating a collection view interface, you first add a UICollectionView object to your storyboard or nib file. Think of the collection view as the central hub, from which all other objects emanate. After adding that object, you can begin to configure any related objects, such as the data source or delegate. All configurations are centered around the collection view itself. For example, you never create a layout object without also creating a collection view object.&lt;/p&gt;
@@ -1353,7 +1333,7 @@ A collection view typically has &lt;strong&gt;at least one section&lt;/strong&gt
 
 &lt;p&gt;&lt;strong&gt;Figure 1-2&lt;/strong&gt; shows how a vertically scrolling flow layout arranges its cells and supplementary views. In a vertically scrolling flow layout, the width of the content area remains fixed and the height grows to accommodate the content. To compute the area, the layout object places views and cells one at a time, choosing the most appropriate location for each. In the case of the flow layout, the size of the cells and supplementary views are specified as properties, either on the layout object or by using a delegate. Computing the layout is just a matter of using those properties to place each view.&lt;/p&gt;
 
-&lt;h4 id=&quot;centerfigure-1-2--the-layout-object-provides-layout-metricscenter&quot;&gt;&lt;center&gt;Figure 1-2  The layout object provides layout metrics&lt;/center&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;figure-1-2--the-layout-object-provides-layout-metrics&quot;&gt;&lt;center&gt;Figure 1-2  The layout object provides layout metrics&lt;/center&gt;&lt;/h4&gt;
 &lt;p&gt;&lt;img src=&quot;/public/img/20161128-1-1.png&quot; alt=&quot;figure-1-2&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Layout objects control more than just the size and position of their views. The layout object can specify other view-related attributes, such as its &lt;strong&gt;transparency&lt;/strong&gt;, its &lt;strong&gt;transform in 3D space&lt;/strong&gt;, and its &lt;strong&gt;visibility&lt;/strong&gt; (if any) above or below other views. These attributes let you create more interesting layouts. For example, you might create stacks of cells by placing the views on top of one another and changing their z-ordering, or you might use a transform to rotate them on any axis.&lt;/p&gt;
@@ -1405,12 +1385,11 @@ A collection view typically has &lt;strong&gt;at least one section&lt;/strong&gt
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;readonly&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSPersistentContainer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;persistentContainer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;readonly&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSPersistentContainer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;persistentContainer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;// The persistent container for the application. This implementation creates and returns a container, having loaded the store for the application to it.
 &lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;saveContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;We’re going to focus on doing the first one &lt;code class=&quot;highlighter-rouge&quot;&gt;UIManagedDocument&lt;/code&gt;.&lt;/p&gt;
 
 &lt;!--more--&gt;
@@ -1418,25 +1397,23 @@ A collection view typically has &lt;strong&gt;at least one section&lt;/strong&gt
 &lt;h2 id=&quot;uimanageddocument&quot;&gt;UIManagedDocument&lt;/h2&gt;
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;UIManagedDocument&lt;/code&gt; inherits from UIDocument which provides a lot of mechanism for the management of storage. It also good for iCloud support. Think of a &lt;code class=&quot;highlighter-rouge&quot;&gt;UIManagedDocument&lt;/code&gt; as simply a container for your Core Data database.&lt;/p&gt;
 
-&lt;h3 id=&quot;create-a-uimanageddocument&quot;&gt;1. Create a UIManagedDocument&lt;/h3&gt;
-&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;NSFileManager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fileManager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSFileManager&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;defaultManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;h3 id=&quot;1-create-a-uimanageddocument&quot;&gt;1. Create a UIManagedDocument&lt;/h3&gt;
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;NSFileManager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fileManager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSFileManager&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;defaultManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;NSURL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;documentsDirectory&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fileManager&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;URLsForDirectory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSDocumentDirectory&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;inDomains&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;NSUserDomainMask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;firstObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;documentName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&quot;MyDocument&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
 &lt;span class=&quot;n&quot;&gt;NSURL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;documentsDirectory&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;URLByAppendingPathComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;documentName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;UIManagedDocument&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;document&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIManagedDocument&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initWithFileURL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;This creates the UIManagedDocument instance, but does not open nor create the underlying file.&lt;/p&gt;
 
-&lt;h3 id=&quot;open-or-create-a-uimanageddocument&quot;&gt;2. Open or Create a UIManagedDocument&lt;/h3&gt;
+&lt;h3 id=&quot;2-open-or-create-a-uimanageddocument&quot;&gt;2. Open or Create a UIManagedDocument&lt;/h3&gt;
 &lt;p&gt;Check if the &lt;code class=&quot;highlighter-rouge&quot;&gt;UIManagedDocument&lt;/code&gt;’s underlying file exists on disk:&lt;/p&gt;
 
-&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;BOOL&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fileExists&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSFileManager&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;defaultManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;fileExistsAtPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]];&lt;/span&gt; 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;BOOL&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fileExists&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSFileManager&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;defaultManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;fileExistsAtPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]];&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;Here is an example:&lt;/p&gt;
 
-&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;document&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIManagedDocument&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initWithFileURL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;URL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;document&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIManagedDocument&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initWithFileURL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;URL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;([[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSFileManager&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;defaultManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;fileExistsAtPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;document&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;openWithCompletionHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BOOL&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;success&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;success&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;documentIsReady&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
@@ -1456,10 +1433,9 @@ A collection view typically has &lt;strong&gt;at least one section&lt;/strong&gt
 &lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;NSManagedObjectContext&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;context&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;managedObjectContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; 
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;saving--closing&quot;&gt;3. Saving &amp;amp; Closing&lt;/h3&gt;
+&lt;h3 id=&quot;3-saving--closing&quot;&gt;3. Saving &amp;amp; Closing&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;Notice that &lt;code class=&quot;highlighter-rouge&quot;&gt;UIManagedDocument&lt;/code&gt;s AUTOSAVE themselves!&lt;/li&gt;
   &lt;li&gt;Will automatically close if there are no strong pointers left to it.&lt;/li&gt;
@@ -1469,7 +1445,7 @@ A collection view typically has &lt;strong&gt;at least one section&lt;/strong&gt
 
 &lt;h3 id=&quot;how-would-you-watch-a-documents-managedobjectcontext&quot;&gt;How would you watch a document’s managedObjectContext?&lt;/h3&gt;
 
-&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;viewDidAppear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BOOL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;animated&lt;/span&gt;
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;viewDidAppear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BOOL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;animated&lt;/span&gt;
  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
      &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;super&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;viewDidAppear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;animated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
      &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;center&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addObserver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;
@@ -1484,8 +1460,7 @@ A collection view typically has &lt;strong&gt;at least one section&lt;/strong&gt
                      &lt;span class=&quot;nl&quot;&gt;object:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;managedObjectContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
      &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;super&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;viewWillDisappear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;animated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;core-data&quot;&gt;Core Data&lt;/h2&gt;
 &lt;p&gt;Now we use the &lt;code class=&quot;highlighter-rouge&quot;&gt;UIManagedDocument&lt;/code&gt;’s &lt;code class=&quot;highlighter-rouge&quot;&gt;managedObjectContext&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt;&lt;/code&gt; to insert/delete objects in the database and query for objects in the database.&lt;/p&gt;
@@ -1516,9 +1491,8 @@ A collection view typically has &lt;strong&gt;at least one section&lt;/strong&gt
 
 &lt;p&gt;How? It is just a simple proper on the view controller class and the caller uses:&lt;/p&gt;
 
-&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nextViewController&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setManagedObjectContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;managedObjectContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]];&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nextViewController&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setManagedObjectContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;managedObjectContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]];&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Some others may recommend a singleton but that is another deep dark pit that is best avoided.&lt;/p&gt;
 
@@ -1598,7 +1572,7 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
 
 &lt;h2 id=&quot;database-setup&quot;&gt;Database Setup&lt;/h2&gt;
 
-&lt;h3 id=&quot;create-the-database&quot;&gt;1. Create the Database&lt;/h3&gt;
+&lt;h3 id=&quot;1-create-the-database&quot;&gt;1. Create the Database&lt;/h3&gt;
 &lt;p&gt;Create a database file. Then, add the following two entities into the database:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -1607,7 +1581,7 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
 &lt;!--more--&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;define-the-schema-schema-visually&quot;&gt;2. Define the Schema &lt;sup id=&quot;fnref:schema&quot;&gt;&lt;a href=&quot;#fn:schema&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; Visually.&lt;/h3&gt;
+&lt;h3 id=&quot;2-define-the-schema--visually&quot;&gt;2. Define the Schema &lt;sup id=&quot;fnref:schema&quot;&gt;&lt;a href=&quot;#fn:schema&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; Visually.&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -1626,7 +1600,7 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;create-nsmanagedobject-subclasses&quot;&gt;3. Create NSManagedObject Subclasses&lt;/h3&gt;
+&lt;h3 id=&quot;3-create-nsmanagedobject-subclasses&quot;&gt;3. Create NSManagedObject Subclasses&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;Create NSManagedObject Subclasses automatically using XCode.
     &lt;ul&gt;
@@ -1650,16 +1624,15 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;add-custom-methods-to-the-subclasses&quot;&gt;4. Add Custom Methods to the Subclasses&lt;/h3&gt;
+&lt;h3 id=&quot;4-add-custom-methods-to-the-subclasses&quot;&gt;4. Add Custom Methods to the Subclasses&lt;/h3&gt;
 &lt;p&gt;Add these too class methods to &lt;code class=&quot;highlighter-rouge&quot;&gt;Photos+CoreDataClass&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Photo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;photoWithFlickrInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSDictionary&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;photoDictionary&lt;/span&gt;
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Photo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;photoWithFlickrInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSDictionary&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;photoDictionary&lt;/span&gt;
         &lt;span class=&quot;nf&quot;&gt;inManagedObjectContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSManagedObjectContext&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;loadPhotosFromFlickrArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;photos&lt;/span&gt;
          &lt;span class=&quot;nf&quot;&gt;intoManagedObjectContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSManagedObjectContext&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
@@ -1667,7 +1640,7 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
 &lt;div class=&quot;footnotes&quot;&gt;
   &lt;ol&gt;
     &lt;li id=&quot;fn:schema&quot;&gt;
-      &lt;p&gt;A &lt;strong&gt;schema&lt;/strong&gt; is a collection of database objects (as far as this hour is concerned—tables) associated with one particular database username. This username is called the schema owner, or the owner of the related group of objects. You may have one or multiple schemas in a database. Jul 1, 2008 &lt;a href=&quot;http://www.informit.com/articles/article.aspx?p=1216889&amp;amp;seqNum=2&quot;&gt;Managing Database Objects in SQL&lt;/a&gt; &lt;a href=&quot;#fnref:schema&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;A &lt;strong&gt;schema&lt;/strong&gt; is a collection of database objects (as far as this hour is concerned—tables) associated with one particular database username. This username is called the schema owner, or the owner of the related group of objects. You may have one or multiple schemas in a database. Jul 1, 2008 &lt;a href=&quot;http://www.informit.com/articles/article.aspx?p=1216889&amp;amp;seqNum=2&quot;&gt;Managing Database Objects in SQL&lt;/a&gt; &lt;a href=&quot;#fnref:schema&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
@@ -1683,7 +1656,7 @@ This might be the toughest and the biggest demo in this iOS course. Here I put m
 This is a common issue that anybody using XCode may encounter. It's usually very annoying when you want to change the names of the classes because file names and includes are all related when you do it. Here I gather some correct (should be) way to make it happen. 
 &lt;/div&gt;
 
-&lt;h2 id=&quot;change-default-view-controller-name&quot;&gt;1. Change Default View Controller Name&lt;/h2&gt;
+&lt;h2 id=&quot;1-change-default-view-controller-name&quot;&gt;1. Change Default View Controller Name&lt;/h2&gt;
 
 &lt;p&gt;Check this: &lt;a href=&quot;http://rshankar.com/how-to-rename-default-view-controllers-in-xcode/&quot;&gt;How to rename default view controllers in XCode&lt;/a&gt;
 In short, it looks like this:&lt;/p&gt;
@@ -1710,7 +1683,7 @@ In short, it looks like this:&lt;/p&gt;
 &lt;p&gt;Oh, by the way, DON’T FORGET to change your controller class name to the new one in the identity inspector in storyboard.
 &lt;!--more--&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;change-default-appdelegate-name&quot;&gt;2. Change Default AppDelegate Name&lt;/h2&gt;
+&lt;h2 id=&quot;2-change-default-appdelegate-name&quot;&gt;2. Change Default AppDelegate Name&lt;/h2&gt;
 
 &lt;p&gt;I applied the same steps to rename my default &lt;code class=&quot;highlighter-rouge&quot;&gt;AppDelegate.h/AppDelegate.m&lt;/code&gt; class. It works fine, but you need to change the app delegate include name in &lt;code class=&quot;highlighter-rouge&quot;&gt;main.m&lt;/code&gt; manually, or there’ll be an error.&lt;/p&gt;
 
@@ -1728,11 +1701,10 @@ In short, it looks like this:&lt;/p&gt;
 
 &lt;p&gt;Oh! This is really an awesome editor as I’m typing these words. I can see what it looks like as published on the right. As long I wanna try some syntax in markdown that I’m not quite familiar, I just try it, and take a look:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;this is a block
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;this is a block
 this is a block
 this is a block
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;This is really nice, and efficiency.The inline block is like &lt;code class=&quot;highlighter-rouge&quot;&gt;this is an inline block&lt;/code&gt;. this is a link: &lt;a href=&quot;http://google.com&quot;&gt;google&lt;/a&gt; This is really awesome!!! I like it.&lt;/p&gt;
 
@@ -1744,9 +1716,8 @@ this is a block
 &lt;p&gt;Example:
 add the following code:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;![My first image inserted](/public/img/ios-10-nimblechapps.png)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;![My first image inserted](/public/img/ios-10-nimblechapps.png)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;the path in the parentheses is the image local url.&lt;/p&gt;
 

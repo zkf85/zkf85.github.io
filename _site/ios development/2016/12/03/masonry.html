@@ -213,7 +213,7 @@ Use Masonry to implement autolayout programmatically. Learn how to use it. A det
 <h2 id="prepare-to-meet-your-maker">Prepare to meet your Maker!</h2>
 <p>Create constraints using MASConstraintMaker:</p>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">UIEdgeInsets</span> <span class="n">padding</span> <span class="o">=</span> <span class="n">UIEdgeInsetsMake</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">UIEdgeInsets</span> <span class="n">padding</span> <span class="o">=</span> <span class="n">UIEdgeInsetsMake</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
 
 <span class="p">[</span><span class="n">view1</span> <span class="nf">mas_makeConstraints</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">MASConstraintMaker</span> <span class="o">*</span><span class="n">make</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">make</span><span class="p">.</span><span class="n">top</span><span class="p">.</span><span class="n">equalTo</span><span class="p">(</span><span class="n">superview</span><span class="p">.</span><span class="n">mas_top</span><span class="p">).</span><span class="n">with</span><span class="p">.</span><span class="n">offset</span><span class="p">(</span><span class="n">padding</span><span class="p">.</span><span class="n">top</span><span class="p">);</span> <span class="c1">//with is an optional semantic filler
@@ -221,16 +221,14 @@ Use Masonry to implement autolayout programmatically. Learn how to use it. A det
     <span class="n">make</span><span class="p">.</span><span class="n">bottom</span><span class="p">.</span><span class="n">equalTo</span><span class="p">(</span><span class="n">superview</span><span class="p">.</span><span class="n">mas_bottom</span><span class="p">).</span><span class="n">with</span><span class="p">.</span><span class="n">offset</span><span class="p">(</span><span class="o">-</span><span class="n">padding</span><span class="p">.</span><span class="n">bottom</span><span class="p">);</span>
     <span class="n">make</span><span class="p">.</span><span class="n">right</span><span class="p">.</span><span class="n">equalTo</span><span class="p">(</span><span class="n">superview</span><span class="p">.</span><span class="n">mas_right</span><span class="p">).</span><span class="n">with</span><span class="p">.</span><span class="n">offset</span><span class="p">(</span><span class="o">-</span><span class="n">padding</span><span class="p">.</span><span class="n">right</span><span class="p">);</span>
 <span class="p">}];</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Or even shorter</p>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="n">view1</span> <span class="nf">mas_makeConstraints</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">MASConstraintMaker</span> <span class="o">*</span><span class="n">make</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">view1</span> <span class="nf">mas_makeConstraints</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">MASConstraintMaker</span> <span class="o">*</span><span class="n">make</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">make</span><span class="p">.</span><span class="n">edges</span><span class="p">.</span><span class="n">equalTo</span><span class="p">(</span><span class="n">superview</span><span class="p">).</span><span class="n">with</span><span class="p">.</span><span class="n">insets</span><span class="p">(</span><span class="n">padding</span><span class="p">);</span>
 <span class="p">}];</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="important-notes">IMPORTANT NOTES:</h4>
 <blockquote>
@@ -253,7 +251,7 @@ Use Masonry to implement autolayout programmatically. Learn how to use it. A det
 <p>.<code class="highlighter-rouge">greaterThanOrEqualTo</code> equivalent to NSLayoutRelationGreaterThanOrEqual
 These three equality constraints accept one argument which can be any of the following:</p>
 
-<h3 id="masviewattribute">1. MASViewAttribute</h3>
+<h3 id="1-masviewattribute">1. MASViewAttribute</h3>
 <pre><code class="language-make.centerX.lessThanOrEqualTo(view2.mas_left);```">
 ### 2. UIView/NSView
 
@@ -265,48 +263,44 @@ make.left.greaterThanOrEqualTo(label);
 make.left.greaterThanOrEqualTo(label.mas_left);
 </code></pre>
 
-<h3 id="nsnumber">3. NSNumber</h3>
+<h3 id="3-nsnumber">3. NSNumber</h3>
 
 <p>Auto Layout allows width and height to be set to constant values. if you want to set view to have a minimum and maximum width you could pass a number to the equality blocks:</p>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="c1">//width &gt;= 200 &amp;&amp; width &lt;= 400
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//width &gt;= 200 &amp;&amp; width &lt;= 400
 </span><span class="n">make</span><span class="p">.</span><span class="n">width</span><span class="p">.</span><span class="n">greaterThanOrEqualTo</span><span class="p">(</span><span class="mi">@200</span><span class="p">);</span>
 <span class="n">make</span><span class="p">.</span><span class="n">width</span><span class="p">.</span><span class="n">lessThanOrEqualTo</span><span class="p">(</span><span class="mi">@400</span><span class="p">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>However Auto Layout does not allow alignment attributes such as left, right, centerY etc to be set to constant values. So if you pass a NSNumber for these attributes Masonry will turn these into constraints relative to the view’s superview ie:</p>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="c1">//creates view.left = view.superview.left + 10
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//creates view.left = view.superview.left + 10
 </span><span class="n">make</span><span class="p">.</span><span class="n">left</span><span class="p">.</span><span class="n">lessThanOrEqualTo</span><span class="p">(</span><span class="mi">@10</span><span class="p">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Instead of using NSNumber, you can use primitives and structs to build your constraints, like so:</p>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">make</span><span class="p">.</span><span class="n">top</span><span class="p">.</span><span class="n">mas_equalTo</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">make</span><span class="p">.</span><span class="n">top</span><span class="p">.</span><span class="n">mas_equalTo</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>
 <span class="n">make</span><span class="p">.</span><span class="n">height</span><span class="p">.</span><span class="n">mas_equalTo</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
 <span class="n">make</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">mas_equalTo</span><span class="p">(</span><span class="n">CGSizeMake</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">));</span>
 <span class="n">make</span><span class="p">.</span><span class="n">edges</span><span class="p">.</span><span class="n">mas_equalTo</span><span class="p">(</span><span class="n">UIEdgeInsetsMake</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
 <span class="n">make</span><span class="p">.</span><span class="n">left</span><span class="p">.</span><span class="n">mas_equalTo</span><span class="p">(</span><span class="n">view</span><span class="p">).</span><span class="n">mas_offset</span><span class="p">(</span><span class="n">UIEdgeInsetsMake</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>By default, macros which support autoboxing are prefixed with mas_. Unprefixed versions are available by defining MAS_SHORTHAND_GLOBALS before importing Masonry.</p>
 
-<h3 id="nsarray">4. NSArray</h3>
+<h3 id="4-nsarray">4. NSArray</h3>
 
 <p>An array of a mixture of any of the previous types</p>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">make</span><span class="p">.</span><span class="n">height</span><span class="p">.</span><span class="n">equalTo</span><span class="p">(@[</span><span class="n">view1</span><span class="p">.</span><span class="n">mas_height</span><span class="p">,</span> <span class="n">view2</span><span class="p">.</span><span class="n">mas_height</span><span class="p">]);</span>
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">make</span><span class="p">.</span><span class="n">height</span><span class="p">.</span><span class="n">equalTo</span><span class="p">(@[</span><span class="n">view1</span><span class="p">.</span><span class="n">mas_height</span><span class="p">,</span> <span class="n">view2</span><span class="p">.</span><span class="n">mas_height</span><span class="p">]);</span>
 <span class="n">make</span><span class="p">.</span><span class="n">height</span><span class="p">.</span><span class="n">equalTo</span><span class="p">(@[</span><span class="n">view1</span><span class="p">,</span> <span class="n">view2</span><span class="p">]);</span>
 <span class="n">make</span><span class="p">.</span><span class="n">left</span><span class="p">.</span><span class="n">equalTo</span><span class="p">(@[</span><span class="n">view1</span><span class="p">,</span> <span class="mi">@100</span><span class="p">,</span> <span class="n">view3</span><span class="p">.</span><span class="n">right</span><span class="p">]);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="where-should-i-create-my-constraints">Where should I create my constraints?</h2>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">@implementation</span> <span class="nc">DIYCustomView</span>
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@implementation</span> <span class="nc">DIYCustomView</span>
 
 <span class="k">-</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="n">init</span> <span class="p">{</span>
     <span class="n">self</span> <span class="o">=</span> <span class="p">[</span><span class="n">super</span> <span class="nf">init</span><span class="p">];</span>
@@ -345,14 +339,13 @@ make.left.greaterThanOrEqualTo(label.mas_left);
 <span class="p">}</span>
 
 <span class="k">@end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<h2 id="liuyanwei-lijichuan">中文资料<sup id="fnref:liuyanwei"><a href="#fn:liuyanwei" class="footnote">2</a></sup> <sup id="fnref:lijichuan"><a href="#fn:lijichuan" class="footnote">3</a></sup></h2>
+<h2 id="中文资料-">中文资料<sup id="fnref:liuyanwei"><a href="#fn:liuyanwei" class="footnote">2</a></sup> <sup id="fnref:lijichuan"><a href="#fn:lijichuan" class="footnote">3</a></sup></h2>
 
-<h4 id="masonry---httpliuyanweijumppocom20150614ios-library-masonryhtml"><a href="http://liuyanwei.jumppo.com/2015/06/14/ios-library-masonry.html">Masonry的使用 - 刘彦玮</a></h4>
+<h4 id="masonry的使用---刘彦玮"><a href="http://liuyanwei.jumppo.com/2015/06/14/ios-library-masonry.html">Masonry的使用 - 刘彦玮</a></h4>
 
-<h4 id="masonryautolayout---httpadad184com20140928use-masonry-to-quick-solve-autolayout"><a href="http://adad184.com/2014/09/28/use-masonry-to-quick-solve-autolayout/">Masonry介绍与使用实践(快速上手Autolayout) - 里脊串</a></h4>
+<h4 id="masonry介绍与使用实践快速上手autolayout---里脊串"><a href="http://adad184.com/2014/09/28/use-masonry-to-quick-solve-autolayout/">Masonry介绍与使用实践(快速上手Autolayout) - 里脊串</a></h4>
 
 <p><br /><br />
 <strong><em>KF</em></strong></p>
@@ -361,13 +354,13 @@ make.left.greaterThanOrEqualTo(label.mas_left);
 <div class="footnotes">
   <ol>
     <li id="fn:masonry">
-      <p><a href="https://github.com/SnapKit/Masonry">Masonry - Github</a> <a href="#fnref:masonry" class="reversefootnote">&#8617;</a> <a href="#fnref:masonry:1" class="reversefootnote">&#8617;<sup>2</sup></a></p>
+      <p><a href="https://github.com/SnapKit/Masonry">Masonry - Github</a> <a href="#fnref:masonry" class="reversefootnote">&#8617;</a> <a href="#fnref:masonry:1" class="reversefootnote">&#8617;<sup>2</sup></a></p>
     </li>
     <li id="fn:liuyanwei">
-      <p><a href="http://liuyanwei.jumppo.com/2015/06/14/ios-library-masonry.html">Masonry的使用 - 刘彦玮</a> <a href="#fnref:liuyanwei" class="reversefootnote">&#8617;</a></p>
+      <p><a href="http://liuyanwei.jumppo.com/2015/06/14/ios-library-masonry.html">Masonry的使用 - 刘彦玮</a> <a href="#fnref:liuyanwei" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:lijichuan">
-      <p><a href="http://adad184.com/2014/09/28/use-masonry-to-quick-solve-autolayout/">Masonry介绍与使用实践(快速上手Autolayout) - 里脊串</a> <a href="#fnref:lijichuan" class="reversefootnote">&#8617;</a></p>
+      <p><a href="http://adad184.com/2014/09/28/use-masonry-to-quick-solve-autolayout/">Masonry介绍与使用实践(快速上手Autolayout) - 里脊串</a> <a href="#fnref:lijichuan" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>

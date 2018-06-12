@@ -189,11 +189,11 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
   </span>
   <hr>
   <article>
-    <h3 id="section">相同点：</h3>
+    <h3 id="相同点">相同点：</h3>
 <p>一般来说，要使用某个类的方法，需要先实例化一个对象再调用方法。
 e.g.:</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 	<span class="n">bar</span> <span class="o">=</span> <span class="mi">1</span>
 	<span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  
         <span class="k">print</span> <span class="s">'foo'</span> 
@@ -204,14 +204,13 @@ e.g.:</p>
 	<span class="nd">@classmethod</span>
 	<span class="k">def</span> <span class="nf">class_foo</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
 		<span class="k">print</span><span class="p">(</span><span class="s">"class_foo"</span><span class="p">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>而使用<code class="highlighter-rouge">@staticmethod</code>或<code class="highlighter-rouge">@classmethod</code>，就可以不需要实例化，直接<strong>类名.方法名()</strong>来调用。e.g. <code class="highlighter-rouge">A.static_foo</code> 或者 <code class="highlighter-rouge">A.class_foo</code></p>
 
 <p>这有利于组织代码，把某些应该属于某个类的函数给放到那个类里去，同时有利于命名空间的整洁。</p>
 
-<h3 id="section-1">不同点：</h3>
+<h3 id="不同点">不同点：</h3>
 
 <p>既然@staticmethod和@classmethod都可以直接类名.方法名()来调用，那他们有什么区别呢</p>
 
@@ -230,9 +229,9 @@ e.g.:</p>
 
 <p>而@classmethod因为持有cls参数，可以来调用类的属性，类的方法，实例化对象等，避免硬编码, e.g. <code class="highlighter-rouge">cls.bar</code>以及<code class="highlighter-rouge">cls().foo()</code></p>
 
-<h4 id="section-2">测试代码</h4>
+<h4 id="测试代码">测试代码</h4>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>  
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>  
     <span class="n">bar</span> <span class="o">=</span> <span class="mi">1</span>  
     <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  
         <span class="k">print</span><span class="p">(</span><span class="s">"oo"</span><span class="p">)</span>
@@ -250,17 +249,15 @@ e.g.:</p>
   
 <span class="n">A</span><span class="o">.</span><span class="n">static_foo</span><span class="p">()</span>  
 <span class="n">A</span><span class="o">.</span><span class="n">class_foo</span><span class="p">()</span>  
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>输出</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>static_foo
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>static_foo
 1
 class_foo
 1
 foo
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><br /><strong><em>KF</em></strong></p>
 

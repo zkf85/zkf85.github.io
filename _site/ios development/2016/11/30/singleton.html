@@ -208,12 +208,12 @@ What is the concept of singleton in iOS development?
 
 <!--more-->
 
-<h2 id="how-to-implementmatt">How to Implement?<sup id="fnref:matt:2"><a href="#fn:matt" class="footnote">2</a></sup></h2>
+<h2 id="how-to-implement">How to Implement?<sup id="fnref:matt:2"><a href="#fn:matt" class="footnote">2</a></sup></h2>
 <p>You can implement a singleton class in Objective-C using the following code:</p>
 
 <p>in <code class="highlighter-rouge">MyManager.h</code>:</p>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="cp">#import &lt;foundation/Foundation.h&gt;
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#import &lt;foundation/Foundation.h&gt;
 </span>
 <span class="k">@interface</span> <span class="nc">MyManager</span> <span class="p">:</span> <span class="nc">NSObject</span> <span class="p">{</span>
     <span class="n">NSString</span> <span class="o">*</span><span class="n">someProperty</span><span class="p">;</span>
@@ -224,12 +224,11 @@ What is the concept of singleton in iOS development?
 <span class="k">+</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="n">sharedManager</span><span class="p">;</span>
 
 <span class="k">@end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>in <code class="highlighter-rouge">MyManager.m</code>:</p>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="cp">#import "MyManager.h"
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#import "MyManager.h"
 </span>
 <span class="k">@implementation</span> <span class="nc">MyManager</span>
 
@@ -258,8 +257,7 @@ What is the concept of singleton in iOS development?
 </span><span class="p">}</span>
 
 <span class="k">@end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>What this does is it defines a static variable (but only global to this <a href="http://en.wikipedia.org/wiki/Translation_unit_(programming)">translation unit</a>) called <code class="highlighter-rouge">sharedMyManager</code> which is then initialized once and only once in <code class="highlighter-rouge">sharedManager</code>. The way we ensure that it’s only created once is by using the <code class="highlighter-rouge">dispatch_once</code> method from <a href="http://developer.apple.com/library/ios/#documentation/Performance/Reference/GCD_libdispatch_Ref/Reference/reference.html">Grand Central Dispatch (GCD)</a>. This is thread safe and handled entirely by the OS for you so that you don’t have to worry about it at all.</p>
 
@@ -267,7 +265,7 @@ What is the concept of singleton in iOS development?
 
 <p>Non-GCD based code:</p>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="n">sharedManager</span> <span class="p">{</span>
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="n">sharedManager</span> <span class="p">{</span>
     <span class="k">static</span> <span class="n">MyManager</span> <span class="o">*</span><span class="n">sharedMyManager</span> <span class="o">=</span> <span class="nb">nil</span><span class="p">;</span>
     <span class="k">@synchronized</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">sharedMyManager</span> <span class="o">==</span> <span class="nb">nil</span><span class="p">)</span>
@@ -275,14 +273,12 @@ What is the concept of singleton in iOS development?
     <span class="p">}</span>
     <span class="k">return</span> <span class="n">sharedMyManager</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Then you can reference the singleton from anywhere by calling the following function:</p>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">MyManager</span> <span class="o">*</span><span class="n">sharedManager</span> <span class="o">=</span> <span class="p">[</span><span class="n">MyManager</span> <span class="nf">sharedManager</span><span class="p">];</span>
-</code></pre>
-</div>
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">MyManager</span> <span class="o">*</span><span class="n">sharedManager</span> <span class="o">=</span> <span class="p">[</span><span class="n">MyManager</span> <span class="nf">sharedManager</span><span class="p">];</span>
+</code></pre></div></div>
 
 <p>I’ve used this extensively throughout my code for things such as creating a singleton to handle CoreLocation or CoreData functions.</p>
 
@@ -293,10 +289,10 @@ What is the concept of singleton in iOS development?
 <div class="footnotes">
   <ol>
     <li id="fn:apple">
-      <p><a href="https://developer.apple.com/library/content/documentation/General/Conceptual/DevPedia-CocoaCore/Singleton.html">Singleton - Apple Developer</a> <a href="#fnref:apple" class="reversefootnote">&#8617;</a></p>
+      <p><a href="https://developer.apple.com/library/content/documentation/General/Conceptual/DevPedia-CocoaCore/Singleton.html">Singleton - Apple Developer</a> <a href="#fnref:apple" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:matt">
-      <p><a href="http://www.galloway.me.uk/tutorials/singleton-classes/">Singletons in Objective-C - Matt Galloway</a> <a href="#fnref:matt" class="reversefootnote">&#8617;</a> <a href="#fnref:matt:1" class="reversefootnote">&#8617;<sup>2</sup></a> <a href="#fnref:matt:2" class="reversefootnote">&#8617;<sup>3</sup></a></p>
+      <p><a href="http://www.galloway.me.uk/tutorials/singleton-classes/">Singletons in Objective-C - Matt Galloway</a> <a href="#fnref:matt" class="reversefootnote">&#8617;</a> <a href="#fnref:matt:1" class="reversefootnote">&#8617;<sup>2</sup></a> <a href="#fnref:matt:2" class="reversefootnote">&#8617;<sup>3</sup></a></p>
     </li>
   </ol>
 </div>

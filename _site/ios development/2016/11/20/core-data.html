@@ -232,12 +232,11 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
   </li>
 </ol>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n">NSPersistentContainer</span> <span class="o">*</span><span class="n">persistentContainer</span><span class="p">;</span>
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n">NSPersistentContainer</span> <span class="o">*</span><span class="n">persistentContainer</span><span class="p">;</span>
 <span class="c1">// The persistent container for the application. This implementation creates and returns a container, having loaded the store for the application to it.
 </span>
 <span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">saveContext</span><span class="p">;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>We’re going to focus on doing the first one <code class="highlighter-rouge">UIManagedDocument</code>.</p>
 
 <!--more-->
@@ -245,25 +244,23 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
 <h2 id="uimanageddocument">UIManagedDocument</h2>
 <p><code class="highlighter-rouge">UIManagedDocument</code> inherits from UIDocument which provides a lot of mechanism for the management of storage. It also good for iCloud support. Think of a <code class="highlighter-rouge">UIManagedDocument</code> as simply a container for your Core Data database.</p>
 
-<h3 id="create-a-uimanageddocument">1. Create a UIManagedDocument</h3>
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">NSFileManager</span> <span class="o">*</span><span class="n">fileManager</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSFileManager</span> <span class="nf">defaultManager</span><span class="p">];</span>
+<h3 id="1-create-a-uimanageddocument">1. Create a UIManagedDocument</h3>
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">NSFileManager</span> <span class="o">*</span><span class="n">fileManager</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSFileManager</span> <span class="nf">defaultManager</span><span class="p">];</span>
 <span class="n">NSURL</span> <span class="o">*</span><span class="n">documentsDirectory</span> <span class="o">=</span> <span class="p">[[</span><span class="n">fileManager</span> <span class="nf">URLsForDirectory</span><span class="p">:</span><span class="n">NSDocumentDirectory</span> <span class="nf">inDomains</span><span class="p">:</span><span class="nf">NSUserDomainMask</span><span class="p">]</span> <span class="n">firstObject</span><span class="p">];</span>
 <span class="n">NSString</span> <span class="o">*</span><span class="n">documentName</span> <span class="o">=</span> <span class="s">@"MyDocument"</span><span class="p">;</span> 
 <span class="n">NSURL</span> <span class="o">*</span><span class="n">url</span> <span class="o">=</span> <span class="p">[</span><span class="n">documentsDirectory</span> <span class="nf">URLByAppendingPathComponent</span><span class="p">:</span><span class="n">documentName</span><span class="p">];</span>
 <span class="n">UIManagedDocument</span> <span class="o">*</span><span class="n">document</span> <span class="o">=</span> <span class="p">[[</span><span class="n">UIManagedDocument</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithFileURL</span><span class="p">:</span><span class="n">url</span><span class="p">];</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>This creates the UIManagedDocument instance, but does not open nor create the underlying file.</p>
 
-<h3 id="open-or-create-a-uimanageddocument">2. Open or Create a UIManagedDocument</h3>
+<h3 id="2-open-or-create-a-uimanageddocument">2. Open or Create a UIManagedDocument</h3>
 <p>Check if the <code class="highlighter-rouge">UIManagedDocument</code>’s underlying file exists on disk:</p>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">BOOL</span> <span class="n">fileExists</span> <span class="o">=</span> <span class="p">[[</span><span class="n">NSFileManager</span> <span class="nf">defaultManager</span><span class="p">]</span> <span class="nf">fileExistsAtPath</span><span class="p">:[</span><span class="n">url</span> <span class="nf">path</span><span class="p">]];</span> 
-</code></pre>
-</div>
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">BOOL</span> <span class="n">fileExists</span> <span class="o">=</span> <span class="p">[[</span><span class="n">NSFileManager</span> <span class="nf">defaultManager</span><span class="p">]</span> <span class="nf">fileExistsAtPath</span><span class="p">:[</span><span class="n">url</span> <span class="nf">path</span><span class="p">]];</span> 
+</code></pre></div></div>
 <p>Here is an example:</p>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">self</span><span class="p">.</span><span class="n">document</span> <span class="o">=</span> <span class="p">[[</span><span class="n">UIManagedDocument</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithFileURL</span><span class="p">:(</span><span class="n">URL</span> <span class="o">*</span><span class="p">)</span><span class="n">url</span><span class="p">];</span>
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">self</span><span class="p">.</span><span class="n">document</span> <span class="o">=</span> <span class="p">[[</span><span class="n">UIManagedDocument</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithFileURL</span><span class="p">:(</span><span class="n">URL</span> <span class="o">*</span><span class="p">)</span><span class="n">url</span><span class="p">];</span>
 <span class="k">if</span> <span class="p">([[</span><span class="n">NSFileManager</span> <span class="nf">defaultManager</span><span class="p">]</span> <span class="nf">fileExistsAtPath</span><span class="p">:[</span><span class="n">url</span> <span class="nf">path</span><span class="p">]])</span> <span class="p">{</span>
     <span class="p">[</span><span class="n">document</span> <span class="nf">openWithCompletionHandler</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">BOOL</span> <span class="n">success</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">success</span><span class="p">)</span> <span class="p">[</span><span class="n">self</span> <span class="nf">documentIsReady</span><span class="p">];</span>
@@ -283,10 +280,9 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
 </span>	<span class="n">NSManagedObjectContext</span> <span class="o">*</span><span class="n">context</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">document</span><span class="p">.</span><span class="n">managedObjectContext</span><span class="p">;</span>
    <span class="p">}</span> 
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<h3 id="saving--closing">3. Saving &amp; Closing</h3>
+<h3 id="3-saving--closing">3. Saving &amp; Closing</h3>
 <ul>
   <li>Notice that <code class="highlighter-rouge">UIManagedDocument</code>s AUTOSAVE themselves!</li>
   <li>Will automatically close if there are no strong pointers left to it.</li>
@@ -296,7 +292,7 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
 
 <h3 id="how-would-you-watch-a-documents-managedobjectcontext">How would you watch a document’s managedObjectContext?</h3>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">viewDidAppear</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">animated</span>
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">viewDidAppear</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">animated</span>
  <span class="p">{</span>
      <span class="p">[</span><span class="n">super</span> <span class="nf">viewDidAppear</span><span class="p">:</span><span class="n">animated</span><span class="p">];</span>
      <span class="p">[</span><span class="n">center</span> <span class="nf">addObserver</span><span class="p">:</span><span class="n">self</span>
@@ -311,8 +307,7 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
                      <span class="nl">object:</span><span class="n">document</span><span class="p">.</span><span class="n">managedObjectContext</span><span class="p">];</span>
      <span class="p">[</span><span class="n">super</span> <span class="nf">viewWillDisappear</span><span class="p">:</span><span class="n">animated</span><span class="p">];</span>
  <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="core-data">Core Data</h2>
 <p>Now we use the <code class="highlighter-rouge">UIManagedDocument</code>’s <code class="highlighter-rouge">managedObjectContext</code> <code class="highlighter-rouge"><span class="k">@property</span></code> to insert/delete objects in the database and query for objects in the database.</p>
@@ -343,9 +338,8 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
 
 <p>How? It is just a simple proper on the view controller class and the caller uses:</p>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="n">nextViewController</span> <span class="nf">setManagedObjectContext</span><span class="p">:[</span><span class="n">self</span> <span class="nf">managedObjectContext</span><span class="p">]];</span>
-</code></pre>
-</div>
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">nextViewController</span> <span class="nf">setManagedObjectContext</span><span class="p">:[</span><span class="n">self</span> <span class="nf">managedObjectContext</span><span class="p">]];</span>
+</code></pre></div></div>
 
 <p>Some others may recommend a singleton but that is another deep dark pit that is best avoided.</p>
 

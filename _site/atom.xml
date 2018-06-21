@@ -4,7 +4,7 @@
  <title>Everest</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-06-13T09:28:49+08:00</updated>
+ <updated>2018-06-21T16:56:13+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Kefeng Zhu</name>
@@ -13,10 +13,48 @@
 
  
  <entry>
+   <title>Python None</title>
+   <link href="http://localhost:4000/python/2018/06/21/python-None.html"/>
+   <updated>2018-06-21T14:00:00+08:00</updated>
+   <id>http://localhost:4000/python/2018/06/21/python-None</id>
+   <content type="html">&lt;h2 id=&quot;none-是什么&quot;&gt;None 是什么？&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/baicaiye/article/details/72922197&quot;&gt;baicaiye专栏&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;None是一个特殊的常量。
+None和False不同。
+None不是0。
+None不是空字符串。
+None和任何其他的数据类型比较永远返回False。
+None有自己的数据类型NoneType。
+你可以将None复制给任何变量，但是你不能创建其他NoneType对象。&lt;/p&gt;
+
+&lt;h2 id=&quot;the-none-object&quot;&gt;The None Object&lt;/h2&gt;
+
+&lt;p&gt;Note that the PyTypeObject for None is not directly exposed in the Python/C API. Since None is a &lt;strong&gt;singleton&lt;/strong&gt;, testing for object identity (using == in C) is sufficient. There is no PyNone_Check() function for the same reason.&lt;/p&gt;
+
+&lt;h3 id=&quot;pyobject-py_none&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;PyObject* Py_None&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;The Python None object, denoting lack of value. This object has no methods. It needs to be treated just like any other object with respect to reference counts.&lt;/p&gt;
+
+&lt;h3 id=&quot;py_return_none&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Py_RETURN_NONE&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;Properly handle returning Py_None from within a C function (that is, increment the reference count of None and return it.)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.python.org/3/c-api/none.html&quot;&gt;Python NoneType - python.org&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>RNN LSTM - Notes</title>
-   <link href="http://localhost:4000/machine%20learning/2018/06/12/RMM-LSTM.html"/>
+   <link href="http://localhost:4000/machine%20learning/2018/06/12/RMM-LSTM-copy.html"/>
    <updated>2018-06-12T14:00:00+08:00</updated>
-   <id>http://localhost:4000/machine%20learning/2018/06/12/RMM-LSTM</id>
+   <id>http://localhost:4000/machine%20learning/2018/06/12/RMM-LSTM copy</id>
    <content type="html">&lt;h2 id=&quot;deep-learning-reading-note&quot;&gt;&lt;em&gt;“Deep Learning”&lt;/em&gt; Reading note&lt;/h2&gt;
 
 &lt;h3 id=&quot;10-sequence-modeling-recurrent-and-recursive-nets&quot;&gt;10. Sequence Modeling: Recurrent and Recursive nets&lt;/h3&gt;

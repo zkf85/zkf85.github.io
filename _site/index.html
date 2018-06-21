@@ -179,7 +179,63 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
 
   <div class="post">
     <h1 class="post-title">
-      <a href="/machine%20learning/2018/06/12/RMM-LSTM.html">
+      <a href="/python/2018/06/21/python-None.html">
+        Python None
+      </a>
+    </h1>
+
+    <span class="post-date">21 Jun 2018</span>
+     | 
+    
+    <a href="/blog/tags/#python" class="post-tag">python</a>
+    
+    
+    <hr>
+    
+      <h2 id="none-是什么">None 是什么？</h2>
+<ul>
+  <li><a href="https://blog.csdn.net/baicaiye/article/details/72922197">baicaiye专栏</a></li>
+</ul>
+
+<p>None是一个特殊的常量。
+None和False不同。
+None不是0。
+None不是空字符串。
+None和任何其他的数据类型比较永远返回False。
+None有自己的数据类型NoneType。
+你可以将None复制给任何变量，但是你不能创建其他NoneType对象。</p>
+
+<h2 id="the-none-object">The None Object</h2>
+
+<p>Note that the PyTypeObject for None is not directly exposed in the Python/C API. Since None is a <strong>singleton</strong>, testing for object identity (using == in C) is sufficient. There is no PyNone_Check() function for the same reason.</p>
+
+<h3 id="pyobject-py_none"><code class="highlighter-rouge">PyObject* Py_None</code></h3>
+
+<p>The Python None object, denoting lack of value. This object has no methods. It needs to be treated just like any other object with respect to reference counts.</p>
+
+<h3 id="py_return_none"><code class="highlighter-rouge">Py_RETURN_NONE</code></h3>
+
+<p>Properly handle returning Py_None from within a C function (that is, increment the reference count of None and return it.)</p>
+
+<ul>
+  <li><a href="https://docs.python.org/3/c-api/none.html">Python NoneType - python.org</a></li>
+</ul>
+
+<p><br /><strong><em>KF</em></strong></p>
+
+    
+    <div class="post-more">
+      
+      <a href="/python/2018/06/21/python-None.html#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+      
+      <a href="/python/2018/06/21/python-None.html"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+    </div>
+  </div>
+  
+
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/machine%20learning/2018/06/12/RMM-LSTM-copy.html">
         RNN LSTM - Notes
       </a>
     </h1>
@@ -311,9 +367,9 @@ Figure 10.3 (p.369) or say equation 10.8 (p. 370) defines forward propagation in
     
     <div class="post-more">
       
-      <a href="/machine%20learning/2018/06/12/RMM-LSTM.html#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+      <a href="/machine%20learning/2018/06/12/RMM-LSTM-copy.html#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
       
-      <a href="/machine%20learning/2018/06/12/RMM-LSTM.html"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+      <a href="/machine%20learning/2018/06/12/RMM-LSTM-copy.html"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
     </div>
   </div>
   

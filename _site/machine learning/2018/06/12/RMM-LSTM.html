@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      RNN LSTM - Notes &middot; Everest
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/main.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+<!-- 
+  
+  <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"> </script>
+  <script type="text/x-mathjax-config">
+MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true } });
+  </script>
+  
+</head>
+ -->
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+
+  <br><br><br><br>
+
+    <div class="sidebar-personal-info">
+      
+      <div class="sidebar-personal-info-section">
+        <p>An <strong>iOS developer and designer</strong>. Blogging is good.</p>
+      </div>
+
+      
+      
+      
+      <div class="sidebar-personal-info-section">
+        <p> Follow me: 
+        
+        
+        
+        <a href="https://github.com/zkf85">
+          <i class="fa fa-github" aria-hidden="true"></i>
+        </a>
+        
+        
+        
+        </p>
+      </div>
+      
+    </div>
+  </div>
+
+<br><br>
+
+  <nav class="sidebar-nav">
+
+    
+      
+      
+      
+
+      
+
+      <span class="">
+        <a class="sidebar-nav-item " href="/">
+          Home
+        </a>
+
+        
+      </span>
+
+    
+      
+      
+      
+
+      
+
+      <span class="foldable">
+        <a class="sidebar-nav-item " href="/blog/">
+          Blog
+        </a>
+
+        
+          
+            
+            
+            
+              <a class="sidebar-nav-item sidebar-nav-item-sub " href="/blog/categories/">
+                Categories
+              </a>
+          
+        
+          
+            
+            
+            
+              <a class="sidebar-nav-item sidebar-nav-item-sub " href="/blog/tags/">
+                Tags
+              </a>
+          
+        
+      </span>
+
+    
+      
+      
+      
+
+      
+
+      <span class="">
+        <a class="sidebar-nav-item " href="/about/">
+          About
+        </a>
+
+        
+      </span>
+
+    
+
+    <!-- <span class="sidebar-nav-item">Currently v1.0.0</span> -->
+  </nav>
+
+
+  <div class="sidebar-item">
+    <br><br>
+    <p>
+    &copy; 2018 Kefeng Zhu. <br>
+    All Rights Reserved.
+    <br><br>
+    Powered by <a href="http://jekyllrb.com">jekyll</a>. 
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <!-- <a href="/" title="Home" title="Everest">
+              <img class="masthead-logo" src=""/>
+            </a> -->
+            <a href="/" title="Home">Everest</a>
+            <small>Kefeng's blog</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">RNN LSTM - Notes</h1>
+
+  <!-- <span class="post-date">12 Jun 2018</span> -->
+  <div class="post-date">Tue, 12 Jun 2018 14:00:00 +0800</div>
+  <span class="post-tag-kf">
+  
+  
+    <a href="/blog/tags/#rnn" class="post-tag">rnn</a>
+  
+    <a href="/blog/tags/#lstm" class="post-tag">lstm</a>
+  
+    <a href="/blog/tags/#machine-learning" class="post-tag">machine_learning</a>
+  
+  
+  </span>
+  <hr>
+  <article>
+    <h2 id="deep-learning-reading-note"><em>“Deep Learning”</em> Reading note</h2>
+
+<h3 id="10-sequence-modeling-recurrent-and-recursive-nets">10. Sequence Modeling: Recurrent and Recursive nets</h3>
+
+<h4 id="101-unfolding-computational-graphs">10.1 Unfolding Computational Graphs</h4>
+
+<ul>
+  <li>
+    <p><strong>What is a Computational Graph?</strong></p>
+
+    <p>A computational graph is a way to formalize the structure of a set of computations.</p>
+  </li>
+</ul>
+
+<p>Considering a classical form of a dynamic system:</p>
+
+<script type="math/tex; mode=display">s^{(t)} = f \left( s^{(t-1)} ; \theta \right), \tag{10.1}</script>
+
+<p>where $s$ is called the state of the system. And it is a recurrent.</p>
+
+<p>For a finite number of $\tau$ steps, we can unfold the equation. For example, when $\tau = 3$, we have</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{eqnarray*}
+s^{(3)} &=& f\left( s^{(2)}; \theta \right) \tag{10.2} \\
+ &=& f\left(f\left( s^{(1)}; \theta \right);\theta\right) \tag{10.3}
+ \end{eqnarray*} %]]></script>
+
+<p>Another example, considering a dynamic system driven by an external signal $x^{(t)}$,
+<script type="math/tex">s^{(t)} = f\left( s^{(t-1)}, x^{(t)};\theta \right) \tag{10.4}</script></p>
+
+<p>To indicate the state  is the hidden units of the network, we rewrite equation 10.4 using $h$ to represent the state,
+<script type="math/tex">h^{(t)} = f\left(h^{(t-1)}, x^{(t)}; \theta \right) \tag{10.5}</script></p>
+
+<p>We can represent the unfolded recurrence after $t$ steps with a function $g^{(t)}$:
+<script type="math/tex">% <![CDATA[
+\begin{eqnarray*}
+h^{(t)} &=& g^{(t)}\left(x^{(t)}, x^{(t-1)}, x^{(t-2)}, ..., x^{(2)}, x^{(1)}\right) \tag{10.6} \\
+&=& f\left(h^{(t-1)}, x^{(t)};\theta\right). \tag{10.7}
+\end{eqnarray*} %]]></script></p>
+
+<p>The function $ g^{(t)} $ takes the whole past sequence $\left(x^{(t)}, x^{(t-1)}, x^{(t-2)}, …, x^{(2)}, x^{(1)} \right)$ as input and produces the current state. But the unfolded recurrent structure allows us to factorize the function into repeated application of a function $f$, the unfolding process introduces two major advantages:</p>
+
+<ul>
+  <li>
+    <ol>
+      <li>The learned model always has the same input size, which specified in terms of transition from one state to another.</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>It is possible to use the <em>same</em> transition function $f$ with the same parameters at every time step.</li>
+    </ol>
+  </li>
+</ul>
+
+<h4 id="102-recurrent-neural-networks-循环神经网络">10.2 Recurrent Neural Networks （循环神经网络）</h4>
+<blockquote>
+  <p>Based on the basic idea of parameter-sharing, we can build a variety of neural networks. 3 typical designs are presented in the book:</p>
+</blockquote>
+
+<ul>
+  <li>
+    <ol>
+      <li>RNN produce an output at each time step, and have connections between hidden unit. (Page 368, fig. 10.3)</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>RNN produce an output at each time step and have connections from <em>the output at one time step</em> to <em>the hidden units at the next time step</em>. (Page 370, fig. 10.4)</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>RNN connections between hidden units, that read an entire sequence and then produce a single output (page. 371, fig. 10.5)</li>
+    </ol>
+  </li>
+</ul>
+
+<blockquote>
+  <p>The RNN of figure 10.3 (p.368) and equation 10.8 (p.369) is universal in the sense that (从…意义上来说）<em>any</em>function computable by a Turing machine can be computed by such a recurrent network of a finite size.</p>
+</blockquote>
+
+<p>In the book, case 1 is chosen as a throughout example. 
+Figure 10.3 (p.369) or say equation 10.8 (p. 370) defines forward propagation in this model.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\DeclareMathOperator{\softmax}{softmax}
+\begin{eqnarray*}
+\pmb{a}^{(t)} &=& \pmb{b} + \pmb{W}\pmb{h}^{(t-1)} + \pmb{U}\pmb{x}, \tag{10.8} \\
+\pmb{h}^{(t)} &=& \tanh\left(\pmb{a}^{(t)}\right), \tag{10.9} \\
+\pmb{o}^{(t)} &=& \pmb{c} + \pmb{V}\pmb{h}^{(t)}, \tag{10.10} \\
+\hat{\pmb{y}} ^{(t)} &=& \softmax \left(\pmb{o}^{(t)} \right), \tag{10.11}
+\end{eqnarray*} %]]></script>
+
+<p>Parameters: bias vecters $\pmb{b}$, $\pmb{c}$, weight matrices $\pmb{U}$, $\pmb{V}$ and $\pmb{W}$.</p>
+
+<ul>
+  <li>$\pmb W$ is the hidden-to-hidden recurrent weight matrix</li>
+  <li>$\pmb V$ is the hidden-to-output weight matrix</li>
+  <li>
+    <p>$\pmb U$ is the input-to-hidden weight matrix</p>
+  </li>
+  <li>This is an example of a recurrent network that maps an input sequence $\pmb{x}^{(t)}$ to an output sequence $\pmb{y}^{(t)}$ of the same length $t$ in a range of $(1, \tau)$.</li>
+</ul>
+
+<blockquote>
+  <p>The Loss Function:</p>
+</blockquote>
+
+<p><br /><strong><em>KF</em></strong></p>
+
+  </article>
+</div>
+
+<div class="related">
+  <h3>Related Posts</h3>
+  <ul class="related-posts">
+    
+      <li>
+        <h4>
+          <a href="/python/2018/06/10/python-staticmethod.html">
+            @staticmethod和@classmethod的作用与区别
+            <small>10 Jun 2018</small>
+          </a>
+        </h4>
+      </li>
+    
+      <li>
+        <h4>
+          <a href="/life/2016/12/18/leukemia.html">
+            Knowledge of Leukemia
+            <small>18 Dec 2016</small>
+          </a>
+        </h4>
+      </li>
+    
+      <li>
+        <h4>
+          <a href="/ios%20development/2016/12/03/masonry.html">
+            Masonry
+            <small>03 Dec 2016</small>
+          </a>
+        </h4>
+      </li>
+    
+  </ul>
+</div>
+
+
+<div class="comments">
+  <h3>Comments</h3>
+  <div id="disqus_thread"></div>
+  <script>
+var disqus_config = function () {
+  this.page.url = 'http://localhost:4000/machine%20learning/2018/06/12/RMM-LSTM.html'; // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = '/machine%20learning/2018/06/12/RMM-LSTM'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() {
+  var d = document, s = d.createElement('script');
+  s.src = '//zkf85githubio.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</div>
+
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if (target === toggle) {
+            checkbox.checked = !checkbox.checked;
+            e.preventDefault();
+          } else if (checkbox.checked && !sidebar.contains(target)) {
+            /* click outside the sidebar when sidebar is open */
+            checkbox.checked = false;
+          }
+        }, false);
+      })(document);
+    </script>
+    
+  </body>
+  
+  <script id="dsq-count-scr" src="//zkf85githubio.disqus.com/count.js" async></script>
+  
+</html>

@@ -1,0 +1,58 @@
+---
+layout: default
+comment: true
+---
+
+<div class="post">
+  <h1 class="post-title">{{ page.title }}</h1>
+
+  <!-- <span class="post-date">{{ page.date | date_to_string }}</span> -->
+  <div class="post-date">{{ page.date | date_to_rfc822 }}</div>
+  <span class="post-tag-kf">
+  {% if page.tags %}
+  {% for tag in page.tags %}
+    <a href="{{ site.baseurl }}{{ site.tag_page }}#{{ tag | slugify }}" class="post-tag">{{ tag }}</a>
+  {% endfor %}
+  {% endif %}
+  </span>
+  <hr>
+  <article>
+    {{ content }}
+  </article>
+</div>
+
+<div class="related">
+  <h3>Related Posts</h3>
+  <ul class="related-posts">
+    {% for post in site.related_posts limit:3 %}
+      <li>
+        <h4>
+          <a href="{{ site.baseurl }}{{ post.url }}">
+            {{ post.title }}
+            <small>{{ post.date | date_to_string }}</small>
+          </a>
+        </h4>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% if site.disqus_short_name %}
+<div class="comments">
+  <h3>Comments</h3>
+  <div id="disqus_thread"></div>
+  <script>
+var disqus_config = function () {
+  this.page.url = '{{ site.url }}{{ page.url }}'; // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = '{{ page.id }}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() {
+  var d = document, s = d.createElement('script');
+  s.src = '//{{ site.disqus_short_name }}.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</div>
+{% endif %}

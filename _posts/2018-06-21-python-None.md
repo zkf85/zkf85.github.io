@@ -5,7 +5,8 @@ date: "2018-06-21 14:00:00"
 category: [Python]
 tag: [python]
 ---
-## None 是什么？
+
+## Python 中的 None 是什么？
 - [baicaiye专栏](https://blog.csdn.net/baicaiye/article/details/72922197)
 
 None是一个特殊的常量。

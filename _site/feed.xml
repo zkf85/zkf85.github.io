@@ -1,0 +1,1001 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-10-08T15:10:21+08:00</updated><id>http://localhost:4000/</id><title type="html">KFZ’s BLOG</title><subtitle>Material theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites
+</subtitle><entry><title type="html">Python None</title><link href="http://localhost:4000/2018/06/21/python-None" rel="alternate" type="text/html" title="Python None" /><published>2018-06-21T14:00:00+08:00</published><updated>2018-06-21T14:00:00+08:00</updated><id>http://localhost:4000/2018/06/21/python-None</id><content type="html" xml:base="http://localhost:4000/2018/06/21/python-None">&lt;h2 id=&quot;python-中的-none-是什么&quot;&gt;Python 中的 None 是什么？&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/baicaiye/article/details/72922197&quot;&gt;baicaiye专栏&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;None是一个特殊的常量。
+None和False不同。
+None不是0。
+None不是空字符串。
+None和任何其他的数据类型比较永远返回False。
+None有自己的数据类型NoneType。
+你可以将None复制给任何变量，但是你不能创建其他NoneType对象。&lt;/p&gt;
+
+&lt;h2 id=&quot;the-none-object&quot;&gt;The None Object&lt;/h2&gt;
+
+&lt;p&gt;Note that the PyTypeObject for None is not directly exposed in the Python/C API. Since None is a &lt;strong&gt;singleton&lt;/strong&gt;, testing for object identity (using == in C) is sufficient. There is no PyNone_Check() function for the same reason.&lt;/p&gt;
+
+&lt;h3 id=&quot;pyobject-py_none&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;PyObject* Py_None&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;The Python None object, denoting lack of value. This object has no methods. It needs to be treated just like any other object with respect to reference counts.&lt;/p&gt;
+
+&lt;h3 id=&quot;py_return_none&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Py_RETURN_NONE&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;Properly handle returning Py_None from within a C function (that is, increment the reference count of None and return it.)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.python.org/3/c-api/none.html&quot;&gt;Python NoneType - python.org&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;]" /><category term="python" /><summary type="html">Python 中的 None 是什么？ baicaiye专栏</summary></entry><entry><title type="html">RNN LSTM - Notes</title><link href="http://localhost:4000/2018/06/12/RMM-LSTM-copy" rel="alternate" type="text/html" title="RNN LSTM - Notes" /><published>2018-06-12T14:00:00+08:00</published><updated>2018-06-12T14:00:00+08:00</updated><id>http://localhost:4000/2018/06/12/RMM-LSTM%20copy</id><content type="html" xml:base="http://localhost:4000/2018/06/12/RMM-LSTM-copy">&lt;h2 id=&quot;deep-learning-reading-note&quot;&gt;&lt;em&gt;“Deep Learning”&lt;/em&gt; Reading note&lt;/h2&gt;
+
+&lt;h3 id=&quot;10-sequence-modeling-recurrent-and-recursive-nets&quot;&gt;10. Sequence Modeling: Recurrent and Recursive nets&lt;/h3&gt;
+
+&lt;h4 id=&quot;101-unfolding-computational-graphs&quot;&gt;10.1 Unfolding Computational Graphs&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;What is a Computational Graph?&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;A computational graph is a way to formalize the structure of a set of computations.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Considering a classical form of a dynamic system:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;s^{(t)} = f \left( s^{(t-1)} ; \theta \right), \tag{10.1}&lt;/script&gt;
+
+&lt;p&gt;where $s$ is called the state of the system. And it is a recurrent.&lt;/p&gt;
+
+&lt;p&gt;For a finite number of $\tau$ steps, we can unfold the equation. For example, when $\tau = 3$, we have&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{eqnarray*}
+s^{(3)} &amp;=&amp; f\left( s^{(2)}; \theta \right) \tag{10.2} \\
+ &amp;=&amp; f\left(f\left( s^{(1)}; \theta \right);\theta\right) \tag{10.3}
+ \end{eqnarray*} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Another example, considering a dynamic system driven by an external signal $x^{(t)}$,
+&lt;script type=&quot;math/tex&quot;&gt;s^{(t)} = f\left( s^{(t-1)}, x^{(t)};\theta \right) \tag{10.4}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;To indicate the state  is the hidden units of the network, we rewrite equation 10.4 using $h$ to represent the state,
+&lt;script type=&quot;math/tex&quot;&gt;h^{(t)} = f\left(h^{(t-1)}, x^{(t)}; \theta \right) \tag{10.5}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;We can represent the unfolded recurrence after $t$ steps with a function $g^{(t)}$:
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\begin{eqnarray*}
+h^{(t)} &amp;=&amp; g^{(t)}\left(x^{(t)}, x^{(t-1)}, x^{(t-2)}, ..., x^{(2)}, x^{(1)}\right) \tag{10.6} \\
+&amp;=&amp; f\left(h^{(t-1)}, x^{(t)};\theta\right). \tag{10.7}
+\end{eqnarray*} %]]&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;The function $ g^{(t)} $ takes the whole past sequence $\left(x^{(t)}, x^{(t-1)}, x^{(t-2)}, …, x^{(2)}, x^{(1)} \right)$ as input and produces the current state. But the unfolded recurrent structure allows us to factorize the function into repeated application of a function $f$, the unfolding process introduces two major advantages:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;ol&gt;
+      &lt;li&gt;The learned model always has the same input size, which specified in terms of transition from one state to another.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;ol&gt;
+      &lt;li&gt;It is possible to use the &lt;em&gt;same&lt;/em&gt; transition function $f$ with the same parameters at every time step.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;102-recurrent-neural-networks-循环神经网络&quot;&gt;10.2 Recurrent Neural Networks （循环神经网络）&lt;/h4&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Based on the basic idea of parameter-sharing, we can build a variety of neural networks. 3 typical designs are presented in the book:&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;ol&gt;
+      &lt;li&gt;RNN produce an output at each time step, and have connections between hidden unit. (Page 368, fig. 10.3)&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;ol&gt;
+      &lt;li&gt;RNN produce an output at each time step and have connections from &lt;em&gt;the output at one time step&lt;/em&gt; to &lt;em&gt;the hidden units at the next time step&lt;/em&gt;. (Page 370, fig. 10.4)&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;ol&gt;
+      &lt;li&gt;RNN connections between hidden units, that read an entire sequence and then produce a single output (page. 371, fig. 10.5)&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The RNN of figure 10.3 (p.368) and equation 10.8 (p.369) is universal in the sense that (从…意义上来说）&lt;em&gt;any&lt;/em&gt;function computable by a Turing machine can be computed by such a recurrent network of a finite size.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In the book, case 1 is chosen as a throughout example. 
+Figure 10.3 (p.369) or say equation 10.8 (p. 370) defines forward propagation in this model.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\DeclareMathOperator{\softmax}{softmax}
+\begin{eqnarray*}
+\pmb{a}^{(t)} &amp;=&amp; \pmb{b} + \pmb{W}\pmb{h}^{(t-1)} + \pmb{U}\pmb{x}, \tag{10.8} \\
+\pmb{h}^{(t)} &amp;=&amp; \tanh\left(\pmb{a}^{(t)}\right), \tag{10.9} \\
+\pmb{o}^{(t)} &amp;=&amp; \pmb{c} + \pmb{V}\pmb{h}^{(t)}, \tag{10.10} \\
+\hat{\pmb{y}} ^{(t)} &amp;=&amp; \softmax \left(\pmb{o}^{(t)} \right), \tag{10.11}
+\end{eqnarray*} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Parameters: bias vecters $\pmb{b}$, $\pmb{c}$, weight matrices $\pmb{U}$, $\pmb{V}$ and $\pmb{W}$.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$\pmb W$ is the hidden-to-hidden recurrent weight matrix&lt;/li&gt;
+  &lt;li&gt;$\pmb V$ is the hidden-to-output weight matrix&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;$\pmb U$ is the input-to-hidden weight matrix&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;This is an example of a recurrent network that maps an input sequence $\pmb{x}^{(t)}$ to an output sequence $\pmb{y}^{(t)}$ of the same length $t$ in a range of $(1, \tau)$.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The Loss Function:&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Machine Learning&quot;]" /><category term="rnn" /><category term="lstm" /><category term="machine_learning" /><summary type="html">“Deep Learning” Reading note</summary></entry><entry><title type="html">@staticmethod和@classmethod的作用与区别</title><link href="http://localhost:4000/2018/06/10/python-staticmethod" rel="alternate" type="text/html" title="@staticmethod和@classmethod的作用与区别" /><published>2018-06-10T15:24:00+08:00</published><updated>2018-06-10T15:24:00+08:00</updated><id>http://localhost:4000/2018/06/10/python-staticmethod</id><content type="html" xml:base="http://localhost:4000/2018/06/10/python-staticmethod">&lt;h3 id=&quot;相同点&quot;&gt;相同点：&lt;/h3&gt;
+&lt;p&gt;一般来说，要使用某个类的方法，需要先实例化一个对象再调用方法。
+e.g.:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;bar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;  
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'foo'&lt;/span&gt; 
+	&lt;span class=&quot;nd&quot;&gt;@staticmethod&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;static_foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;static_foo&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+		
+	&lt;span class=&quot;nd&quot;&gt;@classmethod&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;class_foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;class_foo&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;而使用&lt;code class=&quot;highlighter-rouge&quot;&gt;@staticmethod&lt;/code&gt;或&lt;code class=&quot;highlighter-rouge&quot;&gt;@classmethod&lt;/code&gt;，就可以不需要实例化，直接&lt;strong&gt;类名.方法名()&lt;/strong&gt;来调用。e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;A.static_foo&lt;/code&gt; 或者 &lt;code class=&quot;highlighter-rouge&quot;&gt;A.class_foo&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;这有利于组织代码，把某些应该属于某个类的函数给放到那个类里去，同时有利于命名空间的整洁。&lt;/p&gt;
+
+&lt;h3 id=&quot;不同点&quot;&gt;不同点：&lt;/h3&gt;
+
+&lt;p&gt;既然@staticmethod和@classmethod都可以直接类名.方法名()来调用，那他们有什么区别呢&lt;/p&gt;
+
+&lt;p&gt;从它们的使用上来看,&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;@staticmethod&lt;strong&gt;不需要&lt;/strong&gt;表示自身对象的self和自身类的cls&lt;strong&gt;参数&lt;/strong&gt;，就跟使用函数一样。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;@classmethod也不需要self参数，但&lt;strong&gt;第一个参数&lt;/strong&gt;需要是表示自身类的cls参数。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;如果在@staticmethod中要调用到这个类的一些属性方法，只能直接类名.属性名或类名.方法名, e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;A.bar&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;而@classmethod因为持有cls参数，可以来调用类的属性，类的方法，实例化对象等，避免硬编码, e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;cls.bar&lt;/code&gt;以及&lt;code class=&quot;highlighter-rouge&quot;&gt;cls().foo()&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;测试代码&quot;&gt;测试代码&lt;/h4&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;  
+    &lt;span class=&quot;n&quot;&gt;bar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;  
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;  
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;oo&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ 
+    &lt;span class=&quot;nd&quot;&gt;@staticmethod&lt;/span&gt;  
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;static_foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;  
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;static_foo&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ 
+    &lt;span class=&quot;nd&quot;&gt;@classmethod&lt;/span&gt;  
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;class_foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;  
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;class_foo&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cls&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;cls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  
+  
+&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;static_foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  
+&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;class_foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;输出&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;static_foo
+1
+class_foo
+1
+foo
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;]" /><category term="python" /><summary type="html">相同点： 一般来说，要使用某个类的方法，需要先实例化一个对象再调用方法。 e.g.:</summary></entry><entry><title type="html">This is Just Another Post</title><link href="http://localhost:4000/2017/03/25/another-post" rel="alternate" type="text/html" title="This is Just Another Post" /><published>2017-03-25T01:30:13+08:00</published><updated>2017-03-25T01:30:13+08:00</updated><id>http://localhost:4000/2017/03/25/another-post</id><content type="html" xml:base="http://localhost:4000/2017/03/25/another-post">&lt;p&gt;I have some text.&lt;/p&gt;
+
+&lt;p&gt;I want some &lt;em&gt;italics&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;I want some &lt;strong&gt;bold&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;this-is-heading-1&quot;&gt;this is heading 1&lt;/h1&gt;
+
+&lt;h2 id=&quot;this-is-heading-2&quot;&gt;this is heading 2&lt;/h2&gt;
+
+&lt;h3 id=&quot;this-is-heading-3&quot;&gt;this is heading 3&lt;/h3&gt;
+
+&lt;p&gt;you want a list?&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;first&lt;/li&gt;
+  &lt;li&gt;second&lt;/li&gt;
+  &lt;li&gt;third&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;you want an ordered list?&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;whatever&lt;/li&gt;
+  &lt;li&gt;whatever&lt;/li&gt;
+  &lt;li&gt;whatever&lt;/li&gt;
+&lt;/ol&gt;</content><author><name></name></author><category term="test" /><summary type="html">I have some text.</summary></entry><entry><title type="html">Syntax Highlighting Test</title><link href="http://localhost:4000/2017/03/24/syntax-test" rel="alternate" type="text/html" title="Syntax Highlighting Test" /><published>2017-03-24T01:30:13+08:00</published><updated>2017-03-24T01:30:13+08:00</updated><id>http://localhost:4000/2017/03/24/syntax-test</id><content type="html" xml:base="http://localhost:4000/2017/03/24/syntax-test">&lt;p&gt;Jekyll uses Rouge by default for syntax highlighting, here are some tests.&lt;/p&gt;
+
+&lt;p&gt;Ruby:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Python with line numbers:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hi, {}&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;C with line numbers:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hi, %s&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Tom&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;/* prints 'Hi, Tom' to STDOUT. */&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><author><name></name></author><category term="test" /><category term="syntax" /><summary type="html">Jekyll uses Rouge by default for syntax highlighting, here are some tests.</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/2017/03/23/welcome-to-jekyll" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2017-03-23T01:30:13+08:00</published><updated>2017-03-23T01:30:13+08:00</updated><id>http://localhost:4000/2017/03/23/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/2017/03/23/welcome-to-jekyll">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="test" /><category term="Test" /><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry><entry><title type="html">Knowledge of Leukemia</title><link href="http://localhost:4000/2016/12/18/leukemia" rel="alternate" type="text/html" title="Knowledge of Leukemia" /><published>2016-12-18T09:37:00+08:00</published><updated>2016-12-18T09:37:00+08:00</updated><id>http://localhost:4000/2016/12/18/leukemia</id><content type="html" xml:base="http://localhost:4000/2016/12/18/leukemia">&lt;div class=&quot;message&quot;&gt;
+在这里汇总一下关于这个病的一些知识和其他信息。要战胜敌人就得充分了解敌人。盼望南哥战胜它，早日康复！
+&lt;/div&gt;
+
+&lt;h2 id=&quot;resources&quot;&gt;Resources:&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.bloodjournal.org/content/116/18/3409?sso-checked=true&quot;&gt;How I treat Philadelphia chromosome–positive acute lymphoblastic leukemia&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Important Excerpt from an In-Depth Report on ALL&lt;sup id=&quot;fnref:maryland-report&quot;&gt;&lt;a href=&quot;#fn:maryland-report&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;
+This is an in-depth report on the causes, diagnosis, treatment, and prevention of leukemia:&lt;/p&gt;
+  &lt;blockquote&gt;
+    &lt;p&gt;&lt;a href=&quot;http://umm.edu/health/medical/reports/articles/acute-lymphocytic-leukemia&quot;&gt;&lt;strong&gt;Acute Lymphocytic Leukemia - An in-depth Report&lt;/strong&gt; - University of Maryland Medical Center&lt;/a&gt;&lt;/p&gt;
+  &lt;/blockquote&gt;
+
+  &lt;p&gt;There are some key information and factors in the report and are listed below:&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;i-acute-lymphocytic-leukemia&quot;&gt;I. Acute Lymphocytic Leukemia&lt;sup id=&quot;fnref:maryland-report:1&quot;&gt;&lt;a href=&quot;#fn:maryland-report&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+
+&lt;p&gt;Acute lymphocytic leukemia (ALL) is also known as acute lymphoid leukemia or acute lymphoblastic leukemia. The majority of childhood leukemias are of the ALL type.&lt;/p&gt;
+
+&lt;p&gt;Lymphocytes are the body’s primary immune cells. Among other vital functions, lymphocytes produce antibodies, factors that can target and attack specific foreign substances (antigens) and fight infections.&lt;/p&gt;
+
+&lt;p&gt;Lymphocytes develop in the thymus gland or bone marrow and are therefore categorized as either B cells (bone marrow-derived cells) or T cells (thymus gland-derived cells).  ALL can arise from either T-cell or &lt;strong&gt;B-cell&lt;/strong&gt; lymphocytes. Most cases of ALL involve &lt;strong&gt;B cells&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;ii-causes&quot;&gt;II. Causes&lt;sup id=&quot;fnref:maryland-report:2&quot;&gt;&lt;a href=&quot;#fn:maryland-report&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+
+&lt;p&gt;Doctors do not know exactly what causes acute lymphocytic leukemia (ALL). It is likely that ALL develops from a combination of genetic, biologic, and environmental factors.&lt;/p&gt;
+
+&lt;h3 id=&quot;genetic-translocations&quot;&gt;Genetic Translocations&lt;/h3&gt;
+
+&lt;p&gt;Up to 65% of leukemias contain genetic rearrangements, called translocations, in which some of the genetic material (genes) on a chromosome may be shuffled or swapped between a pair of chromosomes.&lt;/p&gt;
+
+&lt;p&gt;The most common genetic translocation in ALL is the Philadelphia (Ph) chromosome where DNA is swapped between chromosomes 9 and 22 [t(9:22)]. It occurs in about 20 - 30% of adults and 3 - 5% of children with ALL.&lt;/p&gt;
+
+&lt;h2 id=&quot;iii-risk-factors&quot;&gt;III. Risk Factors&lt;sup id=&quot;fnref:maryland-report:3&quot;&gt;&lt;a href=&quot;#fn:maryland-report&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+
+&lt;h3 id=&quot;hereditary-disorders&quot;&gt;Hereditary Disorders&lt;/h3&gt;
+&lt;p&gt;ALL does not appear to run in families. Still, certain genetic disorders may increase risk. For example, children with Down syndrome have a 20-times greater risk of developing ALL than the general population. Other rare genetic disorders associated with increased risk include Klinefelter syndrome, Bloom syndrome, Fanconi anemia, ataxia-telangiectasia, neurofibromatosis, Shwachman syndrome, IgA deficiency, and congenital X-linked agammaglobulinemia.&lt;/p&gt;
+
+&lt;h3 id=&quot;radiation-and-chemical-exposure&quot;&gt;Radiation and Chemical Exposure&lt;/h3&gt;
+
+&lt;p&gt;Previous cancer treatment with high doses of radiation or chemotherapy can increase the risk for developing ALL. Prenatal exposure to x-rays may also increase risk in children. Lower levels of radiation (living near power lines, video screen emissions, small appliances, cell phones) are unlikely to pose any cancer risk.&lt;/p&gt;
+
+&lt;h2 id=&quot;iv-symptoms&quot;&gt;IV. Symptoms&lt;sup id=&quot;fnref:maryland-report:4&quot;&gt;&lt;a href=&quot;#fn:maryland-report&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+
+&lt;p&gt;The symptoms of ALL may be difficult to recognize. ALL usually begins abruptly and intensely, but in some cases symptoms may develop slowly. They may be present one day, and absent the next, particularly in children. Symptoms develop when:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;There are not enough healthy mature white blood cells (leukocytes) to mount a defense against infection.&lt;/li&gt;
+  &lt;li&gt;There are not enough healthy blood-clotting cells (platelets) to prevent bleeding.&lt;/li&gt;
+  &lt;li&gt;The depleted oxygen-bearing red blood cells can’t provide enough oxygen to organs.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Symptoms include:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Fatigue&lt;/li&gt;
+  &lt;li&gt;Paleness – patients may have poor coloring from anemia caused by insufficient red blood cells&lt;/li&gt;
+  &lt;li&gt;Recurrent minor infections&lt;/li&gt;
+  &lt;li&gt;Fever without known cause&lt;/li&gt;
+  &lt;li&gt;Bone pain&lt;/li&gt;
+  &lt;li&gt;Abdominal swelling&lt;/li&gt;
+  &lt;li&gt;Bruising – may result from only slight injury&lt;/li&gt;
+  &lt;li&gt;Poor healing of minor cuts&lt;/li&gt;
+  &lt;li&gt;Uncontrolled bleeding – bleeding events increase as the bone marrow fails to produce enough platelets to make a normal blood clot, a condition called thrombocytopenia.&lt;/li&gt;
+  &lt;li&gt;Small, red spots on the skin (petechiae)&lt;/li&gt;
+  &lt;li&gt;Vision changes (rare)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;v-prognosis&quot;&gt;V. Prognosis&lt;sup id=&quot;fnref:maryland-report:5&quot;&gt;&lt;a href=&quot;#fn:maryland-report&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+&lt;p&gt;ALL is one of the most curable cancers and survival rates are now at an all-time high.&lt;/p&gt;
+
+&lt;p&gt;According to the American Cancer Society, certain factors can help determine prognosis:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Age. Younger patients (especially those younger than age 50) have a better prognosis than older patients.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Initial white blood cell (WBC) count. People diagnosed with a WBC count below 50,000 tend to do better than people with higher WBC counts.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Response to chemotherapy. Patients who achieve complete remission (absence of active cancer) within 4 - 5 weeks of starting treatment tend to have a better prognosis than those who take longer.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;vi-treatment&quot;&gt;VI. Treatment&lt;sup id=&quot;fnref:maryland-report:6&quot;&gt;&lt;a href=&quot;#fn:maryland-report&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+
+&lt;h3 id=&quot;1-treatment-phases&quot;&gt;1. Treatment Phases&lt;/h3&gt;
+
+&lt;p&gt;There are typically &lt;strong&gt;three treatment stages&lt;/strong&gt; for the average-risk patient with ALL:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Induction&lt;/strong&gt; therapy is given in order to achieve a first remission (the absence of active cancer)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Consolidation&lt;/strong&gt; (intensification) therapy is given to prevent relapse after remission has been achieved&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Maintenance&lt;/strong&gt; treatment is lower intensity therapy given for several years to prevent relapse after remission&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Because leukemia can also spread to the brain and spinal cord, where chemotherapy that is given intravenously or orally does not penetrate very well, most patients also need radiation to the brain and spinal cord, or chemotherapy that is injected into the layers around them. This is called central nervous system prophylaxis (preventive treatment) and is given during all treatment phases to prevent the cancer from spreading to the brain and spinal cord.&lt;/p&gt;
+
+&lt;h3 id=&quot;2-specific-treatments-used-in-all&quot;&gt;2. Specific Treatments Used in ALL&lt;/h3&gt;
+
+&lt;p&gt;The following are specific treatments used for ALL:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Chemotherapy is the primary treatment&lt;/strong&gt; for each stage. Newer drugs known as biological therapies are also being used.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Radiation to the brain and spinal cord is also administered in some cases.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;A &lt;strong&gt;bone marrow transplant&lt;/strong&gt; may be recommended for some adult patients after treatment when there is no active cancer (remission) or for adults and children if the cancer has returned after treatment (relapsed).&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3-drugs-used-for-induction-chemotherapy&quot;&gt;3. Drugs Used for Induction Chemotherapy&lt;/h3&gt;
+&lt;p&gt;Both children and adults typically start with a 3-drug regimen. Imatinib (Gleevec) or dasatinib (Sprycel) may be added for patients with Philadelphia chromosome-positive ALL.&lt;/p&gt;
+
+&lt;p&gt;For &lt;strong&gt;adults&lt;/strong&gt;, the standard drugs are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Vincristine&lt;/li&gt;
+  &lt;li&gt;Prednisone&lt;/li&gt;
+  &lt;li&gt;Anthracycline drug, such as such as doxorubicin, daunorubicin, or epirubicin. Some adult chemotherapy regimens also add on an asparaginase drug or cyclophosphamide (Cytoxan).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;4-preventing-central-nervous-system-disease-cns-prophylaxis&quot;&gt;4. Preventing Central Nervous System Disease (CNS Prophylaxis)&lt;/h3&gt;
+
+&lt;p&gt;Adult CNS prophylaxis is performed in one of three ways:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Cranial radiation plus intrathecal chemotherapy with methotrexate&lt;/li&gt;
+  &lt;li&gt;High-dose systemic infusion of methotrexate plus intrathecal methotrexate without cranial radiation&lt;/li&gt;
+  &lt;li&gt;Intrathecal methotrexate chemotherapy alone&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;5-evidence-of-remission-after-induction-treatment&quot;&gt;5. Evidence of Remission after Induction Treatment&lt;/h3&gt;
+
+&lt;p&gt;Survival in acute leukemia depends on complete remission (no signs of active cancer). Although not always clear-cut, remission is indicated by the following:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;All signs and symptoms of leukemia disappear.&lt;/li&gt;
+  &lt;li&gt;There are no abnormal cells in the blood, bone marrow, and cerebrospinal fluid.&lt;/li&gt;
+  &lt;li&gt;The percentage of blast cells in the bone marrow is less than 5%.&lt;/li&gt;
+  &lt;li&gt;Blood platelet count returns to normal.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Induction can produce extremely rapid results. Nearly all children with ALL achieve remission after a month of induction treatment. The shorter the time to remission the better the outlook:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A complete remission usually occurs within the first 4 weeks. Patients who show low disease levels within 7 - 14 days have an excellent outlook, particularly if they have favorable genetic factors, and may need less-intensive treatments afterward.&lt;/li&gt;
+  &lt;li&gt;Patients with high disease levels at 14 days or who require more than 4 weeks to achieve remission are at higher risk for relapse and most likely need more aggressive treatment.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;6-side-effects-and-complications&quot;&gt;6. Side Effects and Complications&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Common Side Effects&lt;/em&gt;. Typical side effects include:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Nausea and vomiting. Drugs known as serotonin antagonists, such as ondansetron (Zofran) or granisteron (Kyril), can relieve these side effects.&lt;/li&gt;
+  &lt;li&gt;Diarrhea&lt;/li&gt;
+  &lt;li&gt;Hair loss&lt;/li&gt;
+  &lt;li&gt;Mouth sores&lt;/li&gt;
+  &lt;li&gt;Weight loss&lt;/li&gt;
+  &lt;li&gt;Depression&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;vii-transplantation&quot;&gt;VII. Transplantation&lt;/h2&gt;
+
+&lt;h3 id=&quot;1-transplantation&quot;&gt;1. Transplantation&lt;/h3&gt;
+
+&lt;p&gt;Stem cells that are made in the bone marrow are the early form of all blood cells in the body. They normally mature into red, white, or immune cells. To help the patient survive high dose chemotherapy needed to cure leukemia that has returned treatment, or not responded to treatment, a stem cell transplantation procedure may be used. Stem cell transplantation replaces blood stem cells that were lost during the initial chemotherapy treatment. The lost stem cells are replaced by transplanting them from a donor into the patient.&lt;/p&gt;
+
+&lt;h3 id=&quot;2-the-blood-stem-cell-collection-procedure&quot;&gt;2. The Blood Stem Cell Collection Procedure&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;Sources of Cells&lt;/em&gt;. Stem cells can be obtained either from the donor’s:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;(Bone marrow (bone marrow transplantation)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Blood (peripheral blood stem cell transplantation)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3-the-transplant-procedure&quot;&gt;3. The Transplant Procedure&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;The patient with ALL is given high-dose chemotherapy with or without radiation – a treatment known as conditioning. The point is to inactivate the immune system and to kill any remaining leukemia cells.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;A few days after treatment, the patient is &lt;em&gt;rescued&lt;/em&gt; using the stored stem cells, which are administered through a vein. This may take several hours. Patients may experience fever, chills, hives, shortness of breath, or a fall in blood pressure during the procedure.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The patient is kept in a protected environment to minimize infection, and the patient usually needs blood cell replacement and nutritional support.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;4-side-effects-and-complications&quot;&gt;4. Side Effects and Complications&lt;/h3&gt;
+&lt;p&gt;Stem-cell transplantation is a serious and complex procedure that can cause many short- and long-term side effects and complications.&lt;/p&gt;
+
+&lt;p&gt;Early side effects of transplantation are similar to chemotherapy and include nausea, vomiting, fatigue, mouth sores, and loss of appetite.&lt;/p&gt;
+
+&lt;p&gt;Bleeding because of reduced platelets is a high risk during the first four weeks and may require transfusions. Later side effects include fertility problems (if the ovaries are affected), thyroid gland problems (which can affect metabolism), lung damage (which can cause breathing problems) and bone damage.&lt;/p&gt;
+
+&lt;h2 id=&quot;home-management-important&quot;&gt;Home Management (IMPORTANT)&lt;sup id=&quot;fnref:maryland-report:7&quot;&gt;&lt;a href=&quot;#fn:maryland-report&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+&lt;p&gt;A parent should call the doctor if the child has any symptoms that are out of the ordinary, including (but not limited) to:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Any fever of 101 °F or higher&lt;/li&gt;
+  &lt;li&gt;Any signs of a flu or cold&lt;/li&gt;
+  &lt;li&gt;Shortness of breath&lt;/li&gt;
+  &lt;li&gt;Severe diarrhea&lt;/li&gt;
+  &lt;li&gt;Blood in the urine or stools&lt;/li&gt;
+  &lt;li&gt;Trouble urinating&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Tracking Neutrophils&lt;/strong&gt;. Family should track their patients absolute neutrophil count. This measurement for the &lt;strong&gt;amount of white blood cells&lt;/strong&gt; is an important gauge of his &lt;strong&gt;ability to fight infection&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Counts over 1,000 usually provide sufficient protection so that children can engage in normal activities, including school and other functions where they are exposed to other children.&lt;/li&gt;
+  &lt;li&gt;If the count is between 500 - 1,000, the child should avoid large groups.&lt;/li&gt;
+  &lt;li&gt;If it falls between 200 - 500, the child should stay at home and should see only healthy visitors who have washed their hands vigorously.&lt;/li&gt;
+  &lt;li&gt;Neutrophil counts below 200 indicate that the child is at high risk for infection and should have no visitors.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;preventing-infection&quot;&gt;Preventing Infection&lt;/h3&gt;
+
+&lt;p&gt;It is &lt;strong&gt;very important&lt;/strong&gt; to take precautions to prevent infection following chemotherapy or transplantation. Guidelines for infection prevention and control include:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Discuss with the doctor what vaccinations are needed and when. Patient with ALL may need reimmunization. In general, it is best to have immunizations prior to chemotherapy and to avoid live virus vaccines during treatment,&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Avoid crowds, especially during cold and flu season.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Be diligent about hand washing and make sure that visitors wash their hands. Alcohol-based handrubs are best.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Avoid eating raw fruits and vegetables. Poultry, meat, fish, eggs and other foods should be cooked thoroughly. Do not eat foods purchased at salad bars or buffets. In the first few months after the transplant, be sure to eat protein-rich foods to help restore muscle mass and repair cell damage caused by chemotherapy and radiation.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Boil tap water before drinking it.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Dental hygiene is very important, including daily brushing and flossing. Use a soft toothbrush to prevent gum bleeding. Schedule regular visits with your dentist.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Do not sleep with pets. Avoid contact with pets’ excrement.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Avoid fresh flowers and plants as they may carry mold. Do not garden.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Swimming may increase exposure to infection. If you swim, do not submerge your face in water. Do not use hot tubs.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Report to the doctor any symptoms of fever, chills, cough, difficulty breathing, rash or changes in skin, and severe diarrhea or vomiting. Fever is one of the first signs of infection. Some of these symptoms can also indicate graft-versus-host disease.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Report to the ophthalmologist any signs of eye discharge or changes in vision. Patients who undergo radiation or who are on long-term steroid therapy have an increased risk for cataracts.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Some of the drugs used for leukemia cause extreme sun sensitivity. Sunburn can cause skin infection. Children should wear sunblock and sun-protective clothing when going outside.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;about-ph-positive-all&quot;&gt;About Ph-Positive ALL&lt;/h2&gt;
+
+&lt;h3 id=&quot;what-is-ph-all-&quot;&gt;What is Ph+ ALL? &lt;sup id=&quot;fnref:ph-positive-CML&quot;&gt;&lt;a href=&quot;#fn:ph-positive-CML&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;“Ph” is an abbreviation for “Philadelphia chromosome,” the name given to the abnormal chromosome that can lead to the overproduction of white blood cells.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The plus sign (+) means that your laboratory tests show your bone marrow and white blood cells contain the abnormal Philadelphia chromosome.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;how-does-ph-happen&quot;&gt;How Does Ph+ Happen?&lt;sup id=&quot;fnref:ph-positive-CML:1&quot;&gt;&lt;a href=&quot;#fn:ph-positive-CML&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/h3&gt;
+&lt;p&gt;The soft tissue inside our bones, called the bone marrow, produces a type of cell called a stem cell. As stem cells mature, they can turn into platelets, red blood cells, or white blood cells. Ph+ CML happens because of changes in the genetic material of these stem cells.&lt;/p&gt;
+
+&lt;p&gt;Chromosomes are the parts of our cells that carry our DNA and genes—the things that give us our physical traits, such as blue eyes or brown hair, and that tell our body how to handle all the functions of life, including the process of making blood cells. Humans have 23 pairs of chromosomes. Ph+ CML happens when some genetic material from one chromosome (chromosome 9) switches position with some genetic material from another chromosome (chromosome 22).&lt;/p&gt;
+
+&lt;p&gt;The new genetic material on chromosome 22 is called BCR-ABL and leads to abnormalities in your body’s process for making blood cells. When chromosome 22 has this abnormal BCR-ABL gene, scientists call it the Philadelphia chromosome. People with Ph+ CML have the BCR-ABL gene in their stem cells and white blood cells. The BCR-ABL gene produces a protein called Bcr-Abl. Scientists distinguish between the name of the gene and protein by how they are written.&lt;/p&gt;
+
+&lt;p&gt;The Bcr-Abl protein causes your bone marrow to produce more and more white blood cells, and these white blood cells are often damaged. It acts like a switch that keeps your white blood cell production in the “on” position. Normally, your body would stop producing white blood cells that weren’t needed and damaged blood cells would die off, but the Bcr-Abl protein interferes with these processes. Instead, your bone marrow keeps making damaged white blood cells that, over time, crowd out healthy red blood cells and platelets.&lt;/p&gt;
+
+&lt;p&gt;Scientists do not know exactly why the genetic material switches between the 2 chromosomes and continue to search for causes of Ph+ CML. Although Ph+ CML involves genetic material, be assured that it is not inherited. The abnormal gene is not passed down from parent to child.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.lls.org/leukemia/acute-lymphoblastic-leukemia/treatment/ph-positive-all-therapy&quot;&gt;Ph-Positive ALL Therapy&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;philadelphia-chromosome-&quot;&gt;Philadelphia Chromosome &lt;sup id=&quot;fnref:phil-chromo&quot;&gt;&lt;a href=&quot;#fn:phil-chromo&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+&lt;p&gt;The Philadelphia chromosome or Philadelphia translocation is a specific genetic abnormality in chromosome 22 of leukemia cancer cells (particularly chronic myelogenous leukemia (CML) cells). This chromosome is defective and unusually short because of reciprocal translocation of genetic material between chromosome 9 and chromosome 22, and contains a fusion gene called BCR-ABL1.&lt;/p&gt;
+
+&lt;p&gt;(ABL represents “Abelson”, the name of a leukemia virus&lt;sup id=&quot;fnref:abelson&quot;&gt;&lt;a href=&quot;#fn:abelson&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;.)&lt;/p&gt;
+
+&lt;p&gt;Translocation results in an oncogenic BCR-ABL gene fusion that can be found on the shorter derivative 22 chromosome. This gene encodes for a Bcr-abl fusion protein. Depending on the precise location of fusion, the molecular weight of this protein can range from 185 to 210 kDa. Consequently, bcr-abl is referred to as p210 or p185.&lt;/p&gt;
+
+&lt;p&gt;Three clinically important variants are the p190, p210, and p230 isoforms. p190 is generally associated with acute lymphoblastic leukemia (ALL), while &lt;strong&gt;p210&lt;/strong&gt; is generally associated with chronic myeloid leukemia but can also be associated with ALL.[6] p230 is usually associated with chronic myelogenous leukemia associated with neutrophilia and thrombocytosis.[6] Additionally, the p190 isoform can also be expressed as a splice variant of p210.[7]&lt;/p&gt;
+
+&lt;center&gt;&lt;img src=&quot;/public/img/20161218-1-1.png&quot; width=&quot;400&quot; /&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;nomenclature&quot;&gt;Nomenclature&lt;/h3&gt;
+&lt;p&gt;The Philadelphia chromosome is designated Ph (or Ph’) chromosome and designates the shortened chromosome 22. It arises from the translocation, which is termed t(9;22)(q34.1;q11.2). This means there is a translocation between chromosome 9 and chromosome 22, with breaks happening in region (3), band (4), sub-band (1) of the long arm (q) of chromosome 9 and region (1), band (1), sub-band (2) of the long arm (q) of chromosome 22. Hence the chromosome breakpoints are written as (9q34.1) and (22q11.2), respectively, using ISCN standards. Notation omitting the sub-bands is also commonly seen: t(9;22)(q34;q11).&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:maryland-report&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;http://umm.edu/health/medical/reports/articles/acute-lymphocytic-leukemia&quot;&gt;&lt;strong&gt;Acute Lymphocytic Leukemia - An in-depth Report&lt;/strong&gt; - University of Maryland Medical Center&lt;/a&gt; &lt;a href=&quot;#fnref:maryland-report&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:maryland-report:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:maryland-report:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:maryland-report:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:maryland-report:4&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;5&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:maryland-report:5&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;6&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:maryland-report:6&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;7&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:maryland-report:7&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;8&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:ph-positive-CML&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;http://www.gleevec.com/patient/ph-cml-treatment.jsp?usertrack.filter_applied=true&amp;amp;NovaId=4029462192126550515&quot;&gt;What is Ph+ CML? - GLEEVEC&lt;/a&gt; &lt;a href=&quot;#fnref:ph-positive-CML&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:ph-positive-CML:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:phil-chromo&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Philadelphia_chromosome&quot;&gt;Philadelphia chromosome - Wikipedia&lt;/a&gt; &lt;a href=&quot;#fnref:phil-chromo&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:abelson&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Abelson_murine_leukemia_virus&quot;&gt;Abelson murine leukemia virus - Wikipedia&lt;/a&gt; &lt;a href=&quot;#fnref:abelson&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name></name></author><category term="[&quot;Life&quot;]" /><category term="leukemia" /><summary type="html">在这里汇总一下关于这个病的一些知识和其他信息。要战胜敌人就得充分了解敌人。盼望南哥战胜它，早日康复！</summary></entry><entry><title type="html">Masonry</title><link href="http://localhost:4000/2016/12/03/masonry" rel="alternate" type="text/html" title="Masonry" /><published>2016-12-03T21:18:00+08:00</published><updated>2016-12-03T21:18:00+08:00</updated><id>http://localhost:4000/2016/12/03/masonry</id><content type="html" xml:base="http://localhost:4000/2016/12/03/masonry">&lt;div class=&quot;message&quot;&gt;
+Use Masonry to implement autolayout programmatically. Learn how to use it. A detailed note here!
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Harness the power of AutoLayout NSLayoutConstraints with a simplified, chainable and expressive syntax. Supports iOS and OSX Auto Layout&lt;sup id=&quot;fnref:masonry&quot;&gt;&lt;a href=&quot;#fn:masonry&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The content below is my notes from reading Introduction on Masonry’s Github Page&lt;sup id=&quot;fnref:masonry:1&quot;&gt;&lt;a href=&quot;#fn:masonry&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;why-use-masonry&quot;&gt;Why use Masonry?&lt;/h2&gt;
+&lt;p&gt;Under the hood Auto Layout is a powerful and flexible way of organising and laying out your views. However &lt;strong&gt;creating constraints from code is verbose and not very descriptive&lt;/strong&gt;. Imagine a simple example in which you want to have a view fill its superview but inset by 10 pixels on every side&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;prepare-to-meet-your-maker&quot;&gt;Prepare to meet your Maker!&lt;/h2&gt;
+&lt;p&gt;Create constraints using MASConstraintMaker:&lt;/p&gt;
+
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;UIEdgeInsets&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;padding&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UIEdgeInsetsMake&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view1&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;mas_makeConstraints&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MASConstraintMaker&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;superview&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mas_top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;offset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//with is an optional semantic filler
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;superview&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mas_left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;offset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;superview&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mas_bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;offset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;superview&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mas_right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;offset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Or even shorter&lt;/p&gt;
+
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view1&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;mas_makeConstraints&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MASConstraintMaker&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;edges&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;superview&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;insets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;important-notes&quot;&gt;IMPORTANT NOTES:&lt;/h4&gt;
+&lt;blockquote&gt;
+  &lt;ol&gt;
+    &lt;li&gt;
+      &lt;p&gt;We had to add the constraints to the superview [superview addConstraints:…. using autolayout. Masonry however will &lt;strong&gt;automagically add constraints to the appropriate view&lt;/strong&gt;.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;Masonry will also &lt;strong&gt;automagically&lt;/strong&gt; call &lt;code class=&quot;highlighter-rouge&quot;&gt;view1.translatesAutoresizingMaskIntoConstraints = NO;&lt;/code&gt; for you.&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Not all things are created equal&lt;/p&gt;
+
+&lt;p&gt;.&lt;code class=&quot;highlighter-rouge&quot;&gt;equalTo&lt;/code&gt; equivalent to NSLayoutRelationEqual&lt;/p&gt;
+
+&lt;p&gt;.&lt;code class=&quot;highlighter-rouge&quot;&gt;lessThanOrEqualTo&lt;/code&gt; equivalent to NSLayoutRelationLessThanOrEqual&lt;/p&gt;
+
+&lt;p&gt;.&lt;code class=&quot;highlighter-rouge&quot;&gt;greaterThanOrEqualTo&lt;/code&gt; equivalent to NSLayoutRelationGreaterThanOrEqual
+These three equality constraints accept one argument which can be any of the following:&lt;/p&gt;
+
+&lt;h3 id=&quot;1-masviewattribute&quot;&gt;1. MASViewAttribute&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&quot;language-make.centerX.lessThanOrEqualTo(view2.mas_left);```&quot;&gt;
+### 2. UIView/NSView
+
+if you want `view.left` to be greater than or equal to `label.left` :
+
+```objc
+//these two constraints are exactly the same
+make.left.greaterThanOrEqualTo(label);
+make.left.greaterThanOrEqualTo(label.mas_left);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;3-nsnumber&quot;&gt;3. NSNumber&lt;/h3&gt;
+
+&lt;p&gt;Auto Layout allows width and height to be set to constant values. if you want to set view to have a minimum and maximum width you could pass a number to the equality blocks:&lt;/p&gt;
+
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//width &amp;gt;= 200 &amp;amp;&amp;amp; width &amp;lt;= 400
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;greaterThanOrEqualTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;@200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lessThanOrEqualTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;@400&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;However Auto Layout does not allow alignment attributes such as left, right, centerY etc to be set to constant values. So if you pass a NSNumber for these attributes Masonry will turn these into constraints relative to the view’s superview ie:&lt;/p&gt;
+
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//creates view.left = view.superview.left + 10
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lessThanOrEqualTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;@10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Instead of using NSNumber, you can use primitives and structs to build your constraints, like so:&lt;/p&gt;
+
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mas_equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mas_equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mas_equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CGSizeMake&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;edges&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mas_equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIEdgeInsetsMake&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mas_equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mas_offset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIEdgeInsetsMake&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;By default, macros which support autoboxing are prefixed with mas_. Unprefixed versions are available by defining MAS_SHORTHAND_GLOBALS before importing Masonry.&lt;/p&gt;
+
+&lt;h3 id=&quot;4-nsarray&quot;&gt;4. NSArray&lt;/h3&gt;
+
+&lt;p&gt;An array of a mixture of any of the previous types&lt;/p&gt;
+
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(@[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mas_height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;view2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mas_height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(@[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;view2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(@[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;@100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;view3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;where-should-i-create-my-constraints&quot;&gt;Where should I create my constraints?&lt;/h2&gt;
+
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;DIYCustomView&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;init&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;super&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// --- Create your views here ---
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIButton&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// tell UIKit that you are using AutoLayout
+&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BOOL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;requiresConstraintBasedLayout&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;YES&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// this is Apple's recommended place for adding/updating constraints
+&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;updateConstraints&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// --- remake/update constraints here
+&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;remakeConstraints&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MASConstraintMaker&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buttonSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buttonSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;//according to apple super should be called at end of method
+&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;super&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;updateConstraints&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;didTapButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIButton&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// --- Do your changes ie change variables that affect your layout etc ---
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buttonSize&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CGSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// tell constraints they need updating
+&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setNeedsUpdateConstraints&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;中文资料-&quot;&gt;中文资料&lt;sup id=&quot;fnref:liuyanwei&quot;&gt;&lt;a href=&quot;#fn:liuyanwei&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; &lt;sup id=&quot;fnref:lijichuan&quot;&gt;&lt;a href=&quot;#fn:lijichuan&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+
+&lt;h4 id=&quot;masonry的使用---刘彦玮&quot;&gt;&lt;a href=&quot;http://liuyanwei.jumppo.com/2015/06/14/ios-library-masonry.html&quot;&gt;Masonry的使用 - 刘彦玮&lt;/a&gt;&lt;/h4&gt;
+
+&lt;h4 id=&quot;masonry介绍与使用实践快速上手autolayout---里脊串&quot;&gt;&lt;a href=&quot;http://adad184.com/2014/09/28/use-masonry-to-quick-solve-autolayout/&quot;&gt;Masonry介绍与使用实践(快速上手Autolayout) - 里脊串&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:masonry&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://github.com/SnapKit/Masonry&quot;&gt;Masonry - Github&lt;/a&gt; &lt;a href=&quot;#fnref:masonry&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:masonry:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:liuyanwei&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;http://liuyanwei.jumppo.com/2015/06/14/ios-library-masonry.html&quot;&gt;Masonry的使用 - 刘彦玮&lt;/a&gt; &lt;a href=&quot;#fnref:liuyanwei&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:lijichuan&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;http://adad184.com/2014/09/28/use-masonry-to-quick-solve-autolayout/&quot;&gt;Masonry介绍与使用实践(快速上手Autolayout) - 里脊串&lt;/a&gt; &lt;a href=&quot;#fnref:lijichuan&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name></name></author><category term="[&quot;iOS Development&quot;]" /><category term="ios" /><category term="objective-c" /><category term="masonry" /><category term="autolayout" /><summary type="html">Use Masonry to implement autolayout programmatically. Learn how to use it. A detailed note here!</summary></entry><entry><title type="html">Should I Use Storyboards or Not?</title><link href="http://localhost:4000/2016/12/03/storyboard-or-not" rel="alternate" type="text/html" title="Should I Use Storyboards or Not?" /><published>2016-12-03T20:08:00+08:00</published><updated>2016-12-03T20:08:00+08:00</updated><id>http://localhost:4000/2016/12/03/storyboard-or-not</id><content type="html" xml:base="http://localhost:4000/2016/12/03/storyboard-or-not">&lt;div class=&quot;message&quot;&gt;
+Storyboards are a quick and easy way to start building a simple app. But should you use Storyboards on more complex apps? Or on a team? What are the pros and cons of using them? Do experienced iOS developers use them? Are any mainstream apps built with Storyboards?
+&lt;/div&gt;
+
+&lt;h2 id=&quot;i-what-are-the-pros-and-cons-of-using-storyboards&quot;&gt;I. What are the pros and cons of using Storyboards?&lt;sup id=&quot;fnref:roadfire&quot;&gt;&lt;a href=&quot;#fn:roadfire&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+
+&lt;h3 id=&quot;pros&quot;&gt;Pros:&lt;/h3&gt;
+&lt;p&gt;The biggest benefit of using Storyboards (especially over nibs/xibs) is that &lt;strong&gt;you can see how the screens in your app are related&lt;/strong&gt;. When you’re just starting on an existing project (or coming back to an old one), Storyboards give you an easy way to follow the flow through the app and zoom out to get a high level overview of what the app does.&lt;/p&gt;
+
+&lt;p&gt;Another benefit to using Storyboards (over creating views programmatically) is that &lt;strong&gt;you get to see what your view will look like at runtime without having to run your app&lt;/strong&gt;. You can quickly make a change in Interface Builder and immediately see what it’ll look like – without waiting for Xcode to compile and run. (Nibs/xibs get this benefit, too.)&lt;/p&gt;
+
+&lt;p&gt;And a third benefit is that &lt;strong&gt;you can create static table views in Storyboards&lt;/strong&gt;. So if you have a Settings screen, for example, with tappable rows of static text, Storyboards allow you to quickly and easily create them – no code required.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h3 id=&quot;cons&quot;&gt;Cons:&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;On teams&lt;/strong&gt;, Storyboards are tricky to use for two main reasons:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Merge conflicts are painful&lt;/strong&gt;: When two people edit the same Storyboard file at the same time and cause a merge conflict, it’s tricky to sort out how to merge the changes. Part of this is because of the format of the Storyboard file (it’s XML) and part of it is because Xcode rearranges elements and makes changes in the Storyboard when you open it – even if you don’t touch anything. And when you do touch something, it’s that much worse.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Code reviews are tricky&lt;/strong&gt;: If you conduct code reviews on your team, reviewing changes to a Storyboard file is… difficult. Again, the format is XML with lots of hard-to-understand attributes and elements, so reviewing a diff and making constructive comments is just not easy.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And those are just the cons to working on a team. Even if you’re working &lt;strong&gt;on your ow&lt;/strong&gt;n, there are some cons to using Storyboards:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Confusion when they become complicated&lt;/strong&gt;: If you have a relatively large app and you keep adding new view controllers, your Storyboard will eventually become complicated. Those pretty arrows that connect one view controller to the next start overlapping each other or getting hidden under view controllers – and it’s really hard to see what’s happening in the app.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Xcode grinds to a halt when opening a large Storyboard&lt;/strong&gt;: Again, if you’re working on a relatively large app, Storyboards can be difficult since it takes Xcode a while to load them into the editor. I’m working on a project with about 30 view controllers in a Storyboard, and it takes multiple seconds (around 4-5) to load the Storyboard whenever I want to edit it. (And yes, my MBP is fast.)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Whenever I’ve worked on a team, we’ve agreed to &lt;strong&gt;create separate Storyboards for different flows to avoid the confusion and performance issues of massive Storyboards.&lt;/strong&gt; And we’ve always been careful to communicate about which Storyboard we’re working on before we start to make changes so we can avoid having to deal with messy merge conflicts. The code review issue exists, and will continue to exist, until Apple changes the format of the XML in the Storyboard file.&lt;/p&gt;
+
+&lt;h2 id=&quot;ii-why-im-abandoning-storyboards&quot;&gt;II. Why I’m Abandoning Storyboards&lt;sup id=&quot;fnref:gopalkri&quot;&gt;&lt;a href=&quot;#fn:gopalkri&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+&lt;p&gt;Here’s a list of reasons as to why I’m abandoning the storyboard:&lt;/p&gt;
+
+&lt;h3 id=&quot;1-diffs&quot;&gt;1. Diffs&lt;/h3&gt;
+&lt;p&gt;Storyboards can’t be diffed meaningfully. Since they serialize to unreadable XML, it’s more or less impossible to look at a diff of a storyboard and figure out what really changed.&lt;/p&gt;
+
+&lt;h3 id=&quot;2-merges&quot;&gt;2. Merges&lt;/h3&gt;
+&lt;p&gt;Because storyboards can’t be read by human beings, merging or rebasing storyboards across branches is an absolute nightmare. It often results in re-creating the work on one of the branches manually.&lt;/p&gt;
+
+&lt;h3 id=&quot;3-opening-a-file-modifies-it&quot;&gt;3. Opening a file modifies it&lt;/h3&gt;
+&lt;p&gt;I’m not sure why this happens, and it doesn’t happen all the time, but I’ve often found that merely opening a Storyboard file modifies it. This is super irritating, because I’m no longer sure about whether or not I made a change to it that matters.&lt;/p&gt;
+
+&lt;h3 id=&quot;4-code-review&quot;&gt;4. Code review&lt;/h3&gt;
+&lt;p&gt;A broken storyboard can completely break the app (like say, if you’ve got an ambiguous constraint), so it must be code reviewed like all other code. However, because of the above reasons, it is really hard to do a proper code review.&lt;/p&gt;
+
+&lt;h3 id=&quot;5-usefulness&quot;&gt;5. Usefulness&lt;/h3&gt;
+&lt;p&gt;One of the goals of using Storyboards is to be able to visualize what the app will look like without actually running it. In reality, though, storyboards don’t really come close. 
+&lt;img src=&quot;http://gopalkri.com/assets/images/2016-05-27-Storyboards-Visualization.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;what-im-doing-instead&quot;&gt;What I’m doing instead&lt;/h2&gt;
+&lt;p&gt;I’m going to be using AutoLayout in code. While NSLayoutConstraint is incredibly verbose, there’re a few open source libraries that appear to make it significantly less painful: SnapKit, EasyPeasy, SwiftAutoLayout, etc. I’m not a big fan of the ASCII art version of NSLayoutConstraint. As awesome as it is, it’s stringly typed, and I try and avoid stringly typed code whenever possible.&lt;/p&gt;
+
+&lt;h2 id=&quot;iii-ios-user-interfaces-storyboards-vs-nibs-vs-custom-code&quot;&gt;III. iOS User Interfaces: Storyboards vs. NIBs vs. Custom Code&lt;sup id=&quot;fnref:toptal&quot;&gt;&lt;a href=&quot;#fn:toptal&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+
+&lt;h3 id=&quot;ios-storyboards&quot;&gt;iOS Storyboards&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;A classic beginner’s mistake is to create one massive project-wide Storyboard. A Storyboard is a board with a story to tell. It shouldn’t be used to mix unrelated stories into one big volume.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;As its name implies, a Storyboard is a board with a story to tell. It shouldn’t be used to mix unrelated stories into one big volume. A storyboard should contain view controllers that are logically related to each other—which doesn’t mean every view controller.&lt;/p&gt;
+
+&lt;p&gt;For example, it makes sense to use Storyboards when handling:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A set of views for authentication and registration.&lt;/li&gt;
+  &lt;li&gt;A multi-step order entry flow.&lt;/li&gt;
+  &lt;li&gt;A wizard-like (i.e., tutorial) flow.&lt;/li&gt;
+  &lt;li&gt;A master-detail set of views (e.g., profiles lists, profile details).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Meanwhile, large Storyboards should be avoided, including single app-wide Storyboards (unless the app is relatively simple). Before we go any deeper, let’s see why.&lt;/p&gt;
+
+&lt;h4 id=&quot;when-to-use-storyboards&quot;&gt;When to use Storyboards:&lt;/h4&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Storyboards are best used with multiple interconnected view controllers, as their major simplification is in transitioning between view controllers.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;when-not-to-use-ios-storyboards&quot;&gt;When Not to Use iOS Storyboards&lt;/h4&gt;
+
+&lt;p&gt;A few cases:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The view has a complicated or dynamic layout, best-implemented with code.&lt;/li&gt;
+  &lt;li&gt;The view is already implemented with NIBs or code.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In those cases, we can either leave the view out of the Storyboard or embed it in a view controller. The former breaks the Storyboard’s visual flow, but doesn’t have any negative functional or development implications. The latter retains this visual flow, but it requires additional development efforts as the view is not integrated into the view controller: it’s just embedded as a component, hence the view controller must interact with the view rather than implementing it.&lt;/p&gt;
+
+&lt;h3 id=&quot;ios-custom-code-programmatic-uis&quot;&gt;iOS Custom Code (Programmatic UIs)&lt;/h3&gt;
+
+&lt;h4 id=&quot;pro-under-the-hood&quot;&gt;Pro: Under the Hood&lt;/h4&gt;
+&lt;p&gt;The greatest advantage of creating an iOS UI programmatically: if you know how to code a user interface, then you know what happens under the hood, whereas the same is not necessarily true of NIBs and Storyboards.&lt;/p&gt;
+
+&lt;p&gt;So, mastering the coding of iOS user interfaces gives you more control over and greater awareness of how these pieces fit together, which raises your upper-bound as a developer.&lt;/p&gt;
+
+&lt;h4 id=&quot;when-to-use-code&quot;&gt;When to Use Code&lt;/h4&gt;
+
+&lt;p&gt;It’s often a good call to use use custom code for iOS user interface design when you have:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Dynamic layouts.&lt;/li&gt;
+  &lt;li&gt;Views with effects, such as rounded corners, shadows, etc.&lt;/li&gt;
+  &lt;li&gt;Any case in which using NIBs and Storyboards is complicated or infeasible.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;when-not-to-use-code&quot;&gt;When Not to Use Code&lt;/h4&gt;
+
+&lt;p&gt;In general, code-made UIs can always be used. They’re rarely a bad idea, so I’d put an here.&lt;/p&gt;
+
+&lt;p&gt;Fore complete information, check the references.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:roadfire&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;http://roadfiresoftware.com/2015/03/the-pros-and-cons-of-using-storyboards/&quot;&gt;Should you use Storyboards on more complex apps?&lt;/a&gt; &lt;a href=&quot;#fnref:roadfire&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:gopalkri&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;http://gopalkri.com/2016/05/27/why-im-abandoning-storyboards/&quot;&gt;Why I’m Abandoning Storyboards&lt;/a&gt; &lt;a href=&quot;#fnref:gopalkri&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:toptal&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://www.toptal.com/ios/ios-user-interfaces-storyboards-vs-nibs-vs-custom-code&quot;&gt;iOS User Interfaces: Storyboards vs. NIBs vs. Custom Code&lt;/a&gt; &lt;a href=&quot;#fnref:toptal&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name></name></author><category term="[&quot;iOS Development&quot;]" /><category term="ios" /><category term="objective-c" /><category term="storyboard" /><summary type="html">Storyboards are a quick and easy way to start building a simple app. But should you use Storyboards on more complex apps? Or on a team? What are the pros and cons of using them? Do experienced iOS developers use them? Are any mainstream apps built with Storyboards?</summary></entry><entry><title type="html">Sort Tags Alphabetically</title><link href="http://localhost:4000/2016/11/30/sort-tag-alphabetically" rel="alternate" type="text/html" title="Sort Tags Alphabetically" /><published>2016-11-30T20:32:00+08:00</published><updated>2016-11-30T20:32:00+08:00</updated><id>http://localhost:4000/2016/11/30/sort-tag-alphabetically</id><content type="html" xml:base="http://localhost:4000/2016/11/30/sort-tag-alphabetically">&lt;div class=&quot;message&quot;&gt;
+Unordered tags make a Jekyll tag list look sloppy, so if you care about the details, you likely want your tag list to be alphabetized.
+&lt;br /&gt;KF 11/30/2016
+&lt;/div&gt;
+
+&lt;h2 id=&quot;sort-tags-a--z&quot;&gt;Sort Tags A ~ Z&lt;/h2&gt;
+
+&lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-tags-pure-liquid.html&quot;&gt;Michael Lanyon - Alphabetizing Jekyll Page Tags In Pure Liquid (Without Plugins)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.siteleaf.com/blog/advanced-liquid-sort/&quot;&gt;Advanced Liquid: Sort&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Based on the notes from &lt;a href=&quot;https://blog.lanyonm.org&quot;&gt;Michael Lanyon&lt;/a&gt;, I modified my &lt;code class=&quot;highlighter-rouge&quot;&gt;tags.html&lt;/code&gt; to the version below:&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
+layout: page
+title: Tags
+---
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- tag sorted - kf 11/30/2016 --&amp;gt;&lt;/span&gt;
+
+{% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- site_tags: {{ site_tags }} --&amp;gt;&lt;/span&gt;
+{% assign tag_words = site_tags | split:',' | sort %}
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- tag_words: {{ tag_words }} --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;tags-expo&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;tags-expo-list&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  {% for tag in tag_words %}
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#{{ tag | cgi_escape }}&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;post-tag&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ tag }} &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;font-size:80%; color:gray;&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ site.tags[tag] | size }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+  {% endfor %}
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;tags-expo-section&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    {% for item in (0..site.tags.size) %}{% unless forloop.last %}
+    {% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ this_word | cgi_escape }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ this_word }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;tags-expo-posts&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      {% for post in site.tags[this_word] %}{% if post.title != null %}
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;post-title&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ site.baseurl }}{{ post.url }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
+        {{ post.title }} &lt;span class=&quot;err&quot;&gt;&amp;amp;&lt;/span&gt;laquo 
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;small&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;post-date&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ post.date | date_to_string }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/small&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+      {% endif %}{% endfor %}
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+    {% endunless %}{% endfor %}
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;For &lt;code class=&quot;highlighter-rouge&quot;&gt;categories.html&lt;/code&gt; the basic idea is the same.&lt;/p&gt;
+
+&lt;p&gt;When Adding the code block above, I came across a curious problem when writing liquid template code in this markdown file. When Jekyll compiles the static web files, it tries to process all the curly brackets like: &lt;code class=&quot;highlighter-rouge&quot;&gt;{{&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;{%&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;This is not a bug , but a &lt;a href=&quot;https://github.com/jekyll/jekyll/issues/814&quot;&gt;caveat of using a templating language with markdown&lt;/a&gt;. The workarounds are provided by&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://ozzieliu.com/2016/04/26/writing-liquid-template-in-markdown-with-jekyll/&quot;&gt;Ozzie Liu - Writing Liquid Template in Markdown Code Blocks with Jekyll&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Simply put, just add&lt;code class=&quot;highlighter-rouge&quot;&gt;{% raw %}&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;{% endraw %}&lt;/code&gt; on the both end when &lt;code class=&quot;highlighter-rouge&quot;&gt;{{&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;{%&lt;/code&gt; appears.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;It is pretty confused to render the above line!!!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;advanced---sort-tags-az-case-insensitive&quot;&gt;Advanced - Sort Tags A~Z Case Insensitive&lt;/h2&gt;
+
+&lt;h3 id=&quot;reference-1&quot;&gt;Reference&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Shopify/liquid/issues/529&quot;&gt;Add case-insensitive sort #529&lt;/a&gt;
+&lt;a href=&quot;https://github.com/jekyll/jekyll/issues/2135&quot;&gt;Sort only sorts in binary #2135&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;solution-is-simple&quot;&gt;Solution is simple:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;some_list | sort: 'downcase'&lt;/code&gt; for strings&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Web Development&quot;]" /><category term="jekyll" /><category term="html" /><category term="css" /><category term="liquid" /><category term="tag" /><category term="sort" /><summary type="html">Unordered tags make a Jekyll tag list look sloppy, so if you care about the details, you likely want your tag list to be alphabetized. KF 11/30/2016</summary></entry></feed>

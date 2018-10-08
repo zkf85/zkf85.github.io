@@ -1,62 +1,46 @@
-# Site Info
-title: Everest
-tagline: 'Kefeng''s blog'
-description: 'A Jekyll theme adapted from <a href="http://lanyon.getpoole.com/" target="_blank">Lanyon</a>. Made by <a href="http://codinfox.github.io" target="_blank">@codinfox</a>.'
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: KFZ's BLOG
+description: > # this means to ignore newlines until "baseurl:"
+  Material theme based on <a href="http://materializecss.com">Materialize.css</a> for jekyll sites
 baseurl: 
+url: "https://zkf85.github.io"
+permalink: /:year/:month/:day/:title
+repository: 
+paginate: 5
 
-url: http://zkf85.github.io
-#logo: '/public/logo.png'
+# MatJek specific configurations
+github_profile: "https://github.com/zkf85"
+user: "Kefeng Zhu"
+user_email: "zkf1985@gmail.com"
+contact_url: ""
+#google_tracking_id: "UA-96359860-1"
+#google_site_verification: "UA-96359860-1"
+disqus_shortname: "zkf85"
 
-# Site configurations
-gems:
-  - jekyll-paginate
+# Build settings
 markdown: kramdown
-kramdown:
-  input: GFM
-#  syntax_highlighter: rouge
-excerpt_separator: "<!-- more -->"
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitemap
+exclude:
+  - Gemfile
+  - Gemfile.lock
 sass:
   style: compressed
-  sass_dir: _scss    
-paginate: 50
-paginate_path: '/blog/page:num'
-#permalink: pretty
-
-version: 1.0.0
-
-# About/contact
-author:
-  name: Kefeng Zhu
-  description: An <strong>iOS developer and designer</strong>. Blogging is good.
-  contact:
-    github:    https://github.com/zkf85
-    #email:     
-
-# Navigation (2nd level links supported)
-nav:
-  Home:           
-    - '/'
-  Blog:           
-    - '/blog/'
-    - { Categories: '/blog/categories/' }
-    - { Tags: '/blog/tags/' }
-  About:          
-    - '/about/'
-  #Github Project: 
-  #  - 'http://zkf85.github.io/'
-
-# Where are tags and categories displayed
-tag_page: '/blog/tags/'
-category_page: '/blog/categories/'
-
-#hero:
-#  image: /public/img/we_will_be_giants_by_yalestewart.jpg
-#  caption: Original Artwork &copy; <a href="http://yalestewart.deviantart.com/art/We-Will-Be-Giants-370176475">Yale Stewart</a>
-
-# Puglins
-mathjax: true # whether support mathjax
-#google_analytics_token: 'UA-00000000-1' # leave blank if you don't want google analytics
-disqus_short_name: 'zkf85githubio' # leave blank if you don't want disqus
-
-# post excerpt separator
-excerpt_separator: <!--more-->
+future: true

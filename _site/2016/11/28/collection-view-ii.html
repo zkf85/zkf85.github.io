@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+      Collection View II - Designing Your Data Source and Delegate
+      
+    </title>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/res/favicon.ico">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <link rel="stylesheet" href="/assets/css/post.css">
+    
+    
+    
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="Collection View II - Designing Your Data Source and Delegate" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Continue - Collection View learning notes on reading Apple Guide Document &quot; Collection View Programming Guide for iOS&quot;. KF 11/28/2016" />
+<meta property="og:description" content="Continue - Collection View learning notes on reading Apple Guide Document &quot; Collection View Programming Guide for iOS&quot;. KF 11/28/2016" />
+<link rel="canonical" href="http://localhost:4000/2016/11/28/collection-view-ii" />
+<meta property="og:url" content="http://localhost:4000/2016/11/28/collection-view-ii" />
+<meta property="og:site_name" content="KFZ’s BLOG" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-11-28T14:00:00+08:00" />
+<script type="application/ld+json">
+{"description":"Continue - Collection View learning notes on reading Apple Guide Document &quot; Collection View Programming Guide for iOS&quot;. KF 11/28/2016","@type":"BlogPosting","url":"http://localhost:4000/2016/11/28/collection-view-ii","headline":"Collection View II - Designing Your Data Source and Delegate","dateModified":"2016-11-28T14:00:00+08:00","datePublished":"2016-11-28T14:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2016/11/28/collection-view-ii"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <header>
+      <nav class="top-nav teal">
+        <div class="nav-wrapper">
+          <div class="container">
+            <a class="page-title" href="/">KFZ's BLOG</a>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <a href="#" data-activates="slide-out" class="button-collapse top-nav full hide-on-large-only">
+          <i class="material-icons">menu</i>
+        </a>
+      </div>
+      <ul id="slide-out" class="side-nav fixed">
+        <li>
+          <div class="userView">
+            <div class="background"></div>
+            <a href="https://github.com/zkf85" target="_blank"><img class="circle z-depth-2" src="/assets/res/user.png"></a>
+            <span class="white-text name">Kefeng Zhu</span>
+            <span class="white-text email">zkf1985@gmail.com</span>
+          </div>
+        </li>
+        <li><a class="waves-effect" href="/"><i class="material-icons">home</i>Home</a></li>
+<!--
+<li><a class="waves-effect" href="/projects"><i class="material-icons">description</i>Projects</a></li>
+-->
+        <li><a class="waves-effect" href="/categories"><i class="material-icons">sort</i>Categories</a></li>
+        <li><a class="waves-effect" href="/tags"><i class="material-icons">label</i>Tags</a></li>
+<!--
+<li><a class="waves-effect" href="/feed.xml" target="_blank"><i class="material-icons">rss_feed</i>RSS</a></li>
+-->
+        <li><div class="divider"></div></li>
+        <li><a class="waves-effect" href="/about"><i class="material-icons">person</i>About</a></li>
+        <li><a class="waves-effect" href="/contact"><i class="material-icons">email</i>Contact</a></li>
+      </ul>
+    </header>
+    <main>
+
+
+<div class="container">
+  <div id="post-info">
+  <h3>Collection View II - Designing Your Data Source and Delegate</h3>
+  <ul class="collapsible hoverable" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Date">date_range</i>
+          28/11/2016 14:00
+          <i id="indicate" class="right material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Show extra info">info</i>
+        </span>
+      </div>
+      <div class="collapsible-body">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Categories">sort</i>
+          
+          
+          
+          <a href="/categories#ios-development" target="_blank"><div class="chip">iOS Development</div></a>
+          
+        </span>
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Tags">label</i>
+          
+          
+          
+          <a href="/tags#ios" target="_blank"><div class="chip">ios</div></a>
+          
+          
+          
+          <a href="/tags#uicollectionview" target="_blank"><div class="chip">uicollectionview</div></a>
+          
+          
+          
+          <a href="/tags#objective-c" target="_blank"><div class="chip">objective-c</div></a>
+          
+        </span>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="divider"></div>
+<div class="row">
+  <div class="col s12">
+    <div class="message">
+Continue - Collection View learning notes on reading Apple Guide Document " Collection View Programming Guide for iOS".
+<br />KF 11/28/2016
+</div>
+
+<h1 id="iidesigning-your-data-source-and-delegate">II.Designing Your Data Source and Delegate</h1>
+<p>The <strong>data source</strong> object is the content that your app displays. The only requirement of the data source is that it must be able to provide information that the collection view needs, such as</p>
+
+<ul>
+  <li>how many items there are and</li>
+  <li>which views to use when displaying those items.</li>
+</ul>
+
+<p>The <strong>delegate object</strong> is an optional (but recommended) object that manages aspects related to the presentation of and interaction with your content.  Although the delegate’s main job is to manage cell highlighting and selection, it can be extended to provide additional information. For example, the flow layout extends the basic delegate behavior to customize layout metrics, such as the size of cells and the spacing between them.
+<!--more--></p>
+
+<h2 id="the-data-source-manages-your-content">The Data Source Manages Your Content</h2>
+<p>The data source object is the object responsible for managing the content you are presenting using a collection view. The data source object must conform to the <code class="highlighter-rouge">UICollectionViewDataSource</code> protocol, which defines the basic behavior and methods that you must support. The job of the data source is to provide the collection view with answers to the following questions:</p>
+
+<ul>
+  <li>How many sections does the collection view contain?</li>
+  <li>For a given section, how many items does a section contain?</li>
+  <li>For a given section or item, what views should be used to display the corresponding content?</li>
+</ul>
+
+<p><strong>Sections</strong> and <strong>items</strong> are the fundamental organizing principle for collection view content.
+A collection view typically has <strong>at least one section</strong> and may contain more. Each section, in turn, contains <strong>zero</strong> or more items. Items represent the main content you want to present, whereas sections organize those items into logical groups. For example, a photo app might use sections to represent a single album of photos or a set of photos taken on the same day.</p>
+
+<p>The collection view refers to the data it contains using NSIndexPath objects. When trying to locate an item, the collection view uses the index path information provided to it by the layout object. For items, the index path contains a section number and an item number. For supplementary and decoration views, the index path contains whichever values were provided by the layout object.</p>
+
+<blockquote>
+  <p><strong>Note:</strong> Although standard index paths support multiple levels, the collection view’s cells only supports index paths that are 2-levels deep with “section” and “item” parameters, much like the index paths for the UITableView class.</p>
+</blockquote>
+
+<p>Different layout objects could present section and item data very differently, as shown in <strong>Figure 2-1</strong>.</p>
+
+<h4 id="figure-2-1-sections-arranged-according-to-the-arrangement-of-layout-objects"><center>Figure 2-1. Sections arranged according to the arrangement of layout objects</center></h4>
+<p><img src="/public/img/20161128-2-1.png" alt="figure-2-1" /></p>
+
+<h3 id="designing-your-data-objects">Designing Your Data Objects</h3>
+<p>Organizing your data into sections and items makes it much easier to implement your data source methods later. And because your data source methods are called frequently, you want to make sure that your implementations of those methods are able to retrieve data as quickly as possible.</p>
+
+<p>One simple solution (but certainly not the only solution) is for your data source to use a set of nested arrays, as shown in <strong>Figure 2-2</strong>.</p>
+
+<h4 id="figure-2-2-arranging-data-objects-using-nested-arrays"><center>Figure 2-2. Arranging data objects using nested arrays</center></h4>
+
+<center><img src="/public/img/20161128-2-2.png" width="5000" /></center>
+
+<blockquote>
+  <p><strong>Note:</strong> In general, your data objects should never be a performance bottleneck. The collection view usually accesses your data source only to calculate how many objects there are in total and to obtain views for elements that are currently onscreen. If the layout object relies only on data from your data objects, performance could be severely impacted when the data source contains thousands of objects.</p>
+</blockquote>
+
+<h3 id="telling-the-collection-view-about-your-content">Telling the Collection View About Your Content</h3>
+<p>Among the questions asked of your data source by the collection view are how many sections it contains and how many items each section contains. The collection view asks your data source to provide this information when any of the following actions occur:</p>
+
+<ul>
+  <li>The collection view is displayed for the first time.</li>
+  <li>You assign a different data source object to the collection view.</li>
+  <li>You explicitly call the collection view’s <code class="highlighter-rouge">reloadData</code> method.</li>
+  <li>The collection view delegate executes a block using <code class="highlighter-rouge">performBatchUpdates:completion:</code> or any of the move, insert, or delete methods.</li>
+</ul>
+
+<p>You provide the number of sections using the <code class="highlighter-rouge">numberOfSectionsInCollectionView:</code> method, and the number of items in each section using the <code class="highlighter-rouge">collectionView:numberOfItemsInSection:</code> method. You must implement the <code class="highlighter-rouge">collectionView:numberOfItemsInSection:</code> method, but if your collection view has only one section, implementing the <code class="highlighter-rouge">numberOfSectionsInCollectionView:</code> method is optional. Both methods return integer values with the appropriate information.</p>
+
+<p>If you implemented your data source as shown in Figure 2-2, the implementation of your data source methods could be as simple as those shown below:</p>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nf">numberOfSectionsInCollectionView</span><span class="p">:(</span><span class="n">UICollectionView</span><span class="o">*</span><span class="p">)</span><span class="nv">collectionView</span> <span class="p">{</span>
+    <span class="c1">// _data is a class member variable that contains one array per section.
+</span>    <span class="k">return</span> <span class="p">[</span><span class="n">_data</span> <span class="nf">count</span><span class="p">];</span>
+<span class="p">}</span>
+ 
+<span class="k">-</span> <span class="p">(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nf">collectionView</span><span class="p">:(</span><span class="n">UICollectionView</span><span class="o">*</span><span class="p">)</span><span class="nv">collectionView</span> <span class="nf">numberOfItemsInSection</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">section</span> <span class="p">{</span>
+    <span class="n">NSArray</span><span class="o">*</span> <span class="n">sectionArray</span> <span class="o">=</span> <span class="p">[</span><span class="n">_data</span> <span class="nf">objectAtIndex</span><span class="p">:</span><span class="n">section</span><span class="p">];</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">sectionArray</span> <span class="nf">count</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="configuring-cells-and-supplementary-views">Configuring Cells and Supplementary Views</h2>
+<p>Another important task of your data source is to provide the views that the collection view uses to display your content. The collection view does not track your app’s content. It simply takes the views you give it and applies the current layout information to them. Therefore, everything that is displayed by the views is your responsibility.</p>
+
+<p>After your data source reports how many sections and items it manages, the collection view asks the layout object to provide layout attributes for the collection view’s content. At some point, the collection view asks the layout object to provide the list of elements in a specific rectangle (often this is the visible rectangle). The collection view uses that list to ask your data source for the corresponding cells and supplementary views. To provide those cells and supplementary views, your code must do the following:</p>
+
+<ol>
+  <li>Embed your template cells and views in your storyboard file. (Alternatively, register a class or nib file for each type of supported cell or view.)</li>
+  <li>In your data source, dequeue and configure the appropriate cell or view when asked.</li>
+</ol>
+
+<p><br /><br />
+<strong><em>KF</em></strong></p>
+
+  </div>
+</div>
+
+</div>
+
+    </main>
+    <footer class="page-footer teal">
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            <img src="/assets/res/logo.png" alt="logo"/>
+            <p class="grey-text text-lighten-4">Material theme based on <a href="http://materializecss.com">Materialize.css</a> for jekyll sites
+</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          &#xA9; 2018 KFZ's BLOG. All rights reserved. Powered by <a href="https://github.com/ShawnTeoh/matjek">MatJek</a>.
+        </div>
+      </div>
+    </footer>
+    <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+    
+    
+    <script src="/assets/js/post.js"></script>
+    
+    
+    
+    
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+      Notifications - Example
+      
+    </title>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/res/favicon.ico">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <link rel="stylesheet" href="/assets/css/post.css">
+    
+    
+    
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="Notifications - Example" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This is a simple example of how to post and listen to a notification radio. KF 11/29/2016" />
+<meta property="og:description" content="This is a simple example of how to post and listen to a notification radio. KF 11/29/2016" />
+<link rel="canonical" href="http://localhost:4000/2016/11/29/notification" />
+<meta property="og:url" content="http://localhost:4000/2016/11/29/notification" />
+<meta property="og:site_name" content="KFZ’s BLOG" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-11-29T12:30:00+08:00" />
+<script type="application/ld+json">
+{"description":"This is a simple example of how to post and listen to a notification radio. KF 11/29/2016","@type":"BlogPosting","url":"http://localhost:4000/2016/11/29/notification","headline":"Notifications - Example","dateModified":"2016-11-29T12:30:00+08:00","datePublished":"2016-11-29T12:30:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2016/11/29/notification"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <header>
+      <nav class="top-nav teal">
+        <div class="nav-wrapper">
+          <div class="container">
+            <a class="page-title" href="/">KFZ's BLOG</a>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <a href="#" data-activates="slide-out" class="button-collapse top-nav full hide-on-large-only">
+          <i class="material-icons">menu</i>
+        </a>
+      </div>
+      <ul id="slide-out" class="side-nav fixed">
+        <li>
+          <div class="userView">
+            <div class="background"></div>
+            <a href="https://github.com/zkf85" target="_blank"><img class="circle z-depth-2" src="/assets/res/user.png"></a>
+            <span class="white-text name">Kefeng Zhu</span>
+            <span class="white-text email">zkf1985@gmail.com</span>
+          </div>
+        </li>
+        <li><a class="waves-effect" href="/"><i class="material-icons">home</i>Home</a></li>
+<!--
+<li><a class="waves-effect" href="/projects"><i class="material-icons">description</i>Projects</a></li>
+-->
+        <li><a class="waves-effect" href="/categories"><i class="material-icons">sort</i>Categories</a></li>
+        <li><a class="waves-effect" href="/tags"><i class="material-icons">label</i>Tags</a></li>
+<!--
+<li><a class="waves-effect" href="/feed.xml" target="_blank"><i class="material-icons">rss_feed</i>RSS</a></li>
+-->
+        <li><div class="divider"></div></li>
+        <li><a class="waves-effect" href="/about"><i class="material-icons">person</i>About</a></li>
+        <li><a class="waves-effect" href="/contact"><i class="material-icons">email</i>Contact</a></li>
+      </ul>
+    </header>
+    <main>
+
+
+<div class="container">
+  <div id="post-info">
+  <h3>Notifications - Example</h3>
+  <ul class="collapsible hoverable" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Date">date_range</i>
+          29/11/2016 12:30
+          <i id="indicate" class="right material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Show extra info">info</i>
+        </span>
+      </div>
+      <div class="collapsible-body">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Categories">sort</i>
+          
+          
+          
+          <a href="/categories#ios-development" target="_blank"><div class="chip">iOS Development</div></a>
+          
+        </span>
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Tags">label</i>
+          
+          
+          
+          <a href="/tags#ios" target="_blank"><div class="chip">ios</div></a>
+          
+          
+          
+          <a href="/tags#notification" target="_blank"><div class="chip">notification</div></a>
+          
+          
+          
+          <a href="/tags#objective-c" target="_blank"><div class="chip">objective-c</div></a>
+          
+        </span>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="divider"></div>
+<div class="row">
+  <div class="col s12">
+    <div class="message">
+This is a simple example of how to post and listen to a notification radio.
+<br />KF 11/29/2016
+</div>
+
+<h2 id="what-is-a-notification">What is a Notification?</h2>
+<blockquote>
+  <p>Reference: <a href="http://www.informit.com/articles/article.aspx?p=2091958">How Best to Use Delegates and Notifications in Objective-C</a></p>
+</blockquote>
+
+<p>Notifications provide a means of broadcasting a message from anywhere to anywhere. The <code class="highlighter-rouge">NSNotification</code> class provides this functionality in Objective-C. It is not strictly a part of the language, but rather the Foundation framework. Instances of NSNotification are broadcast through an <code class="highlighter-rouge">NSNotificationCenter</code>.</p>
+
+<p>Notifications contain a name, an object and a dictionary of metadata. The object and metadata are optional, but the name is required. An object can register with the notification center to receive certain notifications, filtered by name, object or both name and object. Additionally, a selector is passed, which is called when a notification matching the filter is broadcast.
+An example of a notification is as follows:
+<!--more--></p>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Registering as observer from one object
+</span><span class="p">[[</span><span class="n">NSNotificationCenter</span> <span class="nf">defaultCenter</span><span class="p">]</span> <span class="nf">addObserver</span><span class="p">:</span><span class="n">self</span>
+                                         <span class="nf">selector</span><span class="p">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">thingHappened</span><span class="o">:</span><span class="p">)</span>
+                                             <span class="n">name</span><span class="o">:</span><span class="n">MyThingHappened</span>
+                                           <span class="n">object</span><span class="o">:</span><span class="n">_myObject</span><span class="p">];</span>
+
+<span class="c1">// Posting notification from another object
+</span><span class="p">[[</span><span class="n">NSNotificationCenter</span> <span class="nf">defaultCenter</span><span class="p">]</span> <span class="nf">postNotificationName</span><span class="p">:</span><span class="n">MyThingHappened</span>
+                                                    <span class="nf">object</span><span class="p">:</span><span class="n">self</span>
+                                                  <span class="n">userInfo</span><span class="o">:</span><span class="nb">nil</span><span class="p">];</span>
+</code></pre></div></div>
+
+<p>In this example one object is registering itself as an observer for the MyThingHappened notification, limiting it to when that notification occurs on the exact object, <code class="highlighter-rouge">_myObject</code>. Then, another object is posting that notification with itself as the object and nothing as the metadata dictionary, <code class="highlighter-rouge">userInfo</code>. So in this case, if the object that’s posting the notification is <code class="highlighter-rouge">_myObject</code> from the context of the registering object, then the notification will cause thingHappened: to be called.</p>
+
+<h2 id="why-and-when-to-use-notification">Why and When to Use Notification?</h2>
+
+<h3 id="coupling">Coupling</h3>
+<p>Notifications result in loose coupling between objects. The coupling is <strong>loose</strong> because the object sending a notification doesn’t know what is listening to the notification. This loose coupling can be extremely powerful because multiple objects can all register to listen to the same notification, from different parts of an application. However, loose coupling can also make the use of notifications a nightmare to debug, since code can easily become entangled. Following the code paths produced when a notification is broadcast can become a daunting experience.</p>
+
+<h3 id="multiple-listeners">Multiple Listeners</h3>
+<p>By design, notifications offer multiple listeners. There can be zero, one or many listeners for any one notification. If you are certain that you’ll need multiple listeners, a notification is the correct route to go down. The instance above of login state handling is a perfect example of this. It’s likely that multiple objects are going to care about login state changing, so a notification makes sense.</p>
+
+<h3 id="is-the-object-known">Is the Object Known?</h3>
+<p>Sometimes you don’t actually know the precise object you want to communicate with. An example of such a scenario is the keyboard in iOS, which is a view which is handled entirely by iOS for you.</p>
+
+<h2 id="example-in-my-project---timepocket">Example in my project - TimePocket</h2>
+<p>In my project ‘TimePocket’, I use notification to pass <code class="highlighter-rouge">managedObjectContext</code> from <code class="highlighter-rouge">AppDelegate</code> to the <code class="highlighter-rouge">ViewController</code> at a proper time during the life cycle.</p>
+
+<h3 id="1-create-a-header-file---preparing-for-the-notification">1. Create a Header File - Preparing for the Notification</h3>
+<p>Create a header file called <code class="highlighter-rouge">EventDatabaseAvailability.h</code>
+In the file add the following two constants:</p>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define EventDatabaseAvailabilityNotification @"EventDatabaseAvailabilityNotification"
+#define EventDatabaseAvailabilityContext @"Context"
+</span></code></pre></div></div>
+<h3 id="2-post-notification">2. Post Notification</h3>
+<p>When the initialization of my database is completed, I post my notification there in order to pass the <code class="highlighter-rouge">managedObjectContext</code>.</p>
+
+<p>Post notification code:</p>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">userInfo</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">eventDatabaseContext</span> <span class="p">?</span> <span class="p">@{</span> <span class="n">EventDatabaseAvailabilityContext</span> <span class="o">:</span> <span class="n">self</span><span class="p">.</span><span class="n">eventDatabaseContext</span> <span class="p">}</span> <span class="p">:</span> <span class="nb">nil</span><span class="p">;</span>
+        <span class="p">[[</span><span class="n">NSNotificationCenter</span> <span class="nf">defaultCenter</span><span class="p">]</span> <span class="nf">postNotificationName</span><span class="p">:</span><span class="n">EventDatabaseAvailabilityNotification</span> <span class="nf">object</span><span class="p">:</span><span class="n">self</span> <span class="n">userInfo</span><span class="o">:</span><span class="n">userInfo</span><span class="p">];</span>
+</code></pre></div></div>
+<h3 id="3-listen-to-the-notification">3. Listen to the Notification</h3>
+<p>In my <code class="highlighter-rouge">ViewController</code>, the notification observer should be added as early as possible in its life cycle. Therefore, it’s added in <code class="highlighter-rouge">awakeFromNib</code>, which is the earliest part in the controller’s life cycle.</p>
+
+<p>Add the notification observer in <code class="highlighter-rouge">- (void)awakeFromNib</code> to listen to the notification.</p>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">awakeFromNib</span> <span class="p">{</span>
+    <span class="p">[</span><span class="n">super</span> <span class="nf">awakeFromNib</span><span class="p">];</span>
+    <span class="c1">// KF 11/28/2016
+</span>    <span class="c1">// Listen to the Notification from AppDelegate
+</span>    <span class="p">[[</span><span class="n">NSNotificationCenter</span> <span class="nf">defaultCenter</span><span class="p">]</span>
+     <span class="nf">addObserverForName</span><span class="p">:</span><span class="n">EventDatabaseAvailabilityNotification</span>
+     <span class="nf">object</span><span class="p">:</span><span class="nb">nil</span>
+     <span class="n">queue</span><span class="o">:</span><span class="nb">nil</span>
+     <span class="n">usingBlock</span><span class="o">:^</span><span class="p">(</span><span class="n">NSNotification</span> <span class="o">*</span> <span class="n">_Nonnull</span> <span class="n">note</span><span class="p">)</span> <span class="p">{</span>
+         <span class="n">self</span><span class="p">.</span><span class="n">managedObjectContext</span> <span class="o">=</span> <span class="n">note</span><span class="p">.</span><span class="n">userInfo</span><span class="p">[</span><span class="nf">EventDatabaseAvailabilityContext</span><span class="p">];</span>
+     <span class="p">}];</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /><br />
+<strong><em>KF</em></strong></p>
+
+  </div>
+</div>
+
+</div>
+
+    </main>
+    <footer class="page-footer teal">
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            <img src="/assets/res/logo.png" alt="logo"/>
+            <p class="grey-text text-lighten-4">Material theme based on <a href="http://materializecss.com">Materialize.css</a> for jekyll sites
+</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          &#xA9; 2018 KFZ's BLOG. All rights reserved. Powered by <a href="https://github.com/ShawnTeoh/matjek">MatJek</a>.
+        </div>
+      </div>
+    </footer>
+    <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+    
+    
+    <script src="/assets/js/post.js"></script>
+    
+    
+    
+    
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

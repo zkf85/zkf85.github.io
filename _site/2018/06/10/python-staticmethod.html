@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+      @staticmethod和@classmethod的作用与区别
+      
+    </title>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/res/favicon.ico">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <link rel="stylesheet" href="/assets/css/post.css">
+    
+    
+    
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="@staticmethod和@classmethod的作用与区别" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="相同点： 一般来说，要使用某个类的方法，需要先实例化一个对象再调用方法。 e.g.:" />
+<meta property="og:description" content="相同点： 一般来说，要使用某个类的方法，需要先实例化一个对象再调用方法。 e.g.:" />
+<link rel="canonical" href="http://localhost:4000/2018/06/10/python-staticmethod" />
+<meta property="og:url" content="http://localhost:4000/2018/06/10/python-staticmethod" />
+<meta property="og:site_name" content="KFZ’s BLOG" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-06-10T15:24:00+08:00" />
+<script type="application/ld+json">
+{"description":"相同点： 一般来说，要使用某个类的方法，需要先实例化一个对象再调用方法。 e.g.:","@type":"BlogPosting","url":"http://localhost:4000/2018/06/10/python-staticmethod","headline":"@staticmethod和@classmethod的作用与区别","dateModified":"2018-06-10T15:24:00+08:00","datePublished":"2018-06-10T15:24:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2018/06/10/python-staticmethod"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <header>
+      <nav class="top-nav teal">
+        <div class="nav-wrapper">
+          <div class="container">
+            <a class="page-title" href="/">KFZ's BLOG</a>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <a href="#" data-activates="slide-out" class="button-collapse top-nav full hide-on-large-only">
+          <i class="material-icons">menu</i>
+        </a>
+      </div>
+      <ul id="slide-out" class="side-nav fixed">
+        <li>
+          <div class="userView">
+            <div class="background"></div>
+            <a href="https://github.com/zkf85" target="_blank"><img class="circle z-depth-2" src="/assets/res/user.png"></a>
+            <span class="white-text name">Kefeng Zhu</span>
+            <span class="white-text email">zkf1985@gmail.com</span>
+          </div>
+        </li>
+        <li><a class="waves-effect" href="/"><i class="material-icons">home</i>Home</a></li>
+<!--
+<li><a class="waves-effect" href="/projects"><i class="material-icons">description</i>Projects</a></li>
+-->
+        <li><a class="waves-effect" href="/categories"><i class="material-icons">sort</i>Categories</a></li>
+        <li><a class="waves-effect" href="/tags"><i class="material-icons">label</i>Tags</a></li>
+<!--
+<li><a class="waves-effect" href="/feed.xml" target="_blank"><i class="material-icons">rss_feed</i>RSS</a></li>
+-->
+        <li><div class="divider"></div></li>
+        <li><a class="waves-effect" href="/about"><i class="material-icons">person</i>About</a></li>
+        <li><a class="waves-effect" href="/contact"><i class="material-icons">email</i>Contact</a></li>
+      </ul>
+    </header>
+    <main>
+
+
+<div class="container">
+  <div id="post-info">
+  <h3>@staticmethod和@classmethod的作用与区别</h3>
+  <ul class="collapsible hoverable" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Date">date_range</i>
+          10/06/2018 15:24
+          <i id="indicate" class="right material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Show extra info">info</i>
+        </span>
+      </div>
+      <div class="collapsible-body">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Categories">sort</i>
+          
+          
+          
+          <a href="/categories#python_cap" target="_blank"><div class="chip">Python</div></a>
+          
+        </span>
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Tags">label</i>
+          
+          
+          
+          <a href="/tags#python" target="_blank"><div class="chip">python</div></a>
+          
+        </span>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="divider"></div>
+<div class="row">
+  <div class="col s12">
+    <h3 id="相同点">相同点：</h3>
+<p>一般来说，要使用某个类的方法，需要先实例化一个对象再调用方法。
+e.g.:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="n">bar</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  
+        <span class="k">print</span> <span class="s">'foo'</span> 
+	<span class="nd">@staticmethod</span>
+	<span class="k">def</span> <span class="nf">static_foo</span><span class="p">():</span>
+		<span class="k">print</span><span class="p">(</span><span class="s">"static_foo"</span><span class="p">)</span>
+		
+	<span class="nd">@classmethod</span>
+	<span class="k">def</span> <span class="nf">class_foo</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+		<span class="k">print</span><span class="p">(</span><span class="s">"class_foo"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>而使用<code class="highlighter-rouge">@staticmethod</code>或<code class="highlighter-rouge">@classmethod</code>，就可以不需要实例化，直接<strong>类名.方法名()</strong>来调用。e.g. <code class="highlighter-rouge">A.static_foo</code> 或者 <code class="highlighter-rouge">A.class_foo</code></p>
+
+<p>这有利于组织代码，把某些应该属于某个类的函数给放到那个类里去，同时有利于命名空间的整洁。</p>
+
+<h3 id="不同点">不同点：</h3>
+
+<p>既然@staticmethod和@classmethod都可以直接类名.方法名()来调用，那他们有什么区别呢</p>
+
+<p>从它们的使用上来看,</p>
+
+<ul>
+  <li>
+    <p>@staticmethod<strong>不需要</strong>表示自身对象的self和自身类的cls<strong>参数</strong>，就跟使用函数一样。</p>
+  </li>
+  <li>
+    <p>@classmethod也不需要self参数，但<strong>第一个参数</strong>需要是表示自身类的cls参数。</p>
+  </li>
+</ul>
+
+<p>如果在@staticmethod中要调用到这个类的一些属性方法，只能直接类名.属性名或类名.方法名, e.g. <code class="highlighter-rouge">A.bar</code></p>
+
+<p>而@classmethod因为持有cls参数，可以来调用类的属性，类的方法，实例化对象等，避免硬编码, e.g. <code class="highlighter-rouge">cls.bar</code>以及<code class="highlighter-rouge">cls().foo()</code></p>
+
+<h4 id="测试代码">测试代码</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>  
+    <span class="n">bar</span> <span class="o">=</span> <span class="mi">1</span>  
+    <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  
+        <span class="k">print</span><span class="p">(</span><span class="s">"oo"</span><span class="p">)</span>
+ 
+    <span class="nd">@staticmethod</span>  
+    <span class="k">def</span> <span class="nf">static_foo</span><span class="p">():</span>  
+        <span class="k">print</span><span class="p">(</span><span class="s">"static_foo"</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">bar</span><span class="p">)</span>
+ 
+    <span class="nd">@classmethod</span>  
+    <span class="k">def</span> <span class="nf">class_foo</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>  
+        <span class="k">print</span><span class="p">(</span><span class="s">"class_foo"</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">cls</span><span class="o">.</span><span class="n">bar</span><span class="p">)</span>
+        <span class="n">cls</span><span class="p">()</span><span class="o">.</span><span class="n">foo</span><span class="p">()</span>  
+  
+<span class="n">A</span><span class="o">.</span><span class="n">static_foo</span><span class="p">()</span>  
+<span class="n">A</span><span class="o">.</span><span class="n">class_foo</span><span class="p">()</span>  
+</code></pre></div></div>
+<p>输出</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>static_foo
+1
+class_foo
+1
+foo
+</code></pre></div></div>
+
+<p><br /><strong><em>KF</em></strong></p>
+
+  </div>
+</div>
+
+</div>
+
+    </main>
+    <footer class="page-footer teal">
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            <img src="/assets/res/logo.png" alt="logo"/>
+            <p class="grey-text text-lighten-4">Material theme based on <a href="http://materializecss.com">Materialize.css</a> for jekyll sites
+</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          &#xA9; 2018 KFZ's BLOG. All rights reserved. Powered by <a href="https://github.com/ShawnTeoh/matjek">MatJek</a>.
+        </div>
+      </div>
+    </footer>
+    <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+    
+    
+    <script src="/assets/js/post.js"></script>
+    
+    
+    
+    
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

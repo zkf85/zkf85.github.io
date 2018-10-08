@@ -1,11 +1,7 @@
 ---
 layout: page
-title: About
+title: "About Me"
+css: ["about.css", "animate.css", "morphext.css"]
+js: ["morphext.min.js", "about.js"]
 ---
-
-<p class="message">
-	This is a blog written by KF. 
-	Keep blogging! 
-
-</p>
-
+{% include about.html %}

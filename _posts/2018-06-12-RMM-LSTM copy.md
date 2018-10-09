@@ -2,8 +2,8 @@
 layout: post
 title: "RNN LSTM - Notes"
 date: "2018-06-12 14:00:00"
-category: [Machine Learning]
-tag: [rnn, lstm, machine_learning]
+category: [Machine Learning, Deep Learning]
+tag: [rnn, lstm, machine learning, deep learning]
 ---
 
 ## *"Deep Learning"* Reading note

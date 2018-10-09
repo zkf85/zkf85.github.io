@@ -202,16 +202,5 @@ gsutil rm -r gs://my-awesome-bucket/<folder-name>
 gsutil rm -r gs://my-awesome-bucket
 ```
 
-| adsfasdf  |  |  |  |  |
-| --- | --- | --- | --- | --- |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-# 1
-
-## 2
  
 <br>***KF*** 

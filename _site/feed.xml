@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-10-09T15:15:23+08:00</updated><id>http://localhost:4000/</id><title type="html">KFZ’s BLOG</title><subtitle>Material theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-10-09T15:33:59+08:00</updated><id>http://localhost:4000/</id><title type="html">KFZ’s BLOG</title><subtitle>Material theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites
 </subtitle><entry><title type="html">Experiencing google cloud</title><link href="http://localhost:4000/2018/10/09/google-cloud" rel="alternate" type="text/html" title="Experiencing google cloud" /><published>2018-10-09T09:00:00+08:00</published><updated>2018-10-09T09:00:00+08:00</updated><id>http://localhost:4000/2018/10/09/google-cloud</id><content type="html" xml:base="http://localhost:4000/2018/10/09/google-cloud">&lt;p&gt;After experiencing google cloud for couple of week, I’d like to write something down here. On the one hand, there’re lots of tips, necessary knowledge and pitfalls to remember and check. One the other hand, just cannot resist to complain about this giant and complicated service system.&lt;/p&gt;
 
 &lt;h3 id=&quot;why-google-cloud&quot;&gt;Why Google Cloud&lt;/h3&gt;
@@ -92,6 +92,30 @@ The real way apple store would respond is: “Here are three new iPhones with ba
 &lt;/table&gt;
 
 &lt;p&gt;I hope in this way you can have a general idea of the pricing of these google cloud services.&lt;/p&gt;
+
+&lt;h3 id=&quot;commands&quot;&gt;Commands&lt;/h3&gt;
+&lt;p&gt;In the following I’ll continue to list some commonly use commands with google cloud’s daily-based usage.&lt;/p&gt;
+
+&lt;h4 id=&quot;compute-engine&quot;&gt;Compute Engine&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Set zone:&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  gcloud config &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;compute/zone us-east1-b
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;SSH login to VM instance:
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  gcloud compute ssh &amp;lt;instance_name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Transfer files from/to the VM instance:
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;c&quot;&gt;# From local to VM instance&lt;/span&gt;
+  gcloud compute scp &lt;span class=&quot;nt&quot;&gt;--recurse&lt;/span&gt; &amp;lt;file_dir&amp;gt; &amp;lt;user_name&amp;gt;@&amp;lt;instance_name&amp;gt;:&amp;lt;dest_dir&amp;gt;
+  &lt;span class=&quot;c&quot;&gt;# From VM instance to local&lt;/span&gt;
+  gcloud compute scp &lt;span class=&quot;nt&quot;&gt;--recurse&lt;/span&gt; &amp;lt;user_name&amp;gt;@&amp;lt;instance_name&amp;gt;:&amp;lt;file_dir&amp;gt; &amp;lt;dest_dir&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Deep Learning&quot;]" /><category term="google cloud" /><category term="deep learning" /><summary type="html">After experiencing google cloud for couple of week, I’d like to write something down here. On the one hand, there’re lots of tips, necessary knowledge and pitfalls to remember and check. One the other hand, just cannot resist to complain about this giant and complicated service system.</summary></entry><entry><title type="html">Python None</title><link href="http://localhost:4000/2018/06/21/python-None" rel="alternate" type="text/html" title="Python None" /><published>2018-06-21T14:00:00+08:00</published><updated>2018-06-21T14:00:00+08:00</updated><id>http://localhost:4000/2018/06/21/python-None</id><content type="html" xml:base="http://localhost:4000/2018/06/21/python-None">&lt;h2 id=&quot;python-中的-none-是什么&quot;&gt;Python 中的 &lt;code class=&quot;highlighter-rouge&quot;&gt;None&lt;/code&gt; 是什么？&lt;/h2&gt;
 &lt;ul&gt;

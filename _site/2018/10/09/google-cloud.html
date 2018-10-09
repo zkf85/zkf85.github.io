@@ -211,6 +211,30 @@ The real way apple store would respond is: “Here are three new iPhones with ba
 
 <p>I hope in this way you can have a general idea of the pricing of these google cloud services.</p>
 
+<h3 id="commands">Commands</h3>
+<p>In the following I’ll continue to list some commonly use commands with google cloud’s daily-based usage.</p>
+
+<h4 id="compute-engine">Compute Engine</h4>
+<ul>
+  <li>
+    <p>Set zone:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  gcloud config <span class="nb">set </span>compute/zone us-east1-b
+</code></pre></div>    </div>
+  </li>
+  <li>SSH login to VM instance:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  gcloud compute ssh &lt;instance_name&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>Transfer files from/to the VM instance:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c"># From local to VM instance</span>
+  gcloud compute scp <span class="nt">--recurse</span> &lt;file_dir&gt; &lt;user_name&gt;@&lt;instance_name&gt;:&lt;dest_dir&gt;
+  <span class="c"># From VM instance to local</span>
+  gcloud compute scp <span class="nt">--recurse</span> &lt;user_name&gt;@&lt;instance_name&gt;:&lt;file_dir&gt; &lt;dest_dir&gt;
+</code></pre></div>    </div>
+  </li>
+</ul>
+
 <p><br /><strong><em>KF</em></strong></p>
 
   </div>

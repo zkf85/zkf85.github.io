@@ -65,6 +65,25 @@ A little digressed from the subject. Here I give a rough pricing list for most t
 
 I hope in this way you can have a general idea of the pricing of these google cloud services.
 
+### Commands
+In the following I'll continue to list some commonly use commands with google cloud's daily-based usage.
 
+#### Compute Engine
+- Set zone:
+
+    ```bash
+    gcloud config set compute/zone us-east1-b
+    ```
+- SSH login to VM instance:
+    ```bash
+    gcloud compute ssh <instance_name>
+    ```
+- Transfer files from/to the VM instance:
+    ```bash
+    # From local to VM instance
+    gcloud compute scp --recurse <file_dir> <user_name>@<instance_name>:<dest_dir>
+    # From VM instance to local
+    gcloud compute scp --recurse <user_name>@<instance_name>:<file_dir> <dest_dir>
+    ```
 
 <br>***KF*** 

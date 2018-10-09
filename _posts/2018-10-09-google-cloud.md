@@ -6,7 +6,7 @@ category: [Deep Learning]
 tag: [google cloud, deep learning]
 ---
 
-After experiencing google cloud for couple of week, I'd like to write something down here. On the one hand, there're lots of tips, necessary knowledge and pitfalls to remember and check. One the other hand, just cannot resist to say something about this giant and complicated service system.
+After experiencing google cloud for couple of week, I'd like to write something down here. On the one hand, there're lots of tips, necessary knowledge and pitfalls to remember and check. One the other hand, just cannot resist to complain about this giant and complicated service system.
 
 
 ### Why Google Cloud 

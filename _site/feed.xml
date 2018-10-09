@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-10-09T12:52:34+08:00</updated><id>http://localhost:4000/</id><title type="html">KFZ’s BLOG</title><subtitle>Material theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-10-09T15:04:10+08:00</updated><id>http://localhost:4000/</id><title type="html">KFZ’s BLOG</title><subtitle>Material theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites
 </subtitle><entry><title type="html">Experiencing google cloud</title><link href="http://localhost:4000/2018/10/09/google-cloud" rel="alternate" type="text/html" title="Experiencing google cloud" /><published>2018-10-09T09:00:00+08:00</published><updated>2018-10-09T09:00:00+08:00</updated><id>http://localhost:4000/2018/10/09/google-cloud</id><content type="html" xml:base="http://localhost:4000/2018/10/09/google-cloud">&lt;p&gt;After experiencing google cloud for couple of week, I’d like to write something down here. On the one hand, there’re lots of tips, necessary knowledge and pitfalls to remember and check. One the other hand, just cannot resist to say something about this giant and complicated service system.&lt;/p&gt;
 
 &lt;h3 id=&quot;why-google-cloud&quot;&gt;Why Google Cloud&lt;/h3&gt;
@@ -9,6 +9,89 @@
 &lt;p&gt;&lt;img src=&quot;/public/img/Screen Shot 2018-10-09 at 11.01.26 AM.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;bunch-of-services---in-a-nut-shell&quot;&gt;Bunch of services - in a nut shell&lt;/h3&gt;
+&lt;p&gt;Google cloud provides a huge set of services. If you have no experience of using cloud service, it’s pretty hard to get started becuase you’d be dazzled by the the countless stuff.&lt;/p&gt;
+
+&lt;p&gt;To get started, especially for those who want to leverage google cloud as a tool for deep learning, I’d like to list the frequently used services.&lt;/p&gt;
+
+&lt;h4 id=&quot;1-cloud-computing&quot;&gt;1. Cloud computing&lt;/h4&gt;
+&lt;p&gt;Cloud computing is most frequently used service in my usage. As introduced by google itself, it provides &lt;em&gt;“Scalable, High-Perfoermance Virtual Machines”&lt;/em&gt;.
+To make it clear in a few words, this computing engine provides &lt;strong&gt;computing resource&lt;/strong&gt; such as CPU/GPU, memories, with a separate  pricing rule (only based on how many CPUs, GPUs, RAMs you are using) excluding the storage info.&lt;/p&gt;
+
+&lt;p&gt;When your VM is started, cloud computing service starts charging your credit. But as long as you shut it down. The charge from compute engine is stopped.&lt;/p&gt;
+
+&lt;h4 id=&quot;2-storage&quot;&gt;2. Storage&lt;/h4&gt;
+&lt;p&gt;The compute engine cannot run without a disk, which is related to the storage service. For instance, when you create a VM, you always also apply a disk of 10G or 30G space for the computing engine you chosed. (But remember, the fee for storage is charged separately. ) Basically, there are two different kind of  storage service that is most frequently use.&lt;/p&gt;
+
+&lt;h5 id=&quot;21-persistent-disk&quot;&gt;2.1 Persistent Disk&lt;/h5&gt;
+&lt;p&gt;In short, the persistent disk is block storage for virtual machine instances and storage to be mounted to VMs.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;It’s just like normal disks.&lt;/li&gt;
+  &lt;li&gt;You have to let your VM running before you can access this kind of storage.&lt;/li&gt;
+  &lt;li&gt;It’s easy to manipulate the files in the disks.&lt;/li&gt;
+  &lt;li&gt;The persistent disk charges with it’s own rates.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;22-cloud-storage&quot;&gt;2.2 Cloud Storage&lt;/h5&gt;
+&lt;p&gt;It’s object storage, in the actual use, each cloud storage block is  called a ‘bucket’.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;You can access this kind of storage by using their &lt;code class=&quot;highlighter-rouge&quot;&gt;gsutil&lt;/code&gt; tool from cloud shell or even from your computer using google cloud sdk.&lt;/li&gt;
+  &lt;li&gt;You do not need to start any VM to access your data stored in the ‘buckets’.&lt;/li&gt;
+  &lt;li&gt;It’s a great tool for uploading and downloading files from google cloud. Multi-thread &lt;code class=&quot;highlighter-rouge&quot;&gt;gsutil -m scp&lt;/code&gt; makes it much faster than normal &lt;code class=&quot;highlighter-rouge&quot;&gt;scp&lt;/code&gt; in POSIX file system.&lt;/li&gt;
+  &lt;li&gt;You have to use &lt;code class=&quot;highlighter-rouge&quot;&gt;gsutil&lt;/code&gt; to access and manipulate the data in the storage, which is a little bit awkward when you need to treate the files and folders in your ‘traditional’ mindset.&lt;/li&gt;
+  &lt;li&gt;the cloud storage charges with its own rates, roughly based on the amount of storage and the inward/outward stream amout.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;pricing&quot;&gt;Pricing&lt;/h3&gt;
+&lt;p&gt;The story about pricing is trivial! This reminds me of the main reason why I usually prefer Apple’s products rather than google’s.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;IT’S SHOULD BE SIMPLE!!!
+When I was checking the pricing rate of these google cloud services, it’s like, suppose I want to buy a new iPhone and go to their store and ask: “I’d like to buy an iPhone, which one should I choose?” Think that if the guy tells me “well that depends on what kind of processor, storage, RAMs, camera you want. Here is the pricing list and help yourself …” 
+&lt;strong&gt;See? this would drive me crazy. And this is how you feel when you are checking google cloud pricing&lt;/strong&gt;. 
+The real way apple store would respond is: “Here are three new iPhones with basic price of $749, $999 and $1099, you can add more storage with extra price …”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;My dear google, why don’t you make the pricing a little bit straight forward? Wouldn’t a rough approximation for every service rate in one page as a pricing overview be much better???&lt;/p&gt;
+
+&lt;p&gt;A little digressed from the subject. Here I give a rough pricing list for most the services mentioned above.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Service&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Rate per Hour&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Rate per Day&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Rate per Month&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;CPU VM&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;~$1.00&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;GPU VM &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;~$1.00&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;-&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;-&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Persistent Disk&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;-&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;-&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;~$2.00 per 100G&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Cloud Storage&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;-&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;-&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;~$2.00 per 100G&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;I hope in this way you can have a general idea of the pricing of these google cloud services.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Deep Learning&quot;]" /><category term="google cloud" /><category term="deep learning" /><summary type="html">After experiencing google cloud for couple of week, I’d like to write something down here. On the one hand, there’re lots of tips, necessary knowledge and pitfalls to remember and check. One the other hand, just cannot resist to say something about this giant and complicated service system.</summary></entry><entry><title type="html">Python None</title><link href="http://localhost:4000/2018/06/21/python-None" rel="alternate" type="text/html" title="Python None" /><published>2018-06-21T14:00:00+08:00</published><updated>2018-06-21T14:00:00+08:00</updated><id>http://localhost:4000/2018/06/21/python-None</id><content type="html" xml:base="http://localhost:4000/2018/06/21/python-None">&lt;h2 id=&quot;python-中的-none-是什么&quot;&gt;Python 中的 &lt;code class=&quot;highlighter-rouge&quot;&gt;None&lt;/code&gt; 是什么？&lt;/h2&gt;
 &lt;ul&gt;

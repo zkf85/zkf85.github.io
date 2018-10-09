@@ -9,6 +9,7 @@ tag: [python]
 ## Python 中的 None 是什么？
 - [baicaiye专栏](https://blog.csdn.net/baicaiye/article/details/72922197)
 
+
 None是一个特殊的常量。
 None和False不同。
 None不是0。

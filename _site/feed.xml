@@ -1,5 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-10-08T17:40:32+08:00</updated><id>http://localhost:4000/</id><title type="html">KFZ’s BLOG</title><subtitle>Material theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites
-</subtitle><entry><title type="html">Python None</title><link href="http://localhost:4000/2018/06/21/python-None" rel="alternate" type="text/html" title="Python None" /><published>2018-06-21T14:00:00+08:00</published><updated>2018-06-21T14:00:00+08:00</updated><id>http://localhost:4000/2018/06/21/python-None</id><content type="html" xml:base="http://localhost:4000/2018/06/21/python-None">&lt;h2 id=&quot;python-中的-none-是什么&quot;&gt;Python 中的 None 是什么？&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-10-09T12:18:44+08:00</updated><id>http://localhost:4000/</id><title type="html">KFZ’s BLOG</title><subtitle>Material theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites
+</subtitle><entry><title type="html">Experiencing google cloud</title><link href="http://localhost:4000/2018/10/09/google-cloud" rel="alternate" type="text/html" title="Experiencing google cloud" /><published>2018-10-09T09:00:00+08:00</published><updated>2018-10-09T09:00:00+08:00</updated><id>http://localhost:4000/2018/10/09/google-cloud</id><content type="html" xml:base="http://localhost:4000/2018/10/09/google-cloud">&lt;p&gt;After experiencing google cloud for couple of week, I’d like to write something down here. On the one hand, there’re lots of tips, necessary knowledge and pitfalls to remember and check. One the other hand, just cannot resist to say something about this giant and complicated service system.&lt;/p&gt;
+
+&lt;h3 id=&quot;why-google-cloud&quot;&gt;Why Google Cloud&lt;/h3&gt;
+&lt;p&gt;So where shall we start? OK, first why Google Cloud? The reason for me is that it’s actually free to use. Well although it’s not literally free. As long as you apply an “free trial” account and enter your credit card info (they won’t automatically charge you, for sure), they will grant you $300 credit within one year to use for free completely. I have to say the google is really generous in this case.&lt;/p&gt;
+
+&lt;p&gt;This screen shot below is my current balance as I’ve already used the google cloud for training with or without GPUs for about 2 weeks. $300 is worth several month decent using.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/img/Screen Shot 2018-10-09 at 11.01.26 AM.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;bunch-of-services---in-a-nut-shell&quot;&gt;Bunch of services - in a nut shell&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Deep Learning&quot;]" /><category term="google cloud" /><category term="deep learning" /><summary type="html">After experiencing google cloud for couple of week, I’d like to write something down here. On the one hand, there’re lots of tips, necessary knowledge and pitfalls to remember and check. One the other hand, just cannot resist to say something about this giant and complicated service system.</summary></entry><entry><title type="html">Python None</title><link href="http://localhost:4000/2018/06/21/python-None" rel="alternate" type="text/html" title="Python None" /><published>2018-06-21T14:00:00+08:00</published><updated>2018-06-21T14:00:00+08:00</updated><id>http://localhost:4000/2018/06/21/python-None</id><content type="html" xml:base="http://localhost:4000/2018/06/21/python-None">&lt;h2 id=&quot;python-中的-none-是什么&quot;&gt;Python 中的 None 是什么？&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/baicaiye/article/details/72922197&quot;&gt;baicaiye专栏&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -912,90 +923,4 @@ Storyboards are a quick and easy way to start building a simple app. But should 
       &lt;p&gt;&lt;a href=&quot;https://www.toptal.com/ios/ios-user-interfaces-storyboards-vs-nibs-vs-custom-code&quot;&gt;iOS User Interfaces: Storyboards vs. NIBs vs. Custom Code&lt;/a&gt; &lt;a href=&quot;#fnref:toptal&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name></name></author><category term="[&quot;iOS Development&quot;]" /><category term="ios" /><category term="objective-c" /><category term="storyboard" /><summary type="html">Storyboards are a quick and easy way to start building a simple app. But should you use Storyboards on more complex apps? Or on a team? What are the pros and cons of using them? Do experienced iOS developers use them? Are any mainstream apps built with Storyboards?</summary></entry><entry><title type="html">Sort Tags Alphabetically</title><link href="http://localhost:4000/2016/11/30/sort-tag-alphabetically" rel="alternate" type="text/html" title="Sort Tags Alphabetically" /><published>2016-11-30T20:32:00+08:00</published><updated>2016-11-30T20:32:00+08:00</updated><id>http://localhost:4000/2016/11/30/sort-tag-alphabetically</id><content type="html" xml:base="http://localhost:4000/2016/11/30/sort-tag-alphabetically">&lt;div class=&quot;message&quot;&gt;
-Unordered tags make a Jekyll tag list look sloppy, so if you care about the details, you likely want your tag list to be alphabetized.
-&lt;br /&gt;KF 11/30/2016
-&lt;/div&gt;
-
-&lt;h2 id=&quot;sort-tags-a--z&quot;&gt;Sort Tags A ~ Z&lt;/h2&gt;
-
-&lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-tags-pure-liquid.html&quot;&gt;Michael Lanyon - Alphabetizing Jekyll Page Tags In Pure Liquid (Without Plugins)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.siteleaf.com/blog/advanced-liquid-sort/&quot;&gt;Advanced Liquid: Sort&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Based on the notes from &lt;a href=&quot;https://blog.lanyonm.org&quot;&gt;Michael Lanyon&lt;/a&gt;, I modified my &lt;code class=&quot;highlighter-rouge&quot;&gt;tags.html&lt;/code&gt; to the version below:&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
-layout: page
-title: Tags
----
-&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- tag sorted - kf 11/30/2016 --&amp;gt;&lt;/span&gt;
-
-{% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
-&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- site_tags: {{ site_tags }} --&amp;gt;&lt;/span&gt;
-{% assign tag_words = site_tags | split:',' | sort %}
-&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- tag_words: {{ tag_words }} --&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;tags-expo&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;tags-expo-list&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  {% for tag in tag_words %}
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#{{ tag | cgi_escape }}&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;post-tag&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ tag }} &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;font-size:80%; color:gray;&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ site.tags[tag] | size }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
-  {% endfor %}
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-  
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;tags-expo-section&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    {% for item in (0..site.tags.size) %}{% unless forloop.last %}
-    {% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ this_word | cgi_escape }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ this_word }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;tags-expo-posts&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-      {% for post in site.tags[this_word] %}{% if post.title != null %}
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;post-title&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ site.baseurl }}{{ post.url }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
-        {{ post.title }} &lt;span class=&quot;err&quot;&gt;&amp;amp;&lt;/span&gt;laquo 
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;small&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;post-date&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ post.date | date_to_string }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/small&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
-      {% endif %}{% endfor %}
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
-    {% endunless %}{% endfor %}
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;For &lt;code class=&quot;highlighter-rouge&quot;&gt;categories.html&lt;/code&gt; the basic idea is the same.&lt;/p&gt;
-
-&lt;p&gt;When Adding the code block above, I came across a curious problem when writing liquid template code in this markdown file. When Jekyll compiles the static web files, it tries to process all the curly brackets like: &lt;code class=&quot;highlighter-rouge&quot;&gt;{{&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;{%&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;This is not a bug , but a &lt;a href=&quot;https://github.com/jekyll/jekyll/issues/814&quot;&gt;caveat of using a templating language with markdown&lt;/a&gt;. The workarounds are provided by&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://ozzieliu.com/2016/04/26/writing-liquid-template-in-markdown-with-jekyll/&quot;&gt;Ozzie Liu - Writing Liquid Template in Markdown Code Blocks with Jekyll&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Simply put, just add&lt;code class=&quot;highlighter-rouge&quot;&gt;{% raw %}&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;{% endraw %}&lt;/code&gt; on the both end when &lt;code class=&quot;highlighter-rouge&quot;&gt;{{&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;{%&lt;/code&gt; appears.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;It is pretty confused to render the above line!!!&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;advanced---sort-tags-az-case-insensitive&quot;&gt;Advanced - Sort Tags A~Z Case Insensitive&lt;/h2&gt;
-
-&lt;h3 id=&quot;reference-1&quot;&gt;Reference&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/Shopify/liquid/issues/529&quot;&gt;Add case-insensitive sort #529&lt;/a&gt;
-&lt;a href=&quot;https://github.com/jekyll/jekyll/issues/2135&quot;&gt;Sort only sorts in binary #2135&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;solution-is-simple&quot;&gt;Solution is simple:&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;some_list | sort: 'downcase'&lt;/code&gt; for strings&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
-&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Web Development&quot;]" /><category term="jekyll" /><category term="html" /><category term="css" /><category term="liquid" /><category term="tag" /><category term="sort" /><summary type="html">Unordered tags make a Jekyll tag list look sloppy, so if you care about the details, you likely want your tag list to be alphabetized. KF 11/30/2016</summary></entry></feed>
+&lt;/div&gt;</content><author><name></name></author><category term="[&quot;iOS Development&quot;]" /><category term="ios" /><category term="objective-c" /><category term="storyboard" /><summary type="html">Storyboards are a quick and easy way to start building a simple app. But should you use Storyboards on more complex apps? Or on a team? What are the pros and cons of using them? Do experienced iOS developers use them? Are any mainstream apps built with Storyboards?</summary></entry></feed>

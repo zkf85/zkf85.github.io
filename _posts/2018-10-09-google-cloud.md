@@ -14,7 +14,7 @@ So where shall we start? OK, first why Google Cloud? The reason for me is that i
 
 This screen shot below is my current balance as I've already used the google cloud for training with or without GPUs for about 2 weeks. $300 is worth several month decent using.
 
-![](img/Screen Shot 2018-10-09 at 11.01.26 AM.png)
+![](/public/img/Screen Shot 2018-10-09 at 11.01.26 AM.png)
 
 ### Bunch of services - in a nut shell
 

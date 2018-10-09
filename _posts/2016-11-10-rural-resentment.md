@@ -25,7 +25,7 @@ And as it happens, **rural areas are older than the rest of the nation** — the
 
 **Likewise, rural areas tend to be less educated than urban areas.**
 
-![rural less diverse](img/20161110-npr-rural-diversity.png)
+![rural less diverse](/public/img/20161110-npr-rural-diversity.png)
 
 Rural areas are whiter, as well. Nearly 80 percent of people in rural areas are white non-Hispanics, compared to around 64 percent among the U.S. as a whol
 

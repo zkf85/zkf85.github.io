@@ -37,7 +37,7 @@ Create a database file. Then, add the following two entities into the database:
 	- The correspondent subclasses **Photo.h/Photo.m** and **Photographer.h/Photographer.m** are created in the project and can be found in the project navigator.
 	- Notice that in XCode 7 and later, the generated new subclasses include: entity and their CoreDataProperties category like this:
 
-		![subclasses](img/20161106-0.png)
+		![subclasses](/public/img/20161106-0.png)
 	
 		To understand this, check [this Q&A on Stack Overflow](http://stackoverflow.com/questions/33106098/xcode-7-generates-core-data-entity-with-additional-coredataproperties-category). The gist is that you can use  the two files *without* "properties" to add some custom methods or properties. In this way, whenever you update your database property setup and regenerate these supclasses, these custom methods will still be there.
 

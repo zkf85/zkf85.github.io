@@ -68,7 +68,7 @@ Flow Layout 	| `UICollectionViewFlowLayout`<br>`UICollectionViewDelegateFlowLayo
 
 
 #### <center> Figure 1-1. Merging content and layout to create the final presentation </center>
-![figure-1-1](/public/img/20161124-1-1.png)
+![figure-1-1](img/20161124-1-1.png)
 
 
 When creating a collection view interface, you first add a UICollectionView object to your storyboard or nib file. Think of the collection view as the central hub, from which all other objects emanate. After adding that object, you can begin to configure any related objects, such as the data source or delegate. All configurations are centered around the collection view itself. For example, you never create a layout object without also creating a collection view object.
@@ -92,7 +92,7 @@ The layout process used by collection views is related to, but distinct from, th
 **Figure 1-2** shows how a vertically scrolling flow layout arranges its cells and supplementary views. In a vertically scrolling flow layout, the width of the content area remains fixed and the height grows to accommodate the content. To compute the area, the layout object places views and cells one at a time, choosing the most appropriate location for each. In the case of the flow layout, the size of the cells and supplementary views are specified as properties, either on the layout object or by using a delegate. Computing the layout is just a matter of using those properties to place each view.
 
 #### <center>Figure 1-2  The layout object provides layout metrics</center>
-![figure-1-2](/public/img/20161128-1-1.png)
+![figure-1-2](img/20161128-1-1.png)
 
 Layout objects control more than just the size and position of their views. The layout object can specify other view-related attributes, such as its **transparency**, its **transform in 3D space**, and its **visibility** (if any) above or below other views. These attributes let you create more interesting layouts. For example, you might create stacks of cells by placing the views on top of one another and changing their z-ordering, or you might use a transform to rotate them on any axis.
 

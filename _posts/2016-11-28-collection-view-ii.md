@@ -36,7 +36,7 @@ The collection view refers to the data it contains using NSIndexPath objects. Wh
 Different layout objects could present section and item data very differently, as shown in **Figure 2-1**.
 
 #### <center>Figure 2-1. Sections arranged according to the arrangement of layout objects</center>
-![figure-2-1](/public/img/20161128-2-1.png)
+![figure-2-1](img/20161128-2-1.png)
 
 ### Designing Your Data Objects
 Organizing your data into sections and items makes it much easier to implement your data source methods later. And because your data source methods are called frequently, you want to make sure that your implementations of those methods are able to retrieve data as quickly as possible.
@@ -45,7 +45,7 @@ One simple solution (but certainly not the only solution) is for your data sourc
 
 #### <center>Figure 2-2. Arranging data objects using nested arrays</center>
 
-<center><img src="/public/img/20161128-2-2.png" width="5000"/></center>
+<center><img src="img/20161128-2-2.png" width="5000"/></center>
 
 
 > **Note:** In general, your data objects should never be a performance bottleneck. The collection view usually accesses your data source only to calculate how many objects there are in total and to obtain views for elements that are currently onscreen. If the layout object relies only on data from your data objects, performance could be severely impacted when the data source contains thousands of objects.

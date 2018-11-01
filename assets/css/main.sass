@@ -1,11 +1,5 @@
 ---
 ---
-// Overall
-body
-  display: flex
-  min-height: 100vh
-  flex-direction: column
-
 a
   color: #bdbdbd
 
@@ -14,9 +8,38 @@ a:hover
 
 a:active
   text-decoration: underline
-
+ 
 main
   flex: 1 0 auto
+  // Heading 1 ~ 6 - KF 10/08/2018
+  h1, h2, h3, h4, h5, h6
+    margin-bottom: .5rem
+    font-weight: bold
+    line-height: 1.25
+    color: #313131
+    text-rendering: optimizeLegibility
+    font-size: 1.2rem
+  
+  h1  
+    font-size: 2rem
+  
+  h2  
+    margin: 2em 0 1em 0
+    font-size: 1.5rem
+  
+  h3  
+    margin: 2em 0 1em 0
+    font-size: 1.25rem
+  
+  h4, h5, h6
+    margin: 2em 0 1em 0
+    font-size: 1rem
+
+// Overall
+body
+  display: flex
+  min-height: 100vh
+  flex-direction: column
 
 header,
 main,
@@ -25,37 +48,6 @@ footer
 
 .container
   width: 90%
-
-// Image size - KF 10/09/2018
-img
-  display: block
-  margin-left: auto
-  margin-right: auto
-  max-width: 100%
-
-
-// Heading 1 ~ 6 - KF 10/08/2018
-h1, h2, h3, h4, h5, h6
-  margin-bottom: .5rem
-  font-weight: bold
-  line-height: 1.25
-  color: #313131
-  text-rendering: optimizeLegibility
-
-h1 
-  font-size: 2rem
-
-h2 
-  margin: 2em 0 1em 0
-  font-size: 1.5rem
-
-h3 
-  margin: 2em 0 1em 0
-  font-size: 1.25rem
-
-h4, h5, h6
-  margin: 2em 0 1em 0
-  font-size: 1rem
 
 // Header
 header

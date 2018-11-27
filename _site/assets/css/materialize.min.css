@@ -2457,7 +2457,10 @@ nav ul a span.badge{
 .row{
     margin-left:auto;
     margin-right:auto;
+	/* Edited by KF 11/27/2018
     margin-bottom:20px
+	*/
+    margin-bottom:72px
 }
 .row:after{
     content:"";
@@ -5442,11 +5445,16 @@ input[type=range]:focus::-ms-fill-upper{
     background-color:rgba(0,0,0,0.05)
 }
 .side-nav li>a{
-    color:rgba(0,0,0,0.87);
     display:block;
-    font-size:14px;
     font-weight:500;
+	/* Modified by KF 11/27/2018
+    color:rgba(0,0,0,0.87);
+    font-size:14px;
     height:48px;
+	*/
+    color:rgba(0,0,0,0.6);
+    font-size:18px;
+    height:56px;
     line-height:48px;
     padding:0 32px
 }

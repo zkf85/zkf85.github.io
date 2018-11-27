@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-11-01T12:44:52+08:00</updated><id>http://localhost:4000/</id><title type="html">KFZ’s BLOG</title><subtitle>Material theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-11-27T13:07:52+08:00</updated><id>http://localhost:4000/</id><title type="html">KFZ’s BLOG</title><subtitle>Material theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites
 </subtitle><entry><title type="html">MIT 6.006 Algorithms Lecture 1 Notes</title><link href="http://localhost:4000/2018/11/01/MIT-6006-Lecture1" rel="alternate" type="text/html" title="MIT 6.006 Algorithms Lecture 1 Notes" /><published>2018-11-01T12:00:00+08:00</published><updated>2018-11-01T12:00:00+08:00</updated><id>http://localhost:4000/2018/11/01/MIT-6006-Lecture1</id><content type="html" xml:base="http://localhost:4000/2018/11/01/MIT-6006-Lecture1">&lt;h2 id=&quot;course-overview&quot;&gt;Course Overview&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;Efficient procedures for solving problems on large inputs.&lt;/li&gt;
@@ -19,6 +19,12 @@
   &lt;li&gt;Dynamic Programming: Image Compression&lt;/li&gt;
   &lt;li&gt;Advanced Topics&lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;h2 id=&quot;peak-finding&quot;&gt;Peak finding&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;1 D&lt;/li&gt;
+  &lt;li&gt;2 D&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Algorithm&quot;]" /><category term="algorithm" /><category term="leture notes" /><summary type="html">Course Overview Efficient procedures for solving problems on large inputs. Scalability Classic data structures and elementary algorithms (CLRS text) -&amp;gt; 6.046 for more design of algorithms. Real implementations in Python Fun problems sets!</summary></entry><entry><title type="html">Experiencing google cloud</title><link href="http://localhost:4000/2018/10/09/google-cloud" rel="alternate" type="text/html" title="Experiencing google cloud" /><published>2018-10-09T09:00:00+08:00</published><updated>2018-10-09T09:00:00+08:00</updated><id>http://localhost:4000/2018/10/09/google-cloud</id><content type="html" xml:base="http://localhost:4000/2018/10/09/google-cloud">&lt;p&gt;After experiencing google cloud for couple of week, I’d like to write something down here. On the one hand, there’re lots of tips, necessary knowledge and pitfalls to remember and check. One the other hand, just cannot resist to complain about this giant and complicated service system.&lt;/p&gt;
 

@@ -7,6 +7,13 @@
 .ohio-state-gray{
     background-color:#666666 !important
 }
+/* Added by KF 11/28/2018 */
+img.buckeye_leaf{
+	position: absolute;
+	top:12px;
+	right:12px;
+    width:96px
+}
 
  .materialize-red{
     background-color:#e51c23 !important

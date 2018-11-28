@@ -5509,9 +5509,10 @@ input[type=range]:focus::-ms-fill-upper{
     position:relative;
 	/* Edited by KF 11/27/2018
     padding:32px 32px 0;
+    margin-bottom:8px
 	*/
     padding:48px 12px 12px 12px;
-    margin-bottom:8px
+    margin-bottom:36px
 }
 .side-nav .user-view>a,.side-nav .userView>a{
     height:auto;
@@ -5589,7 +5590,10 @@ input[type=range]:focus::-ms-fill-upper{
         padding:0 16px
     }
     .side-nav .user-view,.side-nav .userView{
+		/* KF 11/28/2018
         padding:16px 16px 0
+		*/
+        padding:48px 16px 12px 12px
     }
 }
 .side-nav .collapsible-body>ul:not(.collapsible)>li.active,.side-nav.fixed .collapsible-body>ul:not(.collapsible)>li.active{

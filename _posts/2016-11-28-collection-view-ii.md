@@ -5,10 +5,9 @@ date: "2016-11-28 14:00:00"
 category: [iOS Development]
 tags: [ios, uicollectionview, objective-c]
 ---
-<div class = "message">
-Continue - Collection View learning notes on reading Apple Guide Document " Collection View Programming Guide for iOS".
-<br>KF 11/28/2016
-</div>
+>Continue - Collection View learning notes on reading Apple Guide Document " Collection View Programming Guide for iOS".
+
+<!--more-->
 
 # II.Designing Your Data Source and Delegate
 The **data source** object is the content that your app displays. The only requirement of the data source is that it must be able to provide information that the collection view needs, such as
@@ -17,7 +16,6 @@ The **data source** object is the content that your app displays. The only requi
 - which views to use when displaying those items.
 
 The **delegate object** is an optional (but recommended) object that manages aspects related to the presentation of and interaction with your content.  Although the delegate’s main job is to manage cell highlighting and selection, it can be extended to provide additional information. For example, the flow layout extends the basic delegate behavior to customize layout metrics, such as the size of cells and the spacing between them.
-<!--more-->
 
 ## The Data Source Manages Your Content
 The data source object is the object responsible for managing the content you are presenting using a collection view. The data source object must conform to the `UICollectionViewDataSource` protocol, which defines the basic behavior and methods that you must support. The job of the data source is to provide the collection view with answers to the following questions:

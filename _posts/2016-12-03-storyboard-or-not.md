@@ -5,9 +5,9 @@ date: "2016-12-03 20:08:00"
 category: [iOS Development]
 tags: [ios, objective-c, storyboard]
 ---
-<div class = "message">
-Storyboards are a quick and easy way to start building a simple app. But should you use Storyboards on more complex apps? Or on a team? What are the pros and cons of using them? Do experienced iOS developers use them? Are any mainstream apps built with Storyboards?
-</div>
+>Storyboards are a quick and easy way to start building a simple app. But should you use Storyboards on more complex apps? Or on a team? What are the pros and cons of using them? Do experienced iOS developers use them? Are any mainstream apps built with Storyboards?
+
+<!--more-->
 
 ## I. What are the pros and cons of using Storyboards?[^roadfire]
 
@@ -18,7 +18,6 @@ Another benefit to using Storyboards (over creating views programmatically) is t
 
 And a third benefit is that **you can create static table views in Storyboards**. So if you have a Settings screen, for example, with tappable rows of static text, Storyboards allow you to quickly and easily create them – no code required.
 
-<!--more-->
 
 ### Cons:
 **On teams**, Storyboards are tricky to use for two main reasons:

@@ -5,10 +5,9 @@ date: "2016-11-29 12:30:00"
 category: [iOS Development]
 tags: [ios, notification, objective-c]
 ---
-<div class = "message">
-This is a simple example of how to post and listen to a notification radio.
-<br>KF 11/29/2016
-</div>
+>This is a simple example of how to post and listen to a notification radio.
+
+<!--more-->
 
 ##  What is a Notification? 
 >Reference: [How Best to Use Delegates and Notifications in Objective-C](http://www.informit.com/articles/article.aspx?p=2091958)
@@ -17,7 +16,6 @@ Notifications provide a means of broadcasting a message from anywhere to anywher
 
 Notifications contain a name, an object and a dictionary of metadata. The object and metadata are optional, but the name is required. An object can register with the notification center to receive certain notifications, filtered by name, object or both name and object. Additionally, a selector is passed, which is called when a notification matching the filter is broadcast.
 An example of a notification is as follows:
-<!--more-->
 
 ```objc 
 // Registering as observer from one object

@@ -5,10 +5,9 @@ date: "2016-11-24 16:00:00"
 category: [iOS Development]
 tags: [ios, uicollectionview, objective-c]
 ---
-<div class = "message">
-"Collection View is super powerful." This article includes notes on reading Apple Guide Document " Collection View Programming Guide for iOS".
-<br>KF 11/24/2016
-</div>
+>Collection View is super powerful." This article includes notes on reading Apple Guide Document " Collection View Programming Guide for iOS.
+
+<!--more-->
 
 # About iOS Collection Views
 - A collection view is a way to present an ordered set of data items using a flexible and changeable layout.
@@ -20,7 +19,6 @@ tags: [ios, uicollectionview, objective-c]
 - The collection view is all about the presentation and arrangement of your views and not about their content.
 
 - The **Flow Layout** Supports Grids and Other Line-Oriented Presentations
-<!--more-->
 
 # Collection View Basics
  - your app must provide a data source object that tells the collection view how many items there are to display. 

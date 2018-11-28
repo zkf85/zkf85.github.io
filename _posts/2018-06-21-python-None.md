@@ -2,13 +2,14 @@
 layout: post
 title: "Python None"
 date: "2018-06-21 14:00:00"
-category: [Python]
+category: [Python, Notes]
 tag: [python]
 ---
 
-## Python 中的 `None` 是什么？
-- [baicaiye专栏](https://blog.csdn.net/baicaiye/article/details/72922197)
+> Python 中的 `None` 是什么？
+> - [baicaiye专栏](https://blog.csdn.net/baicaiye/article/details/72922197)
 
+<!--more-->
 
 None是一个特殊的常量。
 None和False不同。

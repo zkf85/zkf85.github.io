@@ -1,5 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-11-28T10:49:05+08:00</updated><id>http://localhost:4000/</id><title type="html">KFZ’s BLOG</title><subtitle>Material theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites
-</subtitle><entry><title type="html">MIT 6.006 Algorithms Lecture 1 Notes</title><link href="http://localhost:4000/2018/11/01/MIT-6006-Lecture1" rel="alternate" type="text/html" title="MIT 6.006 Algorithms Lecture 1 Notes" /><published>2018-11-01T12:00:00+08:00</published><updated>2018-11-01T12:00:00+08:00</updated><id>http://localhost:4000/2018/11/01/MIT-6006-Lecture1</id><content type="html" xml:base="http://localhost:4000/2018/11/01/MIT-6006-Lecture1">&lt;h2 id=&quot;course-overview&quot;&gt;Course Overview&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-11-28T19:18:58+08:00</updated><id>http://localhost:4000/</id><title type="html">KFZ’s PLAYGROUND</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
+</subtitle><entry><title type="html">Get Started with THE Docker</title><link href="http://localhost:4000/2018/11/28/docker-debut" rel="alternate" type="text/html" title="Get Started with THE Docker" /><published>2018-11-28T00:00:00+08:00</published><updated>2018-11-28T00:00:00+08:00</updated><id>http://localhost:4000/2018/11/28/docker-debut</id><content type="html" xml:base="http://localhost:4000/2018/11/28/docker-debut">&lt;blockquote&gt;
+  &lt;p&gt;The famous “Docker” is &lt;strong&gt;&lt;em&gt;a tool that can package an application and tis dependencies in a virtual container that can run on any Linux server&lt;/em&gt;&lt;/strong&gt;. After getting my keras model, it’s a good chance to try docker to deploy a deep learning model as a API service. In this article, I’d like to write down all the important procedures and details about how to make this service work with docker.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-description-of-my-job&quot;&gt;1. Description of my job&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Operating System&quot;]" /><category term="docker" /><summary type="html">The famous “Docker” is a tool that can package an application and tis dependencies in a virtual container that can run on any Linux server. After getting my keras model, it’s a good chance to try docker to deploy a deep learning model as a API service. In this article, I’d like to write down all the important procedures and details about how to make this service work with docker.”</summary></entry><entry><title type="html">MIT 6.006 Algorithms Lecture 1 Notes</title><link href="http://localhost:4000/2018/11/01/MIT-6006-Lecture1" rel="alternate" type="text/html" title="MIT 6.006 Algorithms Lecture 1 Notes" /><published>2018-11-01T12:00:00+08:00</published><updated>2018-11-01T12:00:00+08:00</updated><id>http://localhost:4000/2018/11/01/MIT-6006-Lecture1</id><content type="html" xml:base="http://localhost:4000/2018/11/01/MIT-6006-Lecture1">&lt;blockquote&gt;
+  &lt;p&gt;The starting note of the MIT 6.006 Algorithm course.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;course-overview&quot;&gt;Course Overview&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;Efficient procedures for solving problems on large inputs.&lt;/li&gt;
   &lt;li&gt;Scalability&lt;/li&gt;
@@ -26,7 +40,11 @@
   &lt;li&gt;2 D&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Algorithm&quot;]" /><category term="algorithm" /><category term="leture notes" /><summary type="html">Course Overview Efficient procedures for solving problems on large inputs. Scalability Classic data structures and elementary algorithms (CLRS text) -&amp;gt; 6.046 for more design of algorithms. Real implementations in Python Fun problems sets!</summary></entry><entry><title type="html">Experiencing google cloud</title><link href="http://localhost:4000/2018/10/09/google-cloud" rel="alternate" type="text/html" title="Experiencing google cloud" /><published>2018-10-09T09:00:00+08:00</published><updated>2018-10-09T09:00:00+08:00</updated><id>http://localhost:4000/2018/10/09/google-cloud</id><content type="html" xml:base="http://localhost:4000/2018/10/09/google-cloud">&lt;p&gt;After experiencing google cloud for couple of week, I’d like to write something down here. On the one hand, there’re lots of tips, necessary knowledge and pitfalls to remember and check. One the other hand, just cannot resist to complain about this giant and complicated service system.&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Algorithms&quot;]" /><category term="algorithm" /><category term="leture notes" /><summary type="html">The starting note of the MIT 6.006 Algorithm course.</summary></entry><entry><title type="html">Experiencing google cloud</title><link href="http://localhost:4000/2018/10/09/google-cloud" rel="alternate" type="text/html" title="Experiencing google cloud" /><published>2018-10-09T09:00:00+08:00</published><updated>2018-10-09T09:00:00+08:00</updated><id>http://localhost:4000/2018/10/09/google-cloud</id><content type="html" xml:base="http://localhost:4000/2018/10/09/google-cloud">&lt;blockquote&gt;
+  &lt;p&gt;After experiencing google cloud for couple of week, I’d like to write something down here. On the one hand, there’re lots of tips, necessary knowledge and pitfalls to remember and check. One the other hand, just cannot resist to complain about this giant and complicated service system.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
 
 &lt;h2 id=&quot;why-google-cloud&quot;&gt;Why Google Cloud&lt;/h2&gt;
 &lt;p&gt;So where shall we start? OK, first why Google Cloud? The reason for me is that it’s actually free to use. Well although it’s not literally free. As long as you apply an “free trial” account and enter your credit card info (they won’t automatically charge you, for sure), they will grant you $300 credit within one year to use for free completely. I have to say the google is really generous in this case.&lt;/p&gt;
@@ -269,10 +287,14 @@ gsutil rm &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; gs://my-awesome-bucke
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Deep Learning&quot;]" /><category term="google cloud" /><category term="deep learning" /><summary type="html">After experiencing google cloud for couple of week, I’d like to write something down here. On the one hand, there’re lots of tips, necessary knowledge and pitfalls to remember and check. One the other hand, just cannot resist to complain about this giant and complicated service system.</summary></entry><entry><title type="html">Python None</title><link href="http://localhost:4000/2018/06/21/python-None" rel="alternate" type="text/html" title="Python None" /><published>2018-06-21T14:00:00+08:00</published><updated>2018-06-21T14:00:00+08:00</updated><id>http://localhost:4000/2018/06/21/python-None</id><content type="html" xml:base="http://localhost:4000/2018/06/21/python-None">&lt;h2 id=&quot;python-中的-none-是什么&quot;&gt;Python 中的 &lt;code class=&quot;highlighter-rouge&quot;&gt;None&lt;/code&gt; 是什么？&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/baicaiye/article/details/72922197&quot;&gt;baicaiye专栏&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Deep Learning&quot;]" /><category term="google cloud" /><category term="deep learning" /><summary type="html">After experiencing google cloud for couple of week, I’d like to write something down here. On the one hand, there’re lots of tips, necessary knowledge and pitfalls to remember and check. One the other hand, just cannot resist to complain about this giant and complicated service system.</summary></entry><entry><title type="html">Python None</title><link href="http://localhost:4000/2018/06/21/python-None" rel="alternate" type="text/html" title="Python None" /><published>2018-06-21T14:00:00+08:00</published><updated>2018-06-21T14:00:00+08:00</updated><id>http://localhost:4000/2018/06/21/python-None</id><content type="html" xml:base="http://localhost:4000/2018/06/21/python-None">&lt;blockquote&gt;
+  &lt;p&gt;Python 中的 &lt;code class=&quot;highlighter-rouge&quot;&gt;None&lt;/code&gt; 是什么？&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/baicaiye/article/details/72922197&quot;&gt;baicaiye专栏&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
 
 &lt;p&gt;None是一个特殊的常量。
 None和False不同。
@@ -298,7 +320,11 @@ None有自己的数据类型NoneType。
   &lt;li&gt;&lt;a href=&quot;https://docs.python.org/3/c-api/none.html&quot;&gt;Python NoneType - python.org&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;]" /><category term="python" /><summary type="html">Python 中的 None 是什么？ baicaiye专栏</summary></entry><entry><title type="html">RNN LSTM - Notes</title><link href="http://localhost:4000/2018/06/12/RMM-LSTM-copy" rel="alternate" type="text/html" title="RNN LSTM - Notes" /><published>2018-06-12T14:00:00+08:00</published><updated>2018-06-12T14:00:00+08:00</updated><id>http://localhost:4000/2018/06/12/RMM-LSTM%20copy</id><content type="html" xml:base="http://localhost:4000/2018/06/12/RMM-LSTM-copy">&lt;h2 id=&quot;deep-learning-reading-note&quot;&gt;&lt;em&gt;“Deep Learning”&lt;/em&gt; Reading note&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;, &quot;Notes&quot;]" /><category term="python" /><summary type="html">Python 中的 None 是什么？ baicaiye专栏</summary></entry><entry><title type="html">RNN LSTM - Notes</title><link href="http://localhost:4000/2018/06/12/RMM-LSTM-copy" rel="alternate" type="text/html" title="RNN LSTM - Notes" /><published>2018-06-12T14:00:00+08:00</published><updated>2018-06-12T14:00:00+08:00</updated><id>http://localhost:4000/2018/06/12/RMM-LSTM%20copy</id><content type="html" xml:base="http://localhost:4000/2018/06/12/RMM-LSTM-copy">&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;“Deep Learning”&lt;/em&gt; Reading note&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
 
 &lt;h3 id=&quot;10-sequence-modeling-recurrent-and-recursive-nets&quot;&gt;10. Sequence Modeling: Recurrent and Recursive nets&lt;/h3&gt;
 
@@ -408,7 +434,13 @@ Figure 10.3 (p.369) or say equation 10.8 (p. 370) defines forward propagation in
   &lt;p&gt;The Loss Function:&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Machine Learning&quot;, &quot;Deep Learning&quot;]" /><category term="rnn" /><category term="lstm" /><category term="machine learning" /><category term="deep learning" /><summary type="html">“Deep Learning” Reading note</summary></entry><entry><title type="html">@staticmethod和@classmethod的作用与区别</title><link href="http://localhost:4000/2018/06/10/python-staticmethod" rel="alternate" type="text/html" title="@staticmethod和@classmethod的作用与区别" /><published>2018-06-10T15:24:00+08:00</published><updated>2018-06-10T15:24:00+08:00</updated><id>http://localhost:4000/2018/06/10/python-staticmethod</id><content type="html" xml:base="http://localhost:4000/2018/06/10/python-staticmethod">&lt;h3 id=&quot;相同点&quot;&gt;相同点：&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Artifitial Intelligence&quot;, &quot;Notes&quot;]" /><category term="rnn" /><category term="lstm" /><category term="machine learning" /><category term="deep learning" /><summary type="html">“Deep Learning” Reading note</summary></entry><entry><title type="html">@staticmethod和@classmethod的作用与区别</title><link href="http://localhost:4000/2018/06/10/python-staticmethod" rel="alternate" type="text/html" title="@staticmethod和@classmethod的作用与区别" /><published>2018-06-10T15:24:00+08:00</published><updated>2018-06-10T15:24:00+08:00</updated><id>http://localhost:4000/2018/06/10/python-staticmethod</id><content type="html" xml:base="http://localhost:4000/2018/06/10/python-staticmethod">&lt;blockquote&gt;
+  &lt;p&gt;两个方法的异同。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
+
+&lt;h3 id=&quot;相同点&quot;&gt;相同点：&lt;/h3&gt;
 &lt;p&gt;一般来说，要使用某个类的方法，需要先实例化一个对象再调用方法。
 e.g.:&lt;/p&gt;
 
@@ -478,31 +510,11 @@ class_foo
 foo
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;]" /><category term="python" /><summary type="html">相同点： 一般来说，要使用某个类的方法，需要先实例化一个对象再调用方法。 e.g.:</summary></entry><entry><title type="html">This is Just Another Post</title><link href="http://localhost:4000/2017/03/25/another-post" rel="alternate" type="text/html" title="This is Just Another Post" /><published>2017-03-25T01:30:13+08:00</published><updated>2017-03-25T01:30:13+08:00</updated><id>http://localhost:4000/2017/03/25/another-post</id><content type="html" xml:base="http://localhost:4000/2017/03/25/another-post">&lt;p&gt;I have some text.&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;]" /><category term="python" /><summary type="html">两个方法的异同。</summary></entry><entry><title type="html">Syntax Highlighting Test</title><link href="http://localhost:4000/2017/03/24/syntax-test" rel="alternate" type="text/html" title="Syntax Highlighting Test" /><published>2017-03-24T01:30:13+08:00</published><updated>2017-03-24T01:30:13+08:00</updated><id>http://localhost:4000/2017/03/24/syntax-test</id><content type="html" xml:base="http://localhost:4000/2017/03/24/syntax-test">&lt;blockquote&gt;
+  &lt;p&gt;Jekyll uses Rouge by default for syntax highlighting, here are some tests.&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;I want some &lt;em&gt;italics&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;I want some &lt;strong&gt;bold&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h1 id=&quot;this-is-heading-1&quot;&gt;this is heading 1&lt;/h1&gt;
-
-&lt;h2 id=&quot;this-is-heading-2&quot;&gt;this is heading 2&lt;/h2&gt;
-
-&lt;h3 id=&quot;this-is-heading-3&quot;&gt;this is heading 3&lt;/h3&gt;
-
-&lt;p&gt;you want a list?&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;first&lt;/li&gt;
-  &lt;li&gt;second&lt;/li&gt;
-  &lt;li&gt;third&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;you want an ordered list?&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;whatever&lt;/li&gt;
-  &lt;li&gt;whatever&lt;/li&gt;
-  &lt;li&gt;whatever&lt;/li&gt;
-&lt;/ol&gt;</content><author><name></name></author><category term="test" /><summary type="html">I have some text.</summary></entry><entry><title type="html">Syntax Highlighting Test</title><link href="http://localhost:4000/2017/03/24/syntax-test" rel="alternate" type="text/html" title="Syntax Highlighting Test" /><published>2017-03-24T01:30:13+08:00</published><updated>2017-03-24T01:30:13+08:00</updated><id>http://localhost:4000/2017/03/24/syntax-test</id><content type="html" xml:base="http://localhost:4000/2017/03/24/syntax-test">&lt;p&gt;Jekyll uses Rouge by default for syntax highlighting, here are some tests.&lt;/p&gt;
+&lt;!--more--&gt;
 
 &lt;p&gt;Ruby:&lt;/p&gt;
 
@@ -536,7 +548,11 @@ foo
   &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hi, %s&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Tom&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;/* prints 'Hi, Tom' to STDOUT. */&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><author><name></name></author><category term="test" /><category term="syntax" /><summary type="html">Jekyll uses Rouge by default for syntax highlighting, here are some tests.</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/2017/03/23/welcome-to-jekyll" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2017-03-23T01:30:13+08:00</published><updated>2017-03-23T01:30:13+08:00</updated><id>http://localhost:4000/2017/03/23/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/2017/03/23/welcome-to-jekyll">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+&lt;span class=&quot;cm&quot;&gt;/* prints 'Hi, Tom' to STDOUT. */&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><author><name></name></author><category term="jekyll" /><summary type="html">Jekyll uses Rouge by default for syntax highlighting, here are some tests.</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/2017/03/23/welcome-to-jekyll" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2017-03-23T01:30:13+08:00</published><updated>2017-03-23T01:30:13+08:00</updated><id>http://localhost:4000/2017/03/23/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/2017/03/23/welcome-to-jekyll">&lt;blockquote&gt;
+  &lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
 
 &lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
 
@@ -548,9 +564,11 @@ foo
 &lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="test" /><category term="Test" /><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry><entry><title type="html">Knowledge of Leukemia</title><link href="http://localhost:4000/2016/12/18/leukemia" rel="alternate" type="text/html" title="Knowledge of Leukemia" /><published>2016-12-18T09:37:00+08:00</published><updated>2016-12-18T09:37:00+08:00</updated><id>http://localhost:4000/2016/12/18/leukemia</id><content type="html" xml:base="http://localhost:4000/2016/12/18/leukemia">&lt;div class=&quot;message&quot;&gt;
-在这里汇总一下关于这个病的一些知识和其他信息。要战胜敌人就得充分了解敌人。盼望南哥战胜它，早日康复！
-&lt;/div&gt;
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="jekyll" /><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry><entry><title type="html">Knowledge of Leukemia</title><link href="http://localhost:4000/2016/12/18/leukemia" rel="alternate" type="text/html" title="Knowledge of Leukemia" /><published>2016-12-18T09:37:00+08:00</published><updated>2016-12-18T09:37:00+08:00</updated><id>http://localhost:4000/2016/12/18/leukemia</id><content type="html" xml:base="http://localhost:4000/2016/12/18/leukemia">&lt;blockquote&gt;
+  &lt;p&gt;在这里汇总一下关于这个病的一些知识和其他信息。要战胜敌人就得充分了解敌人。盼望南哥战胜它，早日康复！&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
 
 &lt;h2 id=&quot;resources&quot;&gt;Resources:&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;http://www.bloodjournal.org/content/116/18/3409?sso-checked=true&quot;&gt;How I treat Philadelphia chromosome–positive acute lymphoblastic leukemia&lt;/a&gt;&lt;/p&gt;
@@ -884,9 +902,11 @@ This is an in-depth report on the causes, diagnosis, treatment, and prevention o
       &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Abelson_murine_leukemia_virus&quot;&gt;Abelson murine leukemia virus - Wikipedia&lt;/a&gt; &lt;a href=&quot;#fnref:abelson&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name></name></author><category term="[&quot;Life&quot;]" /><category term="leukemia" /><summary type="html">在这里汇总一下关于这个病的一些知识和其他信息。要战胜敌人就得充分了解敌人。盼望南哥战胜它，早日康复！</summary></entry><entry><title type="html">Masonry</title><link href="http://localhost:4000/2016/12/03/masonry" rel="alternate" type="text/html" title="Masonry" /><published>2016-12-03T21:18:00+08:00</published><updated>2016-12-03T21:18:00+08:00</updated><id>http://localhost:4000/2016/12/03/masonry</id><content type="html" xml:base="http://localhost:4000/2016/12/03/masonry">&lt;div class=&quot;message&quot;&gt;
-Use Masonry to implement autolayout programmatically. Learn how to use it. A detailed note here!
-&lt;/div&gt;
+&lt;/div&gt;</content><author><name></name></author><category term="[&quot;Life&quot;]" /><category term="leukemia" /><summary type="html">在这里汇总一下关于这个病的一些知识和其他信息。要战胜敌人就得充分了解敌人。盼望南哥战胜它，早日康复！</summary></entry><entry><title type="html">Masonry</title><link href="http://localhost:4000/2016/12/03/masonry" rel="alternate" type="text/html" title="Masonry" /><published>2016-12-03T21:18:00+08:00</published><updated>2016-12-03T21:18:00+08:00</updated><id>http://localhost:4000/2016/12/03/masonry</id><content type="html" xml:base="http://localhost:4000/2016/12/03/masonry">&lt;blockquote&gt;
+  &lt;p&gt;Use Masonry to implement autolayout programmatically. Learn how to use it. A detailed note here!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Harness the power of AutoLayout NSLayoutConstraints with a simplified, chainable and expressive syntax. Supports iOS and OSX Auto Layout&lt;sup id=&quot;fnref:masonry&quot;&gt;&lt;a href=&quot;#fn:masonry&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
@@ -896,8 +916,6 @@ Use Masonry to implement autolayout programmatically. Learn how to use it. A det
 
 &lt;h2 id=&quot;why-use-masonry&quot;&gt;Why use Masonry?&lt;/h2&gt;
 &lt;p&gt;Under the hood Auto Layout is a powerful and flexible way of organising and laying out your views. However &lt;strong&gt;creating constraints from code is verbose and not very descriptive&lt;/strong&gt;. Imagine a simple example in which you want to have a view fill its superview but inset by 10 pixels on every side&lt;/p&gt;
-
-&lt;!--more--&gt;
 
 &lt;h2 id=&quot;prepare-to-meet-your-maker&quot;&gt;Prepare to meet your Maker!&lt;/h2&gt;
 &lt;p&gt;Create constraints using MASConstraintMaker:&lt;/p&gt;

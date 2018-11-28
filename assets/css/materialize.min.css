@@ -1823,9 +1823,15 @@ a{
     background-color:#e0e0e0
 }
 blockquote{
+    border-left:5px solid #ee6e73;
+	/* KF 11/28/2018
     margin:20px 0;
     padding-left:1.5rem;
-    border-left:5px solid #ee6e73
+	*/
+    margin:12px 0;
+    padding-left:1.5rem;
+	color:#777777
+
 }
 i{
     line-height:inherit
@@ -3413,7 +3419,10 @@ a{
 }
 html{
     line-height:1.5;
+	/* KF 11/28/2018
     font-family:"Roboto", sans-serif;
+	*/
+    font-family:"Helvetica", sans-serif;
     font-weight:normal;
     color:rgba(0,0,0,0.87)
 }
@@ -3424,7 +3433,10 @@ html{
 }
 @media only screen and (min-width: 992px){
     html{
+		/* KF 11/28/2018
         font-size:14.5px
+		*/
+        font-size:16px
     }
 }
 @media only screen and (min-width: 1200px){
@@ -3628,8 +3640,10 @@ small{
     border-radius:2px
 }
 .card .card-title{
+	/* KF 11/28/2018
     font-size:24px;
-    font-weight:300
+	*/
+    font-size:1.75rem;
 }
 .card .card-title.activator{
     cursor:pointer
@@ -3730,7 +3744,10 @@ small{
     padding:24px
 }
 .card .card-content{
+	/* KF 11/28/2018
     padding:24px;
+	*/
+    padding:24px 24px 12px;
     border-radius:0 0 2px 2px
 }
 .card .card-content p{
@@ -3749,13 +3766,20 @@ small{
     position:relative;
     background-color:inherit;
     border-top:1px solid rgba(160,160,160,0.2);
+	/* KF 11/28/2018 
     padding:16px 24px
+	*/
+    padding:8px 24px 
 }
 .card .card-action:last-child{
     border-radius:0 0 2px 2px
 }
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating){
+	/* KF 11/28/2018
     color:#ffab40;
+	*/
+	color:#bb0000;
+
     margin-right:24px;
     transition:color .3s ease;
     text-transform:uppercase
@@ -4444,7 +4468,10 @@ button.btn-floating{
     display:none;
     border-bottom:1px solid #ddd;
     box-sizing:border-box;
+	/* KF 11/28/2018
     padding:2rem
+	*/
+    padding:1.1rem
 }
 .side-nav .collapsible,.side-nav.fixed .collapsible{
     border:none;
@@ -4531,7 +4558,8 @@ button.btn-floating{
 }
 .chips .chip.selected{
     background-color:#26a69a;
-    color:#fff
+    background-color:#bb0000;
+    color:#fff;
 }
 .chips .input{
     background:none;
@@ -5453,7 +5481,6 @@ input[type=range]:focus::-ms-fill-upper{
 }
 .side-nav li>a{
     display:block;
-    font-weight:500;
 	/* Modified by KF 11/27/2018
     color:rgba(0,0,0,0.87);
     font-size:14px;
@@ -5550,9 +5577,11 @@ input[type=range]:focus::-ms-fill-upper{
 }
 .side-nav .user-view .name,.side-nav .userView .name{
     margin-top:24px;
+	/* KF 11/28/2018 
     font-weight:500;
-	/* Added by KF 11/27/2018 */
+	*/
 	font-size:20px;
+    font-weight:bold;
 
 }
 .side-nav .user-view .email,.side-nav .userView .email{

@@ -11,7 +11,7 @@
     {% for tag in site.tags %}
     {% capture test %}{{tag[0] | slice: 0}}{% endcapture %}
     {% capture testup %}{{tag[0] | slice: 0 | upcase}}{% endcapture %}
-    <h4 id="{{tag[0] | slugify}}{% if test == testup %}_cap{% endif %}">{{tag[0]}}</h4>
+    <h3 id="{{tag[0] | slugify}}{% if test == testup %}_cap{% endif %}">{{tag[0]}}</h3>
     <ul class="tag-post">
       {% for post in tag[1] %}
       <a class="post-title" href="{{site.baseurl}}{{post.url}}" target="_blank">

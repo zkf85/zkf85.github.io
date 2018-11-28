@@ -4,7 +4,9 @@ title: "The Role of 'Rural Resentment' in the Election 2016"
 category: [Thoughts]
 tags: [politics]
 ---
-<div class = "message">There is an obvious phenomenon when I was watching the results popping out with the votes' distribution geographically: most people in urban area supported Hillary while there was a landslide winning in favor of Trump in rural area all over the country. An article stressed this topic and I take a summary here.</div>
+>There is an obvious phenomenon when I was watching the results popping out with the votes' distribution geographically: most people in urban area supported Hillary while there was a landslide winning in favor of Trump in rural area all over the country. An article stressed this topic and I take a summary here.
+
+<!--more-->
 
 ![Trump has better coverage than Verizon](/public/img/20161110-election-map.jpg)
 
@@ -15,7 +17,6 @@ tags: [politics]
 The rural-urban divide persists nationwide. Hillary Clinton led Trump by 26 points in urban areas in a recent poll, also from the Washington Post. But in rural areas, Trump led Clinton by 20 points.
 
 Four years ago, Obama won urban areas by 26 points, according to exit polls, while Romney won rural areas by 20 points.
-<!--more-->
 
 ## Why?
 

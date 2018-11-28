@@ -5,10 +5,10 @@ date: "2016-11-30 14:53:00"
 category: [iOS Development]
 tags: [ios, objective-c, singleton]
 ---
-<div class = "message">
-What is the concept of singleton in iOS development?
-<br>KF 11/30/2016
-</div>
+
+>What is the concept of singleton in iOS development?
+
+<!--more-->
 
 ## What is Singleton
 A singleton object provides a global point of access to the resources of its class. Singletons are used in situations where this single point of control is desirable, such as with classes that offer some general service or resource. You obtain the global instance from a singleton class through a factory method.
@@ -18,7 +18,6 @@ You obtain the global instance from a singleton class through a factory method. 
 
 Singleton classes are an important concept to understand because they exhibit an extremely useful design pattern. This idea is used throughout the iPhone SDK, for example, UIApplication has a method called sharedApplication which when called from anywhere will return the UIApplication instance which relates to the currently running application.[^matt]
 
-<!--more-->
 
 ## How to Implement?[^matt]
 You can implement a singleton class in Objective-C using the following code:

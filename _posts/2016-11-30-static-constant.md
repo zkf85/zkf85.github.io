@@ -5,10 +5,9 @@ date: "2016-11-30 14:42:00"
 category: [iOS Development]
 tags: [ios, objective-c]
 ---
-<div class = "message">
-Static VS. Constant
-<br>KF 11/30/2016
-</div>
+>Static VS. Constant
+
+<!--more-->
 
 A `static` variable means that the object's lifetime is the entire execution of the program and it's value is initialized only once before the program startup. All statics are initialized if you do not explicitly set a value to them.The manner and timing of static initialization is unspecified.
 

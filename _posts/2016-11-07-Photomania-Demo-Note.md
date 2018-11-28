@@ -4,9 +4,10 @@ title: "iOS7 CS193P 13/14 Photomania Demo Note"
 category: iOS Development
 tag: [ios, core data, multitask, uitableview, delegate]
 ---
-<div class = "message">
-This might be the toughest and the biggest demo in this iOS course. Here I put my note collection here as reference for later use. 11/06/2016
-</div>
+
+>This might be the toughest and the biggest demo in this iOS course. Here I put my note collection here as reference for later use. 11/06/2016
+
+<!--more-->
 
 ## Create the Project
 - Create a project with single view as normal.
@@ -18,7 +19,6 @@ Create a database file. Then, add the following two entities into the database:
 	 
 - **Photo**
 - **Photographer**
-<!--more-->
 
 ### 2. Define the Schema [^schema] Visually.
 

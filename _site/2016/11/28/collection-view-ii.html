@@ -28,15 +28,15 @@
 <meta name="generator" content="Jekyll v3.7.3" />
 <meta property="og:title" content="Collection View II - Designing Your Data Source and Delegate" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Continue - Collection View learning notes on reading Apple Guide Document &quot; Collection View Programming Guide for iOS&quot;. KF 11/28/2016" />
-<meta property="og:description" content="Continue - Collection View learning notes on reading Apple Guide Document &quot; Collection View Programming Guide for iOS&quot;. KF 11/28/2016" />
+<meta name="description" content="Continue - Collection View learning notes on reading Apple Guide Document “ Collection View Programming Guide for iOS”." />
+<meta property="og:description" content="Continue - Collection View learning notes on reading Apple Guide Document “ Collection View Programming Guide for iOS”." />
 <link rel="canonical" href="http://localhost:4000/2016/11/28/collection-view-ii" />
 <meta property="og:url" content="http://localhost:4000/2016/11/28/collection-view-ii" />
-<meta property="og:site_name" content="KFZ’s BLOG" />
+<meta property="og:site_name" content="KFZ’s PLAYGROUND" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2016-11-28T14:00:00+08:00" />
 <script type="application/ld+json">
-{"description":"Continue - Collection View learning notes on reading Apple Guide Document &quot; Collection View Programming Guide for iOS&quot;. KF 11/28/2016","@type":"BlogPosting","url":"http://localhost:4000/2016/11/28/collection-view-ii","headline":"Collection View II - Designing Your Data Source and Delegate","dateModified":"2016-11-28T14:00:00+08:00","datePublished":"2016-11-28T14:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2016/11/28/collection-view-ii"},"@context":"http://schema.org"}</script>
+{"description":"Continue - Collection View learning notes on reading Apple Guide Document “ Collection View Programming Guide for iOS”.","@type":"BlogPosting","url":"http://localhost:4000/2016/11/28/collection-view-ii","headline":"Collection View II - Designing Your Data Source and Delegate","dateModified":"2016-11-28T14:00:00+08:00","datePublished":"2016-11-28T14:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2016/11/28/collection-view-ii"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -48,7 +48,7 @@
       <nav class="top-nav ohio-state-scarlet">
         <div class="nav-wrapper">
           <div class="container">
-            <a class="page-title" href="/">KFZ's BLOG</a>
+            <a class="page-title" href="/">KFZ's PLAYGROUND</a>
             <img class="buckeye_leaf" src="/assets/res/buckeye_leaf.png">
           </div>
         </div>
@@ -131,10 +131,11 @@
 <div class="divider"></div>
 <div class="row">
   <div class="col s12">
-    <div class="message">
-Continue - Collection View learning notes on reading Apple Guide Document " Collection View Programming Guide for iOS".
-<br />KF 11/28/2016
-</div>
+    <blockquote>
+  <p>Continue - Collection View learning notes on reading Apple Guide Document “ Collection View Programming Guide for iOS”.</p>
+</blockquote>
+
+<!--more-->
 
 <h1 id="iidesigning-your-data-source-and-delegate">II.Designing Your Data Source and Delegate</h1>
 <p>The <strong>data source</strong> object is the content that your app displays. The only requirement of the data source is that it must be able to provide information that the collection view needs, such as</p>
@@ -144,8 +145,7 @@ Continue - Collection View learning notes on reading Apple Guide Document " Coll
   <li>which views to use when displaying those items.</li>
 </ul>
 
-<p>The <strong>delegate object</strong> is an optional (but recommended) object that manages aspects related to the presentation of and interaction with your content.  Although the delegate’s main job is to manage cell highlighting and selection, it can be extended to provide additional information. For example, the flow layout extends the basic delegate behavior to customize layout metrics, such as the size of cells and the spacing between them.
-<!--more--></p>
+<p>The <strong>delegate object</strong> is an optional (but recommended) object that manages aspects related to the presentation of and interaction with your content.  Although the delegate’s main job is to manage cell highlighting and selection, it can be extended to provide additional information. For example, the flow layout extends the basic delegate behavior to customize layout metrics, such as the size of cells and the spacing between them.</p>
 
 <h2 id="the-data-source-manages-your-content">The Data Source Manages Your Content</h2>
 <p>The data source object is the object responsible for managing the content you are presenting using a collection view. The data source object must conform to the <code class="highlighter-rouge">UICollectionViewDataSource</code> protocol, which defines the basic behavior and methods that you must support. The job of the data source is to provide the collection view with answers to the following questions:</p>
@@ -233,14 +233,14 @@ A collection view typically has <strong>at least one section</strong> and may co
         <div class="row">
           <div class="col s12">
             <img src="/assets/res/logo.png" alt="logo"/>
-            <p class="grey-text text-lighten-4">Material theme based on <a href="http://materializecss.com">Materialize.css</a> for jekyll sites
+            <p class="grey-text text-lighten-4">Theme based on <a href="http://materializecss.com">Materialize.css</a> for jekyll sites.
 </p>
           </div>
         </div>
       </div>
       <div class="footer-copyright">
         <div class="container">
-          &#xA9; 2018 KFZ's BLOG. All rights reserved. Powered by <a href="https://github.com/zkf85">Kefeng</a>.
+          &#xA9; 2018 KFZ's PLAYGROUND. All rights reserved. Powered by <a href="https://github.com/zkf85">Kefeng</a>.
         </div>
       </div>
     </footer>

@@ -4,9 +4,9 @@ title: "Class Renaming Issue"
 category: [iOS Development]
 tag: [ios, objective-c, xcode, technical problem]
 ---
-<div class = "message">
-This is a common issue that anybody using XCode may encounter. It's usually very annoying when you want to change the names of the classes because file names and includes are all related when you do it. Here I gather some correct (should be) way to make it happen. 
-</div>
+>This is a common issue that anybody using XCode may encounter. It's usually very annoying when you want to change the names of the classes because file names and includes are all related when you do it. Here I gather some correct (should be) way to make it happen. 
+
+<!--more-->
 
 ## 1. Change Default View Controller Name
 
@@ -26,7 +26,6 @@ I tried the steps above and it works fine.
 According to personal experience, you'd better change your default controller name right after you create your new  application. As more files and classes are added, there might be more problems emerge.
 
 Oh, by the way, DON'T FORGET to change your controller class name to the new one in the identity inspector in storyboard.
-<!--more-->
 
 ## 2. Change Default AppDelegate Name
 

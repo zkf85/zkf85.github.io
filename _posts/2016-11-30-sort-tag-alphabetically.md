@@ -5,10 +5,10 @@ date: "2016-11-30 20:32:00"
 category: [Web Development]
 tags: [jekyll, html, css, liquid, tag, sort]
 ---
-<div class = "message">
-Unordered tags make a Jekyll tag list look sloppy, so if you care about the details, you likely want your tag list to be alphabetized.
-<br>KF 11/30/2016
-</div>
+
+>Unordered tags make a Jekyll tag list look sloppy, so if you care about the details, you likely want your tag list to be alphabetized.
+
+<!--more-->
 
 ## Sort Tags A ~ Z
 
@@ -19,7 +19,6 @@ Unordered tags make a Jekyll tag list look sloppy, so if you care about the deta
 
 Based on the notes from [Michael Lanyon](https://blog.lanyonm.org), I modified my `tags.html` to the version below:
 
-<!--more-->
 
 {% raw %}
 ```html

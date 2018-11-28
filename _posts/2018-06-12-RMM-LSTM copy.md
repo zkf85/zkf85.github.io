@@ -2,11 +2,14 @@
 layout: post
 title: "RNN LSTM - Notes"
 date: "2018-06-12 14:00:00"
-category: [Machine Learning, Deep Learning]
+category: [Artifitial Intelligence, Notes]
 tag: [rnn, lstm, machine learning, deep learning]
 ---
 
-## *"Deep Learning"* Reading note
+
+> *"Deep Learning"* Reading note
+
+<!--more-->
 
 ### 10. Sequence Modeling: Recurrent and Recursive nets
 

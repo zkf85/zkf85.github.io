@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title: "Get Started with THE Docker"
 date: "2018-11-28"
 category: [Operating System]

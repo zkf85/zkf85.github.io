@@ -16,14 +16,20 @@ main
   // Image size - KF 10/09/2018
   img
     display: block
-    margin-left: auto
-    margin-right: auto
+    // KF 11/30/2018
+    //margin-left: auto
+    //margin-right: auto
+    margin: 8px auto 8px auto
+    //margin: auto
     max-width: 100%
+    max-height: 360px 
+    text-align: center
 
   // Font - KF 10/09/2018
   /* Font stack */
   font-family: $font-sans
-  font-size: $font-factor*1.15rem
+  //font-size: $font-factor*1.15rem
+  font-size: 16px
 
   // Heading 1 ~ 6 - KF 10/08/2018
   h1, h2, h3, h4, h5, h6
@@ -34,7 +40,9 @@ main
     line-height: 2
   
   h2  
-    margin: 2em 0 1em 0
+    // KF 11/29/2018
+    //margin: 2em 0 1em 0
+    margin: 48px 0 24px
     font-size: $font-factor*1.5rem
   
   h3  
@@ -50,10 +58,14 @@ main
       margin: 10px 0
 
     &.highlighter-rouge
-      margin: 1em 20px
+      // KF 11/29/2018
+      //margin: 1em 20px
+      margin: 16px 0
 
       pre
-        padding: 5px
+        // KF 11/29/2018
+        //padding: 5px
+        padding: 8px
 
   figure
     &.highlight

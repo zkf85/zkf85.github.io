@@ -7,9 +7,10 @@ tag: [python]
 ---
 
 > Python 中的 `None` 是什么？
-> - [baicaiye专栏](https://blog.csdn.net/baicaiye/article/details/72922197)
 
 <!--more-->
+- [baicaiye专栏](https://blog.csdn.net/baicaiye/article/details/72922197)
+- [Python NoneType - python.org](https://docs.python.org/3/c-api/none.html)
 
 None是一个特殊的常量。
 None和False不同。
@@ -32,6 +33,5 @@ The Python None object, denoting lack of value. This object has no methods. It n
 Properly handle returning Py_None from within a C function (that is, increment the reference count of None and return it.)
 
 
-- [Python NoneType - python.org](https://docs.python.org/3/c-api/none.html)
 
 <br>***KF*** 

@@ -1,13 +1,252 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-11-29T09:13:33+08:00</updated><id>http://localhost:4000/</id><title type="html">KFZ’s PLAYGROUND</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-02T11:10:51+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KFZ’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
 </subtitle><entry><title type="html">Get Started with THE Docker</title><link href="http://localhost:4000/2018/11/28/docker-debut" rel="alternate" type="text/html" title="Get Started with THE Docker" /><published>2018-11-28T00:00:00+08:00</published><updated>2018-11-28T00:00:00+08:00</updated><id>http://localhost:4000/2018/11/28/docker-debut</id><content type="html" xml:base="http://localhost:4000/2018/11/28/docker-debut">&lt;blockquote&gt;
   &lt;p&gt;The famous “Docker” is &lt;strong&gt;&lt;em&gt;a tool that can package an application and tis dependencies in a virtual container that can run on any Linux server&lt;/em&gt;&lt;/strong&gt;. After getting my keras model, it’s a good chance to try docker to deploy a deep learning model as a API service. In this article, I’d like to write down all the important procedures and details about how to make this service work with docker.”&lt;/p&gt;
 &lt;/blockquote&gt;
 
+&lt;p&gt;&lt;img src=&quot;/assets/res/laurel-docker-containers.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
 &lt;p&gt;&lt;!--more--&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;1-description-of-my-job&quot;&gt;1. Description of my job&lt;/h2&gt;
+&lt;h2 id=&quot;1-background&quot;&gt;1. Background&lt;/h2&gt;
+&lt;h3 id=&quot;11-description-of-my-job&quot;&gt;1.1. Description of my job&lt;/h3&gt;
+&lt;p&gt;After spending more than 200 credits on google cloud GPU for training a &lt;strong&gt;Plant Disease Recoginition (PDR)&lt;/strong&gt; model with Keras, I’ve got a decent model that reached more than 85% accuracy. The model is ready and the next thing to do is to deploy the model for inference as a service.&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Operating System&quot;]" /><category term="docker" /><summary type="html">The famous “Docker” is a tool that can package an application and tis dependencies in a virtual container that can run on any Linux server. After getting my keras model, it’s a good chance to try docker to deploy a deep learning model as a API service. In this article, I’d like to write down all the important procedures and details about how to make this service work with docker.”</summary></entry><entry><title type="html">MIT 6.006 Algorithms Lecture 1 Notes</title><link href="http://localhost:4000/2018/11/01/MIT-6006-Lecture1" rel="alternate" type="text/html" title="MIT 6.006 Algorithms Lecture 1 Notes" /><published>2018-11-01T12:00:00+08:00</published><updated>2018-11-01T12:00:00+08:00</updated><id>http://localhost:4000/2018/11/01/MIT-6006-Lecture1</id><content type="html" xml:base="http://localhost:4000/2018/11/01/MIT-6006-Lecture1">&lt;blockquote&gt;
+&lt;p&gt;The main objective is to build a web service API which responds with a inference result as a json file after receiving a request with an image in it.&lt;/p&gt;
+
+&lt;h3 id=&quot;12-what-we-have&quot;&gt;1.2. What we have?&lt;/h3&gt;
+&lt;p&gt;At the moment, we have a well-built keras model, trained with &lt;code class=&quot;highlighter-rouge&quot;&gt;keras==2.2.4&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;tensorflow==1.11.0&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;python==3.5.2&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;13-what-strategy-we-choose&quot;&gt;1.3. What strategy we choose?&lt;/h3&gt;
+&lt;p&gt;Basically, it’s &lt;strong&gt;“Flask + uWSGI + NGINX”&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://flask.pocoo.org&quot;&gt;Flask&lt;/a&gt; is a good python microframework for web development. It is pretty easy to make an improvised API with Flask. But it’s not recommended to use it to build a formal production.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://uwsgi-docs-additions.readthedocs.io/en/latest/&quot;&gt;uWSGI&lt;/a&gt; aims at developing a full stack for building hosting services. uWSGI is implemented as a linker between Nginx(does not support python) and Flask(written in python).&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.nginx.com/resources/wiki/&quot;&gt;NGINX&lt;/a&gt;  ( &lt;a href=&quot;https://en.wikipedia.org/wiki/Nginx&quot;&gt;/ˌɛndʒɪnˈɛks/ EN-jin-EKS&lt;/a&gt;) is a free, open-source, high-performance HTTP server and reverse proxy.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-check-out-docker&quot;&gt;2. Check out Docker!&lt;/h2&gt;
+&lt;p&gt;Of course we can install and configure the “&lt;em&gt;Flask/uWSGI/NGINX (FUN)&lt;/em&gt;” combo step by step, but it’s trivial and with bunch of pitfalls.&lt;/p&gt;
+
+&lt;p&gt;Docker is the perfect choice to make such things much easier!&lt;/p&gt;
+
+&lt;h3 id=&quot;21-basic-idea-of-using-docker&quot;&gt;2.1. Basic idea of using Docker&lt;/h3&gt;
+&lt;p&gt;The basic idea of using Docker is to avoid installing and configuring environment by yourself. Instead, you can download a ready-to-use &lt;strong&gt;&lt;em&gt;image&lt;/em&gt;&lt;/strong&gt;, which is carefully configured and saved by other people, and run it as a &lt;strong&gt;&lt;em&gt;container&lt;/em&gt;&lt;/strong&gt;, in which you can focus on you own stuff without worrying about whether the environment trivials at all.&lt;/p&gt;
+
+&lt;h3 id=&quot;22-installuninstall-docker&quot;&gt;2.2. Install/Uninstall Docker&lt;/h3&gt;
+&lt;p&gt;Docker is available in two editions:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Community Edition (CE)&lt;/li&gt;
+  &lt;li&gt;Enterprise Edition (EE)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The CE edition is suitable for individual developers and it’s free.&lt;/p&gt;
+
+&lt;p&gt;To get Docker CE for Ubuntu, check the instruction &lt;a href=&quot;https://docs.docker.com/install/linux/docker-ce/ubuntu/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;221-prerequisites&quot;&gt;2.2.1. Prerequisites&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;Uninstall old versions:
+    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get remove docker docker-engine docker.io
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Update the &lt;code class=&quot;highlighter-rouge&quot;&gt;apt&lt;/code&gt; package index:
+    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get update
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Install packages to allow apt to use a repository over HTTPS:
+    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get install &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+ apt-transport-https &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+ ca-certificates &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+ curl &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+ software-properties-common
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Add Docker’s official GPG key:&lt;/p&gt;
+
+    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-fsSL&lt;/span&gt; https://download.docker.com/linux/ubuntu/gpg | &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-key add -
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;Verify that you now have the key with the fingerprint &lt;code class=&quot;highlighter-rouge&quot;&gt;9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88&lt;/code&gt;, by searching for the last 8 characters of the fingerprint.&lt;/p&gt;
+
+    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-key fingerprint 0EBFCD88
+
+ pub   4096R/0EBFCD88 2017-02-22
+       Key fingerprint &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88
+ uid                  Docker Release &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;CE deb&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &amp;lt;docker@docker.com&amp;gt;
+ sub   4096R/F273FCD8 2017-02-22
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Use the following command to set up the stable repository. ( For x86_64/amd64)
+    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;add-apt-repository &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;lsb_release &lt;span class=&quot;nt&quot;&gt;-cs&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;
+    stable&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;222-install-docker-ce-using-repository&quot;&gt;2.2.2. Install Docker CE (using repository)&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Update the &lt;code class=&quot;highlighter-rouge&quot;&gt;apt&lt;/code&gt; package index:&lt;/p&gt;
+
+    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get update
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Install packages to allow apt to use a repository over HTTPS:&lt;/p&gt;
+
+    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get install &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+     apt-transport-https &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+     ca-certificates &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+     curl &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+     software-properties-common
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Install the &lt;em&gt;latest&lt;/em&gt; version of Docker CE, or go to the next step to install a specific version:&lt;/p&gt;
+
+    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get install docker-ce
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Verify that Docker CE is installed correctly by running the hello-world image.&lt;/p&gt;
+
+    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker run hello-world
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;223-uninstall-docker-ce&quot;&gt;2.2.3. Uninstall Docker CE&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Uninstall the Docker CE package:&lt;/p&gt;
+
+    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get purge docker-ce
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Images, containers, volumes, or customized configuration files on your host are not automatically removed. To delete all images, containers, and volumes:&lt;/p&gt;
+
+    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;rm &lt;span class=&quot;nt&quot;&gt;-rf&lt;/span&gt; /var/lib/docker
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;223-other-installation-methods&quot;&gt;2.2.3. Other installation methods&lt;/h4&gt;
+&lt;p&gt;You can also install Docker CE from &lt;em&gt;a package&lt;/em&gt; or &lt;em&gt;using the convenience script&lt;/em&gt;. Again, for details check &lt;a href=&quot;https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-using-the-repository&quot;&gt;here&lt;/a&gt;!&lt;/p&gt;
+
+&lt;h3 id=&quot;23-docker-basics&quot;&gt;2.3. Docker basics&lt;/h3&gt;
+&lt;p&gt;Docker official site provides a very nice set of &lt;a href=&quot;https://docs.docker.com/get-started/&quot;&gt;Tutorials&lt;/a&gt;. It’s highly recommended to go through the first couple of sections of the tutorial. Here I’d like to keep a record of the very basic steps and commands to get started with Docker.&lt;/p&gt;
+
+&lt;p&gt;The best and complete way to learn Docker is to go through this &lt;a href=&quot;https://docs.docker.com/get-started/&quot;&gt;Get Started from Docker’s Official&lt;/a&gt;. Here I just take a record of the core concepts and commands for myself.&lt;/p&gt;
+
+&lt;h4 id=&quot;231-docker-concepts&quot;&gt;2.3.1. Docker Concepts&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Image:&lt;/p&gt;
+
+    &lt;p&gt;An &lt;strong&gt;image&lt;/strong&gt; is an executable package that includes everything needed to run an application–the code, a runtime, libraries, environment variables, and configuration files.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Container:&lt;/p&gt;
+
+    &lt;p&gt;A &lt;strong&gt;container&lt;/strong&gt; is a runtime instance of an image–what the image becomes in memory when executed (that is, an image with state, or a user process). You can see a list of your running containers with the command, &lt;code class=&quot;highlighter-rouge&quot;&gt;docker ps&lt;/code&gt;, just as you would in Linux.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Container vs. Virtual Machines:&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A &lt;strong&gt;container&lt;/strong&gt; runs natively on Linux and shares the kernel of the host machine with other containers. It runs a discrete process, taking no more memory than any other executable, making it lightweight.&lt;/p&gt;
+
+&lt;p&gt;By contrast, a &lt;strong&gt;virtual machine (VM)&lt;/strong&gt; runs a full-blown “guest” operating system with virtual access to host resources through a hypervisor. In general, VMs provide an environment with more resources than most applications need.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+    &lt;img src=&quot;/assets/res/docker-container.png&quot; /&gt;
+    &lt;/td&gt;
+
+    &lt;td&gt;
+    &lt;img src=&quot;/assets/res/docker-VM.png&quot; /&gt;
+	&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&quot;232-cheat-sheet-1---check-info&quot;&gt;2.3.2. &lt;strong&gt;Cheat sheet 1 - Check info&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;## List Docker CLI commands&lt;/span&gt;
+docker
+docker container &lt;span class=&quot;nt&quot;&gt;--help&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;## Display Docker version and info&lt;/span&gt;
+docker &lt;span class=&quot;nt&quot;&gt;--version&lt;/span&gt;
+docker version
+docker info
+
+&lt;span class=&quot;c&quot;&gt;## Execute Docker image&lt;/span&gt;
+docker run hello-world
+
+&lt;span class=&quot;c&quot;&gt;## List Docker images&lt;/span&gt;
+docker image &lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;## List Docker containers (running, all, all in quiet mode)&lt;/span&gt;
+docker container &lt;span class=&quot;nb&quot;&gt;ls
+&lt;/span&gt;docker container &lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--all&lt;/span&gt;
+docker container &lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-aq&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;233-cheat-sheet-2---check-info&quot;&gt;2.3.3. &lt;strong&gt;Cheat sheet 2 - Check info&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;After &lt;code class=&quot;highlighter-rouge&quot;&gt;Dockerfile&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;app.py&lt;/code&gt; (optionally &lt;code class=&quot;highlighter-rouge&quot;&gt;requirements&lt;/code&gt;) are ready:&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+docker build &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; friendlyhello &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# Create image using this directory's Dockerfile&lt;/span&gt;
+docker run &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 4000:80 friendlyhello  &lt;span class=&quot;c&quot;&gt;# Run &quot;friendlyname&quot; mapping port 4000 to 80&lt;/span&gt;
+docker run &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 4000:80 friendlyhello         &lt;span class=&quot;c&quot;&gt;# Same thing, but in detached mode&lt;/span&gt;
+docker container &lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;                                &lt;span class=&quot;c&quot;&gt;# List all running containers&lt;/span&gt;
+docker container &lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt;             &lt;span class=&quot;c&quot;&gt;# List all containers, even those not running&lt;/span&gt;
+docker container stop &amp;lt;&lt;span class=&quot;nb&quot;&gt;hash&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;           &lt;span class=&quot;c&quot;&gt;# Gracefully stop the specified container&lt;/span&gt;
+docker container &lt;span class=&quot;nb&quot;&gt;kill&lt;/span&gt; &amp;lt;&lt;span class=&quot;nb&quot;&gt;hash&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;         &lt;span class=&quot;c&quot;&gt;# Force shutdown of the specified container&lt;/span&gt;
+docker container rm &amp;lt;&lt;span class=&quot;nb&quot;&gt;hash&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;        &lt;span class=&quot;c&quot;&gt;# Remove specified container from this machine&lt;/span&gt;
+docker container rm &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;docker container &lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-q&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;         &lt;span class=&quot;c&quot;&gt;# Remove all containers&lt;/span&gt;
+docker image &lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt;                             &lt;span class=&quot;c&quot;&gt;# List all images on this machine&lt;/span&gt;
+docker image rm &amp;lt;image id&amp;gt;            &lt;span class=&quot;c&quot;&gt;# Remove specified image from this machine&lt;/span&gt;
+docker image rm &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;docker image &lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-q&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# Remove all images from this machine&lt;/span&gt;
+docker login             &lt;span class=&quot;c&quot;&gt;# Log in this CLI session using your Docker credentials&lt;/span&gt;
+docker tag &amp;lt;image&amp;gt; username/repository:tag  &lt;span class=&quot;c&quot;&gt;# Tag &amp;lt;image&amp;gt; for upload to registry&lt;/span&gt;
+docker push username/repository:tag            &lt;span class=&quot;c&quot;&gt;# Upload tagged image to registry&lt;/span&gt;
+docker run username/repository:tag                   &lt;span class=&quot;c&quot;&gt;# Run image from a registry&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;233-cheat-sheet-3---services&quot;&gt;2.3.3. &lt;strong&gt;Cheat sheet 3 - Services&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+docker stack &lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;                                            &lt;span class=&quot;c&quot;&gt;# List stacks or apps&lt;/span&gt;
+docker stack deploy &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; &amp;lt;composefile&amp;gt; &amp;lt;appname&amp;gt;  &lt;span class=&quot;c&quot;&gt;# Run the specified Compose file&lt;/span&gt;
+docker service &lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;                 &lt;span class=&quot;c&quot;&gt;# List running services associated with an app&lt;/span&gt;
+docker service ps &amp;lt;service&amp;gt;                  &lt;span class=&quot;c&quot;&gt;# List tasks associated with an app&lt;/span&gt;
+docker inspect &amp;lt;task or container&amp;gt;                   &lt;span class=&quot;c&quot;&gt;# Inspect task or container&lt;/span&gt;
+docker container &lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-q&lt;/span&gt;                                      &lt;span class=&quot;c&quot;&gt;# List container IDs&lt;/span&gt;
+docker stack rm &amp;lt;appname&amp;gt;                             &lt;span class=&quot;c&quot;&gt;# Tear down an application&lt;/span&gt;
+docker swarm leave &lt;span class=&quot;nt&quot;&gt;--force&lt;/span&gt;      &lt;span class=&quot;c&quot;&gt;# Take down a single node swarm from the manager&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;3-flask--uwsgi--nginx-with-docker-setup-for-my-work&quot;&gt;3. &lt;strong&gt;Flask + uWSGI + NGINX&lt;/strong&gt; with docker setup for my work&lt;/h2&gt;
+
+&lt;p&gt;Check out &lt;a href=&quot;https://github.com/tiangolo/uwsgi-nginx-flask-docker&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;tiangolo/uwsgi-nginx-flask-docker&lt;/code&gt;&lt;/a&gt; to find and download a suitable version of &lt;code class=&quot;highlighter-rouge&quot;&gt;Dockerfile&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Follow the instructions in the link above to set up the docker.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;To Be continued ~&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Operating System&quot;]" /><category term="docker" /><summary type="html">The famous “Docker” is a tool that can package an application and tis dependencies in a virtual container that can run on any Linux server. After getting my keras model, it’s a good chance to try docker to deploy a deep learning model as a API service. In this article, I’d like to write down all the important procedures and details about how to make this service work with docker.”</summary></entry><entry><title type="html">MIT 6.006 Algorithms Lecture 1 Notes</title><link href="http://localhost:4000/2018/11/01/MIT-6006-Lecture1" rel="alternate" type="text/html" title="MIT 6.006 Algorithms Lecture 1 Notes" /><published>2018-11-01T12:00:00+08:00</published><updated>2018-11-01T12:00:00+08:00</updated><id>http://localhost:4000/2018/11/01/MIT-6006-Lecture1</id><content type="html" xml:base="http://localhost:4000/2018/11/01/MIT-6006-Lecture1">&lt;blockquote&gt;
   &lt;p&gt;The starting note of the MIT 6.006 Algorithm course.&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -289,12 +528,13 @@ gsutil rm &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; gs://my-awesome-bucke
 
 &lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Deep Learning&quot;]" /><category term="google cloud" /><category term="deep learning" /><summary type="html">After experiencing google cloud for couple of week, I’d like to write something down here. On the one hand, there’re lots of tips, necessary knowledge and pitfalls to remember and check. One the other hand, just cannot resist to complain about this giant and complicated service system.</summary></entry><entry><title type="html">Python None</title><link href="http://localhost:4000/2018/06/21/python-None" rel="alternate" type="text/html" title="Python None" /><published>2018-06-21T14:00:00+08:00</published><updated>2018-06-21T14:00:00+08:00</updated><id>http://localhost:4000/2018/06/21/python-None</id><content type="html" xml:base="http://localhost:4000/2018/06/21/python-None">&lt;blockquote&gt;
   &lt;p&gt;Python 中的 &lt;code class=&quot;highlighter-rouge&quot;&gt;None&lt;/code&gt; 是什么？&lt;/p&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/baicaiye/article/details/72922197&quot;&gt;baicaiye专栏&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
 &lt;/blockquote&gt;
 
 &lt;!--more--&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/baicaiye/article/details/72922197&quot;&gt;baicaiye专栏&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.python.org/3/c-api/none.html&quot;&gt;Python NoneType - python.org&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;None是一个特殊的常量。
 None和False不同。
@@ -316,11 +556,7 @@ None有自己的数据类型NoneType。
 
 &lt;p&gt;Properly handle returning Py_None from within a C function (that is, increment the reference count of None and return it.)&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://docs.python.org/3/c-api/none.html&quot;&gt;Python NoneType - python.org&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;, &quot;Notes&quot;]" /><category term="python" /><summary type="html">Python 中的 None 是什么？ baicaiye专栏</summary></entry><entry><title type="html">RNN LSTM - Notes</title><link href="http://localhost:4000/2018/06/12/RMM-LSTM-copy" rel="alternate" type="text/html" title="RNN LSTM - Notes" /><published>2018-06-12T14:00:00+08:00</published><updated>2018-06-12T14:00:00+08:00</updated><id>http://localhost:4000/2018/06/12/RMM-LSTM%20copy</id><content type="html" xml:base="http://localhost:4000/2018/06/12/RMM-LSTM-copy">&lt;blockquote&gt;
+&lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;, &quot;Notes&quot;]" /><category term="python" /><summary type="html">Python 中的 None 是什么？</summary></entry><entry><title type="html">RNN LSTM - Notes</title><link href="http://localhost:4000/2018/06/12/RMM-LSTM-copy" rel="alternate" type="text/html" title="RNN LSTM - Notes" /><published>2018-06-12T14:00:00+08:00</published><updated>2018-06-12T14:00:00+08:00</updated><id>http://localhost:4000/2018/06/12/RMM-LSTM%20copy</id><content type="html" xml:base="http://localhost:4000/2018/06/12/RMM-LSTM-copy">&lt;blockquote&gt;
   &lt;p&gt;&lt;em&gt;“Deep Learning”&lt;/em&gt; Reading note&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -434,121 +670,7 @@ Figure 10.3 (p.369) or say equation 10.8 (p. 370) defines forward propagation in
   &lt;p&gt;The Loss Function:&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Artifitial Intelligence&quot;, &quot;Notes&quot;]" /><category term="rnn" /><category term="lstm" /><category term="machine learning" /><category term="deep learning" /><summary type="html">“Deep Learning” Reading note</summary></entry><entry><title type="html">@staticmethod和@classmethod的作用与区别</title><link href="http://localhost:4000/2018/06/10/python-staticmethod" rel="alternate" type="text/html" title="@staticmethod和@classmethod的作用与区别" /><published>2018-06-10T15:24:00+08:00</published><updated>2018-06-10T15:24:00+08:00</updated><id>http://localhost:4000/2018/06/10/python-staticmethod</id><content type="html" xml:base="http://localhost:4000/2018/06/10/python-staticmethod">&lt;blockquote&gt;
-  &lt;p&gt;两个方法的异同。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;!--more--&gt;
-
-&lt;h3 id=&quot;相同点&quot;&gt;相同点：&lt;/h3&gt;
-&lt;p&gt;一般来说，要使用某个类的方法，需要先实例化一个对象再调用方法。
-e.g.:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;bar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;  
-        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'foo'&lt;/span&gt; 
-	&lt;span class=&quot;nd&quot;&gt;@staticmethod&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;static_foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-		&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;static_foo&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-		
-	&lt;span class=&quot;nd&quot;&gt;@classmethod&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;class_foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-		&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;class_foo&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;而使用&lt;code class=&quot;highlighter-rouge&quot;&gt;@staticmethod&lt;/code&gt;或&lt;code class=&quot;highlighter-rouge&quot;&gt;@classmethod&lt;/code&gt;，就可以不需要实例化，直接&lt;strong&gt;类名.方法名()&lt;/strong&gt;来调用。e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;A.static_foo&lt;/code&gt; 或者 &lt;code class=&quot;highlighter-rouge&quot;&gt;A.class_foo&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;这有利于组织代码，把某些应该属于某个类的函数给放到那个类里去，同时有利于命名空间的整洁。&lt;/p&gt;
-
-&lt;h3 id=&quot;不同点&quot;&gt;不同点：&lt;/h3&gt;
-
-&lt;p&gt;既然@staticmethod和@classmethod都可以直接类名.方法名()来调用，那他们有什么区别呢&lt;/p&gt;
-
-&lt;p&gt;从它们的使用上来看,&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;@staticmethod&lt;strong&gt;不需要&lt;/strong&gt;表示自身对象的self和自身类的cls&lt;strong&gt;参数&lt;/strong&gt;，就跟使用函数一样。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;@classmethod也不需要self参数，但&lt;strong&gt;第一个参数&lt;/strong&gt;需要是表示自身类的cls参数。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;如果在@staticmethod中要调用到这个类的一些属性方法，只能直接类名.属性名或类名.方法名, e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;A.bar&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;而@classmethod因为持有cls参数，可以来调用类的属性，类的方法，实例化对象等，避免硬编码, e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;cls.bar&lt;/code&gt;以及&lt;code class=&quot;highlighter-rouge&quot;&gt;cls().foo()&lt;/code&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;测试代码&quot;&gt;测试代码&lt;/h4&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;  
-    &lt;span class=&quot;n&quot;&gt;bar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;  
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;  
-        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;oo&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
- 
-    &lt;span class=&quot;nd&quot;&gt;@staticmethod&lt;/span&gt;  
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;static_foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;  
-        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;static_foo&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
- 
-    &lt;span class=&quot;nd&quot;&gt;@classmethod&lt;/span&gt;  
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;class_foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;  
-        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;class_foo&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cls&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;cls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  
-  
-&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;static_foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  
-&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;class_foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;输出&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;static_foo
-1
-class_foo
-1
-foo
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;]" /><category term="python" /><summary type="html">两个方法的异同。</summary></entry><entry><title type="html">Syntax Highlighting Test</title><link href="http://localhost:4000/2017/03/24/syntax-test" rel="alternate" type="text/html" title="Syntax Highlighting Test" /><published>2017-03-24T01:30:13+08:00</published><updated>2017-03-24T01:30:13+08:00</updated><id>http://localhost:4000/2017/03/24/syntax-test</id><content type="html" xml:base="http://localhost:4000/2017/03/24/syntax-test">&lt;blockquote&gt;
-  &lt;p&gt;Jekyll uses Rouge by default for syntax highlighting, here are some tests.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;Ruby:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Python with line numbers:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hi, {}&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;C with line numbers:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hi, %s&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Tom&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;/* prints 'Hi, Tom' to STDOUT. */&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><author><name></name></author><category term="jekyll" /><summary type="html">Jekyll uses Rouge by default for syntax highlighting, here are some tests.</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/2017/03/23/welcome-to-jekyll" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2017-03-23T01:30:13+08:00</published><updated>2017-03-23T01:30:13+08:00</updated><id>http://localhost:4000/2017/03/23/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/2017/03/23/welcome-to-jekyll">&lt;blockquote&gt;
+&lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Artifitial Intelligence&quot;, &quot;Notes&quot;]" /><category term="rnn" /><category term="lstm" /><category term="machine learning" /><category term="deep learning" /><summary type="html">“Deep Learning” Reading note</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/2017/03/23/welcome-to-jekyll" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2017-03-23T01:30:13+08:00</published><updated>2017-03-23T01:30:13+08:00</updated><id>http://localhost:4000/2017/03/23/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/2017/03/23/welcome-to-jekyll">&lt;blockquote&gt;
   &lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -1070,4 +1192,146 @@ make.left.greaterThanOrEqualTo(label.mas_left);
       &lt;p&gt;&lt;a href=&quot;http://adad184.com/2014/09/28/use-masonry-to-quick-solve-autolayout/&quot;&gt;Masonry介绍与使用实践(快速上手Autolayout) - 里脊串&lt;/a&gt; &lt;a href=&quot;#fnref:lijichuan&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name></name></author><category term="[&quot;iOS Development&quot;]" /><category term="ios" /><category term="objective-c" /><category term="masonry" /><category term="autolayout" /><summary type="html">Use Masonry to implement autolayout programmatically. Learn how to use it. A detailed note here!</summary></entry></feed>
+&lt;/div&gt;</content><author><name></name></author><category term="[&quot;iOS Development&quot;]" /><category term="ios" /><category term="objective-c" /><category term="masonry" /><category term="autolayout" /><summary type="html">Use Masonry to implement autolayout programmatically. Learn how to use it. A detailed note here!</summary></entry><entry><title type="html">Should I Use Storyboards or Not?</title><link href="http://localhost:4000/2016/12/03/storyboard-or-not" rel="alternate" type="text/html" title="Should I Use Storyboards or Not?" /><published>2016-12-03T20:08:00+08:00</published><updated>2016-12-03T20:08:00+08:00</updated><id>http://localhost:4000/2016/12/03/storyboard-or-not</id><content type="html" xml:base="http://localhost:4000/2016/12/03/storyboard-or-not">&lt;blockquote&gt;
+  &lt;p&gt;Storyboards are a quick and easy way to start building a simple app. But should you use Storyboards on more complex apps? Or on a team? What are the pros and cons of using them? Do experienced iOS developers use them? Are any mainstream apps built with Storyboards?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;i-what-are-the-pros-and-cons-of-using-storyboards&quot;&gt;I. What are the pros and cons of using Storyboards?&lt;sup id=&quot;fnref:roadfire&quot;&gt;&lt;a href=&quot;#fn:roadfire&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+
+&lt;h3 id=&quot;pros&quot;&gt;Pros:&lt;/h3&gt;
+&lt;p&gt;The biggest benefit of using Storyboards (especially over nibs/xibs) is that &lt;strong&gt;you can see how the screens in your app are related&lt;/strong&gt;. When you’re just starting on an existing project (or coming back to an old one), Storyboards give you an easy way to follow the flow through the app and zoom out to get a high level overview of what the app does.&lt;/p&gt;
+
+&lt;p&gt;Another benefit to using Storyboards (over creating views programmatically) is that &lt;strong&gt;you get to see what your view will look like at runtime without having to run your app&lt;/strong&gt;. You can quickly make a change in Interface Builder and immediately see what it’ll look like – without waiting for Xcode to compile and run. (Nibs/xibs get this benefit, too.)&lt;/p&gt;
+
+&lt;p&gt;And a third benefit is that &lt;strong&gt;you can create static table views in Storyboards&lt;/strong&gt;. So if you have a Settings screen, for example, with tappable rows of static text, Storyboards allow you to quickly and easily create them – no code required.&lt;/p&gt;
+
+&lt;h3 id=&quot;cons&quot;&gt;Cons:&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;On teams&lt;/strong&gt;, Storyboards are tricky to use for two main reasons:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Merge conflicts are painful&lt;/strong&gt;: When two people edit the same Storyboard file at the same time and cause a merge conflict, it’s tricky to sort out how to merge the changes. Part of this is because of the format of the Storyboard file (it’s XML) and part of it is because Xcode rearranges elements and makes changes in the Storyboard when you open it – even if you don’t touch anything. And when you do touch something, it’s that much worse.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Code reviews are tricky&lt;/strong&gt;: If you conduct code reviews on your team, reviewing changes to a Storyboard file is… difficult. Again, the format is XML with lots of hard-to-understand attributes and elements, so reviewing a diff and making constructive comments is just not easy.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And those are just the cons to working on a team. Even if you’re working &lt;strong&gt;on your ow&lt;/strong&gt;n, there are some cons to using Storyboards:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Confusion when they become complicated&lt;/strong&gt;: If you have a relatively large app and you keep adding new view controllers, your Storyboard will eventually become complicated. Those pretty arrows that connect one view controller to the next start overlapping each other or getting hidden under view controllers – and it’s really hard to see what’s happening in the app.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Xcode grinds to a halt when opening a large Storyboard&lt;/strong&gt;: Again, if you’re working on a relatively large app, Storyboards can be difficult since it takes Xcode a while to load them into the editor. I’m working on a project with about 30 view controllers in a Storyboard, and it takes multiple seconds (around 4-5) to load the Storyboard whenever I want to edit it. (And yes, my MBP is fast.)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Whenever I’ve worked on a team, we’ve agreed to &lt;strong&gt;create separate Storyboards for different flows to avoid the confusion and performance issues of massive Storyboards.&lt;/strong&gt; And we’ve always been careful to communicate about which Storyboard we’re working on before we start to make changes so we can avoid having to deal with messy merge conflicts. The code review issue exists, and will continue to exist, until Apple changes the format of the XML in the Storyboard file.&lt;/p&gt;
+
+&lt;h2 id=&quot;ii-why-im-abandoning-storyboards&quot;&gt;II. Why I’m Abandoning Storyboards&lt;sup id=&quot;fnref:gopalkri&quot;&gt;&lt;a href=&quot;#fn:gopalkri&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+&lt;p&gt;Here’s a list of reasons as to why I’m abandoning the storyboard:&lt;/p&gt;
+
+&lt;h3 id=&quot;1-diffs&quot;&gt;1. Diffs&lt;/h3&gt;
+&lt;p&gt;Storyboards can’t be diffed meaningfully. Since they serialize to unreadable XML, it’s more or less impossible to look at a diff of a storyboard and figure out what really changed.&lt;/p&gt;
+
+&lt;h3 id=&quot;2-merges&quot;&gt;2. Merges&lt;/h3&gt;
+&lt;p&gt;Because storyboards can’t be read by human beings, merging or rebasing storyboards across branches is an absolute nightmare. It often results in re-creating the work on one of the branches manually.&lt;/p&gt;
+
+&lt;h3 id=&quot;3-opening-a-file-modifies-it&quot;&gt;3. Opening a file modifies it&lt;/h3&gt;
+&lt;p&gt;I’m not sure why this happens, and it doesn’t happen all the time, but I’ve often found that merely opening a Storyboard file modifies it. This is super irritating, because I’m no longer sure about whether or not I made a change to it that matters.&lt;/p&gt;
+
+&lt;h3 id=&quot;4-code-review&quot;&gt;4. Code review&lt;/h3&gt;
+&lt;p&gt;A broken storyboard can completely break the app (like say, if you’ve got an ambiguous constraint), so it must be code reviewed like all other code. However, because of the above reasons, it is really hard to do a proper code review.&lt;/p&gt;
+
+&lt;h3 id=&quot;5-usefulness&quot;&gt;5. Usefulness&lt;/h3&gt;
+&lt;p&gt;One of the goals of using Storyboards is to be able to visualize what the app will look like without actually running it. In reality, though, storyboards don’t really come close. 
+&lt;img src=&quot;http://gopalkri.com/assets/images/2016-05-27-Storyboards-Visualization.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;what-im-doing-instead&quot;&gt;What I’m doing instead&lt;/h2&gt;
+&lt;p&gt;I’m going to be using AutoLayout in code. While NSLayoutConstraint is incredibly verbose, there’re a few open source libraries that appear to make it significantly less painful: SnapKit, EasyPeasy, SwiftAutoLayout, etc. I’m not a big fan of the ASCII art version of NSLayoutConstraint. As awesome as it is, it’s stringly typed, and I try and avoid stringly typed code whenever possible.&lt;/p&gt;
+
+&lt;h2 id=&quot;iii-ios-user-interfaces-storyboards-vs-nibs-vs-custom-code&quot;&gt;III. iOS User Interfaces: Storyboards vs. NIBs vs. Custom Code&lt;sup id=&quot;fnref:toptal&quot;&gt;&lt;a href=&quot;#fn:toptal&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+
+&lt;h3 id=&quot;ios-storyboards&quot;&gt;iOS Storyboards&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;A classic beginner’s mistake is to create one massive project-wide Storyboard. A Storyboard is a board with a story to tell. It shouldn’t be used to mix unrelated stories into one big volume.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;As its name implies, a Storyboard is a board with a story to tell. It shouldn’t be used to mix unrelated stories into one big volume. A storyboard should contain view controllers that are logically related to each other—which doesn’t mean every view controller.&lt;/p&gt;
+
+&lt;p&gt;For example, it makes sense to use Storyboards when handling:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A set of views for authentication and registration.&lt;/li&gt;
+  &lt;li&gt;A multi-step order entry flow.&lt;/li&gt;
+  &lt;li&gt;A wizard-like (i.e., tutorial) flow.&lt;/li&gt;
+  &lt;li&gt;A master-detail set of views (e.g., profiles lists, profile details).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Meanwhile, large Storyboards should be avoided, including single app-wide Storyboards (unless the app is relatively simple). Before we go any deeper, let’s see why.&lt;/p&gt;
+
+&lt;h4 id=&quot;when-to-use-storyboards&quot;&gt;When to use Storyboards:&lt;/h4&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Storyboards are best used with multiple interconnected view controllers, as their major simplification is in transitioning between view controllers.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;when-not-to-use-ios-storyboards&quot;&gt;When Not to Use iOS Storyboards&lt;/h4&gt;
+
+&lt;p&gt;A few cases:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The view has a complicated or dynamic layout, best-implemented with code.&lt;/li&gt;
+  &lt;li&gt;The view is already implemented with NIBs or code.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In those cases, we can either leave the view out of the Storyboard or embed it in a view controller. The former breaks the Storyboard’s visual flow, but doesn’t have any negative functional or development implications. The latter retains this visual flow, but it requires additional development efforts as the view is not integrated into the view controller: it’s just embedded as a component, hence the view controller must interact with the view rather than implementing it.&lt;/p&gt;
+
+&lt;h3 id=&quot;ios-custom-code-programmatic-uis&quot;&gt;iOS Custom Code (Programmatic UIs)&lt;/h3&gt;
+
+&lt;h4 id=&quot;pro-under-the-hood&quot;&gt;Pro: Under the Hood&lt;/h4&gt;
+&lt;p&gt;The greatest advantage of creating an iOS UI programmatically: if you know how to code a user interface, then you know what happens under the hood, whereas the same is not necessarily true of NIBs and Storyboards.&lt;/p&gt;
+
+&lt;p&gt;So, mastering the coding of iOS user interfaces gives you more control over and greater awareness of how these pieces fit together, which raises your upper-bound as a developer.&lt;/p&gt;
+
+&lt;h4 id=&quot;when-to-use-code&quot;&gt;When to Use Code&lt;/h4&gt;
+
+&lt;p&gt;It’s often a good call to use use custom code for iOS user interface design when you have:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Dynamic layouts.&lt;/li&gt;
+  &lt;li&gt;Views with effects, such as rounded corners, shadows, etc.&lt;/li&gt;
+  &lt;li&gt;Any case in which using NIBs and Storyboards is complicated or infeasible.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;when-not-to-use-code&quot;&gt;When Not to Use Code&lt;/h4&gt;
+
+&lt;p&gt;In general, code-made UIs can always be used. They’re rarely a bad idea, so I’d put an here.&lt;/p&gt;
+
+&lt;p&gt;Fore complete information, check the references.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:roadfire&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;http://roadfiresoftware.com/2015/03/the-pros-and-cons-of-using-storyboards/&quot;&gt;Should you use Storyboards on more complex apps?&lt;/a&gt; &lt;a href=&quot;#fnref:roadfire&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:gopalkri&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;http://gopalkri.com/2016/05/27/why-im-abandoning-storyboards/&quot;&gt;Why I’m Abandoning Storyboards&lt;/a&gt; &lt;a href=&quot;#fnref:gopalkri&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:toptal&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://www.toptal.com/ios/ios-user-interfaces-storyboards-vs-nibs-vs-custom-code&quot;&gt;iOS User Interfaces: Storyboards vs. NIBs vs. Custom Code&lt;/a&gt; &lt;a href=&quot;#fnref:toptal&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name></name></author><category term="[&quot;iOS Development&quot;]" /><category term="ios" /><category term="objective-c" /><category term="storyboard" /><summary type="html">Storyboards are a quick and easy way to start building a simple app. But should you use Storyboards on more complex apps? Or on a team? What are the pros and cons of using them? Do experienced iOS developers use them? Are any mainstream apps built with Storyboards?</summary></entry><entry><title type="html">How to Offset an HTML Anchor to Adjust for Fixed Header?</title><link href="http://localhost:4000/2016/11/30/anchor-link-back-position-setting" rel="alternate" type="text/html" title="How to Offset an HTML Anchor to Adjust for Fixed Header?" /><published>2016-11-30T20:32:00+08:00</published><updated>2016-11-30T20:32:00+08:00</updated><id>http://localhost:4000/2016/11/30/anchor-link-back-position-setting</id><content type="html" xml:base="http://localhost:4000/2016/11/30/anchor-link-back-position-setting">&lt;blockquote&gt;
+  &lt;p&gt;I have a header that is fixed to the top of the page, so when you link to an anchor elsewhere in the page, the page jumps so the anchor is at the top of the page, leaving the content behind the fixed header (I hope that makes sense). I need a way to offset the anchor by some pixels from the height of the header. I would prefer HTML or CSS, but Javascript would be acceptable as well.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
+
+&lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/4086107/html-positionfixed-page-header-and-in-page-anchors&quot;&gt;HTML position:fixed page header and in-page anchors&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/10732690/offsetting-an-html-anchor-to-adjust-for-fixed-header&quot;&gt;offsetting an html anchor to adjust for fixed header [duplicate]&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Web Development&quot;]" /><category term="jekyll" /><category term="html" /><category term="css" /><category term="markdown" /><category term="anchor" /><summary type="html">I have a header that is fixed to the top of the page, so when you link to an anchor elsewhere in the page, the page jumps so the anchor is at the top of the page, leaving the content behind the fixed header (I hope that makes sense). I need a way to offset the anchor by some pixels from the height of the header. I would prefer HTML or CSS, but Javascript would be acceptable as well.</summary></entry></feed>

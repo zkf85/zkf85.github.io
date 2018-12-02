@@ -1679,7 +1679,7 @@ sub{
     bottom:-0.25em
 }
 img{
-    border:0
+    border:0;
 }
 svg:not(:root){
     overflow:hidden
@@ -1696,7 +1696,10 @@ pre{
 }
 code,kbd,pre,samp{
     font-family:monospace, monospace;
+	/* KF 11/29/2018
     font-size:1em
+	*/
+    font-size:14px
 }
 button,input,optgroup,select,textarea{
     color:inherit;
@@ -1823,11 +1826,12 @@ a{
     background-color:#e0e0e0
 }
 blockquote{
-    border-left:5px solid #ee6e73;
 	/* KF 11/28/2018
+    border-left:5px solid #ee6e73;
     margin:20px 0;
     padding-left:1.5rem;
 	*/
+    border-left:5px solid #bb0000;
     margin:12px 0;
     padding-left:1.5rem;
 	color:#777777
@@ -2470,10 +2474,8 @@ nav ul a span.badge{
 .row{
     margin-left:auto;
     margin-right:auto;
-	/* Edited by KF 11/27/2018
+	/* Edited by KF 11/27/2018 */
     margin-bottom:20px
-	*/
-    margin-bottom:72px
 }
 .row:after{
     content:"";
@@ -3453,7 +3455,7 @@ h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{
 }
 h1{
     font-size:4.2rem;
-    line-height:110%;
+    line-height:120%;
     margin:2.1rem 0 1.68rem 0
 }
 h2{
@@ -3485,7 +3487,10 @@ em{
     font-style:italic
 }
 strong{
+	/* KF 11/29/2018
     font-weight:500
+	*/
+    font-weight:bold
 }
 small{
     font-size:75%
@@ -3643,7 +3648,7 @@ small{
 	/* KF 11/28/2018
     font-size:24px;
 	*/
-    font-size:1.75rem;
+    font-size:1.5rem;
 }
 .card .card-title.activator{
     cursor:pointer

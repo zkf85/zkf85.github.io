@@ -2,7 +2,10 @@
 .highlight table pre { margin: 0; }
 .highlight {
   color: #faf6e4;
+  /* KF 11/29/2018
   background-color: #122b3b;
+  */
+  background-color: #212121;
 }
 .highlight .gl {
   color: #dee5e7;

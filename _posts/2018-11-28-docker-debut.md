@@ -9,6 +9,8 @@ tag: [docker]
 
 >The famous "Docker" is ***a tool that can package an application and tis dependencies in a virtual container that can run on any Linux server***. After getting my keras model, it's a good chance to try docker to deploy a deep learning model as a API service. In this article, I'd like to write down all the important procedures and details about how to make this service work with docker."
  
+![](/assets/res/laurel-docker-containers.png)
+
  <!--more-->
 
 ## 1. Background
@@ -27,7 +29,7 @@ Basically, it's **"Flask + uWSGI + NGINX"**:
 - [uWSGI](https://uwsgi-docs-additions.readthedocs.io/en/latest/) aims at developing a full stack for building hosting services. uWSGI is implemented as a linker between Nginx(does not support python) and Flask(written in python).
 - [NGINX](https://www.nginx.com/resources/wiki/)  ( [/ˌɛndʒɪnˈɛks/ EN-jin-EKS](https://en.wikipedia.org/wiki/Nginx)) is a free, open-source, high-performance HTTP server and reverse proxy.
 
-## 2. Docker time!
+## 2. Check out Docker!
 Of course we can install and configure the "*Flask/uWSGI/NGINX (FUN)*" combo step by step, but it's trivial and with bunch of pitfalls.
 
 Docker is the perfect choice to make such things much easier!
@@ -90,7 +92,7 @@ $ sudo apt-get install \
 	   stable"
 	```
 
-#### 2.2.2. Install Docker CE
+#### 2.2.2. Install Docker CE (using repository)
 1. Update the `apt` package index:
 
 	```sh
@@ -100,7 +102,11 @@ $ sudo apt-get install \
 2. Install packages to allow apt to use a repository over HTTPS:
 
 	```sh
-	$ sudo apt-get update
+	$ sudo apt-get install \
+		apt-transport-https \
+		ca-certificates \
+		curl \
+		software-properties-common
 	```
 
 3. Install the *latest* version of Docker CE, or go to the next step to install a specific version:
@@ -128,12 +134,113 @@ $ sudo apt-get install \
 	$ sudo rm -rf /var/lib/docker
 	```
 
+#### 2.2.3. Other installation methods
+You can also install Docker CE from *a package* or *using the convenience script*. Again, for details check [here](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-using-the-repository)!
+
 ### 2.3. Docker basics
 Docker official site provides a very nice set of [Tutorials](https://docs.docker.com/get-started/). It's highly recommended to go through the first couple of sections of the tutorial. Here I'd like to keep a record of the very basic steps and commands to get started with Docker.
 
+The best and complete way to learn Docker is to go through this [Get Started from Docker's Official](https://docs.docker.com/get-started/). Here I just take a record of the core concepts and commands for myself.
 
+#### 2.3.1. Docker Concepts
 
+- Image:
 
+	An **image** is an executable package that includes everything needed to run an application--the code, a runtime, libraries, environment variables, and configuration files.	
+
+- Container:
+
+	A **container** is a runtime instance of an image--what the image becomes in memory when executed (that is, an image with state, or a user process). You can see a list of your running containers with the command, `docker ps`, just as you would in Linux.
+
+- Container vs. Virtual Machines:
+
+A **container** runs natively on Linux and shares the kernel of the host machine with other containers. It runs a discrete process, taking no more memory than any other executable, making it lightweight.
+
+By contrast, a **virtual machine (VM)** runs a full-blown “guest” operating system with virtual access to host resources through a hypervisor. In general, VMs provide an environment with more resources than most applications need.
+
+<table>
+  <tr>
+    <td>
+    <img src="/assets/res/docker-container.png">
+    </td>
+
+    <td>
+    <img src="/assets/res/docker-VM.png">
+	</td>
+  </tr>
+</table>
+
+#### 2.3.2. **Cheat sheet 1 - Check info**
+
+```sh
+## List Docker CLI commands
+docker
+docker container --help
+
+## Display Docker version and info
+docker --version
+docker version
+docker info
+
+## Execute Docker image
+docker run hello-world
+
+## List Docker images
+docker image ls
+
+## List Docker containers (running, all, all in quiet mode)
+docker container ls
+docker container ls --all
+docker container ls -aq
+
+```
+
+#### 2.3.3. **Cheat sheet 2 - Check info**
+
+After `Dockerfile` and `app.py` (optionally `requirements`) are ready:
+
+```sh
+
+docker build -t friendlyhello .  # Create image using this directory's Dockerfile
+docker run -p 4000:80 friendlyhello  # Run "friendlyname" mapping port 4000 to 80
+docker run -d -p 4000:80 friendlyhello         # Same thing, but in detached mode
+docker container ls                                # List all running containers
+docker container ls -a             # List all containers, even those not running
+docker container stop <hash>           # Gracefully stop the specified container
+docker container kill <hash>         # Force shutdown of the specified container
+docker container rm <hash>        # Remove specified container from this machine
+docker container rm $(docker container ls -a -q)         # Remove all containers
+docker image ls -a                             # List all images on this machine
+docker image rm <image id>            # Remove specified image from this machine
+docker image rm $(docker image ls -a -q)   # Remove all images from this machine
+docker login             # Log in this CLI session using your Docker credentials
+docker tag <image> username/repository:tag  # Tag <image> for upload to registry
+docker push username/repository:tag            # Upload tagged image to registry
+docker run username/repository:tag                   # Run image from a registry
+
+```
+#### 2.3.3. **Cheat sheet 3 - Services**
+
+```sh
+
+docker stack ls                                            # List stacks or apps
+docker stack deploy -c <composefile> <appname>  # Run the specified Compose file
+docker service ls                 # List running services associated with an app
+docker service ps <service>                  # List tasks associated with an app
+docker inspect <task or container>                   # Inspect task or container
+docker container ls -q                                      # List container IDs
+docker stack rm <appname>                             # Tear down an application
+docker swarm leave --force      # Take down a single node swarm from the manager
+
+```
+
+## 3. **Flask + uWSGI + NGINX** with docker setup for my work 
+
+Check out [`tiangolo/uwsgi-nginx-flask-docker`](https://github.com/tiangolo/uwsgi-nginx-flask-docker) to find and download a suitable version of `Dockerfile`.
+
+Follow the instructions in the link above to set up the docker.
+
+***To Be continued ~***
 
 
 <br><br>***KF*** 

@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-02T11:10:51+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KFZ’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
-</subtitle><entry><title type="html">Get Started with THE Docker</title><link href="http://localhost:4000/2018/11/28/docker-debut" rel="alternate" type="text/html" title="Get Started with THE Docker" /><published>2018-11-28T00:00:00+08:00</published><updated>2018-11-28T00:00:00+08:00</updated><id>http://localhost:4000/2018/11/28/docker-debut</id><content type="html" xml:base="http://localhost:4000/2018/11/28/docker-debut">&lt;blockquote&gt;
-  &lt;p&gt;The famous “Docker” is &lt;strong&gt;&lt;em&gt;a tool that can package an application and tis dependencies in a virtual container that can run on any Linux server&lt;/em&gt;&lt;/strong&gt;. After getting my keras model, it’s a good chance to try docker to deploy a deep learning model as a API service. In this article, I’d like to write down all the important procedures and details about how to make this service work with docker.”&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-03T20:02:21+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KFZ’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
+</subtitle><entry><title type="html">Deploy Keras Model with Flask+uWSGI+NGINX with docker</title><link href="http://localhost:4000/2018/12/03/flask-uwsgi-nginx-deploy" rel="alternate" type="text/html" title="Deploy Keras Model with Flask+uWSGI+NGINX with docker" /><published>2018-12-03T15:21:00+08:00</published><updated>2018-12-03T15:21:00+08:00</updated><id>http://localhost:4000/2018/12/03/flask-uwsgi-nginx-deploy</id><content type="html" xml:base="http://localhost:4000/2018/12/03/flask-uwsgi-nginx-deploy">&lt;blockquote&gt;
+  &lt;p&gt;After spending more than 200 credits on google cloud GPU for training a &lt;strong&gt;Plant Disease Recoginition (PDR)&lt;/strong&gt; model with Keras, I’ve got a decent model that have reached more than 85% accuracy. The model is ready and the next thing to do is to deploy the model for inference as a service.&lt;/p&gt;
 &lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/res/laurel-docker-containers.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;!--more--&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;1-background&quot;&gt;1. Background&lt;/h2&gt;
-&lt;h3 id=&quot;11-description-of-my-job&quot;&gt;1.1. Description of my job&lt;/h3&gt;
-&lt;p&gt;After spending more than 200 credits on google cloud GPU for training a &lt;strong&gt;Plant Disease Recoginition (PDR)&lt;/strong&gt; model with Keras, I’ve got a decent model that reached more than 85% accuracy. The model is ready and the next thing to do is to deploy the model for inference as a service.&lt;/p&gt;
 
 &lt;p&gt;The main objective is to build a web service API which responds with a inference result as a json file after receiving a request with an image in it.&lt;/p&gt;
 
@@ -25,15 +21,351 @@
   &lt;li&gt;&lt;a href=&quot;https://www.nginx.com/resources/wiki/&quot;&gt;NGINX&lt;/a&gt;  ( &lt;a href=&quot;https://en.wikipedia.org/wiki/Nginx&quot;&gt;/ˌɛndʒɪnˈɛks/ EN-jin-EKS&lt;/a&gt;) is a free, open-source, high-performance HTTP server and reverse proxy.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;2-check-out-docker&quot;&gt;2. Check out Docker!&lt;/h2&gt;
+&lt;h2 id=&quot;2-deploy-the-flask--uwsgi--nginx-fun-combo-manually&quot;&gt;2. Deploy the &lt;strong&gt;Flask + uWSGI + NGINX&lt;/strong&gt; (FUN) Combo Manually&lt;/h2&gt;
+
+&lt;p&gt;Before everything, there’s a complete tutorial on &lt;code class=&quot;highlighter-rouge&quot;&gt;digitalocean&lt;/code&gt; about this:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uswgi-and-nginx-on-ubuntu-18-04&quot;&gt;» &lt;strong&gt;How to serve Flask Application with uWSGI and NGINX on Ubuntu 18.04&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;21-flask&quot;&gt;2.1. Flask&lt;/h3&gt;
+&lt;p&gt;Here are the basic steps for setting up Flask:&lt;/p&gt;
+
+&lt;p&gt;In your main python script (e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;myproject.py&lt;/code&gt;),
+Import related tools:&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;flask&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;flask&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Flask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Response&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Initialize the Flask application:&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Flask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Setup the app route and method, return the response as JSON file:&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;@app.route&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'/predict'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;methods&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'POST'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;predict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flask&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;jsonify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;A complete sample code of &lt;code class=&quot;highlighter-rouge&quot;&gt;myproject.py&lt;/code&gt; is listed below:&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Filename   :  myproject.py&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Written by :  KF &lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;flask&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;flask&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Flask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Response&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;keras.preprocessing.image&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;load_img&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;tensorflow.keras.models&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;load_model&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;keras.preprocessing.image&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;img_to_array&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;tensorflow&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Initialize the Flask application&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Flask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;global&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;img_shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;idx_dict&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;global&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Basic parameters&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;model_file_name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;disease_224.model&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;label_file_name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;labels.npz&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;img_shape&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;224&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;224&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Load Keras model&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;load_model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model_file_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Initialize a global graph for Keras/tensorflow&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_default_graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Load index-label list (not important here in this article)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;labels&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;label_file_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;label_dict&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;labels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'class_idx'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tolist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;idx_dict&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;label_dict&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()}&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# route http posts to this method&lt;/span&gt;
+&lt;span class=&quot;nd&quot;&gt;@app.route&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'/predict'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;methods&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'POST'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;predict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Get the image in the POST request &lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;image_file&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'image'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Load the image for Keras model&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;img&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;load_img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image_file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;target_size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;img_shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;img_np&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;img_to_array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;255.0&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;img_np&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;expand_dims&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;img_np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;axis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Predict&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;as_default&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Start predicting ...'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;proba&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;predict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;img_np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;verbose&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+	&lt;span class=&quot;c&quot;&gt;#proba = [1,2,3,4,5]&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Prediction complete！'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;res_idx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argmax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;proba&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Mapping the result index to label (not important for this article)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;best_prediction_label&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;idx_dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;res_idx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Build a response dict to send back to client&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'message'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'image received!'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'best_prediction'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;best_prediction_label&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flask&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;jsonify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+
+&lt;span class=&quot;c&quot;&gt;# Initialize first no matter if it's main or not ...&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;__main__&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;* Loading Keras model and Flask starting server...&quot;&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;&quot;please wait until server has fully started&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# start the flask app, allow remote connection&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;host&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'0.0.0.0'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;threaded&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;:&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;Anytime this main &lt;code class=&quot;highlighter-rouge&quot;&gt;myproject.py&lt;/code&gt; script is called, the model loading and parameters loading steps should be put in the &lt;code class=&quot;highlighter-rouge&quot;&gt;init()&lt;/code&gt; in order to avoid running the slow process everytime when predicting.&lt;/li&gt;
+    &lt;li&gt;In the initialization, a global &lt;code class=&quot;highlighter-rouge&quot;&gt;graph&lt;/code&gt; for keras/tensorflow is initialized. Without this, there’ll be an error.&lt;/li&gt;
+    &lt;li&gt;To change the port (e.g. change to 8000, simply change the last line to &lt;code class=&quot;highlighter-rouge&quot;&gt;app.run(host='0.0.0.0', port='8000')&lt;/code&gt;.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Run/Test the API with Flask simply by:&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python myproject.py
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If the log is as below, ht means the Flask API is working well,&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; Loading Keras model and Flask starting server...please &lt;span class=&quot;nb&quot;&gt;wait &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;until &lt;/span&gt;server has fully started
+&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; Serving Flask app &lt;span class=&quot;s2&quot;&gt;&quot;myproject&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;lazy loading&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; Environment: production
+   WARNING: Do not use the development server &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;a production environment.
+   Use a production WSGI server instead.
+&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; Debug mode: off
+&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; Running on http://0.0.0.0:5000/ &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Press CTRL+C to quit&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;22-test-the-api&quot;&gt;2.2. Test the API&lt;/h3&gt;
+
+&lt;p&gt;On another computer, write a &lt;code class=&quot;highlighter-rouge&quot;&gt;POST&lt;/code&gt; request in python using &lt;code class=&quot;highlighter-rouge&quot;&gt;requests&lt;/code&gt; library.
+In &lt;code class=&quot;highlighter-rouge&quot;&gt;api_test.py&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Filename   :  api_test.py&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Written by :  KF &lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;requests&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;os&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;addr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'http://192.168.1.235:5000'&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#addr = 'http://192.168.1.235'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;test_url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'predict'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;files&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'image'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'test_image.JPG'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'rb'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)}&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# send http request with image and receive response&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test_url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#decode response&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If you followed the initial server setup guide, you should have a UFW firewall enabled. To test the application, you need to allow access to port 5000:&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;ufw allow 5000
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Make sure that the ip address and port number is correct. Then it should work.&lt;/p&gt;
+
+&lt;h3 id=&quot;23-uwsgi&quot;&gt;2.3. uWSGI&lt;/h3&gt;
+&lt;p&gt;As we can see in the log info of running Flask, it warns that &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;Do not use the development server in a production environment&quot;&lt;/code&gt;&lt;/strong&gt;, which means that Flask by itself is “OK” for testing in development but &lt;strong&gt;not&lt;/strong&gt; designed for production. Therefore, we need to deploy it in a more professional environment, as it says, &lt;strong&gt;“Use a production WSGI server instead”&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://uwsgi-docs-additions.readthedocs.io/en/latest/&quot;&gt;uWSGI (WSGI - Web Server Gateway Interface)&lt;/a&gt; is used here as a tool for connecting &lt;strong&gt;Flask&lt;/strong&gt; and &lt;strong&gt;NGINX&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;231-create-a-uwsgi-configuration-file&quot;&gt;2.3.1. Create a uWSGI Configuration File&lt;/h4&gt;
+&lt;p&gt;Let’s place that file in our project directory and call it &lt;code class=&quot;highlighter-rouge&quot;&gt;myproject.ini&lt;/code&gt;, in the file, add the following snippet:&lt;/p&gt;
+&lt;div class=&quot;language-ini highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nn&quot;&gt;[uwsgi]&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;wsgi:app&lt;/span&gt;
+
+&lt;span class=&quot;py&quot;&gt;processes&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;vacuum&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;true&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;die-on-term&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;true&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;socket&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/tmp/myproject.sock&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;chmod-socket&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;666&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#master = true
+&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;master&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;false&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;:&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;socket&lt;/code&gt; points to a temporery file generated later when the service is on, pointing it to &lt;code class=&quot;highlighter-rouge&quot;&gt;/tmp/&lt;/code&gt; and change its permission to 666 make sure there’s not a permission problem.&lt;/li&gt;
+    &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;processes&lt;/code&gt; is set to &lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt; in my case. If not, my API will be stuck at the prediction step.&lt;/li&gt;
+    &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; is set to &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;. If not, my API will be stuck at t he prediction step.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;232-creating-a-systemd-unit-file&quot;&gt;2.3.2. Creating a systemd Unit File&lt;/h4&gt;
+&lt;p&gt;Next, let’s create the systemd service unit file. Creating a systemd unit file will allow Ubuntu’s init system to automatically start uWSGI and serve the Flask application whenever the server boots.&lt;/p&gt;
+
+&lt;p&gt;Create a unit file ending in .service (e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;myproject.service&lt;/code&gt;) within the &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/systemd/system&lt;/code&gt; directory with the following snippet:&lt;/p&gt;
+&lt;div class=&quot;language-ini highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nn&quot;&gt;[Unit]&lt;/span&gt;                                                                                                                
+&lt;span class=&quot;py&quot;&gt;Description&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;uWSGI instance to serve myproject&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;After&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;network.target&lt;/span&gt;
+
+&lt;span class=&quot;nn&quot;&gt;[Service]&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;kefeng&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;Group&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;www-data&lt;/span&gt;
+
+&lt;span class=&quot;py&quot;&gt;WorkingDirectory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;/home/kefeng/PlantDiseaseRecognition/myproject&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;Environment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;PATH=/home/kefeng/anaconda3/bin&quot;&lt;/span&gt;
+
+&lt;span class=&quot;py&quot;&gt;ExecStart&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;/usr/local/bin/uwsgi --ini myproject.ini&lt;/span&gt;
+
+&lt;span class=&quot;nn&quot;&gt;[Install]&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;WantedBy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;multi-user.target&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;We can now start the uWSGI service we created and enable it so that it starts at boot:&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl start myproject
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl &lt;span class=&quot;nb&quot;&gt;enable &lt;/span&gt;myproject
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Check the status:&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl status myproject
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The output should be like this:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;● myproject.service - uWSGI instance to serve myproject
+   Loaded: loaded (/etc/systemd/system/myproject.service; disabled; vendor preset: enabled)
+   Active: active (running) since Mon 2018-12-03 17:58:25 CST; 1h 7min ago
+ Main PID: 3889 (uwsgi)
+    Tasks: 13 (limit: 4915)
+   CGroup: /system.slice/myproject.service
+           └─3889 /usr/local/bin/uwsgi --ini myproject.ini
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;24-configuring-nginx-to-proxy-requests&quot;&gt;2.4. Configuring Nginx to Proxy Requests&lt;/h3&gt;
+&lt;p&gt;Our uWSGI application server should now be up and running, waiting for requests on the socket file in the project directory. Let’s configure Nginx to pass web requests to that socket using the &lt;code class=&quot;highlighter-rouge&quot;&gt;uwsgi&lt;/code&gt; protocol.&lt;/p&gt;
+
+&lt;p&gt;Create a new server block configuration file in Nginx’s sites-available directory (e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;myproject&lt;/code&gt;):&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;vi /etc/nginx/sites-available/myproject
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Code in &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/nginx/sites-available/myproject&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;server {
+    listen 80;
+    server_name 192.168.0.235;
+
+    location / {
+        try_files $uri @app;
+    }
+    location @app {
+        include uwsgi_params;
+        uwsgi_pass unix:///tmp/myproject.sock;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;To enable the Nginx server block configuration you’ve just created, link the file to the sites-enabled directory:&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;ln &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; /etc/nginx/sites-available/myproject /etc/nginx/sites-enabled
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;With the file in that directory, we can test for syntax errors by typing:&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;nginx &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If this returns without indicating any issues, restart the Nginx process to read the new configuration:&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl restart nginx
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Adjust the firewall again. We no longer need access through port 5000, so we can remove that rule. We can then allow access to the Nginx server:&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;ufw delete allow 5000
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;ufw allow &lt;span class=&quot;s1&quot;&gt;'Nginx Full'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If you encounter any errors, trying checking the following:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo less /var/log/nginx/error.log: checks the Nginx error logs.&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo less /var/log/nginx/access.log: checks the Nginx access logs.&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo journalctl -u nginx: checks the Nginx process logs.&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo journalctl -u myproject: checks your Flask app's uWSGI logs.&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;25-test-the-newly-established-api&quot;&gt;2.5 Test the newly established API&lt;/h3&gt;
+&lt;p&gt;Use the same python file created in 2.2, only remove the port number since the nginx api use the default port 80.&lt;/p&gt;
+
+&lt;p&gt;In &lt;code class=&quot;highlighter-rouge&quot;&gt;api_test.py&lt;/code&gt;, make the following change:&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;addr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'http://192.168.1.235'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;It should work fine as the same as with Flask alone.&lt;/p&gt;
+
+&lt;h2 id=&quot;3-deploy-flask--uwsgi--nginx-fun-combo-with-docker&quot;&gt;3. Deploy &lt;strong&gt;Flask + uWSGI + NGINX&lt;/strong&gt; (FUN) combo with Docker&lt;/h2&gt;
+
+&lt;p&gt;Using Docker to deploy the service is much easier. You can save most work described above.&lt;/p&gt;
+
+&lt;p&gt;Check out &lt;a href=&quot;https://github.com/tiangolo/uwsgi-nginx-flask-docker&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;tiangolo/uwsgi-nginx-flask-docker&lt;/code&gt;&lt;/a&gt; to find and download a suitable version of &lt;code class=&quot;highlighter-rouge&quot;&gt;Dockerfile&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;For Docker basics, see my previous article about Docker.&lt;/p&gt;
+
+&lt;h1 id=&quot;31-build-a-customized-version-of-docker-image&quot;&gt;3.1. Build a customized version of docker image&lt;/h1&gt;
+&lt;p&gt;In my case, I use &lt;code class=&quot;highlighter-rouge&quot;&gt;python3.6&lt;/code&gt; version image. Besides, it is good practice to build a customized version of image for yourself since&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Several additional python package need to be installed in the Docker;&lt;/li&gt;
+  &lt;li&gt;Some minor modifications are needed for the nginx service;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;First, create a folder with a &lt;code class=&quot;highlighter-rouge&quot;&gt;Dockerfile&lt;/code&gt; in it;&lt;/p&gt;
+
+&lt;p&gt;Create a &lt;code class=&quot;highlighter-rouge&quot;&gt;requirements.txt&lt;/code&gt; file for additional python packages to be installed in the Docker image.&lt;/p&gt;
+
+&lt;p&gt;In my &lt;code class=&quot;highlighter-rouge&quot;&gt;requirements.txt&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;keras==2.2.4
+tensorflow==1.11.0
+pillow
+numpy
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The default nginx body buffer size is too small for a POST request with an image in it. Therefore, you need to modifiy this parameter by copy a &lt;code class=&quot;highlighter-rouge&quot;&gt;.conf&lt;/code&gt; file into the Docker image.&lt;/p&gt;
+
+&lt;p&gt;Create a file &lt;code class=&quot;highlighter-rouge&quot;&gt;kf_upload.conf&lt;/code&gt;, in which add:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;client_body_buffer_size 5m;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then, write the &lt;code class=&quot;highlighter-rouge&quot;&gt;Dockerfile&lt;/code&gt; as below:&lt;/p&gt;
+&lt;div class=&quot;language-ini highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;tiangolo/uwsgi-nginx-flask:python3.6&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;COPY&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;requirements.txt&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;/&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;COPY&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;kf_upload.conf&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;/etc/nginx/conf.d/&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;RUN&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;pip&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;https://pypi.tuna.tsinghua.edu.cn/simple&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;-r&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;/requirements.txt&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Finally, in the directory including &lt;code class=&quot;highlighter-rouge&quot;&gt;Dockerfile&lt;/code&gt; build a customized version of Docker image by:&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker build &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; kf-customized-image &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Operating System&quot;, &quot;Deep Learning&quot;]" /><category term="docker" /><category term="flask" /><category term="uwsgi" /><category term="nginx" /><category term="keras" /><category term="tensorflow" /><summary type="html">After spending more than 200 credits on google cloud GPU for training a Plant Disease Recoginition (PDR) model with Keras, I’ve got a decent model that have reached more than 85% accuracy. The model is ready and the next thing to do is to deploy the model for inference as a service.</summary></entry><entry><title type="html">Get Started with THE Docker</title><link href="http://localhost:4000/2018/11/28/docker-debut" rel="alternate" type="text/html" title="Get Started with THE Docker" /><published>2018-11-28T00:00:00+08:00</published><updated>2018-11-28T00:00:00+08:00</updated><id>http://localhost:4000/2018/11/28/docker-debut</id><content type="html" xml:base="http://localhost:4000/2018/11/28/docker-debut">&lt;blockquote&gt;
+  &lt;p&gt;The famous “Docker” is &lt;strong&gt;&lt;em&gt;a tool that can package an application and tis dependencies in a virtual container that can run on any Linux server&lt;/em&gt;&lt;/strong&gt;. After getting my keras model, it’s a good chance to try docker to deploy a deep learning model as a API service. In this article, I’d like to write down all the important procedures and details about how to make this service work with docker.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/img/20181128-laurel-docker-containers.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-check-out-docker&quot;&gt;1. Check out Docker!&lt;/h2&gt;
 &lt;p&gt;Of course we can install and configure the “&lt;em&gt;Flask/uWSGI/NGINX (FUN)&lt;/em&gt;” combo step by step, but it’s trivial and with bunch of pitfalls.&lt;/p&gt;
 
 &lt;p&gt;Docker is the perfect choice to make such things much easier!&lt;/p&gt;
 
-&lt;h3 id=&quot;21-basic-idea-of-using-docker&quot;&gt;2.1. Basic idea of using Docker&lt;/h3&gt;
+&lt;h3 id=&quot;11-basic-idea-of-using-docker&quot;&gt;1.1. Basic idea of using Docker&lt;/h3&gt;
 &lt;p&gt;The basic idea of using Docker is to avoid installing and configuring environment by yourself. Instead, you can download a ready-to-use &lt;strong&gt;&lt;em&gt;image&lt;/em&gt;&lt;/strong&gt;, which is carefully configured and saved by other people, and run it as a &lt;strong&gt;&lt;em&gt;container&lt;/em&gt;&lt;/strong&gt;, in which you can focus on you own stuff without worrying about whether the environment trivials at all.&lt;/p&gt;
 
-&lt;h3 id=&quot;22-installuninstall-docker&quot;&gt;2.2. Install/Uninstall Docker&lt;/h3&gt;
+&lt;h2 id=&quot;2-installuninstall-docker&quot;&gt;2. Install/Uninstall Docker&lt;/h2&gt;
 &lt;p&gt;Docker is available in two editions:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Community Edition (CE)&lt;/li&gt;
@@ -44,7 +376,7 @@
 
 &lt;p&gt;To get Docker CE for Ubuntu, check the instruction &lt;a href=&quot;https://docs.docker.com/install/linux/docker-ce/ubuntu/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h4 id=&quot;221-prerequisites&quot;&gt;2.2.1. Prerequisites&lt;/h4&gt;
+&lt;h3 id=&quot;21-prerequisites&quot;&gt;2.1. Prerequisites&lt;/h3&gt;
 &lt;ol&gt;
   &lt;li&gt;Uninstall old versions:
     &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get remove docker docker-engine docker.io
@@ -87,7 +419,7 @@
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h4 id=&quot;222-install-docker-ce-using-repository&quot;&gt;2.2.2. Install Docker CE (using repository)&lt;/h4&gt;
+&lt;h3 id=&quot;22-install-docker-ce-using-repository&quot;&gt;2.2. Install Docker CE (using repository)&lt;/h3&gt;
 &lt;ol&gt;
   &lt;li&gt;
     &lt;p&gt;Update the &lt;code class=&quot;highlighter-rouge&quot;&gt;apt&lt;/code&gt; package index:&lt;/p&gt;
@@ -119,7 +451,7 @@
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&quot;223-uninstall-docker-ce&quot;&gt;2.2.3. Uninstall Docker CE&lt;/h3&gt;
+&lt;h3 id=&quot;23-uninstall-docker-ce&quot;&gt;2.3. Uninstall Docker CE&lt;/h3&gt;
 &lt;ol&gt;
   &lt;li&gt;
     &lt;p&gt;Uninstall the Docker CE package:&lt;/p&gt;
@@ -135,15 +467,15 @@
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h4 id=&quot;223-other-installation-methods&quot;&gt;2.2.3. Other installation methods&lt;/h4&gt;
+&lt;h3 id=&quot;23-other-installation-methods&quot;&gt;2.3. Other installation methods&lt;/h3&gt;
 &lt;p&gt;You can also install Docker CE from &lt;em&gt;a package&lt;/em&gt; or &lt;em&gt;using the convenience script&lt;/em&gt;. Again, for details check &lt;a href=&quot;https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-using-the-repository&quot;&gt;here&lt;/a&gt;!&lt;/p&gt;
 
-&lt;h3 id=&quot;23-docker-basics&quot;&gt;2.3. Docker basics&lt;/h3&gt;
+&lt;h2 id=&quot;3-docker-basics&quot;&gt;3. Docker basics&lt;/h2&gt;
 &lt;p&gt;Docker official site provides a very nice set of &lt;a href=&quot;https://docs.docker.com/get-started/&quot;&gt;Tutorials&lt;/a&gt;. It’s highly recommended to go through the first couple of sections of the tutorial. Here I’d like to keep a record of the very basic steps and commands to get started with Docker.&lt;/p&gt;
 
 &lt;p&gt;The best and complete way to learn Docker is to go through this &lt;a href=&quot;https://docs.docker.com/get-started/&quot;&gt;Get Started from Docker’s Official&lt;/a&gt;. Here I just take a record of the core concepts and commands for myself.&lt;/p&gt;
 
-&lt;h4 id=&quot;231-docker-concepts&quot;&gt;2.3.1. Docker Concepts&lt;/h4&gt;
+&lt;h3 id=&quot;31-docker-concepts&quot;&gt;3.1. Docker Concepts&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -168,16 +500,16 @@
 &lt;table&gt;
   &lt;tr&gt;
     &lt;td&gt;
-    &lt;img src=&quot;/assets/res/docker-container.png&quot; /&gt;
+    &lt;img src=&quot;/public/img/20181128-docker-container.png&quot; /&gt;
     &lt;/td&gt;
 
     &lt;td&gt;
-    &lt;img src=&quot;/assets/res/docker-VM.png&quot; /&gt;
+    &lt;img src=&quot;/public/img/20181128-docker-VM.png&quot; /&gt;
 	&lt;/td&gt;
   &lt;/tr&gt;
 &lt;/table&gt;
 
-&lt;h4 id=&quot;232-cheat-sheet-1---check-info&quot;&gt;2.3.2. &lt;strong&gt;Cheat sheet 1 - Check info&lt;/strong&gt;&lt;/h4&gt;
+&lt;h3 id=&quot;32-cheat-sheet-1---check-info&quot;&gt;3.2. &lt;strong&gt;Cheat sheet 1 - Check info&lt;/strong&gt;&lt;/h3&gt;
 
 &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;## List Docker CLI commands&lt;/span&gt;
 docker
@@ -201,7 +533,7 @@ docker container &lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h4 id=&quot;233-cheat-sheet-2---check-info&quot;&gt;2.3.3. &lt;strong&gt;Cheat sheet 2 - Check info&lt;/strong&gt;&lt;/h4&gt;
+&lt;h3 id=&quot;33-cheat-sheet-2---check-info&quot;&gt;3.3. &lt;strong&gt;Cheat sheet 2 - Check info&lt;/strong&gt;&lt;/h3&gt;
 
 &lt;p&gt;After &lt;code class=&quot;highlighter-rouge&quot;&gt;Dockerfile&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;app.py&lt;/code&gt; (optionally &lt;code class=&quot;highlighter-rouge&quot;&gt;requirements&lt;/code&gt;) are ready:&lt;/p&gt;
 
@@ -224,7 +556,7 @@ docker push username/repository:tag            &lt;span class=&quot;c&quot;&gt;#
 docker run username/repository:tag                   &lt;span class=&quot;c&quot;&gt;# Run image from a registry&lt;/span&gt;
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h4 id=&quot;233-cheat-sheet-3---services&quot;&gt;2.3.3. &lt;strong&gt;Cheat sheet 3 - Services&lt;/strong&gt;&lt;/h4&gt;
+&lt;h3 id=&quot;33-cheat-sheet-3---services&quot;&gt;3.3. &lt;strong&gt;Cheat sheet 3 - Services&lt;/strong&gt;&lt;/h3&gt;
 
 &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 docker stack &lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;                                            &lt;span class=&quot;c&quot;&gt;# List stacks or apps&lt;/span&gt;
@@ -237,14 +569,6 @@ docker stack rm &amp;lt;appname&amp;gt;                             &lt;span cla
 docker swarm leave &lt;span class=&quot;nt&quot;&gt;--force&lt;/span&gt;      &lt;span class=&quot;c&quot;&gt;# Take down a single node swarm from the manager&lt;/span&gt;
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;3-flask--uwsgi--nginx-with-docker-setup-for-my-work&quot;&gt;3. &lt;strong&gt;Flask + uWSGI + NGINX&lt;/strong&gt; with docker setup for my work&lt;/h2&gt;
-
-&lt;p&gt;Check out &lt;a href=&quot;https://github.com/tiangolo/uwsgi-nginx-flask-docker&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;tiangolo/uwsgi-nginx-flask-docker&lt;/code&gt;&lt;/a&gt; to find and download a suitable version of &lt;code class=&quot;highlighter-rouge&quot;&gt;Dockerfile&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Follow the instructions in the link above to set up the docker.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;To Be continued ~&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Operating System&quot;]" /><category term="docker" /><summary type="html">The famous “Docker” is a tool that can package an application and tis dependencies in a virtual container that can run on any Linux server. After getting my keras model, it’s a good chance to try docker to deploy a deep learning model as a API service. In this article, I’d like to write down all the important procedures and details about how to make this service work with docker.”</summary></entry><entry><title type="html">MIT 6.006 Algorithms Lecture 1 Notes</title><link href="http://localhost:4000/2018/11/01/MIT-6006-Lecture1" rel="alternate" type="text/html" title="MIT 6.006 Algorithms Lecture 1 Notes" /><published>2018-11-01T12:00:00+08:00</published><updated>2018-11-01T12:00:00+08:00</updated><id>http://localhost:4000/2018/11/01/MIT-6006-Lecture1</id><content type="html" xml:base="http://localhost:4000/2018/11/01/MIT-6006-Lecture1">&lt;blockquote&gt;
   &lt;p&gt;The starting note of the MIT 6.006 Algorithm course.&lt;/p&gt;
@@ -290,7 +614,7 @@ docker swarm leave &lt;span class=&quot;nt&quot;&gt;--force&lt;/span&gt;      &l
 
 &lt;p&gt;This screen shot below is my current balance as I’ve already used the google cloud for training with or without GPUs for about 2 weeks. $300 is worth several month decent using.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/public/img/Screen Shot 2018-10-09 at 11.01.26 AM.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/img/20181009-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;bunch-of-services---in-a-nut-shell&quot;&gt;Bunch of services - in a nut shell&lt;/h2&gt;
 &lt;p&gt;Google cloud provides a huge set of services. If you have no experience of using cloud service, it’s pretty hard to get started becuase you’d be dazzled by the the countless stuff.&lt;/p&gt;
@@ -1322,16 +1646,4 @@ make.left.greaterThanOrEqualTo(label.mas_left);
       &lt;p&gt;&lt;a href=&quot;https://www.toptal.com/ios/ios-user-interfaces-storyboards-vs-nibs-vs-custom-code&quot;&gt;iOS User Interfaces: Storyboards vs. NIBs vs. Custom Code&lt;/a&gt; &lt;a href=&quot;#fnref:toptal&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name></name></author><category term="[&quot;iOS Development&quot;]" /><category term="ios" /><category term="objective-c" /><category term="storyboard" /><summary type="html">Storyboards are a quick and easy way to start building a simple app. But should you use Storyboards on more complex apps? Or on a team? What are the pros and cons of using them? Do experienced iOS developers use them? Are any mainstream apps built with Storyboards?</summary></entry><entry><title type="html">How to Offset an HTML Anchor to Adjust for Fixed Header?</title><link href="http://localhost:4000/2016/11/30/anchor-link-back-position-setting" rel="alternate" type="text/html" title="How to Offset an HTML Anchor to Adjust for Fixed Header?" /><published>2016-11-30T20:32:00+08:00</published><updated>2016-11-30T20:32:00+08:00</updated><id>http://localhost:4000/2016/11/30/anchor-link-back-position-setting</id><content type="html" xml:base="http://localhost:4000/2016/11/30/anchor-link-back-position-setting">&lt;blockquote&gt;
-  &lt;p&gt;I have a header that is fixed to the top of the page, so when you link to an anchor elsewhere in the page, the page jumps so the anchor is at the top of the page, leaving the content behind the fixed header (I hope that makes sense). I need a way to offset the anchor by some pixels from the height of the header. I would prefer HTML or CSS, but Javascript would be acceptable as well.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;!--more--&gt;
-
-&lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/4086107/html-positionfixed-page-header-and-in-page-anchors&quot;&gt;HTML position:fixed page header and in-page anchors&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/10732690/offsetting-an-html-anchor-to-adjust-for-fixed-header&quot;&gt;offsetting an html anchor to adjust for fixed header [duplicate]&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
-&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Web Development&quot;]" /><category term="jekyll" /><category term="html" /><category term="css" /><category term="markdown" /><category term="anchor" /><summary type="html">I have a header that is fixed to the top of the page, so when you link to an anchor elsewhere in the page, the page jumps so the anchor is at the top of the page, leaving the content behind the fixed header (I hope that makes sense). I need a way to offset the anchor by some pixels from the height of the header. I would prefer HTML or CSS, but Javascript would be acceptable as well.</summary></entry></feed>
+&lt;/div&gt;</content><author><name></name></author><category term="[&quot;iOS Development&quot;]" /><category term="ios" /><category term="objective-c" /><category term="storyboard" /><summary type="html">Storyboards are a quick and easy way to start building a simple app. But should you use Storyboards on more complex apps? Or on a team? What are the pros and cons of using them? Do experienced iOS developers use them? Are any mainstream apps built with Storyboards?</summary></entry></feed>

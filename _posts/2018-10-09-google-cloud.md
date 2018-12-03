@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title: "Experiencing google cloud"
 date: "2018-10-09 09:00:00"
 category: [Deep Learning]
@@ -15,7 +16,7 @@ So where shall we start? OK, first why Google Cloud? The reason for me is that i
 
 This screen shot below is my current balance as I've already used the google cloud for training with or without GPUs for about 2 weeks. $300 is worth several month decent using.
 
-![](/public/img/Screen Shot 2018-10-09 at 11.01.26 AM.png)
+![](/public/img/20181009-01.png)
 
 ## Bunch of services - in a nut shell
 Google cloud provides a huge set of services. If you have no experience of using cloud service, it's pretty hard to get started becuase you'd be dazzled by the the countless stuff.

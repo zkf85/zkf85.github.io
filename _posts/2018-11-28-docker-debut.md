@@ -9,36 +9,20 @@ tag: [docker]
 
 >The famous "Docker" is ***a tool that can package an application and tis dependencies in a virtual container that can run on any Linux server***. After getting my keras model, it's a good chance to try docker to deploy a deep learning model as a API service. In this article, I'd like to write down all the important procedures and details about how to make this service work with docker."
  
-![](/assets/res/laurel-docker-containers.png)
+![](/public/img/20181128-laurel-docker-containers.png)
 
  <!--more-->
 
-## 1. Background
-### 1.1. Description of my job
-After spending more than 200 credits on google cloud GPU for training a **Plant Disease Recoginition (PDR)** model with Keras, I've got a decent model that reached more than 85% accuracy. The model is ready and the next thing to do is to deploy the model for inference as a service.
-
-The main objective is to build a web service API which responds with a inference result as a json file after receiving a request with an image in it.
-
-### 1.2. What we have?
-At the moment, we have a well-built keras model, trained with `keras==2.2.4` and `tensorflow==1.11.0` in `python==3.5.2`.
-
-### 1.3. What strategy we choose?
-Basically, it's **"Flask + uWSGI + NGINX"**:
-
-- [Flask](http://flask.pocoo.org) is a good python microframework for web development. It is pretty easy to make an improvised API with Flask. But it's not recommended to use it to build a formal production.
-- [uWSGI](https://uwsgi-docs-additions.readthedocs.io/en/latest/) aims at developing a full stack for building hosting services. uWSGI is implemented as a linker between Nginx(does not support python) and Flask(written in python).
-- [NGINX](https://www.nginx.com/resources/wiki/)  ( [/ˌɛndʒɪnˈɛks/ EN-jin-EKS](https://en.wikipedia.org/wiki/Nginx)) is a free, open-source, high-performance HTTP server and reverse proxy.
-
-## 2. Check out Docker!
+## 1. Check out Docker!
 Of course we can install and configure the "*Flask/uWSGI/NGINX (FUN)*" combo step by step, but it's trivial and with bunch of pitfalls.
 
 Docker is the perfect choice to make such things much easier!
 
-### 2.1. Basic idea of using Docker
+### 1.1. Basic idea of using Docker
 The basic idea of using Docker is to avoid installing and configuring environment by yourself. Instead, you can download a ready-to-use ***image***, which is carefully configured and saved by other people, and run it as a ***container***, in which you can focus on you own stuff without worrying about whether the environment trivials at all.
 
 
-### 2.2. Install/Uninstall Docker
+## 2. Install/Uninstall Docker
 Docker is available in two editions:
 - Community Edition (CE)
 - Enterprise Edition (EE)
@@ -47,7 +31,7 @@ The CE edition is suitable for individual developers and it's free.
 
 To get Docker CE for Ubuntu, check the instruction [here](https://docs.docker.com/install/linux/docker-ce/ubuntu/).
 
-#### 2.2.1. Prerequisites
+### 2.1. Prerequisites
 1. Uninstall old versions:
 ```sh
 $ sudo apt-get remove docker docker-engine docker.io
@@ -92,7 +76,7 @@ $ sudo apt-get install \
 	   stable"
 	```
 
-#### 2.2.2. Install Docker CE (using repository)
+### 2.2. Install Docker CE (using repository)
 1. Update the `apt` package index:
 
 	```sh
@@ -121,7 +105,7 @@ $ sudo apt-get install \
 	$ sudo docker run hello-world
 	```
 
-### 2.2.3. Uninstall Docker CE
+### 2.3. Uninstall Docker CE
 1. Uninstall the Docker CE package:
 
 	```sh
@@ -134,15 +118,15 @@ $ sudo apt-get install \
 	$ sudo rm -rf /var/lib/docker
 	```
 
-#### 2.2.3. Other installation methods
+### 2.3. Other installation methods
 You can also install Docker CE from *a package* or *using the convenience script*. Again, for details check [here](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-using-the-repository)!
 
-### 2.3. Docker basics
+## 3. Docker basics
 Docker official site provides a very nice set of [Tutorials](https://docs.docker.com/get-started/). It's highly recommended to go through the first couple of sections of the tutorial. Here I'd like to keep a record of the very basic steps and commands to get started with Docker.
 
 The best and complete way to learn Docker is to go through this [Get Started from Docker's Official](https://docs.docker.com/get-started/). Here I just take a record of the core concepts and commands for myself.
 
-#### 2.3.1. Docker Concepts
+### 3.1. Docker Concepts
 
 - Image:
 
@@ -161,16 +145,16 @@ By contrast, a **virtual machine (VM)** runs a full-blown “guest” operating 
 <table>
   <tr>
     <td>
-    <img src="/assets/res/docker-container.png">
+    <img src="/public/img/20181128-docker-container.png">
     </td>
 
     <td>
-    <img src="/assets/res/docker-VM.png">
+    <img src="/public/img/20181128-docker-VM.png">
 	</td>
   </tr>
 </table>
 
-#### 2.3.2. **Cheat sheet 1 - Check info**
+### 3.2. **Cheat sheet 1 - Check info**
 
 ```sh
 ## List Docker CLI commands
@@ -195,7 +179,7 @@ docker container ls -aq
 
 ```
 
-#### 2.3.3. **Cheat sheet 2 - Check info**
+### 3.3. **Cheat sheet 2 - Check info**
 
 After `Dockerfile` and `app.py` (optionally `requirements`) are ready:
 
@@ -219,7 +203,7 @@ docker push username/repository:tag            # Upload tagged image to registry
 docker run username/repository:tag                   # Run image from a registry
 
 ```
-#### 2.3.3. **Cheat sheet 3 - Services**
+### 3.3. **Cheat sheet 3 - Services**
 
 ```sh
 
@@ -233,14 +217,5 @@ docker stack rm <appname>                             # Tear down an application
 docker swarm leave --force      # Take down a single node swarm from the manager
 
 ```
-
-## 3. **Flask + uWSGI + NGINX** with docker setup for my work 
-
-Check out [`tiangolo/uwsgi-nginx-flask-docker`](https://github.com/tiangolo/uwsgi-nginx-flask-docker) to find and download a suitable version of `Dockerfile`.
-
-Follow the instructions in the link above to set up the docker.
-
-***To Be continued ~***
-
 
 <br><br>***KF*** 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-03T20:02:21+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KFZ’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-03T20:04:43+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KFZ’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
 </subtitle><entry><title type="html">Deploy Keras Model with Flask+uWSGI+NGINX with docker</title><link href="http://localhost:4000/2018/12/03/flask-uwsgi-nginx-deploy" rel="alternate" type="text/html" title="Deploy Keras Model with Flask+uWSGI+NGINX with docker" /><published>2018-12-03T15:21:00+08:00</published><updated>2018-12-03T15:21:00+08:00</updated><id>http://localhost:4000/2018/12/03/flask-uwsgi-nginx-deploy</id><content type="html" xml:base="http://localhost:4000/2018/12/03/flask-uwsgi-nginx-deploy">&lt;blockquote&gt;
   &lt;p&gt;After spending more than 200 credits on google cloud GPU for training a &lt;strong&gt;Plant Disease Recoginition (PDR)&lt;/strong&gt; model with Keras, I’ve got a decent model that have reached more than 85% accuracy. The model is ready and the next thing to do is to deploy the model for inference as a service.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -313,7 +313,7 @@ In &lt;code class=&quot;highlighter-rouge&quot;&gt;api_test.py&lt;/code&gt;:&lt;
 
 &lt;p&gt;For Docker basics, see my previous article about Docker.&lt;/p&gt;
 
-&lt;h1 id=&quot;31-build-a-customized-version-of-docker-image&quot;&gt;3.1. Build a customized version of docker image&lt;/h1&gt;
+&lt;h3 id=&quot;31-build-a-customized-version-of-docker-image&quot;&gt;3.1. Build a customized version of docker image&lt;/h3&gt;
 &lt;p&gt;In my case, I use &lt;code class=&quot;highlighter-rouge&quot;&gt;python3.6&lt;/code&gt; version image. Besides, it is good practice to build a customized version of image for yourself since&lt;/p&gt;
 &lt;ol&gt;
   &lt;li&gt;Several additional python package need to be installed in the Docker;&lt;/li&gt;
@@ -338,16 +338,18 @@ numpy
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Then, write the &lt;code class=&quot;highlighter-rouge&quot;&gt;Dockerfile&lt;/code&gt; as below:&lt;/p&gt;
-&lt;div class=&quot;language-ini highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;tiangolo/uwsgi-nginx-flask:python3.6&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;FROM tiangolo/uwsgi-nginx-flask:python3.6
 
-&lt;span class=&quot;err&quot;&gt;COPY&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;requirements.txt&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;/&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt;COPY&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;kf_upload.conf&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;/etc/nginx/conf.d/&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt;RUN&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;pip&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;https://pypi.tuna.tsinghua.edu.cn/simple&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;-r&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;/requirements.txt&lt;/span&gt;
+COPY requirements.txt /
+COPY kf_upload.conf /etc/nginx/conf.d/
+RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r /requirements.txt
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Finally, in the directory including &lt;code class=&quot;highlighter-rouge&quot;&gt;Dockerfile&lt;/code&gt; build a customized version of Docker image by:&lt;/p&gt;
 &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker build &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; kf-customized-image &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;32-create-and-run-a-docker-container-with-the-customized-image&quot;&gt;3.2. Create and run a Docker container with the customized image&lt;/h3&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Operating System&quot;, &quot;Deep Learning&quot;]" /><category term="docker" /><category term="flask" /><category term="uwsgi" /><category term="nginx" /><category term="keras" /><category term="tensorflow" /><summary type="html">After spending more than 200 credits on google cloud GPU for training a Plant Disease Recoginition (PDR) model with Keras, I’ve got a decent model that have reached more than 85% accuracy. The model is ready and the next thing to do is to deploy the model for inference as a service.</summary></entry><entry><title type="html">Get Started with THE Docker</title><link href="http://localhost:4000/2018/11/28/docker-debut" rel="alternate" type="text/html" title="Get Started with THE Docker" /><published>2018-11-28T00:00:00+08:00</published><updated>2018-11-28T00:00:00+08:00</updated><id>http://localhost:4000/2018/11/28/docker-debut</id><content type="html" xml:base="http://localhost:4000/2018/11/28/docker-debut">&lt;blockquote&gt;
   &lt;p&gt;The famous “Docker” is &lt;strong&gt;&lt;em&gt;a tool that can package an application and tis dependencies in a virtual container that can run on any Linux server&lt;/em&gt;&lt;/strong&gt;. After getting my keras model, it’s a good chance to try docker to deploy a deep learning model as a API service. In this article, I’d like to write down all the important procedures and details about how to make this service work with docker.”&lt;/p&gt;

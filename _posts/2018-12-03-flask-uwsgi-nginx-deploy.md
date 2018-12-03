@@ -330,7 +330,7 @@ Check out [`tiangolo/uwsgi-nginx-flask-docker`](https://github.com/tiangolo/uwsg
 
 For Docker basics, see my previous article about Docker.
 
-# 3.1. Build a customized version of docker image
+### 3.1. Build a customized version of docker image
 In my case, I use `python3.6` version image. Besides, it is good practice to build a customized version of image for yourself since
 1. Several additional python package need to be installed in the Docker;
 2. Some minor modifications are needed for the nginx service;
@@ -355,7 +355,7 @@ client_body_buffer_size 5m;
 ```
 
 Then, write the `Dockerfile` as below:
-```ini
+```
 FROM tiangolo/uwsgi-nginx-flask:python3.6
 
 COPY requirements.txt /
@@ -368,13 +368,7 @@ Finally, in the directory including `Dockerfile` build a customized version of D
 $ docker build -t kf-customized-image .
 ```
 
-
-
-
-
-
-
-
+### 3.2. Create and run a Docker container with the customized image
 
 
 <br><br>***KF*** 

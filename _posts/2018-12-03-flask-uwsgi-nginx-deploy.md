@@ -146,7 +146,7 @@ Run/Test the API with Flask simply by:
 $ python myproject.py
 ```
 
-If the log is as below, ht means the Flask API is working well,
+If the log is as below, it means the Flask API is working well,
 ```sh
 * Loading Keras model and Flask starting server...please wait until server has fully started
 * Serving Flask app "myproject" (lazy loading)
@@ -367,8 +367,83 @@ Finally, in the directory including `Dockerfile` build a customized version of D
 ```sh
 $ docker build -t kf-customized-image .
 ```
+> Note that the `kf-customized-image` is the name of the new image you build. You may change it to anything you like.
 
 ### 3.2. Create and run a Docker container with the customized image
+Create a new folder for deploying you api, in which there's a `Dockerfile` and a subfolder named `app`.
+
+Copy the `myproject.py` file mentioned in the previous section into the `app` folder, rename it as `main.py`. Also remember to copy the files used in the `main.py` (e.g. `disease.model`, `labels.npz`) in to `app` folder too.
+
+In the base folder (which inlcudes th `app` folder and the `Dockerfile`), create a `uwsgi.ini` file, add the following code:
+```ini
+[uwsgi]
+socket = /tmp/uwsgi.sock
+chown-socket = nginx:nginx
+chmod-socket = 664
+cheaper = 0
+processes = 1
+master = false
+```
+
+Then, add the following code into the `Dockerfile`:
+```
+FROM kf-customized-image
+COPY uwsgi.ini /etc/uwsgi/
+
+COPY ./app /app
+```
+
+Build the final version of image that is ready to use, in the base folder:
+```sh 
+$ docker build -t kf-ready-to-deploy-image .
+```
+
+Now, everything is ready for the deployment. You can check if your image is ready in you Docker by:
+```sh
+$ docker image ls
+```
+
+Finally, all you need to do is to run the image as a container. 
+
+In any working directory, just run:
+```sh
+docker run -p 80:80 kf-ready-to-deploy-image
+```
+
+> Note that the `-p` parameter is to map the Docker internal port (e.g. `80`) to your actual machine serving port (e.g. `80`). 
+
+Then the  API should be working.
+
+You may use the same `api-test.py` on another computer (in the same internal network) to test if the API works normally. Remember to make sure that the testing port is consistent with the one set in your service.
+
+### 3.3. Wrap it up and deploy it anywhere else
+The advantage of using docker is its compatibility. As long as Docker is installed on your platform, no matter its Windows, Linux or macOS, you can simply deploy your service with the image you built.
+
+There are two ways to scale your self-built image:
+1. Log in your Dockerhub account and publish your image, after that, import your image by enter its unique name:
+	```
+	docker login             # Log in this CLI session using your Docker credentials
+	docker tag <image> username/repository:tag  # Tag <image> for upload to registry
+	docker push username/repository:tag            # Upload tagged image to registry
+	```
+
+2. Save the Docker image into a `.tar` file. Load the `.tar` file on the destination machine.
+
+	Save the Docker image with (the two commands belows are the same):
+	```sh
+	$ docker save --output kf-ready-to-deploy-image.tar kf-ready-to-deploy-image
+	$ docker save -o kf-ready-to-deploy-image.tar kf-ready-to-deploy-image
+	```
+
+	Load the Docker image with (the two commands belows are the same):
+	```sh
+	$ docker save --input kf-ready-to-deploy-image.tar
+	$ docker save -i kf-ready-to-deploy-image.tar
+	```
+
+## 4. Conclusion
+There's not a lot of articles about Deploying Keras models for production, thus here I write a complete instruction on how to deploy Keras model with Flask+uWSGI+NGINX strategy in two ways: 1) Configure everything step by step; 2) Apply docker to save your time. Both methods can provide the same production-level API service for your well-trained Keras model.
+
 
 
 <br><br>***KF*** 

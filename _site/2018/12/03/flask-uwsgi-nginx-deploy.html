@@ -533,7 +533,7 @@ COPY ./app /app
 <p>Finally, one last step you need to do is to run the image as a container.</p>
 
 <p>In any working directory, just run:</p>
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-p</span> 80:80 kf-ready-to-deploy-image
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker run <span class="nt">-p</span> 80:80 kf-ready-to-deploy-image
 </code></pre></div></div>
 
 <blockquote>
@@ -550,9 +550,9 @@ COPY ./app /app
 <p>There are two ways to scale your self-built image:</p>
 <ol>
   <li>Log in your Dockerhub account and publish your image, after which, import your image by enter its unique name:
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> docker login             # Log in this CLI session using your Docker credentials
- docker tag &lt;image&gt; username/repository:tag  # Tag &lt;image&gt; for upload to registry
- docker push username/repository:tag            # Upload tagged image to registry
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>docker login             <span class="c"># Log in this CLI session using your Docker credentials</span>
+ <span class="nv">$ </span>docker tag &lt;image&gt; username/repository:tag  <span class="c"># Tag &lt;image&gt; for upload to registry</span>
+ <span class="nv">$ </span>docker push username/repository:tag            <span class="c"># Upload tagged image to registry</span>
 </code></pre></div>    </div>
   </li>
   <li>

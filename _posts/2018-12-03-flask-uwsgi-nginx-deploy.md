@@ -407,7 +407,7 @@ Finally, one last step you need to do is to run the image as a container.
 
 In any working directory, just run:
 ```sh
-docker run -p 80:80 kf-ready-to-deploy-image
+$ docker run -p 80:80 kf-ready-to-deploy-image
 ```
 
 > Note that the `-p` parameter is to map the Docker internal port (e.g. `80`) to your actual machine's port (e.g. `80`). 
@@ -421,10 +421,10 @@ The advantage of using Docker is for its compatibility. As long as Docker is ins
 
 There are two ways to scale your self-built image:
 1. Log in your Dockerhub account and publish your image, after which, import your image by enter its unique name:
-	```
-	docker login             # Log in this CLI session using your Docker credentials
-	docker tag <image> username/repository:tag  # Tag <image> for upload to registry
-	docker push username/repository:tag            # Upload tagged image to registry
+	```sh
+	$ docker login             # Log in this CLI session using your Docker credentials
+	$ docker tag <image> username/repository:tag  # Tag <image> for upload to registry
+	$ docker push username/repository:tag            # Upload tagged image to registry
 	```
 
 2. Save the Docker image into a `.tar` file. Load the `.tar` file on any destination machine.

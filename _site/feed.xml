@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-04T10:27:04+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KFZ’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-04T10:29:11+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KFZ’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
 </subtitle><entry><title type="html">Deploy Keras Model with Flask+uWSGI+NGINX with docker</title><link href="http://localhost:4000/2018/12/03/flask-uwsgi-nginx-deploy" rel="alternate" type="text/html" title="Deploy Keras Model with Flask+uWSGI+NGINX with docker" /><published>2018-12-03T15:21:00+08:00</published><updated>2018-12-03T15:21:00+08:00</updated><id>http://localhost:4000/2018/12/03/flask-uwsgi-nginx-deploy</id><content type="html" xml:base="http://localhost:4000/2018/12/03/flask-uwsgi-nginx-deploy">&lt;blockquote&gt;
   &lt;p&gt;After spending more than 200 credits on google cloud GPU for training a &lt;strong&gt;Plant Disease Recoginition (PDR)&lt;/strong&gt; model with Keras, I’ve got a decent model that have reached more than 85% accuracy. The model is ready and the next thing to do is to deploy the model for inference as a service.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -385,7 +385,7 @@ COPY ./app /app
 &lt;p&gt;Finally, one last step you need to do is to run the image as a container.&lt;/p&gt;
 
 &lt;p&gt;In any working directory, just run:&lt;/p&gt;
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 80:80 kf-ready-to-deploy-image
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker run &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 80:80 kf-ready-to-deploy-image
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;blockquote&gt;
@@ -402,9 +402,9 @@ COPY ./app /app
 &lt;p&gt;There are two ways to scale your self-built image:&lt;/p&gt;
 &lt;ol&gt;
   &lt;li&gt;Log in your Dockerhub account and publish your image, after which, import your image by enter its unique name:
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; docker login             # Log in this CLI session using your Docker credentials
- docker tag &amp;lt;image&amp;gt; username/repository:tag  # Tag &amp;lt;image&amp;gt; for upload to registry
- docker push username/repository:tag            # Upload tagged image to registry
+    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker login             &lt;span class=&quot;c&quot;&gt;# Log in this CLI session using your Docker credentials&lt;/span&gt;
+ &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker tag &amp;lt;image&amp;gt; username/repository:tag  &lt;span class=&quot;c&quot;&gt;# Tag &amp;lt;image&amp;gt; for upload to registry&lt;/span&gt;
+ &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker push username/repository:tag            &lt;span class=&quot;c&quot;&gt;# Upload tagged image to registry&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;

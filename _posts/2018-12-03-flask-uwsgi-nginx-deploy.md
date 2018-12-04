@@ -218,7 +218,7 @@ master = false
 #### 2.3.2. Creating a systemd Unit File
 Next, let's create the systemd service unit file. Creating a systemd unit file will allow Ubuntu's init system to automatically start uWSGI and serve the Flask application whenever the server boots.
 
-Create a unit file ending in .service (e.g. `myproject.service`) within the `/etc/systemd/system` directory with the following snippet:
+Create a unit file ends with .service (e.g. `myproject.service`) within the `/etc/systemd/system` directory with the following snippet:
 ```ini
 [Unit]                                                                                                                
 Description=uWSGI instance to serve myproject
@@ -398,36 +398,36 @@ Build the final version of image that is ready to use, in the base folder:
 $ docker build -t kf-ready-to-deploy-image .
 ```
 
-Now, everything is ready for the deployment. You can check if your image is ready in you Docker by:
+Now, everything is ready for deployment. You can check if your image is ready in your Docker by:
 ```sh
 $ docker image ls
 ```
 
-Finally, all you need to do is to run the image as a container. 
+Finally, one last step you need to do is to run the image as a container. 
 
 In any working directory, just run:
 ```sh
 docker run -p 80:80 kf-ready-to-deploy-image
 ```
 
-> Note that the `-p` parameter is to map the Docker internal port (e.g. `80`) to your actual machine serving port (e.g. `80`). 
+> Note that the `-p` parameter is to map the Docker internal port (e.g. `80`) to your actual machine's port (e.g. `80`). 
 
-Then the  API should be working.
+Then the  API should be working fine.
 
-You may use the same `api-test.py` on another computer (in the same internal network) to test if the API works normally. Remember to make sure that the testing port is consistent with the one set in your service.
+You may use the same `api-test.py` on another computer (in the same internal network) to test if the API works appropriately. Remember to make sure that the testing port is consistent with the one set in your service.
 
 ### 3.3. Wrap it up and deploy it anywhere else
-The advantage of using docker is its compatibility. As long as Docker is installed on your platform, no matter its Windows, Linux or macOS, you can simply deploy your service with the image you built.
+The advantage of using Docker is for its compatibility. As long as Docker is installed on your platform, no matter its Windows, Linux or macOS, you can simply deploy your service by running the image you built.
 
 There are two ways to scale your self-built image:
-1. Log in your Dockerhub account and publish your image, after that, import your image by enter its unique name:
+1. Log in your Dockerhub account and publish your image, after which, import your image by enter its unique name:
 	```
 	docker login             # Log in this CLI session using your Docker credentials
 	docker tag <image> username/repository:tag  # Tag <image> for upload to registry
 	docker push username/repository:tag            # Upload tagged image to registry
 	```
 
-2. Save the Docker image into a `.tar` file. Load the `.tar` file on the destination machine.
+2. Save the Docker image into a `.tar` file. Load the `.tar` file on any destination machine.
 
 	Save the Docker image with (the two commands belows are the same):
 	```sh
@@ -442,7 +442,7 @@ There are two ways to scale your self-built image:
 	```
 
 ## 4. Conclusion
-There's not a lot of articles about Deploying Keras models for production, thus here I write a complete instruction on how to deploy Keras model with Flask+uWSGI+NGINX strategy in two ways: 1) Configure everything step by step; 2) Apply docker to save your time. Both methods can provide the same production-level API service for your well-trained Keras model.
+There're not a lot of articles on deploying Keras models for production, thus I write this complete instruction on how to deploy Keras model with Flask+uWSGI+NGINX strategy. There are two ways to manage the work: 1) configure everything step by step; 2) apply docker to save your time. Both methods can provide the same production-level API with your well-trained Keras model.
 
 
 

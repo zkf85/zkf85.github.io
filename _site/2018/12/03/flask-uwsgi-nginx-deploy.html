@@ -359,7 +359,7 @@ In <code class="highlighter-rouge">api_test.py</code>:</p>
 <h4 id="232-creating-a-systemd-unit-file">2.3.2. Creating a systemd Unit File</h4>
 <p>Next, let’s create the systemd service unit file. Creating a systemd unit file will allow Ubuntu’s init system to automatically start uWSGI and serve the Flask application whenever the server boots.</p>
 
-<p>Create a unit file ending in .service (e.g. <code class="highlighter-rouge">myproject.service</code>) within the <code class="highlighter-rouge">/etc/systemd/system</code> directory with the following snippet:</p>
+<p>Create a unit file ends with .service (e.g. <code class="highlighter-rouge">myproject.service</code>) within the <code class="highlighter-rouge">/etc/systemd/system</code> directory with the following snippet:</p>
 <div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[Unit]</span>                                                                                                                
 <span class="py">Description</span><span class="p">=</span><span class="s">uWSGI instance to serve myproject</span>
 <span class="py">After</span><span class="p">=</span><span class="s">network.target</span>
@@ -526,37 +526,37 @@ COPY ./app /app
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker build <span class="nt">-t</span> kf-ready-to-deploy-image <span class="nb">.</span>
 </code></pre></div></div>
 
-<p>Now, everything is ready for the deployment. You can check if your image is ready in you Docker by:</p>
+<p>Now, everything is ready for deployment. You can check if your image is ready in your Docker by:</p>
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker image <span class="nb">ls</span>
 </code></pre></div></div>
 
-<p>Finally, all you need to do is to run the image as a container.</p>
+<p>Finally, one last step you need to do is to run the image as a container.</p>
 
 <p>In any working directory, just run:</p>
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-p</span> 80:80 kf-ready-to-deploy-image
 </code></pre></div></div>
 
 <blockquote>
-  <p>Note that the <code class="highlighter-rouge">-p</code> parameter is to map the Docker internal port (e.g. <code class="highlighter-rouge">80</code>) to your actual machine serving port (e.g. <code class="highlighter-rouge">80</code>).</p>
+  <p>Note that the <code class="highlighter-rouge">-p</code> parameter is to map the Docker internal port (e.g. <code class="highlighter-rouge">80</code>) to your actual machine’s port (e.g. <code class="highlighter-rouge">80</code>).</p>
 </blockquote>
 
-<p>Then the  API should be working.</p>
+<p>Then the  API should be working fine.</p>
 
-<p>You may use the same <code class="highlighter-rouge">api-test.py</code> on another computer (in the same internal network) to test if the API works normally. Remember to make sure that the testing port is consistent with the one set in your service.</p>
+<p>You may use the same <code class="highlighter-rouge">api-test.py</code> on another computer (in the same internal network) to test if the API works appropriately. Remember to make sure that the testing port is consistent with the one set in your service.</p>
 
 <h3 id="33-wrap-it-up-and-deploy-it-anywhere-else">3.3. Wrap it up and deploy it anywhere else</h3>
-<p>The advantage of using docker is its compatibility. As long as Docker is installed on your platform, no matter its Windows, Linux or macOS, you can simply deploy your service with the image you built.</p>
+<p>The advantage of using Docker is for its compatibility. As long as Docker is installed on your platform, no matter its Windows, Linux or macOS, you can simply deploy your service by running the image you built.</p>
 
 <p>There are two ways to scale your self-built image:</p>
 <ol>
-  <li>Log in your Dockerhub account and publish your image, after that, import your image by enter its unique name:
+  <li>Log in your Dockerhub account and publish your image, after which, import your image by enter its unique name:
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> docker login             # Log in this CLI session using your Docker credentials
  docker tag &lt;image&gt; username/repository:tag  # Tag &lt;image&gt; for upload to registry
  docker push username/repository:tag            # Upload tagged image to registry
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Save the Docker image into a <code class="highlighter-rouge">.tar</code> file. Load the <code class="highlighter-rouge">.tar</code> file on the destination machine.</p>
+    <p>Save the Docker image into a <code class="highlighter-rouge">.tar</code> file. Load the <code class="highlighter-rouge">.tar</code> file on any destination machine.</p>
 
     <p>Save the Docker image with (the two commands belows are the same):</p>
     <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>docker save <span class="nt">--output</span> kf-ready-to-deploy-image.tar kf-ready-to-deploy-image
@@ -571,7 +571,7 @@ COPY ./app /app
 </ol>
 
 <h2 id="4-conclusion">4. Conclusion</h2>
-<p>There’s not a lot of articles about Deploying Keras models for production, thus here I write a complete instruction on how to deploy Keras model with Flask+uWSGI+NGINX strategy in two ways: 1) Configure everything step by step; 2) Apply docker to save your time. Both methods can provide the same production-level API service for your well-trained Keras model.</p>
+<p>There’re not a lot of articles on deploying Keras models for production, thus I write this complete instruction on how to deploy Keras model with Flask+uWSGI+NGINX strategy. There are two ways to manage the work: 1) configure everything step by step; 2) apply docker to save your time. Both methods can provide the same production-level API with your well-trained Keras model.</p>
 
 <p><br /><br /><strong><em>KF</em></strong></p>
 

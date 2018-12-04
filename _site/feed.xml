@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-04T10:10:46+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KFZ’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-04T10:27:04+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KFZ’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
 </subtitle><entry><title type="html">Deploy Keras Model with Flask+uWSGI+NGINX with docker</title><link href="http://localhost:4000/2018/12/03/flask-uwsgi-nginx-deploy" rel="alternate" type="text/html" title="Deploy Keras Model with Flask+uWSGI+NGINX with docker" /><published>2018-12-03T15:21:00+08:00</published><updated>2018-12-03T15:21:00+08:00</updated><id>http://localhost:4000/2018/12/03/flask-uwsgi-nginx-deploy</id><content type="html" xml:base="http://localhost:4000/2018/12/03/flask-uwsgi-nginx-deploy">&lt;blockquote&gt;
   &lt;p&gt;After spending more than 200 credits on google cloud GPU for training a &lt;strong&gt;Plant Disease Recoginition (PDR)&lt;/strong&gt; model with Keras, I’ve got a decent model that have reached more than 85% accuracy. The model is ready and the next thing to do is to deploy the model for inference as a service.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -211,7 +211,7 @@ In &lt;code class=&quot;highlighter-rouge&quot;&gt;api_test.py&lt;/code&gt;:&lt;
 &lt;h4 id=&quot;232-creating-a-systemd-unit-file&quot;&gt;2.3.2. Creating a systemd Unit File&lt;/h4&gt;
 &lt;p&gt;Next, let’s create the systemd service unit file. Creating a systemd unit file will allow Ubuntu’s init system to automatically start uWSGI and serve the Flask application whenever the server boots.&lt;/p&gt;
 
-&lt;p&gt;Create a unit file ending in .service (e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;myproject.service&lt;/code&gt;) within the &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/systemd/system&lt;/code&gt; directory with the following snippet:&lt;/p&gt;
+&lt;p&gt;Create a unit file ends with .service (e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;myproject.service&lt;/code&gt;) within the &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/systemd/system&lt;/code&gt; directory with the following snippet:&lt;/p&gt;
 &lt;div class=&quot;language-ini highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nn&quot;&gt;[Unit]&lt;/span&gt;                                                                                                                
 &lt;span class=&quot;py&quot;&gt;Description&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;uWSGI instance to serve myproject&lt;/span&gt;
 &lt;span class=&quot;py&quot;&gt;After&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;network.target&lt;/span&gt;
@@ -378,37 +378,37 @@ COPY ./app /app
 &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker build &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; kf-ready-to-deploy-image &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Now, everything is ready for the deployment. You can check if your image is ready in you Docker by:&lt;/p&gt;
+&lt;p&gt;Now, everything is ready for deployment. You can check if your image is ready in your Docker by:&lt;/p&gt;
 &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker image &lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Finally, all you need to do is to run the image as a container.&lt;/p&gt;
+&lt;p&gt;Finally, one last step you need to do is to run the image as a container.&lt;/p&gt;
 
 &lt;p&gt;In any working directory, just run:&lt;/p&gt;
 &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 80:80 kf-ready-to-deploy-image
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;Note that the &lt;code class=&quot;highlighter-rouge&quot;&gt;-p&lt;/code&gt; parameter is to map the Docker internal port (e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;80&lt;/code&gt;) to your actual machine serving port (e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;80&lt;/code&gt;).&lt;/p&gt;
+  &lt;p&gt;Note that the &lt;code class=&quot;highlighter-rouge&quot;&gt;-p&lt;/code&gt; parameter is to map the Docker internal port (e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;80&lt;/code&gt;) to your actual machine’s port (e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;80&lt;/code&gt;).&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Then the  API should be working.&lt;/p&gt;
+&lt;p&gt;Then the  API should be working fine.&lt;/p&gt;
 
-&lt;p&gt;You may use the same &lt;code class=&quot;highlighter-rouge&quot;&gt;api-test.py&lt;/code&gt; on another computer (in the same internal network) to test if the API works normally. Remember to make sure that the testing port is consistent with the one set in your service.&lt;/p&gt;
+&lt;p&gt;You may use the same &lt;code class=&quot;highlighter-rouge&quot;&gt;api-test.py&lt;/code&gt; on another computer (in the same internal network) to test if the API works appropriately. Remember to make sure that the testing port is consistent with the one set in your service.&lt;/p&gt;
 
 &lt;h3 id=&quot;33-wrap-it-up-and-deploy-it-anywhere-else&quot;&gt;3.3. Wrap it up and deploy it anywhere else&lt;/h3&gt;
-&lt;p&gt;The advantage of using docker is its compatibility. As long as Docker is installed on your platform, no matter its Windows, Linux or macOS, you can simply deploy your service with the image you built.&lt;/p&gt;
+&lt;p&gt;The advantage of using Docker is for its compatibility. As long as Docker is installed on your platform, no matter its Windows, Linux or macOS, you can simply deploy your service by running the image you built.&lt;/p&gt;
 
 &lt;p&gt;There are two ways to scale your self-built image:&lt;/p&gt;
 &lt;ol&gt;
-  &lt;li&gt;Log in your Dockerhub account and publish your image, after that, import your image by enter its unique name:
+  &lt;li&gt;Log in your Dockerhub account and publish your image, after which, import your image by enter its unique name:
     &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; docker login             # Log in this CLI session using your Docker credentials
  docker tag &amp;lt;image&amp;gt; username/repository:tag  # Tag &amp;lt;image&amp;gt; for upload to registry
  docker push username/repository:tag            # Upload tagged image to registry
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Save the Docker image into a &lt;code class=&quot;highlighter-rouge&quot;&gt;.tar&lt;/code&gt; file. Load the &lt;code class=&quot;highlighter-rouge&quot;&gt;.tar&lt;/code&gt; file on the destination machine.&lt;/p&gt;
+    &lt;p&gt;Save the Docker image into a &lt;code class=&quot;highlighter-rouge&quot;&gt;.tar&lt;/code&gt; file. Load the &lt;code class=&quot;highlighter-rouge&quot;&gt;.tar&lt;/code&gt; file on any destination machine.&lt;/p&gt;
 
     &lt;p&gt;Save the Docker image with (the two commands belows are the same):&lt;/p&gt;
     &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker save &lt;span class=&quot;nt&quot;&gt;--output&lt;/span&gt; kf-ready-to-deploy-image.tar kf-ready-to-deploy-image
@@ -423,7 +423,7 @@ COPY ./app /app
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;4-conclusion&quot;&gt;4. Conclusion&lt;/h2&gt;
-&lt;p&gt;There’s not a lot of articles about Deploying Keras models for production, thus here I write a complete instruction on how to deploy Keras model with Flask+uWSGI+NGINX strategy in two ways: 1) Configure everything step by step; 2) Apply docker to save your time. Both methods can provide the same production-level API service for your well-trained Keras model.&lt;/p&gt;
+&lt;p&gt;There’re not a lot of articles on deploying Keras models for production, thus I write this complete instruction on how to deploy Keras model with Flask+uWSGI+NGINX strategy. There are two ways to manage the work: 1) configure everything step by step; 2) apply docker to save your time. Both methods can provide the same production-level API with your well-trained Keras model.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Operating System&quot;, &quot;Deep Learning&quot;]" /><category term="docker" /><category term="flask" /><category term="uwsgi" /><category term="nginx" /><category term="keras" /><category term="tensorflow" /><summary type="html">After spending more than 200 credits on google cloud GPU for training a Plant Disease Recoginition (PDR) model with Keras, I’ve got a decent model that have reached more than 85% accuracy. The model is ready and the next thing to do is to deploy the model for inference as a service.</summary></entry><entry><title type="html">Get Started with THE Docker</title><link href="http://localhost:4000/2018/11/28/docker-debut" rel="alternate" type="text/html" title="Get Started with THE Docker" /><published>2018-11-28T00:00:00+08:00</published><updated>2018-11-28T00:00:00+08:00</updated><id>http://localhost:4000/2018/11/28/docker-debut</id><content type="html" xml:base="http://localhost:4000/2018/11/28/docker-debut">&lt;blockquote&gt;
   &lt;p&gt;The famous “Docker” is &lt;strong&gt;&lt;em&gt;a tool that can package an application and tis dependencies in a virtual container that can run on any Linux server&lt;/em&gt;&lt;/strong&gt;. After getting my keras model, it’s a good chance to try docker to deploy a deep learning model as a API service. In this article, I’d like to write down all the important procedures and details about how to make this service work with docker.”&lt;/p&gt;

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-04T10:29:42+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KFZ’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-04T10:46:15+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KFZ’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
 </subtitle><entry><title type="html">Deploy Keras Model with Flask+uWSGI+NGINX with docker</title><link href="http://localhost:4000/2018/12/03/flask-uwsgi-nginx-deploy" rel="alternate" type="text/html" title="Deploy Keras Model with Flask+uWSGI+NGINX with docker" /><published>2018-12-03T15:21:00+08:00</published><updated>2018-12-03T15:21:00+08:00</updated><id>http://localhost:4000/2018/12/03/flask-uwsgi-nginx-deploy</id><content type="html" xml:base="http://localhost:4000/2018/12/03/flask-uwsgi-nginx-deploy">&lt;blockquote&gt;
   &lt;p&gt;After spending more than 200 credits on google cloud GPU for training a &lt;strong&gt;Plant Disease Recoginition (PDR)&lt;/strong&gt; model with Keras, I’ve got a decent model that have reached more than 85% accuracy. The model is ready and the next thing to do is to deploy the model for inference as a service.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -7,6 +7,7 @@
 
 &lt;h2 id=&quot;1-background&quot;&gt;1. Background&lt;/h2&gt;
 
+&lt;h3 id=&quot;11-objective&quot;&gt;1.1. Objective&lt;/h3&gt;
 &lt;p&gt;The main objective is to build a web service API which responds with a inference result as a json file after receiving a request with an image in it.&lt;/p&gt;
 
 &lt;h3 id=&quot;12-what-we-have&quot;&gt;1.2. What we have?&lt;/h3&gt;
@@ -259,7 +260,7 @@ In &lt;code class=&quot;highlighter-rouge&quot;&gt;api_test.py&lt;/code&gt;:&lt;
 &lt;p&gt;Code in &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/nginx/sites-available/myproject&lt;/code&gt;:&lt;/p&gt;
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;server {
     listen 80;
-    server_name 192.168.0.235;
+    server_name 192.168.1.235;
 
     location / {
         try_files $uri @app;

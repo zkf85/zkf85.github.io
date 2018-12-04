@@ -155,6 +155,7 @@
 
 <h2 id="1-background">1. Background</h2>
 
+<h3 id="11-objective">1.1. Objective</h3>
 <p>The main objective is to build a web service API which responds with a inference result as a json file after receiving a request with an image in it.</p>
 
 <h3 id="12-what-we-have">1.2. What we have?</h3>
@@ -407,7 +408,7 @@ In <code class="highlighter-rouge">api_test.py</code>:</p>
 <p>Code in <code class="highlighter-rouge">/etc/nginx/sites-available/myproject</code>:</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>server {
     listen 80;
-    server_name 192.168.0.235;
+    server_name 192.168.1.235;
 
     location / {
         try_files $uri @app;

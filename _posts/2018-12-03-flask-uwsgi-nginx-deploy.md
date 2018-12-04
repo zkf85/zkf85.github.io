@@ -13,6 +13,7 @@ tag: [docker, flask, uwsgi, nginx, keras, tensorflow]
 
 ## 1. Background
 
+### 1.1. Objective
 The main objective is to build a web service API which responds with a inference result as a json file after receiving a request with an image in it.
 
 ### 1.2. What we have?

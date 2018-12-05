@@ -8,6 +8,7 @@ tag: [macOS, bash, usb-bootable-stick, ubuntu]
 ---
 
 > Making things happen without any third party tools is joyful. In this article, I'd like to show how to make a bootable USB simply using built-in commands in a terminal on macOS.
+
 ![](/public/img/20181205-bootable-usb.jpg)
 
 <!--more-->

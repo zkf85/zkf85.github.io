@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-05T15:20:01+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KFZ’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-05T15:24:38+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KFZ’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
 </subtitle><entry><title type="html">How to make Bootable USB from an ISO with Command Line Tools on macOS?</title><link href="http://localhost:4000/2018/12/05/how-to-format-a-usb-on-linux" rel="alternate" type="text/html" title="How to make Bootable USB from an ISO with Command Line Tools on macOS?" /><published>2018-12-05T11:30:00+08:00</published><updated>2018-12-05T11:30:00+08:00</updated><id>http://localhost:4000/2018/12/05/how-to-format-a-usb-on-linux</id><content type="html" xml:base="http://localhost:4000/2018/12/05/how-to-format-a-usb-on-linux">&lt;blockquote&gt;
-  &lt;p&gt;Making things happen without any third party tools is joyful. In this article, I’d like to show how to make a bootable USB simply using built-in commands in a terminal on macOS.
-&lt;img src=&quot;/public/img/20181205-bootable-usb.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;Making things happen without any third party tools is joyful. In this article, I’d like to show how to make a bootable USB simply using built-in commands in a terminal on macOS.&lt;/p&gt;
 &lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/img/20181205-bootable-usb.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;!--more--&gt;
 

@@ -21,6 +21,7 @@ url: "https://zkf85.github.io"
 permalink: /:year/:month/:day/:title
 repository: 
 paginate: 5
+excerpt_separator: <!--more-->
 
 # MatJek specific configurations
 github_profile: "https://github.com/zkf85"

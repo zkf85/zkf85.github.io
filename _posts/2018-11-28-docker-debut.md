@@ -7,7 +7,7 @@ category: [Operating System]
 tag: [docker]
 ---
 
->The famous "Docker" is ***a tool that can package an application and tis dependencies in a virtual container that can run on any Linux server***. After getting my keras model, it's a good chance to try docker to deploy a deep learning model as a API service. In this article, I'd like to write down all the important procedures and details about how to make this service work with docker."
+> The famous "Docker" is ***a tool that can package an application and tis dependencies in a virtual container that can run on any Linux server***. After getting my keras model, it's a good chance to try docker to deploy a deep learning model as a API service. In this article, I'd like to write down all the important procedures and details about how to make this service work with docker."
  
 ![](/public/img/20181128-laurel-docker-containers.png)
 

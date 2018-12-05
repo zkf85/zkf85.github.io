@@ -1,0 +1,38 @@
+<blockquote>
+  <p>This is a common issue that anybody using XCode may encounter. It’s usually very annoying when you want to change the names of the classes because file names and includes are all related when you do it. Here I gather some correct (should be) way to make it happen.</p>
+</blockquote>
+
+<!--more-->
+
+<h2 id="1-change-default-view-controller-name">1. Change Default View Controller Name</h2>
+
+<p>Check this: <a href="http://rshankar.com/how-to-rename-default-view-controllers-in-xcode/">How to rename default view controllers in XCode</a>
+In short, it looks like this:</p>
+
+<ul>
+  <li>
+    <p><strong>Step 1:</strong> Navigate to FirstViewController.h and select the name after interface keyword.</p>
+  </li>
+  <li>
+    <p><strong>Step 2:</strong> Click the Edit menu then Refactor and select Rename from the list of available option.</p>
+  </li>
+  <li>
+    <p><strong>Step 3:</strong> Enter the name then select Rename related files and click the Preview button. This would display the list of files and location where the rename would affect.</p>
+  </li>
+  <li>
+    <p><strong>Step 4:</strong> If you are happy with Preview then save the changes.</p>
+  </li>
+</ul>
+
+<p>I tried the steps above and it works fine.</p>
+
+<p>According to personal experience, you’d better change your default controller name right after you create your new  application. As more files and classes are added, there might be more problems emerge.</p>
+
+<p>Oh, by the way, DON’T FORGET to change your controller class name to the new one in the identity inspector in storyboard.</p>
+
+<h2 id="2-change-default-appdelegate-name">2. Change Default AppDelegate Name</h2>
+
+<p>I applied the same steps to rename my default <code class="highlighter-rouge">AppDelegate.h/AppDelegate.m</code> class. It works fine, but you need to change the app delegate include name in <code class="highlighter-rouge">main.m</code> manually, or there’ll be an error.</p>
+
+<p><br />
+<strong><em>KF</em></strong></p>

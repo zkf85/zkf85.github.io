@@ -1,0 +1,77 @@
+<blockquote>
+  <p>两个方法的异同。</p>
+</blockquote>
+
+<!--more-->
+
+<h3 id="相同点">相同点：</h3>
+<p>一般来说，要使用某个类的方法，需要先实例化一个对象再调用方法。
+e.g.:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="n">bar</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  
+        <span class="k">print</span> <span class="s">'foo'</span> 
+	<span class="o">@</span><span class="nb">staticmethod</span>
+	<span class="k">def</span> <span class="nf">static_foo</span><span class="p">():</span>
+		<span class="k">print</span><span class="p">(</span><span class="s">"static_foo"</span><span class="p">)</span>
+		
+	<span class="o">@</span><span class="nb">classmethod</span>
+	<span class="k">def</span> <span class="nf">class_foo</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+		<span class="k">print</span><span class="p">(</span><span class="s">"class_foo"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>而使用<code class="highlighter-rouge">@staticmethod</code>或<code class="highlighter-rouge">@classmethod</code>，就可以不需要实例化，直接<strong>类名.方法名()</strong>来调用。e.g. <code class="highlighter-rouge">A.static_foo</code> 或者 <code class="highlighter-rouge">A.class_foo</code></p>
+
+<p>这有利于组织代码，把某些应该属于某个类的函数给放到那个类里去，同时有利于命名空间的整洁。</p>
+
+<h3 id="不同点">不同点：</h3>
+
+<p>既然@staticmethod和@classmethod都可以直接类名.方法名()来调用，那他们有什么区别呢</p>
+
+<p>从它们的使用上来看,</p>
+
+<ul>
+  <li>
+    <p>@staticmethod<strong>不需要</strong>表示自身对象的self和自身类的cls<strong>参数</strong>，就跟使用函数一样。</p>
+  </li>
+  <li>
+    <p>@classmethod也不需要self参数，但<strong>第一个参数</strong>需要是表示自身类的cls参数。</p>
+  </li>
+</ul>
+
+<p>如果在@staticmethod中要调用到这个类的一些属性方法，只能直接类名.属性名或类名.方法名, e.g. <code class="highlighter-rouge">A.bar</code></p>
+
+<p>而@classmethod因为持有cls参数，可以来调用类的属性，类的方法，实例化对象等，避免硬编码, e.g. <code class="highlighter-rouge">cls.bar</code>以及<code class="highlighter-rouge">cls().foo()</code></p>
+
+<h4 id="测试代码">测试代码</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>  
+    <span class="n">bar</span> <span class="o">=</span> <span class="mi">1</span>  
+    <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  
+        <span class="k">print</span><span class="p">(</span><span class="s">"oo"</span><span class="p">)</span>
+ 
+    <span class="o">@</span><span class="nb">staticmethod</span>  
+    <span class="k">def</span> <span class="nf">static_foo</span><span class="p">():</span>  
+        <span class="k">print</span><span class="p">(</span><span class="s">"static_foo"</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">bar</span><span class="p">)</span>
+ 
+    <span class="o">@</span><span class="nb">classmethod</span>  
+    <span class="k">def</span> <span class="nf">class_foo</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>  
+        <span class="k">print</span><span class="p">(</span><span class="s">"class_foo"</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">cls</span><span class="o">.</span><span class="n">bar</span><span class="p">)</span>
+        <span class="n">cls</span><span class="p">()</span><span class="o">.</span><span class="n">foo</span><span class="p">()</span>  
+  
+<span class="n">A</span><span class="o">.</span><span class="n">static_foo</span><span class="p">()</span>  
+<span class="n">A</span><span class="o">.</span><span class="n">class_foo</span><span class="p">()</span>  
+</code></pre></div></div>
+<p>输出</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>static_foo
+1
+class_foo
+1
+foo
+</code></pre></div></div>
+
+<p><br /><strong><em>KF</em></strong></p>

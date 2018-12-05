@@ -1,0 +1,102 @@
+<blockquote>
+  <p>What is the concept of singleton in iOS development?</p>
+</blockquote>
+
+<!--more-->
+
+<h2 id="what-is-singleton">What is Singleton</h2>
+<p>A singleton object provides a global point of access to the resources of its class. Singletons are used in situations where this single point of control is desirable, such as with classes that offer some general service or resource. You obtain the global instance from a singleton class through a factory method.</p>
+
+<h2 id="why-and-when-we-use-it">Why and When We Use It?</h2>
+<p>You obtain the global instance from a singleton class through a factory method. The class lazily creates its sole instance the first time it is requested and thereafter ensures that no other instance can be created.<sup id="fnref:apple"><a href="#fn:apple" class="footnote">1</a></sup> It’s an extremely powerful way to share data between different parts of code without having to pass the data around manually.<sup id="fnref:matt"><a href="#fn:matt" class="footnote">2</a></sup></p>
+
+<p>Singleton classes are an important concept to understand because they exhibit an extremely useful design pattern. This idea is used throughout the iPhone SDK, for example, UIApplication has a method called sharedApplication which when called from anywhere will return the UIApplication instance which relates to the currently running application.<sup id="fnref:matt:1"><a href="#fn:matt" class="footnote">2</a></sup></p>
+
+<h2 id="how-to-implement">How to Implement?<sup id="fnref:matt:2"><a href="#fn:matt" class="footnote">2</a></sup></h2>
+<p>You can implement a singleton class in Objective-C using the following code:</p>
+
+<p>in <code class="highlighter-rouge">MyManager.h</code>:</p>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#import &lt;foundation/Foundation.h&gt;
+</span>
+<span class="k">@interface</span> <span class="nc">MyManager</span> <span class="p">:</span> <span class="nc">NSObject</span> <span class="p">{</span>
+    <span class="n">NSString</span> <span class="o">*</span><span class="n">someProperty</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">retain</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">someProperty</span><span class="p">;</span>
+
+<span class="k">+</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="n">sharedManager</span><span class="p">;</span>
+
+<span class="k">@end</span>
+</code></pre></div></div>
+
+<p>in <code class="highlighter-rouge">MyManager.m</code>:</p>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#import "MyManager.h"
+</span>
+<span class="k">@implementation</span> <span class="nc">MyManager</span>
+
+<span class="k">@synthesize</span> <span class="n">someProperty</span><span class="p">;</span>
+
+<span class="cp">#pragma mark Singleton Methods
+</span>
+<span class="k">+</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="n">sharedManager</span> <span class="p">{</span>
+    <span class="k">static</span> <span class="n">MyManager</span> <span class="o">*</span><span class="n">sharedMyManager</span> <span class="o">=</span> <span class="nb">nil</span><span class="p">;</span>
+    <span class="k">static</span> <span class="n">dispatch_once_t</span> <span class="n">onceToken</span><span class="p">;</span>
+    <span class="n">dispatch_once</span><span class="p">(</span><span class="o">&amp;</span><span class="n">onceToken</span><span class="p">,</span> <span class="o">^</span><span class="p">{</span>
+        <span class="n">sharedMyManager</span> <span class="o">=</span> <span class="p">[[</span><span class="n">self</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">init</span><span class="p">];</span>
+    <span class="p">});</span>
+    <span class="k">return</span> <span class="n">sharedMyManager</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">-</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="n">init</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">self</span> <span class="o">=</span> <span class="p">[</span><span class="n">super</span> <span class="nf">init</span><span class="p">])</span> <span class="p">{</span>
+      <span class="n">someProperty</span> <span class="o">=</span> <span class="p">[[</span><span class="n">NSString</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithString</span><span class="p">:</span><span class="s">@"Default Property Value"</span><span class="p">];</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="n">self</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">dealloc</span> <span class="p">{</span>
+  <span class="c1">// Should never be called, but just here for clarity really.</span>
+<span class="p">}</span>
+
+<span class="k">@end</span>
+</code></pre></div></div>
+
+<p>What this does is it defines a static variable (but only global to this <a href="http://en.wikipedia.org/wiki/Translation_unit_(programming)">translation unit</a>) called <code class="highlighter-rouge">sharedMyManager</code> which is then initialized once and only once in <code class="highlighter-rouge">sharedManager</code>. The way we ensure that it’s only created once is by using the <code class="highlighter-rouge">dispatch_once</code> method from <a href="http://developer.apple.com/library/ios/#documentation/Performance/Reference/GCD_libdispatch_Ref/Reference/reference.html">Grand Central Dispatch (GCD)</a>. This is thread safe and handled entirely by the OS for you so that you don’t have to worry about it at all.</p>
+
+<p>However, if you would rather not use GCD then you should use the following code for sharedManager:</p>
+
+<p>Non-GCD based code:</p>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="n">sharedManager</span> <span class="p">{</span>
+    <span class="k">static</span> <span class="n">MyManager</span> <span class="o">*</span><span class="n">sharedMyManager</span> <span class="o">=</span> <span class="nb">nil</span><span class="p">;</span>
+    <span class="k">@synchronized</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">sharedMyManager</span> <span class="o">==</span> <span class="nb">nil</span><span class="p">)</span>
+            <span class="n">sharedMyManager</span> <span class="o">=</span> <span class="p">[[</span><span class="n">self</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">init</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">sharedMyManager</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Then you can reference the singleton from anywhere by calling the following function:</p>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">MyManager</span> <span class="o">*</span><span class="n">sharedManager</span> <span class="o">=</span> <span class="p">[</span><span class="n">MyManager</span> <span class="nf">sharedManager</span><span class="p">];</span>
+</code></pre></div></div>
+
+<p>I’ve used this extensively throughout my code for things such as creating a singleton to handle CoreLocation or CoreData functions.</p>
+
+<p><br /><br />
+<strong><em>KF</em></strong></p>
+
+<h3 id="reference">Reference</h3>
+<div class="footnotes">
+  <ol>
+    <li id="fn:apple">
+      <p><a href="https://developer.apple.com/library/content/documentation/General/Conceptual/DevPedia-CocoaCore/Singleton.html">Singleton - Apple Developer</a> <a href="#fnref:apple" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:matt">
+      <p><a href="http://www.galloway.me.uk/tutorials/singleton-classes/">Singletons in Objective-C - Matt Galloway</a> <a href="#fnref:matt" class="reversefootnote">&#8617;</a> <a href="#fnref:matt:1" class="reversefootnote">&#8617;<sup>2</sup></a> <a href="#fnref:matt:2" class="reversefootnote">&#8617;<sup>3</sup></a></p>
+    </li>
+  </ol>
+</div>

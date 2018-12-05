@@ -1,0 +1,222 @@
+<blockquote>
+  <p>The famous “Docker” is <strong><em>a tool that can package an application and tis dependencies in a virtual container that can run on any Linux server</em></strong>. After getting my keras model, it’s a good chance to try docker to deploy a deep learning model as a API service. In this article, I’d like to write down all the important procedures and details about how to make this service work with docker.”</p>
+</blockquote>
+
+<p><img src="/public/img/20181128-laurel-docker-containers.png" alt="" /></p>
+
+<p><!--more--></p>
+
+<h2 id="1-check-out-docker">1. Check out Docker!</h2>
+<p>Of course we can install and configure the “<em>Flask/uWSGI/NGINX (FUN)</em>” combo step by step, but it’s trivial and with bunch of pitfalls.</p>
+
+<p>Docker is the perfect choice to make such things much easier!</p>
+
+<h3 id="11-basic-idea-of-using-docker">1.1. Basic idea of using Docker</h3>
+<p>The basic idea of using Docker is to avoid installing and configuring environment by yourself. Instead, you can download a ready-to-use <strong><em>image</em></strong>, which is carefully configured and saved by other people, and run it as a <strong><em>container</em></strong>, in which you can focus on you own stuff without worrying about whether the environment trivials at all.</p>
+
+<h2 id="2-installuninstall-docker">2. Install/Uninstall Docker</h2>
+<p>Docker is available in two editions:</p>
+<ul>
+  <li>Community Edition (CE)</li>
+  <li>Enterprise Edition (EE)</li>
+</ul>
+
+<p>The CE edition is suitable for individual developers and it’s free.</p>
+
+<p>To get Docker CE for Ubuntu, check the instruction <a href="https://docs.docker.com/install/linux/docker-ce/ubuntu/">here</a>.</p>
+
+<h3 id="21-prerequisites">2.1. Prerequisites</h3>
+<ol>
+  <li>Uninstall old versions:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt-get remove docker docker-engine docker.io
+</code></pre></div>    </div>
+  </li>
+  <li>Update the <code class="highlighter-rouge">apt</code> package index:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt-get update
+</code></pre></div>    </div>
+  </li>
+  <li>Install packages to allow apt to use a repository over HTTPS:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="se">\</span>
+ apt-transport-https <span class="se">\</span>
+ ca-certificates <span class="se">\</span>
+ curl <span class="se">\</span>
+ software-properties-common
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Add Docker’s official GPG key:</p>
+
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>curl <span class="nt">-fsSL</span> https://download.docker.com/linux/ubuntu/gpg | <span class="nb">sudo </span>apt-key add -
+</code></pre></div>    </div>
+
+    <p>Verify that you now have the key with the fingerprint <code class="highlighter-rouge">9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88</code>, by searching for the last 8 characters of the fingerprint.</p>
+
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span><span class="nb">sudo </span>apt-key fingerprint 0EBFCD88
+
+ pub   4096R/0EBFCD88 2017-02-22
+       Key fingerprint <span class="o">=</span> 9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88
+ uid                  Docker Release <span class="o">(</span>CE deb<span class="o">)</span> &lt;docker@docker.com&gt;
+ sub   4096R/F273FCD8 2017-02-22
+</code></pre></div>    </div>
+  </li>
+  <li>Use the following command to set up the stable repository. ( For x86_64/amd64)
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span><span class="nb">sudo </span>add-apt-repository <span class="se">\</span>
+    <span class="s2">"deb [arch=amd64] https://download.docker.com/linux/ubuntu </span><span class="se">\</span><span class="s2">
+    </span><span class="k">$(</span>lsb_release <span class="nt">-cs</span><span class="k">)</span><span class="s2"> </span><span class="se">\</span><span class="s2">
+    stable"</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="22-install-docker-ce-using-repository">2.2. Install Docker CE (using repository)</h3>
+<ol>
+  <li>
+    <p>Update the <code class="highlighter-rouge">apt</code> package index:</p>
+
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span><span class="nb">sudo </span>apt-get update
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Install packages to allow apt to use a repository over HTTPS:</p>
+
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="se">\</span>
+     apt-transport-https <span class="se">\</span>
+     ca-certificates <span class="se">\</span>
+     curl <span class="se">\</span>
+     software-properties-common
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Install the <em>latest</em> version of Docker CE, or go to the next step to install a specific version:</p>
+
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>docker-ce
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Verify that Docker CE is installed correctly by running the hello-world image.</p>
+
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span><span class="nb">sudo </span>docker run hello-world
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="23-uninstall-docker-ce">2.3. Uninstall Docker CE</h3>
+<ol>
+  <li>
+    <p>Uninstall the Docker CE package:</p>
+
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span><span class="nb">sudo </span>apt-get purge docker-ce
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Images, containers, volumes, or customized configuration files on your host are not automatically removed. To delete all images, containers, and volumes:</p>
+
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span><span class="nb">sudo rm</span> <span class="nt">-rf</span> /var/lib/docker
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="23-other-installation-methods">2.3. Other installation methods</h3>
+<p>You can also install Docker CE from <em>a package</em> or <em>using the convenience script</em>. Again, for details check <a href="https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-using-the-repository">here</a>!</p>
+
+<h2 id="3-docker-basics">3. Docker basics</h2>
+<p>Docker official site provides a very nice set of <a href="https://docs.docker.com/get-started/">Tutorials</a>. It’s highly recommended to go through the first couple of sections of the tutorial. Here I’d like to keep a record of the very basic steps and commands to get started with Docker.</p>
+
+<p>The best and complete way to learn Docker is to go through this <a href="https://docs.docker.com/get-started/">Get Started from Docker’s Official</a>. Here I just take a record of the core concepts and commands for myself.</p>
+
+<h3 id="31-docker-concepts">3.1. Docker Concepts</h3>
+
+<ul>
+  <li>
+    <p>Image:</p>
+
+    <p>An <strong>image</strong> is an executable package that includes everything needed to run an application–the code, a runtime, libraries, environment variables, and configuration files.</p>
+  </li>
+  <li>
+    <p>Container:</p>
+
+    <p>A <strong>container</strong> is a runtime instance of an image–what the image becomes in memory when executed (that is, an image with state, or a user process). You can see a list of your running containers with the command, <code class="highlighter-rouge">docker ps</code>, just as you would in Linux.</p>
+  </li>
+  <li>
+    <p>Container vs. Virtual Machines:</p>
+  </li>
+</ul>
+
+<p>A <strong>container</strong> runs natively on Linux and shares the kernel of the host machine with other containers. It runs a discrete process, taking no more memory than any other executable, making it lightweight.</p>
+
+<p>By contrast, a <strong>virtual machine (VM)</strong> runs a full-blown “guest” operating system with virtual access to host resources through a hypervisor. In general, VMs provide an environment with more resources than most applications need.</p>
+
+<table>
+  <tr>
+    <td>
+    <img src="/public/img/20181128-docker-container.png" />
+    </td>
+
+    <td>
+    <img src="/public/img/20181128-docker-VM.png" />
+	</td>
+  </tr>
+</table>
+
+<h3 id="32-cheat-sheet-1---check-info">3.2. <strong>Cheat sheet 1 - Check info</strong></h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">## List Docker CLI commands</span>
+docker
+docker container <span class="nt">--help</span>
+
+<span class="c">## Display Docker version and info</span>
+docker <span class="nt">--version</span>
+docker version
+docker info
+
+<span class="c">## Execute Docker image</span>
+docker run hello-world
+
+<span class="c">## List Docker images</span>
+docker image <span class="nb">ls</span>
+
+<span class="c">## List Docker containers (running, all, all in quiet mode)</span>
+docker container <span class="nb">ls
+</span>docker container <span class="nb">ls</span> <span class="nt">--all</span>
+docker container <span class="nb">ls</span> <span class="nt">-aq</span>
+
+</code></pre></div></div>
+
+<h3 id="33-cheat-sheet-2---check-info">3.3. <strong>Cheat sheet 2 - Check info</strong></h3>
+
+<p>After <code class="highlighter-rouge">Dockerfile</code> and <code class="highlighter-rouge">app.py</code> (optionally <code class="highlighter-rouge">requirements</code>) are ready:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+docker build <span class="nt">-t</span> friendlyhello <span class="nb">.</span>  <span class="c"># Create image using this directory's Dockerfile</span>
+docker run <span class="nt">-p</span> 4000:80 friendlyhello  <span class="c"># Run "friendlyname" mapping port 4000 to 80</span>
+docker run <span class="nt">-d</span> <span class="nt">-p</span> 4000:80 friendlyhello         <span class="c"># Same thing, but in detached mode</span>
+docker container <span class="nb">ls</span>                                <span class="c"># List all running containers</span>
+docker container <span class="nb">ls</span> <span class="nt">-a</span>             <span class="c"># List all containers, even those not running</span>
+docker container stop &lt;<span class="nb">hash</span><span class="o">&gt;</span>           <span class="c"># Gracefully stop the specified container</span>
+docker container <span class="nb">kill</span> &lt;<span class="nb">hash</span><span class="o">&gt;</span>         <span class="c"># Force shutdown of the specified container</span>
+docker container <span class="nb">rm</span> &lt;<span class="nb">hash</span><span class="o">&gt;</span>        <span class="c"># Remove specified container from this machine</span>
+docker container <span class="nb">rm</span> <span class="k">$(</span>docker container <span class="nb">ls</span> <span class="nt">-a</span> <span class="nt">-q</span><span class="k">)</span>         <span class="c"># Remove all containers</span>
+docker image <span class="nb">ls</span> <span class="nt">-a</span>                             <span class="c"># List all images on this machine</span>
+docker image <span class="nb">rm</span> &lt;image <span class="nb">id</span><span class="o">&gt;</span>            <span class="c"># Remove specified image from this machine</span>
+docker image <span class="nb">rm</span> <span class="k">$(</span>docker image <span class="nb">ls</span> <span class="nt">-a</span> <span class="nt">-q</span><span class="k">)</span>   <span class="c"># Remove all images from this machine</span>
+docker login             <span class="c"># Log in this CLI session using your Docker credentials</span>
+docker tag &lt;image&gt; username/repository:tag  <span class="c"># Tag &lt;image&gt; for upload to registry</span>
+docker push username/repository:tag            <span class="c"># Upload tagged image to registry</span>
+docker run username/repository:tag                   <span class="c"># Run image from a registry</span>
+
+</code></pre></div></div>
+<h3 id="33-cheat-sheet-3---services">3.3. <strong>Cheat sheet 3 - Services</strong></h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+docker stack <span class="nb">ls</span>                                            <span class="c"># List stacks or apps</span>
+docker stack deploy <span class="nt">-c</span> &lt;composefile&gt; &lt;appname&gt;  <span class="c"># Run the specified Compose file</span>
+docker service <span class="nb">ls</span>                 <span class="c"># List running services associated with an app</span>
+docker service ps &lt;service&gt;                  <span class="c"># List tasks associated with an app</span>
+docker inspect &lt;task or container&gt;                   <span class="c"># Inspect task or container</span>
+docker container <span class="nb">ls</span> <span class="nt">-q</span>                                      <span class="c"># List container IDs</span>
+docker stack <span class="nb">rm</span> &lt;appname&gt;                             <span class="c"># Tear down an application</span>
+docker swarm leave <span class="nt">--force</span>      <span class="c"># Take down a single node swarm from the manager</span>
+
+</code></pre></div></div>
+
+<p><br /><br /><strong><em>KF</em></strong></p>

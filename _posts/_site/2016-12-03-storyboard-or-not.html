@@ -1,0 +1,131 @@
+<blockquote>
+  <p>Storyboards are a quick and easy way to start building a simple app. But should you use Storyboards on more complex apps? Or on a team? What are the pros and cons of using them? Do experienced iOS developers use them? Are any mainstream apps built with Storyboards?</p>
+</blockquote>
+
+<!--more-->
+
+<h2 id="i-what-are-the-pros-and-cons-of-using-storyboards">I. What are the pros and cons of using Storyboards?<sup id="fnref:roadfire"><a href="#fn:roadfire" class="footnote">1</a></sup></h2>
+
+<h3 id="pros">Pros:</h3>
+<p>The biggest benefit of using Storyboards (especially over nibs/xibs) is that <strong>you can see how the screens in your app are related</strong>. When you’re just starting on an existing project (or coming back to an old one), Storyboards give you an easy way to follow the flow through the app and zoom out to get a high level overview of what the app does.</p>
+
+<p>Another benefit to using Storyboards (over creating views programmatically) is that <strong>you get to see what your view will look like at runtime without having to run your app</strong>. You can quickly make a change in Interface Builder and immediately see what it’ll look like – without waiting for Xcode to compile and run. (Nibs/xibs get this benefit, too.)</p>
+
+<p>And a third benefit is that <strong>you can create static table views in Storyboards</strong>. So if you have a Settings screen, for example, with tappable rows of static text, Storyboards allow you to quickly and easily create them – no code required.</p>
+
+<h3 id="cons">Cons:</h3>
+<p><strong>On teams</strong>, Storyboards are tricky to use for two main reasons:</p>
+
+<ul>
+  <li><strong>Merge conflicts are painful</strong>: When two people edit the same Storyboard file at the same time and cause a merge conflict, it’s tricky to sort out how to merge the changes. Part of this is because of the format of the Storyboard file (it’s XML) and part of it is because Xcode rearranges elements and makes changes in the Storyboard when you open it – even if you don’t touch anything. And when you do touch something, it’s that much worse.</li>
+  <li><strong>Code reviews are tricky</strong>: If you conduct code reviews on your team, reviewing changes to a Storyboard file is… difficult. Again, the format is XML with lots of hard-to-understand attributes and elements, so reviewing a diff and making constructive comments is just not easy.</li>
+</ul>
+
+<p>And those are just the cons to working on a team. Even if you’re working <strong>on your ow</strong>n, there are some cons to using Storyboards:</p>
+
+<ul>
+  <li><strong>Confusion when they become complicated</strong>: If you have a relatively large app and you keep adding new view controllers, your Storyboard will eventually become complicated. Those pretty arrows that connect one view controller to the next start overlapping each other or getting hidden under view controllers – and it’s really hard to see what’s happening in the app.</li>
+  <li><strong>Xcode grinds to a halt when opening a large Storyboard</strong>: Again, if you’re working on a relatively large app, Storyboards can be difficult since it takes Xcode a while to load them into the editor. I’m working on a project with about 30 view controllers in a Storyboard, and it takes multiple seconds (around 4-5) to load the Storyboard whenever I want to edit it. (And yes, my MBP is fast.)</li>
+</ul>
+
+<p>Whenever I’ve worked on a team, we’ve agreed to <strong>create separate Storyboards for different flows to avoid the confusion and performance issues of massive Storyboards.</strong> And we’ve always been careful to communicate about which Storyboard we’re working on before we start to make changes so we can avoid having to deal with messy merge conflicts. The code review issue exists, and will continue to exist, until Apple changes the format of the XML in the Storyboard file.</p>
+
+<h2 id="ii-why-im-abandoning-storyboards">II. Why I’m Abandoning Storyboards<sup id="fnref:gopalkri"><a href="#fn:gopalkri" class="footnote">2</a></sup></h2>
+<p>Here’s a list of reasons as to why I’m abandoning the storyboard:</p>
+
+<h3 id="1-diffs">1. Diffs</h3>
+<p>Storyboards can’t be diffed meaningfully. Since they serialize to unreadable XML, it’s more or less impossible to look at a diff of a storyboard and figure out what really changed.</p>
+
+<h3 id="2-merges">2. Merges</h3>
+<p>Because storyboards can’t be read by human beings, merging or rebasing storyboards across branches is an absolute nightmare. It often results in re-creating the work on one of the branches manually.</p>
+
+<h3 id="3-opening-a-file-modifies-it">3. Opening a file modifies it</h3>
+<p>I’m not sure why this happens, and it doesn’t happen all the time, but I’ve often found that merely opening a Storyboard file modifies it. This is super irritating, because I’m no longer sure about whether or not I made a change to it that matters.</p>
+
+<h3 id="4-code-review">4. Code review</h3>
+<p>A broken storyboard can completely break the app (like say, if you’ve got an ambiguous constraint), so it must be code reviewed like all other code. However, because of the above reasons, it is really hard to do a proper code review.</p>
+
+<h3 id="5-usefulness">5. Usefulness</h3>
+<p>One of the goals of using Storyboards is to be able to visualize what the app will look like without actually running it. In reality, though, storyboards don’t really come close. 
+<img src="http://gopalkri.com/assets/images/2016-05-27-Storyboards-Visualization.png" alt="image" /></p>
+
+<h2 id="what-im-doing-instead">What I’m doing instead</h2>
+<p>I’m going to be using AutoLayout in code. While NSLayoutConstraint is incredibly verbose, there’re a few open source libraries that appear to make it significantly less painful: SnapKit, EasyPeasy, SwiftAutoLayout, etc. I’m not a big fan of the ASCII art version of NSLayoutConstraint. As awesome as it is, it’s stringly typed, and I try and avoid stringly typed code whenever possible.</p>
+
+<h2 id="iii-ios-user-interfaces-storyboards-vs-nibs-vs-custom-code">III. iOS User Interfaces: Storyboards vs. NIBs vs. Custom Code<sup id="fnref:toptal"><a href="#fn:toptal" class="footnote">3</a></sup></h2>
+
+<h3 id="ios-storyboards">iOS Storyboards</h3>
+<blockquote>
+  <p>A classic beginner’s mistake is to create one massive project-wide Storyboard. A Storyboard is a board with a story to tell. It shouldn’t be used to mix unrelated stories into one big volume.</p>
+</blockquote>
+
+<p>As its name implies, a Storyboard is a board with a story to tell. It shouldn’t be used to mix unrelated stories into one big volume. A storyboard should contain view controllers that are logically related to each other—which doesn’t mean every view controller.</p>
+
+<p>For example, it makes sense to use Storyboards when handling:</p>
+
+<ul>
+  <li>A set of views for authentication and registration.</li>
+  <li>A multi-step order entry flow.</li>
+  <li>A wizard-like (i.e., tutorial) flow.</li>
+  <li>A master-detail set of views (e.g., profiles lists, profile details).</li>
+</ul>
+
+<p>Meanwhile, large Storyboards should be avoided, including single app-wide Storyboards (unless the app is relatively simple). Before we go any deeper, let’s see why.</p>
+
+<h4 id="when-to-use-storyboards">When to use Storyboards:</h4>
+<blockquote>
+  <p>Storyboards are best used with multiple interconnected view controllers, as their major simplification is in transitioning between view controllers.</p>
+</blockquote>
+
+<h4 id="when-not-to-use-ios-storyboards">When Not to Use iOS Storyboards</h4>
+
+<p>A few cases:</p>
+
+<ul>
+  <li>The view has a complicated or dynamic layout, best-implemented with code.</li>
+  <li>The view is already implemented with NIBs or code.</li>
+</ul>
+
+<p>In those cases, we can either leave the view out of the Storyboard or embed it in a view controller. The former breaks the Storyboard’s visual flow, but doesn’t have any negative functional or development implications. The latter retains this visual flow, but it requires additional development efforts as the view is not integrated into the view controller: it’s just embedded as a component, hence the view controller must interact with the view rather than implementing it.</p>
+
+<h3 id="ios-custom-code-programmatic-uis">iOS Custom Code (Programmatic UIs)</h3>
+
+<h4 id="pro-under-the-hood">Pro: Under the Hood</h4>
+<p>The greatest advantage of creating an iOS UI programmatically: if you know how to code a user interface, then you know what happens under the hood, whereas the same is not necessarily true of NIBs and Storyboards.</p>
+
+<p>So, mastering the coding of iOS user interfaces gives you more control over and greater awareness of how these pieces fit together, which raises your upper-bound as a developer.</p>
+
+<h4 id="when-to-use-code">When to Use Code</h4>
+
+<p>It’s often a good call to use use custom code for iOS user interface design when you have:</p>
+
+<ul>
+  <li>Dynamic layouts.</li>
+  <li>Views with effects, such as rounded corners, shadows, etc.</li>
+  <li>Any case in which using NIBs and Storyboards is complicated or infeasible.</li>
+</ul>
+
+<h4 id="when-not-to-use-code">When Not to Use Code</h4>
+
+<p>In general, code-made UIs can always be used. They’re rarely a bad idea, so I’d put an here.</p>
+
+<p>Fore complete information, check the references.</p>
+
+<p><br /><br />
+<strong><em>KF</em></strong></p>
+
+<h2 id="reference">Reference</h2>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:roadfire">
+      <p><a href="http://roadfiresoftware.com/2015/03/the-pros-and-cons-of-using-storyboards/">Should you use Storyboards on more complex apps?</a> <a href="#fnref:roadfire" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:gopalkri">
+      <p><a href="http://gopalkri.com/2016/05/27/why-im-abandoning-storyboards/">Why I’m Abandoning Storyboards</a> <a href="#fnref:gopalkri" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:toptal">
+      <p><a href="https://www.toptal.com/ios/ios-user-interfaces-storyboards-vs-nibs-vs-custom-code">iOS User Interfaces: Storyboards vs. NIBs vs. Custom Code</a> <a href="#fnref:toptal" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>

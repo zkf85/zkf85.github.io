@@ -1,5 +1,163 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-04T10:46:15+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KFZ’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
-</subtitle><entry><title type="html">Deploy Keras Model with Flask+uWSGI+NGINX with docker</title><link href="http://localhost:4000/2018/12/03/flask-uwsgi-nginx-deploy" rel="alternate" type="text/html" title="Deploy Keras Model with Flask+uWSGI+NGINX with docker" /><published>2018-12-03T15:21:00+08:00</published><updated>2018-12-03T15:21:00+08:00</updated><id>http://localhost:4000/2018/12/03/flask-uwsgi-nginx-deploy</id><content type="html" xml:base="http://localhost:4000/2018/12/03/flask-uwsgi-nginx-deploy">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-05T15:20:01+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KFZ’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
+</subtitle><entry><title type="html">How to make Bootable USB from an ISO with Command Line Tools on macOS?</title><link href="http://localhost:4000/2018/12/05/how-to-format-a-usb-on-linux" rel="alternate" type="text/html" title="How to make Bootable USB from an ISO with Command Line Tools on macOS?" /><published>2018-12-05T11:30:00+08:00</published><updated>2018-12-05T11:30:00+08:00</updated><id>http://localhost:4000/2018/12/05/how-to-format-a-usb-on-linux</id><content type="html" xml:base="http://localhost:4000/2018/12/05/how-to-format-a-usb-on-linux">&lt;blockquote&gt;
+  &lt;p&gt;Making things happen without any third party tools is joyful. In this article, I’d like to show how to make a bootable USB simply using built-in commands in a terminal on macOS.
+&lt;img src=&quot;/public/img/20181205-bootable-usb.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;1-prepare-everything-needed&quot;&gt;1. Prepare Everything Needed&lt;/h2&gt;
+&lt;p&gt;What you need:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;A Ubuntu installer ISO file, you can download from either site below:&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;https://www.ubuntu.com/download/alternative-downloads&quot;&gt;» Ubuntu Official Installer Downloads Page&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases/&quot;&gt;» Tsinghua Mirrors of Ubuntu Releases (extremely fast for users in China)&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;A Flash Drive that is free to use.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;2-clear-up-your-usb-flash-drive-optional&quot;&gt;2. Clear up your USB Flash Drive (Optional)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.theinstructional.com/guides/disk-management-from-the-command-line-part-1&quot;&gt;» Disk Management From the Command-Line, Part 1&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;21-locate-your-usb-disk&quot;&gt;2.1. Locate your USB disk&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;List the partition of the disk:
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;diskutil list
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Then find your usb disk info as below:
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  /dev/disk2 (external, physical):
+     #:                       TYPE NAME                    SIZE       IDENTIFIER
+     0:     Apple_partition_scheme                        *31.0 GB    disk2
+     1:        Apple_partition_map                         4.1 KB     disk2s1
+     2:                  Apple_HFS                         2.4 MB     disk2s2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;22-erase-the-disk&quot;&gt;2.2. Erase the disk&lt;/h3&gt;
+&lt;p&gt;Erasing disks from the command-line can be a dangerous process as there aren’t any warnings or confirmations. One typo could lead to irreversible data loss if there’s no backup to restore from. If you’re not familiar with the command-line, Disk Utility is just as capable.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;To erase an entire disk&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;diskutil eraseDisk &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;filesystem&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;Name_to_use&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; /dev/&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;disk_identifier&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Erasing a whole disk will clear any partitions and create a new, single partition, before formatting it as a volume.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;{filesystem}&lt;/code&gt;&lt;/strong&gt;:&lt;/p&gt;
+
+    &lt;p&gt;You can specify the filesystem to format the partition in by using any that are supported. 
+  To find out which filesystems you can use, enter:&lt;/p&gt;
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;diskutil listFilesystems
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;And you may get this:&lt;/p&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  Formattable file systems
+
+  These file system personalities can be used for erasing and partitioning.
+  When specifying a personality as a parameter to a verb, case is not considered.
+  Certain common aliases (also case-insensitive) are listed below as well.
+
+  -------------------------------------------------------------------------------
+  PERSONALITY                     USER VISIBLE NAME
+  -------------------------------------------------------------------------------
+  APFS                            APFS
+    (or) APFSI
+  Case-sensitive APFS             APFS (Case-sensitive)
+  ExFAT                           ExFAT
+  Free Space                      Free Space
+    (or) FREE
+  MS-DOS                          MS-DOS (FAT)
+  MS-DOS FAT12                    MS-DOS (FAT12)
+  MS-DOS FAT16                    MS-DOS (FAT16)
+  MS-DOS FAT32                    MS-DOS (FAT32)
+    (or) FAT32
+  HFS+                            Mac OS Extended
+  Case-sensitive HFS+             Mac OS Extended (Case-sensitive)
+    (or) HFSX
+  Case-sensitive Journaled HFS+   Mac OS Extended (Case-sensitive, Journaled)
+    (or) JHFSX
+  Journaled HFS+                  Mac OS Extended (Journaled)
+    (or) JHFS+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;{Name_to_use}&lt;/code&gt;&lt;/strong&gt;:&lt;/p&gt;
+
+    &lt;p&gt;This simply refers to the name of the volume that will be created. In this instance, I’ve just labelled the volume as “Test”.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;{disk_identifier}&lt;/code&gt;&lt;/strong&gt;:&lt;/p&gt;
+
+    &lt;p&gt;Only the primary part of the identifier (i.e. &lt;code class=&quot;highlighter-rouge&quot;&gt;disk1&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;disk2&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;disk3&lt;/code&gt;…) is needed.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;In my case, the actual command I used to erase the USB disk is&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;diskutil eraseDisk fat32 KF-USB /dev/disk2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;If sucessful, it will show information like this:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Started erase on disk2
+Unmounting disk
+Creating the partition map
+Waiting for partitions to activate
+Formatting disk2s2 as MS-DOS (FAT32) with name KF-USB
+512 bytes per physical sector
+/dev/rdisk2s2: 60161312 sectors in 1880041 FAT32 clusters (16384 bytes/cluster)
+bps=512 spc=32 res=32 nft=2 mid=0xf8 spt=32 hds=255 hid=411648 drv=0x80 bsec=60190720 bspf=14688 rdcl=2 infs=1 bkbs=6
+Mounting disk
+Finished erase on disk2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Meanwhile the USB is automatically mounted to you system as well. In my case, it’s mounted at &lt;code class=&quot;highlighter-rouge&quot;&gt;/Volumes/KF-USB&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now use command &lt;code class=&quot;highlighter-rouge&quot;&gt;diskutil list&lt;/code&gt; again to show the disk partition information, you’ll see the new disk’s info:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/dev/disk2 (external, physical):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      GUID_partition_scheme                        *31.0 GB    disk2
+   1:                        EFI EFI                     209.7 MB   disk2s1
+   2:       Microsoft Basic Data KF-USB                  30.8 GB    disk2s2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;3-create-the-bootable--usb&quot;&gt;3. Create the Bootable  USB&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.cybrary.it/0p3n/macos-terminal-create-bootable-usb-iso-using-dd/&quot;&gt;» MacOS Terminal: Create a Bootable USB from an ISO Using “dd”&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Assuming our flash drive is stll &lt;code class=&quot;highlighter-rouge&quot;&gt;disk2&lt;/code&gt;, then&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;diskutil unmountDisk disk2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;unmountDisk&lt;/code&gt; command unmounts all volumes of the given disk drive but keeps the drive itself visible to the computer (as opposed to the eject option that disconnects it entirely)&lt;/p&gt;
+
+&lt;p&gt;Then, run the following command to create the bootable USB:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;dd &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/Users/kyle/Downloads/Linux.iso &lt;span class=&quot;nv&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/dev/disk2 &lt;span class=&quot;nv&quot;&gt;bs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;8m
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;“sudo”&lt;/code&gt;&lt;/strong&gt; tells the system to use root level (that is the system’s highest level) privileges to perform the following action.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;“dd”&lt;/code&gt;&lt;/strong&gt; is an extremely basic, but powerful block level copy command built into all Linux and Unix operating systems (MacOS is UNIX based)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;“if”&lt;/code&gt;&lt;/strong&gt; stands for input file (a.k.a the source file or location). In our use-case, this is the .ISO file. In MacOS, if you have a finder window open, you can drag and drop the .iso into the terminal and it will auto-fill this file path.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;“of”&lt;/code&gt;&lt;/strong&gt; stands for “output file” (a.k.a the destination file or location). For us, this is our USB drive, disk2. The specific path for external drives is in “/dev”, hence /dev/disk2&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;“bs”&lt;/code&gt;&lt;/strong&gt; stands for block size. dd copies data in blocks rather than on a file by file basis (this is why it’s so fast) and this command gives you the option to set how big each block is. There is a science to the ideal block size, but I don’t know it. 8m (MegaBytes) has consistently worked well for my uses.&lt;/p&gt;
+
+&lt;p&gt;The command will not show any progress until it’s done, but you can press control+t for status updates. With an average computer, this takes less than 5min to complete.
+Once complete:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;diskutil eject disk2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The USB drive can now safely be removed. Assuming that the iso is EFI-compatible, you can reboot your mac to test it.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Operating System&quot;]" /><category term="macOS" /><category term="bash" /><category term="usb-bootable-stick" /><category term="ubuntu" /><summary type="html">Making things happen without any third party tools is joyful. In this article, I’d like to show how to make a bootable USB simply using built-in commands in a terminal on macOS.</summary></entry><entry><title type="html">Deploy Keras Model with Flask+uWSGI+NGINX with docker</title><link href="http://localhost:4000/2018/12/03/flask-uwsgi-nginx-deploy" rel="alternate" type="text/html" title="Deploy Keras Model with Flask+uWSGI+NGINX with docker" /><published>2018-12-03T15:21:00+08:00</published><updated>2018-12-03T15:21:00+08:00</updated><id>http://localhost:4000/2018/12/03/flask-uwsgi-nginx-deploy</id><content type="html" xml:base="http://localhost:4000/2018/12/03/flask-uwsgi-nginx-deploy">&lt;blockquote&gt;
   &lt;p&gt;After spending more than 200 credits on google cloud GPU for training a &lt;strong&gt;Plant Disease Recoginition (PDR)&lt;/strong&gt; model with Keras, I’ve got a decent model that have reached more than 85% accuracy. The model is ready and the next thing to do is to deploy the model for inference as a service.&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -1593,134 +1751,4 @@ make.left.greaterThanOrEqualTo(label.mas_left);
       &lt;p&gt;&lt;a href=&quot;http://adad184.com/2014/09/28/use-masonry-to-quick-solve-autolayout/&quot;&gt;Masonry介绍与使用实践(快速上手Autolayout) - 里脊串&lt;/a&gt; &lt;a href=&quot;#fnref:lijichuan&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name></name></author><category term="[&quot;iOS Development&quot;]" /><category term="ios" /><category term="objective-c" /><category term="masonry" /><category term="autolayout" /><summary type="html">Use Masonry to implement autolayout programmatically. Learn how to use it. A detailed note here!</summary></entry><entry><title type="html">Should I Use Storyboards or Not?</title><link href="http://localhost:4000/2016/12/03/storyboard-or-not" rel="alternate" type="text/html" title="Should I Use Storyboards or Not?" /><published>2016-12-03T20:08:00+08:00</published><updated>2016-12-03T20:08:00+08:00</updated><id>http://localhost:4000/2016/12/03/storyboard-or-not</id><content type="html" xml:base="http://localhost:4000/2016/12/03/storyboard-or-not">&lt;blockquote&gt;
-  &lt;p&gt;Storyboards are a quick and easy way to start building a simple app. But should you use Storyboards on more complex apps? Or on a team? What are the pros and cons of using them? Do experienced iOS developers use them? Are any mainstream apps built with Storyboards?&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2 id=&quot;i-what-are-the-pros-and-cons-of-using-storyboards&quot;&gt;I. What are the pros and cons of using Storyboards?&lt;sup id=&quot;fnref:roadfire&quot;&gt;&lt;a href=&quot;#fn:roadfire&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
-
-&lt;h3 id=&quot;pros&quot;&gt;Pros:&lt;/h3&gt;
-&lt;p&gt;The biggest benefit of using Storyboards (especially over nibs/xibs) is that &lt;strong&gt;you can see how the screens in your app are related&lt;/strong&gt;. When you’re just starting on an existing project (or coming back to an old one), Storyboards give you an easy way to follow the flow through the app and zoom out to get a high level overview of what the app does.&lt;/p&gt;
-
-&lt;p&gt;Another benefit to using Storyboards (over creating views programmatically) is that &lt;strong&gt;you get to see what your view will look like at runtime without having to run your app&lt;/strong&gt;. You can quickly make a change in Interface Builder and immediately see what it’ll look like – without waiting for Xcode to compile and run. (Nibs/xibs get this benefit, too.)&lt;/p&gt;
-
-&lt;p&gt;And a third benefit is that &lt;strong&gt;you can create static table views in Storyboards&lt;/strong&gt;. So if you have a Settings screen, for example, with tappable rows of static text, Storyboards allow you to quickly and easily create them – no code required.&lt;/p&gt;
-
-&lt;h3 id=&quot;cons&quot;&gt;Cons:&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;On teams&lt;/strong&gt;, Storyboards are tricky to use for two main reasons:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Merge conflicts are painful&lt;/strong&gt;: When two people edit the same Storyboard file at the same time and cause a merge conflict, it’s tricky to sort out how to merge the changes. Part of this is because of the format of the Storyboard file (it’s XML) and part of it is because Xcode rearranges elements and makes changes in the Storyboard when you open it – even if you don’t touch anything. And when you do touch something, it’s that much worse.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Code reviews are tricky&lt;/strong&gt;: If you conduct code reviews on your team, reviewing changes to a Storyboard file is… difficult. Again, the format is XML with lots of hard-to-understand attributes and elements, so reviewing a diff and making constructive comments is just not easy.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;And those are just the cons to working on a team. Even if you’re working &lt;strong&gt;on your ow&lt;/strong&gt;n, there are some cons to using Storyboards:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Confusion when they become complicated&lt;/strong&gt;: If you have a relatively large app and you keep adding new view controllers, your Storyboard will eventually become complicated. Those pretty arrows that connect one view controller to the next start overlapping each other or getting hidden under view controllers – and it’s really hard to see what’s happening in the app.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Xcode grinds to a halt when opening a large Storyboard&lt;/strong&gt;: Again, if you’re working on a relatively large app, Storyboards can be difficult since it takes Xcode a while to load them into the editor. I’m working on a project with about 30 view controllers in a Storyboard, and it takes multiple seconds (around 4-5) to load the Storyboard whenever I want to edit it. (And yes, my MBP is fast.)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Whenever I’ve worked on a team, we’ve agreed to &lt;strong&gt;create separate Storyboards for different flows to avoid the confusion and performance issues of massive Storyboards.&lt;/strong&gt; And we’ve always been careful to communicate about which Storyboard we’re working on before we start to make changes so we can avoid having to deal with messy merge conflicts. The code review issue exists, and will continue to exist, until Apple changes the format of the XML in the Storyboard file.&lt;/p&gt;
-
-&lt;h2 id=&quot;ii-why-im-abandoning-storyboards&quot;&gt;II. Why I’m Abandoning Storyboards&lt;sup id=&quot;fnref:gopalkri&quot;&gt;&lt;a href=&quot;#fn:gopalkri&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
-&lt;p&gt;Here’s a list of reasons as to why I’m abandoning the storyboard:&lt;/p&gt;
-
-&lt;h3 id=&quot;1-diffs&quot;&gt;1. Diffs&lt;/h3&gt;
-&lt;p&gt;Storyboards can’t be diffed meaningfully. Since they serialize to unreadable XML, it’s more or less impossible to look at a diff of a storyboard and figure out what really changed.&lt;/p&gt;
-
-&lt;h3 id=&quot;2-merges&quot;&gt;2. Merges&lt;/h3&gt;
-&lt;p&gt;Because storyboards can’t be read by human beings, merging or rebasing storyboards across branches is an absolute nightmare. It often results in re-creating the work on one of the branches manually.&lt;/p&gt;
-
-&lt;h3 id=&quot;3-opening-a-file-modifies-it&quot;&gt;3. Opening a file modifies it&lt;/h3&gt;
-&lt;p&gt;I’m not sure why this happens, and it doesn’t happen all the time, but I’ve often found that merely opening a Storyboard file modifies it. This is super irritating, because I’m no longer sure about whether or not I made a change to it that matters.&lt;/p&gt;
-
-&lt;h3 id=&quot;4-code-review&quot;&gt;4. Code review&lt;/h3&gt;
-&lt;p&gt;A broken storyboard can completely break the app (like say, if you’ve got an ambiguous constraint), so it must be code reviewed like all other code. However, because of the above reasons, it is really hard to do a proper code review.&lt;/p&gt;
-
-&lt;h3 id=&quot;5-usefulness&quot;&gt;5. Usefulness&lt;/h3&gt;
-&lt;p&gt;One of the goals of using Storyboards is to be able to visualize what the app will look like without actually running it. In reality, though, storyboards don’t really come close. 
-&lt;img src=&quot;http://gopalkri.com/assets/images/2016-05-27-Storyboards-Visualization.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;what-im-doing-instead&quot;&gt;What I’m doing instead&lt;/h2&gt;
-&lt;p&gt;I’m going to be using AutoLayout in code. While NSLayoutConstraint is incredibly verbose, there’re a few open source libraries that appear to make it significantly less painful: SnapKit, EasyPeasy, SwiftAutoLayout, etc. I’m not a big fan of the ASCII art version of NSLayoutConstraint. As awesome as it is, it’s stringly typed, and I try and avoid stringly typed code whenever possible.&lt;/p&gt;
-
-&lt;h2 id=&quot;iii-ios-user-interfaces-storyboards-vs-nibs-vs-custom-code&quot;&gt;III. iOS User Interfaces: Storyboards vs. NIBs vs. Custom Code&lt;sup id=&quot;fnref:toptal&quot;&gt;&lt;a href=&quot;#fn:toptal&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
-
-&lt;h3 id=&quot;ios-storyboards&quot;&gt;iOS Storyboards&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;A classic beginner’s mistake is to create one massive project-wide Storyboard. A Storyboard is a board with a story to tell. It shouldn’t be used to mix unrelated stories into one big volume.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;As its name implies, a Storyboard is a board with a story to tell. It shouldn’t be used to mix unrelated stories into one big volume. A storyboard should contain view controllers that are logically related to each other—which doesn’t mean every view controller.&lt;/p&gt;
-
-&lt;p&gt;For example, it makes sense to use Storyboards when handling:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;A set of views for authentication and registration.&lt;/li&gt;
-  &lt;li&gt;A multi-step order entry flow.&lt;/li&gt;
-  &lt;li&gt;A wizard-like (i.e., tutorial) flow.&lt;/li&gt;
-  &lt;li&gt;A master-detail set of views (e.g., profiles lists, profile details).&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Meanwhile, large Storyboards should be avoided, including single app-wide Storyboards (unless the app is relatively simple). Before we go any deeper, let’s see why.&lt;/p&gt;
-
-&lt;h4 id=&quot;when-to-use-storyboards&quot;&gt;When to use Storyboards:&lt;/h4&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Storyboards are best used with multiple interconnected view controllers, as their major simplification is in transitioning between view controllers.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h4 id=&quot;when-not-to-use-ios-storyboards&quot;&gt;When Not to Use iOS Storyboards&lt;/h4&gt;
-
-&lt;p&gt;A few cases:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The view has a complicated or dynamic layout, best-implemented with code.&lt;/li&gt;
-  &lt;li&gt;The view is already implemented with NIBs or code.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In those cases, we can either leave the view out of the Storyboard or embed it in a view controller. The former breaks the Storyboard’s visual flow, but doesn’t have any negative functional or development implications. The latter retains this visual flow, but it requires additional development efforts as the view is not integrated into the view controller: it’s just embedded as a component, hence the view controller must interact with the view rather than implementing it.&lt;/p&gt;
-
-&lt;h3 id=&quot;ios-custom-code-programmatic-uis&quot;&gt;iOS Custom Code (Programmatic UIs)&lt;/h3&gt;
-
-&lt;h4 id=&quot;pro-under-the-hood&quot;&gt;Pro: Under the Hood&lt;/h4&gt;
-&lt;p&gt;The greatest advantage of creating an iOS UI programmatically: if you know how to code a user interface, then you know what happens under the hood, whereas the same is not necessarily true of NIBs and Storyboards.&lt;/p&gt;
-
-&lt;p&gt;So, mastering the coding of iOS user interfaces gives you more control over and greater awareness of how these pieces fit together, which raises your upper-bound as a developer.&lt;/p&gt;
-
-&lt;h4 id=&quot;when-to-use-code&quot;&gt;When to Use Code&lt;/h4&gt;
-
-&lt;p&gt;It’s often a good call to use use custom code for iOS user interface design when you have:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Dynamic layouts.&lt;/li&gt;
-  &lt;li&gt;Views with effects, such as rounded corners, shadows, etc.&lt;/li&gt;
-  &lt;li&gt;Any case in which using NIBs and Storyboards is complicated or infeasible.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;when-not-to-use-code&quot;&gt;When Not to Use Code&lt;/h4&gt;
-
-&lt;p&gt;In general, code-made UIs can always be used. They’re rarely a bad idea, so I’d put an here.&lt;/p&gt;
-
-&lt;p&gt;Fore complete information, check the references.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
-&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
-
-&lt;div class=&quot;footnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:roadfire&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;http://roadfiresoftware.com/2015/03/the-pros-and-cons-of-using-storyboards/&quot;&gt;Should you use Storyboards on more complex apps?&lt;/a&gt; &lt;a href=&quot;#fnref:roadfire&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:gopalkri&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;http://gopalkri.com/2016/05/27/why-im-abandoning-storyboards/&quot;&gt;Why I’m Abandoning Storyboards&lt;/a&gt; &lt;a href=&quot;#fnref:gopalkri&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:toptal&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://www.toptal.com/ios/ios-user-interfaces-storyboards-vs-nibs-vs-custom-code&quot;&gt;iOS User Interfaces: Storyboards vs. NIBs vs. Custom Code&lt;/a&gt; &lt;a href=&quot;#fnref:toptal&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;</content><author><name></name></author><category term="[&quot;iOS Development&quot;]" /><category term="ios" /><category term="objective-c" /><category term="storyboard" /><summary type="html">Storyboards are a quick and easy way to start building a simple app. But should you use Storyboards on more complex apps? Or on a team? What are the pros and cons of using them? Do experienced iOS developers use them? Are any mainstream apps built with Storyboards?</summary></entry></feed>
+&lt;/div&gt;</content><author><name></name></author><category term="[&quot;iOS Development&quot;]" /><category term="ios" /><category term="objective-c" /><category term="masonry" /><category term="autolayout" /><summary type="html">Use Masonry to implement autolayout programmatically. Learn how to use it. A detailed note here!</summary></entry></feed>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+      Linux/Unix Recursively Search All Files for a String
+      
+    </title>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/res/favicon.ico">
+	<!--
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+	-->
+    <link rel="stylesheet" href="/assets/css/materialize.min.css">
+    <link rel="stylesheet" href="/assets/css/Material+Icons.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <link rel="stylesheet" href="/assets/css/post.css">
+    
+    
+    
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Linux/Unix Recursively Search All Files for a String" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A quick answer here: $ grep -r &quot;string&quot; ." />
+<meta property="og:description" content="A quick answer here: $ grep -r &quot;string&quot; ." />
+<link rel="canonical" href="http://localhost:4000/2018/12/06/search-all-files-for-a-string" />
+<meta property="og:url" content="http://localhost:4000/2018/12/06/search-all-files-for-a-string" />
+<meta property="og:site_name" content="KFZ’s Playground" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-12-06T13:15:00+08:00" />
+<script type="application/ld+json">
+{"description":"A quick answer here: $ grep -r &quot;string&quot; .","@type":"BlogPosting","url":"http://localhost:4000/2018/12/06/search-all-files-for-a-string","headline":"Linux/Unix Recursively Search All Files for a String","dateModified":"2018-12-06T13:15:00+08:00","datePublished":"2018-12-06T13:15:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2018/12/06/search-all-files-for-a-string"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <header>
+	  <!--
+      <nav class="top-nav teal">
+	  -->
+      <nav class="top-nav ohio-state-scarlet">
+        <div class="nav-wrapper">
+          <div class="container">
+            <a class="page-title" href="/">KFZ's Playground</a>
+            <img class="buckeye_leaf" src="/assets/res/buckeye_leaf.png">
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <a href="#" data-activates="slide-out" class="button-collapse top-nav full hide-on-large-only">
+          <i class="material-icons">menu</i>
+        </a>
+      </div>
+      <ul id="slide-out" class="side-nav fixed">
+        <li>
+          <div class="userView">
+            <div class="background"></div>
+            <a href="https://github.com/zkf85" target="_blank"><img class="circle z-depth-2" src="/assets/res/lion_king.jpg"></a>
+            <span class="white-text name">Kefeng Zhu</span>
+			<!--
+            <span class="white-text email">zkf1985@gmail.com</span>
+			-->
+            <span class="white-text email"><i>A Programmer, An AI Practitioner</i></span>
+          </div>
+        </li>
+        <li><a class="waves-effect" href="/"><i class="material-icons">home</i>Home</a></li>
+<!--
+<li><a class="waves-effect" href="/projects"><i class="material-icons">description</i>Projects</a></li>
+-->
+        <li><a class="waves-effect" href="/categories"><i class="material-icons">sort</i>Categories</a></li>
+        <li><a class="waves-effect" href="/tags"><i class="material-icons">label</i>Tags</a></li>
+<!--
+<li><a class="waves-effect" href="/feed.xml" target="_blank"><i class="material-icons">rss_feed</i>RSS</a></li>
+-->
+        <li><div class="divider"></div></li>
+        <li><a class="waves-effect" href="/about"><i class="material-icons">person</i>About Me</a></li>
+        <li><a class="waves-effect" href="/contact"><i class="material-icons">email</i>Contact</a></li>
+      </ul>
+    </header>
+    <main>
+
+
+<div class="container">
+  <div id="post-info">
+  <h1>Linux/Unix Recursively Search All Files for a String</h1>
+  <ul class="collapsible hoverable" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Date">date_range</i>
+          12/06/2018 13:15
+          <i id="indicate" class="right material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Show extra info">info</i>
+        </span>
+      </div>
+      <div class="collapsible-body">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Categories">sort</i>
+          
+          
+          
+          <a href="/categories#operating-system_cap" target="_blank"><div class="chip">Operating System</div></a>
+          
+        </span>
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Tags">label</i>
+          
+          
+          
+          <a href="/tags#linux" target="_blank"><div class="chip">linux</div></a>
+          
+          
+          
+          <a href="/tags#unix" target="_blank"><div class="chip">unix</div></a>
+          
+          
+          
+          <a href="/tags#macos" target="_blank"><div class="chip">macOS</div></a>
+          
+          
+          
+          <a href="/tags#grep" target="_blank"><div class="chip">grep</div></a>
+          
+          
+          
+          <a href="/tags#find" target="_blank"><div class="chip">find</div></a>
+          
+          
+          
+          <a href="/tags#shell" target="_blank"><div class="chip">shell</div></a>
+          
+          
+          
+          <a href="/tags#bash" target="_blank"><div class="chip">bash</div></a>
+          
+        </span>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="divider"></div>
+<div class="row">
+  <div class="col s12">
+    <blockquote>
+  <p>A quick answer here:</p>
+</blockquote>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">grep</span> <span class="nt">-r</span> <span class="s2">"string"</span> <span class="nb">.</span>
+</code></pre></div></div>
+<!--more-->
+<p>Check this link:
+<a href="https://www.cyberciti.biz/faq/howto-recursively-search-all-files-for-words/">» Linux / UNIX Recursively Search All Files For A String</a></p>
+
+<h2 id="grep-command-recursively-search-all-files-for-a-string"><code class="highlighter-rouge">grep</code> command: Recursively Search All Files For A String</h2>
+
+<p>The syntax is:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> /path/to/dir
+<span class="nv">$ </span><span class="nb">grep</span> <span class="nt">-r</span> <span class="s2">"word"</span> <span class="nb">.</span>
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>To ignore <span class="k">case</span> distinctions:
+<span class="nv">$ </span><span class="nb">grep</span> <span class="nt">-ri</span> <span class="s2">"word"</span> <span class="nb">.</span>
+</code></pre></div></div>
+
+<p>To display print only the filenames with GNU grep, enter:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">grep</span> <span class="nt">-r</span> <span class="nt">-l</span> <span class="s2">"foo"</span> <span class="nb">.</span>
+</code></pre></div></div>
+
+<p>You can also specify directory name:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">grep</span> <span class="nt">-r</span> <span class="nt">-l</span> <span class="s2">"foo"</span> /path/to/dir/<span class="k">*</span>.c
+</code></pre></div></div>
+
+<h2 id="find-command-recursively-search-all-files-for-a-string"><code class="highlighter-rouge">find</code> command: Recursively Search All Files For A String</h2>
+
+<p><code class="highlighter-rouge">find</code> command is recommend because of speed and ability to deal with filenames that contain spaces.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /path/to/dir
+find <span class="nb">.</span> <span class="nt">-type</span> f <span class="nt">-exec</span> <span class="nb">grep</span> <span class="nt">-l</span> <span class="s2">"word"</span> <span class="o">{}</span> +
+find <span class="nb">.</span> <span class="nt">-type</span> f <span class="nt">-exec</span> <span class="nb">grep</span> <span class="nt">-l</span> <span class="s2">"seting"</span> <span class="o">{}</span> +
+find <span class="nb">.</span> <span class="nt">-type</span> f <span class="nt">-exec</span> <span class="nb">grep</span> <span class="nt">-l</span> <span class="s2">"foo"</span> <span class="o">{}</span> +
+find /search/dir/ <span class="nt">-type</span> f <span class="nt">-name</span> <span class="s2">"*.c"</span> <span class="nt">-print0</span> | xargs <span class="nt">-I</span> <span class="o">{}</span> <span class="nt">-0</span> <span class="nb">grep</span> <span class="s2">"foo"</span> <span class="s2">"{}"</span>
+
+<span class="c">## Search /etc/ directory for 'nameserver' word in all *.conf files ##</span>
+find /etc/ <span class="nt">-type</span> f <span class="nt">-name</span> <span class="s2">"*.conf"</span> <span class="nt">-print0</span> | xargs <span class="nt">-I</span> <span class="o">{}</span> <span class="nt">-0</span> <span class="nb">grep</span> <span class="s2">"nameserver"</span> <span class="s2">"{}"</span>
+</code></pre></div></div>
+
+<p>Older UNIX version should use xargs to speed up things:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>find /path/to/dir <span class="nt">-type</span> f | xargs <span class="nb">grep</span> <span class="nt">-l</span> <span class="s2">"foo"</span>
+</code></pre></div></div>
+
+<p>It is good idea to pass -print0 option to find command that it can deal with filenames that contain spaces or other metacharacters:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>find /path/to/dir <span class="nt">-type</span> f <span class="nt">-print0</span> | xargs <span class="nt">-0</span> <span class="nb">grep</span> <span class="nt">-l</span> <span class="s2">"foo"</span>
+</code></pre></div></div>
+
+<p>OR use the following OSX/BSD/find or GNU/find example:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find /path/to/dir/ <span class="nt">-type</span> f <span class="nt">-name</span> <span class="s2">"file-pattern"</span> <span class="nt">-print0</span> | xargs <span class="nt">-I</span> <span class="o">{}</span>  <span class="nt">-0</span> <span class="nb">grep</span> <span class="nt">-l</span> <span class="s2">"search-term"</span> <span class="s2">"{}"</span>
+
+<span class="c">## OR ##</span>
+find /mycool/project/ <span class="nt">-type</span> f <span class="nt">-name</span> <span class="s2">"*.py"</span> <span class="nt">-print0</span> | xargs <span class="nt">-I</span> <span class="o">{}</span>  <span class="nt">-0</span> <span class="nb">grep</span> <span class="nt">-H</span> <span class="nt">--color</span> <span class="s2">"methodNameHere"</span> <span class="s2">"{}"</span>
+
+<span class="c">## OR search all files in /etc/ dir for 'nameserver' word ##</span>
+find /etc/ <span class="nt">-iname</span> <span class="s2">"*"</span> <span class="nt">-type</span> f <span class="nt">-print0</span>  |  xargs <span class="nt">-0</span> <span class="nb">grep</span> <span class="nt">-H</span> <span class="s2">"nameserver"</span>
+</code></pre></div></div>
+
+<p><br /><br /><strong><em>KF</em></strong></p>
+
+  </div>
+</div>
+
+
+<div>
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    this.page.url = "http://localhost:4000/2018/12/06/search-all-files-for-a-string";
+    this.page.identifier = "/2018/12/06/search-all-files-for-a-string";
+  };
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//zkf85githubio.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+
+
+</div>
+
+    </main>
+    <footer class="page-footer ohio-state-scarlet">
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            <img src="/assets/res/logo.png" alt="logo"/>
+            <p class="grey-text text-lighten-4">Theme based on <a href="http://materializecss.com">Materialize.css</a> for jekyll sites.
+</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          &#xA9; 2018 KFZ's Playground. All rights reserved. Powered by <a href="https://github.com/zkf85">Kefeng</a>.
+        </div>
+      </div>
+    </footer>
+    <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+    
+    
+    <script src="/assets/js/post.js"></script>
+    
+    
+    
+    
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

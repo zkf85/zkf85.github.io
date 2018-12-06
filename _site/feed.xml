@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-06T10:00:24+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KFZ’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-06T10:07:09+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KFZ’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
 </subtitle><entry><title type="html">How to Open Jupyter Notebook via SSH</title><link href="http://localhost:4000/2018/12/06/open-jupyter-via-ssh" rel="alternate" type="text/html" title="How to Open Jupyter Notebook via SSH" /><published>2018-12-06T09:56:00+08:00</published><updated>2018-12-06T09:56:00+08:00</updated><id>http://localhost:4000/2018/12/06/open-jupyter-via-ssh</id><content type="html" xml:base="http://localhost:4000/2018/12/06/open-jupyter-via-ssh">&lt;blockquote&gt;
   &lt;p&gt;The Objective is clear as described in the title. The case is usually encountered when logged in a remote server for computation but still want to use the jupyter-notebook that you’re familiar with. This article tells how.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -34,9 +34,9 @@
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jupyter notebook &lt;span class=&quot;nt&quot;&gt;--no-browser&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;Finally, copy the link you get from the terminal directly to a browser (since the port numbers are consistant), this link from terminal should be something like this:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	Copy/paste this URL into your browser when you connect for the first time,
-    to login with a token:
-        http://localhost:8888/?token=3e44d05a9258791304d98706d1c079971b098f60a9770a00&amp;amp;token=3e44d05a9258791304d98706d1c079971b098f60a9770a00
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copy/paste this URL into your browser when you connect for the first time,
+to login with a token:
+    http://localhost:8888/?token=3e44d05a9258791304d98706d1c079971b098f60a9770a00&amp;amp;token=3e44d05a9258791304d98706d1c079971b098f60a9770a00
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;The good thing here is that you don’t need to copy paste the lengthy token again and your jupyter is just ready to use like this:&lt;/p&gt;

@@ -44,9 +44,9 @@ $ jupyter notebook --no-browser
 ```
 Finally, copy the link you get from the terminal directly to a browser (since the port numbers are consistant), this link from terminal should be something like this:
 ```
-	Copy/paste this URL into your browser when you connect for the first time,
-    to login with a token:
-        http://localhost:8888/?token=3e44d05a9258791304d98706d1c079971b098f60a9770a00&token=3e44d05a9258791304d98706d1c079971b098f60a9770a00
+Copy/paste this URL into your browser when you connect for the first time,
+to login with a token:
+    http://localhost:8888/?token=3e44d05a9258791304d98706d1c079971b098f60a9770a00&token=3e44d05a9258791304d98706d1c079971b098f60a9770a00
 ```
 
 The good thing here is that you don't need to copy paste the lengthy token again and your jupyter is just ready to use like this:

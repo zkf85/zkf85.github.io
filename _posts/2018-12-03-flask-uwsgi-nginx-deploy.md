@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title: "Deploy Keras Model with Flask+uWSGI+NGINX with docker"
+title: "Deploy Keras Model with Flask+uWSGI+NGINX with Docker"
 date: "2018-12-03 15:21:00"
 category: [Operating System, Deep Learning]
 tag: [docker, flask, uwsgi, nginx, keras, tensorflow]

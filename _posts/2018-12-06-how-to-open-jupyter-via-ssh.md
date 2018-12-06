@@ -4,7 +4,7 @@ comments: true
 title: "How to Open Jupyter Notebook via SSH"
 date: "2018-12-06 09:56:00"
 category: [Operating System]
-tag: [ssh, jupyter-notebook]
+tag: [ssh, jupyter-notebook, python, how-to]
 ---
 
 > The Objective is clear as described in the title. The case is usually encountered when logged in a remote server for computation but still want to use the jupyter-notebook that you're familiar with. This article tells how.

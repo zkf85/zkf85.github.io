@@ -1,10 +1,10 @@
 ---
 layout: post
 comments: true
-title: "How to Open Jupyter Notebook via SSH"
+title: "How to Save IPython Session"
 date: "2018-12-06 13:01:00"
 category: [Python]
-tag: [ipython]
+tag: [ipython, python, how-to]
 ---
 
 > The detail of the question is described in this page [How to save a Python interactive session?]( https://stackoverflow.com/questions/947810/how-to-save-a-python-interactive-session)

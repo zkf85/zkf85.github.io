@@ -4,7 +4,7 @@ comments: true
 title: "How to make Bootable USB from an ISO with Command Line Tools on macOS?"
 date: "2018-12-05 16:09:00"
 category: [Operating System]
-tag: [macOS, bash, usb-bootable-stick, ubuntu]
+tag: [macOS, bash, usb-bootable-stick, ubuntu, how-to]
 ---
 
 > Making things happen without any third party tools is joyful. In this article, I'd like to show how to make a bootable USB simply using built-in commands in a terminal on macOS.

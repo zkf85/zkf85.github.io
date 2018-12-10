@@ -17,6 +17,9 @@ tag: [how-to, ubuntu, linux, nvidia, gpu]
 
 ## Related Articles:
 
-[>> 
+
+[>> How to install Tensorflow GPU with CUDA 10.0 for python on Ubuntu](https://www.python36.com/how-to-install-tensorflow-gpu-with-cuda-10-0-for-python-on-ubuntu/)
+
+[>> Tensorflow - Build from source](https://www.tensorflow.org/install/source) 
 
 <br><br>***KF*** 

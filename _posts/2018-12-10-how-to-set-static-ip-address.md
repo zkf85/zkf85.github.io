@@ -8,7 +8,7 @@ tag: [how-to, ubuntu, linux, netplan]
 ---
 
 > Recently I was struggling with tensorflow-gpu installation my home server. After couple of rounds of attempts and re-installation. I have to choose Ubuntu-18.04 only (due to my mother board version, both ubuntu-16.04 and debian-9 have network driver issues). 
->
+
 > During the time when re-installing the system, setting a static IP address is a common routine that make other computer in the home network easy to access the server. Here I'll show how to configure static IP Address in Ubuntu 18.04 with netplan.
 
 <!--more-->

@@ -1,5 +1,311 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-06T14:28:11+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KFZ’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
-</subtitle><entry><title type="html">Linux/Unix Recursively Search All Files for a String</title><link href="http://localhost:4000/2018/12/06/search-all-files-for-a-string" rel="alternate" type="text/html" title="Linux/Unix Recursively Search All Files for a String" /><published>2018-12-06T13:15:00+08:00</published><updated>2018-12-06T13:15:00+08:00</updated><id>http://localhost:4000/2018/12/06/search-all-files-for-a-string</id><content type="html" xml:base="http://localhost:4000/2018/12/06/search-all-files-for-a-string">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-10T16:05:19+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KFZ’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
+</subtitle><entry><title type="html">Understanding generators in Python</title><link href="http://localhost:4000/2018/12/10/understand-python-generator" rel="alternate" type="text/html" title="Understanding generators in Python" /><published>2018-12-10T12:52:00+08:00</published><updated>2018-12-10T12:52:00+08:00</updated><id>http://localhost:4000/2018/12/10/understand-python-generator</id><content type="html" xml:base="http://localhost:4000/2018/12/10/understand-python-generator">&lt;blockquote&gt;
+  &lt;p&gt;This post note a full understanding of a &lt;strong&gt;&lt;a href=&quot;http://www.python.org/dev/peps/pep-0255/&quot;&gt;generator&lt;/a&gt;&lt;/strong&gt; in Python.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;1-what-is-a-generator&quot;&gt;1. What is a Generator?&lt;/h2&gt;
+&lt;p&gt;A &lt;strong&gt;&lt;a href=&quot;http://www.python.org/dev/peps/pep-0255/&quot;&gt;generator&lt;/a&gt;&lt;/strong&gt; is a simply a function which returns an object on which you caqn call &lt;code class=&quot;highlighter-rouge&quot;&gt;next&lt;/code&gt;, such that for every call it returns some value, until it raises a ` StopIteration` exception, signaling that all values have been generated. Such an object is called an &lt;em&gt;iterator&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Normal functions return a single value using &lt;code class=&quot;highlighter-rouge&quot;&gt;return&lt;/code&gt;. In Python, however, there’s an alternative called &lt;code class=&quot;highlighter-rouge&quot;&gt;yield&lt;/code&gt;. Using &lt;code class=&quot;highlighter-rouge&quot;&gt;yield&lt;/code&gt; anywhere in a function makes it a generator:&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;myGen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;yield&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;yield&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myGen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Traceback&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;most&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;recent&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;call&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&amp;lt;stdin&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;StopIteration&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;As you can see, &lt;code class=&quot;highlighter-rouge&quot;&gt;myGen(n)&lt;/code&gt; is a function which yields &lt;code class=&quot;highlighter-rouge&quot;&gt;n&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;n+1&lt;/code&gt;. Every call to &lt;a href=&quot;http://docs.python.org/3/library/functions.html#next&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;next&lt;/code&gt;&lt;/a&gt; yields a single value, until all values have been yielded. &lt;code class=&quot;highlighter-rouge&quot;&gt;for&lt;/code&gt; loops call &lt;code class=&quot;highlighter-rouge&quot;&gt;next&lt;/code&gt; in the background, this:&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myGen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Likewise there are &lt;a href=&quot;http://www.python.org/dev/peps/pep-0289/&quot;&gt;generator expressions&lt;/a&gt;, which provide a means to succinctly describe certain common types of generators:&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Traceback&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;most&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;recent&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;call&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&amp;lt;stdin&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;StopIteration&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Note that generator expressions are much like list &lt;a href=&quot;http://docs.python.org/3/tutorial/datastructures.html#list-comprehensions&quot;&gt;comprehensions&lt;/a&gt;:&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lc&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;IMPORTANT&lt;/strong&gt;: A generator object is generated &lt;strong&gt;&lt;em&gt;once&lt;/em&gt;&lt;/strong&gt;, but its code is not run all at once. Only calls to &lt;code class=&quot;highlighter-rouge&quot;&gt;next&lt;/code&gt; actually execute (part of) the code. Execution of the code in a generator stops once a &lt;code class=&quot;highlighter-rouge&quot;&gt;yield&lt;/code&gt; statement has been reached, upon which it returns a value. The next call to &lt;code class=&quot;highlighter-rouge&quot;&gt;next&lt;/code&gt; then causes execution to continue in the state in which the generator was left after the last &lt;code class=&quot;highlighter-rouge&quot;&gt;yield&lt;/code&gt;. This is a fundamental difference with regular functions: those always start execution at the “top” and discard their state upon returning a value.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;2-why-use-generators&quot;&gt;2. Why use Generators?&lt;/h2&gt;
+&lt;p&gt;There are a couple of good reasons:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Certain concepts can be described much more succinctly using generators.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Instead of creating a function which returns a list of values, one can write a generator which generates the values on the fly. This means that no list needs to be constructed, meaning that the resulting code is more &lt;strong&gt;memory efficient&lt;/strong&gt;. In this way one can even describe data streams which would simply be too large to fit in memory.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Generators allow for a natural way to describe infinite streams. Consider for example the &lt;a href=&quot;http://en.wikipedia.org/wiki/Fibonacci_number&quot;&gt;Fibonacci numbers&lt;/a&gt;:&lt;/p&gt;
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;fib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;     &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;         &lt;span class=&quot;k&quot;&gt;yield&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;         &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;itertools&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;itertools&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;islice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;13&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;21&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;34&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;This code uses &lt;code class=&quot;highlighter-rouge&quot;&gt;itertools.islice&lt;/code&gt; to take a finite number of elements from an infinite stream. You are advised to have a good look at the functions in the &lt;code class=&quot;highlighter-rouge&quot;&gt;itertools&lt;/code&gt; module, as they are essential tools for writing advanced generators with great ease.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3-examples&quot;&gt;3. Examples&lt;/h2&gt;
+&lt;p&gt;Here is a good example of creating training/validation generators to feed the Keras &lt;code class=&quot;highlighter-rouge&quot;&gt;fit_generator&lt;/code&gt; training process:&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Create Training Generator&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;trainGenerator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;batch_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# Generate data with batch_size&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;train_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;batch_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;start_pos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;end_pos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;batch_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;train_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;train_s1_X_batch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;asarray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s1_training&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start_pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end_pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;train_s2_X_batch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;asarray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s2_training&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start_pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end_pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;train_y_batch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;asarray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;label_training&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start_pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end_pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+            &lt;span class=&quot;c&quot;&gt;# concatenate s1 and s2 data along the last axis&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;train_concat_X_batch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;concatenate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;train_s1_X_batch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;train_s2_X_batch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;axis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;             
+            &lt;span class=&quot;c&quot;&gt;# According to &quot;fit_generator&quot; on Keras.io, the output from the generator must&lt;/span&gt;
+            &lt;span class=&quot;c&quot;&gt;# be a tuple (inputs, targets), thus,&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;yield&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;train_concat_X_batch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;train_y_batch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Create Valication Generator&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;valGenerator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;batch_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;c&quot;&gt;# Generate data with batch_size&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;batch_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;start_pos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;end_pos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;batch_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;val_s1_X_batch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;asarray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s1_validation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start_pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end_pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;val_s2_X_batch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;asarray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s2_validation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start_pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end_pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;val_y_batch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;asarray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;label_validation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start_pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end_pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+            &lt;span class=&quot;c&quot;&gt;# concatenate s1 and s2 data along the last axis&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;val_concat_X_batch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;concatenate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val_s1_X_batch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val_s2_X_batch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;axis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;c&quot;&gt;# According to &quot;fit_generator&quot; on Keras.io, the output from the generator must&lt;/span&gt;
+            &lt;span class=&quot;c&quot;&gt;# be a tuple (inputs, targets), thus,&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;yield&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val_concat_X_batch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val_y_batch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;train_size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30000&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;val_size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10000&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;batch_size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;32&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;epochs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Training loop with generators&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fit_generator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;trainGenerator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;batch_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;steps_per_epoch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ceil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;train_size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;batch_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;epochs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;epochs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;validation_data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;valGenerator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;batch_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;validation_steps&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ceil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val_size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;batch_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/1756096/understanding-generators-in-python&quot;&gt;» Understanding generators in Python on Stack Overflow&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;, &quot;Deep Learning&quot;]" /><category term="python" /><category term="deep learning" /><category term="keras" /><summary type="html">This post note a full understanding of a generator in Python.</summary></entry><entry><title type="html">How to install Tensorflow GPU with CUDA 10.0 for python on Ubuntu</title><link href="http://localhost:4000/2018/12/10/how-to-install-cuda-10-on-ubuntu-18.04" rel="alternate" type="text/html" title="How to install Tensorflow GPU with CUDA 10.0 for python on Ubuntu" /><published>2018-12-10T10:28:00+08:00</published><updated>2018-12-10T10:28:00+08:00</updated><id>http://localhost:4000/2018/12/10/how-to-install-cuda-10-on-ubuntu-18.04</id><content type="html" xml:base="http://localhost:4000/2018/12/10/how-to-install-cuda-10-on-ubuntu-18.04">&lt;blockquote&gt;
+  &lt;p&gt;As described in the title, it’s exactly what I need currently. Here is an excellent post on this:&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.python36.com/how-to-install-tensorflow-gpu-with-cuda-10-0-for-python-on-ubuntu/&quot;&gt;» How to install Tensorflow GPU with CUDA 10.0 for python on Ubuntu&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;There are a bunch of steps for the installation and requires a lot of time for compiling. In this post I’ll update my progress on trying it out on my own home server. Hope it works!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;related-articles&quot;&gt;Related Articles:&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.python36.com/how-to-install-tensorflow-gpu-with-cuda-10-0-for-python-on-ubuntu/&quot;&gt;» How to install Tensorflow GPU with CUDA 10.0 for python on Ubuntu&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.tensorflow.org/install/source&quot;&gt;» Tensorflow - Build from source&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Operating System&quot;, &quot;Deep Learning&quot;]" /><category term="how-to" /><category term="ubuntu" /><category term="linux" /><category term="nvidia" /><category term="gpu" /><summary type="html">As described in the title, it’s exactly what I need currently. Here is an excellent post on this: » How to install Tensorflow GPU with CUDA 10.0 for python on Ubuntu There are a bunch of steps for the installation and requires a lot of time for compiling. In this post I’ll update my progress on trying it out on my own home server. Hope it works!</summary></entry><entry><title type="html">How to Set Static IP Address on Ubuntu 18.04 Using Netplan</title><link href="http://localhost:4000/2018/12/10/how-to-set-static-ip-address" rel="alternate" type="text/html" title="How to Set Static IP Address on Ubuntu 18.04 Using Netplan" /><published>2018-12-10T09:18:00+08:00</published><updated>2018-12-10T09:18:00+08:00</updated><id>http://localhost:4000/2018/12/10/how-to-set-static-ip-address</id><content type="html" xml:base="http://localhost:4000/2018/12/10/how-to-set-static-ip-address">&lt;blockquote&gt;
+  &lt;p&gt;Recently I was struggling with tensorflow-gpu installation my home server. After couple of rounds of attempts and re-installation. I have to choose Ubuntu-18.04 only (due to my mother board version, both ubuntu-16.04 and debian-9 have network driver issues).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;During the time when re-installing the system, setting a static IP address is a common routine that make other computer in the home network easy to access the server. Here I’ll show how to configure static IP Address in Ubuntu 18.04 with netplan.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;When installing Ubuntu-18.04, a DHCP is set by default.
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol&quot;&gt;» See what is DHCP (Dynamic Host Configuration Protocol&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;After the installation of the system, we’ll see how to configure static IP address in Ubuntu-18.04 with &lt;strong&gt;&lt;a href=&quot;https://netplan.io&quot;&gt;netplan - new network configuration tool&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Besides, a tradidional method is also shown later in the article, by using &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ifupdown&lt;/code&gt;&lt;/strong&gt; for the same job.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.itzgeek.com/how-tos/linux/ubuntu-how-tos/netplan-how-to-configure-static-ip-address-in-ubuntu-18-04-using-netplan.html&quot;&gt;» Netplan – How To Configure Static IP Address in Ubuntu 18.04 using Netplan&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-configure-static-ip-address-with-netplan-in-ubuntu-1804&quot;&gt;1. Configure Static IP Address with Netplan in Ubuntu 18.04&lt;/h2&gt;
+&lt;h3 id=&quot;11-find-your-desired-network-interface&quot;&gt;1.1. Find your desired network interface&lt;/h3&gt;
+&lt;p&gt;Use one of the following commands to find the network interfaces available on you system.&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ifconfig &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;or&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ip a
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The output would be like this:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;enp2s0: flags=4163&amp;lt;UP,BROADCAST,RUNNING,MULTICAST&amp;gt;  mtu 1500
+        inet 192.168.1.41 netmask 255.255.255.0  broadcast 192.168.1.255
+        inet6 fe80::201:6cff:fed0:e0e9  prefixlen 64  scopeid 0x20&amp;lt;link&amp;gt;
+        ether 00:01:6c:d0:e0:e9  txqueuelen 1000  (Ethernet)
+        RX packets 10356  bytes 8636081 (8.6 MB)
+        RX errors 0  dropped 13  overruns 0  frame 0
+        TX packets 3322  bytes 329660 (329.6 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73&amp;lt;UP,LOOPBACK,RUNNING&amp;gt;  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10&amp;lt;host&amp;gt;
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 144  bytes 10868 (10.8 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 144  bytes 10868 (10.8 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now, the system interface &lt;strong&gt;enp2s0&lt;/strong&gt; takes IP address from DHCP server.&lt;/p&gt;
+
+&lt;p&gt;In this article, I’ll configure a static IP address for enp2s0 as:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;IP address = 192.168.1.100
+Netmask = 255.255.255.0
+Gateway = 192.168.1.1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;12-disable-cloud-init&quot;&gt;1.2. Disable &lt;code class=&quot;highlighter-rouge&quot;&gt;cloud-init&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;In Ubuntu-18.04 server, &lt;code class=&quot;highlighter-rouge&quot;&gt;cloud-init&lt;/code&gt; manages the network configuration. So you need to disable it by adding such a file:&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;vi /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Add the following line int the configuration file:&lt;/p&gt;
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;network&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;diabled&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;13-backup-default-netplan-files&quot;&gt;1.3. Backup Default Netplan Files&lt;/h3&gt;
+&lt;p&gt;Move any files present in &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/netplan&lt;/code&gt; directory to a backup location:&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;mv /etc/netplan/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; /root
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;14-create-a-new-netplan-configuration-file&quot;&gt;1.4. Create a New Netplan Configuration File&lt;/h3&gt;
+&lt;p&gt;Create a new configuration file by:&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;vim /etc/netplan/01-network-card.yaml
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Add the following content to the file:&lt;/p&gt;
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;network&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;2&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;renderer&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;networkd&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;ethernets&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;enp0s3&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+                        &lt;span class=&quot;na&quot;&gt;dhcp4&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;no&lt;/span&gt;
+                        &lt;span class=&quot;na&quot;&gt;addresses&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;192.168.1.100/24&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+                        &lt;span class=&quot;na&quot;&gt;gateway4&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;192.168.1.1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;15-apply-all-configuration-and-restart-renderers&quot;&gt;1.5. Apply All Configuration and Restart Renderers&lt;/h3&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;netplan apply
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;16-verify-the-change&quot;&gt;1.6. Verify the Change&lt;/h3&gt;
+&lt;p&gt;Now verify the static IP address by:&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ifconfig &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;or&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ip a
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;You’ll see:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;enp2s0: flags=4163&amp;lt;UP,BROADCAST,RUNNING,MULTICAST&amp;gt;  mtu 1500
+        inet 192.168.1.235  netmask 255.255.255.0  broadcast 192.168.1.255
+        inet6 fe80::201:6cff:fed0:e0e9  prefixlen 64  scopeid 0x20&amp;lt;link&amp;gt;
+        ether 00:01:6c:d0:e0:e9  txqueuelen 1000  (Ethernet)
+        RX packets 11530  bytes 8736376 (8.7 MB)
+        RX errors 0  dropped 14  overruns 0  frame 0
+        TX packets 3488  bytes 362346 (362.3 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;2-configure-static-ip-address-using-ifupdownnetwork-manager&quot;&gt;2. Configure Static IP Address using &lt;code class=&quot;highlighter-rouge&quot;&gt;ifupdown&lt;/code&gt;/&lt;code class=&quot;highlighter-rouge&quot;&gt;Network Manager&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h3 id=&quot;21-install-packages&quot;&gt;2.1. Install Packages&lt;/h3&gt;
+&lt;p&gt;Install the below packages to support the old method of configuring static IP address:&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt install ifupdown resolvconf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;22-ethernet&quot;&gt;2.2. Ethernet&lt;/h3&gt;
+&lt;p&gt;Edit the interfaces file:&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;vim /etc/network/interfaces
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Update the file with the following information&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Interface Name #&lt;/span&gt;
+auto enp0s3
+&lt;span class=&quot;c&quot;&gt;# Static IP Address #&lt;/span&gt;
+iface enp0s3 inet static
+&lt;span class=&quot;c&quot;&gt;# IP Address #&lt;/span&gt;
+address 192.168.1.100
+&lt;span class=&quot;c&quot;&gt;# Netmask #&lt;/span&gt;
+netmask 255.255.255.0
+&lt;span class=&quot;c&quot;&gt;# Gateway #&lt;/span&gt;
+gateway 192.168.1.1
+&lt;span class=&quot;c&quot;&gt;# DNS Servers #&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#dns-nameservers 192.168.1.1&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#dns-nameservers 8.8.8.8&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Search Domain #&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#dns-search itzgeek.local&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: you can also configure your DNS Server just by uncommenting the last three dns related configuration lines.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;23-restart-and-apply&quot;&gt;2.3. Restart and Apply&lt;/h3&gt;
+&lt;p&gt;Restart the networking using the following command:&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl restart networking
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You’re all set now!&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Operating System&quot;]" /><category term="how-to" /><category term="ubuntu" /><category term="linux" /><category term="netplan" /><summary type="html">Recently I was struggling with tensorflow-gpu installation my home server. After couple of rounds of attempts and re-installation. I have to choose Ubuntu-18.04 only (due to my mother board version, both ubuntu-16.04 and debian-9 have network driver issues). During the time when re-installing the system, setting a static IP address is a common routine that make other computer in the home network easy to access the server. Here I’ll show how to configure static IP Address in Ubuntu 18.04 with netplan.</summary></entry><entry><title type="html">Linux/Unix Recursively Search All Files for a String</title><link href="http://localhost:4000/2018/12/06/search-all-files-for-a-string" rel="alternate" type="text/html" title="Linux/Unix Recursively Search All Files for a String" /><published>2018-12-06T13:15:00+08:00</published><updated>2018-12-06T13:15:00+08:00</updated><id>http://localhost:4000/2018/12/06/search-all-files-for-a-string</id><content type="html" xml:base="http://localhost:4000/2018/12/06/search-all-files-for-a-string">&lt;blockquote&gt;
   &lt;p&gt;A quick answer here:&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -985,395 +1291,4 @@ docker swarm leave &lt;span class=&quot;nt&quot;&gt;--force&lt;/span&gt;      &l
   &lt;li&gt;2 D&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Algorithms&quot;]" /><category term="algorithm" /><category term="leture notes" /><summary type="html">The starting note of the MIT 6.006 Algorithm course.</summary></entry><entry><title type="html">Experiencing google cloud</title><link href="http://localhost:4000/2018/10/09/google-cloud" rel="alternate" type="text/html" title="Experiencing google cloud" /><published>2018-10-09T09:00:00+08:00</published><updated>2018-10-09T09:00:00+08:00</updated><id>http://localhost:4000/2018/10/09/google-cloud</id><content type="html" xml:base="http://localhost:4000/2018/10/09/google-cloud">&lt;blockquote&gt;
-  &lt;p&gt;After experiencing google cloud for couple of week, I’d like to write something down here. On the one hand, there’re lots of tips, necessary knowledge and pitfalls to remember and check. One the other hand, just cannot resist to complain about this giant and complicated service system.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2 id=&quot;why-google-cloud&quot;&gt;Why Google Cloud&lt;/h2&gt;
-&lt;p&gt;So where shall we start? OK, first why Google Cloud? The reason for me is that it’s actually free to use. Well although it’s not literally free. As long as you apply an “free trial” account and enter your credit card info (they won’t automatically charge you, for sure), they will grant you $300 credit within one year to use for free completely. I have to say the google is really generous in this case.&lt;/p&gt;
-
-&lt;p&gt;This screen shot below is my current balance as I’ve already used the google cloud for training with or without GPUs for about 2 weeks. $300 is worth several month decent using.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/public/img/20181009-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;bunch-of-services---in-a-nut-shell&quot;&gt;Bunch of services - in a nut shell&lt;/h2&gt;
-&lt;p&gt;Google cloud provides a huge set of services. If you have no experience of using cloud service, it’s pretty hard to get started becuase you’d be dazzled by the the countless stuff.&lt;/p&gt;
-
-&lt;p&gt;To get started, especially for those who want to leverage google cloud as a tool for deep learning, I’d like to list the frequently used services.&lt;/p&gt;
-
-&lt;h3 id=&quot;1-cloud-computing&quot;&gt;1. Cloud computing&lt;/h3&gt;
-&lt;p&gt;Cloud computing is most frequently used service in my usage. As introduced by google itself, it provides &lt;em&gt;“Scalable, High-Perfoermance Virtual Machines”&lt;/em&gt;.
-To make it clear in a few words, this computing engine provides &lt;strong&gt;computing resource&lt;/strong&gt; such as CPU/GPU, memories, with a separate  pricing rule (only based on how many CPUs, GPUs, RAMs you are using) excluding the storage info.&lt;/p&gt;
-
-&lt;p&gt;When your VM is started, cloud computing service starts charging your credit. But as long as you shut it down. The charge from compute engine is stopped.&lt;/p&gt;
-
-&lt;h3 id=&quot;2-storage&quot;&gt;2. Storage&lt;/h3&gt;
-&lt;p&gt;The compute engine cannot run without a disk, which is related to the storage service. For instance, when you create a VM, you always also apply a disk of 10G or 30G space for the computing engine you chosed. (But remember, the fee for storage is charged separately. ) Basically, there are two different kind of  storage service that is most frequently use.&lt;/p&gt;
-
-&lt;h4 id=&quot;21-persistent-disk&quot;&gt;2.1 Persistent Disk&lt;/h4&gt;
-&lt;p&gt;In short, the persistent disk is block storage for virtual machine instances and storage to be mounted to VMs.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;It’s just like normal disks.&lt;/li&gt;
-  &lt;li&gt;You have to let your VM running before you can access this kind of storage.&lt;/li&gt;
-  &lt;li&gt;It’s easy to manipulate the files in the disks.&lt;/li&gt;
-  &lt;li&gt;The persistent disk charges with it’s own rates.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;22-cloud-storage&quot;&gt;2.2 Cloud Storage&lt;/h4&gt;
-&lt;p&gt;It’s object storage, in the actual use, each cloud storage block is  called a ‘bucket’.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;You can access this kind of storage by using their &lt;code class=&quot;highlighter-rouge&quot;&gt;gsutil&lt;/code&gt; tool from cloud shell or even from your computer using google cloud sdk.&lt;/li&gt;
-  &lt;li&gt;You do not need to start any VM to access your data stored in the ‘buckets’.&lt;/li&gt;
-  &lt;li&gt;It’s a great tool for uploading and downloading files from google cloud. Multi-thread &lt;code class=&quot;highlighter-rouge&quot;&gt;gsutil -m scp&lt;/code&gt; makes it much faster than normal &lt;code class=&quot;highlighter-rouge&quot;&gt;scp&lt;/code&gt; in POSIX file system.&lt;/li&gt;
-  &lt;li&gt;You have to use &lt;code class=&quot;highlighter-rouge&quot;&gt;gsutil&lt;/code&gt; to access and manipulate the data in the storage, which is a little bit awkward when you need to treate the files and folders in your ‘traditional’ mindset.&lt;/li&gt;
-  &lt;li&gt;the cloud storage charges with its own rates, roughly based on the amount of storage and the inward/outward stream amout.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;pricing&quot;&gt;Pricing&lt;/h2&gt;
-&lt;p&gt;The story about pricing is trivial! This reminds me of the main reason why I usually prefer Apple’s products rather than google’s.&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;IT’S SHOULD BE SIMPLE!!!
-When I was checking the pricing rate of these google cloud services, it’s like, suppose I want to buy a new iPhone and go to their store and ask: “I’d like to buy an iPhone, which one should I choose?” Think that if the guy tells me “well that depends on what kind of processor, storage, RAMs, camera you want. Here is the pricing list and help yourself …” 
-&lt;strong&gt;See? this would drive me crazy. And this is how you feel when you are checking google cloud pricing&lt;/strong&gt;. 
-The real way apple store would respond is: “Here are three new iPhones with basic price of $749, $999 and $1099, you can add more storage with extra price …”&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;My dear google, why don’t you make the pricing a little bit straight forward? Wouldn’t a rough approximation for every service rate in one page as a pricing overview be much better???&lt;/p&gt;
-
-&lt;p&gt;A little digressed from the subject. Here I give a rough pricing list for most the services mentioned above.&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Service&lt;/th&gt;
-      &lt;th style=&quot;text-align: right&quot;&gt;Rate per Hour&lt;/th&gt;
-      &lt;th style=&quot;text-align: right&quot;&gt;Rate per Day&lt;/th&gt;
-      &lt;th style=&quot;text-align: right&quot;&gt;Rate per Month&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;CPU VM&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;~$1.00&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;GPU VM &lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;~$1.00&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;-&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;-&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Persistent Disk&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;-&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;-&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;~$2.00 per 100G&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Cloud Storage&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;-&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;-&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;~$2.00 per 100G&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;I hope in this way you can have a general idea of the pricing of these google cloud services.&lt;/p&gt;
-
-&lt;h2 id=&quot;commands&quot;&gt;Commands&lt;/h2&gt;
-&lt;p&gt;In the following I’ll continue to list some commonly use commands with google cloud’s daily-based usage.&lt;/p&gt;
-
-&lt;h3 id=&quot;compute-engine-basic&quot;&gt;Compute Engine Basic&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Set/Unset zone:
-    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Set zone&lt;/span&gt;
-gcloud config &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;compute/zone &amp;lt;zone-name&amp;gt;
-&lt;span class=&quot;c&quot;&gt;# Unset zone&lt;/span&gt;
-gcloud config &lt;span class=&quot;nb&quot;&gt;unset &lt;/span&gt;compute/zone &amp;lt;zone-name&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;List all the VM instances:
-    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gcloud compute instances list
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Start a VM instance:
-    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gcloud compute instances start &amp;lt;instance-name&amp;gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;--zone&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;lt;zone-name&amp;gt;]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Terminate a VM instance:
-    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gcloud compute instances stop &amp;lt;instance-name&amp;gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;--zone&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;lt;zone-name&amp;gt;]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;SSH login to VM instance:
-    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gcloud compute ssh &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&amp;lt;user-name&amp;gt;@]&amp;lt;instance-name&amp;gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;--zone&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;lt;zone-name&amp;gt;]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Transfer files from/to the VM instance:
-    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# From local to VM instance&lt;/span&gt;
-gcloud compute scp &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;--recurse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &amp;lt;file-dir&amp;gt; &amp;lt;user-name&amp;gt;@&amp;lt;instance-name&amp;gt;:&amp;lt;dest-dir&amp;gt;
-&lt;span class=&quot;c&quot;&gt;# From VM instance to local&lt;/span&gt;
-gcloud compute scp &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;--recurse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&amp;lt;user-name&amp;gt;@]&amp;lt;instance-name&amp;gt;:&amp;lt;file-dir&amp;gt; &amp;lt;dest-dir&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;mountunmount-persistent-disk&quot;&gt;Mount/Unmount Persistent Disk&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://cloud.google.com/compute/docs/disks/add-persistent-disk&quot;&gt;Adding or Resizing Persistent Disks&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Create a persistent disk:
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gcloud compute disks create &amp;lt;disk-name&amp;gt; &lt;span class=&quot;nt&quot;&gt;--size&lt;/span&gt; &amp;lt;disk-size&amp;gt; &lt;span class=&quot;nt&quot;&gt;--type&lt;/span&gt; &amp;lt;disk-type&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-    &lt;p&gt;where:&lt;/p&gt;
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;disk-name&gt; is the name of the new disk.
-&lt;/disk-name&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;disk-size&gt; is the size of the new disk in GB.
-&lt;/disk-size&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;disk-type&gt; is the type of persistent disk. Either `pd-standard` or `pd-ssd`.
-
-&lt;/disk-type&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Attach a disk to any running or stopped instance
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gcloud compute instances attach-disk &amp;lt;instance-name&amp;gt; &lt;span class=&quot;nt&quot;&gt;--disk&lt;/span&gt; &amp;lt;disk-name&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;In an instance, list disks attached to the current instance:
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;lsblk
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Format the disk: (usually, the &lt;code class=&quot;highlighter-rouge&quot;&gt;DEVICE_ID&lt;/code&gt; is &lt;code class=&quot;highlighter-rouge&quot;&gt;sdb&lt;/code&gt;)
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;mkfs.ext4 &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; 0 &lt;span class=&quot;nt&quot;&gt;-F&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-E&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;lazy_itable_init&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0,lazy_journal_init&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0,discard /dev/&amp;lt;DEVICE_ID&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Mount the disk to the instance:
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mount &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; discard, defaults /dev/&amp;lt;DEVICE_ID&amp;gt; &amp;lt;mnt_dir&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-    &lt;p&gt;where&lt;/p&gt;
-    &lt;ul&gt;
-      &lt;li&gt;the &lt;code class=&quot;highlighter-rouge&quot;&gt;DEVICE_ID&lt;/code&gt; is often &lt;code class=&quot;highlighter-rouge&quot;&gt;sdb&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mnt_dir&lt;/code&gt; is the directory where you want the disk to be mounted, usually you create such folder before this &lt;code class=&quot;highlighter-rouge&quot;&gt;mount&lt;/code&gt; command.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Grant write access to the device for all users:
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;chmod a+w &amp;lt;mnt_dir&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Add the persistent disk to &lt;code class=&quot;highlighter-rouge&quot;&gt;etc/fstab&lt;/code&gt; file so t hat the device automatically mounts again when the instance restarts.&lt;/p&gt;
-
-    &lt;ol&gt;
-      &lt;li&gt;Create a backup of your current
-        &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;cp /etc/fstab /etc/fstab.backup
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Use the blkid command to find the UUID for the persistent disk. The system generates this UUID when you format the disk. Use UUIDs to mount persistent disks because UUIDs do not change when you move disks between systems.&lt;/li&gt;
-      &lt;li&gt;Create a backup of your current &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/fstab&lt;/code&gt; file.
-        &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;blkid /dev/[DEVICE_ID] /dev/[DEVICE_ID]: &lt;span class=&quot;nv&quot;&gt;UUID&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;[UUID_VALUE]&quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;TYPE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ext4&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-        &lt;p&gt;where:&lt;/p&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[DEVICE_ID]&lt;/code&gt; is the device ID of the persistent disk that you want to automatically mount. If you created a partition table on the disk, specify the partition that you want to mount.&lt;/li&gt;
-          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[UUID_VALUE]&lt;/code&gt; is the UUID of the persistent disk that you must include in the &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/fstab&lt;/code&gt; file.&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Open the &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/fstab&lt;/code&gt; file in a text editor and create an entry that includes the UUID. For example:
-        &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nv&quot;&gt;UUID&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=[&lt;/span&gt;UUID_VALUE] /mnt/disks/[MNT_DIR] ext4 discard,defaults,[NOFAIL_OPTION] 0 2
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-        &lt;p&gt;where:&lt;/p&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[UUID_VALUE]&lt;/code&gt; is the UUID of the persistent disk that you must include in the &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/fstab&lt;/code&gt; file.&lt;/li&gt;
-          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[MNT_DIR]&lt;/code&gt; is the directory where you mounted your persistent disk.&lt;/li&gt;
-          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[NOFAIL_OPTION]&lt;/code&gt; is a variable that specifies what the operating system should do if it cannot mount the persistent disk at boot time. To allow the system to continue booting even when it cannot mount the persistent disk, specify this option. For most distributions, specify the nofail option. For Ubuntu 12.04 or Ubuntu 14.04, specify the nobootwait option.&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;cloud-storage-operation-tools&quot;&gt;Cloud Storage Operation Tools&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://cloud.google.com/compute/docs/disks/gcs-buckets&quot;&gt;Connecting to Cloud Storage buckets&lt;/a&gt;
-&lt;a href=&quot;https://cloud.google.com/storage/docs/quickstart-gsutil#create&quot;&gt;Quickstart: Using the gsutil Tool&lt;/a&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Create a bucket by using &lt;code class=&quot;highlighter-rouge&quot;&gt;gsutil mb&lt;/code&gt; command:
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gsutil mb &lt;span class=&quot;nt&quot;&gt;-l&lt;/span&gt; us-east1 gs://my-awesome-bucket/
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-    &lt;p&gt;note that the bucket name should be globally-unique.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Copy local file to the bucket using &lt;code class=&quot;highlighter-rouge&quot;&gt;gsutil cp&lt;/code&gt; command:
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gsutil &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; cp &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &amp;lt;file-name&amp;gt; gs://my-awesome-bucket
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-    &lt;p&gt;&lt;strong&gt;Remember&lt;/strong&gt;: using &lt;code class=&quot;highlighter-rouge&quot;&gt;-m&lt;/code&gt; flag to activate multi-thread will increase the transfer speed dramatically.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Download file from bucket using &lt;code class=&quot;highlighter-rouge&quot;&gt;gsutil cp&lt;/code&gt; command:
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gsutil &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; cp &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; gs://my-awesome-bucket/&amp;lt;file-name&amp;gt; &amp;lt;local-dir&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Delete an object using &lt;code class=&quot;highlighter-rouge&quot;&gt;gsutil rm&lt;/code&gt;:
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Delete file&lt;/span&gt;
-gsutil rm gs://my-awesome-bucket/&amp;lt;file-name&amp;gt;
-&lt;span class=&quot;c&quot;&gt;# Delete folder&lt;/span&gt;
-gsutil rm &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; gs://my-awesome-bucket/&amp;lt;folder-name&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Remove the bucket
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gsutil rm &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; gs://my-awesome-bucket
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Deep Learning&quot;]" /><category term="google cloud" /><category term="deep learning" /><summary type="html">After experiencing google cloud for couple of week, I’d like to write something down here. On the one hand, there’re lots of tips, necessary knowledge and pitfalls to remember and check. One the other hand, just cannot resist to complain about this giant and complicated service system.</summary></entry><entry><title type="html">Python None</title><link href="http://localhost:4000/2018/06/21/python-None" rel="alternate" type="text/html" title="Python None" /><published>2018-06-21T14:00:00+08:00</published><updated>2018-06-21T14:00:00+08:00</updated><id>http://localhost:4000/2018/06/21/python-None</id><content type="html" xml:base="http://localhost:4000/2018/06/21/python-None">&lt;blockquote&gt;
-  &lt;p&gt;Python 中的 &lt;code class=&quot;highlighter-rouge&quot;&gt;None&lt;/code&gt; 是什么？&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;!--more--&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/baicaiye/article/details/72922197&quot;&gt;baicaiye专栏&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://docs.python.org/3/c-api/none.html&quot;&gt;Python NoneType - python.org&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;None是一个特殊的常量。
-None和False不同。
-None不是0。
-None不是空字符串。
-None和任何其他的数据类型比较永远返回False。
-None有自己的数据类型NoneType。
-你可以将None复制给任何变量，但是你不能创建其他NoneType对象。&lt;/p&gt;
-
-&lt;h2 id=&quot;the-none-object&quot;&gt;The None Object&lt;/h2&gt;
-
-&lt;p&gt;Note that the PyTypeObject for None is not directly exposed in the Python/C API. Since None is a &lt;strong&gt;singleton&lt;/strong&gt;, testing for object identity (using == in C) is sufficient. There is no PyNone_Check() function for the same reason.&lt;/p&gt;
-
-&lt;h3 id=&quot;pyobject-py_none&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;PyObject* Py_None&lt;/code&gt;&lt;/h3&gt;
-
-&lt;p&gt;The Python None object, denoting lack of value. This object has no methods. It needs to be treated just like any other object with respect to reference counts.&lt;/p&gt;
-
-&lt;h3 id=&quot;py_return_none&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Py_RETURN_NONE&lt;/code&gt;&lt;/h3&gt;
-
-&lt;p&gt;Properly handle returning Py_None from within a C function (that is, increment the reference count of None and return it.)&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;, &quot;Notes&quot;]" /><category term="python" /><summary type="html">Python 中的 None 是什么？</summary></entry><entry><title type="html">RNN LSTM - Notes</title><link href="http://localhost:4000/2018/06/12/RMM-LSTM-copy" rel="alternate" type="text/html" title="RNN LSTM - Notes" /><published>2018-06-12T14:00:00+08:00</published><updated>2018-06-12T14:00:00+08:00</updated><id>http://localhost:4000/2018/06/12/RMM-LSTM%20copy</id><content type="html" xml:base="http://localhost:4000/2018/06/12/RMM-LSTM-copy">&lt;blockquote&gt;
-  &lt;p&gt;&lt;em&gt;“Deep Learning”&lt;/em&gt; Reading note&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;!--more--&gt;
-
-&lt;h3 id=&quot;10-sequence-modeling-recurrent-and-recursive-nets&quot;&gt;10. Sequence Modeling: Recurrent and Recursive nets&lt;/h3&gt;
-
-&lt;h4 id=&quot;101-unfolding-computational-graphs&quot;&gt;10.1 Unfolding Computational Graphs&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;What is a Computational Graph?&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;A computational graph is a way to formalize the structure of a set of computations.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Considering a classical form of a dynamic system:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;s^{(t)} = f \left( s^{(t-1)} ; \theta \right), \tag{10.1}&lt;/script&gt;
-
-&lt;p&gt;where $s$ is called the state of the system. And it is a recurrent.&lt;/p&gt;
-
-&lt;p&gt;For a finite number of $\tau$ steps, we can unfold the equation. For example, when $\tau = 3$, we have&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{eqnarray*}
-s^{(3)} &amp;=&amp; f\left( s^{(2)}; \theta \right) \tag{10.2} \\
- &amp;=&amp; f\left(f\left( s^{(1)}; \theta \right);\theta\right) \tag{10.3}
- \end{eqnarray*} %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;Another example, considering a dynamic system driven by an external signal $x^{(t)}$,
-&lt;script type=&quot;math/tex&quot;&gt;s^{(t)} = f\left( s^{(t-1)}, x^{(t)};\theta \right) \tag{10.4}&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;To indicate the state  is the hidden units of the network, we rewrite equation 10.4 using $h$ to represent the state,
-&lt;script type=&quot;math/tex&quot;&gt;h^{(t)} = f\left(h^{(t-1)}, x^{(t)}; \theta \right) \tag{10.5}&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;We can represent the unfolded recurrence after $t$ steps with a function $g^{(t)}$:
-&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
-\begin{eqnarray*}
-h^{(t)} &amp;=&amp; g^{(t)}\left(x^{(t)}, x^{(t-1)}, x^{(t-2)}, ..., x^{(2)}, x^{(1)}\right) \tag{10.6} \\
-&amp;=&amp; f\left(h^{(t-1)}, x^{(t)};\theta\right). \tag{10.7}
-\end{eqnarray*} %]]&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;The function $ g^{(t)} $ takes the whole past sequence $\left(x^{(t)}, x^{(t-1)}, x^{(t-2)}, …, x^{(2)}, x^{(1)} \right)$ as input and produces the current state. But the unfolded recurrent structure allows us to factorize the function into repeated application of a function $f$, the unfolding process introduces two major advantages:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;ol&gt;
-      &lt;li&gt;The learned model always has the same input size, which specified in terms of transition from one state to another.&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;ol&gt;
-      &lt;li&gt;It is possible to use the &lt;em&gt;same&lt;/em&gt; transition function $f$ with the same parameters at every time step.&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;102-recurrent-neural-networks-循环神经网络&quot;&gt;10.2 Recurrent Neural Networks （循环神经网络）&lt;/h4&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Based on the basic idea of parameter-sharing, we can build a variety of neural networks. 3 typical designs are presented in the book:&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;ol&gt;
-      &lt;li&gt;RNN produce an output at each time step, and have connections between hidden unit. (Page 368, fig. 10.3)&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;ol&gt;
-      &lt;li&gt;RNN produce an output at each time step and have connections from &lt;em&gt;the output at one time step&lt;/em&gt; to &lt;em&gt;the hidden units at the next time step&lt;/em&gt;. (Page 370, fig. 10.4)&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;ol&gt;
-      &lt;li&gt;RNN connections between hidden units, that read an entire sequence and then produce a single output (page. 371, fig. 10.5)&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;The RNN of figure 10.3 (p.368) and equation 10.8 (p.369) is universal in the sense that (从…意义上来说）&lt;em&gt;any&lt;/em&gt;function computable by a Turing machine can be computed by such a recurrent network of a finite size.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;In the book, case 1 is chosen as a throughout example. 
-Figure 10.3 (p.369) or say equation 10.8 (p. 370) defines forward propagation in this model.&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\DeclareMathOperator{\softmax}{softmax}
-\begin{eqnarray*}
-\pmb{a}^{(t)} &amp;=&amp; \pmb{b} + \pmb{W}\pmb{h}^{(t-1)} + \pmb{U}\pmb{x}, \tag{10.8} \\
-\pmb{h}^{(t)} &amp;=&amp; \tanh\left(\pmb{a}^{(t)}\right), \tag{10.9} \\
-\pmb{o}^{(t)} &amp;=&amp; \pmb{c} + \pmb{V}\pmb{h}^{(t)}, \tag{10.10} \\
-\hat{\pmb{y}} ^{(t)} &amp;=&amp; \softmax \left(\pmb{o}^{(t)} \right), \tag{10.11}
-\end{eqnarray*} %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;Parameters: bias vecters $\pmb{b}$, $\pmb{c}$, weight matrices $\pmb{U}$, $\pmb{V}$ and $\pmb{W}$.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;$\pmb W$ is the hidden-to-hidden recurrent weight matrix&lt;/li&gt;
-  &lt;li&gt;$\pmb V$ is the hidden-to-output weight matrix&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$\pmb U$ is the input-to-hidden weight matrix&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;This is an example of a recurrent network that maps an input sequence $\pmb{x}^{(t)}$ to an output sequence $\pmb{y}^{(t)}$ of the same length $t$ in a range of $(1, \tau)$.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;The Loss Function:&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Artifitial Intelligence&quot;, &quot;Notes&quot;]" /><category term="rnn" /><category term="lstm" /><category term="machine learning" /><category term="deep learning" /><summary type="html">“Deep Learning” Reading note</summary></entry></feed>
+&lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Algorithms&quot;]" /><category term="algorithm" /><category term="leture notes" /><summary type="html">The starting note of the MIT 6.006 Algorithm course.</summary></entry></feed>

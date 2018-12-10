@@ -57,7 +57,7 @@
 <lastmod>2017-03-23T01:30:13+08:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/2018/06/12/RMM-LSTM-copy</loc>
+<loc>http://localhost:4000/2018/06/12/RNN-LSTM</loc>
 <lastmod>2018-06-12T14:00:00+08:00</lastmod>
 </url>
 <url>
@@ -97,6 +97,18 @@
 <lastmod>2018-12-06T13:15:00+08:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/2018/12/10/how-to-set-static-ip-address</loc>
+<lastmod>2018-12-10T09:18:00+08:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/2018/12/10/how-to-install-cuda-10-on-ubuntu-18.04</loc>
+<lastmod>2018-12-10T10:28:00+08:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/2018/12/10/understand-python-generator</loc>
+<lastmod>2018-12-10T12:52:00+08:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/about</loc>
 </url>
 <url>
@@ -122,5 +134,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/page5/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page6/</loc>
 </url>
 </urlset>

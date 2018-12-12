@@ -438,8 +438,8 @@ There are two ways to scale your self-built image:
 
 	Load the Docker image with (the two commands belows are the same):
 	```sh
-	$ docker save --input kf-ready-to-deploy-image.tar
-	$ docker save -i kf-ready-to-deploy-image.tar
+	$ docker load --input kf-ready-to-deploy-image.tar
+	$ docker load -i kf-ready-to-deploy-image.tar
 	```
 
 ## 4. Conclusion

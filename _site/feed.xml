@@ -1,5 +1,112 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-10T16:05:19+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KFZ’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
-</subtitle><entry><title type="html">Understanding generators in Python</title><link href="http://localhost:4000/2018/12/10/understand-python-generator" rel="alternate" type="text/html" title="Understanding generators in Python" /><published>2018-12-10T12:52:00+08:00</published><updated>2018-12-10T12:52:00+08:00</updated><id>http://localhost:4000/2018/12/10/understand-python-generator</id><content type="html" xml:base="http://localhost:4000/2018/12/10/understand-python-generator">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-12T15:47:12+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KFZ’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
+</subtitle><entry><title type="html">Quick Start on MySQL</title><link href="http://localhost:4000/2018/12/12/mysql-quick-start" rel="alternate" type="text/html" title="Quick Start on MySQL" /><published>2018-12-12T14:04:00+08:00</published><updated>2018-12-12T14:04:00+08:00</updated><id>http://localhost:4000/2018/12/12/mysql-quick-start</id><content type="html" xml:base="http://localhost:4000/2018/12/12/mysql-quick-start">&lt;blockquote&gt;
+  &lt;p&gt;A quick start and a &lt;strong&gt;Cheet Sheet&lt;/strong&gt; on MySQL.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;1-install-mysql&quot;&gt;1. Install MySQL&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/&quot;&gt;» A Quick Guide to Using the MySQL APT Repository&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;11-install-mysql-on-ubuntu-1804&quot;&gt;1.1. Install MySQL on Ubuntu 18.04&lt;/h3&gt;
+&lt;h4 id=&quot;111-install-mysql-with-apt&quot;&gt;1.1.1. Install MySQL with APT:&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Just &lt;code class=&quot;highlighter-rouge&quot;&gt;apt install&lt;/code&gt; it:
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt install mysql-server
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;112-install-mysql-with-deb-installation-package&quot;&gt;1.1.2. Install MySQL with &lt;code class=&quot;highlighter-rouge&quot;&gt;.deb&lt;/code&gt; installation package:&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Go to the download page for the MySQL APT repository at &lt;a href=&quot;https://dev.mysql.com/downloads/repo/apt/.&quot;&gt;https://dev.mysql.com/downloads/repo/apt/&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Install the downloaded package:
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;dpkg &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; /PATH/version-specific-package-name.deb
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Update package information:
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt update
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;113-starting-and-stopping-mysql-server&quot;&gt;1.1.3. Starting and Stopping MySQL Server&lt;/h4&gt;
+&lt;p&gt;The MySQL server is started automatically after installation.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;You can check the status of the MySQL server with the following command:
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;service mysql status
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Stop the MySQL server with the following command:
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;service mysql stop
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;To restart the MySQL server, use the following command:
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;service mysql start
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;12-install-mysql-on-macos&quot;&gt;1.2. Install MySQL on macOS&lt;/h3&gt;
+&lt;p&gt;Just download the &lt;a href=&quot;https://dev.mysql.com/downloads/mysql/&quot;&gt;MySQL disk image (&lt;code class=&quot;highlighter-rouge&quot;&gt;.dmg&lt;/code&gt;) file&lt;/a&gt; and install.&lt;/p&gt;
+
+&lt;h2 id=&quot;2-most-frequently-used-mysql-commands&quot;&gt;2. Most Frequently Used MySQL Commands&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;See a help list:
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mysql &lt;span class=&quot;nt&quot;&gt;--help&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;21-connectingdisconnecting-from-the-server&quot;&gt;2.1. Connecting/Disconnecting from the Server&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Connect to the server:
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mysql &lt;span class=&quot;nt&quot;&gt;-h&lt;/span&gt; host &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; user &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt;
+Enter password: &lt;span class=&quot;k&quot;&gt;********&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;If you are logging in on the same machine that MySQL is running on, you can simply:
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mysql &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; user &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;After you have connected successfully, you can disconnect any time by typing &lt;code class=&quot;highlighter-rouge&quot;&gt;QUIT&lt;/code&gt; (or &lt;code class=&quot;highlighter-rouge&quot;&gt;\q&lt;/code&gt;) at the &lt;code class=&quot;highlighter-rouge&quot;&gt;mysql&amp;gt;&lt;/code&gt; prompt:
+    &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;QUIT&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Bye&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;On Unix, you can also disconnect by pressing Control+D.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;22-entering-queries&quot;&gt;2.2. Entering Queries&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Simple queries by entering:
+    &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;VERSION&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;CURRENT_DATE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Use queries as a calculator:
+    &lt;pre&gt;&lt;code class=&quot;language-mysql&quot;&gt;mysql&amp;gt; SELECT SIN(PI()/4), (4+1)*5;
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;If you decide you do not want to execute a query that you are in the process of entering, cancel it by typing &lt;code class=&quot;highlighter-rouge&quot;&gt;\c&lt;/code&gt;:
+    &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;USER&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;c&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/&quot;&gt;» A Quick Guide to Using the MySQL APT Repository&lt;/a&gt;
+&lt;a href=&quot;https://dev.mysql.com/doc/refman/8.0/en/tutorial.html&quot;&gt;» MySQL 8.0 Reference Manual / Turorial&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Database&quot;]" /><category term="mysql" /><category term="bash" /><category term="linux" /><summary type="html">A quick start and a Cheet Sheet on MySQL.</summary></entry><entry><title type="html">Understanding generators in Python</title><link href="http://localhost:4000/2018/12/10/understand-python-generator" rel="alternate" type="text/html" title="Understanding generators in Python" /><published>2018-12-10T12:52:00+08:00</published><updated>2018-12-10T12:52:00+08:00</updated><id>http://localhost:4000/2018/12/10/understand-python-generator</id><content type="html" xml:base="http://localhost:4000/2018/12/10/understand-python-generator">&lt;blockquote&gt;
   &lt;p&gt;This post note a full understanding of a &lt;strong&gt;&lt;a href=&quot;http://www.python.org/dev/peps/pep-0255/&quot;&gt;generator&lt;/a&gt;&lt;/strong&gt; in Python.&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -146,6 +253,17 @@
 &lt;/blockquote&gt;
 
 &lt;!--more--&gt;
+
+&lt;h2 id=&quot;update&quot;&gt;UPDATE »&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Nothing is more joyful than compiling success in the first shot!&lt;/p&gt;
+
+  &lt;p&gt;&lt;strong&gt;It works for me!&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;p&gt;Just follow the tutorial in the link above, remember to specify the nccl library directory!&lt;/p&gt;
+
+  &lt;p&gt;Happy Compiling!!&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h2 id=&quot;related-articles&quot;&gt;Related Articles:&lt;/h2&gt;
 
@@ -1028,8 +1146,8 @@ COPY ./app /app
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
 
     &lt;p&gt;Load the Docker image with (the two commands belows are the same):&lt;/p&gt;
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker save &lt;span class=&quot;nt&quot;&gt;--input&lt;/span&gt; kf-ready-to-deploy-image.tar
- &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker save &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; kf-ready-to-deploy-image.tar
+    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker load &lt;span class=&quot;nt&quot;&gt;--input&lt;/span&gt; kf-ready-to-deploy-image.tar
+ &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker load &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; kf-ready-to-deploy-image.tar
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
@@ -1258,37 +1376,4 @@ docker swarm leave &lt;span class=&quot;nt&quot;&gt;--force&lt;/span&gt;      &l
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Operating System&quot;]" /><category term="docker" /><summary type="html">The famous “Docker” is a tool that can package an application and tis dependencies in a virtual container that can run on any Linux server. After getting my keras model, it’s a good chance to try docker to deploy a deep learning model as a API service. In this article, I’d like to write down all the important procedures and details about how to make this service work with docker.”</summary></entry><entry><title type="html">MIT 6.006 Algorithms Lecture 1 Notes</title><link href="http://localhost:4000/2018/11/01/MIT-6006-Lecture1" rel="alternate" type="text/html" title="MIT 6.006 Algorithms Lecture 1 Notes" /><published>2018-11-01T12:00:00+08:00</published><updated>2018-11-01T12:00:00+08:00</updated><id>http://localhost:4000/2018/11/01/MIT-6006-Lecture1</id><content type="html" xml:base="http://localhost:4000/2018/11/01/MIT-6006-Lecture1">&lt;blockquote&gt;
-  &lt;p&gt;The starting note of the MIT 6.006 Algorithm course.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2 id=&quot;course-overview&quot;&gt;Course Overview&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;Efficient procedures for solving problems on large inputs.&lt;/li&gt;
-  &lt;li&gt;Scalability&lt;/li&gt;
-  &lt;li&gt;Classic data structures and elementary algorithms (CLRS text) -&amp;gt; 6.046 for more design of algorithms.&lt;/li&gt;
-  &lt;li&gt;Real implementations in Python&lt;/li&gt;
-  &lt;li&gt;Fun problems sets!&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;content---8-modules&quot;&gt;Content - 8 modules&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;Algorithmic Thinking: Peak Finding&lt;/li&gt;
-  &lt;li&gt;Sorting &amp;amp; Trees: Event simulation -&amp;gt; Event Simulation (Problem set 2)&lt;/li&gt;
-  &lt;li&gt;Hasing: Genome Comparisons&lt;/li&gt;
-  &lt;li&gt;Numerics: RSA Encryption&lt;/li&gt;
-  &lt;li&gt;Graphs: Rubik’s Cube&lt;/li&gt;
-  &lt;li&gt;Shortest Paths: Caltech -&amp;gt; MIT&lt;/li&gt;
-  &lt;li&gt;Dynamic Programming: Image Compression&lt;/li&gt;
-  &lt;li&gt;Advanced Topics&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;peak-finding&quot;&gt;Peak finding&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;1 D&lt;/li&gt;
-  &lt;li&gt;2 D&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Algorithms&quot;]" /><category term="algorithm" /><category term="leture notes" /><summary type="html">The starting note of the MIT 6.006 Algorithm course.</summary></entry></feed>
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Operating System&quot;]" /><category term="docker" /><summary type="html">The famous “Docker” is a tool that can package an application and tis dependencies in a virtual container that can run on any Linux server. After getting my keras model, it’s a good chance to try docker to deploy a deep learning model as a API service. In this article, I’d like to write down all the important procedures and details about how to make this service work with docker.”</summary></entry></feed>

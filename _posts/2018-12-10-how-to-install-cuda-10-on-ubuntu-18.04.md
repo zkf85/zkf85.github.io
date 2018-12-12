@@ -15,6 +15,17 @@ tag: [how-to, ubuntu, linux, nvidia, gpu]
 
 <!--more-->
 
+## UPDATE >>
+> Nothing is more joyful than compiling success in the first shot! 
+>
+> **It works for me!**
+>
+> Just follow the tutorial in the link above, remember to specify the nccl library directory! 
+>
+> Happy Compiling!!
+
+
+
 ## Related Articles:
 
 

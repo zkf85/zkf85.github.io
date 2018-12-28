@@ -1,5 +1,91 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-12T15:47:12+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KFZ’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
-</subtitle><entry><title type="html">Quick Start on MySQL</title><link href="http://localhost:4000/2018/12/12/mysql-quick-start" rel="alternate" type="text/html" title="Quick Start on MySQL" /><published>2018-12-12T14:04:00+08:00</published><updated>2018-12-12T14:04:00+08:00</updated><id>http://localhost:4000/2018/12/12/mysql-quick-start</id><content type="html" xml:base="http://localhost:4000/2018/12/12/mysql-quick-start">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-28T10:38:44+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KFZ’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
+</subtitle><entry><title type="html">Pandas - Quick Start</title><link href="http://localhost:4000/2018/12/28/pandas-intro" rel="alternate" type="text/html" title="Pandas - Quick Start" /><published>2018-12-28T10:27:00+08:00</published><updated>2018-12-28T10:27:00+08:00</updated><id>http://localhost:4000/2018/12/28/pandas-intro</id><content type="html" xml:base="http://localhost:4000/2018/12/28/pandas-intro">&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;https://pandas.pydata.org/index.html&quot;&gt;&lt;em&gt;pandas&lt;/em&gt;&lt;/a&gt; is an open source,  BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the &lt;strong&gt;Python&lt;/strong&gt; programming language.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;1-overview---data-structure&quot;&gt;1. Overview - Data Structure&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Dimensions&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;Name&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;Series&lt;/td&gt;
+      &lt;td&gt;1D labeled homogeneously-typed array&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;DataFrame&lt;/td&gt;
+      &lt;td&gt;General 2D labeled, size-mutable tabular structure with potentially heterogeneously-typed column&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Why more than one data structure?&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;p&gt;The best way to think about the pandas data structures is as flexible containers for lower dimensional data. For example, DataFrame is a container for Series, and Series is a container for scalars. We would like to be able to insert and remove objects from these containers in a dictionary-like fashion.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;2-pandas-official-tutorials&quot;&gt;2. Pandas Official Tutorials:&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;http://pandas.pydata.org/pandas-docs/stable/10min.html#minutes-to-pandas&quot;&gt;» 10 Minutes to pandas&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://pandas.pydata.org/pandas-docs/stable/tutorials.html&quot;&gt;» Pandas Tutorials&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://pandas.pydata.org/pandas-docs/stable/tutorials.html#pandas-cookbook&quot;&gt;» Pandas Cookbook&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://pandas.pydata.org/Pandas_Cheat_Sheet.pdf&quot;&gt;» Pandas Cheet Sheet&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;3-a-quick-start-of-pandas---based-on-10-minutes-to-pandas&quot;&gt;3. A Quick Start of Pandas - (based on &lt;a href=&quot;http://pandas.pydata.org/pandas-docs/stable/10min.html#minutes-to-pandas&quot;&gt;10 Minutes to pandas&lt;/a&gt;)&lt;/h2&gt;
+
+&lt;p&gt;First, in python, let’s import the packages:&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pandas&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;31-object-creation&quot;&gt;3.1 Object Creation&lt;/h3&gt;
+&lt;h4 id=&quot;311-create-a-series&quot;&gt;3.1.1 Create a Series:&lt;/h4&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;In&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Series&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nan&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;In&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Out&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; 
+&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;    &lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;    &lt;span class=&quot;mf&quot;&gt;3.0&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;    &lt;span class=&quot;mf&quot;&gt;5.0&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;NaN&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;    &lt;span class=&quot;mf&quot;&gt;6.0&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;    &lt;span class=&quot;mf&quot;&gt;8.0&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;dtype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;float64&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;312-create-a-dataframe&quot;&gt;3.1.2. Create a DataFrame&lt;/h4&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;In&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dates&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;date_range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'20130101'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;periods&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;In&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dates&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Out&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;DatetimeIndex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'2013-01-01'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'2013-01-02'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'2013-01-03'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'2013-01-04'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+               &lt;span class=&quot;s&quot;&gt;'2013-01-05'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'2013-01-06'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+              &lt;span class=&quot;n&quot;&gt;dtype&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'datetime64[ns]'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;freq&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'D'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;In&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;df&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DataFrame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;randn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dates&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;columns&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ABCD'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;In&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Out&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+                   &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;         &lt;span class=&quot;n&quot;&gt;B&lt;/span&gt;         &lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;         &lt;span class=&quot;n&quot;&gt;D&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;2013&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;01&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;01&lt;/span&gt;  &lt;span class=&quot;mf&quot;&gt;0.469112&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.282863&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.509059&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.135632&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;2013&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;01&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;02&lt;/span&gt;  &lt;span class=&quot;mf&quot;&gt;1.212112&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.173215&lt;/span&gt;  &lt;span class=&quot;mf&quot;&gt;0.119209&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.044236&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;2013&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;01&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;03&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.861849&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;2.104569&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.494929&lt;/span&gt;  &lt;span class=&quot;mf&quot;&gt;1.071804&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;2013&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;01&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;04&lt;/span&gt;  &lt;span class=&quot;mf&quot;&gt;0.721555&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.706771&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.039575&lt;/span&gt;  &lt;span class=&quot;mf&quot;&gt;0.271860&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;2013&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;01&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;05&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.424972&lt;/span&gt;  &lt;span class=&quot;mf&quot;&gt;0.567020&lt;/span&gt;  &lt;span class=&quot;mf&quot;&gt;0.276232&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.087401&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;2013&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;01&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;06&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.673690&lt;/span&gt;  &lt;span class=&quot;mf&quot;&gt;0.113648&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.478427&lt;/span&gt;  &lt;span class=&quot;mf&quot;&gt;0.524988&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;]" /><category term="pandas" /><category term="python" /><summary type="html">pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language.</summary></entry><entry><title type="html">Quick Start on MySQL</title><link href="http://localhost:4000/2018/12/12/mysql-quick-start" rel="alternate" type="text/html" title="Quick Start on MySQL" /><published>2018-12-12T14:04:00+08:00</published><updated>2018-12-12T14:04:00+08:00</updated><id>http://localhost:4000/2018/12/12/mysql-quick-start</id><content type="html" xml:base="http://localhost:4000/2018/12/12/mysql-quick-start">&lt;blockquote&gt;
   &lt;p&gt;A quick start and a &lt;strong&gt;Cheet Sheet&lt;/strong&gt; on MySQL.&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -78,6 +164,9 @@ Enter password: &lt;span class=&quot;k&quot;&gt;********&lt;/span&gt;
     &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;QUIT&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;Bye&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: “&lt;code class=&quot;highlighter-rouge&quot;&gt;QUIT&lt;/code&gt;” doesn’t need “&lt;code class=&quot;highlighter-rouge&quot;&gt;;&lt;/code&gt;”.&lt;/p&gt;
+    &lt;/blockquote&gt;
   &lt;/li&gt;
   &lt;li&gt;On Unix, you can also disconnect by pressing Control+D.&lt;/li&gt;
 &lt;/ul&gt;
@@ -89,8 +178,8 @@ Enter password: &lt;span class=&quot;k&quot;&gt;********&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;Use queries as a calculator:
-    &lt;pre&gt;&lt;code class=&quot;language-mysql&quot;&gt;mysql&amp;gt; SELECT SIN(PI()/4), (4+1)*5;
-&lt;/code&gt;&lt;/pre&gt;
+    &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SIN&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;If you decide you do not want to execute a query that you are in the process of entering, cancel it by typing &lt;code class=&quot;highlighter-rouge&quot;&gt;\c&lt;/code&gt;:
     &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt;
@@ -98,6 +187,180 @@ Enter password: &lt;span class=&quot;k&quot;&gt;********&lt;/span&gt;
   &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;c&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;23-creating-and-using-a-database&quot;&gt;2.3. Creating and Using a Database&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Find out what databases currently exist on the server:
+    &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SHOW&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DATABASES&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;The output:&lt;/p&gt;
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;+----------+
+| Database |
++----------+
+| mysql    |
+| test     |
+| tmp      |
++----------+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;      &lt;/div&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Access a listed database:
+    &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;USE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: “&lt;code class=&quot;highlighter-rouge&quot;&gt;USE&lt;/code&gt;” doesn’t need “&lt;code class=&quot;highlighter-rouge&quot;&gt;;&lt;/code&gt;”.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;To change the permission of a database to a single user:
+    &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;GRANT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ALL&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;menagerie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;TO&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'your_mysql_name'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'your_client_host'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;h4 id=&quot;231-create-and-select-a-database&quot;&gt;2.3.1 Create and Select a Database&lt;/h4&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Create a Database:
+    &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DATABASE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mydatabase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: Your database needs to be created only once, but you must select it for use each time you begin a mysql session. (Use the statement: &lt;code class=&quot;highlighter-rouge&quot;&gt;USE mydatabase&lt;/code&gt;)&lt;/p&gt;
+
+      &lt;p&gt;Alternatively, specify its name after any connection parameters when logging in to MySQL:&lt;/p&gt;
+      &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mysql &lt;span class=&quot;nt&quot;&gt;-h&lt;/span&gt; host &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; user &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; mydatabase
+Enter password: &lt;span class=&quot;k&quot;&gt;********&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;      &lt;/div&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;232-create-a-table&quot;&gt;2.3.2. Create a Table&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Show all tables in the current database:
+    &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SHOW&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TABLES&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Create a table, use a &lt;code class=&quot;highlighter-rouge&quot;&gt;CREATE TABLE&lt;/code&gt; statement to specify the layout of your table:
+    &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;TABLE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pet&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;VARCHAR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;owner&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;VARCHAR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;species&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;VARCHAR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sex&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CHAR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;birth&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DATE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;death&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DATE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: You can check &lt;a href=&quot;https://dev.mysql.com/doc/refman/8.0/en/data-types.html&quot;&gt;All Data Types&lt;/a&gt; to pick an appropriate one for each item in the table.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Once you have created a table, SHOW TABLES should produce some output:
+    &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SHOW&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TABLES&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;----------------------+&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Tables_in_mydatabase&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;----------------------+&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pet&lt;/span&gt;                  &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;----------------------+&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Show information about the table structure:
+    &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DESCRIBE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;The output would be like this:&lt;/p&gt;
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;+---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| name    | varchar(20) | YES  |     | NULL    |       |
+| owner   | varchar(20) | YES  |     | NULL    |       |
+| species | varchar(20) | YES  |     | NULL    |       |
+| sex     | char(1)     | YES  |     | NULL    |       |
+| birth   | date        | YES  |     | NULL    |       |
+| death   | date        | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;      &lt;/div&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;233-loading-data-into-a-table&quot;&gt;2.3.3. Loading Data into a Table&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;To load the text file &lt;code class=&quot;highlighter-rouge&quot;&gt;pet.txt&lt;/code&gt; into the pet table, use this statement:
+    &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;LOAD&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DATA&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;LOCAL&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;INFILE&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'/path/pet.txt'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;INTO&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;TABLE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;When you want to add new records one at a time, use &lt;code class=&quot;highlighter-rouge&quot;&gt;INSERT&lt;/code&gt; statement like this:
+    &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;INSERT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;INTO&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pet&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;VALUES&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Puffball'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Diane'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'hamster'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'f'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'1999-03-30'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;234-retrieving-information-from-a-table&quot;&gt;2.3.4. Retrieving Information from a Table&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;SELECT&lt;/code&gt; statement is used to pull information from a table. The general form of the statement is:
+    &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;what_to_select&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;which_table&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;conditions_to_satisfy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Select All data from a table:
+    &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Empty the table:
+    &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DELETE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Change a certain record with &lt;code class=&quot;highlighter-rouge&quot;&gt;UPDATE&lt;/code&gt; statement:
+    &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;UPDATE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pet&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SET&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;birth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'1989-08-31'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Bowser'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dev.mysql.com/doc/refman/8.0/en/selecting-rows.html&quot;&gt;» Selecting Particular Rows&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dev.mysql.com/doc/refman/8.0/en/selecting-columns.html&quot;&gt;» Selecting Particular Columns&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dev.mysql.com/doc/refman/8.0/en/sorting-rows.html&quot;&gt;» Sorting Rows&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dev.mysql.com/doc/refman/8.0/en/date-calculations.html&quot;&gt;» Date Calculations&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dev.mysql.com/doc/refman/8.0/en/working-with-null.html&quot;&gt;» Working with NULL Values&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dev.mysql.com/doc/refman/8.0/en/pattern-matching.html&quot;&gt;» Pattern Matching&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dev.mysql.com/doc/refman/8.0/en/counting-rows.html&quot;&gt;» Couting Rows&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dev.mysql.com/doc/refman/8.0/en/multiple-tables.html&quot;&gt;» Using More Than one Table&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;24-using-mysql-in-batch-mode&quot;&gt;2.4. Using mysql in Batch Mode&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;To run a mysql script from file:
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mysql &amp;lt; batch-file
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;If connection parameters needed, the command might look like this:
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mysql &lt;span class=&quot;nt&quot;&gt;-h&lt;/span&gt; host &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; user &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; &amp;lt; batch-file
+Enter password: &lt;span class=&quot;k&quot;&gt;********&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Run the output through a pager:
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mysql &amp;lt; batch-file | less
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Catch the output in a log file:
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mysql &amp;lt; batch-file &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; mysql.out
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;You can also use scripts from the mysql prompt by using the source command or . command:
+    &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3-mysql-security-issues&quot;&gt;3. MySQL Security Issues&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dev.mysql.com/doc/refman/8.0/en/security.html&quot;&gt;» MySQL Tutorial on Security Issues&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;31-security-guidelines&quot;&gt;3.1. Security Guidelines&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;&lt;em&gt;Do not ever give anyone (except MySQL &lt;code class=&quot;highlighter-rouge&quot;&gt;root&lt;/code&gt; accounts) access to the &lt;code class=&quot;highlighter-rouge&quot;&gt;user&lt;/code&gt; table in the mysql system database! This is critical&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;&lt;em&gt;Set a root password!&lt;/em&gt;&lt;/strong&gt; Try &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mysql -u root&lt;/code&gt;&lt;/strong&gt;, if you are able to connect successfully, then you should set a password for &lt;code class=&quot;highlighter-rouge&quot;&gt;root&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Use the &lt;strong&gt;&lt;a href=&quot;https://dev.mysql.com/doc/refman/8.0/en/show-grants.html&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SHOW GRANTS&lt;/code&gt;&lt;/a&gt;&lt;/strong&gt; statement to check which accounts have access to what. Then use the &lt;strong&gt;&lt;a href=&quot;https://dev.mysql.com/doc/refman/8.0/en/revoke.html&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;REVOKE&lt;/code&gt;&lt;/a&gt;&lt;/strong&gt; statement to remove thos privileges that are not necessary.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -1155,225 +1418,4 @@ COPY ./app /app
 &lt;h2 id=&quot;4-conclusion&quot;&gt;4. Conclusion&lt;/h2&gt;
 &lt;p&gt;There’re not a lot of articles on deploying Keras models for production, thus I write this complete instruction on how to deploy Keras model with Flask+uWSGI+NGINX strategy. There are two ways to manage the work: 1) configure everything step by step; 2) apply docker to save your time. Both methods can provide the same production-level API with your well-trained Keras model.&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Operating System&quot;, &quot;Deep Learning&quot;]" /><category term="docker" /><category term="flask" /><category term="uwsgi" /><category term="nginx" /><category term="keras" /><category term="tensorflow" /><summary type="html">After spending more than 200 credits on google cloud GPU for training a Plant Disease Recoginition (PDR) model with Keras, I’ve got a decent model that have reached more than 85% accuracy. The model is ready and the next thing to do is to deploy the model for inference as a service.</summary></entry><entry><title type="html">Get Started with THE Docker</title><link href="http://localhost:4000/2018/11/28/docker-debut" rel="alternate" type="text/html" title="Get Started with THE Docker" /><published>2018-11-28T00:00:00+08:00</published><updated>2018-11-28T00:00:00+08:00</updated><id>http://localhost:4000/2018/11/28/docker-debut</id><content type="html" xml:base="http://localhost:4000/2018/11/28/docker-debut">&lt;blockquote&gt;
-  &lt;p&gt;The famous “Docker” is &lt;strong&gt;&lt;em&gt;a tool that can package an application and tis dependencies in a virtual container that can run on any Linux server&lt;/em&gt;&lt;/strong&gt;. After getting my keras model, it’s a good chance to try docker to deploy a deep learning model as a API service. In this article, I’d like to write down all the important procedures and details about how to make this service work with docker.”&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&quot;/public/img/20181128-laurel-docker-containers.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;!--more--&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;1-check-out-docker&quot;&gt;1. Check out Docker!&lt;/h2&gt;
-&lt;p&gt;Of course we can install and configure the “&lt;em&gt;Flask/uWSGI/NGINX (FUN)&lt;/em&gt;” combo step by step, but it’s trivial and with bunch of pitfalls.&lt;/p&gt;
-
-&lt;p&gt;Docker is the perfect choice to make such things much easier!&lt;/p&gt;
-
-&lt;h3 id=&quot;11-basic-idea-of-using-docker&quot;&gt;1.1. Basic idea of using Docker&lt;/h3&gt;
-&lt;p&gt;The basic idea of using Docker is to avoid installing and configuring environment by yourself. Instead, you can download a ready-to-use &lt;strong&gt;&lt;em&gt;image&lt;/em&gt;&lt;/strong&gt;, which is carefully configured and saved by other people, and run it as a &lt;strong&gt;&lt;em&gt;container&lt;/em&gt;&lt;/strong&gt;, in which you can focus on you own stuff without worrying about whether the environment trivials at all.&lt;/p&gt;
-
-&lt;h2 id=&quot;2-installuninstall-docker&quot;&gt;2. Install/Uninstall Docker&lt;/h2&gt;
-&lt;p&gt;Docker is available in two editions:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Community Edition (CE)&lt;/li&gt;
-  &lt;li&gt;Enterprise Edition (EE)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The CE edition is suitable for individual developers and it’s free.&lt;/p&gt;
-
-&lt;p&gt;To get Docker CE for Ubuntu, check the instruction &lt;a href=&quot;https://docs.docker.com/install/linux/docker-ce/ubuntu/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;21-prerequisites&quot;&gt;2.1. Prerequisites&lt;/h3&gt;
-&lt;ol&gt;
-  &lt;li&gt;Uninstall old versions:
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get remove docker docker-engine docker.io
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Update the &lt;code class=&quot;highlighter-rouge&quot;&gt;apt&lt;/code&gt; package index:
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get update
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Install packages to allow apt to use a repository over HTTPS:
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get install &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
- apt-transport-https &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
- ca-certificates &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
- curl &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
- software-properties-common
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Add Docker’s official GPG key:&lt;/p&gt;
-
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-fsSL&lt;/span&gt; https://download.docker.com/linux/ubuntu/gpg | &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-key add -
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;p&gt;Verify that you now have the key with the fingerprint &lt;code class=&quot;highlighter-rouge&quot;&gt;9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88&lt;/code&gt;, by searching for the last 8 characters of the fingerprint.&lt;/p&gt;
-
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-key fingerprint 0EBFCD88
-
- pub   4096R/0EBFCD88 2017-02-22
-       Key fingerprint &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88
- uid                  Docker Release &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;CE deb&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &amp;lt;docker@docker.com&amp;gt;
- sub   4096R/F273FCD8 2017-02-22
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Use the following command to set up the stable repository. ( For x86_64/amd64)
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;add-apt-repository &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-    &lt;span class=&quot;s2&quot;&gt;&quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;lsb_release &lt;span class=&quot;nt&quot;&gt;-cs&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;
-    stable&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;22-install-docker-ce-using-repository&quot;&gt;2.2. Install Docker CE (using repository)&lt;/h3&gt;
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Update the &lt;code class=&quot;highlighter-rouge&quot;&gt;apt&lt;/code&gt; package index:&lt;/p&gt;
-
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get update
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Install packages to allow apt to use a repository over HTTPS:&lt;/p&gt;
-
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get install &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-     apt-transport-https &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-     ca-certificates &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-     curl &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-     software-properties-common
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Install the &lt;em&gt;latest&lt;/em&gt; version of Docker CE, or go to the next step to install a specific version:&lt;/p&gt;
-
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get install docker-ce
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Verify that Docker CE is installed correctly by running the hello-world image.&lt;/p&gt;
-
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker run hello-world
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;23-uninstall-docker-ce&quot;&gt;2.3. Uninstall Docker CE&lt;/h3&gt;
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Uninstall the Docker CE package:&lt;/p&gt;
-
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get purge docker-ce
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Images, containers, volumes, or customized configuration files on your host are not automatically removed. To delete all images, containers, and volumes:&lt;/p&gt;
-
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;rm &lt;span class=&quot;nt&quot;&gt;-rf&lt;/span&gt; /var/lib/docker
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;23-other-installation-methods&quot;&gt;2.3. Other installation methods&lt;/h3&gt;
-&lt;p&gt;You can also install Docker CE from &lt;em&gt;a package&lt;/em&gt; or &lt;em&gt;using the convenience script&lt;/em&gt;. Again, for details check &lt;a href=&quot;https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-using-the-repository&quot;&gt;here&lt;/a&gt;!&lt;/p&gt;
-
-&lt;h2 id=&quot;3-docker-basics&quot;&gt;3. Docker basics&lt;/h2&gt;
-&lt;p&gt;Docker official site provides a very nice set of &lt;a href=&quot;https://docs.docker.com/get-started/&quot;&gt;Tutorials&lt;/a&gt;. It’s highly recommended to go through the first couple of sections of the tutorial. Here I’d like to keep a record of the very basic steps and commands to get started with Docker.&lt;/p&gt;
-
-&lt;p&gt;The best and complete way to learn Docker is to go through this &lt;a href=&quot;https://docs.docker.com/get-started/&quot;&gt;Get Started from Docker’s Official&lt;/a&gt;. Here I just take a record of the core concepts and commands for myself.&lt;/p&gt;
-
-&lt;h3 id=&quot;31-docker-concepts&quot;&gt;3.1. Docker Concepts&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Image:&lt;/p&gt;
-
-    &lt;p&gt;An &lt;strong&gt;image&lt;/strong&gt; is an executable package that includes everything needed to run an application–the code, a runtime, libraries, environment variables, and configuration files.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Container:&lt;/p&gt;
-
-    &lt;p&gt;A &lt;strong&gt;container&lt;/strong&gt; is a runtime instance of an image–what the image becomes in memory when executed (that is, an image with state, or a user process). You can see a list of your running containers with the command, &lt;code class=&quot;highlighter-rouge&quot;&gt;docker ps&lt;/code&gt;, just as you would in Linux.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Container vs. Virtual Machines:&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;A &lt;strong&gt;container&lt;/strong&gt; runs natively on Linux and shares the kernel of the host machine with other containers. It runs a discrete process, taking no more memory than any other executable, making it lightweight.&lt;/p&gt;
-
-&lt;p&gt;By contrast, a &lt;strong&gt;virtual machine (VM)&lt;/strong&gt; runs a full-blown “guest” operating system with virtual access to host resources through a hypervisor. In general, VMs provide an environment with more resources than most applications need.&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;td&gt;
-    &lt;img src=&quot;/public/img/20181128-docker-container.png&quot; /&gt;
-    &lt;/td&gt;
-
-    &lt;td&gt;
-    &lt;img src=&quot;/public/img/20181128-docker-VM.png&quot; /&gt;
-	&lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;32-cheat-sheet-1---check-info&quot;&gt;3.2. &lt;strong&gt;Cheat sheet 1 - Check info&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;## List Docker CLI commands&lt;/span&gt;
-docker
-docker container &lt;span class=&quot;nt&quot;&gt;--help&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;## Display Docker version and info&lt;/span&gt;
-docker &lt;span class=&quot;nt&quot;&gt;--version&lt;/span&gt;
-docker version
-docker info
-
-&lt;span class=&quot;c&quot;&gt;## Execute Docker image&lt;/span&gt;
-docker run hello-world
-
-&lt;span class=&quot;c&quot;&gt;## List Docker images&lt;/span&gt;
-docker image &lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;## List Docker containers (running, all, all in quiet mode)&lt;/span&gt;
-docker container &lt;span class=&quot;nb&quot;&gt;ls
-&lt;/span&gt;docker container &lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--all&lt;/span&gt;
-docker container &lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-aq&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;33-cheat-sheet-2---check-info&quot;&gt;3.3. &lt;strong&gt;Cheat sheet 2 - Check info&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;After &lt;code class=&quot;highlighter-rouge&quot;&gt;Dockerfile&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;app.py&lt;/code&gt; (optionally &lt;code class=&quot;highlighter-rouge&quot;&gt;requirements&lt;/code&gt;) are ready:&lt;/p&gt;
-
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-docker build &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; friendlyhello &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# Create image using this directory's Dockerfile&lt;/span&gt;
-docker run &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 4000:80 friendlyhello  &lt;span class=&quot;c&quot;&gt;# Run &quot;friendlyname&quot; mapping port 4000 to 80&lt;/span&gt;
-docker run &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 4000:80 friendlyhello         &lt;span class=&quot;c&quot;&gt;# Same thing, but in detached mode&lt;/span&gt;
-docker container &lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;                                &lt;span class=&quot;c&quot;&gt;# List all running containers&lt;/span&gt;
-docker container &lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt;             &lt;span class=&quot;c&quot;&gt;# List all containers, even those not running&lt;/span&gt;
-docker container stop &amp;lt;&lt;span class=&quot;nb&quot;&gt;hash&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;           &lt;span class=&quot;c&quot;&gt;# Gracefully stop the specified container&lt;/span&gt;
-docker container &lt;span class=&quot;nb&quot;&gt;kill&lt;/span&gt; &amp;lt;&lt;span class=&quot;nb&quot;&gt;hash&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;         &lt;span class=&quot;c&quot;&gt;# Force shutdown of the specified container&lt;/span&gt;
-docker container rm &amp;lt;&lt;span class=&quot;nb&quot;&gt;hash&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;        &lt;span class=&quot;c&quot;&gt;# Remove specified container from this machine&lt;/span&gt;
-docker container rm &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;docker container &lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-q&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;         &lt;span class=&quot;c&quot;&gt;# Remove all containers&lt;/span&gt;
-docker image &lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt;                             &lt;span class=&quot;c&quot;&gt;# List all images on this machine&lt;/span&gt;
-docker image rm &amp;lt;image id&amp;gt;            &lt;span class=&quot;c&quot;&gt;# Remove specified image from this machine&lt;/span&gt;
-docker image rm &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;docker image &lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-q&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# Remove all images from this machine&lt;/span&gt;
-docker login             &lt;span class=&quot;c&quot;&gt;# Log in this CLI session using your Docker credentials&lt;/span&gt;
-docker tag &amp;lt;image&amp;gt; username/repository:tag  &lt;span class=&quot;c&quot;&gt;# Tag &amp;lt;image&amp;gt; for upload to registry&lt;/span&gt;
-docker push username/repository:tag            &lt;span class=&quot;c&quot;&gt;# Upload tagged image to registry&lt;/span&gt;
-docker run username/repository:tag                   &lt;span class=&quot;c&quot;&gt;# Run image from a registry&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h3 id=&quot;33-cheat-sheet-3---services&quot;&gt;3.3. &lt;strong&gt;Cheat sheet 3 - Services&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-docker stack &lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;                                            &lt;span class=&quot;c&quot;&gt;# List stacks or apps&lt;/span&gt;
-docker stack deploy &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; &amp;lt;composefile&amp;gt; &amp;lt;appname&amp;gt;  &lt;span class=&quot;c&quot;&gt;# Run the specified Compose file&lt;/span&gt;
-docker service &lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;                 &lt;span class=&quot;c&quot;&gt;# List running services associated with an app&lt;/span&gt;
-docker service ps &amp;lt;service&amp;gt;                  &lt;span class=&quot;c&quot;&gt;# List tasks associated with an app&lt;/span&gt;
-docker inspect &amp;lt;task or container&amp;gt;                   &lt;span class=&quot;c&quot;&gt;# Inspect task or container&lt;/span&gt;
-docker container &lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-q&lt;/span&gt;                                      &lt;span class=&quot;c&quot;&gt;# List container IDs&lt;/span&gt;
-docker stack rm &amp;lt;appname&amp;gt;                             &lt;span class=&quot;c&quot;&gt;# Tear down an application&lt;/span&gt;
-docker swarm leave &lt;span class=&quot;nt&quot;&gt;--force&lt;/span&gt;      &lt;span class=&quot;c&quot;&gt;# Take down a single node swarm from the manager&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Operating System&quot;]" /><category term="docker" /><summary type="html">The famous “Docker” is a tool that can package an application and tis dependencies in a virtual container that can run on any Linux server. After getting my keras model, it’s a good chance to try docker to deploy a deep learning model as a API service. In this article, I’d like to write down all the important procedures and details about how to make this service work with docker.”</summary></entry></feed>
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Operating System&quot;, &quot;Deep Learning&quot;]" /><category term="docker" /><category term="flask" /><category term="uwsgi" /><category term="nginx" /><category term="keras" /><category term="tensorflow" /><summary type="html">After spending more than 200 credits on google cloud GPU for training a Plant Disease Recoginition (PDR) model with Keras, I’ve got a decent model that have reached more than 85% accuracy. The model is ready and the next thing to do is to deploy the model for inference as a service.</summary></entry></feed>

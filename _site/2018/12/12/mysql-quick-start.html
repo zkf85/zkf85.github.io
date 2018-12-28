@@ -210,6 +210,9 @@ Enter password: <span class="k">********</span>
     <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">QUIT</span>
 <span class="n">Bye</span>
 </code></pre></div>    </div>
+    <blockquote>
+      <p><strong>Note</strong>: “<code class="highlighter-rouge">QUIT</code>” doesn’t need “<code class="highlighter-rouge">;</code>”.</p>
+    </blockquote>
   </li>
   <li>On Unix, you can also disconnect by pressing Control+D.</li>
 </ul>
@@ -221,8 +224,8 @@ Enter password: <span class="k">********</span>
 </code></pre></div>    </div>
   </li>
   <li>Use queries as a calculator:
-    <pre><code class="language-mysql">mysql&gt; SELECT SIN(PI()/4), (4+1)*5;
-</code></pre>
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="n">SIN</span><span class="p">(</span><span class="n">PI</span><span class="p">()</span><span class="o">/</span><span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mi">5</span><span class="p">;</span>
+</code></pre></div>    </div>
   </li>
   <li>If you decide you do not want to execute a query that you are in the process of entering, cancel it by typing <code class="highlighter-rouge">\c</code>:
     <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span>
@@ -230,6 +233,180 @@ Enter password: <span class="k">********</span>
   <span class="o">-&gt;</span> <span class="err">\</span><span class="k">c</span>
 <span class="n">mysql</span><span class="o">&gt;</span>
 </code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="23-creating-and-using-a-database">2.3. Creating and Using a Database</h3>
+<ul>
+  <li>Find out what databases currently exist on the server:
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SHOW</span> <span class="n">DATABASES</span><span class="p">;</span>
+</code></pre></div>    </div>
+    <blockquote>
+      <p>The output:</p>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+----------+
+| Database |
++----------+
+| mysql    |
+| test     |
+| tmp      |
++----------+
+</code></pre></div>      </div>
+    </blockquote>
+  </li>
+  <li>Access a listed database:
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">USE</span> <span class="n">test</span>
+</code></pre></div>    </div>
+    <blockquote>
+      <p><strong>Note</strong>: “<code class="highlighter-rouge">USE</code>” doesn’t need “<code class="highlighter-rouge">;</code>”.</p>
+    </blockquote>
+  </li>
+  <li>To change the permission of a database to a single user:
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">ON</span> <span class="n">menagerie</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="s1">'your_mysql_name'</span><span class="o">@</span><span class="s1">'your_client_host'</span><span class="p">;</span>
+</code></pre></div>    </div>
+    <h4 id="231-create-and-select-a-database">2.3.1 Create and Select a Database</h4>
+  </li>
+  <li>Create a Database:
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="n">mydatabase</span><span class="p">;</span>
+</code></pre></div>    </div>
+    <blockquote>
+      <p><strong>Note</strong>: Your database needs to be created only once, but you must select it for use each time you begin a mysql session. (Use the statement: <code class="highlighter-rouge">USE mydatabase</code>)</p>
+
+      <p>Alternatively, specify its name after any connection parameters when logging in to MySQL:</p>
+      <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>mysql <span class="nt">-h</span> host <span class="nt">-u</span> user <span class="nt">-p</span> mydatabase
+Enter password: <span class="k">********</span>
+</code></pre></div>      </div>
+    </blockquote>
+  </li>
+</ul>
+
+<h4 id="232-create-a-table">2.3.2. Create a Table</h4>
+<ul>
+  <li>Show all tables in the current database:
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SHOW</span> <span class="n">TABLES</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Create a table, use a <code class="highlighter-rouge">CREATE TABLE</code> statement to specify the layout of your table:
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">pet</span> <span class="p">(</span><span class="n">name</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span> <span class="k">owner</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
+  <span class="o">-&gt;</span> <span class="n">species</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span> <span class="n">sex</span> <span class="n">CHAR</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">birth</span> <span class="n">DATE</span><span class="p">,</span> <span class="n">death</span> <span class="n">DATE</span><span class="p">);</span>
+</code></pre></div>    </div>
+    <blockquote>
+      <p><strong>Note</strong>: You can check <a href="https://dev.mysql.com/doc/refman/8.0/en/data-types.html">All Data Types</a> to pick an appropriate one for each item in the table.</p>
+    </blockquote>
+  </li>
+  <li>Once you have created a table, SHOW TABLES should produce some output:
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SHOW</span> <span class="n">TABLES</span><span class="p">;</span>
+<span class="o">+</span><span class="c1">----------------------+</span>
+<span class="o">|</span> <span class="n">Tables_in_mydatabase</span> <span class="o">|</span>
+<span class="o">+</span><span class="c1">----------------------+</span>
+<span class="o">|</span> <span class="n">pet</span>                  <span class="o">|</span>
+<span class="o">+</span><span class="c1">----------------------+</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Show information about the table structure:
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">DESCRIBE</span> <span class="n">pet</span><span class="p">;</span>
+</code></pre></div>    </div>
+
+    <blockquote>
+      <p>The output would be like this:</p>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| name    | varchar(20) | YES  |     | NULL    |       |
+| owner   | varchar(20) | YES  |     | NULL    |       |
+| species | varchar(20) | YES  |     | NULL    |       |
+| sex     | char(1)     | YES  |     | NULL    |       |
+| birth   | date        | YES  |     | NULL    |       |
+| death   | date        | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+</code></pre></div>      </div>
+    </blockquote>
+  </li>
+</ul>
+
+<h4 id="233-loading-data-into-a-table">2.3.3. Loading Data into a Table</h4>
+<ul>
+  <li>To load the text file <code class="highlighter-rouge">pet.txt</code> into the pet table, use this statement:
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">LOAD</span> <span class="k">DATA</span> <span class="k">LOCAL</span> <span class="n">INFILE</span> <span class="s1">'/path/pet.txt'</span> <span class="k">INTO</span> <span class="k">TABLE</span> <span class="n">pet</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>When you want to add new records one at a time, use <code class="highlighter-rouge">INSERT</code> statement like this:
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">pet</span>
+  <span class="o">-&gt;</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">'Puffball'</span><span class="p">,</span><span class="s1">'Diane'</span><span class="p">,</span><span class="s1">'hamster'</span><span class="p">,</span><span class="s1">'f'</span><span class="p">,</span><span class="s1">'1999-03-30'</span><span class="p">,</span><span class="k">NULL</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h4 id="234-retrieving-information-from-a-table">2.3.4. Retrieving Information from a Table</h4>
+<ul>
+  <li>The <code class="highlighter-rouge">SELECT</code> statement is used to pull information from a table. The general form of the statement is:
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">what_to_select</span>
+<span class="k">FROM</span> <span class="n">which_table</span>
+<span class="k">WHERE</span> <span class="n">conditions_to_satisfy</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Select All data from a table:
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">pet</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Empty the table:
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">pet</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Change a certain record with <code class="highlighter-rouge">UPDATE</code> statement:
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">UPDATE</span> <span class="n">pet</span> <span class="k">SET</span> <span class="n">birth</span> <span class="o">=</span> <span class="s1">'1989-08-31'</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">'Bowser'</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://dev.mysql.com/doc/refman/8.0/en/selecting-rows.html">» Selecting Particular Rows</a></li>
+  <li><a href="https://dev.mysql.com/doc/refman/8.0/en/selecting-columns.html">» Selecting Particular Columns</a></li>
+  <li><a href="https://dev.mysql.com/doc/refman/8.0/en/sorting-rows.html">» Sorting Rows</a></li>
+  <li><a href="https://dev.mysql.com/doc/refman/8.0/en/date-calculations.html">» Date Calculations</a></li>
+  <li><a href="https://dev.mysql.com/doc/refman/8.0/en/working-with-null.html">» Working with NULL Values</a></li>
+  <li><a href="https://dev.mysql.com/doc/refman/8.0/en/pattern-matching.html">» Pattern Matching</a></li>
+  <li><a href="https://dev.mysql.com/doc/refman/8.0/en/counting-rows.html">» Couting Rows</a></li>
+  <li><a href="https://dev.mysql.com/doc/refman/8.0/en/multiple-tables.html">» Using More Than one Table</a></li>
+</ul>
+
+<h3 id="24-using-mysql-in-batch-mode">2.4. Using mysql in Batch Mode</h3>
+<ul>
+  <li>To run a mysql script from file:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>mysql &lt; batch-file
+</code></pre></div>    </div>
+  </li>
+  <li>If connection parameters needed, the command might look like this:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>mysql <span class="nt">-h</span> host <span class="nt">-u</span> user <span class="nt">-p</span> &lt; batch-file
+Enter password: <span class="k">********</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Run the output through a pager:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>mysql &lt; batch-file | less
+</code></pre></div>    </div>
+  </li>
+  <li>Catch the output in a log file:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>mysql &lt; batch-file <span class="o">&gt;</span> mysql.out
+</code></pre></div>    </div>
+  </li>
+  <li>You can also use scripts from the mysql prompt by using the source command or . command:
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">source</span> <span class="n">filename</span><span class="p">;</span>
+<span class="n">mysql</span><span class="o">&gt;</span> <span class="err">\</span><span class="p">.</span> <span class="n">filename</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="3-mysql-security-issues">3. MySQL Security Issues</h2>
+<ul>
+  <li><a href="https://dev.mysql.com/doc/refman/8.0/en/security.html">» MySQL Tutorial on Security Issues</a></li>
+</ul>
+
+<h3 id="31-security-guidelines">3.1. Security Guidelines</h3>
+<ul>
+  <li>
+    <p><strong><em>Do not ever give anyone (except MySQL <code class="highlighter-rouge">root</code> accounts) access to the <code class="highlighter-rouge">user</code> table in the mysql system database! This is critical</em></strong>.</p>
+  </li>
+  <li>
+    <p><strong><em>Set a root password!</em></strong> Try <strong><code class="highlighter-rouge">mysql -u root</code></strong>, if you are able to connect successfully, then you should set a password for <code class="highlighter-rouge">root</code>.</p>
+  </li>
+  <li>
+    <p>Use the <strong><a href="https://dev.mysql.com/doc/refman/8.0/en/show-grants.html"><code class="highlighter-rouge">SHOW GRANTS</code></a></strong> statement to check which accounts have access to what. Then use the <strong><a href="https://dev.mysql.com/doc/refman/8.0/en/revoke.html"><code class="highlighter-rouge">REVOKE</code></a></strong> statement to remove thos privileges that are not necessary.</p>
   </li>
 </ul>
 

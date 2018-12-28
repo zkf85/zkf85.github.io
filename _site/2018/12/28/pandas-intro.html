@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+      Pandas - Quick Start
+      
+    </title>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/res/favicon.ico">
+	<!--
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+	-->
+    <link rel="stylesheet" href="/assets/css/materialize.min.css">
+    <link rel="stylesheet" href="/assets/css/Material+Icons.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <link rel="stylesheet" href="/assets/css/post.css">
+    
+    
+    
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Pandas - Quick Start" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language." />
+<meta property="og:description" content="pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language." />
+<link rel="canonical" href="http://localhost:4000/2018/12/28/pandas-intro" />
+<meta property="og:url" content="http://localhost:4000/2018/12/28/pandas-intro" />
+<meta property="og:site_name" content="KFZ’s Playground" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-12-28T10:27:00+08:00" />
+<script type="application/ld+json">
+{"description":"pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language.","@type":"BlogPosting","url":"http://localhost:4000/2018/12/28/pandas-intro","headline":"Pandas - Quick Start","dateModified":"2018-12-28T10:27:00+08:00","datePublished":"2018-12-28T10:27:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2018/12/28/pandas-intro"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <header>
+	  <!--
+      <nav class="top-nav teal">
+	  -->
+      <nav class="top-nav ohio-state-scarlet">
+        <div class="nav-wrapper">
+          <div class="container">
+            <a class="page-title" href="/">KFZ's Playground</a>
+            <img class="buckeye_leaf" src="/assets/res/buckeye_leaf.png">
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <a href="#" data-activates="slide-out" class="button-collapse top-nav full hide-on-large-only">
+          <i class="material-icons">menu</i>
+        </a>
+      </div>
+      <ul id="slide-out" class="side-nav fixed">
+        <li>
+          <div class="userView">
+            <div class="background"></div>
+            <a href="https://github.com/zkf85" target="_blank"><img class="circle z-depth-2" src="/assets/res/lion_king.jpg"></a>
+            <span class="white-text name">Kefeng Zhu</span>
+			<!--
+            <span class="white-text email">zkf1985@gmail.com</span>
+			-->
+            <span class="white-text email"><i>A Programmer, An AI Practitioner</i></span>
+          </div>
+        </li>
+        <li><a class="waves-effect" href="/"><i class="material-icons">home</i>Home</a></li>
+<!--
+<li><a class="waves-effect" href="/projects"><i class="material-icons">description</i>Projects</a></li>
+-->
+        <li><a class="waves-effect" href="/categories"><i class="material-icons">sort</i>Categories</a></li>
+        <li><a class="waves-effect" href="/tags"><i class="material-icons">label</i>Tags</a></li>
+<!--
+<li><a class="waves-effect" href="/feed.xml" target="_blank"><i class="material-icons">rss_feed</i>RSS</a></li>
+-->
+        <li><div class="divider"></div></li>
+        <li><a class="waves-effect" href="/about"><i class="material-icons">person</i>About Me</a></li>
+        <li><a class="waves-effect" href="/contact"><i class="material-icons">email</i>Contact</a></li>
+      </ul>
+    </header>
+    <main>
+
+
+<div class="container">
+  <div id="post-info">
+  <h1>Pandas - Quick Start</h1>
+  <ul class="collapsible hoverable" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Date">date_range</i>
+          12/28/2018 10:27
+          <i id="indicate" class="right material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Show extra info">info</i>
+        </span>
+      </div>
+      <div class="collapsible-body">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Categories">sort</i>
+          
+          
+          
+          <a href="/categories#python_cap" target="_blank"><div class="chip">Python</div></a>
+          
+        </span>
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Tags">label</i>
+          
+          
+          
+          <a href="/tags#pandas" target="_blank"><div class="chip">pandas</div></a>
+          
+          
+          
+          <a href="/tags#python" target="_blank"><div class="chip">python</div></a>
+          
+        </span>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="divider"></div>
+<div class="row">
+  <div class="col s12">
+    <blockquote>
+  <p><a href="https://pandas.pydata.org/index.html"><em>pandas</em></a> is an open source,  BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the <strong>Python</strong> programming language.</p>
+</blockquote>
+
+<!--more-->
+
+<h2 id="1-overview---data-structure">1. Overview - Data Structure</h2>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Dimensions</strong></td>
+      <td><strong>Name</strong></td>
+      <td><strong>Description</strong></td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Series</td>
+      <td>1D labeled homogeneously-typed array</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>DataFrame</td>
+      <td>General 2D labeled, size-mutable tabular structure with potentially heterogeneously-typed column</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p><strong>Why more than one data structure?</strong></p>
+
+  <p>The best way to think about the pandas data structures is as flexible containers for lower dimensional data. For example, DataFrame is a container for Series, and Series is a container for scalars. We would like to be able to insert and remove objects from these containers in a dictionary-like fashion.</p>
+</blockquote>
+
+<h2 id="2-pandas-official-tutorials">2. Pandas Official Tutorials:</h2>
+<p><a href="http://pandas.pydata.org/pandas-docs/stable/10min.html#minutes-to-pandas">» 10 Minutes to pandas</a></p>
+
+<p><a href="http://pandas.pydata.org/pandas-docs/stable/tutorials.html">» Pandas Tutorials</a></p>
+
+<p><a href="http://pandas.pydata.org/pandas-docs/stable/tutorials.html#pandas-cookbook">» Pandas Cookbook</a></p>
+
+<p><a href="http://pandas.pydata.org/Pandas_Cheat_Sheet.pdf">» Pandas Cheet Sheet</a></p>
+
+<h2 id="3-a-quick-start-of-pandas---based-on-10-minutes-to-pandas">3. A Quick Start of Pandas - (based on <a href="http://pandas.pydata.org/pandas-docs/stable/10min.html#minutes-to-pandas">10 Minutes to pandas</a>)</h2>
+
+<p>First, in python, let’s import the packages:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+</code></pre></div></div>
+
+<h3 id="31-object-creation">3.1 Object Creation</h3>
+<h4 id="311-create-a-series">3.1.1 Create a Series:</h4>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">s</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> 
+<span class="mi">0</span>    <span class="mf">1.0</span>
+<span class="mi">1</span>    <span class="mf">3.0</span>
+<span class="mi">2</span>    <span class="mf">5.0</span>
+<span class="mi">3</span>    <span class="n">NaN</span>
+<span class="mi">4</span>    <span class="mf">6.0</span>
+<span class="mi">5</span>    <span class="mf">8.0</span>
+<span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+</code></pre></div></div>
+<h4 id="312-create-a-dataframe">3.1.2. Create a DataFrame</h4>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="n">dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s">'20130101'</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="n">dates</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">7</span><span class="p">]:</span>
+<span class="n">DatetimeIndex</span><span class="p">([</span><span class="s">'2013-01-01'</span><span class="p">,</span> <span class="s">'2013-01-02'</span><span class="p">,</span> <span class="s">'2013-01-03'</span><span class="p">,</span> <span class="s">'2013-01-04'</span><span class="p">,</span>
+               <span class="s">'2013-01-05'</span><span class="p">,</span> <span class="s">'2013-01-06'</span><span class="p">],</span>
+              <span class="n">dtype</span><span class="o">=</span><span class="s">'datetime64[ns]'</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s">'D'</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="n">dates</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="s">'ABCD'</span><span class="p">))</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="n">df</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">9</span><span class="p">]:</span>
+                   <span class="n">A</span>         <span class="n">B</span>         <span class="n">C</span>         <span class="n">D</span>
+<span class="mi">2013</span><span class="o">-</span><span class="mo">01</span><span class="o">-</span><span class="mo">01</span>  <span class="mf">0.469112</span> <span class="o">-</span><span class="mf">0.282863</span> <span class="o">-</span><span class="mf">1.509059</span> <span class="o">-</span><span class="mf">1.135632</span>
+<span class="mi">2013</span><span class="o">-</span><span class="mo">01</span><span class="o">-</span><span class="mo">02</span>  <span class="mf">1.212112</span> <span class="o">-</span><span class="mf">0.173215</span>  <span class="mf">0.119209</span> <span class="o">-</span><span class="mf">1.044236</span>
+<span class="mi">2013</span><span class="o">-</span><span class="mo">01</span><span class="o">-</span><span class="mo">03</span> <span class="o">-</span><span class="mf">0.861849</span> <span class="o">-</span><span class="mf">2.104569</span> <span class="o">-</span><span class="mf">0.494929</span>  <span class="mf">1.071804</span>
+<span class="mi">2013</span><span class="o">-</span><span class="mo">01</span><span class="o">-</span><span class="mo">04</span>  <span class="mf">0.721555</span> <span class="o">-</span><span class="mf">0.706771</span> <span class="o">-</span><span class="mf">1.039575</span>  <span class="mf">0.271860</span>
+<span class="mi">2013</span><span class="o">-</span><span class="mo">01</span><span class="o">-</span><span class="mo">05</span> <span class="o">-</span><span class="mf">0.424972</span>  <span class="mf">0.567020</span>  <span class="mf">0.276232</span> <span class="o">-</span><span class="mf">1.087401</span>
+<span class="mi">2013</span><span class="o">-</span><span class="mo">01</span><span class="o">-</span><span class="mo">06</span> <span class="o">-</span><span class="mf">0.673690</span>  <span class="mf">0.113648</span> <span class="o">-</span><span class="mf">1.478427</span>  <span class="mf">0.524988</span>
+</code></pre></div></div>
+
+<p><br /><br /><strong><em>KF</em></strong></p>
+
+  </div>
+</div>
+
+
+<div>
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    this.page.url = "http://localhost:4000/2018/12/28/pandas-intro";
+    this.page.identifier = "/2018/12/28/pandas-intro";
+  };
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//zkf85githubio.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+
+
+</div>
+
+    </main>
+    <footer class="page-footer ohio-state-scarlet">
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            <img src="/assets/res/logo.png" alt="logo"/>
+            <p class="grey-text text-lighten-4">Theme based on <a href="http://materializecss.com">Materialize.css</a> for jekyll sites.
+</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          &#xA9; 2018 KFZ's Playground. All rights reserved. Powered by <a href="https://github.com/zkf85">Kefeng</a>.
+        </div>
+      </div>
+    </footer>
+    <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+    
+    
+    <script src="/assets/js/post.js"></script>
+    
+    
+    
+    
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

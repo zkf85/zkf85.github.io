@@ -20,12 +20,5 @@ tag: [python, how-to, machine learning]
 
 [>> 3d Plotting examples - matplotlib Official](https://matplotlib.org/gallery/index.html#mplot3d-examples-index)
 
-## 1. What is Contour Plot
-Contour plot, like a 3D surface plot, presents 3D data in a 2D figure. 
-
-## 2. Contour Plotting in Python
-### 2.1. Data Preparation
-
-
 
 <br><br>***KF***

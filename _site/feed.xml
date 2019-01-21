@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-01-21T14:50:14+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KFZ’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-01-21T15:43:56+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KFZ’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
 </subtitle><entry><title type="html">What does ‘rc’ Mean in Unix-like systems, or even in Matplotlib rcParams?</title><link href="http://localhost:4000/2019/01/17/what-does-rc-mean" rel="alternate" type="text/html" title="What does 'rc' Mean in Unix-like systems, or even in Matplotlib rcParams?" /><published>2019-01-17T12:30:00+08:00</published><updated>2019-01-17T12:30:00+08:00</updated><id>http://localhost:4000/2019/01/17/what-does-rc-mean</id><content type="html" xml:base="http://localhost:4000/2019/01/17/what-does-rc-mean">&lt;blockquote&gt;
   &lt;p&gt;In the context of Unix-like systems, the term rc stands for the phrase &lt;strong&gt;“run commands”&lt;/strong&gt;. It is used for any file that contains startup information for a command. It is believed to have originated somewhere in 1965 from a runcom facility from the MIT Compatible Time-Sharing System (CTSS).&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -34,12 +34,6 @@
 &lt;p&gt;&lt;a href=&quot;https://matplotlib.org/tutorials/toolkits/mplot3d.html#toolkit-mplot3d-tutorial&quot;&gt;» The mplt3d Toolkit - matplotlib Official&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://matplotlib.org/gallery/index.html#mplot3d-examples-index&quot;&gt;» 3d Plotting examples - matplotlib Official&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;1-what-is-contour-plot&quot;&gt;1. What is Contour Plot&lt;/h2&gt;
-&lt;p&gt;Contour plot, like a 3D surface plot, presents 3D data in a 2D figure.&lt;/p&gt;
-
-&lt;h2 id=&quot;2-contour-plotting-in-python&quot;&gt;2. Contour Plotting in Python&lt;/h2&gt;
-&lt;h3 id=&quot;21-data-preparation&quot;&gt;2.1. Data Preparation&lt;/h3&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;]" /><category term="python" /><category term="how-to" /><category term="machine learning" /><summary type="html">The contour plot that showing the path of gradient descent often appears in the introductory part of machine learning. The following plot is an classic example from Andrew Ng’s CS229. In this article, I’d like to try and take a record on how to draw such a Gradient Descent contour plot in Python.</summary></entry><entry><title type="html">How to Execute a script directly within vi/vim</title><link href="http://localhost:4000/2019/01/16/execute-script-directly-in-vim" rel="alternate" type="text/html" title="How to Execute a script directly within vi/vim" /><published>2019-01-16T12:53:00+08:00</published><updated>2019-01-16T12:53:00+08:00</updated><id>http://localhost:4000/2019/01/16/execute-script-directly-in-vim</id><content type="html" xml:base="http://localhost:4000/2019/01/16/execute-script-directly-in-vim">&lt;blockquote&gt;
   &lt;p&gt;Short Answer:&lt;/p&gt;
@@ -1447,11 +1441,7 @@ Combining the results into a data structure&lt;/p&gt;
 &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rows&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;columns&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;]" /><category term="pandas" /><category term="python" /><summary type="html">pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language.</summary></entry><entry><title type="html">Data Visualization</title><link href="http://localhost:4000/2018/12/28/data-visualization" rel="alternate" type="text/html" title="Data Visualization" /><published>2018-12-28T00:00:00+08:00</published><updated>2018-12-28T00:00:00+08:00</updated><id>http://localhost:4000/2018/12/28/data-visualization</id><content type="html" xml:base="http://localhost:4000/2018/12/28/data-visualization">&lt;blockquote&gt;
-
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Data Visualization&quot;]" /><category term="data visualization" /><category term="python" /><summary type="html">KF</summary></entry><entry><title type="html">Quick Start on MySQL</title><link href="http://localhost:4000/2018/12/12/mysql-quick-start" rel="alternate" type="text/html" title="Quick Start on MySQL" /><published>2018-12-12T14:04:00+08:00</published><updated>2018-12-12T14:04:00+08:00</updated><id>http://localhost:4000/2018/12/12/mysql-quick-start</id><content type="html" xml:base="http://localhost:4000/2018/12/12/mysql-quick-start">&lt;blockquote&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;]" /><category term="pandas" /><category term="python" /><summary type="html">pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language.</summary></entry><entry><title type="html">Quick Start on MySQL</title><link href="http://localhost:4000/2018/12/12/mysql-quick-start" rel="alternate" type="text/html" title="Quick Start on MySQL" /><published>2018-12-12T14:04:00+08:00</published><updated>2018-12-12T14:04:00+08:00</updated><id>http://localhost:4000/2018/12/12/mysql-quick-start</id><content type="html" xml:base="http://localhost:4000/2018/12/12/mysql-quick-start">&lt;blockquote&gt;
   &lt;p&gt;A quick start and a &lt;strong&gt;Cheet Sheet&lt;/strong&gt; on MySQL.&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -1869,4 +1859,35 @@ Enter password: &lt;span class=&quot;k&quot;&gt;********&lt;/span&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/1756096/understanding-generators-in-python&quot;&gt;» Understanding generators in Python on Stack Overflow&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;, &quot;Deep Learning&quot;]" /><category term="python" /><category term="deep learning" /><category term="keras" /><summary type="html">This post note a full understanding of a generator in Python.</summary></entry></feed>
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;, &quot;Deep Learning&quot;]" /><category term="python" /><category term="deep learning" /><category term="keras" /><summary type="html">This post note a full understanding of a generator in Python.</summary></entry><entry><title type="html">How to install Tensorflow GPU with CUDA 10.0 for python on Ubuntu</title><link href="http://localhost:4000/2018/12/10/how-to-install-cuda-10-on-ubuntu-18.04" rel="alternate" type="text/html" title="How to install Tensorflow GPU with CUDA 10.0 for python on Ubuntu" /><published>2018-12-10T10:28:00+08:00</published><updated>2018-12-10T10:28:00+08:00</updated><id>http://localhost:4000/2018/12/10/how-to-install-cuda-10-on-ubuntu-18.04</id><content type="html" xml:base="http://localhost:4000/2018/12/10/how-to-install-cuda-10-on-ubuntu-18.04">&lt;blockquote&gt;
+  &lt;p&gt;As described in the title, it’s exactly what I need currently. Here is an excellent post on this:&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.python36.com/how-to-install-tensorflow-gpu-with-cuda-10-0-for-python-on-ubuntu/&quot;&gt;» How to install Tensorflow GPU with CUDA 10.0 for python on Ubuntu&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;There are a bunch of steps for the installation and requires a lot of time for compiling. In this post I’ll update my progress on trying it out on my own home server. Hope it works!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;update&quot;&gt;UPDATE »&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Nothing is more joyful than compiling success in the first shot!&lt;/p&gt;
+
+  &lt;p&gt;&lt;strong&gt;It works for me!&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;p&gt;Just follow the tutorial in the link above, remember to specify the nccl library directory!&lt;/p&gt;
+
+  &lt;p&gt;Happy Compiling!!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;related-articles&quot;&gt;Related Articles:&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.python36.com/how-to-install-tensorflow-gpu-with-cuda-10-0-for-python-on-ubuntu/&quot;&gt;» How to install Tensorflow GPU with CUDA 10.0 for python on Ubuntu&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.tensorflow.org/install/source&quot;&gt;» Tensorflow - Build from source&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Operating System&quot;, &quot;Deep Learning&quot;]" /><category term="how-to" /><category term="ubuntu" /><category term="linux" /><category term="nvidia" /><category term="gpu" /><summary type="html">As described in the title, it’s exactly what I need currently. Here is an excellent post on this: » How to install Tensorflow GPU with CUDA 10.0 for python on Ubuntu There are a bunch of steps for the installation and requires a lot of time for compiling. In this post I’ll update my progress on trying it out on my own home server. Hope it works!</summary></entry></feed>

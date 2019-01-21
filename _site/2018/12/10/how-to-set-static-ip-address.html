@@ -202,7 +202,7 @@ Gateway = 192.168.1.1
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>vi /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg
 </code></pre></div></div>
 <p>Add the following line int the configuration file:</p>
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">network</span><span class="pi">:</span> <span class="pi">{</span><span class="nv">config</span><span class="pi">:</span> <span class="nv">diabled</span><span class="pi">}</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">network</span><span class="pi">:</span> <span class="pi">{</span><span class="nv">config</span><span class="pi">:</span> <span class="nv">disabled</span><span class="pi">}</span>
 </code></pre></div></div>
 
 <h3 id="13-backup-default-netplan-files">1.3. Backup Default Netplan Files</h3>
@@ -224,6 +224,9 @@ Gateway = 192.168.1.1
                         <span class="na">dhcp4</span><span class="pi">:</span> <span class="s">no</span>
                         <span class="na">addresses</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">192.168.1.100/24</span><span class="pi">]</span>
                         <span class="na">gateway4</span><span class="pi">:</span> <span class="s">192.168.1.1</span>
+                        <span class="na">nameservers</span><span class="pi">:</span>
+                                <span class="na">addresses</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">192.168.1.1</span><span class="pi">,</span><span class="nv">8.8.8.8</span><span class="pi">]</span>
+
 </code></pre></div></div>
 
 <h3 id="15-apply-all-configuration-and-restart-renderers">1.5. Apply All Configuration and Restart Renderers</h3>
@@ -328,7 +331,7 @@ gateway 192.168.1.1
       </div>
       <div class="footer-copyright">
         <div class="container">
-          &#xA9; 2018 KFZ's Playground. All rights reserved. Powered by <a href="https://github.com/zkf85">Kefeng</a>.
+          &#xA9; 2019 KFZ's Playground. All rights reserved. Powered by <a href="https://github.com/zkf85">Kefeng</a>.
         </div>
       </div>
     </footer>

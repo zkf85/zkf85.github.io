@@ -72,7 +72,7 @@ $ sudo vi /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg
 ```
 Add the following line int the configuration file:
 ```yaml
-network: {config: diabled}
+network: {config: disabled}
 ```
 
 ### 1.3. Backup Default Netplan Files
@@ -97,6 +97,9 @@ network:
                         dhcp4: no
                         addresses: [192.168.1.100/24]
                         gateway4: 192.168.1.1
+                        nameservers:
+                                addresses: [192.168.1.1,8.8.8.8]
+
 ```
 
 ### 1.5. Apply All Configuration and Restart Renderers

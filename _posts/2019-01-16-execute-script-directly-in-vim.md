@@ -11,6 +11,7 @@ tag: [python, vim, how-to]
 
 [>> Answer from Stack Overflow](https://stackoverflow.com/questions/3166413/execute-a-script-directly-within-vim-mvim-gvim)
 
+
 You can do this in vim using the `!` command. For instance to count the number of words in the current file you can do:
 ```
 :! wc %

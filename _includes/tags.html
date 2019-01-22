@@ -1,19 +1,23 @@
 <div class="col s12 tag-div">
+  {% capture site_tags %}{% for tag in site.tags %}{{ tag | first | downcase }}#{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+  {% assign tag_hashes = site_tags | split:',' | sort %}
   <div class="tag-list">
-    {% for tag in site.tags %}
-    {% capture test %}{{tag[0] | slice: 0}}{% endcapture %}
-    {% capture testup %}{{tag[0] | slice: 0 | upcase}}{% endcapture %}
-    <a class="tag-chip" href="#{{tag[0] | slugify}}{% if test == testup %}_cap{% endif %}"><div class="chip z-depth-1">{{tag[0]}}</div></a>
+    {% for hash in tag_hashes %}
+      {% assign keyValue = hash | split: '#' %}
+      {% capture tag_word %}{{ keyValue[1] | strip_newlines }}{% endcapture %}
+      <a class="tag-chip" href="/tags/{{ tag_word }}"><div class="chip z-depth-1">{{ tag_word }}, {{ site.tags[tag_word].size }}</div></a>
     {% endfor %}
   </div>
+
   <div class="divider"></div>
+
   <div class="tag-index">
-    {% for tag in site.tags %}
-    {% capture test %}{{tag[0] | slice: 0}}{% endcapture %}
-    {% capture testup %}{{tag[0] | slice: 0 | upcase}}{% endcapture %}
-    <h3 id="{{tag[0] | slugify}}{% if test == testup %}_cap{% endif %}">{{tag[0]}}</h3>
+    {% for hash in tag_hashes %}
+      {% assign keyValue = hash | split: '#' %}
+      {% capture tag_word %}{{ keyValue[1] | strip_newlines }}{% endcapture %}
+    <h3 id="/tags/{{ tag_word }}"> {{ tag_word }} </h3> 
     <ul class="tag-post">
-      {% for post in tag[1] %}
+      {% for post in  site.tags[tag_word] %}
       <a class="post-title" href="{{site.baseurl}}{{post.url}}" target="_blank">
         <li>
           {{post.title}}
@@ -24,4 +28,5 @@
     </ul>
     {% endfor %}
   </div>
+
 </div>

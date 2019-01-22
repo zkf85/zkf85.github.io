@@ -40,7 +40,7 @@ Match the new animal against the cat model and the dog model respectively, to se
 ## 2. Definitions:
 #### **Discriminative** learning algorithms:
 
-Algorithms that try to learn $$p(y \vert x)$$ directly (such as logistic regression) or algorithms that try to learn mappings directly from the space of input \\(\chi\\) to the labels $$\{0,1\}$$ (such as perceptron algorithm) are called **discriminative** learning algorithms.
+Algorithms that try to learn $$p(y \vert x)$$ directly (such as logistic regression) or algorithms that try to learn mappings directly from the space of input $$chi$$ to the labels $$\{0,1\}$$ (such as perceptron algorithm) are called **discriminative** learning algorithms.
 
 #### **Generative** learning algorithms:
     

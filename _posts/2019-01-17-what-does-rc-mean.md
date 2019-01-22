@@ -3,7 +3,7 @@ layout: post
 comments: true
 title: "What does 'rc' Mean in Unix-like systems, or even in Matplotlib rcParams?"
 date: "2019-01-17 12:30:00"
-category: [Python, Operation System]
+category: [Python, Operating System]
 tag: [python, unix, linux, matplotlib]
 ---
 > In the context of Unix-like systems, the term rc stands for the phrase **"run commands"**. It is used for any file that contains startup information for a command. It is believed to have originated somewhere in 1965 from a runcom facility from the MIT Compatible Time-Sharing System (CTSS).

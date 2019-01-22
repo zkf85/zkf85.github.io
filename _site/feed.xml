@@ -1,5 +1,84 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-01-21T15:52:02+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KFZ’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
-</subtitle><entry><title type="html">What does ‘rc’ Mean in Unix-like systems, or even in Matplotlib rcParams?</title><link href="http://localhost:4000/2019/01/17/what-does-rc-mean" rel="alternate" type="text/html" title="What does 'rc' Mean in Unix-like systems, or even in Matplotlib rcParams?" /><published>2019-01-17T12:30:00+08:00</published><updated>2019-01-17T12:30:00+08:00</updated><id>http://localhost:4000/2019/01/17/what-does-rc-mean</id><content type="html" xml:base="http://localhost:4000/2019/01/17/what-does-rc-mean">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-01-22T16:59:42+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">KFZ’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
+</subtitle><entry><title type="html">[CS229] Descriminative Learning v.s. Generative Learning Algorithm</title><link href="http://localhost:4000/2019/01/22/generative-learning" rel="alternate" type="text/html" title="[CS229] Descriminative Learning v.s. Generative Learning Algorithm" /><published>2019-01-22T14:30:00+08:00</published><updated>2019-01-22T14:30:00+08:00</updated><id>http://localhost:4000/2019/01/22/generative-learning</id><content type="html" xml:base="http://localhost:4000/2019/01/22/generative-learning">&lt;blockquote&gt;
+  &lt;p&gt;Generative Learning Algorithms:&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;the origin of the different ideas,&lt;/li&gt;
+    &lt;li&gt;the definitions,&lt;/li&gt;
+    &lt;li&gt;more about generative learning algorithms.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/img/20190122-bayes-theorem.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;1-an-example-to-explain-the-initiative-ideas&quot;&gt;1. An Example to Explain the Initiative Ideas:&lt;/h2&gt;
+&lt;p&gt;Consider a classification problem in which we want to learn to distinguish between cats &lt;script type=&quot;math/tex&quot;&gt;(y=0)&lt;/script&gt; and dogs &lt;script type=&quot;math/tex&quot;&gt;(y=1)&lt;/script&gt;:&lt;/p&gt;
+
+&lt;h4 id=&quot;approach-i&quot;&gt;&lt;strong&gt;Approach I:&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;Based on some features of an animal, given a training set, an algorithm like &lt;strong&gt;&lt;em&gt;logistic regression&lt;/em&gt;&lt;/strong&gt; or &lt;strong&gt;&lt;em&gt;perceptron&lt;/em&gt;&lt;/strong&gt; algorithm, tries to find a &lt;strong&gt;decision boundary&lt;/strong&gt; (e.g. a straight line) to separate the cats and the dogs.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;To classify a new animal:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Just check on which side of the decision boundary it falls.&lt;/p&gt;
+
+&lt;h4 id=&quot;approach-ii&quot;&gt;&lt;strong&gt;Approach II:&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;First, look at cats, build a model of &lt;strong&gt;what cats look like&lt;/strong&gt;. Then, look at dogs, build another model of &lt;strong&gt;whawt dogs look like&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;To classify a new animal:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Match the new animal against the cat model and the dog model respectively, to see whether the new animal looks more like the cats or more like the dogs we had seen in the training set.&lt;/p&gt;
+
+&lt;h2 id=&quot;2-definitions&quot;&gt;2. Definitions:&lt;/h2&gt;
+&lt;h4 id=&quot;discriminative-learning-algorithms&quot;&gt;&lt;strong&gt;Discriminative&lt;/strong&gt; learning algorithms:&lt;/h4&gt;
+
+&lt;p&gt;Algorithms that try to learn &lt;script type=&quot;math/tex&quot;&gt;p(y \vert x)&lt;/script&gt; directly (such as logistic regression) or algorithms that try to learn mappings directly from the space of input \(\chi\) to the labels &lt;script type=&quot;math/tex&quot;&gt;\{0,1\}&lt;/script&gt; (such as perceptron algorithm) are called &lt;strong&gt;discriminative&lt;/strong&gt; learning algorithms.&lt;/p&gt;
+
+&lt;h4 id=&quot;generative-learning-algorithms&quot;&gt;&lt;strong&gt;Generative&lt;/strong&gt; learning algorithms:&lt;/h4&gt;
+
+&lt;p&gt;Algorithms that instead try to model &lt;script type=&quot;math/tex&quot;&gt;p(x \vert y)&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;p(y)&lt;/script&gt; are called &lt;strong&gt;generative&lt;/strong&gt; learning algorithms.&lt;/p&gt;
+
+&lt;h2 id=&quot;3-more-about-generative-learning-algorithms&quot;&gt;3. More about Generative Learning Algorithms:&lt;/h2&gt;
+
+&lt;p&gt;Continue with the example of cats and dogs, if &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; indicates whether an sample is a cat (0) or a dog (1), then&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;p(x \vert y=0)&lt;/script&gt; models the distribution of cats’ features.&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;p(x \vert y=1)&lt;/script&gt; models the distribution of dogs’ features.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;After modeling &lt;script type=&quot;math/tex&quot;&gt;p(y)&lt;/script&gt; (called the &lt;strong&gt;class priors&lt;/strong&gt;) and &lt;script type=&quot;math/tex&quot;&gt;p(x \vert y)&lt;/script&gt;, our algorithm can then use &lt;strong&gt;Bayes Rule&lt;/strong&gt; to derive the posterior distribution on &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; given &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;p(y \vert x) = \frac{p(x \vert y)p(y)}{p(x)}.&lt;/script&gt;
+
+&lt;p&gt;Here, the denominator is given by &lt;script type=&quot;math/tex&quot;&gt;p(x)=\sum_i p(x \vert y_i)p(y_i)&lt;/script&gt;. In cats &amp;amp; dogs example, &lt;script type=&quot;math/tex&quot;&gt;p(x)=p(x \vert y=0)p(y=0)+p(x \vert y=1)p(y=1)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Actually, if we we’re calculating &lt;script type=&quot;math/tex&quot;&gt;p(y \vert x)&lt;/script&gt; in order to make a prediction, then we don’t need to calculate the denominator, since&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\arg\underset{y}{\max} p(y \vert x) &amp; = \arg \underset{y}{\max} \frac{p(x \vert y)p(y)}{p(x)} \\
+&amp; = \arg \underset{y}{\max} p(x \vert y)p(y).
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="machine learning" /><category term="cs229" /><summary type="html">Generative Learning Algorithms: the origin of the different ideas, the definitions, more about generative learning algorithms.</summary></entry><entry><title type="html">How to Support LaTex in Jekyll?</title><link href="http://localhost:4000/2019/01/22/how-to-render-latex-in-jekyll" rel="alternate" type="text/html" title="How to Support LaTex in Jekyll?" /><published>2019-01-22T14:00:00+08:00</published><updated>2019-01-22T14:00:00+08:00</updated><id>http://localhost:4000/2019/01/22/how-to-render-latex-in-jekyll</id><content type="html" xml:base="http://localhost:4000/2019/01/22/how-to-render-latex-in-jekyll">&lt;blockquote&gt;
+  &lt;p&gt;To render math symbols and formula using LaTex in Jekyll website, here’s the way:&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/10987992/using-mathjax-with-jekyll&quot;&gt;» mathjax-with-jekyll on Stack Overflow&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://www.iangoodfellow.com/blog/jekyll/markdown/tex/2016/11/07/latex-in-markdown.html&quot;&gt;» Iangoodfellow on LaTex in Jekyll&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Web Developing&quot;]" /><category term="how-to" /><category term="jekyll" /><category term="latex" /><summary type="html">To render math symbols and formula using LaTex in Jekyll website, here’s the way: Reference » mathjax-with-jekyll on Stack Overflow » Iangoodfellow on LaTex in Jekyll</summary></entry><entry><title type="html">What does ‘rc’ Mean in Unix-like systems, or even in Matplotlib rcParams?</title><link href="http://localhost:4000/2019/01/17/what-does-rc-mean" rel="alternate" type="text/html" title="What does 'rc' Mean in Unix-like systems, or even in Matplotlib rcParams?" /><published>2019-01-17T12:30:00+08:00</published><updated>2019-01-17T12:30:00+08:00</updated><id>http://localhost:4000/2019/01/17/what-does-rc-mean</id><content type="html" xml:base="http://localhost:4000/2019/01/17/what-does-rc-mean">&lt;blockquote&gt;
   &lt;p&gt;In the context of Unix-like systems, the term rc stands for the phrase &lt;strong&gt;“run commands”&lt;/strong&gt;. It is used for any file that contains startup information for a command. It is believed to have originated somewhere in 1965 from a runcom facility from the MIT Compatible Time-Sharing System (CTSS).&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -20,7 +99,7 @@
 &lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Run_commands&quot;&gt;» Run commands - Wikipedia&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;, &quot;Operation System&quot;]" /><category term="python" /><category term="unix" /><category term="linux" /><category term="matplotlib" /><summary type="html">In the context of Unix-like systems, the term rc stands for the phrase “run commands”. It is used for any file that contains startup information for a command. It is believed to have originated somewhere in 1965 from a runcom facility from the MIT Compatible Time-Sharing System (CTSS). From Brian Kernighan and Dennis Ritchie: There was a facility that would execute a bunch of commands stored in a file; it was called runcom for “run commands”, and the file began to be called “a runcom”. rc in Unix is a fossil from that usage.</summary></entry><entry><title type="html">How to Draw Contour Plot for Gradient Descent in Python</title><link href="http://localhost:4000/2019/01/17/gradient-descent-plot-contour" rel="alternate" type="text/html" title="How to Draw Contour Plot for Gradient Descent in Python" /><published>2019-01-17T09:10:00+08:00</published><updated>2019-01-17T09:10:00+08:00</updated><id>http://localhost:4000/2019/01/17/gradient-descent-plot-contour</id><content type="html" xml:base="http://localhost:4000/2019/01/17/gradient-descent-plot-contour">&lt;blockquote&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;, &quot;Operating System&quot;]" /><category term="python" /><category term="unix" /><category term="linux" /><category term="matplotlib" /><summary type="html">In the context of Unix-like systems, the term rc stands for the phrase “run commands”. It is used for any file that contains startup information for a command. It is believed to have originated somewhere in 1965 from a runcom facility from the MIT Compatible Time-Sharing System (CTSS). From Brian Kernighan and Dennis Ritchie: There was a facility that would execute a bunch of commands stored in a file; it was called runcom for “run commands”, and the file began to be called “a runcom”. rc in Unix is a fossil from that usage.</summary></entry><entry><title type="html">How to Draw Contour Plot for Gradient Descent in Python</title><link href="http://localhost:4000/2019/01/17/gradient-descent-plot-contour" rel="alternate" type="text/html" title="How to Draw Contour Plot for Gradient Descent in Python" /><published>2019-01-17T09:10:00+08:00</published><updated>2019-01-17T09:10:00+08:00</updated><id>http://localhost:4000/2019/01/17/gradient-descent-plot-contour</id><content type="html" xml:base="http://localhost:4000/2019/01/17/gradient-descent-plot-contour">&lt;blockquote&gt;
   &lt;p&gt;The contour plot that showing the path of gradient descent often appears in the introductory part of machine learning. The following plot is an classic example from Andrew Ng’s CS229. In this article, I’d like to try and take a record on how to draw such a Gradient Descent contour plot in Python.&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -1725,169 +1804,4 @@ Enter password: &lt;span class=&quot;k&quot;&gt;********&lt;/span&gt;
 &lt;p&gt;&lt;a href=&quot;https://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/&quot;&gt;» A Quick Guide to Using the MySQL APT Repository&lt;/a&gt;
 &lt;a href=&quot;https://dev.mysql.com/doc/refman/8.0/en/tutorial.html&quot;&gt;» MySQL 8.0 Reference Manual / Turorial&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Database&quot;]" /><category term="mysql" /><category term="bash" /><category term="linux" /><summary type="html">A quick start and a Cheet Sheet on MySQL.</summary></entry><entry><title type="html">Understanding generators in Python</title><link href="http://localhost:4000/2018/12/10/understand-python-generator" rel="alternate" type="text/html" title="Understanding generators in Python" /><published>2018-12-10T12:52:00+08:00</published><updated>2018-12-10T12:52:00+08:00</updated><id>http://localhost:4000/2018/12/10/understand-python-generator</id><content type="html" xml:base="http://localhost:4000/2018/12/10/understand-python-generator">&lt;blockquote&gt;
-  &lt;p&gt;This post note a full understanding of a &lt;strong&gt;&lt;a href=&quot;http://www.python.org/dev/peps/pep-0255/&quot;&gt;generator&lt;/a&gt;&lt;/strong&gt; in Python.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2 id=&quot;1-what-is-a-generator&quot;&gt;1. What is a Generator?&lt;/h2&gt;
-&lt;p&gt;A &lt;strong&gt;&lt;a href=&quot;http://www.python.org/dev/peps/pep-0255/&quot;&gt;generator&lt;/a&gt;&lt;/strong&gt; is a simply a function which returns an object on which you caqn call &lt;code class=&quot;highlighter-rouge&quot;&gt;next&lt;/code&gt;, such that for every call it returns some value, until it raises a ` StopIteration` exception, signaling that all values have been generated. Such an object is called an &lt;em&gt;iterator&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Normal functions return a single value using &lt;code class=&quot;highlighter-rouge&quot;&gt;return&lt;/code&gt;. In Python, however, there’s an alternative called &lt;code class=&quot;highlighter-rouge&quot;&gt;yield&lt;/code&gt;. Using &lt;code class=&quot;highlighter-rouge&quot;&gt;yield&lt;/code&gt; anywhere in a function makes it a generator:&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;myGen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;yield&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;yield&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myGen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Traceback&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;most&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;recent&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;call&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&amp;lt;stdin&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;StopIteration&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;As you can see, &lt;code class=&quot;highlighter-rouge&quot;&gt;myGen(n)&lt;/code&gt; is a function which yields &lt;code class=&quot;highlighter-rouge&quot;&gt;n&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;n+1&lt;/code&gt;. Every call to &lt;a href=&quot;http://docs.python.org/3/library/functions.html#next&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;next&lt;/code&gt;&lt;/a&gt; yields a single value, until all values have been yielded. &lt;code class=&quot;highlighter-rouge&quot;&gt;for&lt;/code&gt; loops call &lt;code class=&quot;highlighter-rouge&quot;&gt;next&lt;/code&gt; in the background, this:&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myGen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
-&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;
-&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Likewise there are &lt;a href=&quot;http://www.python.org/dev/peps/pep-0289/&quot;&gt;generator expressions&lt;/a&gt;, which provide a means to succinctly describe certain common types of generators:&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Traceback&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;most&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;recent&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;call&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&amp;lt;stdin&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;StopIteration&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Note that generator expressions are much like list &lt;a href=&quot;http://docs.python.org/3/tutorial/datastructures.html#list-comprehensions&quot;&gt;comprehensions&lt;/a&gt;:&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lc&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;IMPORTANT&lt;/strong&gt;: A generator object is generated &lt;strong&gt;&lt;em&gt;once&lt;/em&gt;&lt;/strong&gt;, but its code is not run all at once. Only calls to &lt;code class=&quot;highlighter-rouge&quot;&gt;next&lt;/code&gt; actually execute (part of) the code. Execution of the code in a generator stops once a &lt;code class=&quot;highlighter-rouge&quot;&gt;yield&lt;/code&gt; statement has been reached, upon which it returns a value. The next call to &lt;code class=&quot;highlighter-rouge&quot;&gt;next&lt;/code&gt; then causes execution to continue in the state in which the generator was left after the last &lt;code class=&quot;highlighter-rouge&quot;&gt;yield&lt;/code&gt;. This is a fundamental difference with regular functions: those always start execution at the “top” and discard their state upon returning a value.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;2-why-use-generators&quot;&gt;2. Why use Generators?&lt;/h2&gt;
-&lt;p&gt;There are a couple of good reasons:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Certain concepts can be described much more succinctly using generators.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Instead of creating a function which returns a list of values, one can write a generator which generates the values on the fly. This means that no list needs to be constructed, meaning that the resulting code is more &lt;strong&gt;memory efficient&lt;/strong&gt;. In this way one can even describe data streams which would simply be too large to fit in memory.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Generators allow for a natural way to describe infinite streams. Consider for example the &lt;a href=&quot;http://en.wikipedia.org/wiki/Fibonacci_number&quot;&gt;Fibonacci numbers&lt;/a&gt;:&lt;/p&gt;
-    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;fib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;     &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;         &lt;span class=&quot;k&quot;&gt;yield&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;         &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;itertools&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;itertools&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;islice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;13&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;21&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;34&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;p&gt;This code uses &lt;code class=&quot;highlighter-rouge&quot;&gt;itertools.islice&lt;/code&gt; to take a finite number of elements from an infinite stream. You are advised to have a good look at the functions in the &lt;code class=&quot;highlighter-rouge&quot;&gt;itertools&lt;/code&gt; module, as they are essential tools for writing advanced generators with great ease.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;3-examples&quot;&gt;3. Examples&lt;/h2&gt;
-&lt;p&gt;Here is a good example of creating training/validation generators to feed the Keras &lt;code class=&quot;highlighter-rouge&quot;&gt;fit_generator&lt;/code&gt; training process:&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Create Training Generator&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;trainGenerator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;batch_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;# Generate data with batch_size&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;train_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;batch_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;start_pos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;end_pos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;batch_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;train_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;train_s1_X_batch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;asarray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s1_training&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start_pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end_pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;train_s2_X_batch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;asarray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s2_training&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start_pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end_pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;train_y_batch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;asarray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;label_training&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start_pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end_pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-            &lt;span class=&quot;c&quot;&gt;# concatenate s1 and s2 data along the last axis&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;train_concat_X_batch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;concatenate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;train_s1_X_batch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;train_s2_X_batch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;axis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;             
-            &lt;span class=&quot;c&quot;&gt;# According to &quot;fit_generator&quot; on Keras.io, the output from the generator must&lt;/span&gt;
-            &lt;span class=&quot;c&quot;&gt;# be a tuple (inputs, targets), thus,&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;yield&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;train_concat_X_batch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;train_y_batch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# Create Valication Generator&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;valGenerator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;batch_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;c&quot;&gt;# Generate data with batch_size&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;batch_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;start_pos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;end_pos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;batch_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;val_s1_X_batch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;asarray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s1_validation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start_pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end_pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;val_s2_X_batch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;asarray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s2_validation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start_pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end_pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;val_y_batch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;asarray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;label_validation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start_pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end_pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-            &lt;span class=&quot;c&quot;&gt;# concatenate s1 and s2 data along the last axis&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;val_concat_X_batch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;concatenate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val_s1_X_batch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val_s2_X_batch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;axis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;c&quot;&gt;# According to &quot;fit_generator&quot; on Keras.io, the output from the generator must&lt;/span&gt;
-            &lt;span class=&quot;c&quot;&gt;# be a tuple (inputs, targets), thus,&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;yield&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val_concat_X_batch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val_y_batch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;train_size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30000&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;val_size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10000&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;batch_size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;32&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;epochs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# Training loop with generators&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fit_generator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;trainGenerator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;batch_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;steps_per_epoch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ceil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;train_size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;batch_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;epochs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;epochs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;validation_data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;valGenerator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;batch_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;validation_steps&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ceil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val_size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;batch_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/1756096/understanding-generators-in-python&quot;&gt;» Understanding generators in Python on Stack Overflow&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;, &quot;Deep Learning&quot;]" /><category term="python" /><category term="deep learning" /><category term="keras" /><summary type="html">This post note a full understanding of a generator in Python.</summary></entry><entry><title type="html">How to install Tensorflow GPU with CUDA 10.0 for python on Ubuntu</title><link href="http://localhost:4000/2018/12/10/how-to-install-cuda-10-on-ubuntu-18.04" rel="alternate" type="text/html" title="How to install Tensorflow GPU with CUDA 10.0 for python on Ubuntu" /><published>2018-12-10T10:28:00+08:00</published><updated>2018-12-10T10:28:00+08:00</updated><id>http://localhost:4000/2018/12/10/how-to-install-cuda-10-on-ubuntu-18.04</id><content type="html" xml:base="http://localhost:4000/2018/12/10/how-to-install-cuda-10-on-ubuntu-18.04">&lt;blockquote&gt;
-  &lt;p&gt;As described in the title, it’s exactly what I need currently. Here is an excellent post on this:&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.python36.com/how-to-install-tensorflow-gpu-with-cuda-10-0-for-python-on-ubuntu/&quot;&gt;» How to install Tensorflow GPU with CUDA 10.0 for python on Ubuntu&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;There are a bunch of steps for the installation and requires a lot of time for compiling. In this post I’ll update my progress on trying it out on my own home server. Hope it works!&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2 id=&quot;update&quot;&gt;UPDATE »&lt;/h2&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Nothing is more joyful than compiling success in the first shot!&lt;/p&gt;
-
-  &lt;p&gt;&lt;strong&gt;It works for me!&lt;/strong&gt;&lt;/p&gt;
-
-  &lt;p&gt;Just follow the tutorial in the link above, remember to specify the nccl library directory!&lt;/p&gt;
-
-  &lt;p&gt;Happy Compiling!!&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;related-articles&quot;&gt;Related Articles:&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.python36.com/how-to-install-tensorflow-gpu-with-cuda-10-0-for-python-on-ubuntu/&quot;&gt;» How to install Tensorflow GPU with CUDA 10.0 for python on Ubuntu&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.tensorflow.org/install/source&quot;&gt;» Tensorflow - Build from source&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Operating System&quot;, &quot;Deep Learning&quot;]" /><category term="how-to" /><category term="ubuntu" /><category term="linux" /><category term="nvidia" /><category term="gpu" /><summary type="html">As described in the title, it’s exactly what I need currently. Here is an excellent post on this: » How to install Tensorflow GPU with CUDA 10.0 for python on Ubuntu There are a bunch of steps for the installation and requires a lot of time for compiling. In this post I’ll update my progress on trying it out on my own home server. Hope it works!</summary></entry></feed>
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Database&quot;]" /><category term="mysql" /><category term="bash" /><category term="linux" /><summary type="html">A quick start and a Cheet Sheet on MySQL.</summary></entry></feed>

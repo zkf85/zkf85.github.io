@@ -34,7 +34,6 @@ disqus_shortname: "zkf85githubio"
 
 # Build settings
 markdown: kramdown
-mathjax: true
 plugins:
   - jekyll-feed
   - jekyll-paginate

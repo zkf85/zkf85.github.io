@@ -1,5 +1,22 @@
 /*! * Materialize v0.99.0 (http://materializecss.com) * Copyright 2014-2017 Materialize * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE) */
 
+
+/* Added by KF 01/23/2019 */
+/* Adding 'Contents' headline to the TOC */
+#markdown-toc::before {
+    content: "Contents";
+    font-weight: bold;
+}
+/* Using numbers instead of bullets for listing */
+#markdown-toc li {
+    list-style: none;
+}
+#markdown-toc {
+    border: 1px solid #aaa;
+    padding: 1.5em;
+    display: inline-block;
+}
+
 /* Added by KF 11/27/2018 */
 .ohio-state-scarlet{
     background-color:#bb0000 !important

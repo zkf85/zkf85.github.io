@@ -86,7 +86,12 @@
     </header>
     <main>
 
+<!--
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+-->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 <div class="container">
   <div id="post-info">
   <h1>Pandas - Quick Start</h1>
@@ -132,6 +137,65 @@
 </blockquote>
 
 <!--more-->
+
+<ul id="markdown-toc">
+  <li><a href="#1-overview---data-structure" id="markdown-toc-1-overview---data-structure">1. Overview - Data Structure</a></li>
+  <li><a href="#2-pandas-official-tutorials" id="markdown-toc-2-pandas-official-tutorials">2. Pandas Official Tutorials:</a></li>
+  <li><a href="#3-a-quick-start-of-pandas---based-on-10-minutes-to-pandas" id="markdown-toc-3-a-quick-start-of-pandas---based-on-10-minutes-to-pandas">3. A Quick Start of Pandas - (based on 10 Minutes to pandas)</a>    <ul>
+      <li><a href="#31-object-creation" id="markdown-toc-31-object-creation">3.1 Object Creation</a>        <ul>
+          <li><a href="#311-create-a-series" id="markdown-toc-311-create-a-series">3.1.1. Create a Series:</a></li>
+          <li><a href="#312-create-a-dataframe-by-passing-a-numpy-array-with-a-datetime-index-and-labeled-columns" id="markdown-toc-312-create-a-dataframe-by-passing-a-numpy-array-with-a-datetime-index-and-labeled-columns">3.1.2. Create a <code class="highlighter-rouge">DataFrame</code> by passing a NumPy array, with a datetime index and labeled columns:</a></li>
+          <li><a href="#313-creating-a-dataframe-by-passing-a-dict-of-objects-that-can-be-converted-to-series-like" id="markdown-toc-313-creating-a-dataframe-by-passing-a-dict-of-objects-that-can-be-converted-to-series-like">3.1.3. Creating a <code class="highlighter-rouge">DataFrame</code> by passing a dict of objects that can be converted to series-like.</a></li>
+        </ul>
+      </li>
+      <li><a href="#32-viewing-data" id="markdown-toc-32-viewing-data">3.2. Viewing Data</a>        <ul>
+          <li><a href="#321-view-the-top-and-bottom-rows-of-the-frame" id="markdown-toc-321-view-the-top-and-bottom-rows-of-the-frame">3.2.1. View the top and bottom rows of the frame:</a></li>
+          <li><a href="#322-display-the-index-columns-and-the-underlying-numpy-data" id="markdown-toc-322-display-the-index-columns-and-the-underlying-numpy-data">3.2.2. Display the index, columns, and the underlying NumPy data:</a></li>
+          <li><a href="#322-describe-shows-a-quick-statistic-summary-of-your-data" id="markdown-toc-322-describe-shows-a-quick-statistic-summary-of-your-data">3.2.2. <code class="highlighter-rouge">describe()</code> shows a quick statistic summary of your data:</a></li>
+          <li><a href="#323-transposing-your-data" id="markdown-toc-323-transposing-your-data">3.2.3. Transposing your data</a></li>
+          <li><a href="#324-sorting-by-an-axis" id="markdown-toc-324-sorting-by-an-axis">3.2.4. Sorting by an axis:</a></li>
+          <li><a href="#325-sorting-by-values" id="markdown-toc-325-sorting-by-values">3.2.5. Sorting by values:</a></li>
+        </ul>
+      </li>
+      <li><a href="#33-selection" id="markdown-toc-33-selection">3.3. Selection</a>        <ul>
+          <li><a href="#331-getting" id="markdown-toc-331-getting">3.3.1. Getting</a></li>
+          <li><a href="#332-selection-by-label" id="markdown-toc-332-selection-by-label">3.3.2. Selection by Label</a></li>
+          <li><a href="#333-selection-by-position" id="markdown-toc-333-selection-by-position">3.3.3. Selection by Position</a></li>
+          <li><a href="#334-boolean-indexing" id="markdown-toc-334-boolean-indexing">3.3.4. Boolean Indexing</a></li>
+          <li><a href="#335-setting" id="markdown-toc-335-setting">3.3.5. Setting</a></li>
+        </ul>
+      </li>
+      <li><a href="#34-missing-data" id="markdown-toc-34-missing-data">3.4. Missing Data</a></li>
+      <li><a href="#35-operations" id="markdown-toc-35-operations">3.5. Operations</a>        <ul>
+          <li><a href="#351-stats" id="markdown-toc-351-stats">3.5.1. Stats</a></li>
+          <li><a href="#352-apply" id="markdown-toc-352-apply">3.5.2. Apply</a></li>
+          <li><a href="#353-string-methods" id="markdown-toc-353-string-methods">3.5.3. String Methods</a></li>
+        </ul>
+      </li>
+      <li><a href="#36-merge" id="markdown-toc-36-merge">3.6. Merge</a>        <ul>
+          <li><a href="#361-concat" id="markdown-toc-361-concat">3.6.1. Concat</a></li>
+          <li><a href="#362-join" id="markdown-toc-362-join">3.6.2. Join</a></li>
+          <li><a href="#363-append" id="markdown-toc-363-append">3.6.3. Append</a></li>
+          <li><a href="#364-grouping" id="markdown-toc-364-grouping">3.6.4. Grouping</a></li>
+        </ul>
+      </li>
+      <li><a href="#37-reshaping" id="markdown-toc-37-reshaping">3.7. Reshaping</a>        <ul>
+          <li><a href="#371-stack" id="markdown-toc-371-stack">3.7.1. Stack</a></li>
+          <li><a href="#372-pivot-tables" id="markdown-toc-372-pivot-tables">3.7.2. Pivot Tables</a></li>
+          <li><a href="#38-time-series" id="markdown-toc-38-time-series">3.8. Time Series</a></li>
+        </ul>
+      </li>
+      <li><a href="#38-categoricals" id="markdown-toc-38-categoricals">3.8. Categoricals</a></li>
+      <li><a href="#39-plotting" id="markdown-toc-39-plotting">3.9. Plotting</a></li>
+      <li><a href="#310-getting-data-inout" id="markdown-toc-310-getting-data-inout">3.10. Getting Data In/Out</a>        <ul>
+          <li><a href="#3101-csv" id="markdown-toc-3101-csv">3.10.1. CSV</a></li>
+          <li><a href="#3102-hdf5" id="markdown-toc-3102-hdf5">3.10.2. HDF5</a></li>
+          <li><a href="#3103-excel" id="markdown-toc-3103-excel">3.10.3. Excel</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
 <h2 id="1-overview---data-structure">1. Overview - Data Structure</h2>
 

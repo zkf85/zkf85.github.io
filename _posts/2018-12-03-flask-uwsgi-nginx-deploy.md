@@ -11,6 +11,9 @@ tag: [docker, flask, uwsgi, nginx, keras, tensorflow]
 
  <!--more-->
 
+* TOC
+{:toc}
+
 ## 1. Background
 
 ### 1.1. Objective

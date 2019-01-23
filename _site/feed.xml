@@ -1,5 +1,137 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-01-23T13:49:31+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ZKF’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
-</subtitle><entry><title type="html">How to Force Keras to use CPU to Run Script?</title><link href="http://localhost:4000/2019/01/23/how-to-force-keraas-use-cpu" rel="alternate" type="text/html" title="How to Force Keras to use CPU to Run Script?" /><published>2019-01-23T14:00:00+08:00</published><updated>2019-01-23T14:00:00+08:00</updated><id>http://localhost:4000/2019/01/23/how-to-force-keraas-use-cpu</id><content type="html" xml:base="http://localhost:4000/2019/01/23/how-to-force-keraas-use-cpu">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-01-23T18:02:37+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ZKF’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
+</subtitle><entry><title type="html">[CS229] Descriminative Learning v.s. Generative Learning Algorithm</title><link href="http://localhost:4000/2019/01/23/generative-learning" rel="alternate" type="text/html" title="[CS229] Descriminative Learning v.s. Generative Learning Algorithm" /><published>2019-01-23T16:30:00+08:00</published><updated>2019-01-23T16:30:00+08:00</updated><id>http://localhost:4000/2019/01/23/generative-learning</id><content type="html" xml:base="http://localhost:4000/2019/01/23/generative-learning">&lt;blockquote&gt;
+  &lt;p&gt;A Review of Generative Learning Algorithms.&lt;/p&gt;
+
+  &lt;p&gt;Keep Updating:&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;2019-01-22 Add Part 1&lt;/li&gt;
+    &lt;li&gt;2019-01-23 Add Part 2, Gausian discriminant analysis&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/img/20190122-bayes-theorem.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-basics-of-generative-learning-algorithms&quot; id=&quot;markdown-toc-1-basics-of-generative-learning-algorithms&quot;&gt;1. Basics of Generative Learning Algorithms&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#11-an-example-to-explain-the-initiative-ideas&quot; id=&quot;markdown-toc-11-an-example-to-explain-the-initiative-ideas&quot;&gt;1.1. An Example to Explain the Initiative Ideas:&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#approach-i&quot; id=&quot;markdown-toc-approach-i&quot;&gt;&lt;strong&gt;Approach I:&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#approach-ii&quot; id=&quot;markdown-toc-approach-ii&quot;&gt;&lt;strong&gt;Approach II:&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#12-definitions&quot; id=&quot;markdown-toc-12-definitions&quot;&gt;1.2. Definitions:&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#discriminative-learning-algorithms&quot; id=&quot;markdown-toc-discriminative-learning-algorithms&quot;&gt;&lt;strong&gt;Discriminative&lt;/strong&gt; learning algorithms:&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#generative-learning-algorithms&quot; id=&quot;markdown-toc-generative-learning-algorithms&quot;&gt;&lt;strong&gt;Generative&lt;/strong&gt; learning algorithms:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#13-more-about-generative-learning-algorithms&quot; id=&quot;markdown-toc-13-more-about-generative-learning-algorithms&quot;&gt;1.3. More about Generative Learning Algorithms:&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-gaussian-discriminant-analysis-gda&quot; id=&quot;markdown-toc-2-gaussian-discriminant-analysis-gda&quot;&gt;2. Gaussian Discriminant Analysis (GDA)&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#21-the-multivariate-normal-distribution&quot; id=&quot;markdown-toc-21-the-multivariate-normal-distribution&quot;&gt;2.1. The multivariate normal distribution&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#todo---practice&quot; id=&quot;markdown-toc-todo---practice&quot;&gt;//TODO - Practice:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#22-the-gaussian-discriminant-analysis-model&quot; id=&quot;markdown-toc-22-the-gaussian-discriminant-analysis-model&quot;&gt;2.2. The Gaussian Discriminant Analysis model&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#reference&quot; id=&quot;markdown-toc-reference&quot;&gt;Reference&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;1-basics-of-generative-learning-algorithms&quot;&gt;1. Basics of Generative Learning Algorithms&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;(01/22/2019)&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;11-an-example-to-explain-the-initiative-ideas&quot;&gt;1.1. An Example to Explain the Initiative Ideas:&lt;/h3&gt;
+&lt;p&gt;Consider a classification problem in which we want to learn to distinguish between cats &lt;script type=&quot;math/tex&quot;&gt;(y=0)&lt;/script&gt; and dogs &lt;script type=&quot;math/tex&quot;&gt;(y=1)&lt;/script&gt;:&lt;/p&gt;
+
+&lt;h4 id=&quot;approach-i&quot;&gt;&lt;strong&gt;Approach I:&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;Based on some features of an animal, given a training set, an algorithm like &lt;strong&gt;&lt;em&gt;logistic regression&lt;/em&gt;&lt;/strong&gt; or &lt;strong&gt;&lt;em&gt;perceptron&lt;/em&gt;&lt;/strong&gt; algorithm, tries to find a &lt;strong&gt;decision boundary&lt;/strong&gt; (e.g. a straight line) to separate the cats and the dogs.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;To classify a new animal:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Just check on which side of the decision boundary it falls.&lt;/p&gt;
+
+&lt;h4 id=&quot;approach-ii&quot;&gt;&lt;strong&gt;Approach II:&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;First, look at cats, build a model of &lt;strong&gt;what cats look like&lt;/strong&gt;. Then, look at dogs, build another model of &lt;strong&gt;whawt dogs look like&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;To classify a new animal:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Match the new animal against the cat model and the dog model respectively, to see whether the new animal looks more like the cats or more like the dogs we had seen in the training set.&lt;/p&gt;
+
+&lt;h3 id=&quot;12-definitions&quot;&gt;1.2. Definitions:&lt;/h3&gt;
+&lt;h4 id=&quot;discriminative-learning-algorithms&quot;&gt;&lt;strong&gt;Discriminative&lt;/strong&gt; learning algorithms:&lt;/h4&gt;
+
+&lt;p&gt;Algorithms that try to learn &lt;script type=&quot;math/tex&quot;&gt;p(y \vert x)&lt;/script&gt; directly (such as logistic regression) or algorithms that try to learn mappings directly from the space of input &lt;script type=&quot;math/tex&quot;&gt;chi&lt;/script&gt; to the labels &lt;script type=&quot;math/tex&quot;&gt;\{0,1\}&lt;/script&gt; (such as perceptron algorithm) are called &lt;strong&gt;discriminative&lt;/strong&gt; learning algorithms.&lt;/p&gt;
+
+&lt;h4 id=&quot;generative-learning-algorithms&quot;&gt;&lt;strong&gt;Generative&lt;/strong&gt; learning algorithms:&lt;/h4&gt;
+
+&lt;p&gt;Algorithms that instead try to model &lt;script type=&quot;math/tex&quot;&gt;p(x \vert y)&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;p(y)&lt;/script&gt; are called &lt;strong&gt;generative&lt;/strong&gt; learning algorithms.&lt;/p&gt;
+
+&lt;h3 id=&quot;13-more-about-generative-learning-algorithms&quot;&gt;1.3. More about Generative Learning Algorithms:&lt;/h3&gt;
+
+&lt;p&gt;Continue with the example of cats and dogs, if &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; indicates whether an sample is a cat (0) or a dog (1), then&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;p(x \vert y=0)&lt;/script&gt; models the distribution of cats’ features.&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;p(x \vert y=1)&lt;/script&gt; models the distribution of dogs’ features.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;After modeling &lt;script type=&quot;math/tex&quot;&gt;p(y)&lt;/script&gt; (called the &lt;strong&gt;class priors&lt;/strong&gt;) and &lt;script type=&quot;math/tex&quot;&gt;p(x \vert y)&lt;/script&gt;, our algorithm can then use &lt;strong&gt;Bayes Rule&lt;/strong&gt; to derive the posterior distribution on &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; given &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;p(y \vert x) = \frac{p(x \vert y)p(y)}{p(x)}.&lt;/script&gt;
+
+&lt;p&gt;Here, the denominator is given by &lt;script type=&quot;math/tex&quot;&gt;p(x)=\sum_i p(x \vert y_i)p(y_i)&lt;/script&gt;. In cats &amp;amp; dogs example, &lt;script type=&quot;math/tex&quot;&gt;p(x)=p(x \vert y=0)p(y=0)+p(x \vert y=1)p(y=1)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Actually, if we we’re calculating &lt;script type=&quot;math/tex&quot;&gt;p(y \vert x)&lt;/script&gt; in order to make a prediction, then we don’t need to calculate the denominator, since&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\arg\underset{y}{\max} p(y \vert x) &amp; = \arg \underset{y}{\max} \frac{p(x \vert y)p(y)}{p(x)} \\
+&amp; = \arg \underset{y}{\max} p(x \vert y)p(y).
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;h2 id=&quot;2-gaussian-discriminant-analysis-gda&quot;&gt;2. Gaussian Discriminant Analysis (GDA)&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;(01/23/2019)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;In this model (GDA), we assume that &lt;script type=&quot;math/tex&quot;&gt;p(x \vert y)&lt;/script&gt; is distributed according to a &lt;strong&gt;multivariate normal distribution&lt;/strong&gt;. First let’s talk briefly about the properties of multivariate normal distributions.&lt;/p&gt;
+
+&lt;h3 id=&quot;21-the-multivariate-normal-distribution&quot;&gt;2.1. The multivariate normal distribution&lt;/h3&gt;
+&lt;p&gt;The Definition of so-called &lt;em&gt;multivariate normal distribution&lt;/em&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A distribution with a &lt;strong&gt;mean vector&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\mu \in \mathbb{R}^n&lt;/script&gt; and a &lt;strong&gt;covariance matrix&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\Sigma \in \mathbb{R}^{n \times n}&lt;/script&gt;, where &lt;script type=&quot;math/tex&quot;&gt;\Sigma \geq 0&lt;/script&gt; is symmetric and positive semi-definite. Also written “&lt;script type=&quot;math/tex&quot;&gt;\mathcal{N}(\mu, \Sigma)&lt;/script&gt;”, it’s density is given by:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;p(x; \mu, \Sigma) = \frac{1}{(2\pi)^{n/2}|\Sigma|^{1/2}}\exp\left(-\frac{1}{2}(x-\mu)^T\Sigma^{-1}(x-\mu)\right).&lt;/script&gt;
+
+&lt;p&gt;where “&lt;script type=&quot;math/tex&quot;&gt;\vert\Sigma\vert&lt;/script&gt;” denotes the determinant of the matrix &lt;script type=&quot;math/tex&quot;&gt;\Sigma&lt;/script&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;For a random variable &lt;script type=&quot;math/tex&quot;&gt;X&lt;/script&gt; distributed &lt;script type=&quot;math/tex&quot;&gt;\mathcal{N}(\mu, \Sigma)&lt;/script&gt;, the mean is given by &lt;script type=&quot;math/tex&quot;&gt;\mu&lt;/script&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\text{E}[X] = \int_x x\ p(x;\mu,\Sigma)dx = \mu&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The &lt;strong&gt;covariance&lt;/strong&gt; of a vector-valued random variable &lt;script type=&quot;math/tex&quot;&gt;Z&lt;/script&gt; is defined as &lt;script type=&quot;math/tex&quot;&gt;\text{Cov}(Z) = \text{E}[(Z-\text{E}[Z])(Z-\text{E}[Z])^T]&lt;/script&gt;, which can also be written as &lt;script type=&quot;math/tex&quot;&gt;\text{Cov}(Z) = \text{E}[ZZ^T]-(\text{E}[Z])(\text{E}[Z])^T&lt;/script&gt;. If &lt;script type=&quot;math/tex&quot;&gt;X \sim \mathcal{N}(\mu, \Sigma)&lt;/script&gt;, then:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\text{Cov}(X) = \Sigma.&lt;/script&gt;
+
+&lt;h4 id=&quot;todo---practice&quot;&gt;//TODO - Practice:&lt;/h4&gt;
+
+&lt;h3 id=&quot;22-the-gaussian-discriminant-analysis-model&quot;&gt;2.2. The Gaussian Discriminant Analysis model&lt;/h3&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://see.stanford.edu/materials/aimlcs229/cs229-notes2.pdf&quot;&gt;» Stanford CS229 Lecture Note Part IV - Generative Learning Algorithms&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="machine learning" /><category term="course-cs229" /><summary type="html">A Review of Generative Learning Algorithms. Keep Updating: 2019-01-22 Add Part 1 2019-01-23 Add Part 2, Gausian discriminant analysis</summary></entry><entry><title type="html">How to Force Keras to use CPU to Run Script?</title><link href="http://localhost:4000/2019/01/23/how-to-force-keras-use-cpu" rel="alternate" type="text/html" title="How to Force Keras to use CPU to Run Script?" /><published>2019-01-23T14:00:00+08:00</published><updated>2019-01-23T14:00:00+08:00</updated><id>http://localhost:4000/2019/01/23/how-to-force-keras-use-cpu</id><content type="html" xml:base="http://localhost:4000/2019/01/23/how-to-force-keras-use-cpu">&lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;The reason for such a demand:&lt;/strong&gt;&lt;/p&gt;
 
   &lt;p&gt;My main training program was using the GPU fully. But I needed to get a prediction with another previously trained model urgently. I tried to use the GPU but I got OOM. Therefore, using CPU for the predicting job should be a good solution, and it did solve the problem!&lt;/p&gt;
@@ -54,11 +186,12 @@
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://www.seanbuscay.com/blog/jekyll-toc-markdown/&quot;&gt;» How I Add a Table of Contents to my Jekyll Blog Written in Markdown&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.webjeda.com/jekyll-toc/#how-to-add-toc-for-jekyll-posts&quot;&gt;» Jekyll Table Of Contents - Wikipedia Look!&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;!--more--&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Web Developing&quot;]" /><category term="how-to" /><category term="jekyll" /><summary type="html">In the post, simple add: * TOC {:toc} in the post. » How I Add a Table of Contents to my Jekyll Blog Written in Markdown</summary></entry><entry><title type="html">How to Add a Scroll Back to Top Button?</title><link href="http://localhost:4000/2019/01/23/how-to-add-back-to-top-button" rel="alternate" type="text/html" title="How to Add a Scroll Back to Top Button?" /><published>2019-01-23T09:40:00+08:00</published><updated>2019-01-23T09:40:00+08:00</updated><id>http://localhost:4000/2019/01/23/how-to-add-back-to-top-button</id><content type="html" xml:base="http://localhost:4000/2019/01/23/how-to-add-back-to-top-button">&lt;blockquote&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Web Developing&quot;]" /><category term="how-to" /><category term="jekyll" /><summary type="html">In the post, simple add: * TOC {:toc} in the post. » How I Add a Table of Contents to my Jekyll Blog Written in Markdown » Jekyll Table Of Contents - Wikipedia Look!</summary></entry><entry><title type="html">How to Add a Scroll Back to Top Button?</title><link href="http://localhost:4000/2019/01/23/how-to-add-back-to-top-button" rel="alternate" type="text/html" title="How to Add a Scroll Back to Top Button?" /><published>2019-01-23T09:40:00+08:00</published><updated>2019-01-23T09:40:00+08:00</updated><id>http://localhost:4000/2019/01/23/how-to-add-back-to-top-button</id><content type="html" xml:base="http://localhost:4000/2019/01/23/how-to-add-back-to-top-button">&lt;blockquote&gt;
   &lt;p&gt;Check this below:&lt;/p&gt;
 
   &lt;ul&gt;
@@ -78,100 +211,22 @@
 
 &lt;!--more--&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Web Developing&quot;]" /><category term="how-to" /><category term="jekyll" /><summary type="html">Check this Article: » Sorting site tags in Jekyll - by “code of climber”</summary></entry><entry><title type="html">[CS229] Descriminative Learning v.s. Generative Learning Algorithm</title><link href="http://localhost:4000/2019/01/22/generative-learning" rel="alternate" type="text/html" title="[CS229] Descriminative Learning v.s. Generative Learning Algorithm" /><published>2019-01-22T14:30:00+08:00</published><updated>2019-01-22T14:30:00+08:00</updated><id>http://localhost:4000/2019/01/22/generative-learning</id><content type="html" xml:base="http://localhost:4000/2019/01/22/generative-learning">&lt;blockquote&gt;
-  &lt;p&gt;Generative Learning Algorithms:&lt;/p&gt;
-  &lt;ul&gt;
-    &lt;li&gt;the origin of the different ideas,&lt;/li&gt;
-    &lt;li&gt;the definitions,&lt;/li&gt;
-    &lt;li&gt;more about generative learning algorithms.&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Web Developing&quot;]" /><category term="how-to" /><category term="jekyll" /><summary type="html">Check this Article: » Sorting site tags in Jekyll - by “code of climber”</summary></entry><entry><title type="html">How to Support LaTex in Jekyll?</title><link href="http://localhost:4000/2019/01/22/how-to-render-latex-in-jekyll" rel="alternate" type="text/html" title="How to Support LaTex in Jekyll?" /><published>2019-01-22T14:00:00+08:00</published><updated>2019-01-22T14:00:00+08:00</updated><id>http://localhost:4000/2019/01/22/how-to-render-latex-in-jekyll</id><content type="html" xml:base="http://localhost:4000/2019/01/22/how-to-render-latex-in-jekyll">&lt;blockquote&gt;
+  &lt;p&gt;To render math symbols and formula using LaTex in Jekyll website, check the links below,&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/public/img/20190122-bayes-theorem.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#1-an-example-to-explain-the-initiative-ideas&quot; id=&quot;markdown-toc-1-an-example-to-explain-the-initiative-ideas&quot;&gt;1. An Example to Explain the Initiative Ideas:&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#approach-i&quot; id=&quot;markdown-toc-approach-i&quot;&gt;&lt;strong&gt;Approach I:&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#approach-ii&quot; id=&quot;markdown-toc-approach-ii&quot;&gt;&lt;strong&gt;Approach II:&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#2-definitions&quot; id=&quot;markdown-toc-2-definitions&quot;&gt;2. Definitions:&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#discriminative-learning-algorithms&quot; id=&quot;markdown-toc-discriminative-learning-algorithms&quot;&gt;&lt;strong&gt;Discriminative&lt;/strong&gt; learning algorithms:&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#generative-learning-algorithms&quot; id=&quot;markdown-toc-generative-learning-algorithms&quot;&gt;&lt;strong&gt;Generative&lt;/strong&gt; learning algorithms:&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#3-more-about-generative-learning-algorithms&quot; id=&quot;markdown-toc-3-more-about-generative-learning-algorithms&quot;&gt;3. More about Generative Learning Algorithms:&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;1-an-example-to-explain-the-initiative-ideas&quot;&gt;1. An Example to Explain the Initiative Ideas:&lt;/h2&gt;
-&lt;p&gt;Consider a classification problem in which we want to learn to distinguish between cats &lt;script type=&quot;math/tex&quot;&gt;(y=0)&lt;/script&gt; and dogs &lt;script type=&quot;math/tex&quot;&gt;(y=1)&lt;/script&gt;:&lt;/p&gt;
-
-&lt;h3 id=&quot;approach-i&quot;&gt;&lt;strong&gt;Approach I:&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;Based on some features of an animal, given a training set, an algorithm like &lt;strong&gt;&lt;em&gt;logistic regression&lt;/em&gt;&lt;/strong&gt; or &lt;strong&gt;&lt;em&gt;perceptron&lt;/em&gt;&lt;/strong&gt; algorithm, tries to find a &lt;strong&gt;decision boundary&lt;/strong&gt; (e.g. a straight line) to separate the cats and the dogs.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;To classify a new animal:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Just check on which side of the decision boundary it falls.&lt;/p&gt;
-
-&lt;h3 id=&quot;approach-ii&quot;&gt;&lt;strong&gt;Approach II:&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;First, look at cats, build a model of &lt;strong&gt;what cats look like&lt;/strong&gt;. Then, look at dogs, build another model of &lt;strong&gt;whawt dogs look like&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;To classify a new animal:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Match the new animal against the cat model and the dog model respectively, to see whether the new animal looks more like the cats or more like the dogs we had seen in the training set.&lt;/p&gt;
-
-&lt;h2 id=&quot;2-definitions&quot;&gt;2. Definitions:&lt;/h2&gt;
-&lt;h3 id=&quot;discriminative-learning-algorithms&quot;&gt;&lt;strong&gt;Discriminative&lt;/strong&gt; learning algorithms:&lt;/h3&gt;
-
-&lt;p&gt;Algorithms that try to learn &lt;script type=&quot;math/tex&quot;&gt;p(y \vert x)&lt;/script&gt; directly (such as logistic regression) or algorithms that try to learn mappings directly from the space of input &lt;script type=&quot;math/tex&quot;&gt;chi&lt;/script&gt; to the labels &lt;script type=&quot;math/tex&quot;&gt;\{0,1\}&lt;/script&gt; (such as perceptron algorithm) are called &lt;strong&gt;discriminative&lt;/strong&gt; learning algorithms.&lt;/p&gt;
-
-&lt;h3 id=&quot;generative-learning-algorithms&quot;&gt;&lt;strong&gt;Generative&lt;/strong&gt; learning algorithms:&lt;/h3&gt;
-
-&lt;p&gt;Algorithms that instead try to model &lt;script type=&quot;math/tex&quot;&gt;p(x \vert y)&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;p(y)&lt;/script&gt; are called &lt;strong&gt;generative&lt;/strong&gt; learning algorithms.&lt;/p&gt;
-
-&lt;h2 id=&quot;3-more-about-generative-learning-algorithms&quot;&gt;3. More about Generative Learning Algorithms:&lt;/h2&gt;
-
-&lt;p&gt;Continue with the example of cats and dogs, if &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; indicates whether an sample is a cat (0) or a dog (1), then&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;p(x \vert y=0)&lt;/script&gt; models the distribution of cats’ features.&lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;p(x \vert y=1)&lt;/script&gt; models the distribution of dogs’ features.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;After modeling &lt;script type=&quot;math/tex&quot;&gt;p(y)&lt;/script&gt; (called the &lt;strong&gt;class priors&lt;/strong&gt;) and &lt;script type=&quot;math/tex&quot;&gt;p(x \vert y)&lt;/script&gt;, our algorithm can then use &lt;strong&gt;Bayes Rule&lt;/strong&gt; to derive the posterior distribution on &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; given &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;p(y \vert x) = \frac{p(x \vert y)p(y)}{p(x)}.&lt;/script&gt;
-
-&lt;p&gt;Here, the denominator is given by &lt;script type=&quot;math/tex&quot;&gt;p(x)=\sum_i p(x \vert y_i)p(y_i)&lt;/script&gt;. In cats &amp;amp; dogs example, &lt;script type=&quot;math/tex&quot;&gt;p(x)=p(x \vert y=0)p(y=0)+p(x \vert y=1)p(y=1)&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;Actually, if we we’re calculating &lt;script type=&quot;math/tex&quot;&gt;p(y \vert x)&lt;/script&gt; in order to make a prediction, then we don’t need to calculate the denominator, since&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{align}
-\arg\underset{y}{\max} p(y \vert x) &amp; = \arg \underset{y}{\max} \frac{p(x \vert y)p(y)}{p(x)} \\
-&amp; = \arg \underset{y}{\max} p(x \vert y)p(y).
-\end{align} %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="machine learning" /><category term="cs229" /><summary type="html">Generative Learning Algorithms: the origin of the different ideas, the definitions, more about generative learning algorithms.</summary></entry><entry><title type="html">How to Support LaTex in Jekyll?</title><link href="http://localhost:4000/2019/01/22/how-to-render-latex-in-jekyll" rel="alternate" type="text/html" title="How to Support LaTex in Jekyll?" /><published>2019-01-22T14:00:00+08:00</published><updated>2019-01-22T14:00:00+08:00</updated><id>http://localhost:4000/2019/01/22/how-to-render-latex-in-jekyll</id><content type="html" xml:base="http://localhost:4000/2019/01/22/how-to-render-latex-in-jekyll">&lt;blockquote&gt;
-  &lt;p&gt;To render math symbols and formula using LaTex in Jekyll website, here’s the way:&lt;/p&gt;
+  &lt;p&gt;Also Remember to update the cdnjs link, which is described in the last reference link.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/10987992/using-mathjax-with-jekyll&quot;&gt;» mathjax-with-jekyll on Stack Overflow&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://www.iangoodfellow.com/blog/jekyll/markdown/tex/2016/11/07/latex-in-markdown.html&quot;&gt;» Iangoodfellow on LaTex in Jekyll&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/10987992/using-mathjax-with-jekyll&quot;&gt;» mathjax-with-jekyll on Stack Overflow&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.iangoodfellow.com/blog/jekyll/markdown/tex/2016/11/07/latex-in-markdown.html&quot;&gt;» Iangoodfellow on LaTex in Jekyll&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.mathjax.org/cdn-shutting-down/&quot;&gt;» MathJax CDN shutting down on April 30, 2017. Alternatives available.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;!--more--&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Web Developing&quot;]" /><category term="how-to" /><category term="jekyll" /><category term="latex" /><summary type="html">To render math symbols and formula using LaTex in Jekyll website, here’s the way: Reference » mathjax-with-jekyll on Stack Overflow » Iangoodfellow on LaTex in Jekyll</summary></entry><entry><title type="html">What does ‘rc’ Mean in Unix-like systems, or even in Matplotlib rcParams?</title><link href="http://localhost:4000/2019/01/17/what-does-rc-mean" rel="alternate" type="text/html" title="What does 'rc' Mean in Unix-like systems, or even in Matplotlib rcParams?" /><published>2019-01-17T12:30:00+08:00</published><updated>2019-01-17T12:30:00+08:00</updated><id>http://localhost:4000/2019/01/17/what-does-rc-mean</id><content type="html" xml:base="http://localhost:4000/2019/01/17/what-does-rc-mean">&lt;blockquote&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Web Developing&quot;]" /><category term="how-to" /><category term="jekyll" /><category term="latex" /><summary type="html">To render math symbols and formula using LaTex in Jekyll website, check the links below, Also Remember to update the cdnjs link, which is described in the last reference link. Reference » mathjax-with-jekyll on Stack Overflow » Iangoodfellow on LaTex in Jekyll » MathJax CDN shutting down on April 30, 2017. Alternatives available.</summary></entry><entry><title type="html">What does ‘rc’ Mean in Unix-like systems, or even in Matplotlib rcParams?</title><link href="http://localhost:4000/2019/01/17/what-does-rc-mean" rel="alternate" type="text/html" title="What does 'rc' Mean in Unix-like systems, or even in Matplotlib rcParams?" /><published>2019-01-17T12:30:00+08:00</published><updated>2019-01-17T12:30:00+08:00</updated><id>http://localhost:4000/2019/01/17/what-does-rc-mean</id><content type="html" xml:base="http://localhost:4000/2019/01/17/what-does-rc-mean">&lt;blockquote&gt;
   &lt;p&gt;In the context of Unix-like systems, the term rc stands for the phrase &lt;strong&gt;“run commands”&lt;/strong&gt;. It is used for any file that contains startup information for a command. It is believed to have originated somewhere in 1965 from a runcom facility from the MIT Compatible Time-Sharing System (CTSS).&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -260,4 +315,4 @@
   &lt;li&gt;Saving the plots in files as a default option in python codes.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;]" /><category term="ipython" /><category term="jupyter" /><summary type="html">I’ve struggled with Jupyter Notebook for a long time and I have to write it down this time - I don’t like it! And I feel relieved when I found that I’m not alone. And here’re the reasons …</summary></entry></feed>
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;]" /><category term="ipython" /><category term="jupyter-notebook" /><summary type="html">I’ve struggled with Jupyter Notebook for a long time and I have to write it down this time - I don’t like it! And I feel relieved when I found that I’m not alone. And here’re the reasons …</summary></entry></feed>

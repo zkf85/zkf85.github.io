@@ -4,7 +4,7 @@ comments: true
 title: "I Don't Like Jupyter Notebook"
 date: "2019-01-16 09:45:00"
 category: [Python]
-tag: [ipython, jupyter]
+tag: [ipython, jupyter-notebook]
 ---
 
 > I've struggled with Jupyter Notebook for a long time and I have to write it down this time - I don't like it! And I feel relieved when I found that I'm not alone. And here're the reasons ... 

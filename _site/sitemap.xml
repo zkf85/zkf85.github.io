@@ -145,10 +145,6 @@
 <lastmod>2019-01-22T14:00:00+08:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/2019/01/22/generative-learning</loc>
-<lastmod>2019-01-22T14:30:00+08:00</lastmod>
-</url>
-<url>
 <loc>http://localhost:4000/2019/01/23/how-to-sort-tags-in-jekyll</loc>
 <lastmod>2019-01-23T09:20:00+08:00</lastmod>
 </url>
@@ -161,8 +157,12 @@
 <lastmod>2019-01-23T11:20:00+08:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/2019/01/23/how-to-force-keraas-use-cpu</loc>
+<loc>http://localhost:4000/2019/01/23/how-to-force-keras-use-cpu</loc>
 <lastmod>2019-01-23T14:00:00+08:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/2019/01/23/generative-learning</loc>
+<lastmod>2019-01-23T16:30:00+08:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/about</loc>

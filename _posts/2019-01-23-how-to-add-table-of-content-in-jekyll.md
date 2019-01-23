@@ -14,6 +14,7 @@ In the post, simple add:
 in the post.
 
 - [>> How I Add a Table of Contents to my Jekyll Blog Written in Markdown](http://www.seanbuscay.com/blog/jekyll-toc-markdown/)
+- [>> Jekyll Table Of Contents - Wikipedia Look!](https://blog.webjeda.com/jekyll-toc/#how-to-add-toc-for-jekyll-posts)
 
 <!--more-->
 

@@ -89,7 +89,12 @@
     </header>
     <main>
 
+<!--
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+-->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 <div class="container">
   <div id="page-info">
   <!--
@@ -99,6 +104,40 @@
 </div>
 <div class="row">
   <div class="row">
+  
+  <div class="col s12">
+    <div class="card hoverable">
+      <div class="card-content">
+        <span id="post-title" class="card-title">[CS229] Descriminative Learning v.s. Generative Learning Algorithm</span>
+        
+        <p id="post-date">
+          <i class="material-icons">date_range</i>
+		  <!--
+          01/23/2019 16:30
+		  -->
+          01/23/2019
+        </p>
+        <p id="post-content"><blockquote>
+  <p>A Review of Generative Learning Algorithms.</p>
+
+  <p>Keep Updating:</p>
+  <ul>
+    <li>2019-01-22 Add Part 1</li>
+    <li>2019-01-23 Add Part 2, Gausian discriminant analysis</li>
+  </ul>
+</blockquote>
+
+<p><img src="/public/img/20190122-bayes-theorem.jpg" alt="" /></p>
+
+</p>
+      </div>
+      <div class="card-action">
+        <a href="/2019/01/23/generative-learning">
+          Read More
+        </a>
+      </div>
+    </div>
+  </div>
   
   <div class="col s12">
     <div class="card hoverable">
@@ -113,25 +152,25 @@
           01/23/2019
         </p>
         <p id="post-content"><blockquote>
-  <strong>The reason for such a demand:</strong>
+  <p><strong>The reason for such a demand:</strong></p>
 
-  My main training program was using the GPU fully. But I needed to get a prediction with another previously trained model urgently. I tried to use the GPU but I got OOM. Therefore, using CPU for the predicting job should be a good solution, and it did solve the problem!
+  <p>My main training program was using the GPU fully. But I needed to get a prediction with another previously trained model urgently. I tried to use the GPU but I got OOM. Therefore, using CPU for the predicting job should be a good solution, and it did solve the problem!</p>
 
-  Generally there are two ways: a short/lazy one and a lengthy but graceful one.
+  <p>Generally there are two ways: a short/lazy one and a lengthy but graceful one.</p>
 </blockquote>
 
 <h2 id="option-i">Option I:</h2>
-If you want to force Keras to use CPU
+<p>If you want to force Keras to use CPU</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">os</span>
 <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">"CUDA_DEVICE_ORDER"</span><span class="p">]</span> <span class="o">=</span> <span class="s">"PCI_BUS_ID"</span> 
 <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">"CUDA_VISIBLE_DEVICES"</span><span class="p">]</span> <span class="o">=</span> <span class="s">""</span>
 </code></pre></div></div>
-before Keras / Tensorflow is imported.
+<p>before Keras / Tensorflow is imported.</p>
 
 </p>
       </div>
       <div class="card-action">
-        <a href="/2019/01/23/how-to-force-keraas-use-cpu">
+        <a href="/2019/01/23/how-to-force-keras-use-cpu">
           Read More
         </a>
       </div>
@@ -150,14 +189,15 @@ before Keras / Tensorflow is imported.
 		  -->
           01/23/2019
         </p>
-        <p id="post-content">In the post, simple add:
+        <p id="post-content"><p>In the post, simple add:</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* TOC
 {:toc} 
 </code></pre></div></div>
-in the post.
+<p>in the post.</p>
 
 <ul>
   <li><a href="http://www.seanbuscay.com/blog/jekyll-toc-markdown/">» How I Add a Table of Contents to my Jekyll Blog Written in Markdown</a></li>
+  <li><a href="https://blog.webjeda.com/jekyll-toc/#how-to-add-toc-for-jekyll-posts">» Jekyll Table Of Contents - Wikipedia Look!</a></li>
 </ul>
 
 </p>
@@ -183,7 +223,7 @@ in the post.
           01/23/2019
         </p>
         <p id="post-content"><blockquote>
-  Check this below:
+  <p>Check this below:</p>
 
   <ul>
     <li><a href="https://www.w3schools.com/howto/howto_js_scroll_to_top.asp">»How To Create a Scroll To Top Button - W3Schools</a></li>
@@ -213,7 +253,7 @@ in the post.
           01/23/2019
         </p>
         <p id="post-content"><blockquote>
-  Check this Article:
+  <p>Check this Article:</p>
 
   <ul>
     <li><a href="https://www.codeofclimber.ru/2015/sorting-site-tags-in-jekyll/">» Sorting site tags in Jekyll - by “code of climber”</a></li>
@@ -233,39 +273,6 @@ in the post.
   <div class="col s12">
     <div class="card hoverable">
       <div class="card-content">
-        <span id="post-title" class="card-title">[CS229] Descriminative Learning v.s. Generative Learning Algorithm</span>
-        
-        <p id="post-date">
-          <i class="material-icons">date_range</i>
-		  <!--
-          01/22/2019 14:30
-		  -->
-          01/22/2019
-        </p>
-        <p id="post-content"><blockquote>
-  Generative Learning Algorithms:
-  <ul>
-    <li>the origin of the different ideas,</li>
-    <li>the definitions,</li>
-    <li>more about generative learning algorithms.</li>
-  </ul>
-</blockquote>
-
-<img src="/public/img/20190122-bayes-theorem.jpg" alt="" />
-
-</p>
-      </div>
-      <div class="card-action">
-        <a href="/2019/01/22/generative-learning">
-          Read More
-        </a>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col s12">
-    <div class="card hoverable">
-      <div class="card-content">
         <span id="post-title" class="card-title">How to Support LaTex in Jekyll?</span>
         
         <p id="post-date">
@@ -276,17 +283,16 @@ in the post.
           01/22/2019
         </p>
         <p id="post-content"><blockquote>
-  To render math symbols and formula using LaTex in Jekyll website, here’s the way:
+  <p>To render math symbols and formula using LaTex in Jekyll website, check the links below,</p>
+
+  <p>Also Remember to update the cdnjs link, which is described in the last reference link.</p>
 </blockquote>
 
 <h2 id="reference">Reference</h2>
 <ul>
-  <li>
-    <a href="https://stackoverflow.com/questions/10987992/using-mathjax-with-jekyll">» mathjax-with-jekyll on Stack Overflow</a>
-  </li>
-  <li>
-    <a href="http://www.iangoodfellow.com/blog/jekyll/markdown/tex/2016/11/07/latex-in-markdown.html">» Iangoodfellow on LaTex in Jekyll</a>
-  </li>
+  <li><a href="https://stackoverflow.com/questions/10987992/using-mathjax-with-jekyll">» mathjax-with-jekyll on Stack Overflow</a></li>
+  <li><a href="http://www.iangoodfellow.com/blog/jekyll/markdown/tex/2016/11/07/latex-in-markdown.html">» Iangoodfellow on LaTex in Jekyll</a></li>
+  <li><a href="https://www.mathjax.org/cdn-shutting-down/">» MathJax CDN shutting down on April 30, 2017. Alternatives available.</a></li>
 </ul>
 
 </p>
@@ -312,13 +318,13 @@ in the post.
           01/17/2019
         </p>
         <p id="post-content"><blockquote>
-  In the context of Unix-like systems, the term rc stands for the phrase <strong>“run commands”</strong>. It is used for any file that contains startup information for a command. It is believed to have originated somewhere in 1965 from a runcom facility from the MIT Compatible Time-Sharing System (CTSS).
+  <p>In the context of Unix-like systems, the term rc stands for the phrase <strong>“run commands”</strong>. It is used for any file that contains startup information for a command. It is believed to have originated somewhere in 1965 from a runcom facility from the MIT Compatible Time-Sharing System (CTSS).</p>
 </blockquote>
 
-From Brian Kernighan and Dennis Ritchie:
+<p>From Brian Kernighan and Dennis Ritchie:</p>
 
 <blockquote>
-  There was a facility that would execute a bunch of commands stored in a file; it was called runcom for “run commands”, and the file began to be called “a runcom”. rc in Unix is a fossil from that usage.
+  <p>There was a facility that would execute a bunch of commands stored in a file; it was called runcom for “run commands”, and the file began to be called “a runcom”. rc in Unix is a fossil from that usage.</p>
 </blockquote>
 
 </p>
@@ -344,10 +350,10 @@ From Brian Kernighan and Dennis Ritchie:
           01/17/2019
         </p>
         <p id="post-content"><blockquote>
-  The contour plot that showing the path of gradient descent often appears in the introductory part of machine learning. The following plot is an classic example from Andrew Ng’s CS229. In this article, I’d like to try and take a record on how to draw such a Gradient Descent contour plot in Python.
+  <p>The contour plot that showing the path of gradient descent often appears in the introductory part of machine learning. The following plot is an classic example from Andrew Ng’s CS229. In this article, I’d like to try and take a record on how to draw such a Gradient Descent contour plot in Python.</p>
 </blockquote>
 
-<img src="/public/img/20190117-contour_cs229.png" alt="" />
+<p><img src="/public/img/20190117-contour_cs229.png" alt="" /></p>
 
 </p>
       </div>
@@ -372,16 +378,16 @@ From Brian Kernighan and Dennis Ritchie:
           01/16/2019
         </p>
         <p id="post-content"><blockquote>
-  Short Answer:
+  <p>Short Answer:</p>
 </blockquote>
 
-<a href="https://stackoverflow.com/questions/3166413/execute-a-script-directly-within-vim-mvim-gvim">» Answer from Stack Overflow</a>
+<p><a href="https://stackoverflow.com/questions/3166413/execute-a-script-directly-within-vim-mvim-gvim">» Answer from Stack Overflow</a></p>
 
-You can do this in vim using the <code class="highlighter-rouge">!</code> command. For instance to count the number of words in the current file you can do:
+<p>You can do this in vim using the <code class="highlighter-rouge">!</code> command. For instance to count the number of words in the current file you can do:</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:! wc %
 </code></pre></div></div>
 
-The <code class="highlighter-rouge">%</code> is replaced by the current filename. To run a script you could call the interpreter on the file - for instance if you are writing a python script:
+<p>The <code class="highlighter-rouge">%</code> is replaced by the current filename. To run a script you could call the interpreter on the file - for instance if you are writing a python script:</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:! python %
 </code></pre></div></div>
 
@@ -408,7 +414,7 @@ The <code class="highlighter-rouge">%</code> is replaced by the current filename
           01/16/2019
         </p>
         <p id="post-content"><blockquote>
-  I’ve struggled with Jupyter Notebook for a long time and I have to write it down this time - I don’t like it! And I feel relieved when I found that I’m not alone. And here’re the reasons …
+  <p>I’ve struggled with Jupyter Notebook for a long time and I have to write it down this time - I don’t like it! And I feel relieved when I found that I’m not alone. And here’re the reasons …</p>
 </blockquote>
 
 </p>

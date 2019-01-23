@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-      KFZ&#39;s Playground
+      ZKF&#39;s Playground
       
     </title>
     <link rel="shortcut icon" type="image/x-icon" href="/assets/res/favicon.ico">
@@ -30,16 +30,16 @@
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
     <!-- Begin Jekyll SEO tag v2.5.0 -->
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="KFZ’s Playground" />
+<meta property="og:title" content="ZKF’s Playground" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Theme based on Materialize.css for jekyll sites." />
 <meta property="og:description" content="Theme based on Materialize.css for jekyll sites." />
 <link rel="canonical" href="http://localhost:4000/" />
 <meta property="og:url" content="http://localhost:4000/" />
-<meta property="og:site_name" content="KFZ’s Playground" />
+<meta property="og:site_name" content="ZKF’s Playground" />
 <link rel="next" href="http://localhost:4000/page2" />
 <script type="application/ld+json">
-{"name":"KFZ’s Playground","description":"Theme based on Materialize.css for jekyll sites.","@type":"WebSite","url":"http://localhost:4000/","headline":"KFZ’s Playground","@context":"http://schema.org"}</script>
+{"name":"ZKF’s Playground","description":"Theme based on Materialize.css for jekyll sites.","@type":"WebSite","url":"http://localhost:4000/","headline":"ZKF’s Playground","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -51,7 +51,7 @@
       <nav class="top-nav ohio-state-scarlet">
         <div class="nav-wrapper">
           <div class="container">
-            <a class="page-title" href="/">KFZ's Playground</a>
+            <a class="page-title" href="/">ZKF's Playground</a>
             <img class="buckeye_leaf" src="/assets/res/buckeye_leaf.png">
           </div>
         </div>
@@ -66,7 +66,7 @@
           <div class="userView">
             <div class="background"></div>
             <a href="https://github.com/zkf85" target="_blank"><img class="circle z-depth-2" src="/assets/res/lion_king.jpg"></a>
-            <span class="white-text name">Kefeng Zhu</span>
+            <span class="white-text name">Zhu, Kefeng</span>
 			<!--
             <span class="white-text email">zkf1985@gmail.com</span>
 			-->
@@ -99,6 +99,136 @@
 </div>
 <div class="row">
   <div class="row">
+  
+  <div class="col s12">
+    <div class="card hoverable">
+      <div class="card-content">
+        <span id="post-title" class="card-title">How to Force Keras to use CPU to Run Script?</span>
+        
+        <p id="post-date">
+          <i class="material-icons">date_range</i>
+		  <!--
+          01/23/2019 14:00
+		  -->
+          01/23/2019
+        </p>
+        <p id="post-content"><blockquote>
+  <strong>The reason for such a demand:</strong>
+
+  My main training program was using the GPU fully. But I needed to get a prediction with another previously trained model urgently. I tried to use the GPU but I got OOM. Therefore, using CPU for the predicting job should be a good solution, and it did solve the problem!
+
+  Generally there are two ways: a short/lazy one and a lengthy but graceful one.
+</blockquote>
+
+<h2 id="option-i">Option I:</h2>
+If you want to force Keras to use CPU
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">"CUDA_DEVICE_ORDER"</span><span class="p">]</span> <span class="o">=</span> <span class="s">"PCI_BUS_ID"</span> 
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">"CUDA_VISIBLE_DEVICES"</span><span class="p">]</span> <span class="o">=</span> <span class="s">""</span>
+</code></pre></div></div>
+before Keras / Tensorflow is imported.
+
+</p>
+      </div>
+      <div class="card-action">
+        <a href="/2019/01/23/how-to-force-keraas-use-cpu">
+          Read More
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col s12">
+    <div class="card hoverable">
+      <div class="card-content">
+        <span id="post-title" class="card-title">How to Add a Table of Content to my Jekyll Blog?</span>
+        
+        <p id="post-date">
+          <i class="material-icons">date_range</i>
+		  <!--
+          01/23/2019 11:20
+		  -->
+          01/23/2019
+        </p>
+        <p id="post-content">In the post, simple add:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* TOC
+{:toc} 
+</code></pre></div></div>
+in the post.
+
+<ul>
+  <li><a href="http://www.seanbuscay.com/blog/jekyll-toc-markdown/">» How I Add a Table of Contents to my Jekyll Blog Written in Markdown</a></li>
+</ul>
+
+</p>
+      </div>
+      <div class="card-action">
+        <a href="/2019/01/23/how-to-add-table-of-content-in-jekyll">
+          Read More
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col s12">
+    <div class="card hoverable">
+      <div class="card-content">
+        <span id="post-title" class="card-title">How to Add a Scroll Back to Top Button?</span>
+        
+        <p id="post-date">
+          <i class="material-icons">date_range</i>
+		  <!--
+          01/23/2019 09:40
+		  -->
+          01/23/2019
+        </p>
+        <p id="post-content"><blockquote>
+  Check this below:
+
+  <ul>
+    <li><a href="https://www.w3schools.com/howto/howto_js_scroll_to_top.asp">»How To Create a Scroll To Top Button - W3Schools</a></li>
+  </ul>
+</blockquote>
+
+</p>
+      </div>
+      <div class="card-action">
+        <a href="/2019/01/23/how-to-add-back-to-top-button">
+          Read More
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col s12">
+    <div class="card hoverable">
+      <div class="card-content">
+        <span id="post-title" class="card-title">How to Sort Site Tags in Jekyll?</span>
+        
+        <p id="post-date">
+          <i class="material-icons">date_range</i>
+		  <!--
+          01/23/2019 09:20
+		  -->
+          01/23/2019
+        </p>
+        <p id="post-content"><blockquote>
+  Check this Article:
+
+  <ul>
+    <li><a href="https://www.codeofclimber.ru/2015/sorting-site-tags-in-jekyll/">» Sorting site tags in Jekyll - by “code of climber”</a></li>
+  </ul>
+</blockquote>
+
+</p>
+      </div>
+      <div class="card-action">
+        <a href="/2019/01/23/how-to-sort-tags-in-jekyll">
+          Read More
+        </a>
+      </div>
+    </div>
+  </div>
   
   <div class="col s12">
     <div class="card hoverable">
@@ -265,6 +395,32 @@ The <code class="highlighter-rouge">%</code> is replaced by the current filename
     </div>
   </div>
   
+  <div class="col s12">
+    <div class="card hoverable">
+      <div class="card-content">
+        <span id="post-title" class="card-title">I Don't Like Jupyter Notebook</span>
+        
+        <p id="post-date">
+          <i class="material-icons">date_range</i>
+		  <!--
+          01/16/2019 09:45
+		  -->
+          01/16/2019
+        </p>
+        <p id="post-content"><blockquote>
+  I’ve struggled with Jupyter Notebook for a long time and I have to write it down this time - I don’t like it! And I feel relieved when I found that I’m not alone. And here’re the reasons …
+</blockquote>
+
+</p>
+      </div>
+      <div class="card-action">
+        <a href="/2019/01/16/i-dont-like-jupyter-notebook">
+          Read More
+        </a>
+      </div>
+    </div>
+  </div>
+  
   <div class="col s12 center-align">
     <ul class="pagination">
       <li class="disabled">
@@ -299,18 +455,6 @@ The <code class="highlighter-rouge">%</code> is replaced by the current filename
       <li class="waves-effect"><a href="/page5">5</a></li>
       
       
-      
-      <li class="waves-effect"><a href="/page6">6</a></li>
-      
-      
-      
-      <li class="waves-effect"><a href="/page7">7</a></li>
-      
-      
-      
-      <li class="waves-effect"><a href="/page8">8</a></li>
-      
-      
       <li class="waves-effect">
         
         <a href="/page2">
@@ -320,6 +464,7 @@ The <code class="highlighter-rouge">%</code> is replaced by the current filename
       </li>
     </ul>
   </div>
+
 </div>
 
 </div>
@@ -339,7 +484,7 @@ The <code class="highlighter-rouge">%</code> is replaced by the current filename
       </div>
       <div class="footer-copyright">
         <div class="container">
-          &#xA9; 2019 KFZ's Playground. All rights reserved. Powered by <a href="https://github.com/zkf85">Kefeng</a>.
+          &#xA9; 2019 ZKF's Playground. All rights reserved. Powered by <a href="https://github.com/zkf85">Kefeng</a>.
         </div>
       </div>
     </footer>

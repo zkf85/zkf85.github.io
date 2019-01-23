@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+      How to Force Keras to use CPU to Run Script?
+      
+    </title>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/res/favicon.ico">
+	<!--
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+	-->
+    <link rel="stylesheet" href="/assets/css/materialize.min.css">
+    <link rel="stylesheet" href="/assets/css/Material+Icons.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <link rel="stylesheet" href="/assets/css/post.css">
+    
+    
+    
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="How to Force Keras to use CPU to Run Script?" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The reason for such a demand: My main training program was using the GPU fully. But I needed to get a prediction with another previously trained model urgently. I tried to use the GPU but I got OOM. Therefore, using CPU for the predicting job should be a good solution, and it did solve the problem! Generally there are two ways: a short/lazy one and a lengthy but graceful one. Option I: If you want to force Keras to use CPU import os os.environ[&quot;CUDA_DEVICE_ORDER&quot;] = &quot;PCI_BUS_ID&quot; os.environ[&quot;CUDA_VISIBLE_DEVICES&quot;] = &quot;&quot; before Keras / Tensorflow is imported." />
+<meta property="og:description" content="The reason for such a demand: My main training program was using the GPU fully. But I needed to get a prediction with another previously trained model urgently. I tried to use the GPU but I got OOM. Therefore, using CPU for the predicting job should be a good solution, and it did solve the problem! Generally there are two ways: a short/lazy one and a lengthy but graceful one. Option I: If you want to force Keras to use CPU import os os.environ[&quot;CUDA_DEVICE_ORDER&quot;] = &quot;PCI_BUS_ID&quot; os.environ[&quot;CUDA_VISIBLE_DEVICES&quot;] = &quot;&quot; before Keras / Tensorflow is imported." />
+<link rel="canonical" href="http://localhost:4000/2019/01/23/how-to-force-keraas-use-cpu" />
+<meta property="og:url" content="http://localhost:4000/2019/01/23/how-to-force-keraas-use-cpu" />
+<meta property="og:site_name" content="ZKF’s Playground" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-01-23T14:00:00+08:00" />
+<script type="application/ld+json">
+{"description":"The reason for such a demand: My main training program was using the GPU fully. But I needed to get a prediction with another previously trained model urgently. I tried to use the GPU but I got OOM. Therefore, using CPU for the predicting job should be a good solution, and it did solve the problem! Generally there are two ways: a short/lazy one and a lengthy but graceful one. Option I: If you want to force Keras to use CPU import os os.environ[&quot;CUDA_DEVICE_ORDER&quot;] = &quot;PCI_BUS_ID&quot; os.environ[&quot;CUDA_VISIBLE_DEVICES&quot;] = &quot;&quot; before Keras / Tensorflow is imported.","@type":"BlogPosting","url":"http://localhost:4000/2019/01/23/how-to-force-keraas-use-cpu","headline":"How to Force Keras to use CPU to Run Script?","dateModified":"2019-01-23T14:00:00+08:00","datePublished":"2019-01-23T14:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/01/23/how-to-force-keraas-use-cpu"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <header>
+	  <!--
+      <nav class="top-nav teal">
+	  -->
+      <nav class="top-nav ohio-state-scarlet">
+        <div class="nav-wrapper">
+          <div class="container">
+            <a class="page-title" href="/">ZKF's Playground</a>
+            <img class="buckeye_leaf" src="/assets/res/buckeye_leaf.png">
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <a href="#" data-activates="slide-out" class="button-collapse top-nav full hide-on-large-only">
+          <i class="material-icons">menu</i>
+        </a>
+      </div>
+      <ul id="slide-out" class="side-nav fixed">
+        <li>
+          <div class="userView">
+            <div class="background"></div>
+            <a href="https://github.com/zkf85" target="_blank"><img class="circle z-depth-2" src="/assets/res/lion_king.jpg"></a>
+            <span class="white-text name">Zhu, Kefeng</span>
+			<!--
+            <span class="white-text email">zkf1985@gmail.com</span>
+			-->
+            <span class="white-text email"><i>A Programmer, An AI Practitioner</i></span>
+          </div>
+        </li>
+        <li><a class="waves-effect" href="/"><i class="material-icons">home</i>Home</a></li>
+<!--
+<li><a class="waves-effect" href="/projects"><i class="material-icons">description</i>Projects</a></li>
+-->
+        <li><a class="waves-effect" href="/categories"><i class="material-icons">sort</i>Categories</a></li>
+        <li><a class="waves-effect" href="/tags"><i class="material-icons">label</i>Tags</a></li>
+<!--
+<li><a class="waves-effect" href="/feed.xml" target="_blank"><i class="material-icons">rss_feed</i>RSS</a></li>
+-->
+        <li><div class="divider"></div></li>
+        <li><a class="waves-effect" href="/about"><i class="material-icons">person</i>About Me</a></li>
+        <li><a class="waves-effect" href="/contact"><i class="material-icons">email</i>Contact</a></li>
+      </ul>
+    </header>
+    <main>
+
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<div class="container">
+  <div id="post-info">
+  <h1>How to Force Keras to use CPU to Run Script?</h1>
+  <ul class="collapsible hoverable" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Date">date_range</i>
+          01/23/2019 14:00
+          <i id="indicate" class="right material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Show extra info">info</i>
+        </span>
+      </div>
+      <div class="collapsible-body">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Categories">sort</i>
+          
+          
+          
+          <a href="/categories#deep-learning_cap" target="_blank"><div class="chip">Deep Learning</div></a>
+          
+        </span>
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Tags">label</i>
+          
+          
+          
+          <a href="/tags#how-to" target="_blank"><div class="chip">how-to</div></a>
+          
+          
+          
+          <a href="/tags#keras" target="_blank"><div class="chip">keras</div></a>
+          
+          
+          
+          <a href="/tags#tensorflow" target="_blank"><div class="chip">tensorflow</div></a>
+          
+          
+          
+          <a href="/tags#deep-learning" target="_blank"><div class="chip">deep learning</div></a>
+          
+          
+          
+          <a href="/tags#gpu" target="_blank"><div class="chip">gpu</div></a>
+          
+          
+          
+          <a href="/tags#nvidia" target="_blank"><div class="chip">nvidia</div></a>
+          
+          
+          
+          <a href="/tags#cuda" target="_blank"><div class="chip">cuda</div></a>
+          
+        </span>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="divider"></div>
+<div class="row">
+  <div class="col s12">
+    <blockquote>
+  <p><strong>The reason for such a demand:</strong></p>
+
+  <p>My main training program was using the GPU fully. But I needed to get a prediction with another previously trained model urgently. I tried to use the GPU but I got OOM. Therefore, using CPU for the predicting job should be a good solution, and it did solve the problem!</p>
+
+  <p>Generally there are two ways: a short/lazy one and a lengthy but graceful one.</p>
+</blockquote>
+
+<h2 id="option-i">Option I:</h2>
+<p>If you want to force Keras to use CPU</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">"CUDA_DEVICE_ORDER"</span><span class="p">]</span> <span class="o">=</span> <span class="s">"PCI_BUS_ID"</span> 
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">"CUDA_VISIBLE_DEVICES"</span><span class="p">]</span> <span class="o">=</span> <span class="s">""</span>
+</code></pre></div></div>
+<p>before Keras / Tensorflow is imported.</p>
+
+<!--more-->
+
+<h2 id="option-ii">Option II:</h2>
+<p>A rather graceful and separable way of doing this is to use</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="n">tf</span>
+<span class="kn">from</span> <span class="nn">keras</span> <span class="kn">import</span> <span class="n">backend</span> <span class="k">as</span> <span class="n">K</span>
+
+<span class="n">num_cores</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="k">if</span> <span class="n">GPU</span><span class="p">:</span>
+    <span class="n">num_GPU</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">num_CPU</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">if</span> <span class="n">CPU</span><span class="p">:</span>
+    <span class="n">num_CPU</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">num_GPU</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">config</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">ConfigProto</span><span class="p">(</span><span class="n">intra_op_parallelism_threads</span><span class="o">=</span><span class="n">num_cores</span><span class="p">,</span>\
+        <span class="n">inter_op_parallelism_threads</span><span class="o">=</span><span class="n">num_cores</span><span class="p">,</span> <span class="n">allow_soft_placement</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>\
+        <span class="n">device_count</span> <span class="o">=</span> <span class="p">{</span><span class="s">'CPU'</span> <span class="p">:</span> <span class="n">num_CPU</span><span class="p">,</span> <span class="s">'GPU'</span> <span class="p">:</span> <span class="n">num_GPU</span><span class="p">})</span>
+<span class="n">session</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">)</span>
+<span class="n">K</span><span class="o">.</span><span class="n">set_session</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
+</code></pre></div></div>
+<p>Here with <code class="highlighter-rouge">booleans</code> <code class="highlighter-rouge">GPU</code> and <code class="highlighter-rouge">CPU</code> you can specify whether to use a GPU or GPU when running your code.</p>
+
+<p>The only thing to note is that you’ll need <code class="highlighter-rouge">tensorflow-gpu</code> and <code class="highlighter-rouge">cuda/cudnn</code> installed because you’re always giving the option of using a GPU.</p>
+
+<h2 id="reference">Reference</h2>
+<p><a href="https://stackoverflow.com/questions/40690598/can-keras-with-tensorflow-backend-be-forced-to-use-cpu-or-gpu-at-will">» Can Keras with Tensorflow backend be forced to use CPU or GPU at will? - Stack Overflow</a></p>
+
+<!--more-->
+
+<p><br /><br /><strong><em>KF</em></strong></p>
+
+  </div>
+</div>
+
+
+<div>
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    this.page.url = "http://localhost:4000/2019/01/23/how-to-force-keraas-use-cpu";
+    this.page.identifier = "/2019/01/23/how-to-force-keraas-use-cpu";
+  };
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//zkf85githubio.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+
+
+</div>
+
+    </main>
+    <footer class="page-footer ohio-state-scarlet">
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            <img src="/assets/res/logo.png" alt="logo"/>
+            <p class="grey-text text-lighten-4">Theme based on <a href="http://materializecss.com">Materialize.css</a> for jekyll sites.
+</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          &#xA9; 2019 ZKF's Playground. All rights reserved. Powered by <a href="https://github.com/zkf85">Kefeng</a>.
+        </div>
+      </div>
+    </footer>
+    <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+    
+    
+    <script src="/assets/js/post.js"></script>
+    
+    
+    
+    
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>
+

@@ -32,7 +32,7 @@
 <meta property="og:description" content="Generative Learning Algorithms: the origin of the different ideas, the definitions, more about generative learning algorithms." />
 <link rel="canonical" href="http://localhost:4000/2019/01/22/generative-learning" />
 <meta property="og:url" content="http://localhost:4000/2019/01/22/generative-learning" />
-<meta property="og:site_name" content="KFZ’s Playground" />
+<meta property="og:site_name" content="ZKF’s Playground" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-01-22T14:30:00+08:00" />
 <script type="application/ld+json">
@@ -48,7 +48,7 @@
       <nav class="top-nav ohio-state-scarlet">
         <div class="nav-wrapper">
           <div class="container">
-            <a class="page-title" href="/">KFZ's Playground</a>
+            <a class="page-title" href="/">ZKF's Playground</a>
             <img class="buckeye_leaf" src="/assets/res/buckeye_leaf.png">
           </div>
         </div>
@@ -63,7 +63,7 @@
           <div class="userView">
             <div class="background"></div>
             <a href="https://github.com/zkf85" target="_blank"><img class="circle z-depth-2" src="/assets/res/lion_king.jpg"></a>
-            <span class="white-text name">Kefeng Zhu</span>
+            <span class="white-text name">Zhu, Kefeng</span>
 			<!--
             <span class="white-text email">zkf1985@gmail.com</span>
 			-->
@@ -140,10 +140,24 @@
 
 <!--more-->
 
+<ul id="markdown-toc">
+  <li><a href="#1-an-example-to-explain-the-initiative-ideas" id="markdown-toc-1-an-example-to-explain-the-initiative-ideas">1. An Example to Explain the Initiative Ideas:</a>    <ul>
+      <li><a href="#approach-i" id="markdown-toc-approach-i"><strong>Approach I:</strong></a></li>
+      <li><a href="#approach-ii" id="markdown-toc-approach-ii"><strong>Approach II:</strong></a></li>
+    </ul>
+  </li>
+  <li><a href="#2-definitions" id="markdown-toc-2-definitions">2. Definitions:</a>    <ul>
+      <li><a href="#discriminative-learning-algorithms" id="markdown-toc-discriminative-learning-algorithms"><strong>Discriminative</strong> learning algorithms:</a></li>
+      <li><a href="#generative-learning-algorithms" id="markdown-toc-generative-learning-algorithms"><strong>Generative</strong> learning algorithms:</a></li>
+    </ul>
+  </li>
+  <li><a href="#3-more-about-generative-learning-algorithms" id="markdown-toc-3-more-about-generative-learning-algorithms">3. More about Generative Learning Algorithms:</a></li>
+</ul>
+
 <h2 id="1-an-example-to-explain-the-initiative-ideas">1. An Example to Explain the Initiative Ideas:</h2>
 <p>Consider a classification problem in which we want to learn to distinguish between cats <script type="math/tex">(y=0)</script> and dogs <script type="math/tex">(y=1)</script>:</p>
 
-<h4 id="approach-i"><strong>Approach I:</strong></h4>
+<h3 id="approach-i"><strong>Approach I:</strong></h3>
 
 <p>Based on some features of an animal, given a training set, an algorithm like <strong><em>logistic regression</em></strong> or <strong><em>perceptron</em></strong> algorithm, tries to find a <strong>decision boundary</strong> (e.g. a straight line) to separate the cats and the dogs.</p>
 
@@ -151,7 +165,7 @@
 
 <p>Just check on which side of the decision boundary it falls.</p>
 
-<h4 id="approach-ii"><strong>Approach II:</strong></h4>
+<h3 id="approach-ii"><strong>Approach II:</strong></h3>
 
 <p>First, look at cats, build a model of <strong>what cats look like</strong>. Then, look at dogs, build another model of <strong>whawt dogs look like</strong>.</p>
 
@@ -160,11 +174,11 @@
 <p>Match the new animal against the cat model and the dog model respectively, to see whether the new animal looks more like the cats or more like the dogs we had seen in the training set.</p>
 
 <h2 id="2-definitions">2. Definitions:</h2>
-<h4 id="discriminative-learning-algorithms"><strong>Discriminative</strong> learning algorithms:</h4>
+<h3 id="discriminative-learning-algorithms"><strong>Discriminative</strong> learning algorithms:</h3>
 
 <p>Algorithms that try to learn <script type="math/tex">p(y \vert x)</script> directly (such as logistic regression) or algorithms that try to learn mappings directly from the space of input <script type="math/tex">chi</script> to the labels <script type="math/tex">\{0,1\}</script> (such as perceptron algorithm) are called <strong>discriminative</strong> learning algorithms.</p>
 
-<h4 id="generative-learning-algorithms"><strong>Generative</strong> learning algorithms:</h4>
+<h3 id="generative-learning-algorithms"><strong>Generative</strong> learning algorithms:</h3>
 
 <p>Algorithms that instead try to model <script type="math/tex">p(x \vert y)</script> and <script type="math/tex">p(y)</script> are called <strong>generative</strong> learning algorithms.</p>
 
@@ -231,7 +245,7 @@
       </div>
       <div class="footer-copyright">
         <div class="container">
-          &#xA9; 2019 KFZ's Playground. All rights reserved. Powered by <a href="https://github.com/zkf85">Kefeng</a>.
+          &#xA9; 2019 ZKF's Playground. All rights reserved. Powered by <a href="https://github.com/zkf85">Kefeng</a>.
         </div>
       </div>
     </footer>

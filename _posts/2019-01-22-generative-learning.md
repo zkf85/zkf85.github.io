@@ -18,10 +18,13 @@ tag: [machine learning, cs229]
 
 <!--more-->
 
+* TOC
+{:toc}
+
 ## 1. An Example to Explain the Initiative Ideas:
 Consider a classification problem in which we want to learn to distinguish between cats $$(y=0)$$ and dogs $$(y=1)$$:
 
-#### **Approach I:** 
+### **Approach I:** 
 
 Based on some features of an animal, given a training set, an algorithm like ***logistic regression*** or ***perceptron*** algorithm, tries to find a **decision boundary** (e.g. a straight line) to separate the cats and the dogs. 
 
@@ -29,7 +32,7 @@ Based on some features of an animal, given a training set, an algorithm like ***
 
 Just check on which side of the decision boundary it falls.
 
-#### **Approach II:**
+### **Approach II:**
 
 First, look at cats, build a model of **what cats look like**. Then, look at dogs, build another model of **whawt dogs look like**.
 
@@ -38,11 +41,11 @@ First, look at cats, build a model of **what cats look like**. Then, look at dog
 Match the new animal against the cat model and the dog model respectively, to see whether the new animal looks more like the cats or more like the dogs we had seen in the training set.
 
 ## 2. Definitions:
-#### **Discriminative** learning algorithms:
+### **Discriminative** learning algorithms:
 
 Algorithms that try to learn $$p(y \vert x)$$ directly (such as logistic regression) or algorithms that try to learn mappings directly from the space of input $$chi$$ to the labels $$\{0,1\}$$ (such as perceptron algorithm) are called **discriminative** learning algorithms.
 
-#### **Generative** learning algorithms:
+### **Generative** learning algorithms:
     
 Algorithms that instead try to model $$p(x \vert y)$$ and $$p(y)$$ are called **generative** learning algorithms.
     

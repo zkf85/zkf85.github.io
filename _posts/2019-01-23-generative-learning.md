@@ -4,7 +4,7 @@ comments: true
 title: "[CS229] Descriminative Learning v.s. Generative Learning Algorithm"
 date: "2019-01-23 16:30:00"
 category: [Notes]
-tag: [machine learning, course-cs229]
+tag: [machine learning, cs229]
 ---
 
 > A Review of Generative Learning Algorithms.

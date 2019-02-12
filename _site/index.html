@@ -108,6 +108,87 @@
   <div class="col s12">
     <div class="card hoverable">
       <div class="card-content">
+        <span id="post-title" class="card-title">[CS229] Lecture 3 Notes</span>
+        
+        <p id="post-date">
+          <i class="material-icons">date_range</i>
+		  <!--
+          01/31/2019 10:40
+		  -->
+          01/31/2019
+        </p>
+        <p id="post-content"><blockquote>
+  <p>CS229 Lecture #3:</p>
+  <ol>
+    <li>Locally Weighted Regression</li>
+    <li>Probablistic Interpretation of LR</li>
+    <li>Classification (Logistic Regression)</li>
+    <li>Disgression -&gt; Perceptron</li>
+  </ol>
+</blockquote>
+
+</p>
+      </div>
+      <div class="card-action">
+        <a href="/2019/01/31/cs229-lecture-3">
+          Read More
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col s12">
+    <div class="card hoverable">
+      <div class="card-content">
+        <span id="post-title" class="card-title">Random! Shuffle v.s. Permutation (Numpy)</span>
+        
+        <p id="post-date">
+          <i class="material-icons">date_range</i>
+		  <!--
+          01/31/2019 10:40
+		  -->
+          01/31/2019
+        </p>
+        <p id="post-content"><blockquote>
+  <p>Generally, in Numpy, both <code class="highlighter-rouge">random.permutation</code> and <code class="highlighter-rouge">random.shuffle</code> randomly shuffle elements in an array. But there are differences:</p>
+</blockquote>
+
+<h2 id="difference">Difference:</h2>
+<p><code class="highlighter-rouge">np.random.permutation</code> has two differences from <code class="highlighter-rouge">np.random.shuffle</code>:</p>
+
+<p>if passed an array, it will return a shuffled <strong>copy</strong> of the array; <code class="highlighter-rouge">np.random.shuffle</code> shuffles the array <strong>inplace</strong></p>
+
+<p>if passed an integer, it will return a shuffled range i.e. <code class="highlighter-rouge">np.random.shuffle(np.arange(n))</code></p>
+
+<p>If x is an integer, randomly permute <code class="highlighter-rouge">np.arange(x)</code>. If x is an array, make a copy and shuffle the elements randomly.</p>
+
+<p>The source code might help to understand this:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">3280</span>        <span class="k">def</span> <span class="nf">permutation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">object</span> <span class="n">x</span><span class="p">):</span>
+<span class="o">...</span>
+<span class="mi">3307</span>            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">integer</span><span class="p">)):</span>
+<span class="mi">3308</span>                <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="mi">3309</span>            <span class="k">else</span><span class="p">:</span>
+<span class="mi">3310</span>                <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="mi">3311</span>            <span class="bp">self</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="mi">3312</span>            <span class="k">return</span> <span class="n">arr</span>
+</code></pre></div></div>
+
+<h2 id="reference">Reference</h2>
+<p><a href="https://stackoverflow.com/questions/15474159/shuffle-vs-permute-numpy">» shuffle vs permute numpy - Stack Overflow</a></p>
+
+</p>
+      </div>
+      <div class="card-action">
+        <a href="/2019/01/31/np-shuffle-vs-permutation">
+          Read More
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col s12">
+    <div class="card hoverable">
+      <div class="card-content">
         <span id="post-title" class="card-title">[CS229] Descriminative Learning v.s. Generative Learning Algorithm</span>
         
         <p id="post-date">
@@ -359,68 +440,6 @@
       </div>
       <div class="card-action">
         <a href="/2019/01/17/gradient-descent-plot-contour">
-          Read More
-        </a>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col s12">
-    <div class="card hoverable">
-      <div class="card-content">
-        <span id="post-title" class="card-title">How to Execute a script directly within vi/vim</span>
-        
-        <p id="post-date">
-          <i class="material-icons">date_range</i>
-		  <!--
-          01/16/2019 12:53
-		  -->
-          01/16/2019
-        </p>
-        <p id="post-content"><blockquote>
-  <p>Short Answer:</p>
-</blockquote>
-
-<p><a href="https://stackoverflow.com/questions/3166413/execute-a-script-directly-within-vim-mvim-gvim">» Answer from Stack Overflow</a></p>
-
-<p>You can do this in vim using the <code class="highlighter-rouge">!</code> command. For instance to count the number of words in the current file you can do:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:! wc %
-</code></pre></div></div>
-
-<p>The <code class="highlighter-rouge">%</code> is replaced by the current filename. To run a script you could call the interpreter on the file - for instance if you are writing a python script:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:! python %
-</code></pre></div></div>
-
-</p>
-      </div>
-      <div class="card-action">
-        <a href="/2019/01/16/execute-script-directly-in-vim">
-          Read More
-        </a>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col s12">
-    <div class="card hoverable">
-      <div class="card-content">
-        <span id="post-title" class="card-title">I Don't Like Jupyter Notebook</span>
-        
-        <p id="post-date">
-          <i class="material-icons">date_range</i>
-		  <!--
-          01/16/2019 09:45
-		  -->
-          01/16/2019
-        </p>
-        <p id="post-content"><blockquote>
-  <p>I’ve struggled with Jupyter Notebook for a long time and I have to write it down this time - I don’t like it! And I feel relieved when I found that I’m not alone. And here’re the reasons …</p>
-</blockquote>
-
-</p>
-      </div>
-      <div class="card-action">
-        <a href="/2019/01/16/i-dont-like-jupyter-notebook">
           Read More
         </a>
       </div>

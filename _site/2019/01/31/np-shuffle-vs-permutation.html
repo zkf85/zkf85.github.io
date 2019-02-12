@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+      Random! Shuffle v.s. Permutation (Numpy)
+      
+    </title>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/res/favicon.ico">
+	<!--
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+	-->
+    <link rel="stylesheet" href="/assets/css/materialize.min.css">
+    <link rel="stylesheet" href="/assets/css/Material+Icons.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <link rel="stylesheet" href="/assets/css/post.css">
+    
+    
+    
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Random! Shuffle v.s. Permutation (Numpy)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Generally, in Numpy, both random.permutation and random.shuffle randomly shuffle elements in an array. But there are differences: Difference: np.random.permutation has two differences from np.random.shuffle: if passed an array, it will return a shuffled copy of the array; np.random.shuffle shuffles the array inplace if passed an integer, it will return a shuffled range i.e. np.random.shuffle(np.arange(n)) If x is an integer, randomly permute np.arange(x). If x is an array, make a copy and shuffle the elements randomly. The source code might help to understand this: 3280 def permutation(self, object x): ... 3307 if isinstance(x, (int, np.integer)): 3308 arr = np.arange(x) 3309 else: 3310 arr = np.array(x) 3311 self.shuffle(arr) 3312 return arr Reference » shuffle vs permute numpy - Stack Overflow" />
+<meta property="og:description" content="Generally, in Numpy, both random.permutation and random.shuffle randomly shuffle elements in an array. But there are differences: Difference: np.random.permutation has two differences from np.random.shuffle: if passed an array, it will return a shuffled copy of the array; np.random.shuffle shuffles the array inplace if passed an integer, it will return a shuffled range i.e. np.random.shuffle(np.arange(n)) If x is an integer, randomly permute np.arange(x). If x is an array, make a copy and shuffle the elements randomly. The source code might help to understand this: 3280 def permutation(self, object x): ... 3307 if isinstance(x, (int, np.integer)): 3308 arr = np.arange(x) 3309 else: 3310 arr = np.array(x) 3311 self.shuffle(arr) 3312 return arr Reference » shuffle vs permute numpy - Stack Overflow" />
+<link rel="canonical" href="http://localhost:4000/2019/01/31/np-shuffle-vs-permutation" />
+<meta property="og:url" content="http://localhost:4000/2019/01/31/np-shuffle-vs-permutation" />
+<meta property="og:site_name" content="ZKF’s Playground" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-01-31T10:40:00+08:00" />
+<script type="application/ld+json">
+{"description":"Generally, in Numpy, both random.permutation and random.shuffle randomly shuffle elements in an array. But there are differences: Difference: np.random.permutation has two differences from np.random.shuffle: if passed an array, it will return a shuffled copy of the array; np.random.shuffle shuffles the array inplace if passed an integer, it will return a shuffled range i.e. np.random.shuffle(np.arange(n)) If x is an integer, randomly permute np.arange(x). If x is an array, make a copy and shuffle the elements randomly. The source code might help to understand this: 3280 def permutation(self, object x): ... 3307 if isinstance(x, (int, np.integer)): 3308 arr = np.arange(x) 3309 else: 3310 arr = np.array(x) 3311 self.shuffle(arr) 3312 return arr Reference » shuffle vs permute numpy - Stack Overflow","@type":"BlogPosting","url":"http://localhost:4000/2019/01/31/np-shuffle-vs-permutation","headline":"Random! Shuffle v.s. Permutation (Numpy)","dateModified":"2019-01-31T10:40:00+08:00","datePublished":"2019-01-31T10:40:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/01/31/np-shuffle-vs-permutation"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <header>
+	  <!--
+      <nav class="top-nav teal">
+	  -->
+      <nav class="top-nav ohio-state-scarlet">
+        <div class="nav-wrapper">
+          <div class="container">
+            <a class="page-title" href="/">ZKF's Playground</a>
+            <img class="buckeye_leaf" src="/assets/res/buckeye_leaf.png">
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <a href="#" data-activates="slide-out" class="button-collapse top-nav full hide-on-large-only">
+          <i class="material-icons">menu</i>
+        </a>
+      </div>
+      <ul id="slide-out" class="side-nav fixed">
+        <li>
+          <div class="userView">
+            <div class="background"></div>
+            <a href="https://github.com/zkf85" target="_blank"><img class="circle z-depth-2" src="/assets/res/lion_king.jpg"></a>
+            <span class="white-text name">Zhu, Kefeng</span>
+			<!--
+            <span class="white-text email">zkf1985@gmail.com</span>
+			-->
+            <span class="white-text email"><i>A Programmer, An AI Practitioner</i></span>
+          </div>
+        </li>
+        <li><a class="waves-effect" href="/"><i class="material-icons">home</i>Home</a></li>
+<!--
+<li><a class="waves-effect" href="/projects"><i class="material-icons">description</i>Projects</a></li>
+-->
+        <li><a class="waves-effect" href="/categories"><i class="material-icons">sort</i>Categories</a></li>
+        <li><a class="waves-effect" href="/tags"><i class="material-icons">label</i>Tags</a></li>
+<!--
+<li><a class="waves-effect" href="/feed.xml" target="_blank"><i class="material-icons">rss_feed</i>RSS</a></li>
+-->
+        <li><div class="divider"></div></li>
+        <li><a class="waves-effect" href="/about"><i class="material-icons">person</i>About Me</a></li>
+        <li><a class="waves-effect" href="/contact"><i class="material-icons">email</i>Contact</a></li>
+      </ul>
+    </header>
+    <main>
+
+<!--
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+-->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<div class="container">
+  <div id="post-info">
+  <h1>Random! Shuffle v.s. Permutation (Numpy)</h1>
+  <ul class="collapsible hoverable" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Date">date_range</i>
+          01/31/2019 10:40
+          <i id="indicate" class="right material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Show extra info">info</i>
+        </span>
+      </div>
+      <div class="collapsible-body">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Categories">sort</i>
+          
+          
+          
+          <a href="/categories#python_cap" target="_blank"><div class="chip">Python</div></a>
+          
+        </span>
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Tags">label</i>
+          
+          
+          
+          <a href="/tags#numpy" target="_blank"><div class="chip">numpy</div></a>
+          
+          
+          
+          <a href="/tags#random" target="_blank"><div class="chip">random</div></a>
+          
+        </span>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="divider"></div>
+<div class="row">
+  <div class="col s12">
+    <blockquote>
+  <p>Generally, in Numpy, both <code class="highlighter-rouge">random.permutation</code> and <code class="highlighter-rouge">random.shuffle</code> randomly shuffle elements in an array. But there are differences:</p>
+</blockquote>
+
+<h2 id="difference">Difference:</h2>
+<p><code class="highlighter-rouge">np.random.permutation</code> has two differences from <code class="highlighter-rouge">np.random.shuffle</code>:</p>
+
+<p>if passed an array, it will return a shuffled <strong>copy</strong> of the array; <code class="highlighter-rouge">np.random.shuffle</code> shuffles the array <strong>inplace</strong></p>
+
+<p>if passed an integer, it will return a shuffled range i.e. <code class="highlighter-rouge">np.random.shuffle(np.arange(n))</code></p>
+
+<p>If x is an integer, randomly permute <code class="highlighter-rouge">np.arange(x)</code>. If x is an array, make a copy and shuffle the elements randomly.</p>
+
+<p>The source code might help to understand this:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">3280</span>        <span class="k">def</span> <span class="nf">permutation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">object</span> <span class="n">x</span><span class="p">):</span>
+<span class="o">...</span>
+<span class="mi">3307</span>            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">integer</span><span class="p">)):</span>
+<span class="mi">3308</span>                <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="mi">3309</span>            <span class="k">else</span><span class="p">:</span>
+<span class="mi">3310</span>                <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="mi">3311</span>            <span class="bp">self</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="mi">3312</span>            <span class="k">return</span> <span class="n">arr</span>
+</code></pre></div></div>
+
+<h2 id="reference">Reference</h2>
+<p><a href="https://stackoverflow.com/questions/15474159/shuffle-vs-permute-numpy">» shuffle vs permute numpy - Stack Overflow</a></p>
+
+<!--more-->
+
+<p><br /><br /><strong><em>KF</em></strong></p>
+
+  </div>
+</div>
+
+
+<div>
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    this.page.url = "http://localhost:4000/2019/01/31/np-shuffle-vs-permutation";
+    this.page.identifier = "/2019/01/31/np-shuffle-vs-permutation";
+  };
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//zkf85githubio.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+
+
+</div>
+
+    </main>
+    <footer class="page-footer ohio-state-scarlet">
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            <img src="/assets/res/logo.png" alt="logo"/>
+            <p class="grey-text text-lighten-4">Theme based on <a href="http://materializecss.com">Materialize.css</a> for jekyll sites.
+</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          &#xA9; 2019 ZKF's Playground. All rights reserved. Powered by <a href="https://github.com/zkf85">Kefeng</a>.
+        </div>
+      </div>
+    </footer>
+    <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+    
+    
+    <script src="/assets/js/post.js"></script>
+    
+    
+    
+    
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>
+

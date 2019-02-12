@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+      [CS229] Lecture 3 Notes
+      
+    </title>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/res/favicon.ico">
+	<!--
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+	-->
+    <link rel="stylesheet" href="/assets/css/materialize.min.css">
+    <link rel="stylesheet" href="/assets/css/Material+Icons.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <link rel="stylesheet" href="/assets/css/post.css">
+    
+    
+    
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="[CS229] Lecture 3 Notes" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="CS229 Lecture #3: Locally Weighted Regression Probablistic Interpretation of LR Classification (Logistic Regression) Disgression -&gt; Perceptron" />
+<meta property="og:description" content="CS229 Lecture #3: Locally Weighted Regression Probablistic Interpretation of LR Classification (Logistic Regression) Disgression -&gt; Perceptron" />
+<link rel="canonical" href="http://localhost:4000/2019/01/31/cs229-lecture-3" />
+<meta property="og:url" content="http://localhost:4000/2019/01/31/cs229-lecture-3" />
+<meta property="og:site_name" content="ZKF’s Playground" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-01-31T10:40:00+08:00" />
+<script type="application/ld+json">
+{"description":"CS229 Lecture #3: Locally Weighted Regression Probablistic Interpretation of LR Classification (Logistic Regression) Disgression -&gt; Perceptron","@type":"BlogPosting","url":"http://localhost:4000/2019/01/31/cs229-lecture-3","headline":"[CS229] Lecture 3 Notes","dateModified":"2019-01-31T10:40:00+08:00","datePublished":"2019-01-31T10:40:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/01/31/cs229-lecture-3"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <header>
+	  <!--
+      <nav class="top-nav teal">
+	  -->
+      <nav class="top-nav ohio-state-scarlet">
+        <div class="nav-wrapper">
+          <div class="container">
+            <a class="page-title" href="/">ZKF's Playground</a>
+            <img class="buckeye_leaf" src="/assets/res/buckeye_leaf.png">
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <a href="#" data-activates="slide-out" class="button-collapse top-nav full hide-on-large-only">
+          <i class="material-icons">menu</i>
+        </a>
+      </div>
+      <ul id="slide-out" class="side-nav fixed">
+        <li>
+          <div class="userView">
+            <div class="background"></div>
+            <a href="https://github.com/zkf85" target="_blank"><img class="circle z-depth-2" src="/assets/res/lion_king.jpg"></a>
+            <span class="white-text name">Zhu, Kefeng</span>
+			<!--
+            <span class="white-text email">zkf1985@gmail.com</span>
+			-->
+            <span class="white-text email"><i>A Programmer, An AI Practitioner</i></span>
+          </div>
+        </li>
+        <li><a class="waves-effect" href="/"><i class="material-icons">home</i>Home</a></li>
+<!--
+<li><a class="waves-effect" href="/projects"><i class="material-icons">description</i>Projects</a></li>
+-->
+        <li><a class="waves-effect" href="/categories"><i class="material-icons">sort</i>Categories</a></li>
+        <li><a class="waves-effect" href="/tags"><i class="material-icons">label</i>Tags</a></li>
+<!--
+<li><a class="waves-effect" href="/feed.xml" target="_blank"><i class="material-icons">rss_feed</i>RSS</a></li>
+-->
+        <li><div class="divider"></div></li>
+        <li><a class="waves-effect" href="/about"><i class="material-icons">person</i>About Me</a></li>
+        <li><a class="waves-effect" href="/contact"><i class="material-icons">email</i>Contact</a></li>
+      </ul>
+    </header>
+    <main>
+
+<!--
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+-->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<div class="container">
+  <div id="post-info">
+  <h1>[CS229] Lecture 3 Notes</h1>
+  <ul class="collapsible hoverable" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Date">date_range</i>
+          01/31/2019 10:40
+          <i id="indicate" class="right material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Show extra info">info</i>
+        </span>
+      </div>
+      <div class="collapsible-body">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Categories">sort</i>
+          
+          
+          
+          <a href="/categories#notes_cap" target="_blank"><div class="chip">Notes</div></a>
+          
+        </span>
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Tags">label</i>
+          
+          
+          
+          <a href="/tags#cs229" target="_blank"><div class="chip">cs229</div></a>
+          
+          
+          
+          <a href="/tags#machine-learning" target="_blank"><div class="chip">machine learning</div></a>
+          
+        </span>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="divider"></div>
+<div class="row">
+  <div class="col s12">
+    <blockquote>
+  <p>CS229 Lecture #3:</p>
+  <ol>
+    <li>Locally Weighted Regression</li>
+    <li>Probablistic Interpretation of LR</li>
+    <li>Classification (Logistic Regression)</li>
+    <li>Disgression -&gt; Perceptron</li>
+  </ol>
+</blockquote>
+
+<!--more-->
+
+<h2 id="1-locally-weighted-regression">1. Locally Weighted Regression</h2>
+<h3 id="11-the-origin">1.1. The origin:</h3>
+<ul>
+  <li>
+    <p>The choice of features is important to ensuring good performance of a learning algorithm.</p>
+  </li>
+  <li>
+    <p>The Loacally weighted linear regression (LWR) algorithm, which assuming there is sufficient training data, makes the <strong>choice of features less critical</strong>.</p>
+  </li>
+</ul>
+
+<h3 id="12-detail">1.2. Detail:</h3>
+<p>The locally weighted linear regression alogorithm does the following:</p>
+<ol>
+  <li>Fit \( \theta \) to minimize \(\sum_i w^{(i)} (y^{(i)} - \theta^T x^{(i)} )^2\).</li>
+  <li>Output \(\theta^T x\).</li>
+</ol>
+
+<p>where \(w^{(i)} = \exp\left(-\frac{(x^{(i)} - x)^2}{2\tau^2}\right)\), \(\tau\) is called <strong>“bandwidth”</strong>.</p>
+
+<p>Note that:</p>
+<ul>
+  <li>the wights depend on the particular point \(x\) at which we’re trying to evaluate \(x\).</li>
+  <li>if \(\vert x^{(i)} - x \vert\) is small, the \(w^{(i)}\) is close to 1;</li>
+  <li>if \(\vert x^{(i)} - x \vert\) is large, the \(w^{(i)}\) is close to 0;</li>
+</ul>
+
+<h3 id="13-parametric-vs-non-parametric-learning-algorighms">1.3. Parametric v.s. Non-Parametric Learning Algorighms:</h3>
+<h4 id="parametric-learning-algorithm">“Parametric” learning algorithm:</h4>
+<ul>
+  <li>Fix numbers of parameters to fit the model;</li>
+</ul>
+
+<h4 id="non-parametric-learning-algorithm">“Non-Parametric” learning algorithm:</h4>
+<ul>
+  <li>Number of parameter grows with \(m\) (\(m\) is the training size).</li>
+  <li>To make predictions using LWR, we need to keep the entire training set around. (LWR is the first example in the class as a <strong>non-parametric</strong> algorithm).</li>
+</ul>
+
+<h2 id="2-probablistic-interpretation-of-lr">2. Probablistic Interpretation of LR</h2>
+<h3 id="21-assumptions">2.1. Assumptions:</h3>
+<p>We <strong>assume</strong> that:</p>
+
+<script type="math/tex; mode=display">y{(i)} = \theta^T x^{(i)} + \varepsilon^{(i)}</script>
+
+<p>where</p>
+<ol>
+  <li>\(\varepsilon^{(i)}\) is the error and \(\varepsilon^{(i)} \sim \mathcal{N}(0, \sigma^2)\), which means \(P(\varepsilon^{(i)}) = \frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{(y^{(i)} - \theta^T x^{(i)})^2}{2\sigma^2}\right)\).</li>
+  <li>\(\varepsilon^{(i)}\) is I.I.D. (independently identically distributed).</li>
+</ol>
+
+<h3 id="22-maximum-likelihood">2.2. Maximum Likelihood</h3>
+<h4 id="221-there-are-two-different-basic-ideas-in-probability">2.2.1. There are two different basic ideas in probability:</h4>
+<ol>
+  <li>Frequency point of view -&gt; (Applied here!)</li>
+  <li>Bayesian point of view.</li>
+</ol>
+
+<h4 id="222-the-principle-of-maximum-likelihood">2.2.2. The principle of maximum likelihood:</h4>
+<ul>
+  <li>To choose \(\theta\) to maximum \(L(\theta)\), \(\theta\) is NOT a random value, but a true value out there!</li>
+</ul>
+
+<h4 id="23-find-the-best-theta-to-reach-the-maximum-likelihood">2.3. Find the best \(\theta\) to reach the “Maximum Likelihood”:</h4>
+<p>Then, the “Likelihood” of the \(y\) is:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+L(\theta) & = P\left(\mathbf{y} \vert X;\theta\right) \\
+(i.i.d) & = \prod_{i=1}^m P\left(y^{(i)} \vert x^{(i)}; \theta\right) \\
+& = \prod_{i=1}^m \frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{\left(y^{(i)} - \theta^T x^{(i)}\right)^2}{2\sigma^2}\right)
+\end{align} %]]></script>
+
+<p>Then, for mathematical convenience, let</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+l(\theta) &= \log\left(L(\theta)\right) \\
+&= \log\left(\prod_{i=1}^m P\left(y^{(i)} \vert x^{(i)}; \theta\right)\right) \\
+&= \sum_{i=1}^m \log P\left(y^{(i)} \vert x^{(i)}; \theta\right) \\
+&= \sum_{i=1}^m \log\left(\frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{\left(y^{(i)} - \theta^T x^{(i)}\right)^2}{2\sigma^2}\right)\right) \\
+&= m\cdot\log\frac{1}{\sqrt{2\pi}\sigma} + \sum_{i=1}^m \left(-\frac{\left(y^{(i)} - \theta^T x^{(i)}\right)^2}{2\sigma^2}\right).
+\end{align} %]]></script>
+
+<p>Therefore, to <strong>maximize</strong> \(l(\theta)\) is to <strong>minimize</strong> \(\sum_{i=1}^m \frac{\left(y^{(i)} - \theta^T x^{(i)}\right)^2}{2\sigma^2}\), which is the same as minimizing \(J(\theta) = \sum_{i=1}^m \frac{\left(y^{(i)} - \theta^T x^{(i)}\right)^2}{2}\) (this is the rule for Least Square).</p>
+
+<h2 id="3-classification-and-logistic-regression">3. Classification and Logistic Regression</h2>
+<blockquote>
+  <p>Note: 
+Generally, it’s bad idea to use LR for classification problems.
+Why? It doesn’t make sence for \(h_\theta(x)\) to take values larger than 1 or smaller than 0 when we know that \(y\in{0,1}\).</p>
+</blockquote>
+
+<h3 id="31-logistic-regression-for-classification-problems">3.1. Logistic regression for classification problems</h3>
+<p>As in a classification problem:</p>
+
+<script type="math/tex; mode=display">y \in \{0, 1\} \\
+h_\theta(x) \in [0, 1]</script>
+
+<p>To fix the problems when using Linear Regression, we choose another form of function for our hypothesis \(h_\theta(x)\).</p>
+
+<script type="math/tex; mode=display">h_\theta(x) = g(\theta^Tx) = \frac{1}{1 + e^{-\theta^T x}},</script>
+
+<p>where</p>
+
+<script type="math/tex; mode=display">g(z) = \frac{1}{1 + e^{-z}}.</script>
+
+<p>\(g(z) = \frac{1}{1 + e^{-z}}\) is called “sigmoid” function or “logistic” function.</p>
+
+<p><img src="/public/img/20190212_sigmoid_function.eps" alt="" />
+Then, we have</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\left\{ \begin{array}{rcl} 
+P(y=1 \vert x; \theta) & = & h_\theta(x) \\
+P(y=0 \vert x; \theta) & = & 1 - h_\theta(x)
+\end{array}\right. \\
+\Rightarrow P(y|x;\theta) = h_\theta(x)^y (1 - h_\theta(x))^{1-y} %]]></script>
+
+<p>Then the likelihood is</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+L(\theta) & = P\left(\mathbf{y} \vert X;\theta\right) \\
+& = \prod_{i=1}^m P\left(y^{(i)} \vert x^{(i)}; \theta\right)
+\end{align} %]]></script>
+
+<p>For mathematical convenience, let</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+l(\theta) &= \log\left(L(\theta)\right) \\
+&= \log\left(\prod_{i=1}^m P\left(y^{(i)} \vert x^{(i)}; \theta\right)\right) \\
+&= \sum_{i=1}^m \log P\left(y^{(i)} \vert x^{(i)}; \theta\right) \\
+&= \sum_{i=1}^m \left( y^{(i)} \log h_\theta(x^{(i)}) + (1 - y^{(i)}) \log (1 - h_\theta(x^{(i)})\right)
+\end{align} %]]></script>
+
+<p>To maximize the likelihood, here we use <strong>gradient ascent</strong> by \(\theta := \theta + \alpha \nabla_\theta l(\theta)\). The derivative is (derivation omitted, can be found on Page 18 in the notes):</p>
+
+<script type="math/tex; mode=display">\frac{\partial}{\partial\theta_j}l(\theta) = \sum_{i=1}^m \left(y^{(i)} - h_\theta\left(x^{(i)}\right)\right)\cdot x_j^{(i)}</script>
+
+<script type="math/tex; mode=display">\theta_j := \theta_j + \alpha \sum_{i=1}^m \left(y^{(i)} - h_\theta\left(x^{(i)}\right)\right)\cdot x_j^{(i)}</script>
+
+<h2 id="4-digression---perceptron">4. Digression - Perceptron</h2>
+<p>Almost the same procedure as the logistic regression. The only difference is the \(g(z)\) used in the process.</p>
+
+<p>The \(g(z)\) used in perceptron learning algorithm is:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+g(z) = \left\{ \begin{array}{rcl} 
+1 & \mbox{if} & z \ge 0 \\
+0 & \mbox{if} & z \lt 0
+\end{array}\right. %]]></script>
+
+<p><img src="/public/img/20190212_perceptron_function.eps" alt="" /></p>
+
+<p>Then, \(h_\theta(x) = g(\theta^T x)\), and the update rule for perceptron learning algorithm is almost the same:</p>
+
+<script type="math/tex; mode=display">\theta_j := \theta_j + \alpha \left(y^{(i)} - h_\theta\left(x^{(i)}\right)\right)\cdot x_j^{(i)}</script>
+
+<p><br /><br /><strong><em>KF</em></strong></p>
+
+  </div>
+</div>
+
+
+<div>
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    this.page.url = "http://localhost:4000/2019/01/31/cs229-lecture-3";
+    this.page.identifier = "/2019/01/31/cs229-lecture-3";
+  };
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//zkf85githubio.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+
+
+</div>
+
+    </main>
+    <footer class="page-footer ohio-state-scarlet">
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            <img src="/assets/res/logo.png" alt="logo"/>
+            <p class="grey-text text-lighten-4">Theme based on <a href="http://materializecss.com">Materialize.css</a> for jekyll sites.
+</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          &#xA9; 2019 ZKF's Playground. All rights reserved. Powered by <a href="https://github.com/zkf85">Kefeng</a>.
+        </div>
+      </div>
+    </footer>
+    <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+    
+    
+    <script src="/assets/js/post.js"></script>
+    
+    
+    
+    
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>
+

@@ -1,5 +1,206 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-01-23T18:02:37+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ZKF’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
-</subtitle><entry><title type="html">[CS229] Descriminative Learning v.s. Generative Learning Algorithm</title><link href="http://localhost:4000/2019/01/23/generative-learning" rel="alternate" type="text/html" title="[CS229] Descriminative Learning v.s. Generative Learning Algorithm" /><published>2019-01-23T16:30:00+08:00</published><updated>2019-01-23T16:30:00+08:00</updated><id>http://localhost:4000/2019/01/23/generative-learning</id><content type="html" xml:base="http://localhost:4000/2019/01/23/generative-learning">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-02-12T15:28:37+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ZKF’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
+</subtitle><entry><title type="html">[CS229] Lecture 3 Notes</title><link href="http://localhost:4000/2019/01/31/cs229-lecture-3" rel="alternate" type="text/html" title="[CS229] Lecture 3 Notes" /><published>2019-01-31T10:40:00+08:00</published><updated>2019-01-31T10:40:00+08:00</updated><id>http://localhost:4000/2019/01/31/cs229-lecture-3</id><content type="html" xml:base="http://localhost:4000/2019/01/31/cs229-lecture-3">&lt;blockquote&gt;
+  &lt;p&gt;CS229 Lecture #3:&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;Locally Weighted Regression&lt;/li&gt;
+    &lt;li&gt;Probablistic Interpretation of LR&lt;/li&gt;
+    &lt;li&gt;Classification (Logistic Regression)&lt;/li&gt;
+    &lt;li&gt;Disgression -&amp;gt; Perceptron&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;1-locally-weighted-regression&quot;&gt;1. Locally Weighted Regression&lt;/h2&gt;
+&lt;h3 id=&quot;11-the-origin&quot;&gt;1.1. The origin:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The choice of features is important to ensuring good performance of a learning algorithm.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The Loacally weighted linear regression (LWR) algorithm, which assuming there is sufficient training data, makes the &lt;strong&gt;choice of features less critical&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;12-detail&quot;&gt;1.2. Detail:&lt;/h3&gt;
+&lt;p&gt;The locally weighted linear regression alogorithm does the following:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Fit \( \theta \) to minimize \(\sum_i w^{(i)} (y^{(i)} - \theta^T x^{(i)} )^2\).&lt;/li&gt;
+  &lt;li&gt;Output \(\theta^T x\).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;where \(w^{(i)} = \exp\left(-\frac{(x^{(i)} - x)^2}{2\tau^2}\right)\), \(\tau\) is called &lt;strong&gt;“bandwidth”&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Note that:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;the wights depend on the particular point \(x\) at which we’re trying to evaluate \(x\).&lt;/li&gt;
+  &lt;li&gt;if \(\vert x^{(i)} - x \vert\) is small, the \(w^{(i)}\) is close to 1;&lt;/li&gt;
+  &lt;li&gt;if \(\vert x^{(i)} - x \vert\) is large, the \(w^{(i)}\) is close to 0;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;13-parametric-vs-non-parametric-learning-algorighms&quot;&gt;1.3. Parametric v.s. Non-Parametric Learning Algorighms:&lt;/h3&gt;
+&lt;h4 id=&quot;parametric-learning-algorithm&quot;&gt;“Parametric” learning algorithm:&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Fix numbers of parameters to fit the model;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;non-parametric-learning-algorithm&quot;&gt;“Non-Parametric” learning algorithm:&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Number of parameter grows with \(m\) (\(m\) is the training size).&lt;/li&gt;
+  &lt;li&gt;To make predictions using LWR, we need to keep the entire training set around. (LWR is the first example in the class as a &lt;strong&gt;non-parametric&lt;/strong&gt; algorithm).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-probablistic-interpretation-of-lr&quot;&gt;2. Probablistic Interpretation of LR&lt;/h2&gt;
+&lt;h3 id=&quot;21-assumptions&quot;&gt;2.1. Assumptions:&lt;/h3&gt;
+&lt;p&gt;We &lt;strong&gt;assume&lt;/strong&gt; that:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;y{(i)} = \theta^T x^{(i)} + \varepsilon^{(i)}&lt;/script&gt;
+
+&lt;p&gt;where&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;\(\varepsilon^{(i)}\) is the error and \(\varepsilon^{(i)} \sim \mathcal{N}(0, \sigma^2)\), which means \(P(\varepsilon^{(i)}) = \frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{(y^{(i)} - \theta^T x^{(i)})^2}{2\sigma^2}\right)\).&lt;/li&gt;
+  &lt;li&gt;\(\varepsilon^{(i)}\) is I.I.D. (independently identically distributed).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;22-maximum-likelihood&quot;&gt;2.2. Maximum Likelihood&lt;/h3&gt;
+&lt;h4 id=&quot;221-there-are-two-different-basic-ideas-in-probability&quot;&gt;2.2.1. There are two different basic ideas in probability:&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;Frequency point of view -&amp;gt; (Applied here!)&lt;/li&gt;
+  &lt;li&gt;Bayesian point of view.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;222-the-principle-of-maximum-likelihood&quot;&gt;2.2.2. The principle of maximum likelihood:&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;To choose \(\theta\) to maximum \(L(\theta)\), \(\theta\) is NOT a random value, but a true value out there!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;23-find-the-best-theta-to-reach-the-maximum-likelihood&quot;&gt;2.3. Find the best \(\theta\) to reach the “Maximum Likelihood”:&lt;/h4&gt;
+&lt;p&gt;Then, the “Likelihood” of the \(y\) is:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+L(\theta) &amp; = P\left(\mathbf{y} \vert X;\theta\right) \\
+(i.i.d) &amp; = \prod_{i=1}^m P\left(y^{(i)} \vert x^{(i)}; \theta\right) \\
+&amp; = \prod_{i=1}^m \frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{\left(y^{(i)} - \theta^T x^{(i)}\right)^2}{2\sigma^2}\right)
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Then, for mathematical convenience, let&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+l(\theta) &amp;= \log\left(L(\theta)\right) \\
+&amp;= \log\left(\prod_{i=1}^m P\left(y^{(i)} \vert x^{(i)}; \theta\right)\right) \\
+&amp;= \sum_{i=1}^m \log P\left(y^{(i)} \vert x^{(i)}; \theta\right) \\
+&amp;= \sum_{i=1}^m \log\left(\frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{\left(y^{(i)} - \theta^T x^{(i)}\right)^2}{2\sigma^2}\right)\right) \\
+&amp;= m\cdot\log\frac{1}{\sqrt{2\pi}\sigma} + \sum_{i=1}^m \left(-\frac{\left(y^{(i)} - \theta^T x^{(i)}\right)^2}{2\sigma^2}\right).
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Therefore, to &lt;strong&gt;maximize&lt;/strong&gt; \(l(\theta)\) is to &lt;strong&gt;minimize&lt;/strong&gt; \(\sum_{i=1}^m \frac{\left(y^{(i)} - \theta^T x^{(i)}\right)^2}{2\sigma^2}\), which is the same as minimizing \(J(\theta) = \sum_{i=1}^m \frac{\left(y^{(i)} - \theta^T x^{(i)}\right)^2}{2}\) (this is the rule for Least Square).&lt;/p&gt;
+
+&lt;h2 id=&quot;3-classification-and-logistic-regression&quot;&gt;3. Classification and Logistic Regression&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Note: 
+Generally, it’s bad idea to use LR for classification problems.
+Why? It doesn’t make sence for \(h_\theta(x)\) to take values larger than 1 or smaller than 0 when we know that \(y\in{0,1}\).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;31-logistic-regression-for-classification-problems&quot;&gt;3.1. Logistic regression for classification problems&lt;/h3&gt;
+&lt;p&gt;As in a classification problem:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;y \in \{0, 1\} \\
+h_\theta(x) \in [0, 1]&lt;/script&gt;
+
+&lt;p&gt;To fix the problems when using Linear Regression, we choose another form of function for our hypothesis \(h_\theta(x)\).&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;h_\theta(x) = g(\theta^Tx) = \frac{1}{1 + e^{-\theta^T x}},&lt;/script&gt;
+
+&lt;p&gt;where&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;g(z) = \frac{1}{1 + e^{-z}}.&lt;/script&gt;
+
+&lt;p&gt;\(g(z) = \frac{1}{1 + e^{-z}}\) is called “sigmoid” function or “logistic” function.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/img/20190212_sigmoid_function.eps&quot; alt=&quot;&quot; /&gt;
+Then, we have&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\left\{ \begin{array}{rcl} 
+P(y=1 \vert x; \theta) &amp; = &amp; h_\theta(x) \\
+P(y=0 \vert x; \theta) &amp; = &amp; 1 - h_\theta(x)
+\end{array}\right. \\
+\Rightarrow P(y|x;\theta) = h_\theta(x)^y (1 - h_\theta(x))^{1-y} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Then the likelihood is&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+L(\theta) &amp; = P\left(\mathbf{y} \vert X;\theta\right) \\
+&amp; = \prod_{i=1}^m P\left(y^{(i)} \vert x^{(i)}; \theta\right)
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;For mathematical convenience, let&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+l(\theta) &amp;= \log\left(L(\theta)\right) \\
+&amp;= \log\left(\prod_{i=1}^m P\left(y^{(i)} \vert x^{(i)}; \theta\right)\right) \\
+&amp;= \sum_{i=1}^m \log P\left(y^{(i)} \vert x^{(i)}; \theta\right) \\
+&amp;= \sum_{i=1}^m \left( y^{(i)} \log h_\theta(x^{(i)}) + (1 - y^{(i)}) \log (1 - h_\theta(x^{(i)})\right)
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;To maximize the likelihood, here we use &lt;strong&gt;gradient ascent&lt;/strong&gt; by \(\theta := \theta + \alpha \nabla_\theta l(\theta)\). The derivative is (derivation omitted, can be found on Page 18 in the notes):&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\partial}{\partial\theta_j}l(\theta) = \sum_{i=1}^m \left(y^{(i)} - h_\theta\left(x^{(i)}\right)\right)\cdot x_j^{(i)}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\theta_j := \theta_j + \alpha \sum_{i=1}^m \left(y^{(i)} - h_\theta\left(x^{(i)}\right)\right)\cdot x_j^{(i)}&lt;/script&gt;
+
+&lt;h2 id=&quot;4-digression---perceptron&quot;&gt;4. Digression - Perceptron&lt;/h2&gt;
+&lt;p&gt;Almost the same procedure as the logistic regression. The only difference is the \(g(z)\) used in the process.&lt;/p&gt;
+
+&lt;p&gt;The \(g(z)\) used in perceptron learning algorithm is:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+g(z) = \left\{ \begin{array}{rcl} 
+1 &amp; \mbox{if} &amp; z \ge 0 \\
+0 &amp; \mbox{if} &amp; z \lt 0
+\end{array}\right. %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/img/20190212_perceptron_function.eps&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Then, \(h_\theta(x) = g(\theta^T x)\), and the update rule for perceptron learning algorithm is almost the same:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\theta_j := \theta_j + \alpha \left(y^{(i)} - h_\theta\left(x^{(i)}\right)\right)\cdot x_j^{(i)}&lt;/script&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="cs229" /><category term="machine learning" /><summary type="html">CS229 Lecture #3: Locally Weighted Regression Probablistic Interpretation of LR Classification (Logistic Regression) Disgression -&amp;gt; Perceptron</summary></entry><entry><title type="html">Random! Shuffle v.s. Permutation (Numpy)</title><link href="http://localhost:4000/2019/01/31/np-shuffle-vs-permutation" rel="alternate" type="text/html" title="Random! Shuffle v.s. Permutation (Numpy)" /><published>2019-01-31T10:40:00+08:00</published><updated>2019-01-31T10:40:00+08:00</updated><id>http://localhost:4000/2019/01/31/np-shuffle-vs-permutation</id><content type="html" xml:base="http://localhost:4000/2019/01/31/np-shuffle-vs-permutation">&lt;blockquote&gt;
+  &lt;p&gt;Generally, in Numpy, both &lt;code class=&quot;highlighter-rouge&quot;&gt;random.permutation&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;random.shuffle&lt;/code&gt; randomly shuffle elements in an array. But there are differences:&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;difference&quot;&gt;Difference:&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;np.random.permutation&lt;/code&gt; has two differences from &lt;code class=&quot;highlighter-rouge&quot;&gt;np.random.shuffle&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;if passed an array, it will return a shuffled &lt;strong&gt;copy&lt;/strong&gt; of the array; &lt;code class=&quot;highlighter-rouge&quot;&gt;np.random.shuffle&lt;/code&gt; shuffles the array &lt;strong&gt;inplace&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;if passed an integer, it will return a shuffled range i.e. &lt;code class=&quot;highlighter-rouge&quot;&gt;np.random.shuffle(np.arange(n))&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;If x is an integer, randomly permute &lt;code class=&quot;highlighter-rouge&quot;&gt;np.arange(x)&lt;/code&gt;. If x is an array, make a copy and shuffle the elements randomly.&lt;/p&gt;
+
+&lt;p&gt;The source code might help to understand this:&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;mi&quot;&gt;3280&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;permutation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;3307&lt;/span&gt;            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;isinstance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;integer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)):&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;3308&lt;/span&gt;                &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;3309&lt;/span&gt;            &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;3310&lt;/span&gt;                &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;3311&lt;/span&gt;            &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shuffle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;3312&lt;/span&gt;            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/15474159/shuffle-vs-permute-numpy&quot;&gt;» shuffle vs permute numpy - Stack Overflow&lt;/a&gt;&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;]" /><category term="numpy" /><category term="random" /><summary type="html">Generally, in Numpy, both random.permutation and random.shuffle randomly shuffle elements in an array. But there are differences: Difference: np.random.permutation has two differences from np.random.shuffle: if passed an array, it will return a shuffled copy of the array; np.random.shuffle shuffles the array inplace if passed an integer, it will return a shuffled range i.e. np.random.shuffle(np.arange(n)) If x is an integer, randomly permute np.arange(x). If x is an array, make a copy and shuffle the elements randomly. The source code might help to understand this: 3280 def permutation(self, object x): ... 3307 if isinstance(x, (int, np.integer)): 3308 arr = np.arange(x) 3309 else: 3310 arr = np.array(x) 3311 self.shuffle(arr) 3312 return arr Reference » shuffle vs permute numpy - Stack Overflow</summary></entry><entry><title type="html">[CS229] Descriminative Learning v.s. Generative Learning Algorithm</title><link href="http://localhost:4000/2019/01/23/generative-learning" rel="alternate" type="text/html" title="[CS229] Descriminative Learning v.s. Generative Learning Algorithm" /><published>2019-01-23T16:30:00+08:00</published><updated>2019-01-23T16:30:00+08:00</updated><id>http://localhost:4000/2019/01/23/generative-learning</id><content type="html" xml:base="http://localhost:4000/2019/01/23/generative-learning">&lt;blockquote&gt;
   &lt;p&gt;A Review of Generative Learning Algorithms.&lt;/p&gt;
 
   &lt;p&gt;Keep Updating:&lt;/p&gt;
@@ -262,57 +463,4 @@
 
 &lt;p&gt;&lt;a href=&quot;https://matplotlib.org/gallery/index.html#mplot3d-examples-index&quot;&gt;» 3d Plotting examples - matplotlib Official&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;]" /><category term="python" /><category term="how-to" /><category term="machine learning" /><summary type="html">The contour plot that showing the path of gradient descent often appears in the introductory part of machine learning. The following plot is an classic example from Andrew Ng’s CS229. In this article, I’d like to try and take a record on how to draw such a Gradient Descent contour plot in Python.</summary></entry><entry><title type="html">How to Execute a script directly within vi/vim</title><link href="http://localhost:4000/2019/01/16/execute-script-directly-in-vim" rel="alternate" type="text/html" title="How to Execute a script directly within vi/vim" /><published>2019-01-16T12:53:00+08:00</published><updated>2019-01-16T12:53:00+08:00</updated><id>http://localhost:4000/2019/01/16/execute-script-directly-in-vim</id><content type="html" xml:base="http://localhost:4000/2019/01/16/execute-script-directly-in-vim">&lt;blockquote&gt;
-  &lt;p&gt;Short Answer:&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/3166413/execute-a-script-directly-within-vim-mvim-gvim&quot;&gt;» Answer from Stack Overflow&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;You can do this in vim using the &lt;code class=&quot;highlighter-rouge&quot;&gt;!&lt;/code&gt; command. For instance to count the number of words in the current file you can do:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;:! wc %
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;%&lt;/code&gt; is replaced by the current filename. To run a script you could call the interpreter on the file - for instance if you are writing a python script:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;:! python %
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="python" /><category term="vim" /><category term="how-to" /><summary type="html">Short Answer: » Answer from Stack Overflow You can do this in vim using the ! command. For instance to count the number of words in the current file you can do: :! wc % The % is replaced by the current filename. To run a script you could call the interpreter on the file - for instance if you are writing a python script: :! python %</summary></entry><entry><title type="html">I Don’t Like Jupyter Notebook</title><link href="http://localhost:4000/2019/01/16/i-dont-like-jupyter-notebook" rel="alternate" type="text/html" title="I Don't Like Jupyter Notebook" /><published>2019-01-16T09:45:00+08:00</published><updated>2019-01-16T09:45:00+08:00</updated><id>http://localhost:4000/2019/01/16/i-dont-like-jupyter-notebook</id><content type="html" xml:base="http://localhost:4000/2019/01/16/i-dont-like-jupyter-notebook">&lt;blockquote&gt;
-  &lt;p&gt;I’ve struggled with Jupyter Notebook for a long time and I have to write it down this time - I don’t like it! And I feel relieved when I found that I’m not alone. And here’re the reasons …&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2 id=&quot;1-we-dont-like-it&quot;&gt;1. “WE DON’T LIKE IT!”&lt;/h2&gt;
-&lt;p&gt;Not only me feels that it’s not a quite good tool in some way:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://owainkenwayucl.github.io/2017/10/03/WhyIDontLikeNotebooks.html&quot;&gt;» Why I don’t like Jupyter Notebooks - Dr Owain Kenway&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://opiateforthemass.es/articles/why-i-dont-like-jupyter-fka-ipython-notebook/&quot;&gt;» Why I Don’t Like Jupyter (FKA IPython Notebook) - KIRILL POMOGAJKO&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;As for me, the reasons why I don’t like to use this tool as a major tool for data analysis are:&lt;/p&gt;
-
-&lt;h2 id=&quot;2-and-we-have-reasons&quot;&gt;2. And We Have Reasons:&lt;/h2&gt;
-&lt;p&gt;I don’t want to put a lot of word here like those two guys above. Here I just list the key points that Jupyter Notebooks annoyed me.&lt;/p&gt;
-
-&lt;h3 id=&quot;21-code-in-chunk-is-annoying&quot;&gt;2.1. Code in Chunk is annoying!!&lt;/h3&gt;
-&lt;ol&gt;
-  &lt;li&gt;Code can only be run in chunks but not line by line.&lt;/li&gt;
-  &lt;li&gt;Order matters when running code, which could often bring problems.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;22-file-format-incompatible-with-version-control&quot;&gt;2.2. File format incompatible with version control&lt;/h3&gt;
-&lt;p&gt;It’s json, not python source code. It’s bad for version control.&lt;/p&gt;
-
-&lt;h3 id=&quot;23-in-order-to-read-your-codedocument-people-have-to-install-jupyter-notebook&quot;&gt;2.3. In order to read your code/document people have to install Jupyter Notebook&lt;/h3&gt;
-&lt;p&gt;Whenever you want to open and take a look at your code in such a notebook, you have to open a local web server and then open a browser. I’m a person preferring simplicity and I really hate this kind of experience.&lt;/p&gt;
-
-&lt;h2 id=&quot;3-my-solution&quot;&gt;3. My Solution:&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;Keep using Vim only for coding in most cases.&lt;/li&gt;
-  &lt;li&gt;For exploring, use the REPL (Read-Eval-Print-Loop) tool iPython.&lt;/li&gt;
-  &lt;li&gt;Saving the plots in files as a default option in python codes.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;]" /><category term="ipython" /><category term="jupyter-notebook" /><summary type="html">I’ve struggled with Jupyter Notebook for a long time and I have to write it down this time - I don’t like it! And I feel relieved when I found that I’m not alone. And here’re the reasons …</summary></entry></feed>
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;]" /><category term="python" /><category term="how-to" /><category term="machine learning" /><summary type="html">The contour plot that showing the path of gradient descent often appears in the introductory part of machine learning. The following plot is an classic example from Andrew Ng’s CS229. In this article, I’d like to try and take a record on how to draw such a Gradient Descent contour plot in Python.</summary></entry></feed>

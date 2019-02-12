@@ -143,6 +143,34 @@
 </blockquote>
 
 <!--more-->
+<ul id="markdown-toc">
+  <li><a href="#1-locally-weighted-regression" id="markdown-toc-1-locally-weighted-regression">1. Locally Weighted Regression</a>    <ul>
+      <li><a href="#11-the-origin" id="markdown-toc-11-the-origin">1.1. The origin:</a></li>
+      <li><a href="#12-detail" id="markdown-toc-12-detail">1.2. Detail:</a></li>
+      <li><a href="#13-parametric-vs-non-parametric-learning-algorighms" id="markdown-toc-13-parametric-vs-non-parametric-learning-algorighms">1.3. Parametric v.s. Non-Parametric Learning Algorighms:</a>        <ul>
+          <li><a href="#parametric-learning-algorithm" id="markdown-toc-parametric-learning-algorithm">“Parametric” learning algorithm:</a></li>
+          <li><a href="#non-parametric-learning-algorithm" id="markdown-toc-non-parametric-learning-algorithm">“Non-Parametric” learning algorithm:</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#2-probablistic-interpretation-of-lr" id="markdown-toc-2-probablistic-interpretation-of-lr">2. Probablistic Interpretation of LR</a>    <ul>
+      <li><a href="#21-assumptions" id="markdown-toc-21-assumptions">2.1. Assumptions:</a></li>
+      <li><a href="#22-maximum-likelihood" id="markdown-toc-22-maximum-likelihood">2.2. Maximum Likelihood</a>        <ul>
+          <li><a href="#221-there-are-two-different-basic-ideas-in-probability" id="markdown-toc-221-there-are-two-different-basic-ideas-in-probability">2.2.1. There are two different basic ideas in probability:</a></li>
+          <li><a href="#222-the-principle-of-maximum-likelihood" id="markdown-toc-222-the-principle-of-maximum-likelihood">2.2.2. The principle of maximum likelihood:</a></li>
+          <li><a href="#23-find-the-best-theta-to-reach-the-maximum-likelihood" id="markdown-toc-23-find-the-best-theta-to-reach-the-maximum-likelihood">2.3. Find the best \(\theta\) to reach the “Maximum Likelihood”:</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#3-classification-and-logistic-regression" id="markdown-toc-3-classification-and-logistic-regression">3. Classification and Logistic Regression</a>    <ul>
+      <li><a href="#31-logistic-regression-for-classification-problems" id="markdown-toc-31-logistic-regression-for-classification-problems">3.1. Logistic regression for classification problems</a></li>
+    </ul>
+  </li>
+  <li><a href="#4-digression---perceptron" id="markdown-toc-4-digression---perceptron">4. Digression - Perceptron</a></li>
+  <li><a href="#reference" id="markdown-toc-reference">Reference</a></li>
+</ul>
 
 <h2 id="1-locally-weighted-regression">1. Locally Weighted Regression</h2>
 <h3 id="11-the-origin">1.1. The origin:</h3>
@@ -151,7 +179,7 @@
     <p>The choice of features is important to ensuring good performance of a learning algorithm.</p>
   </li>
   <li>
-    <p>The Loacally weighted linear regression (LWR) algorithm, which assuming there is sufficient training data, makes the <strong>choice of features less critical</strong>.</p>
+    <p>The Locally weighted linear regression (LWR) algorithm, which assuming there is sufficient training data, makes the <strong>choice of features less critical</strong>.</p>
   </li>
 </ul>
 
@@ -304,6 +332,11 @@ g(z) = \left\{ \begin{array}{rcl}
 
 <script type="math/tex; mode=display">\theta_j := \theta_j + \alpha \left(y^{(i)} - h_\theta\left(x^{(i)}\right)\right)\cdot x_j^{(i)}</script>
 
+<h2 id="reference">Reference</h2>
+<ol>
+  <li><a href="https://see.stanford.edu/materials/aimlcs229/cs229-notes1.pdf">» Stanford CS229 Lecture Note Part I &amp; II</a></li>
+</ol>
+
 <p><br /><br /><strong><em>KF</em></strong></p>
 
   </div>
@@ -332,6 +365,28 @@ g(z) = \left\{ \begin{array}{rcl}
 
 </div>
 
+
+<!-- Add back to top button -->
+<button onclick="topFunction()" id="myBtn" title="Back to top">Top</button>
+
+<script>
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
     </main>
     <footer class="page-footer ohio-state-scarlet">
       <div class="container">

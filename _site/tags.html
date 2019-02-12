@@ -158,15 +158,11 @@ body {
     
       
       
-      <a class="tag-chip" href="#course-cs229"><div class="chip z-depth-1">course-cs229, 1</div></a>
-    
-      
-      
       <a class="tag-chip" href="#course-mit6006"><div class="chip z-depth-1">course-mit6006, 1</div></a>
     
       
       
-      <a class="tag-chip" href="#cs229"><div class="chip z-depth-1">cs229, 1</div></a>
+      <a class="tag-chip" href="#cs229"><div class="chip z-depth-1">cs229, 2</div></a>
     
       
       
@@ -495,20 +491,6 @@ body {
     
       
       
-    <h3 id="course-cs229"> course-cs229 </h3> 
-    <ul class="tag-post">
-      
-      <a class="post-title" href="/2019/01/23/generative-learning" target="_blank">
-        <li>
-          [CS229] Descriminative Learning v.s. Generative Learning Algorithm
-          <small class="post-date">23 Jan 2019</small>
-        </li>
-      </a>
-      
-    </ul>
-    
-      
-      
     <h3 id="course-mit6006"> course-mit6006 </h3> 
     <ul class="tag-post">
       
@@ -530,6 +512,13 @@ body {
         <li>
           [CS229] Lecture 3 Notes
           <small class="post-date">31 Jan 2019</small>
+        </li>
+      </a>
+      
+      <a class="post-title" href="/2019/01/23/generative-learning" target="_blank">
+        <li>
+          [CS229] Descriminative Learning v.s. Generative Learning Algorithm
+          <small class="post-date">23 Jan 2019</small>
         </li>
       </a>
       
@@ -1823,6 +1812,28 @@ function topFunction() {
 
 </div>
 
+
+<!-- Add back to top button -->
+<button onclick="topFunction()" id="myBtn" title="Back to top">Top</button>
+
+<script>
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
     </main>
     <footer class="page-footer ohio-state-scarlet">
       <div class="container">

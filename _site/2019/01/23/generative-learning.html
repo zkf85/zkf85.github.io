@@ -122,7 +122,7 @@
           
           
           
-          <a href="/tags#course-cs229" target="_blank"><div class="chip">course-cs229</div></a>
+          <a href="/tags#cs229" target="_blank"><div class="chip">cs229</div></a>
           
         </span>
       </div>
@@ -177,7 +177,7 @@
 <p><em>(01/22/2019)</em></p>
 
 <h3 id="11-an-example-to-explain-the-initiative-ideas">1.1. An Example to Explain the Initiative Ideas:</h3>
-<p>Consider a classification problem in which we want to learn to distinguish between cats <script type="math/tex">(y=0)</script> and dogs <script type="math/tex">(y=1)</script>:</p>
+<p>Consider a classification problem in which we want to learn to distinguish between cats \((y=0)\) and dogs \((y=1)\):</p>
 
 <h4 id="approach-i"><strong>Approach I:</strong></h4>
 
@@ -189,7 +189,7 @@
 
 <h4 id="approach-ii"><strong>Approach II:</strong></h4>
 
-<p>First, look at cats, build a model of <strong>what cats look like</strong>. Then, look at dogs, build another model of <strong>whawt dogs look like</strong>.</p>
+<p>First, look at cats, build a model of <strong>what cats look like</strong>. Then, look at dogs, build another model of <strong>what dogs look like</strong>.</p>
 
 <p><strong>To classify a new animal:</strong></p>
 
@@ -198,27 +198,27 @@
 <h3 id="12-definitions">1.2. Definitions:</h3>
 <h4 id="discriminative-learning-algorithms"><strong>Discriminative</strong> learning algorithms:</h4>
 
-<p>Algorithms that try to learn <script type="math/tex">p(y \vert x)</script> directly (such as logistic regression) or algorithms that try to learn mappings directly from the space of input <script type="math/tex">chi</script> to the labels <script type="math/tex">\{0,1\}</script> (such as perceptron algorithm) are called <strong>discriminative</strong> learning algorithms.</p>
+<p>Algorithms that try to learn \(p(y \vert x)\) directly (such as logistic regression) or algorithms that try to learn mappings directly from the space of input \(\chi\) to the labels \({0,1}\) (such as perceptron algorithm) are called <strong>discriminative</strong> learning algorithms.</p>
 
 <h4 id="generative-learning-algorithms"><strong>Generative</strong> learning algorithms:</h4>
 
-<p>Algorithms that instead try to model <script type="math/tex">p(x \vert y)</script> and <script type="math/tex">p(y)</script> are called <strong>generative</strong> learning algorithms.</p>
+<p>Algorithms that instead try to model \(p(x \vert y)\) and \(p(y)\) are called <strong>generative</strong> learning algorithms.</p>
 
 <h3 id="13-more-about-generative-learning-algorithms">1.3. More about Generative Learning Algorithms:</h3>
 
-<p>Continue with the example of cats and dogs, if <script type="math/tex">y</script> indicates whether an sample is a cat (0) or a dog (1), then</p>
+<p>Continue with the example of cats and dogs, if \(y\) indicates whether an sample is a cat (0) or a dog (1), then</p>
 <ul>
-  <li><script type="math/tex">p(x \vert y=0)</script> models the distribution of cats’ features.</li>
-  <li><script type="math/tex">p(x \vert y=1)</script> models the distribution of dogs’ features.</li>
+  <li>\(p(x \vert y=0)\) models the distribution of cats’ features.</li>
+  <li>\(p(x \vert y=1)\) models the distribution of dogs’ features.</li>
 </ul>
 
-<p>After modeling <script type="math/tex">p(y)</script> (called the <strong>class priors</strong>) and <script type="math/tex">p(x \vert y)</script>, our algorithm can then use <strong>Bayes Rule</strong> to derive the posterior distribution on <script type="math/tex">y</script> given <script type="math/tex">x</script>:</p>
+<p>After modeling \(p(y)\) (called the <strong>class priors</strong>) and \(p(x \vert y)\), our algorithm can then use <strong>Bayes Rule</strong> to derive the posterior distribution on \(y\) given \(x\):</p>
 
 <script type="math/tex; mode=display">p(y \vert x) = \frac{p(x \vert y)p(y)}{p(x)}.</script>
 
-<p>Here, the denominator is given by <script type="math/tex">p(x)=\sum_i p(x \vert y_i)p(y_i)</script>. In cats &amp; dogs example, <script type="math/tex">p(x)=p(x \vert y=0)p(y=0)+p(x \vert y=1)p(y=1)</script>.</p>
+<p>Here, the denominator is given by \(p(x)=\sum_i p(x \vert y_i)p(y_i)\). In cats &amp; dogs example, \(p(x)=p(x \vert y=0)p(y=0)+p(x \vert y=1)p(y=1)\).</p>
 
-<p>Actually, if we we’re calculating <script type="math/tex">p(y \vert x)</script> in order to make a prediction, then we don’t need to calculate the denominator, since</p>
+<p>Actually, if we we’re calculating \(p(y \vert x)\) in order to make a prediction, then we don’t need to calculate the denominator, since</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{align}
@@ -230,27 +230,27 @@
 
 <p><em>(01/23/2019)</em></p>
 
-<p>In this model (GDA), we assume that <script type="math/tex">p(x \vert y)</script> is distributed according to a <strong>multivariate normal distribution</strong>. First let’s talk briefly about the properties of multivariate normal distributions.</p>
+<p>In this model (GDA), we assume that \(p(x \vert y)\) is distributed according to a <strong>multivariate normal distribution</strong>. First let’s talk briefly about the properties of multivariate normal distributions.</p>
 
 <h3 id="21-the-multivariate-normal-distribution">2.1. The multivariate normal distribution</h3>
 <p>The Definition of so-called <em>multivariate normal distribution</em>:</p>
 
 <ul>
-  <li>A distribution with a <strong>mean vector</strong> <script type="math/tex">\mu \in \mathbb{R}^n</script> and a <strong>covariance matrix</strong> <script type="math/tex">\Sigma \in \mathbb{R}^{n \times n}</script>, where <script type="math/tex">\Sigma \geq 0</script> is symmetric and positive semi-definite. Also written “<script type="math/tex">\mathcal{N}(\mu, \Sigma)</script>”, it’s density is given by:</li>
+  <li>A distribution with a <strong>mean vector</strong> \(\mu \in \mathbb{R}^n\) and a <strong>covariance matrix</strong> \(\Sigma \in \mathbb{R}^{n \times n}\), where \(\Sigma \geq 0\) is symmetric and positive semi-definite. Also written “\(\mathcal{N}(\mu, \Sigma)\)”, it’s density is given by:</li>
 </ul>
 
 <script type="math/tex; mode=display">p(x; \mu, \Sigma) = \frac{1}{(2\pi)^{n/2}|\Sigma|^{1/2}}\exp\left(-\frac{1}{2}(x-\mu)^T\Sigma^{-1}(x-\mu)\right).</script>
 
-<p>where “<script type="math/tex">\vert\Sigma\vert</script>” denotes the determinant of the matrix <script type="math/tex">\Sigma</script>.</p>
+<p>where “\(\vert\Sigma\vert\)” denotes the determinant of the matrix \(\Sigma\).</p>
 
 <ul>
-  <li>For a random variable <script type="math/tex">X</script> distributed <script type="math/tex">\mathcal{N}(\mu, \Sigma)</script>, the mean is given by <script type="math/tex">\mu</script>:</li>
+  <li>For a random variable \(X\) distributed \(\mathcal{N}(\mu, \Sigma)\), the mean is given by \(\mu\):</li>
 </ul>
 
 <script type="math/tex; mode=display">\text{E}[X] = \int_x x\ p(x;\mu,\Sigma)dx = \mu</script>
 
 <ul>
-  <li>The <strong>covariance</strong> of a vector-valued random variable <script type="math/tex">Z</script> is defined as <script type="math/tex">\text{Cov}(Z) = \text{E}[(Z-\text{E}[Z])(Z-\text{E}[Z])^T]</script>, which can also be written as <script type="math/tex">\text{Cov}(Z) = \text{E}[ZZ^T]-(\text{E}[Z])(\text{E}[Z])^T</script>. If <script type="math/tex">X \sim \mathcal{N}(\mu, \Sigma)</script>, then:</li>
+  <li>The <strong>covariance</strong> of a vector-valued random variable \(Z\) is defined as \(\text{Cov}(Z) = \text{E}[(Z-\text{E}[Z])(Z-\text{E}[Z])^T]\), which can also be written as \(\text{Cov}(Z) = \text{E}[ZZ^T]-(\text{E}[Z])(\text{E}[Z])^T\). If \(X \sim \mathcal{N}(\mu, \Sigma)\), then:</li>
 </ul>
 
 <script type="math/tex; mode=display">\text{Cov}(X) = \Sigma.</script>
@@ -292,6 +292,28 @@
 
 </div>
 
+
+<!-- Add back to top button -->
+<button onclick="topFunction()" id="myBtn" title="Back to top">Top</button>
+
+<script>
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
     </main>
     <footer class="page-footer ohio-state-scarlet">
       <div class="container">

@@ -32,6 +32,30 @@ img.buckeye_leaf{
     width:96px
 }
 
+/* Added by KF 02/12/2019 */
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  outline: none;
+  border: 2px solid #bb0000;
+  color: #bb0000;
+  background-color: white;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition-duration: 0.4s;
+  opacity: 0.75;
+}
+
+#myBtn:hover {
+  background-color: #bb0000;
+  color: white;
+}
+
  .materialize-red{
     background-color:#e51c23 !important
 }

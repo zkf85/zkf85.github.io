@@ -97,10 +97,10 @@ $$
 \text{E}[X] = \int_x x\ p(x;\mu,\Sigma)dx = \mu
 $$
 
-- The **covariance** of a vector-valued random variable \\(Z\\) is defined as \\(\text{Cov}(Z) = \text{E}[(Z-\text{E}[Z])(Z-\text{E}[Z])^T]\\), which can also be written as \\(\text{Cov}(Z) = \text{E}[ZZ^T]-(\text{E}[Z])(\text{E}[Z])^T\\). If \\(X \sim \mathcal{N}(\mu, \Sigma)\\), then:
+- The **covariance** of a vector-valued random variable \\(Z\\) is defined as \\(\text{Cov}(Z) = \text{E}[(Z-\text{E}[Z])(Z-\text{E}[Z])^T]\\), which can also be written as \\(\text{Cov}(Z) = \text{E}[ZZ^T]-(\text{E}[Z])(\text{E}[Z])^T\\). If \\(X \sim \mathcal{N}(\mu, \sigma)\\), then:
 
 $$
-\text{Cov}(X) = \Sigma.
+\text{Cov}(X) = \sigma.
 $$
 
 #### //TODO - Practice:

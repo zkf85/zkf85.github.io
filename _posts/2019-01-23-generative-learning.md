@@ -38,7 +38,7 @@ Just check on which side of the decision boundary it falls.
 
 #### **Approach II:**
 
-First, look at cats, build a model of **what cats look like**. Then, look at dogs, build another model of **whawt dogs look like**.
+First, look at cats, build a model of **what cats look like**. Then, look at dogs, build another model of **what dogs look like**.
 
 **To classify a new animal:**
     

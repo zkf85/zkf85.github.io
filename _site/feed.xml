@@ -1,5 +1,69 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-02-12T16:39:48+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ZKF’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
-</subtitle><entry><title type="html">[CS229] Lecture 3 Notes</title><link href="http://localhost:4000/2019/01/31/cs229-lecture-3" rel="alternate" type="text/html" title="[CS229] Lecture 3 Notes" /><published>2019-01-31T10:40:00+08:00</published><updated>2019-01-31T10:40:00+08:00</updated><id>http://localhost:4000/2019/01/31/cs229-lecture-3</id><content type="html" xml:base="http://localhost:4000/2019/01/31/cs229-lecture-3">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-02-14T11:33:27+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ZKF’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
+</subtitle><entry><title type="html">[CS229] Lecture 4 Notes</title><link href="http://localhost:4000/2019/02/14/cs229-lecture-4" rel="alternate" type="text/html" title="[CS229] Lecture 4 Notes" /><published>2019-02-14T10:40:00+08:00</published><updated>2019-02-14T10:40:00+08:00</updated><id>http://localhost:4000/2019/02/14/cs229-lecture-4</id><content type="html" xml:base="http://localhost:4000/2019/02/14/cs229-lecture-4">&lt;blockquote&gt;
+  &lt;p&gt;CS229 Lecture #4&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;Newton’s Method,&lt;/li&gt;
+    &lt;li&gt;Generalized Linear Models&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-newtons-method&quot; id=&quot;markdown-toc-1-newtons-method&quot;&gt;1. Newton’s Method&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#11-basic-idea-of-newtons-method&quot; id=&quot;markdown-toc-11-basic-idea-of-newtons-method&quot;&gt;1.1. Basic idea of Newton’s method&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#12-use-newtons-method-to-maximize-some-function-l&quot; id=&quot;markdown-toc-12-use-newtons-method-to-maximize-some-function-l&quot;&gt;1.2. Use Newton’s method to maximize some function \(l\)&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#reference&quot; id=&quot;markdown-toc-reference&quot;&gt;Reference&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;1-newtons-method&quot;&gt;1. Newton’s Method&lt;/h2&gt;
+&lt;h3 id=&quot;11-basic-idea-of-newtons-method&quot;&gt;1.1. Basic idea of Newton’s method&lt;/h3&gt;
+&lt;p&gt;The aim of Newton’s method is &lt;strong&gt;to find a zero of a function&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Newton%27s_method&quot;&gt;» Newton’s Method on Wikipedia&lt;/a&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;&lt;img src=&quot;/public/img/20190214_NewtonIteration_Ani.gif&quot; alt=&quot;This is the caption!!!&quot; /&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;Figure 1.&lt;/strong&gt; The function \(f\) is shown in blue and the tangent line is in red. We see that \(x_{n + 1}\) is a better approximation than \(x_n\) for the root x of the function \(f\).&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;12-use-newtons-method-to-maximize-some-function-l&quot;&gt;1.2. Use Newton’s method to maximize some function \(l\)&lt;/h3&gt;
+&lt;p&gt;The maxima of \(l\) correspond to points where it’s first derivative \(l’(\theta)\) is zero!&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;asdf &lt;/th&gt;
+      &lt;th&gt;asdf &lt;/th&gt;
+      &lt;th&gt;vcz &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;kfakl;&lt;/td&gt;
+      &lt;td&gt;asfk;l&lt;/td&gt;
+      &lt;td&gt;df &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\theta := \theta - \frac{f(\theta)}{f'(\theta)}.&lt;/script&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://see.stanford.edu/materials/aimlcs229/cs229-notes1.pdf&quot;&gt;» Stanf Lecture Note Part I &amp;amp; II&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="cs229" /><category term="machine learning" /><summary type="html">CS229 Lecture #4 Newton’s Method, Generalized Linear Models</summary></entry><entry><title type="html">[CS229] Lecture 3 Notes</title><link href="http://localhost:4000/2019/02/12/cs229-lecture-3" rel="alternate" type="text/html" title="[CS229] Lecture 3 Notes" /><published>2019-02-12T10:40:00+08:00</published><updated>2019-02-12T10:40:00+08:00</updated><id>http://localhost:4000/2019/02/12/cs229-lecture-3</id><content type="html" xml:base="http://localhost:4000/2019/02/12/cs229-lecture-3">&lt;blockquote&gt;
   &lt;p&gt;CS229 Lecture #3:&lt;/p&gt;
   &lt;ol&gt;
     &lt;li&gt;Locally Weighted Regression&lt;/li&gt;
@@ -481,19 +545,4 @@ g(z) = \left\{ \begin{array}{rcl}
 &lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Run_commands&quot;&gt;» Run commands - Wikipedia&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;, &quot;Operating System&quot;]" /><category term="python" /><category term="unix" /><category term="linux" /><category term="matplotlib" /><summary type="html">In the context of Unix-like systems, the term rc stands for the phrase “run commands”. It is used for any file that contains startup information for a command. It is believed to have originated somewhere in 1965 from a runcom facility from the MIT Compatible Time-Sharing System (CTSS). From Brian Kernighan and Dennis Ritchie: There was a facility that would execute a bunch of commands stored in a file; it was called runcom for “run commands”, and the file began to be called “a runcom”. rc in Unix is a fossil from that usage.</summary></entry><entry><title type="html">How to Draw Contour Plot for Gradient Descent in Python</title><link href="http://localhost:4000/2019/01/17/gradient-descent-plot-contour" rel="alternate" type="text/html" title="How to Draw Contour Plot for Gradient Descent in Python" /><published>2019-01-17T09:10:00+08:00</published><updated>2019-01-17T09:10:00+08:00</updated><id>http://localhost:4000/2019/01/17/gradient-descent-plot-contour</id><content type="html" xml:base="http://localhost:4000/2019/01/17/gradient-descent-plot-contour">&lt;blockquote&gt;
-  &lt;p&gt;The contour plot that showing the path of gradient descent often appears in the introductory part of machine learning. The following plot is an classic example from Andrew Ng’s CS229. In this article, I’d like to try and take a record on how to draw such a Gradient Descent contour plot in Python.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&quot;/public/img/20190117-contour_cs229.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.adeveloperdiary.com/data-science/how-to-visualize-gradient-descent-using-contour-plot-in-python/&quot;&gt;» How to visualize Gradient Descent using Contour plot in Python - Abhisek Jana&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://matplotlib.org/tutorials/toolkits/mplot3d.html#toolkit-mplot3d-tutorial&quot;&gt;» The mplt3d Toolkit - matplotlib Official&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://matplotlib.org/gallery/index.html#mplot3d-examples-index&quot;&gt;» 3d Plotting examples - matplotlib Official&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;]" /><category term="python" /><category term="how-to" /><category term="machine learning" /><summary type="html">The contour plot that showing the path of gradient descent often appears in the introductory part of machine learning. The following plot is an classic example from Andrew Ng’s CS229. In this article, I’d like to try and take a record on how to draw such a Gradient Descent contour plot in Python.</summary></entry></feed>
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;, &quot;Operating System&quot;]" /><category term="python" /><category term="unix" /><category term="linux" /><category term="matplotlib" /><summary type="html">In the context of Unix-like systems, the term rc stands for the phrase “run commands”. It is used for any file that contains startup information for a command. It is believed to have originated somewhere in 1965 from a runcom facility from the MIT Compatible Time-Sharing System (CTSS). From Brian Kernighan and Dennis Ritchie: There was a facility that would execute a bunch of commands stored in a file; it was called runcom for “run commands”, and the file began to be called “a runcom”. rc in Unix is a fossil from that usage.</summary></entry></feed>

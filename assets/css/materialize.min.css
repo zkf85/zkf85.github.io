@@ -2088,7 +2088,10 @@ ul.staggered-list li{
     background-color:rgba(51,51,51,0.08)
 }
 table,th,td{
-    border:none
+    /* KF 02/14/2019 */
+    /* border:none */
+    border: 1px solid #d0d0d0;
+    font-size: 14px
 }
 table{
     width:100%;
@@ -2116,7 +2119,7 @@ thead{
     border-bottom:1px solid #d0d0d0
 }
 td,th{
-    padding:15px 5px;
+    padding:5px 5px;
     display:table-cell;
     text-align:left;
     vertical-align:middle;

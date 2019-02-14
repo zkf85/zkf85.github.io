@@ -3690,6 +3690,7 @@ small{
 }
 .card .card-title{
 	/* KF 11/28/2018
+     * KF 02/14/2019
     font-size:24px;
 	*/
     font-size:1.5rem;
@@ -5537,6 +5538,7 @@ input[type=range]:focus::-ms-fill-upper{
 	*/
     color:rgba(0,0,0,0.6);
     font-size:18px;
+    font-weight: bold;
     line-height:48px;
     padding:0 32px
 }

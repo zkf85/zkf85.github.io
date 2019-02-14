@@ -118,12 +118,12 @@
           02/14/2019
         </p>
         <p id="post-content"><blockquote>
-  <p>CS229 Lecture #4</p>
   <ol>
     <li>Newton’s Method,</li>
     <li>Generalized Linear Models</li>
   </ol>
 </blockquote>
+
 
 </p>
       </div>
@@ -148,7 +148,6 @@
           02/12/2019
         </p>
         <p id="post-content"><blockquote>
-  <p>CS229 Lecture #3:</p>
   <ol>
     <li>Locally Weighted Regression</li>
     <li>Probablistic Interpretation of LR</li>
@@ -182,29 +181,6 @@
         <p id="post-content"><blockquote>
   <p>Generally, in Numpy, both <code class="highlighter-rouge">random.permutation</code> and <code class="highlighter-rouge">random.shuffle</code> randomly shuffle elements in an array. But there are differences:</p>
 </blockquote>
-
-<h2 id="difference">Difference:</h2>
-<p><code class="highlighter-rouge">np.random.permutation</code> has two differences from <code class="highlighter-rouge">np.random.shuffle</code>:</p>
-
-<p>if passed an array, it will return a shuffled <strong>copy</strong> of the array; <code class="highlighter-rouge">np.random.shuffle</code> shuffles the array <strong>inplace</strong></p>
-
-<p>if passed an integer, it will return a shuffled range i.e. <code class="highlighter-rouge">np.random.shuffle(np.arange(n))</code></p>
-
-<p>If x is an integer, randomly permute <code class="highlighter-rouge">np.arange(x)</code>. If x is an array, make a copy and shuffle the elements randomly.</p>
-
-<p>The source code might help to understand this:</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">3280</span>        <span class="k">def</span> <span class="nf">permutation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">object</span> <span class="n">x</span><span class="p">):</span>
-<span class="o">...</span>
-<span class="mi">3307</span>            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">integer</span><span class="p">)):</span>
-<span class="mi">3308</span>                <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="mi">3309</span>            <span class="k">else</span><span class="p">:</span>
-<span class="mi">3310</span>                <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="mi">3311</span>            <span class="bp">self</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
-<span class="mi">3312</span>            <span class="k">return</span> <span class="n">arr</span>
-</code></pre></div></div>
-
-<h2 id="reference">Reference</h2>
-<p><a href="https://stackoverflow.com/questions/15474159/shuffle-vs-permute-numpy">» shuffle vs permute numpy - Stack Overflow</a></p>
 
 </p>
       </div>

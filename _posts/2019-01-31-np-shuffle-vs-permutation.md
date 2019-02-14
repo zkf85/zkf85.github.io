@@ -8,6 +8,8 @@ tag: [numpy, random]
 ---
 > Generally, in Numpy, both `random.permutation` and `random.shuffle` randomly shuffle elements in an array. But there are differences: 
 
+<!--more-->
+
 ## Difference:
 `np.random.permutation` has two differences from `np.random.shuffle`:
 
@@ -32,6 +34,5 @@ The source code might help to understand this:
 ## Reference
 [>> shuffle vs permute numpy - Stack Overflow](https://stackoverflow.com/questions/15474159/shuffle-vs-permute-numpy)
 
-<!--more-->
 
 <br><br>***KF***

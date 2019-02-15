@@ -11,8 +11,7 @@ tag: [algorithms, data structure]
 > 
 > The **heap data structure** in MIT 6.006 is NOT garbage-collected storage.
 
-[\[PDF\] try add a pdf file](/public/files/try.pdf)
-[\[PDF\] Kefeng's Note on L#3](https://github.com/zkf85/StudyNotes/blob/master/MIT6006/mit6006-lec03-note-kf.pdf)
+[\[PDF\] try add a pdf file](/public/files/mit6006/mit6006-lec03-note-kf.pdf)
 <!--more-->
 
 <br><br>***KF***

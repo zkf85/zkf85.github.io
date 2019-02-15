@@ -6,7 +6,7 @@ date: "2019-01-23 11:20:00"
 category: [Web Developing]
 tag: [how-to, jekyll]
 ---
-In the post, simple add:
+In the post, simply add:
 ``` 
 * TOC
 {:toc} 

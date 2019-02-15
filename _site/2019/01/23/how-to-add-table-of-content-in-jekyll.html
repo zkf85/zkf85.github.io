@@ -28,15 +28,15 @@
 <meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="How to Add a Table of Content to my Jekyll Blog?" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="In the post, simple add: * TOC {:toc} in the post. » How I Add a Table of Contents to my Jekyll Blog Written in Markdown » Jekyll Table Of Contents - Wikipedia Look!" />
-<meta property="og:description" content="In the post, simple add: * TOC {:toc} in the post. » How I Add a Table of Contents to my Jekyll Blog Written in Markdown » Jekyll Table Of Contents - Wikipedia Look!" />
+<meta name="description" content="In the post, simply add: * TOC {:toc} in the post. » How I Add a Table of Contents to my Jekyll Blog Written in Markdown » Jekyll Table Of Contents - Wikipedia Look!" />
+<meta property="og:description" content="In the post, simply add: * TOC {:toc} in the post. » How I Add a Table of Contents to my Jekyll Blog Written in Markdown » Jekyll Table Of Contents - Wikipedia Look!" />
 <link rel="canonical" href="http://localhost:4000/2019/01/23/how-to-add-table-of-content-in-jekyll" />
 <meta property="og:url" content="http://localhost:4000/2019/01/23/how-to-add-table-of-content-in-jekyll" />
 <meta property="og:site_name" content="ZKF’s Playground" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-01-23T11:20:00+08:00" />
 <script type="application/ld+json">
-{"description":"In the post, simple add: * TOC {:toc} in the post. » How I Add a Table of Contents to my Jekyll Blog Written in Markdown » Jekyll Table Of Contents - Wikipedia Look!","@type":"BlogPosting","url":"http://localhost:4000/2019/01/23/how-to-add-table-of-content-in-jekyll","headline":"How to Add a Table of Content to my Jekyll Blog?","dateModified":"2019-01-23T11:20:00+08:00","datePublished":"2019-01-23T11:20:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/01/23/how-to-add-table-of-content-in-jekyll"},"@context":"http://schema.org"}</script>
+{"description":"In the post, simply add: * TOC {:toc} in the post. » How I Add a Table of Contents to my Jekyll Blog Written in Markdown » Jekyll Table Of Contents - Wikipedia Look!","@type":"BlogPosting","url":"http://localhost:4000/2019/01/23/how-to-add-table-of-content-in-jekyll","headline":"How to Add a Table of Content to my Jekyll Blog?","dateModified":"2019-01-23T11:20:00+08:00","datePublished":"2019-01-23T11:20:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/01/23/how-to-add-table-of-content-in-jekyll"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -89,9 +89,23 @@
 <!--
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 -->
+<!-- KF 02/14/2019
+The following snippet is to allow single $ style inline mode.
+Remember that after enabling this, you have to enter the real dollar sings with `\$`
+-->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
+
 <div class="container">
   <div id="post-info">
   <h1>How to Add a Table of Content to my Jekyll Blog?</h1>
@@ -132,7 +146,7 @@
 <div class="divider"></div>
 <div class="row">
   <div class="col s12">
-    <p>In the post, simple add:</p>
+    <p>In the post, simply add:</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* TOC
 {:toc} 
 </code></pre></div></div>
@@ -173,7 +187,7 @@
 
 </div>
 
-
+<!-- KF 02/13/2019  -->
 <!-- Add back to top button -->
 <button onclick="topFunction()" id="myBtn" title="Back to top">Top</button>
 

@@ -93,9 +93,23 @@
 <!--
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 -->
+<!-- KF 02/14/2019
+The following snippet is to allow single $ style inline mode.
+Remember that after enabling this, you have to enter the real dollar sings with `\$`
+-->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
+
 <div class="container">
   <div id="page-info">
   <!--
@@ -105,6 +119,36 @@
 </div>
 <div class="row">
   <div class="row">
+  
+  <div class="col s12">
+    <div class="card hoverable">
+      <div class="card-content">
+        <span id="post-title" class="card-title">How to Set Static IP Address on Ubuntu 18.04 Using Netplan</span>
+        
+        <p id="post-date">
+          <i class="material-icons">date_range</i>
+		  <!--
+          12/10/2018 09:18
+		  -->
+          12/10/2018
+        </p>
+        <p id="post-content"><blockquote>
+  <p>Recently I was struggling with tensorflow-gpu installation my home server. After couple of rounds of attempts and re-installation. I have to choose Ubuntu-18.04 only (due to my mother board version, both ubuntu-16.04 and debian-9 have network driver issues).</p>
+</blockquote>
+
+<blockquote>
+  <p>During the time when re-installing the system, setting a static IP address is a common routine that make other computer in the home network easy to access the server. Here I’ll show how to configure static IP Address in Ubuntu 18.04 with netplan.</p>
+</blockquote>
+
+</p>
+      </div>
+      <div class="card-action">
+        <a href="/2018/12/10/how-to-set-static-ip-address">
+          Read More
+        </a>
+      </div>
+    </div>
+  </div>
   
   <div class="col s12">
     <div class="card hoverable">
@@ -347,32 +391,6 @@
     </div>
   </div>
   
-  <div class="col s12">
-    <div class="card hoverable">
-      <div class="card-content">
-        <span id="post-title" class="card-title">RNN LSTM - Notes</span>
-        
-        <p id="post-date">
-          <i class="material-icons">date_range</i>
-		  <!--
-          06/12/2018 14:00
-		  -->
-          06/12/2018
-        </p>
-        <p id="post-content"><blockquote>
-  <p><em>“Deep Learning”</em> Reading note</p>
-</blockquote>
-
-</p>
-      </div>
-      <div class="card-action">
-        <a href="/2018/06/12/RNN-LSTM">
-          Read More
-        </a>
-      </div>
-    </div>
-  </div>
-  
   <div class="col s12 center-align">
     <ul class="pagination">
       <li class="waves-effect">
@@ -425,7 +443,7 @@
 
 </div>
 
-
+<!-- KF 02/13/2019  -->
 <!-- Add back to top button -->
 <button onclick="topFunction()" id="myBtn" title="Back to top">Top</button>
 

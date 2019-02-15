@@ -1733,12 +1733,12 @@ hr{
     height:0
 }
 pre{
-    overflow:auto
+    overflow:auto;
+    font-size: 14px
 }
 code,kbd,pre,samp{
     font-family:monospace, monospace;
 	/* KF 11/29/2018
-    font-size:1em
 	*/
 }
 button,input,optgroup,select,textarea{
@@ -2094,6 +2094,8 @@ table,th,td{
     font-size: 14px
 }
 table{
+    /* KF 02/14/2019 
+    */
     width:100%;
     display:table
 }

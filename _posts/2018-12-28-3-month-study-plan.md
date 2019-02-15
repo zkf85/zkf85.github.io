@@ -21,11 +21,13 @@ Let's make it happen!
 ## 2. Plan Details and Checklist
 In the upcoming three month, I'll keep updating the checklist below to track my progress of the plan.
 
+Updated on 02/15/2019, remove CS230 for this 3-month plan.
+
 ### 2.1. CS229
 [>> CS229 Syllabus and Course Schedule](http://cs229.stanford.edu/syllabus.html)
 
-### 2.2. CS230
-[>> CS230 Syllabus and Course Schedule](http://cs230.stanford.edu/syllabus.html)
+### <strike>2.2. CS230</strike>
+<strike>[>> CS230 Syllabus and Course Schedule](http://cs230.stanford.edu/syllabus.html)</strike>
 
 ### 2.3. CS231
 [>> CS231 Main Page Spring 2017](http://cs231n.stanford.edu/2017/)

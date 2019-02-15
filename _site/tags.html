@@ -91,9 +91,23 @@
 <!--
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 -->
+<!-- KF 02/14/2019
+The following snippet is to allow single $ style inline mode.
+Remember that after enabling this, you have to enter the real dollar sings with `\$`
+-->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
+
 <div class="container">
   <div id="page-info">
   <!--
@@ -142,6 +156,10 @@ body {
     
       
       
+      <a class="tag-chip" href="#algorithms"><div class="chip z-depth-1">algorithms, 1</div></a>
+    
+      
+      
       <a class="tag-chip" href="#anchor"><div class="chip z-depth-1">anchor, 1</div></a>
     
       
@@ -171,6 +189,10 @@ body {
       
       
       <a class="tag-chip" href="#cuda"><div class="chip z-depth-1">cuda, 1</div></a>
+    
+      
+      
+      <a class="tag-chip" href="#data structure"><div class="chip z-depth-1">data structure, 1</div></a>
     
       
       
@@ -414,6 +436,20 @@ body {
     
       
       
+    <h3 id="algorithms"> algorithms </h3> 
+    <ul class="tag-post">
+      
+      <a class="post-title" href="/2019/02/15/the-term-of-heap" target="_blank">
+        <li>
+          The Term of "Heap"
+          <small class="post-date">15 Feb 2019</small>
+        </li>
+      </a>
+      
+    </ul>
+    
+      
+      
     <h3 id="anchor"> anchor </h3> 
     <ul class="tag-post">
       
@@ -510,14 +546,14 @@ body {
       
       <a class="post-title" href="/2019/02/14/cs229-lecture-4" target="_blank">
         <li>
-          [CS229] Lecture 4 Notes
+          [CS229] Lecture 4 Notes - Newton's Method/GLMs
           <small class="post-date">14 Feb 2019</small>
         </li>
       </a>
       
       <a class="post-title" href="/2019/02/12/cs229-lecture-3" target="_blank">
         <li>
-          [CS229] Lecture 3 Notes
+          [CS229] Lecture 3 Notes - LWR/Prob Interp/Logistic/Perceptron
           <small class="post-date">12 Feb 2019</small>
         </li>
       </a>
@@ -561,6 +597,20 @@ body {
         <li>
           How to Force Keras to use CPU to Run Script?
           <small class="post-date">23 Jan 2019</small>
+        </li>
+      </a>
+      
+    </ul>
+    
+      
+      
+    <h3 id="data structure"> data structure </h3> 
+    <ul class="tag-post">
+      
+      <a class="post-title" href="/2019/02/15/the-term-of-heap" target="_blank">
+        <li>
+          The Term of "Heap"
+          <small class="post-date">15 Feb 2019</small>
         </li>
       </a>
       
@@ -1147,14 +1197,14 @@ body {
       
       <a class="post-title" href="/2019/02/14/cs229-lecture-4" target="_blank">
         <li>
-          [CS229] Lecture 4 Notes
+          [CS229] Lecture 4 Notes - Newton's Method/GLMs
           <small class="post-date">14 Feb 2019</small>
         </li>
       </a>
       
       <a class="post-title" href="/2019/02/12/cs229-lecture-3" target="_blank">
         <li>
-          [CS229] Lecture 3 Notes
+          [CS229] Lecture 3 Notes - LWR/Prob Interp/Logistic/Perceptron
           <small class="post-date">12 Feb 2019</small>
         </li>
       </a>
@@ -1826,7 +1876,7 @@ function topFunction() {
 
 </div>
 
-
+<!-- KF 02/13/2019  -->
 <!-- Add back to top button -->
 <button onclick="topFunction()" id="myBtn" title="Back to top">Top</button>
 

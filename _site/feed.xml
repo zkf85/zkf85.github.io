@@ -1,14 +1,338 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-02-15T13:46:49+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ZKF’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
-</subtitle><entry><title type="html">The Term of “Heap”</title><link href="http://localhost:4000/2019/02/15/the-term-of-heap" rel="alternate" type="text/html" title="The Term of &quot;Heap&quot;" /><published>2019-02-15T10:20:00+08:00</published><updated>2019-02-15T10:20:00+08:00</updated><id>http://localhost:4000/2019/02/15/the-term-of-heap</id><content type="html" xml:base="http://localhost:4000/2019/02/15/the-term-of-heap">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-02-18T18:11:52+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ZKF’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
+</subtitle><entry><title type="html">[CS229] Lecture 5 Notes - Descriminative Learning v.s. Generative Learning Algorithm</title><link href="http://localhost:4000/2019/02/18/generative-learning" rel="alternate" type="text/html" title="[CS229] Lecture 5 Notes - Descriminative Learning v.s. Generative Learning Algorithm" /><published>2019-02-18T14:30:00+08:00</published><updated>2019-02-18T14:30:00+08:00</updated><id>http://localhost:4000/2019/02/18/generative-learning</id><content type="html" xml:base="http://localhost:4000/2019/02/18/generative-learning">&lt;blockquote&gt;
+  &lt;p&gt;Keep Updating:&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;2019-02-18 Merge to Lecture #5 Note&lt;/li&gt;
+    &lt;li&gt;2019-01-23 Add Part 2, Gausian discriminant analysis&lt;/li&gt;
+    &lt;li&gt;2019-01-22 Add Part 1, A Review of Generative Learning Algorithms.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/img/20190122-bayes-theorem.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-basics-of-generative-learning-algorithms&quot; id=&quot;markdown-toc-1-basics-of-generative-learning-algorithms&quot;&gt;1. Basics of Generative Learning Algorithms&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#11-an-example-to-explain-the-initiative-ideas&quot; id=&quot;markdown-toc-11-an-example-to-explain-the-initiative-ideas&quot;&gt;1.1. An Example to Explain the Initiative Ideas:&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#approach-i&quot; id=&quot;markdown-toc-approach-i&quot;&gt;&lt;strong&gt;Approach I:&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#approach-ii&quot; id=&quot;markdown-toc-approach-ii&quot;&gt;&lt;strong&gt;Approach II:&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#12-definitions&quot; id=&quot;markdown-toc-12-definitions&quot;&gt;1.2. Definitions:&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#discriminative-learning-algorithms&quot; id=&quot;markdown-toc-discriminative-learning-algorithms&quot;&gt;&lt;strong&gt;Discriminative&lt;/strong&gt; learning algorithms:&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#generative-learning-algorithms&quot; id=&quot;markdown-toc-generative-learning-algorithms&quot;&gt;&lt;strong&gt;Generative&lt;/strong&gt; learning algorithms:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#13-more-about-generative-learning-algorithms&quot; id=&quot;markdown-toc-13-more-about-generative-learning-algorithms&quot;&gt;1.3. More about Generative Learning Algorithms:&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-gaussian-discriminant-analysis-gda&quot; id=&quot;markdown-toc-2-gaussian-discriminant-analysis-gda&quot;&gt;2. Gaussian Discriminant Analysis (GDA)&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#21-the-multivariate-normal-distribution&quot; id=&quot;markdown-toc-21-the-multivariate-normal-distribution&quot;&gt;2.1. The multivariate normal distribution&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#22-the-gaussian-discriminant-analysis-model&quot; id=&quot;markdown-toc-22-the-gaussian-discriminant-analysis-model&quot;&gt;2.2. The Gaussian Discriminant Analysis model&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#to-do-add-the-derivation&quot; id=&quot;markdown-toc-to-do-add-the-derivation&quot;&gt;&lt;em&gt;(TO DO: Add the derivation)&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#predict&quot; id=&quot;markdown-toc-predict&quot;&gt;Predict:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#23-gda-and-logistic-regression&quot; id=&quot;markdown-toc-23-gda-and-logistic-regression&quot;&gt;2.3. GDA and logistic regression&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#assumption-relations&quot; id=&quot;markdown-toc-assumption-relations&quot;&gt;Assumption relations:&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#which-is-better&quot; id=&quot;markdown-toc-which-is-better&quot;&gt;Which is better?&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3-naive-bayes&quot; id=&quot;markdown-toc-3-naive-bayes&quot;&gt;3. Naive Bayes&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#naive-bayes-nb-assumption&quot; id=&quot;markdown-toc-naive-bayes-nb-assumption&quot;&gt;Naive Bayes (NB) assumption:&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#predict-1&quot; id=&quot;markdown-toc-predict-1&quot;&gt;Predict:&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#laplace-smoothing&quot; id=&quot;markdown-toc-laplace-smoothing&quot;&gt;Laplace smoothing&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#reference&quot; id=&quot;markdown-toc-reference&quot;&gt;Reference&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;1-basics-of-generative-learning-algorithms&quot;&gt;1. Basics of Generative Learning Algorithms&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;(01/22/2019)&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;11-an-example-to-explain-the-initiative-ideas&quot;&gt;1.1. An Example to Explain the Initiative Ideas:&lt;/h3&gt;
+&lt;p&gt;Consider a classification problem in which we want to learn to distinguish between cats \((y=0)\) and dogs \((y=1)\):&lt;/p&gt;
+
+&lt;h4 id=&quot;approach-i&quot;&gt;&lt;strong&gt;Approach I:&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;Based on some features of an animal, given a training set, an algorithm like &lt;strong&gt;&lt;em&gt;logistic regression&lt;/em&gt;&lt;/strong&gt; or &lt;strong&gt;&lt;em&gt;perceptron&lt;/em&gt;&lt;/strong&gt; algorithm, tries to find a &lt;strong&gt;decision boundary&lt;/strong&gt; (e.g. a straight line) to separate the cats and the dogs.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;To classify a new animal:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Just check on which side of the decision boundary it falls.&lt;/p&gt;
+
+&lt;h4 id=&quot;approach-ii&quot;&gt;&lt;strong&gt;Approach II:&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;First, look at cats, build a model of &lt;strong&gt;what cats look like&lt;/strong&gt;. Then, look at dogs, build another model of &lt;strong&gt;what dogs look like&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;To classify a new animal:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Match the new animal against the cat model and the dog model respectively, to see whether the new animal looks more like the cats or more like the dogs we had seen in the training set.&lt;/p&gt;
+
+&lt;h3 id=&quot;12-definitions&quot;&gt;1.2. Definitions:&lt;/h3&gt;
+&lt;h4 id=&quot;discriminative-learning-algorithms&quot;&gt;&lt;strong&gt;Discriminative&lt;/strong&gt; learning algorithms:&lt;/h4&gt;
+
+&lt;p&gt;Algorithms that try to &lt;strong&gt;learn \(p(y \vert x)\) directly&lt;/strong&gt; (such as logistic regression) or algorithms that try to learn mappings directly from the space of input \(\chi\) to the labels \({0,1}\) (such as perceptron algorithm) are called &lt;strong&gt;discriminative&lt;/strong&gt; learning algorithms.&lt;/p&gt;
+
+&lt;h4 id=&quot;generative-learning-algorithms&quot;&gt;&lt;strong&gt;Generative&lt;/strong&gt; learning algorithms:&lt;/h4&gt;
+
+&lt;p&gt;Algorithms that instead try to model \(p(x \vert y)\) and \(p(y)\) are called &lt;strong&gt;generative&lt;/strong&gt; learning algorithms.&lt;/p&gt;
+
+&lt;h3 id=&quot;13-more-about-generative-learning-algorithms&quot;&gt;1.3. More about Generative Learning Algorithms:&lt;/h3&gt;
+
+&lt;p&gt;Continue with the example of cats and dogs, if \(y\) indicates whether an sample is a cat (0) or a dog (1), then&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;\(p(x \vert y=0)\) models the distribution of cats’ features.&lt;/li&gt;
+  &lt;li&gt;\(p(x \vert y=1)\) models the distribution of dogs’ features.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;After modeling \(p(y)\) (called the &lt;strong&gt;class priors&lt;/strong&gt;) and \(p(x \vert y)\), our algorithm can then use &lt;strong&gt;Bayes Rule&lt;/strong&gt; to derive the posterior distribution on \(y\) given \(x\):&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;p(y \vert x) = \frac{p(x \vert y)p(y)}{p(x)}.&lt;/script&gt;
+
+&lt;p&gt;Here, the denominator is given by \(p(x)=\sum_i p(x \vert y_i)p(y_i)\). In cats &amp;amp; dogs example, \(p(x)=p(x \vert y=0)p(y=0)+p(x \vert y=1)p(y=1)\).&lt;/p&gt;
+
+&lt;p&gt;Actually, if we we’re calculating \(p(y \vert x)\) in order to make a prediction, then we don’t need to calculate the denominator, since&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\arg\underset{y}{\max} p(y \vert x) &amp; = \arg \underset{y}{\max} \frac{p(x \vert y)p(y)}{p(x)} \\
+&amp; = \arg \underset{y}{\max} p(x \vert y)p(y).
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;h2 id=&quot;2-gaussian-discriminant-analysis-gda&quot;&gt;2. Gaussian Discriminant Analysis (GDA)&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;(01/23/2019)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;In this model (GDA), we assume that \(p(x \vert y)\) is distributed according to a &lt;strong&gt;multivariate normal distribution&lt;/strong&gt;. First let’s talk briefly about the properties of multivariate normal distributions.&lt;/p&gt;
+
+&lt;h3 id=&quot;21-the-multivariate-normal-distribution&quot;&gt;2.1. The multivariate normal distribution&lt;/h3&gt;
+&lt;p&gt;The Definition of so-called &lt;em&gt;multivariate normal distribution&lt;/em&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A distribution with a &lt;strong&gt;mean vector&lt;/strong&gt; \(\mu \in \mathbb{R}^n\) and a &lt;strong&gt;covariance matrix&lt;/strong&gt; \(\Sigma \in \mathbb{R}^{n \times n}\), where \(\Sigma \geq 0\) is symmetric and positive semi-definite. Also written “\(\mathcal{N}(\mu, \Sigma)\)”, it’s density is given by:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;p(x; \mu, \Sigma) = \frac{1}{(2\pi)^{n/2}|\Sigma|^{1/2}}\exp\left(-\frac{1}{2}(x-\mu)^T\Sigma^{-1}(x-\mu)\right).&lt;/script&gt;
+
+&lt;p&gt;where “\(\vert\Sigma\vert\)” denotes the determinant of the matrix \(\Sigma\).&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;For a random variable \(X\) distributed \(\mathcal{N}(\mu, \Sigma)\), the mean is given by \(\mu\):&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\text{E}[X] = \int_x x\ p(x;\mu,\Sigma)dx = \mu&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The &lt;strong&gt;covariance&lt;/strong&gt; of a vector-valued random variable \(Z\) is defined as \(\text{Cov}(Z) = \text{E}[(Z-\text{E}[Z])(Z-\text{E}[Z])^T]\), which can also be written as \(\text{Cov}(Z) = \text{E}[ZZ^T]-(\text{E}[Z])(\text{E}[Z])^T\). If \(X \sim \mathcal{N}(\mu, \Sigma)\), then:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\text{Cov}(X) = \Sigma.&lt;/script&gt;
+
+&lt;h3 id=&quot;22-the-gaussian-discriminant-analysis-model&quot;&gt;2.2. The Gaussian Discriminant Analysis model&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;(02/18/2019)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;When $x$ are continuous-valued variables, we can use the so-called &lt;em&gt;Gaussian Discriminant Analysis (GDA)&lt;/em&gt; which using &lt;strong&gt;multivariate normal distribution&lt;/strong&gt; to model the different cases:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+y &amp;\sim \mbox{Bernoulli}(\phi) \\
+x \vert y=0 &amp;\sim \mathcal{N}(\mu_0, \Sigma) \\
+x \vert y=1 &amp;\sim \mathcal{N}(\mu_1, \Sigma)
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;which can be written as:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+p(y) &amp;= \phi^y(1-\phi)^{1-y} \\
+p(x\vert y=0) &amp;= \frac{1}{(2\pi)^{n/2} \vert\Sigma\vert^{1/2}}\exp\left(-\frac{1}{2}(x-\mu_0)^T\Sigma^{-1}(x-\mu_0)\right) \\
+p(x\vert y=1) &amp;= \frac{1}{(2\pi)^{n/2} \vert\Sigma\vert^{1/2}}\exp\left(-\frac{1}{2}(x-\mu_1)^T\Sigma^{-1}(x-\mu_1)\right) 
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Now the parameters are: $\phi, \mu_0, \mu_1, \Sigma$. Apply maximum likelihood estimate, the log-likelihood would be:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+l(\phi, \mu_0,\mu_1,\Sigma) &amp;= \log\prod_{i=1}^m p(x^{(i)}, y^{(i)}; \phi,\mu_0,\mu_1,\Sigma) \\
+&amp;= \log\prod_{i=1}^m p(x^{(i)} \vert y^{(i)};\mu_0,\mu_1,\Sigma)p(y^{(i)};\phi)
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;h4 id=&quot;to-do-add-the-derivation&quot;&gt;&lt;em&gt;(TO DO: Add the derivation)&lt;/em&gt;&lt;/h4&gt;
+&lt;p&gt;We get the maximum likelihood estimate of these parameters:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\phi &amp;= \frac{1}{m} \sum_{i=1}^m 1\{ y^{(i)}=1 \} \\
+\mu_0 &amp;= \frac{\sum_{i=1}^m 1\{ y^{(i)}=0 \} x^{(i)}}{\sum_{i=1}m 1\{ y{(i)}=0 \}} \\
+\mu_1 &amp;= \frac{\sum_{i=1}^m 1\{ y^{(i)}=1 \} x^{(i)}}{\sum_{i=1}m 1\{ y{(i)}=1 \}} \\
+\Sigma &amp;= \frac{1}{m}\sum_{i=1}^m (x^{(i)} - \mu_{y^{(i)}})(x^{(i)} - \mu_{y^{(i)}})^T.
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;h4 id=&quot;predict&quot;&gt;Predict:&lt;/h4&gt;
+&lt;p&gt;Simply apply the rules mentioned above, with these estimates:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\arg\underset{y}{\max} p(y \vert x) &amp; = \arg \underset{y}{\max} \frac{p(x \vert y)p(y)}{p(x)} \\
+&amp; = \arg \underset{y}{\max} p(x \vert y)p(y).
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;h3 id=&quot;23-gda-and-logistic-regression&quot;&gt;2.3. GDA and logistic regression&lt;/h3&gt;
+&lt;p&gt;With the predicting rules above, we have:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;p(y=1 vert x;\phi,\Sigma,\mu_0,\mu_1) = \frac{1}{1 + \exp(-\theta^Tx)}.&lt;/script&gt;
+
+&lt;p&gt;where $\theta$ is some appropriate function of $\phi,\Sigma,\mu_0,\mu_1$. This is exactly the form that logistic regression, a discriminative algorithm, to model $p(y=1 \vert x)$.&lt;/p&gt;
+
+&lt;h4 id=&quot;assumption-relations&quot;&gt;Assumption relations:&lt;/h4&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\begin{align}
+p(x \vert y) \text{ is multivariate gaussian} &amp;\Rightarrow p(x \vert y) \text{ follows a logistic function/ExpFamily} \\
+p(x \vert y) \text{ is multivariate gaussian} &amp;\nLeftarrow p(x \vert y) \text{ follows a logistic function/ExpFamily} \\
+\end{align} %]]&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;which-is-better&quot;&gt;Which is better?&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;When $p(x \vert y)$ is really Gaussian, GDA is &lt;strong&gt;asymptotically efficient!&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;By making &lt;strong&gt;weaker assumptions&lt;/strong&gt; logistic regression is more &lt;em&gt;robust&lt;/em&gt;, especially the data is indeed non-Gaussian, then in the limit of large datasets, logistic regression will almost always do better than GDA. For this reason, in practice logistic regression is used more often than GDA.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3-naive-bayes&quot;&gt;3. Naive Bayes&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;(02/18/2019)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;As GDA is for continuous $x$ problems, here Naive Bayes is for those problems with discrete $x$.&lt;/p&gt;
+
+&lt;p&gt;Here’s the typical example: spam filter.&lt;/p&gt;
+
+&lt;p&gt;First, we present the email(text) via a feature vector whose length is the length of word dictionary (a fixed number). If the email contains the &lt;em&gt;j&lt;/em&gt;-th word, $x_j=1$; otherwise $x_j=0$. The vector would like like this:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align}
+x = \left[\begin{array}{c} 1\\0\\0\\\vdots\\1\\\vdots\\0 \end{array}\right] \quad \begin{array}{l} \text{a}\\\text{aardvark}\\\text{aardwolf}\\\vdots\\\text{buy}\\\vdots\\\text{zygmurgy}\end{array} \\
+\end{align}&lt;/script&gt;
+
+&lt;p&gt;If our vocabulary size is 50000, then $x \in {0, 1}^{50000}$ ($x$ is a 50000-dimensional vector of 0’s and 1’s). If we were to model $x$ discriminatively/explicitly with multinomial distribution over the $2^{50000}$ possible outcomes, the nwe’d end up with a ($2^{50000} -1$)-dimensional parameter vector, which is not appliable.&lt;/p&gt;
+
+&lt;h4 id=&quot;naive-bayes-nb-assumption&quot;&gt;Naive Bayes (NB) assumption:&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;To model $p(x \vert y)$, we have to assume that the $x_i$’s are &lt;strong&gt;conditionally independent&lt;/strong&gt; given $y$.&lt;/li&gt;
+  &lt;li&gt;Under such assumption, the resulting algorithm is called the &lt;strong&gt;Naive Bayes classifier&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Then, we have:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+&amp; p(x_1,\dots,x_{50000} \vert y) \\
+&amp;= p(x_1 \vert y)p(x_2 \vert y, x_1)p(x_3 \vert y, x_1,x_2)\cdots p(x_{50000}\vert y,x_1,\dots,x_{49999}) \\
+&amp;= p(x_1\vert y)p(x_2\vert y)p(x_3\vert y)\cdots p(x_{50000}\vert y) \\
+&amp;= \prod_{j=1}^n p(x_j\vert y)
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Our model now is parameterized by:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\left\{ 
+\begin{array}{rcl} 
+\phi_{j\vert y=1} &amp;= &amp;p(x_j=1\vert y=1) \\
+\phi_{j\vert y=0} &amp;= &amp;p(x_j=1\vert y=0) \\
+\phi_y &amp;= &amp;p(y=1)
+\end{array}
+\right. %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;The likelihood of the data:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathcal{L}(\phi_y,\phi_{j\vert y=0},\phi_{j\vert y=1}) = \prod_{i=1}^m p(x^{(i)}, y^{(i)}).&lt;/script&gt;
+
+&lt;p&gt;Then we can get the maximum likelihood estimates:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\hat\phi_{j\vert y=1} &amp;= \frac{\sum_{i=1}^m 1\{x_j^{(i)} =1 \wedge y^{(i)} = 1 \}}{\sum_{i=1}^m 1\{y^{(i)} = 1 \}} \\
+\hat\phi_{j\vert y=0} &amp;= \frac{\sum_{i=1}^m 1\{x_j^{(i)} =1 \wedge y^{(i)} = 0 \}}{\sum_{i=1}^m 1\{y^{(i)} = 0 \}} \\
+\hat\phi_y &amp;= \frac{\sum_{i=1}^m 1\{y^{(i)} = 1\}}m
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;In the equation above, the “$\wedge$” symbol means “and”. The estimates have a very natural interpretation. For instance, $\phi_{j\vert y=1}$ is just the fraction of spam $(y=1)$ emails in which word $j$ does appear.&lt;/p&gt;
+
+&lt;h4 id=&quot;predict-1&quot;&gt;Predict:&lt;/h4&gt;
+&lt;p&gt;To make a prediction on a new sample with feature $x$, we then simply calculate:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+p(y=1\vert x) &amp;= \frac{p(x\vert y=1)p(y=1)}{p(x)} \\
+&amp;= \frac{\left(\prod_{j=1}^n p(x_j\vert y=1)\right)p(y=1)}{\prod_{j=1}^n p(x_j\vert y=1)p(y=1) + \prod_{j=1}^n p(x_j\vert y=0)p(y=0)}
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;and pick the class has the higher posterior probability.&lt;/p&gt;
+
+&lt;h3 id=&quot;laplace-smoothing&quot;&gt;Laplace smoothing&lt;/h3&gt;
+&lt;p&gt;Here is a problem:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;If there is a new word ($k$-th in the dictionary) appeared in the email text, which is not included in you training set. Then,&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\prod_{j=1}^n p(x_j\vert y=1) = 0\Leftarrow p(x_k\vert y=1) = 0\\
+\prod_{j=1}^n p(x_j\vert y=0) = 0 \Leftarrow p(x_k\vert y=1) = 0&lt;/script&gt;
+
+&lt;p&gt;Then,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+p(y=1\vert x) &amp;= \frac{\left(\prod_{j=1}^n p(x_j\vert y=1)\right)p(y=1)}{\prod_{j=1}^n p(x_j\vert y=1)p(y=1) + \prod_{j=1}^n p(x_j\vert y=0)p(y=0)} \\
+&amp;= \frac0{0}.
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;To avoid this, we introduce &lt;strong&gt;Laplace smoothing&lt;/strong&gt;, which replace the estimate with:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\phi_j = \frac{\sum_{i=1}^m 1 \{z^{(i)} \} + 1}{m+k}.&lt;/script&gt;
+
+&lt;p&gt;Then the estimates is updated as:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\hat\phi_{j\vert y=1} &amp;= \frac{\sum_{i=1}^m 1\{x_j^{(i)} =1 \wedge y^{(i)} = 1 \} + 1 }{\sum_{i=1}^m 1\{y^{(i)} = 1 \} + 2 } \\
+\hat\phi_{j\vert y=0} &amp;= \frac{\sum_{i=1}^m 1\{x_j^{(i)} =1 \wedge y^{(i)} = 0 \} + 1 }{\sum_{i=1}^m 1\{y^{(i)} = 0 \} + 2 } 
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;
+In practice, it usually doesn’t matter much whether we apply Laplace smoothing to $\phi_y$ or not, since we will typically have a fair fraction each of spam and non-spam message, so $\phi_y$ will be a reasonable estimate of $p(y=1)$ and will be quite far from 0 anyway. &lt;span style=&quot;color:crimson&quot;&gt; WHY? &lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://see.stanford.edu/materials/aimlcs229/cs229-notes2.pdf&quot;&gt;» Stanford CS229 Lecture Note Part IV - Generative Learning Algorithms&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="machine learning" /><category term="cs229" /><summary type="html">Keep Updating: 2019-02-18 Merge to Lecture #5 Note 2019-01-23 Add Part 2, Gausian discriminant analysis 2019-01-22 Add Part 1, A Review of Generative Learning Algorithms.</summary></entry><entry><title type="html">Intro to HTML, CSS, Javascript</title><link href="http://localhost:4000/2019/02/15/intro-to-web-dev" rel="alternate" type="text/html" title="Intro to HTML, CSS, Javascript" /><published>2019-02-15T15:40:00+08:00</published><updated>2019-02-15T15:40:00+08:00</updated><id>http://localhost:4000/2019/02/15/intro-to-web-dev</id><content type="html" xml:base="http://localhost:4000/2019/02/15/intro-to-web-dev">&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=3JluqTojuME&quot;&gt;&lt;img src=&quot;http://img.youtube.com/vi/3JluqTojuME/0.jpg&quot; alt=&quot;IMAGE ALT TEXT HERE&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;http://img.youtube.com/vi/3JluqTojuME/0.jpg&quot;&gt;» Web Development Tutorial for Beginners (#1) - How to build webpages with HTML, CSS, Javascript&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="web development" /><category term="html" /><category term="css" /><category term="javascript" /><summary type="html">» Web Development Tutorial for Beginners (#1) - How to build webpages with HTML, CSS, Javascript</summary></entry><entry><title type="html">The Term of “Heap”</title><link href="http://localhost:4000/2019/02/15/the-term-of-heap" rel="alternate" type="text/html" title="The Term of &quot;Heap&quot;" /><published>2019-02-15T10:20:00+08:00</published><updated>2019-02-15T10:20:00+08:00</updated><id>http://localhost:4000/2019/02/15/the-term-of-heap</id><content type="html" xml:base="http://localhost:4000/2019/02/15/the-term-of-heap">&lt;blockquote&gt;
   &lt;p&gt;The term “&lt;strong&gt;heap&lt;/strong&gt;” was originally coined in the context of heapsort, but it has since come to refer to “garbage-collected storage,” such as the programming languages Java and Lisp provide.&lt;/p&gt;
 
   &lt;p&gt;The &lt;strong&gt;heap data structure&lt;/strong&gt; in MIT 6.006 is NOT garbage-collected storage.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;a href=&quot;/public/files/mit6006/mit6006-lec03-note-kf.pdf&quot;&gt;[PDF] try add a pdf file&lt;/a&gt;
-&lt;!--more--&gt;&lt;/p&gt;
+&lt;!--more--&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Algorithms&quot;]" /><category term="algorithms" /><category term="data structure" /><summary type="html">The term “heap” was originally coined in the context of heapsort, but it has since come to refer to “garbage-collected storage,” such as the programming languages Java and Lisp provide. The heap data structure in MIT 6.006 is NOT garbage-collected storage. [PDF] try add a pdf file</summary></entry><entry><title type="html">[CS229] Lecture 4 Notes - Newton’s Method/GLMs</title><link href="http://localhost:4000/2019/02/14/cs229-lecture-4" rel="alternate" type="text/html" title="[CS229] Lecture 4 Notes - Newton's Method/GLMs" /><published>2019-02-14T10:40:00+08:00</published><updated>2019-02-14T10:40:00+08:00</updated><id>http://localhost:4000/2019/02/14/cs229-lecture-4</id><content type="html" xml:base="http://localhost:4000/2019/02/14/cs229-lecture-4">&lt;blockquote&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Algorithms&quot;]" /><category term="algorithms" /><category term="data structure" /><summary type="html">The term “heap” was originally coined in the context of heapsort, but it has since come to refer to “garbage-collected storage,” such as the programming languages Java and Lisp provide. The heap data structure in MIT 6.006 is NOT garbage-collected storage.</summary></entry><entry><title type="html">[CS229] Lecture 4 Notes - Newton’s Method/GLMs</title><link href="http://localhost:4000/2019/02/14/cs229-lecture-4" rel="alternate" type="text/html" title="[CS229] Lecture 4 Notes - Newton's Method/GLMs" /><published>2019-02-14T10:40:00+08:00</published><updated>2019-02-14T10:40:00+08:00</updated><id>http://localhost:4000/2019/02/14/cs229-lecture-4</id><content type="html" xml:base="http://localhost:4000/2019/02/14/cs229-lecture-4">&lt;blockquote&gt;
   &lt;ol&gt;
     &lt;li&gt;Newton’s Method,&lt;/li&gt;
     &lt;li&gt;Generalized Linear Models&lt;/li&gt;
@@ -452,139 +776,7 @@ g(z) = \left\{ \begin{array}{rcl}
 &lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/15474159/shuffle-vs-permute-numpy&quot;&gt;» shuffle vs permute numpy - Stack Overflow&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;]" /><category term="numpy" /><category term="random" /><summary type="html">Generally, in Numpy, both random.permutation and random.shuffle randomly shuffle elements in an array. But there are differences:</summary></entry><entry><title type="html">[CS229] Descriminative Learning v.s. Generative Learning Algorithm</title><link href="http://localhost:4000/2019/01/23/generative-learning" rel="alternate" type="text/html" title="[CS229] Descriminative Learning v.s. Generative Learning Algorithm" /><published>2019-01-23T16:30:00+08:00</published><updated>2019-01-23T16:30:00+08:00</updated><id>http://localhost:4000/2019/01/23/generative-learning</id><content type="html" xml:base="http://localhost:4000/2019/01/23/generative-learning">&lt;blockquote&gt;
-  &lt;p&gt;A Review of Generative Learning Algorithms.&lt;/p&gt;
-
-  &lt;p&gt;Keep Updating:&lt;/p&gt;
-  &lt;ul&gt;
-    &lt;li&gt;2019-01-22 Add Part 1&lt;/li&gt;
-    &lt;li&gt;2019-01-23 Add Part 2, Gausian discriminant analysis&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&quot;/public/img/20190122-bayes-theorem.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#1-basics-of-generative-learning-algorithms&quot; id=&quot;markdown-toc-1-basics-of-generative-learning-algorithms&quot;&gt;1. Basics of Generative Learning Algorithms&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#11-an-example-to-explain-the-initiative-ideas&quot; id=&quot;markdown-toc-11-an-example-to-explain-the-initiative-ideas&quot;&gt;1.1. An Example to Explain the Initiative Ideas:&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#approach-i&quot; id=&quot;markdown-toc-approach-i&quot;&gt;&lt;strong&gt;Approach I:&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#approach-ii&quot; id=&quot;markdown-toc-approach-ii&quot;&gt;&lt;strong&gt;Approach II:&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#12-definitions&quot; id=&quot;markdown-toc-12-definitions&quot;&gt;1.2. Definitions:&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#discriminative-learning-algorithms&quot; id=&quot;markdown-toc-discriminative-learning-algorithms&quot;&gt;&lt;strong&gt;Discriminative&lt;/strong&gt; learning algorithms:&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#generative-learning-algorithms&quot; id=&quot;markdown-toc-generative-learning-algorithms&quot;&gt;&lt;strong&gt;Generative&lt;/strong&gt; learning algorithms:&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#13-more-about-generative-learning-algorithms&quot; id=&quot;markdown-toc-13-more-about-generative-learning-algorithms&quot;&gt;1.3. More about Generative Learning Algorithms:&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#2-gaussian-discriminant-analysis-gda&quot; id=&quot;markdown-toc-2-gaussian-discriminant-analysis-gda&quot;&gt;2. Gaussian Discriminant Analysis (GDA)&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#21-the-multivariate-normal-distribution&quot; id=&quot;markdown-toc-21-the-multivariate-normal-distribution&quot;&gt;2.1. The multivariate normal distribution&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#todo---practice&quot; id=&quot;markdown-toc-todo---practice&quot;&gt;//TODO - Practice:&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#22-the-gaussian-discriminant-analysis-model&quot; id=&quot;markdown-toc-22-the-gaussian-discriminant-analysis-model&quot;&gt;2.2. The Gaussian Discriminant Analysis model&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#reference&quot; id=&quot;markdown-toc-reference&quot;&gt;Reference&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;1-basics-of-generative-learning-algorithms&quot;&gt;1. Basics of Generative Learning Algorithms&lt;/h2&gt;
-
-&lt;p&gt;&lt;em&gt;(01/22/2019)&lt;/em&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;11-an-example-to-explain-the-initiative-ideas&quot;&gt;1.1. An Example to Explain the Initiative Ideas:&lt;/h3&gt;
-&lt;p&gt;Consider a classification problem in which we want to learn to distinguish between cats \((y=0)\) and dogs \((y=1)\):&lt;/p&gt;
-
-&lt;h4 id=&quot;approach-i&quot;&gt;&lt;strong&gt;Approach I:&lt;/strong&gt;&lt;/h4&gt;
-
-&lt;p&gt;Based on some features of an animal, given a training set, an algorithm like &lt;strong&gt;&lt;em&gt;logistic regression&lt;/em&gt;&lt;/strong&gt; or &lt;strong&gt;&lt;em&gt;perceptron&lt;/em&gt;&lt;/strong&gt; algorithm, tries to find a &lt;strong&gt;decision boundary&lt;/strong&gt; (e.g. a straight line) to separate the cats and the dogs.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;To classify a new animal:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Just check on which side of the decision boundary it falls.&lt;/p&gt;
-
-&lt;h4 id=&quot;approach-ii&quot;&gt;&lt;strong&gt;Approach II:&lt;/strong&gt;&lt;/h4&gt;
-
-&lt;p&gt;First, look at cats, build a model of &lt;strong&gt;what cats look like&lt;/strong&gt;. Then, look at dogs, build another model of &lt;strong&gt;what dogs look like&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;To classify a new animal:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Match the new animal against the cat model and the dog model respectively, to see whether the new animal looks more like the cats or more like the dogs we had seen in the training set.&lt;/p&gt;
-
-&lt;h3 id=&quot;12-definitions&quot;&gt;1.2. Definitions:&lt;/h3&gt;
-&lt;h4 id=&quot;discriminative-learning-algorithms&quot;&gt;&lt;strong&gt;Discriminative&lt;/strong&gt; learning algorithms:&lt;/h4&gt;
-
-&lt;p&gt;Algorithms that try to learn \(p(y \vert x)\) directly (such as logistic regression) or algorithms that try to learn mappings directly from the space of input \(\chi\) to the labels \({0,1}\) (such as perceptron algorithm) are called &lt;strong&gt;discriminative&lt;/strong&gt; learning algorithms.&lt;/p&gt;
-
-&lt;h4 id=&quot;generative-learning-algorithms&quot;&gt;&lt;strong&gt;Generative&lt;/strong&gt; learning algorithms:&lt;/h4&gt;
-
-&lt;p&gt;Algorithms that instead try to model \(p(x \vert y)\) and \(p(y)\) are called &lt;strong&gt;generative&lt;/strong&gt; learning algorithms.&lt;/p&gt;
-
-&lt;h3 id=&quot;13-more-about-generative-learning-algorithms&quot;&gt;1.3. More about Generative Learning Algorithms:&lt;/h3&gt;
-
-&lt;p&gt;Continue with the example of cats and dogs, if \(y\) indicates whether an sample is a cat (0) or a dog (1), then&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;\(p(x \vert y=0)\) models the distribution of cats’ features.&lt;/li&gt;
-  &lt;li&gt;\(p(x \vert y=1)\) models the distribution of dogs’ features.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;After modeling \(p(y)\) (called the &lt;strong&gt;class priors&lt;/strong&gt;) and \(p(x \vert y)\), our algorithm can then use &lt;strong&gt;Bayes Rule&lt;/strong&gt; to derive the posterior distribution on \(y\) given \(x\):&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;p(y \vert x) = \frac{p(x \vert y)p(y)}{p(x)}.&lt;/script&gt;
-
-&lt;p&gt;Here, the denominator is given by \(p(x)=\sum_i p(x \vert y_i)p(y_i)\). In cats &amp;amp; dogs example, \(p(x)=p(x \vert y=0)p(y=0)+p(x \vert y=1)p(y=1)\).&lt;/p&gt;
-
-&lt;p&gt;Actually, if we we’re calculating \(p(y \vert x)\) in order to make a prediction, then we don’t need to calculate the denominator, since&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{align}
-\arg\underset{y}{\max} p(y \vert x) &amp; = \arg \underset{y}{\max} \frac{p(x \vert y)p(y)}{p(x)} \\
-&amp; = \arg \underset{y}{\max} p(x \vert y)p(y).
-\end{align} %]]&gt;&lt;/script&gt;
-
-&lt;h2 id=&quot;2-gaussian-discriminant-analysis-gda&quot;&gt;2. Gaussian Discriminant Analysis (GDA)&lt;/h2&gt;
-
-&lt;p&gt;&lt;em&gt;(01/23/2019)&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;In this model (GDA), we assume that \(p(x \vert y)\) is distributed according to a &lt;strong&gt;multivariate normal distribution&lt;/strong&gt;. First let’s talk briefly about the properties of multivariate normal distributions.&lt;/p&gt;
-
-&lt;h3 id=&quot;21-the-multivariate-normal-distribution&quot;&gt;2.1. The multivariate normal distribution&lt;/h3&gt;
-&lt;p&gt;The Definition of so-called &lt;em&gt;multivariate normal distribution&lt;/em&gt;:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;A distribution with a &lt;strong&gt;mean vector&lt;/strong&gt; \(\mu \in \mathbb{R}^n\) and a &lt;strong&gt;covariance matrix&lt;/strong&gt; \(\Sigma \in \mathbb{R}^{n \times n}\), where \(\Sigma \geq 0\) is symmetric and positive semi-definite. Also written “\(\mathcal{N}(\mu, \Sigma)\)”, it’s density is given by:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;p(x; \mu, \Sigma) = \frac{1}{(2\pi)^{n/2}|\Sigma|^{1/2}}\exp\left(-\frac{1}{2}(x-\mu)^T\Sigma^{-1}(x-\mu)\right).&lt;/script&gt;
-
-&lt;p&gt;where “\(\vert\Sigma\vert\)” denotes the determinant of the matrix \(\Sigma\).&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;For a random variable \(X\) distributed \(\mathcal{N}(\mu, \Sigma)\), the mean is given by \(\mu\):&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\text{E}[X] = \int_x x\ p(x;\mu,\Sigma)dx = \mu&lt;/script&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The &lt;strong&gt;covariance&lt;/strong&gt; of a vector-valued random variable \(Z\) is defined as \(\text{Cov}(Z) = \text{E}[(Z-\text{E}[Z])(Z-\text{E}[Z])^T]\), which can also be written as \(\text{Cov}(Z) = \text{E}[ZZ^T]-(\text{E}[Z])(\text{E}[Z])^T\). If \(X \sim \mathcal{N}(\mu, \Sigma)\), then:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\text{Cov}(X) = \Sigma.&lt;/script&gt;
-
-&lt;h4 id=&quot;todo---practice&quot;&gt;//TODO - Practice:&lt;/h4&gt;
-
-&lt;h3 id=&quot;22-the-gaussian-discriminant-analysis-model&quot;&gt;2.2. The Gaussian Discriminant Analysis model&lt;/h3&gt;
-
-&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://see.stanford.edu/materials/aimlcs229/cs229-notes2.pdf&quot;&gt;» Stanford CS229 Lecture Note Part IV - Generative Learning Algorithms&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="machine learning" /><category term="cs229" /><summary type="html">A Review of Generative Learning Algorithms. Keep Updating: 2019-01-22 Add Part 1 2019-01-23 Add Part 2, Gausian discriminant analysis</summary></entry><entry><title type="html">How to Force Keras to use CPU to Run Script?</title><link href="http://localhost:4000/2019/01/23/how-to-force-keras-use-cpu" rel="alternate" type="text/html" title="How to Force Keras to use CPU to Run Script?" /><published>2019-01-23T14:00:00+08:00</published><updated>2019-01-23T14:00:00+08:00</updated><id>http://localhost:4000/2019/01/23/how-to-force-keras-use-cpu</id><content type="html" xml:base="http://localhost:4000/2019/01/23/how-to-force-keras-use-cpu">&lt;blockquote&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;]" /><category term="numpy" /><category term="random" /><summary type="html">Generally, in Numpy, both random.permutation and random.shuffle randomly shuffle elements in an array. But there are differences:</summary></entry><entry><title type="html">How to Force Keras to use CPU to Run Script?</title><link href="http://localhost:4000/2019/01/23/how-to-force-keras-use-cpu" rel="alternate" type="text/html" title="How to Force Keras to use CPU to Run Script?" /><published>2019-01-23T14:00:00+08:00</published><updated>2019-01-23T14:00:00+08:00</updated><id>http://localhost:4000/2019/01/23/how-to-force-keras-use-cpu</id><content type="html" xml:base="http://localhost:4000/2019/01/23/how-to-force-keras-use-cpu">&lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;The reason for such a demand:&lt;/strong&gt;&lt;/p&gt;
 
   &lt;p&gt;My main training program was using the GPU fully. But I needed to get a prediction with another previously trained model urgently. I tried to use the GPU but I got OOM. Therefore, using CPU for the predicting job should be a good solution, and it did solve the problem!&lt;/p&gt;
@@ -664,19 +856,4 @@ g(z) = \left\{ \begin{array}{rcl}
 
 &lt;!--more--&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Web Developing&quot;]" /><category term="how-to" /><category term="jekyll" /><summary type="html">Check this Article: » Sorting site tags in Jekyll - by “code of climber”</summary></entry><entry><title type="html">How to Support LaTex in Jekyll?</title><link href="http://localhost:4000/2019/01/22/how-to-render-latex-in-jekyll" rel="alternate" type="text/html" title="How to Support LaTex in Jekyll?" /><published>2019-01-22T14:00:00+08:00</published><updated>2019-01-22T14:00:00+08:00</updated><id>http://localhost:4000/2019/01/22/how-to-render-latex-in-jekyll</id><content type="html" xml:base="http://localhost:4000/2019/01/22/how-to-render-latex-in-jekyll">&lt;blockquote&gt;
-  &lt;p&gt;To render math symbols and formula using LaTex in Jekyll website, check the links below,&lt;/p&gt;
-
-  &lt;p&gt;Also Remember to update the cdnjs link, which is described in the last reference link.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/10987992/using-mathjax-with-jekyll&quot;&gt;» mathjax-with-jekyll on Stack Overflow&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.iangoodfellow.com/blog/jekyll/markdown/tex/2016/11/07/latex-in-markdown.html&quot;&gt;» Iangoodfellow on LaTex in Jekyll&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.mathjax.org/cdn-shutting-down/&quot;&gt;» MathJax CDN shutting down on April 30, 2017. Alternatives available.&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Web Developing&quot;]" /><category term="how-to" /><category term="jekyll" /><category term="latex" /><summary type="html">To render math symbols and formula using LaTex in Jekyll website, check the links below, Also Remember to update the cdnjs link, which is described in the last reference link. Reference » mathjax-with-jekyll on Stack Overflow » Iangoodfellow on LaTex in Jekyll » MathJax CDN shutting down on April 30, 2017. Alternatives available.</summary></entry></feed>
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Web Developing&quot;]" /><category term="how-to" /><category term="jekyll" /><summary type="html">Check this Article: » Sorting site tags in Jekyll - by “code of climber”</summary></entry></feed>

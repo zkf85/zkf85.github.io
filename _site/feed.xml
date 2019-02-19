@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-02-19T17:16:13+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ZKF’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-02-19T17:20:21+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ZKF’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
 </subtitle><entry><title type="html">[CS229] Lecture 5 Notes - Descriminative Learning v.s. Generative Learning Algorithm</title><link href="http://localhost:4000/2019/02/18/generative-learning" rel="alternate" type="text/html" title="[CS229] Lecture 5 Notes - Descriminative Learning v.s. Generative Learning Algorithm" /><published>2019-02-18T14:30:00+08:00</published><updated>2019-02-18T14:30:00+08:00</updated><id>http://localhost:4000/2019/02/18/generative-learning</id><content type="html" xml:base="http://localhost:4000/2019/02/18/generative-learning">&lt;blockquote&gt;
   &lt;p&gt;Keep Updating:&lt;/p&gt;
   &lt;ul&gt;
@@ -725,7 +725,7 @@ l(\theta) &amp;= \log\left(L(\theta)\right) \\
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\theta_j := \theta_j + \alpha \sum_{i=1}^m \left(y^{(i)} - h_\theta\left(x^{(i)}\right)\right)\cdot x_j^{(i)}&lt;/script&gt;
 
-&lt;p&gt;&lt;em&gt;(02/19/2019) Modified&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;(added on 02/19/2019)&lt;/em&gt;&lt;/p&gt;
 
 &lt;table&gt;
   &lt;thead&gt;

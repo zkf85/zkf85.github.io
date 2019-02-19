@@ -294,8 +294,20 @@ h_\theta(x) \in [0, 1]</script>
 
 <p>\(g(z) = \frac{1}{1 + e^{-z}}\) is called “sigmoid” function or “logistic” function.</p>
 
-<p><img src="/public/img/20190212_sigmoid_function.eps" alt="" />
-Then, we have</p>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"><img src="/public/img/20190212_sigmoid_function.png" alt="" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Figure 2.</strong> Sigmoid function.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Then, we have</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
 \left\{ \begin{array}{rcl} 
@@ -333,12 +345,12 @@ l(\theta) &= \log\left(L(\theta)\right) \\
 <table>
   <thead>
     <tr>
-      <th style="text-align: center"><img src="/public/img/20190219_review_note.jpg" alt="" /></th>
+      <th style="text-align: left"><img src="/public/img/20190219_review_note1.jpg" alt="" /></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center"><strong>Note:</strong> Review of “logistic regression” from scratch.</td>
+      <td style="text-align: left"><strong>Note 1.</strong> Review of “logistic regression” from scratch.</td>
     </tr>
   </tbody>
 </table>
@@ -354,11 +366,37 @@ g(z) = \left\{ \begin{array}{rcl}
 0 & \mbox{if} & z \lt 0
 \end{array}\right. %]]></script>
 
-<p><img src="/public/img/20190212_perceptron_function.eps" alt="" /></p>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"><img src="/public/img/20190212_perceptron_function.png" alt="" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Figure 2.</strong> Perceptron function.</td>
+    </tr>
+  </tbody>
+</table>
 
 <p>Then, \(h_\theta(x) = g(\theta^T x)\), and the update rule for perceptron learning algorithm is almost the same:</p>
 
 <script type="math/tex; mode=display">\theta_j := \theta_j + \alpha \left(y^{(i)} - h_\theta\left(x^{(i)}\right)\right)\cdot x_j^{(i)}</script>
+
+<p><em>(added on 02/19/2019)</em></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"><img src="/public/img/20190219_review_note2.jpg" alt="" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Note 2.</strong> Review of the “perceptron learning algorithm”.</td>
+    </tr>
+  </tbody>
+</table>
 
 <h2 id="reference">Reference</h2>
 <ol>

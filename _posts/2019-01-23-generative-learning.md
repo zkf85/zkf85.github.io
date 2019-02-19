@@ -173,13 +173,13 @@ As GDA is for continuous $x$ problems, here Naive Bayes is for those problems wi
 
 Here's the typical example: spam filter.
 
-First, we present the email(text) via a feature vector whose length is the length of word dictionary (a fixed number). If the email contains the *j*-th word, $x_j=1$; otherwise $x_j=0$. The vector would like like this:
+First, we present the email(text) via a feature vector whose length is the size of word dictionary (a fixed number). If the email contains the $j$-th word, $x_j=1$; otherwise $x_j=0$. The vector would like like this:
 
 $$\begin{align}
 x = \left[\begin{array}{c} 1\\0\\0\\\vdots\\1\\\vdots\\0 \end{array}\right] \quad \begin{array}{l} \text{a}\\\text{aardvark}\\\text{aardwolf}\\\vdots\\\text{buy}\\\vdots\\\text{zygmurgy}\end{array} \\
 \end{align}$$
 
-If our vocabulary size is 50000, then $x \in \{0, 1\}^{50000}$ ($x$ is a 50000-dimensional vector of 0's and 1's). If we were to model $x$ discriminatively/explicitly with multinomial distribution over the $2^{50000}$ possible outcomes, the nwe'd end up with a ($2^{50000} -1$)-dimensional parameter vector, which is not appliable.
+If our vocabulary size is 50000, then $x \in \\{ 0, 1 \\}^{50000}$ ($x$ is a 50000-dimensional vector of 0's and 1's). If we were to model $x$ discriminatively/explicitly with multinomial distribution over the $2^{50000}$ possible outcomes, the we'd end up with a ($2^{50000} -1$)-dimensional parameter vector, which is not appliable.
 
 #### Naive Bayes (NB) assumption:
 - To model $p(x \vert y)$, we have to assume that the $x_i$'s are **conditionally independent** given $y$.

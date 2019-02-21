@@ -45,3 +45,12 @@ exclude:
 sass:
   style: compressed
 future: true
+
+collections:
+  cs229:
+    output: true
+  mit6006:
+    output: true
+  leetcode:
+    output: true
+    

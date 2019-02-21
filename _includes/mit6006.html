@@ -1,0 +1,25 @@
+<div class="col s12 tag-div">
+
+  <div class="divider"></div>
+    
+  <h3>Classic</h3>
+  {% for article in site.mit6006 %}
+    <a class="post-title" href="{{site.baseurl}}{{article.url}}" target="_blank" style="color: #bb0000">
+      <li>
+        {{article.title}}
+      </li>
+    </a>
+
+  {% endfor %}
+
+  <h3>Materials</h3>
+
+  <h3>Posts</h3>
+    {% for post in  site.tags["mit6006"] %}
+      <a class="post-title" href="{{site.baseurl}}{{post.url}}" target="_blank">
+        <li>
+          {{post.title}}
+          <small class="post-date">{{post.date | date_to_string}}</small>
+        </li>
+      </a>
+      {% endfor %}

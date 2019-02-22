@@ -39,13 +39,13 @@ img.buckeye_leaf{
   bottom: 50px;
   right: 20px;
   z-index: 99;
-  font-size: 36px;
+  font-size: 30px;
   outline: none;
   border: 2px solid #bb0000;
   color: #bb0000;
   background-color: white;
   cursor: pointer;
-  padding: 6px 12px;
+  padding: 0 8px;
   /*width:96px;
   height:96px;*/
   border-radius: 18px;

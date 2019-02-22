@@ -39,14 +39,16 @@ img.buckeye_leaf{
   bottom: 50px;
   right: 20px;
   z-index: 99;
-  font-size: 18px;
+  font-size: 30px;
   outline: none;
   border: 2px solid #bb0000;
   color: #bb0000;
   background-color: white;
   cursor: pointer;
-  padding: 6px 12px;
-  border-radius: 8px;
+  /*padding: 12px 12px;*/
+  width:48px;
+  height:48px;
+  border-radius: 50%;
   transition-duration: 0.4s;
   opacity: 0.75;
 }
@@ -1855,7 +1857,7 @@ a{
 }
 .hoverable{
     transition:box-shadow .25s;
-    box-shadow:0
+    /*box-shadow:0*/
 }
 .hoverable:hover{
     transition:box-shadow .25s;
@@ -3688,14 +3690,14 @@ small{
     margin:.5rem 0 1rem 0;
     background-color:#fff;
     transition:box-shadow .25s;
-    border-radius:2px
+    border-radius:16px;
 }
 .card .card-title{
 	/* KF 11/28/2018
      * KF 02/14/2019
     font-size:24px;
 	*/
-    font-size:1.5rem;
+    /*font-size:1.5rem;*/
 }
 .card .card-title.activator{
     cursor:pointer
@@ -3799,8 +3801,8 @@ small{
 	/* KF 11/28/2018
     padding:24px;
 	*/
-    padding:24px 24px 12px;
-    border-radius:0 0 2px 2px
+    padding:24px 24px 12px 24px;
+    /*border-radius:24px;*/
 }
 .card .card-content p{
     margin:0;
@@ -3810,7 +3812,7 @@ small{
     display:block;
     line-height:32px;
     margin-bottom:8px;
-    color:#bb0000;
+    color:black;
 }
 .card .card-content .card-title i{
     line-height:32px
@@ -3822,17 +3824,17 @@ small{
 	/* KF 11/28/2018 
     padding:16px 24px
 	*/
-    padding:8px 24px 
+    padding:6px 24px 
 }
 .card .card-action:last-child{
-    border-radius:0 0 2px 2px
+/*    border-radius:0 0 2px 2px
+*/
+    border-radius: 0 0 16px 16px;
+
 }
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating){
-	/* KF 11/28/2018
-    color:#ffab40;
-	*/
+    font-size: 14px;
 	color:#bb0000;
-
     margin-right:24px;
     transition:color .3s ease;
     text-transform:uppercase
@@ -4496,7 +4498,9 @@ button.btn-floating{
     border-top:1px solid #ddd;
     border-right:1px solid #ddd;
     border-left:1px solid #ddd;
-    margin:.5rem 0 1rem 0
+    margin:.5rem 0 1rem 0;
+    border-radius: 1.5rem;
+
 }
 .collapsible-header{
     display:block;
@@ -4506,7 +4510,9 @@ button.btn-floating{
     line-height:3rem;
     padding:0 1rem;
     background-color:#fff;
-    border-bottom:1px solid #ddd
+    border-radius: 1.5rem;
+
+    /*border-bottom:1px solid #ddd*/
 }
 .collapsible-header i{
     width:2rem;
@@ -4519,7 +4525,7 @@ button.btn-floating{
 }
 .collapsible-body{
     display:none;
-    border-bottom:1px solid #ddd;
+    /*border-bottom:1px solid #ddd;*/
     box-sizing:border-box;
 	/* KF 11/28/2018
     padding:2rem
@@ -5527,7 +5533,7 @@ input[type=range]:focus::-ms-fill-upper{
 }
 .side-nav li{
     float:none;
-    line-height:30px
+    line-height:32px
 }
 .side-nav li.active{
     background-color:rgba(0,0,0,0.05)
@@ -5540,8 +5546,8 @@ input[type=range]:focus::-ms-fill-upper{
     */    
     color:rgba(0,0,0,0.6);
     font-size:16px;
-    font-weight: bold;
-    /*font-weight: normal;*/
+    /*font-weight: bold;*/
+    font-weight: normal;
     padding:0 48px;
     vertical-align: middle;
 }
@@ -5579,9 +5585,11 @@ input[type=range]:focus::-ms-fill-upper{
     cursor:initial;
     pointer-events:none;
     color:rgba(0,0,0,0.54);
-    font-size:14px;
+    font-size:16px;
     font-weight:lighter;
-    padding: 8px 36px 0 36px;
+    padding: 12px 36px 0 36px;
+    vertical-align: middle;
+
 }
 .side-nav .subheader:hover{
     background-color:transparent
@@ -5592,7 +5600,7 @@ input[type=range]:focus::-ms-fill-upper{
     padding:32px 32px 0;
     margin-bottom:8px
 	*/
-    padding:12px;
+    padding:16px;
 }
 .side-nav .user-view>a,.side-nav .userView>a{
     height:auto;
@@ -5621,26 +5629,26 @@ input[type=range]:focus::-ms-fill-upper{
 	/*margin:auto;*/
     margin-left:auto;
     margin-right:auto;
-    margin-top: 24px;
-    margin-bottom: 24px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 	width:75%;
 
 }
 .side-nav .user-view .name,.side-nav .user-view .email,.side-nav .userView .name,.side-nav .userView .email{
-    font-size:14px;
-    line-height:36px;
+    font-size:12px;
+    font-weight: lighter;
+    line-height:32px;
 	/* Added by KF 11/27/2018 */
 	text-align:center;
 
 }
 .side-nav .user-view .name,.side-nav .userView .name{
-	font-size:20px;
-    font-weight:bold;
+	font-size:16px;
+    font-weight:lighter;
 
 }
 .side-nav .user-view .email,.side-nav .userView .email{
     /*padding-bottom:16px;*/
-    font-weight:400
 }
 .drag-target{
     height:100%;

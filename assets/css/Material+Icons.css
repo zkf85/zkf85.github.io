@@ -20,7 +20,7 @@
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
-  /*font-size: 24px;*/
+  /*font-size: 20px;*/
   line-height: 1;
   letter-spacing: normal;
   text-transform: none;
@@ -28,4 +28,6 @@
   white-space: nowrap;
   word-wrap: normal;
   direction: ltr;
+  vertical-align: baseline;
+  transform: translateY(calc(50% - 0.35em))
 }

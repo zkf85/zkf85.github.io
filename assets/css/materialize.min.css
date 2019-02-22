@@ -5527,7 +5527,7 @@ input[type=range]:focus::-ms-fill-upper{
 }
 .side-nav li{
     float:none;
-    line-height:48px
+    line-height:36px
 }
 .side-nav li.active{
     background-color:rgba(0,0,0,0.05)
@@ -5537,13 +5537,13 @@ input[type=range]:focus::-ms-fill-upper{
 	/* Modified by KF 11/27/2018
     color:rgba(0,0,0,0.87);
     font-size:14px;
-    height:48px;
-	*/
+    */    
     color:rgba(0,0,0,0.6);
     font-size:16px;
-    font-weight: bold;
-    line-height:36px;
-    padding:0 32px;
+    /*font-weight: bold;*/
+    font-weight: normal;
+    padding:0 36px;
+    vertical-align: middle;
 }
 .side-nav li>a:hover{
     background-color:rgba(0,0,0,0.05)
@@ -5566,13 +5566,17 @@ input[type=range]:focus::-ms-fill-upper{
 .side-nav li>a>i,.side-nav li>a>[class^="mdi-"],.side-nav li>a li>a>[class*="mdi-"],.side-nav li>a>i.material-icons{
     /*height:48px;
     line-height:48px;*/
-    float: left;
-    margin:10px 32px 10px 0;
+    /*float: left;*/
+    margin:0 32px 0 0;
     width:24px;
     color:rgba(0,0,0,0.54)
 }
 .side-nav .divider{
-    margin:8px 0 0 0
+    margin:4px 0 4px 0
+}
+.side-nav .blank-space{
+    margin:12px 0;
+    height: 0px;
 }
 .side-nav .subheader{
     cursor:initial;

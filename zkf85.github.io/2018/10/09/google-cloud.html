@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+      Experiencing google cloud
+      
+    </title>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/res/favicon.ico">
+	<!--
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+	-->
+    <link rel="stylesheet" href="/assets/css/materialize.min.css">
+    <link rel="stylesheet" href="/assets/css/Material+Icons.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <link rel="stylesheet" href="/assets/css/post.css">
+    
+    
+    
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Experiencing google cloud" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="After experiencing google cloud for couple of week, I’d like to write something down here. On the one hand, there’re lots of tips, necessary knowledge and pitfalls to remember and check. One the other hand, just cannot resist to complain about this giant and complicated service system." />
+<meta property="og:description" content="After experiencing google cloud for couple of week, I’d like to write something down here. On the one hand, there’re lots of tips, necessary knowledge and pitfalls to remember and check. One the other hand, just cannot resist to complain about this giant and complicated service system." />
+<link rel="canonical" href="http://localhost:4000/2018/10/09/google-cloud" />
+<meta property="og:url" content="http://localhost:4000/2018/10/09/google-cloud" />
+<meta property="og:site_name" content="ZKF’s Playground" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-10-09T09:00:00+08:00" />
+<script type="application/ld+json">
+{"description":"After experiencing google cloud for couple of week, I’d like to write something down here. On the one hand, there’re lots of tips, necessary knowledge and pitfalls to remember and check. One the other hand, just cannot resist to complain about this giant and complicated service system.","@type":"BlogPosting","url":"http://localhost:4000/2018/10/09/google-cloud","headline":"Experiencing google cloud","dateModified":"2018-10-09T09:00:00+08:00","datePublished":"2018-10-09T09:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2018/10/09/google-cloud"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <header>
+	  <!--
+      <nav class="top-nav teal">
+	  -->
+      <nav class="top-nav ohio-state-scarlet">
+        <div class="nav-wrapper">
+          <div class="container">
+            <a class="page-title" href="/">ZKF's Playground</a>
+            <img class="buckeye_leaf" src="/assets/res/buckeye_leaf.png">
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <a href="#" data-activates="slide-out" class="button-collapse top-nav full hide-on-large-only">
+          <i class="material-icons">menu</i>
+        </a>
+      </div>
+      <ul id="slide-out" class="side-nav fixed">
+        <li>
+          <div class="userView">
+            <div class="background"></div>
+            <a href="https://github.com/zkf85" target="_blank"><img class="circle z-depth-2" src="/assets/res/lion_king.jpg"></a>
+            <span class="white-text name">Zhu, Kefeng</span>
+			<!--
+            <span class="white-text email">zkf1985@gmail.com</span>
+			-->
+            <span class="white-text email"><i>A Programmer, An AI Practitioner</i></span>
+          </div>
+        </li>
+        <li><a class="waves-effect" href="/"><i class="material-icons">home</i>Home</a></li>
+
+        <li><a class="waves-effect" href="/categories"><i class="material-icons">sort</i>Categories</a></li>
+        <li><a class="waves-effect" href="/tags"><i class="material-icons">label</i>Tags</a></li>
+<!--
+<li><a class="waves-effect" href="/feed.xml" target="_blank"><i class="material-icons">rss_feed</i>RSS</a></li>
+-->
+        <li><div class="divider"></div></li>
+        <li><a class="waves-effect" href="/cs229"><i class="material-icons">widgets</i>CS229</a></li>
+        <li><a class="waves-effect" href="/mit6006"><i class="material-icons">storage</i>MIT6006</a></li>
+        <li><a class="waves-effect" href="/leetcode"><i class="material-icons">code</i>LeetCode</a></li>
+
+        <li><div class="divider"></div></li>
+
+        <li><a class="waves-effect" href="/about"><i class="material-icons">person</i>About Me</a></li>
+        <!-- <li><a class="waves-effect" href="/contact"><i class="material-icons">email</i>Contact</a></li> -->
+      </ul>
+    </header>
+    <main>
+
+<!--
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+-->
+<!-- KF 02/14/2019
+The following snippet is to allow single $ style inline mode.
+Remember that after enabling this, you have to enter the real dollar sings with `\$`
+-->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<div class="container">
+  <div id="post-info">
+  <h1>Experiencing google cloud</h1>
+  <ul class="collapsible hoverable" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Date">date_range</i>
+          10/09/2018 09:00
+          <i id="indicate" class="right material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Show extra info">info</i>
+        </span>
+      </div>
+      <div class="collapsible-body">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Categories">sort</i>
+          
+          
+          
+          <a href="/categories#deep-learning_cap" target="_blank"><div class="chip">Deep Learning</div></a>
+          
+        </span>
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Tags">label</i>
+          
+          
+          
+          <a href="/tags#google-cloud" target="_blank"><div class="chip">google cloud</div></a>
+          
+          
+          
+          <a href="/tags#deep-learning" target="_blank"><div class="chip">deep learning</div></a>
+          
+        </span>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="divider"></div>
+<div class="row">
+  <div class="col s12">
+    <blockquote>
+  <p>After experiencing google cloud for couple of week, I’d like to write something down here. On the one hand, there’re lots of tips, necessary knowledge and pitfalls to remember and check. One the other hand, just cannot resist to complain about this giant and complicated service system.</p>
+</blockquote>
+
+<!--more-->
+
+<h2 id="why-google-cloud">Why Google Cloud</h2>
+<p>So where shall we start? OK, first why Google Cloud? The reason for me is that it’s actually free to use. Well although it’s not literally free. As long as you apply an “free trial” account and enter your credit card info (they won’t automatically charge you, for sure), they will grant you $300 credit within one year to use for free completely. I have to say the google is really generous in this case.</p>
+
+<p>This screen shot below is my current balance as I’ve already used the google cloud for training with or without GPUs for about 2 weeks. $300 is worth several month decent using.</p>
+
+<p><img src="/public/img/20181009-01.png" alt="" /></p>
+
+<h2 id="bunch-of-services---in-a-nut-shell">Bunch of services - in a nut shell</h2>
+<p>Google cloud provides a huge set of services. If you have no experience of using cloud service, it’s pretty hard to get started becuase you’d be dazzled by the the countless stuff.</p>
+
+<p>To get started, especially for those who want to leverage google cloud as a tool for deep learning, I’d like to list the frequently used services.</p>
+
+<h3 id="1-cloud-computing">1. Cloud computing</h3>
+<p>Cloud computing is most frequently used service in my usage. As introduced by google itself, it provides <em>“Scalable, High-Perfoermance Virtual Machines”</em>.
+To make it clear in a few words, this computing engine provides <strong>computing resource</strong> such as CPU/GPU, memories, with a separate  pricing rule (only based on how many CPUs, GPUs, RAMs you are using) excluding the storage info.</p>
+
+<p>When your VM is started, cloud computing service starts charging your credit. But as long as you shut it down. The charge from compute engine is stopped.</p>
+
+<h3 id="2-storage">2. Storage</h3>
+<p>The compute engine cannot run without a disk, which is related to the storage service. For instance, when you create a VM, you always also apply a disk of 10G or 30G space for the computing engine you chosed. (But remember, the fee for storage is charged separately. ) Basically, there are two different kind of  storage service that is most frequently use.</p>
+
+<h4 id="21-persistent-disk">2.1 Persistent Disk</h4>
+<p>In short, the persistent disk is block storage for virtual machine instances and storage to be mounted to VMs.</p>
+<ul>
+  <li>It’s just like normal disks.</li>
+  <li>You have to let your VM running before you can access this kind of storage.</li>
+  <li>It’s easy to manipulate the files in the disks.</li>
+  <li>The persistent disk charges with it’s own rates.</li>
+</ul>
+
+<h4 id="22-cloud-storage">2.2 Cloud Storage</h4>
+<p>It’s object storage, in the actual use, each cloud storage block is  called a ‘bucket’.</p>
+<ul>
+  <li>You can access this kind of storage by using their <code class="highlighter-rouge">gsutil</code> tool from cloud shell or even from your computer using google cloud sdk.</li>
+  <li>You do not need to start any VM to access your data stored in the ‘buckets’.</li>
+  <li>It’s a great tool for uploading and downloading files from google cloud. Multi-thread <code class="highlighter-rouge">gsutil -m scp</code> makes it much faster than normal <code class="highlighter-rouge">scp</code> in POSIX file system.</li>
+  <li>You have to use <code class="highlighter-rouge">gsutil</code> to access and manipulate the data in the storage, which is a little bit awkward when you need to treate the files and folders in your ‘traditional’ mindset.</li>
+  <li>the cloud storage charges with its own rates, roughly based on the amount of storage and the inward/outward stream amout.</li>
+</ul>
+
+<h2 id="pricing">Pricing</h2>
+<p>The story about pricing is trivial! This reminds me of the main reason why I usually prefer Apple’s products rather than google’s.</p>
+<blockquote>
+  <p>IT’S SHOULD BE SIMPLE!!!
+When I was checking the pricing rate of these google cloud services, it’s like, suppose I want to buy a new iPhone and go to their store and ask: “I’d like to buy an iPhone, which one should I choose?” Think that if the guy tells me “well that depends on what kind of processor, storage, RAMs, camera you want. Here is the pricing list and help yourself …” 
+<strong>See? this would drive me crazy. And this is how you feel when you are checking google cloud pricing</strong>. 
+The real way apple store would respond is: “Here are three new iPhones with basic price of $749, $999 and $1099, you can add more storage with extra price …”</p>
+</blockquote>
+
+<p>My dear google, why don’t you make the pricing a little bit straight forward? Wouldn’t a rough approximation for every service rate in one page as a pricing overview be much better???</p>
+
+<p>A little digressed from the subject. Here I give a rough pricing list for most the services mentioned above.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Service</th>
+      <th style="text-align: right">Rate per Hour</th>
+      <th style="text-align: right">Rate per Day</th>
+      <th style="text-align: right">Rate per Month</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">CPU VM</td>
+      <td style="text-align: right"> </td>
+      <td style="text-align: right">~$1.00</td>
+      <td style="text-align: right"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">GPU VM </td>
+      <td style="text-align: right">~$1.00</td>
+      <td style="text-align: right">-</td>
+      <td style="text-align: right">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Persistent Disk</td>
+      <td style="text-align: right">-</td>
+      <td style="text-align: right">-</td>
+      <td style="text-align: right">~$2.00 per 100G</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Cloud Storage</td>
+      <td style="text-align: right">-</td>
+      <td style="text-align: right">-</td>
+      <td style="text-align: right">~$2.00 per 100G</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>I hope in this way you can have a general idea of the pricing of these google cloud services.</p>
+
+<h2 id="commands">Commands</h2>
+<p>In the following I’ll continue to list some commonly use commands with google cloud’s daily-based usage.</p>
+
+<h3 id="compute-engine-basic">Compute Engine Basic</h3>
+<ul>
+  <li>Set/Unset zone:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Set zone</span>
+gcloud config <span class="nb">set </span>compute/zone &lt;zone-name&gt;
+<span class="c"># Unset zone</span>
+gcloud config <span class="nb">unset </span>compute/zone &lt;zone-name&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>List all the VM instances:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gcloud compute instances list
+</code></pre></div>    </div>
+  </li>
+  <li>Start a VM instance:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gcloud compute instances start &lt;instance-name&gt; <span class="o">[</span><span class="nt">--zone</span><span class="o">=</span>&lt;zone-name&gt;]
+</code></pre></div>    </div>
+  </li>
+  <li>Terminate a VM instance:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gcloud compute instances stop &lt;instance-name&gt; <span class="o">[</span><span class="nt">--zone</span><span class="o">=</span>&lt;zone-name&gt;]
+</code></pre></div>    </div>
+  </li>
+  <li>SSH login to VM instance:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gcloud compute ssh <span class="o">[</span>&lt;user-name&gt;@]&lt;instance-name&gt; <span class="o">[</span><span class="nt">--zone</span><span class="o">=</span>&lt;zone-name&gt;]
+</code></pre></div>    </div>
+  </li>
+  <li>Transfer files from/to the VM instance:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># From local to VM instance</span>
+gcloud compute scp <span class="o">[</span><span class="nt">--recurse</span><span class="o">]</span> &lt;file-dir&gt; &lt;user-name&gt;@&lt;instance-name&gt;:&lt;dest-dir&gt;
+<span class="c"># From VM instance to local</span>
+gcloud compute scp <span class="o">[</span><span class="nt">--recurse</span><span class="o">]</span> <span class="o">[</span>&lt;user-name&gt;@]&lt;instance-name&gt;:&lt;file-dir&gt; &lt;dest-dir&gt;
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="mountunmount-persistent-disk">Mount/Unmount Persistent Disk</h3>
+<p><a href="https://cloud.google.com/compute/docs/disks/add-persistent-disk">Adding or Resizing Persistent Disks</a></p>
+<ul>
+  <li>Create a persistent disk:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gcloud compute disks create &lt;disk-name&gt; <span class="nt">--size</span> &lt;disk-size&gt; <span class="nt">--type</span> &lt;disk-type&gt;
+</code></pre></div>    </div>
+    <p>where:</p>
+    <ul>
+      <li>
+        <disk-name> is the name of the new disk.
+</disk-name>
+      </li>
+      <li>
+        <disk-size> is the size of the new disk in GB.
+</disk-size>
+      </li>
+      <li>
+        <disk-type> is the type of persistent disk. Either `pd-standard` or `pd-ssd`.
+
+</disk-type>
+      </li>
+    </ul>
+  </li>
+  <li>Attach a disk to any running or stopped instance
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gcloud compute instances attach-disk &lt;instance-name&gt; <span class="nt">--disk</span> &lt;disk-name&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>In an instance, list disks attached to the current instance:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>lsblk
+</code></pre></div>    </div>
+  </li>
+  <li>Format the disk: (usually, the <code class="highlighter-rouge">DEVICE_ID</code> is <code class="highlighter-rouge">sdb</code>)
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>mkfs.ext4 <span class="nt">-m</span> 0 <span class="nt">-F</span> <span class="nt">-E</span> <span class="nv">lazy_itable_init</span><span class="o">=</span>0,lazy_journal_init<span class="o">=</span>0,discard /dev/&lt;DEVICE_ID&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>Mount the disk to the instance:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mount <span class="nt">-o</span> discard, defaults /dev/&lt;DEVICE_ID&gt; &lt;mnt_dir&gt;
+</code></pre></div>    </div>
+    <p>where</p>
+    <ul>
+      <li>the <code class="highlighter-rouge">DEVICE_ID</code> is often <code class="highlighter-rouge">sdb</code></li>
+      <li><code class="highlighter-rouge">mnt_dir</code> is the directory where you want the disk to be mounted, usually you create such folder before this <code class="highlighter-rouge">mount</code> command.</li>
+    </ul>
+  </li>
+  <li>Grant write access to the device for all users:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chmod a+w &lt;mnt_dir&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Add the persistent disk to <code class="highlighter-rouge">etc/fstab</code> file so t hat the device automatically mounts again when the instance restarts.</p>
+
+    <ol>
+      <li>Create a backup of your current
+        <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nb">sudo </span>cp /etc/fstab /etc/fstab.backup
+</code></pre></div>        </div>
+      </li>
+      <li>Use the blkid command to find the UUID for the persistent disk. The system generates this UUID when you format the disk. Use UUIDs to mount persistent disks because UUIDs do not change when you move disks between systems.</li>
+      <li>Create a backup of your current <code class="highlighter-rouge">/etc/fstab</code> file.
+        <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span><span class="nb">sudo </span>blkid /dev/[DEVICE_ID] /dev/[DEVICE_ID]: <span class="nv">UUID</span><span class="o">=</span><span class="s2">"[UUID_VALUE]"</span> <span class="nv">TYPE</span><span class="o">=</span><span class="s2">"ext4"</span>
+</code></pre></div>        </div>
+        <p>where:</p>
+        <ul>
+          <li><code class="highlighter-rouge">[DEVICE_ID]</code> is the device ID of the persistent disk that you want to automatically mount. If you created a partition table on the disk, specify the partition that you want to mount.</li>
+          <li><code class="highlighter-rouge">[UUID_VALUE]</code> is the UUID of the persistent disk that you must include in the <code class="highlighter-rouge">/etc/fstab</code> file.</li>
+        </ul>
+      </li>
+      <li>Open the <code class="highlighter-rouge">/etc/fstab</code> file in a text editor and create an entry that includes the UUID. For example:
+        <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">UUID</span><span class="o">=[</span>UUID_VALUE] /mnt/disks/[MNT_DIR] ext4 discard,defaults,[NOFAIL_OPTION] 0 2
+</code></pre></div>        </div>
+        <p>where:</p>
+        <ul>
+          <li><code class="highlighter-rouge">[UUID_VALUE]</code> is the UUID of the persistent disk that you must include in the <code class="highlighter-rouge">/etc/fstab</code> file.</li>
+          <li><code class="highlighter-rouge">[MNT_DIR]</code> is the directory where you mounted your persistent disk.</li>
+          <li><code class="highlighter-rouge">[NOFAIL_OPTION]</code> is a variable that specifies what the operating system should do if it cannot mount the persistent disk at boot time. To allow the system to continue booting even when it cannot mount the persistent disk, specify this option. For most distributions, specify the nofail option. For Ubuntu 12.04 or Ubuntu 14.04, specify the nobootwait option.</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="cloud-storage-operation-tools">Cloud Storage Operation Tools</h3>
+<p><a href="https://cloud.google.com/compute/docs/disks/gcs-buckets">Connecting to Cloud Storage buckets</a>
+<a href="https://cloud.google.com/storage/docs/quickstart-gsutil#create">Quickstart: Using the gsutil Tool</a></p>
+
+<ol>
+  <li>Create a bucket by using <code class="highlighter-rouge">gsutil mb</code> command:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gsutil mb <span class="nt">-l</span> us-east1 gs://my-awesome-bucket/
+</code></pre></div>    </div>
+    <p>note that the bucket name should be globally-unique.</p>
+  </li>
+  <li>Copy local file to the bucket using <code class="highlighter-rouge">gsutil cp</code> command:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gsutil <span class="o">[</span><span class="nt">-m</span><span class="o">]</span> cp <span class="o">[</span><span class="nt">-r</span><span class="o">]</span> &lt;file-name&gt; gs://my-awesome-bucket
+</code></pre></div>    </div>
+    <p><strong>Remember</strong>: using <code class="highlighter-rouge">-m</code> flag to activate multi-thread will increase the transfer speed dramatically.</p>
+  </li>
+  <li>Download file from bucket using <code class="highlighter-rouge">gsutil cp</code> command:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gsutil <span class="o">[</span><span class="nt">-m</span><span class="o">]</span> cp <span class="o">[</span><span class="nt">-r</span><span class="o">]</span> gs://my-awesome-bucket/&lt;file-name&gt; &lt;local-dir&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>Delete an object using <code class="highlighter-rouge">gsutil rm</code>:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Delete file</span>
+gsutil rm gs://my-awesome-bucket/&lt;file-name&gt;
+<span class="c"># Delete folder</span>
+gsutil rm <span class="nt">-r</span> gs://my-awesome-bucket/&lt;folder-name&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>Remove the bucket
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gsutil rm <span class="nt">-r</span> gs://my-awesome-bucket
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p><br /><strong><em>KF</em></strong></p>
+
+  </div>
+</div>
+
+
+<div>
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    this.page.url = "http://localhost:4000/2018/10/09/google-cloud";
+    this.page.identifier = "/2018/10/09/google-cloud";
+  };
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//zkf85githubio.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+
+
+</div>
+
+<!-- KF 02/13/2019  -->
+<!-- Add back to top button -->
+<button onclick="topFunction()" id="myBtn" title="Back to top">Top</button>
+
+<script>
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+    </main>
+    <footer class="page-footer ohio-state-scarlet">
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            <img src="/assets/res/logo.png" alt="logo"/>
+            <p class="grey-text text-lighten-4">Theme based on <a href="http://materializecss.com">Materialize.css</a> for jekyll sites.
+</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          &#xA9; 2019 ZKF's Playground. All rights reserved. Powered by <a href="https://github.com/zkf85">Kefeng</a>.
+        </div>
+      </div>
+    </footer>
+    <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+    
+    
+    <script src="/assets/js/post.js"></script>
+    
+    
+    
+    
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>
+

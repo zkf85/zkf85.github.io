@@ -39,16 +39,16 @@ img.buckeye_leaf{
   bottom: 50px;
   right: 20px;
   z-index: 99;
-  font-size: 48px;
+  font-size: 36px;
   outline: none;
   border: 2px solid #bb0000;
   color: #bb0000;
   background-color: white;
   cursor: pointer;
-  /*padding: 12px 12px;*/
-  width:96px;
-  height:96px;
-  border-radius: 48px;
+  padding: 6px 12px;
+  /*width:96px;
+  height:96px;*/
+  border-radius: 18px;
   text-align: center;
   transition-duration: 0.4s;
   opacity: 0.75;
@@ -2491,7 +2491,7 @@ nav ul a span.badge{
 .container{
     margin:0 auto;
     max-width:1280px;
-    width:90%
+    width:90%;
 }
 @media only screen and (min-width: 601px){
     .container{

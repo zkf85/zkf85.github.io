@@ -4515,7 +4515,7 @@ button.btn-floating{
     display:block;
     float:left;
     text-align:center;
-    margin-right:1rem
+    margin-right:1rem;
 }
 .collapsible-body{
     display:none;
@@ -5527,7 +5527,7 @@ input[type=range]:focus::-ms-fill-upper{
 }
 .side-nav li{
     float:none;
-    line-height:36px
+    line-height:30px
 }
 .side-nav li.active{
     background-color:rgba(0,0,0,0.05)
@@ -5540,8 +5540,8 @@ input[type=range]:focus::-ms-fill-upper{
     */    
     color:rgba(0,0,0,0.6);
     font-size:16px;
-    /*font-weight: bold;*/
-    font-weight: normal;
+    font-weight: bold;
+    /*font-weight: normal;*/
     padding:0 48px;
     vertical-align: middle;
 }
@@ -5572,19 +5572,16 @@ input[type=range]:focus::-ms-fill-upper{
     color:rgba(0,0,0,0.54)
 }
 .side-nav .divider{
-    margin:4px 0 4px 0
+    /*margin:4px 0 4px 0*/
 }
-.side-nav .blank-space{
-    margin:12px 0;
-    height: 0px;
-}
+
 .side-nav .subheader{
     cursor:initial;
     pointer-events:none;
     color:rgba(0,0,0,0.54);
     font-size:14px;
-    font-weight:500;
-    line-height:48px
+    font-weight:lighter;
+    padding: 8px 36px 0 36px;
 }
 .side-nav .subheader:hover{
     background-color:transparent
@@ -5595,7 +5592,7 @@ input[type=range]:focus::-ms-fill-upper{
     padding:32px 32px 0;
     margin-bottom:8px
 	*/
-    padding:48px 12px 12px 12px;
+    padding:12px;
 }
 .side-nav .user-view>a,.side-nav .userView>a{
     height:auto;
@@ -5621,7 +5618,11 @@ input[type=range]:focus::-ms-fill-upper{
     height:64px;
     width:64px
 	*/
-	margin:auto;
+	/*margin:auto;*/
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 24px;
+    margin-bottom: 24px;
 	width:75%;
 
 }
@@ -5633,16 +5634,12 @@ input[type=range]:focus::-ms-fill-upper{
 
 }
 .side-nav .user-view .name,.side-nav .userView .name{
-    margin-top:24px;
-	/* KF 11/28/2018 
-    font-weight:500;
-	*/
 	font-size:20px;
     font-weight:bold;
 
 }
 .side-nav .user-view .email,.side-nav .userView .email{
-    padding-bottom:16px;
+    /*padding-bottom:16px;*/
     font-weight:400
 }
 .drag-target{
@@ -5678,7 +5675,6 @@ input[type=range]:focus::-ms-fill-upper{
 		/* KF 11/28/2018
         padding:16px 16px 0
 		*/
-        padding:48px 16px 12px 12px
     }
 }
 .side-nav .collapsible-body>ul:not(.collapsible)>li.active,.side-nav.fixed .collapsible-body>ul:not(.collapsible)>li.active{

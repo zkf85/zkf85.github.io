@@ -12,7 +12,7 @@
     list-style: none;
 }
 #markdown-toc {
-    border: 1px solid #aaa;
+    border: 1px solid #d0d0d0;
     padding: 1.5em;
     display: inline-block;
 }
@@ -36,8 +36,6 @@ img.buckeye_leaf{
 #myBtn {
   display: none;
   position: fixed;
-  bottom: 50px;
-  right: 20px;
   z-index: 99;
   font-size: 30px;
   outline: none;
@@ -46,6 +44,8 @@ img.buckeye_leaf{
   background-color: white;
   cursor: pointer;
   padding: 0 8px;
+  right: 5%;
+  bottom: 10%;
   /*width:96px;
   height:96px;*/
   border-radius: 18px;
@@ -1867,7 +1867,8 @@ a{
 .divider{
     height:1px;
     overflow:hidden;
-    background-color:#e0e0e0
+    /*background-color:#e0e0e0*/
+    background-color: #d0d0d0
 }
 blockquote{
 	/* KF 11/28/2018
@@ -3821,7 +3822,9 @@ small{
 .card .card-action{
     position:relative;
     background-color:inherit;
-    border-top:1px solid rgba(160,160,160,0.2);
+    /*    border-top:1px solid rgba(160,160,160,0.2);
+    */
+    border-top: 1px solid #d0d0d0;
 	/* KF 11/28/2018 
     padding:16px 24px
 	*/
@@ -4499,7 +4502,7 @@ button.btn-floating{
     border-top:1px solid #ddd;
     border-right:1px solid #ddd;
     border-left:1px solid #ddd;
-    margin:.5rem 0 1rem 0;
+    margin:2rem 0 2rem 0;
     border-radius: 1.5rem;
 
 }

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+      How to Set Static IP Address on Ubuntu 18.04 Using Netplan
+      
+    </title>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/res/favicon.ico">
+	<!--
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+	-->
+    <link rel="stylesheet" href="/assets/css/materialize.min.css">
+    <link rel="stylesheet" href="/assets/css/Material+Icons.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <link rel="stylesheet" href="/assets/css/post.css">
+    
+    
+    
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="How to Set Static IP Address on Ubuntu 18.04 Using Netplan" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Recently I was struggling with tensorflow-gpu installation my home server. After couple of rounds of attempts and re-installation. I have to choose Ubuntu-18.04 only (due to my mother board version, both ubuntu-16.04 and debian-9 have network driver issues). During the time when re-installing the system, setting a static IP address is a common routine that make other computer in the home network easy to access the server. Here I’ll show how to configure static IP Address in Ubuntu 18.04 with netplan." />
+<meta property="og:description" content="Recently I was struggling with tensorflow-gpu installation my home server. After couple of rounds of attempts and re-installation. I have to choose Ubuntu-18.04 only (due to my mother board version, both ubuntu-16.04 and debian-9 have network driver issues). During the time when re-installing the system, setting a static IP address is a common routine that make other computer in the home network easy to access the server. Here I’ll show how to configure static IP Address in Ubuntu 18.04 with netplan." />
+<link rel="canonical" href="http://localhost:4000/2018/12/10/how-to-set-static-ip-address" />
+<meta property="og:url" content="http://localhost:4000/2018/12/10/how-to-set-static-ip-address" />
+<meta property="og:site_name" content="ZKF’s Playground" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-12-10T09:18:00+08:00" />
+<script type="application/ld+json">
+{"description":"Recently I was struggling with tensorflow-gpu installation my home server. After couple of rounds of attempts and re-installation. I have to choose Ubuntu-18.04 only (due to my mother board version, both ubuntu-16.04 and debian-9 have network driver issues). During the time when re-installing the system, setting a static IP address is a common routine that make other computer in the home network easy to access the server. Here I’ll show how to configure static IP Address in Ubuntu 18.04 with netplan.","@type":"BlogPosting","url":"http://localhost:4000/2018/12/10/how-to-set-static-ip-address","headline":"How to Set Static IP Address on Ubuntu 18.04 Using Netplan","dateModified":"2018-12-10T09:18:00+08:00","datePublished":"2018-12-10T09:18:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2018/12/10/how-to-set-static-ip-address"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <header>
+	  <!--
+      <nav class="top-nav teal">
+	  -->
+      <nav class="top-nav ohio-state-scarlet">
+        <div class="nav-wrapper">
+          <div class="container">
+            <a class="page-title" href="/">ZKF's Playground</a>
+            <img class="buckeye_leaf" src="/assets/res/buckeye_leaf.png">
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <a href="#" data-activates="slide-out" class="button-collapse top-nav full hide-on-large-only">
+          <i class="material-icons">menu</i>
+        </a>
+      </div>
+      <ul id="slide-out" class="side-nav fixed">
+        <li>
+          <div class="userView">
+            <div class="background"></div>
+            <a href="https://github.com/zkf85" target="_blank"><img class="circle z-depth-2" src="/assets/res/lion_king.jpg"></a>
+            <span class="white-text name">Zhu, Kefeng</span>
+			<!--
+            <span class="white-text email">zkf1985@gmail.com</span>
+			-->
+            <span class="white-text email"><i>A Programmer, An AI Practitioner</i></span>
+          </div>
+        </li>
+        <li><a class="waves-effect" href="/"><i class="material-icons">home</i>Home</a></li>
+
+        <li><a class="waves-effect" href="/categories"><i class="material-icons">sort</i>Categories</a></li>
+        <li><a class="waves-effect" href="/tags"><i class="material-icons">label</i>Tags</a></li>
+<!--
+<li><a class="waves-effect" href="/feed.xml" target="_blank"><i class="material-icons">rss_feed</i>RSS</a></li>
+-->
+        <li><div class="divider"></div></li>
+        <li><a class="waves-effect" href="/cs229"><i class="material-icons">widgets</i>CS229</a></li>
+        <li><a class="waves-effect" href="/mit6006"><i class="material-icons">storage</i>MIT6006</a></li>
+        <li><a class="waves-effect" href="/leetcode"><i class="material-icons">code</i>LeetCode</a></li>
+
+        <li><div class="divider"></div></li>
+
+        <li><a class="waves-effect" href="/about"><i class="material-icons">person</i>About Me</a></li>
+        <!-- <li><a class="waves-effect" href="/contact"><i class="material-icons">email</i>Contact</a></li> -->
+      </ul>
+    </header>
+    <main>
+
+<!--
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+-->
+<!-- KF 02/14/2019
+The following snippet is to allow single $ style inline mode.
+Remember that after enabling this, you have to enter the real dollar sings with `\$`
+-->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<div class="container">
+  <div id="post-info">
+  <h1>How to Set Static IP Address on Ubuntu 18.04 Using Netplan</h1>
+  <ul class="collapsible hoverable" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Date">date_range</i>
+          12/10/2018 09:18
+          <i id="indicate" class="right material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Show extra info">info</i>
+        </span>
+      </div>
+      <div class="collapsible-body">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Categories">sort</i>
+          
+          
+          
+          <a href="/categories#operating-system_cap" target="_blank"><div class="chip">Operating System</div></a>
+          
+        </span>
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Tags">label</i>
+          
+          
+          
+          <a href="/tags#how-to" target="_blank"><div class="chip">how-to</div></a>
+          
+          
+          
+          <a href="/tags#ubuntu" target="_blank"><div class="chip">ubuntu</div></a>
+          
+          
+          
+          <a href="/tags#linux" target="_blank"><div class="chip">linux</div></a>
+          
+          
+          
+          <a href="/tags#netplan" target="_blank"><div class="chip">netplan</div></a>
+          
+        </span>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="divider"></div>
+<div class="row">
+  <div class="col s12">
+    <blockquote>
+  <p>Recently I was struggling with tensorflow-gpu installation my home server. After couple of rounds of attempts and re-installation. I have to choose Ubuntu-18.04 only (due to my mother board version, both ubuntu-16.04 and debian-9 have network driver issues).</p>
+</blockquote>
+
+<blockquote>
+  <p>During the time when re-installing the system, setting a static IP address is a common routine that make other computer in the home network easy to access the server. Here I’ll show how to configure static IP Address in Ubuntu 18.04 with netplan.</p>
+</blockquote>
+
+<!--more-->
+
+<ul>
+  <li>
+    <p>When installing Ubuntu-18.04, a DHCP is set by default.
+<a href="https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol">» See what is DHCP (Dynamic Host Configuration Protocol</a></p>
+  </li>
+  <li>
+    <p>After the installation of the system, we’ll see how to configure static IP address in Ubuntu-18.04 with <strong><a href="https://netplan.io">netplan - new network configuration tool</a></strong>.</p>
+  </li>
+  <li>
+    <p>Besides, a tradidional method is also shown later in the article, by using <strong><code class="highlighter-rouge">ifupdown</code></strong> for the same job.</p>
+  </li>
+</ul>
+
+<p><a href="https://www.itzgeek.com/how-tos/linux/ubuntu-how-tos/netplan-how-to-configure-static-ip-address-in-ubuntu-18-04-using-netplan.html">» Netplan – How To Configure Static IP Address in Ubuntu 18.04 using Netplan</a></p>
+
+<h2 id="1-configure-static-ip-address-with-netplan-in-ubuntu-1804">1. Configure Static IP Address with Netplan in Ubuntu 18.04</h2>
+<h3 id="11-find-your-desired-network-interface">1.1. Find your desired network interface</h3>
+<p>Use one of the following commands to find the network interfaces available on you system.</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ifconfig <span class="nt">-a</span>
+</code></pre></div></div>
+<p>or</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ip a
+</code></pre></div></div>
+
+<p>The output would be like this:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>enp2s0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+        inet 192.168.1.41 netmask 255.255.255.0  broadcast 192.168.1.255
+        inet6 fe80::201:6cff:fed0:e0e9  prefixlen 64  scopeid 0x20&lt;link&gt;
+        ether 00:01:6c:d0:e0:e9  txqueuelen 1000  (Ethernet)
+        RX packets 10356  bytes 8636081 (8.6 MB)
+        RX errors 0  dropped 13  overruns 0  frame 0
+        TX packets 3322  bytes 329660 (329.6 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt;  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10&lt;host&gt;
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 144  bytes 10868 (10.8 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 144  bytes 10868 (10.8 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+</code></pre></div></div>
+
+<p>Now, the system interface <strong>enp2s0</strong> takes IP address from DHCP server.</p>
+
+<p>In this article, I’ll configure a static IP address for enp2s0 as:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>IP address = 192.168.1.100
+Netmask = 255.255.255.0
+Gateway = 192.168.1.1
+</code></pre></div></div>
+
+<h3 id="12-disable-cloud-init">1.2. Disable <code class="highlighter-rouge">cloud-init</code></h3>
+<p>In Ubuntu-18.04 server, <code class="highlighter-rouge">cloud-init</code> manages the network configuration. So you need to disable it by adding such a file:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>vi /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg
+</code></pre></div></div>
+<p>Add the following line int the configuration file:</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">network</span><span class="pi">:</span> <span class="pi">{</span><span class="nv">config</span><span class="pi">:</span> <span class="nv">disabled</span><span class="pi">}</span>
+</code></pre></div></div>
+
+<h3 id="13-backup-default-netplan-files">1.3. Backup Default Netplan Files</h3>
+<p>Move any files present in <code class="highlighter-rouge">/etc/netplan</code> directory to a backup location:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>mv /etc/netplan/<span class="k">*</span> /root
+</code></pre></div></div>
+
+<h3 id="14-create-a-new-netplan-configuration-file">1.4. Create a New Netplan Configuration File</h3>
+<p>Create a new configuration file by:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>vim /etc/netplan/01-network-card.yaml
+</code></pre></div></div>
+
+<p>Add the following content to the file:</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">network</span><span class="pi">:</span>
+        <span class="na">version</span><span class="pi">:</span> <span class="s">2</span>
+        <span class="na">renderer</span><span class="pi">:</span> <span class="s">networkd</span>
+        <span class="na">ethernets</span><span class="pi">:</span>
+                <span class="na">enp0s3</span><span class="pi">:</span>
+                        <span class="na">dhcp4</span><span class="pi">:</span> <span class="s">no</span>
+                        <span class="na">addresses</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">192.168.1.100/24</span><span class="pi">]</span>
+                        <span class="na">gateway4</span><span class="pi">:</span> <span class="s">192.168.1.1</span>
+                        <span class="na">nameservers</span><span class="pi">:</span>
+                                <span class="na">addresses</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">192.168.1.1</span><span class="pi">,</span><span class="nv">8.8.8.8</span><span class="pi">]</span>
+
+</code></pre></div></div>
+
+<h3 id="15-apply-all-configuration-and-restart-renderers">1.5. Apply All Configuration and Restart Renderers</h3>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>netplan apply
+</code></pre></div></div>
+
+<h3 id="16-verify-the-change">1.6. Verify the Change</h3>
+<p>Now verify the static IP address by:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ifconfig <span class="nt">-a</span>
+</code></pre></div></div>
+<p>or</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ip a
+</code></pre></div></div>
+<p>You’ll see:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>enp2s0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+        inet 192.168.1.235  netmask 255.255.255.0  broadcast 192.168.1.255
+        inet6 fe80::201:6cff:fed0:e0e9  prefixlen 64  scopeid 0x20&lt;link&gt;
+        ether 00:01:6c:d0:e0:e9  txqueuelen 1000  (Ethernet)
+        RX packets 11530  bytes 8736376 (8.7 MB)
+        RX errors 0  dropped 14  overruns 0  frame 0
+        TX packets 3488  bytes 362346 (362.3 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+</code></pre></div></div>
+
+<h2 id="2-configure-static-ip-address-using-ifupdownnetwork-manager">2. Configure Static IP Address using <code class="highlighter-rouge">ifupdown</code>/<code class="highlighter-rouge">Network Manager</code></h2>
+
+<h3 id="21-install-packages">2.1. Install Packages</h3>
+<p>Install the below packages to support the old method of configuring static IP address:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt install ifupdown resolvconf
+</code></pre></div></div>
+
+<h3 id="22-ethernet">2.2. Ethernet</h3>
+<p>Edit the interfaces file:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>vim /etc/network/interfaces
+</code></pre></div></div>
+<p>Update the file with the following information</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Interface Name #</span>
+auto enp0s3
+<span class="c"># Static IP Address #</span>
+iface enp0s3 inet static
+<span class="c"># IP Address #</span>
+address 192.168.1.100
+<span class="c"># Netmask #</span>
+netmask 255.255.255.0
+<span class="c"># Gateway #</span>
+gateway 192.168.1.1
+<span class="c"># DNS Servers #</span>
+<span class="c">#dns-nameservers 192.168.1.1</span>
+<span class="c">#dns-nameservers 8.8.8.8</span>
+<span class="c"># Search Domain #</span>
+<span class="c">#dns-search itzgeek.local</span>
+</code></pre></div></div>
+<blockquote>
+  <p><strong>Note</strong>: you can also configure your DNS Server just by uncommenting the last three dns related configuration lines.</p>
+</blockquote>
+
+<h3 id="23-restart-and-apply">2.3. Restart and Apply</h3>
+<p>Restart the networking using the following command:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>systemctl restart networking
+</code></pre></div></div>
+
+<p>You’re all set now!</p>
+
+<p><br /><br /><strong><em>KF</em></strong></p>
+
+  </div>
+</div>
+
+
+<div>
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    this.page.url = "http://localhost:4000/2018/12/10/how-to-set-static-ip-address";
+    this.page.identifier = "/2018/12/10/how-to-set-static-ip-address";
+  };
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//zkf85githubio.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+
+
+</div>
+
+<!-- KF 02/13/2019  -->
+<!-- Add back to top button -->
+<button onclick="topFunction()" id="myBtn" title="Back to top">Top</button>
+
+<script>
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+    </main>
+    <footer class="page-footer ohio-state-scarlet">
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            <img src="/assets/res/logo.png" alt="logo"/>
+            <p class="grey-text text-lighten-4">Theme based on <a href="http://materializecss.com">Materialize.css</a> for jekyll sites.
+</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          &#xA9; 2019 ZKF's Playground. All rights reserved. Powered by <a href="https://github.com/zkf85">Kefeng</a>.
+        </div>
+      </div>
+    </footer>
+    <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+    
+    
+    <script src="/assets/js/post.js"></script>
+    
+    
+    
+    
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>
+

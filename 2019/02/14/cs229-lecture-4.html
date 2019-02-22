@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+      [CS229] Lecture 4 Notes - Newton&#39;s Method/GLMs
+      
+    </title>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/res/favicon.ico">
+	<!--
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+	-->
+    <link rel="stylesheet" href="/assets/css/materialize.min.css">
+    <link rel="stylesheet" href="/assets/css/Material+Icons.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <link rel="stylesheet" href="/assets/css/post.css">
+    
+    
+    
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="[CS229] Lecture 4 Notes - Newton’s Method/GLMs" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Newton’s Method, Generalized Linear Models" />
+<meta property="og:description" content="Newton’s Method, Generalized Linear Models" />
+<link rel="canonical" href="http://localhost:4000/2019/02/14/cs229-lecture-4" />
+<meta property="og:url" content="http://localhost:4000/2019/02/14/cs229-lecture-4" />
+<meta property="og:site_name" content="ZKF’s Playground" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-02-14T10:40:00+08:00" />
+<script type="application/ld+json">
+{"description":"Newton’s Method, Generalized Linear Models","@type":"BlogPosting","url":"http://localhost:4000/2019/02/14/cs229-lecture-4","headline":"[CS229] Lecture 4 Notes - Newton’s Method/GLMs","dateModified":"2019-02-14T10:40:00+08:00","datePublished":"2019-02-14T10:40:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/02/14/cs229-lecture-4"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <header>
+	  <!--
+      <nav class="top-nav teal">
+	  -->
+      <nav class="top-nav ohio-state-scarlet">
+        <div class="nav-wrapper">
+          <div class="container">
+            <a class="page-title" href="/">ZKF's Playground</a>
+            <img class="buckeye_leaf" src="/assets/res/buckeye_leaf.png">
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <a href="#" data-activates="slide-out" class="button-collapse top-nav full hide-on-large-only">
+          <i class="material-icons">menu</i>
+        </a>
+      </div>
+      <ul id="slide-out" class="side-nav fixed">
+        <li>
+          <div class="userView">
+            <div class="background"></div>
+            <a href="https://github.com/zkf85" target="_blank"><img class="circle z-depth-2" src="/assets/res/lion_king.jpg"></a>
+            <span class="white-text name">Zhu, Kefeng</span>
+			<!--
+            <span class="white-text email">zkf1985@gmail.com</span>
+			-->
+            <span class="white-text email"><i>A Programmer, An AI Practitioner</i></span>
+          </div>
+        </li>
+        <li><a class="waves-effect" href="/"><i class="material-icons">home</i>Home</a></li>
+
+        <li><a class="waves-effect" href="/categories"><i class="material-icons">sort</i>Categories</a></li>
+        <li><a class="waves-effect" href="/tags"><i class="material-icons">label</i>Tags</a></li>
+<!--
+<li><a class="waves-effect" href="/feed.xml" target="_blank"><i class="material-icons">rss_feed</i>RSS</a></li>
+-->
+        <li><div class="divider"></div></li>
+        <li><a class="waves-effect" href="/cs229"><i class="material-icons">widgets</i>CS229</a></li>
+        <li><a class="waves-effect" href="/mit6006"><i class="material-icons">storage</i>MIT6006</a></li>
+        <li><a class="waves-effect" href="/leetcode"><i class="material-icons">code</i>LeetCode</a></li>
+
+        <li><div class="divider"></div></li>
+
+        <li><a class="waves-effect" href="/about"><i class="material-icons">person</i>About Me</a></li>
+        <!-- <li><a class="waves-effect" href="/contact"><i class="material-icons">email</i>Contact</a></li> -->
+      </ul>
+    </header>
+    <main>
+
+<!--
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+-->
+<!-- KF 02/14/2019
+The following snippet is to allow single $ style inline mode.
+Remember that after enabling this, you have to enter the real dollar sings with `\$`
+-->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<div class="container">
+  <div id="post-info">
+  <h1>[CS229] Lecture 4 Notes - Newton's Method/GLMs</h1>
+  <ul class="collapsible hoverable" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Date">date_range</i>
+          02/14/2019 10:40
+          <i id="indicate" class="right material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Show extra info">info</i>
+        </span>
+      </div>
+      <div class="collapsible-body">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Categories">sort</i>
+          
+        </span>
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Tags">label</i>
+          
+        </span>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="divider"></div>
+<div class="row">
+  <div class="col s12">
+    <blockquote>
+  <ol>
+    <li>Newton’s Method,</li>
+    <li>Generalized Linear Models</li>
+  </ol>
+</blockquote>
+
+<ul id="markdown-toc">
+  <li><a href="#1-newtons-method" id="markdown-toc-1-newtons-method">1. Newton’s Method</a>    <ul>
+      <li><a href="#11-basic-idea-of-newtons-method" id="markdown-toc-11-basic-idea-of-newtons-method">1.1. Basic idea of Newton’s method</a></li>
+      <li><a href="#12-use-newtons-method-to-maximize-some-function-l" id="markdown-toc-12-use-newtons-method-to-maximize-some-function-l">1.2. Use Newton’s method to maximize some function \(l\)</a></li>
+      <li><a href="#13-pros--cons-of-newtons-method" id="markdown-toc-13-pros--cons-of-newtons-method">1.3. Pros &amp; Cons of Newton’s method</a></li>
+    </ul>
+  </li>
+  <li><a href="#2-generalized-linear-models" id="markdown-toc-2-generalized-linear-models">2. Generalized Linear Models</a>    <ul>
+      <li><a href="#21-the-exponential-family" id="markdown-toc-21-the-exponential-family">2.1. The exponential family</a>        <ul>
+          <li><a href="#211-bernoulli-case" id="markdown-toc-211-bernoulli-case">2.1.1. Bernoulli case</a></li>
+          <li><a href="#212-gaussian-case" id="markdown-toc-212-gaussian-case">2.1.2. Gaussian case</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#3-constructing-glms" id="markdown-toc-3-constructing-glms">3. Constructing GLMs</a>    <ul>
+      <li><a href="#31-ordinary-least-squares" id="markdown-toc-31-ordinary-least-squares">3.1. Ordinary Least Squares</a></li>
+      <li><a href="#32-logistic-regression" id="markdown-toc-32-logistic-regression">3.2. Logistic Regression</a></li>
+      <li><a href="#33-softmax-regression" id="markdown-toc-33-softmax-regression">3.3. Softmax Regression</a></li>
+    </ul>
+  </li>
+  <li><a href="#reference" id="markdown-toc-reference">Reference</a></li>
+</ul>
+
+<!--more-->
+
+<h2 id="1-newtons-method">1. Newton’s Method</h2>
+<h3 id="11-basic-idea-of-newtons-method">1.1. Basic idea of Newton’s method</h3>
+<p>The aim of Newton’s method is <strong>to find a zero of a function</strong>.</p>
+
+<p>Suppose we have some function that \(f: \mathbb{R}\mapsto\mathbb{R}\), and we want to find a value of \(x\) that makes \(f(x)=0\). Newton’s method performs the following updates:</p>
+
+<script type="math/tex; mode=display">x := x - \frac{f(x)}{f'(x)}.</script>
+
+<p><a href="https://en.wikipedia.org/wiki/Newton%27s_method">» Newton’s Method on Wikipedia</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"><img src="/public/img/20190214_NewtonIteration_Ani.gif" alt="" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Figure 1.</strong> The function \(f\) is shown in blue and the tangent line is in red. We see that \(x_{n + 1}\) is a better approximation than \(x_n\) for the root x of the function \(f\). (from Wikipedia)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="12-use-newtons-method-to-maximize-some-function-l">1.2. Use Newton’s method to maximize some function \(l\)</h3>
+<p>The maxima of \(l\) correspond to points where it’s first derivative \(l’(\theta)\) is zero. Therefore, according to the definition of Newton’s method described above, to find a value of \(\theta\) that makes \(f’(\theta)=0\), we should perform the following update:</p>
+
+<script type="math/tex; mode=display">\theta := \theta - \frac{f'(\theta)}{f''(\theta)}.</script>
+
+<p>In the logistic regression, \(\theta\) is a vector, then the update rule should be generalized as:</p>
+
+<script type="math/tex; mode=display">\theta := \theta - H^{-1}\nabla_\theta l(\theta).</script>
+
+<p>Here \(\nabla_\theta l(\theta)\) is the vector of partial derivatives of \(l(\theta)\) w.r.t. the \(\theta\)’s; and the \(H\) is an n-by-n matrix called <strong>Hessian</strong>, whose entries are given by</p>
+
+<script type="math/tex; mode=display">H_{ij} = \frac{\partial^2 l(\theta)}{\partial\theta_i\partial\theta_j}.</script>
+
+<h3 id="13-pros--cons-of-newtons-method">1.3. Pros &amp; Cons of Newton’s method</h3>
+<p><strong>Pros</strong>:</p>
+<ul>
+  <li>Newton’s method converges faster that gradient descent and requires fewer iterations to get close to the minimum.</li>
+</ul>
+
+<p><strong>Cons</strong>:</p>
+<ul>
+  <li>Each single iteration however is more expensive that the one of gradient descent, since it requires finding and inverting an n-by-n Hessian.</li>
+</ul>
+
+<h2 id="2-generalized-linear-models">2. Generalized Linear Models</h2>
+<p>Both <strong>linear regression</strong> and <strong>logistic regression</strong> methods are special cases of a broader family of models, which is called <strong>Generalized Linear Models (GLMs)</strong>.</p>
+
+<h3 id="21-the-exponential-family">2.1. The exponential family</h3>
+<p>Define a class of distributions in the exponential family as:</p>
+
+<script type="math/tex; mode=display">\begin{align}
+p(y;\eta) = b(y)\exp(\eta^T T(y) - a(\eta)). \tag{*}\label{eq1}
+\end{align}</script>
+
+<ul>
+  <li>\(\eta\) - is called the <strong>natural parameter</strong> of the distribution;</li>
+  <li>\(T(y)\) - is the <strong>sufficient statistic</strong>;</li>
+  <li>\(a(\eta)\) - is the <strong>log partition function</strong>.</li>
+</ul>
+
+<p><strong>A family:</strong></p>
+<ul>
+  <li>A fixed choice of \(T\), \(a\) and \(b\) defines a <em>family</em> of distributions that is parameterized by \(\eta\).</li>
+  <li>As we vary \(\eta\), we could get different distributions within this family.</li>
+</ul>
+
+<p>We’ll show that the Bernoulli and the Gaussian distributions are examples of exponential family distributions.</p>
+
+<h4 id="211-bernoulli-case">2.1.1. Bernoulli case</h4>
+<p>The Bernoulli distribution with mean \(\phi\), written Bernoulli\((\phi)\), specifies a distribution over \(y \in {0,1}\). So that</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\left\{ \begin{array}{rcl} 
+P(y=1;\phi) &=& \phi \\
+P(y=0;\phi) &=& 1-\phi
+\end{array}\right. \\ %]]></script>
+
+<p>This class of distributions is parameterized by \(\phi\). Now we want to show that this class of Bernoulli distributions is in the “exponential family” when we choose a certain set of \(T\), \(a\) and \(b\).
+We write the Bernoulli distribution as:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+p(y;\phi) &= \phi^y(1-\phi)^{1-y} \\
+&= \exp(\log(\phi^y(1-\phi)^{1-y}) \\
+&= \exp(y\log\phi + (1-y)\log(1-\phi)) \\
+&= \exp(y\log\phi -y\log(1-\phi) + log(1-\phi)) \\
+&= \exp\left(y\log\frac{\phi}{1-\phi} + \log(1-\phi)\right).
+\end{align} %]]></script>
+
+<p>according to Equation \(\eqref{eq1}\), we do the following derivation:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"><img src="/public/img/20190214_01.jpg" alt="" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Figure 2.</strong> Derivation of Bernoulli to GLM</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>We have</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\eta &= \log\frac{\phi}{1-\phi} \\
+T(y) &= y \\
+a(\eta) &= \log(1+e^\eta) \\
+b(y) &= 1
+\end{align} %]]></script>
+
+<p>This shows that the Bernoulli distribution can be written in the form of Equation \(\eqref{eq1}\), using certain choice of \(T\), \(a\) and \(b\) above.</p>
+
+<h4 id="212-gaussian-case">2.1.2. Gaussian case</h4>
+<p>When deriving linear regression, the value of $\sigma^2$ had no effect on the choice of $\theta$ and $h_\theta(x)$. Thus, for simplicity, we set $\sigma^2=1$. Then for the Gaussian distribution, we have:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+p(y;\mu) &= \frac{1}{\sqrt{2\pi}}\exp\left(-\frac{1}{2}(y-\mu)^2\right) \\
+&= \frac{1}{\sqrt{2\pi}}\exp\left(-\frac{1}{2}y^2\right)\cdot\exp\left(y\mu-\frac{1}{2}\mu^2\right)
+\end{align} %]]></script>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"><img src="/public/img/20190214_02.jpg" alt="" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Figure 3.</strong> Derivation of Gaussian to GLM</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>We have</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\eta &= \mu \\
+T(y) &= y \\
+a(\eta) &= \frac{1}{2}\mu^2=\frac{1}{2}\eta^2 \\
+b(y) &= \frac{1}{\sqrt{2\pi}}\exp\left(-\frac{1}{2}y^2\right).
+\end{align} %]]></script>
+
+<p>There are a lot of other distributions that belong to the exponential family, such as:</p>
+<ul>
+  <li>the multinomial;</li>
+  <li>the Poisson (for modelling count-data);</li>
+  <li>the gamma and the exponential (for modelling continuous, non-negative random variables, such as time-intervals);</li>
+  <li>the beta and the Dirichlet (for distributions over probabilities).</li>
+</ul>
+
+<h2 id="3-constructing-glms">3. Constructing GLMs</h2>
+<p>Consider a classification or regression problem where we’d like to predict the value of some random variable $y$ as a function of $x$. To derive a GLM for this problem, we will make 3 assumptions about the conditional distribution of $y$ given $x$:</p>
+<ol>
+  <li>$y \vert x; \theta \sim \text{ExponentialFamily}(\eta)$. i.e., given $x$ and $\theta$, the distribution of $y$ follows some exponential family distribution with parameter $\eta$.</li>
+  <li><span style="color:crimson">We would like the prediction $h(x)$ output to satisfy $h(x) = \mbox{E}[y\vert x]$. <strong>Why?</strong></span></li>
+  <li>$\eta$ and $x$ should be linearly related: $\eta=\theta^T x$.(or if $\eta$ is a vector, then $\eta_i=\theta_i^T x$).</li>
+</ol>
+
+<h3 id="31-ordinary-least-squares">3.1. Ordinary Least Squares</h3>
+
+<h3 id="32-logistic-regression">3.2. Logistic Regression</h3>
+
+<h3 id="33-softmax-regression">3.3. Softmax Regression</h3>
+
+<h2 id="reference">Reference</h2>
+<ol>
+  <li><a href="https://see.stanford.edu/materials/aimlcs229/cs229-notes1.pdf">» Stanford Lecture Note Part I &amp; II</a></li>
+</ol>
+
+<p><br /><br /><strong><em>KF</em></strong></p>
+
+  </div>
+</div>
+
+
+<div>
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    this.page.url = "http://localhost:4000/2019/02/14/cs229-lecture-4";
+    this.page.identifier = "/2019/02/14/cs229-lecture-4";
+  };
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//zkf85githubio.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+
+
+</div>
+
+<!-- KF 02/13/2019  -->
+<!-- Add back to top button -->
+<button onclick="topFunction()" id="myBtn" title="Back to top">Top</button>
+
+<script>
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+    </main>
+    <footer class="page-footer ohio-state-scarlet">
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            <img src="/assets/res/logo.png" alt="logo"/>
+            <p class="grey-text text-lighten-4">Theme based on <a href="http://materializecss.com">Materialize.css</a> for jekyll sites.
+</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          &#xA9; 2019 ZKF's Playground. All rights reserved. Powered by <a href="https://github.com/zkf85">Kefeng</a>.
+        </div>
+      </div>
+    </footer>
+    <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+    
+    
+    <script src="/assets/js/post.js"></script>
+    
+    
+    
+    
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>
+

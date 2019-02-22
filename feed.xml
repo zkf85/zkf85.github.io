@@ -1,0 +1,912 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-02-22T10:48:15+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ZKF’s Playground</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
+</subtitle><entry><title type="html">[CS229] Lecture 5 Notes - Descriminative Learning v.s. Generative Learning Algorithm</title><link href="http://localhost:4000/2019/02/18/generative-learning" rel="alternate" type="text/html" title="[CS229] Lecture 5 Notes - Descriminative Learning v.s. Generative Learning Algorithm" /><published>2019-02-18T14:30:00+08:00</published><updated>2019-02-18T14:30:00+08:00</updated><id>http://localhost:4000/2019/02/18/generative-learning</id><content type="html" xml:base="http://localhost:4000/2019/02/18/generative-learning">&lt;blockquote&gt;
+  &lt;p&gt;Keep Updating:&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;2019-02-18 Merge to Lecture #5 Note&lt;/li&gt;
+    &lt;li&gt;2019-01-23 Add Part 2, Gausian discriminant analysis&lt;/li&gt;
+    &lt;li&gt;2019-01-22 Add Part 1, A Review of Generative Learning Algorithms.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/img/20190122-bayes-theorem.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-basics-of-generative-learning-algorithms&quot; id=&quot;markdown-toc-1-basics-of-generative-learning-algorithms&quot;&gt;1. Basics of Generative Learning Algorithms&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#11-an-example-to-explain-the-initiative-ideas&quot; id=&quot;markdown-toc-11-an-example-to-explain-the-initiative-ideas&quot;&gt;1.1. An Example to Explain the Initiative Ideas:&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#approach-i&quot; id=&quot;markdown-toc-approach-i&quot;&gt;&lt;strong&gt;Approach I:&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#approach-ii&quot; id=&quot;markdown-toc-approach-ii&quot;&gt;&lt;strong&gt;Approach II:&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#12-definitions&quot; id=&quot;markdown-toc-12-definitions&quot;&gt;1.2. Definitions:&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#discriminative-learning-algorithms&quot; id=&quot;markdown-toc-discriminative-learning-algorithms&quot;&gt;&lt;strong&gt;Discriminative&lt;/strong&gt; learning algorithms:&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#generative-learning-algorithms&quot; id=&quot;markdown-toc-generative-learning-algorithms&quot;&gt;&lt;strong&gt;Generative&lt;/strong&gt; learning algorithms:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#13-more-about-generative-learning-algorithms&quot; id=&quot;markdown-toc-13-more-about-generative-learning-algorithms&quot;&gt;1.3. More about Generative Learning Algorithms:&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-gaussian-discriminant-analysis-gda&quot; id=&quot;markdown-toc-2-gaussian-discriminant-analysis-gda&quot;&gt;2. Gaussian Discriminant Analysis (GDA)&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#21-the-multivariate-normal-distribution&quot; id=&quot;markdown-toc-21-the-multivariate-normal-distribution&quot;&gt;2.1. The multivariate normal distribution&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#22-the-gaussian-discriminant-analysis-model&quot; id=&quot;markdown-toc-22-the-gaussian-discriminant-analysis-model&quot;&gt;2.2. The Gaussian Discriminant Analysis model&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#to-do-add-the-derivation&quot; id=&quot;markdown-toc-to-do-add-the-derivation&quot;&gt;&lt;em&gt;(TO DO: Add the derivation)&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#predict&quot; id=&quot;markdown-toc-predict&quot;&gt;Predict:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#23-gda-and-logistic-regression&quot; id=&quot;markdown-toc-23-gda-and-logistic-regression&quot;&gt;2.3. GDA and logistic regression&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#assumption-relations&quot; id=&quot;markdown-toc-assumption-relations&quot;&gt;Assumption relations:&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#which-is-better&quot; id=&quot;markdown-toc-which-is-better&quot;&gt;Which is better?&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3-naive-bayes&quot; id=&quot;markdown-toc-3-naive-bayes&quot;&gt;3. Naive Bayes&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#naive-bayes-nb-assumption&quot; id=&quot;markdown-toc-naive-bayes-nb-assumption&quot;&gt;Naive Bayes (NB) assumption:&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#predict-1&quot; id=&quot;markdown-toc-predict-1&quot;&gt;Predict:&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#laplace-smoothing&quot; id=&quot;markdown-toc-laplace-smoothing&quot;&gt;Laplace smoothing&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#reference&quot; id=&quot;markdown-toc-reference&quot;&gt;Reference&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;1-basics-of-generative-learning-algorithms&quot;&gt;1. Basics of Generative Learning Algorithms&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;(01/22/2019)&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;11-an-example-to-explain-the-initiative-ideas&quot;&gt;1.1. An Example to Explain the Initiative Ideas:&lt;/h3&gt;
+&lt;p&gt;Consider a classification problem in which we want to learn to distinguish between cats \((y=0)\) and dogs \((y=1)\):&lt;/p&gt;
+
+&lt;h4 id=&quot;approach-i&quot;&gt;&lt;strong&gt;Approach I:&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;Based on some features of an animal, given a training set, an algorithm like &lt;strong&gt;&lt;em&gt;logistic regression&lt;/em&gt;&lt;/strong&gt; or &lt;strong&gt;&lt;em&gt;perceptron&lt;/em&gt;&lt;/strong&gt; algorithm, tries to find a &lt;strong&gt;decision boundary&lt;/strong&gt; (e.g. a straight line) to separate the cats and the dogs.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;To classify a new animal:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Just check on which side of the decision boundary it falls.&lt;/p&gt;
+
+&lt;h4 id=&quot;approach-ii&quot;&gt;&lt;strong&gt;Approach II:&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;First, look at cats, build a model of &lt;strong&gt;what cats look like&lt;/strong&gt;. Then, look at dogs, build another model of &lt;strong&gt;what dogs look like&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;To classify a new animal:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Match the new animal against the cat model and the dog model respectively, to see whether the new animal looks more like the cats or more like the dogs we had seen in the training set.&lt;/p&gt;
+
+&lt;h3 id=&quot;12-definitions&quot;&gt;1.2. Definitions:&lt;/h3&gt;
+&lt;h4 id=&quot;discriminative-learning-algorithms&quot;&gt;&lt;strong&gt;Discriminative&lt;/strong&gt; learning algorithms:&lt;/h4&gt;
+
+&lt;p&gt;Algorithms that try to &lt;strong&gt;learn \(p(y \vert x)\) directly&lt;/strong&gt; (such as logistic regression) or algorithms that try to learn mappings directly from the space of input \(\chi\) to the labels \({0,1}\) (such as perceptron algorithm) are called &lt;strong&gt;discriminative&lt;/strong&gt; learning algorithms.&lt;/p&gt;
+
+&lt;h4 id=&quot;generative-learning-algorithms&quot;&gt;&lt;strong&gt;Generative&lt;/strong&gt; learning algorithms:&lt;/h4&gt;
+
+&lt;p&gt;Algorithms that instead try to model \(p(x \vert y)\) and \(p(y)\) are called &lt;strong&gt;generative&lt;/strong&gt; learning algorithms.&lt;/p&gt;
+
+&lt;h3 id=&quot;13-more-about-generative-learning-algorithms&quot;&gt;1.3. More about Generative Learning Algorithms:&lt;/h3&gt;
+
+&lt;p&gt;Continue with the example of cats and dogs, if \(y\) indicates whether an sample is a cat (0) or a dog (1), then&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;\(p(x \vert y=0)\) models the distribution of cats’ features.&lt;/li&gt;
+  &lt;li&gt;\(p(x \vert y=1)\) models the distribution of dogs’ features.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;After modeling \(p(y)\) (called the &lt;strong&gt;class priors&lt;/strong&gt;) and \(p(x \vert y)\), our algorithm can then use &lt;strong&gt;Bayes Rule&lt;/strong&gt; to derive the posterior distribution on \(y\) given \(x\):&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;p(y \vert x) = \frac{p(x \vert y)p(y)}{p(x)}.&lt;/script&gt;
+
+&lt;p&gt;Here, the denominator is given by \(p(x)=\sum_i p(x \vert y_i)p(y_i)\). In cats &amp;amp; dogs example, \(p(x)=p(x \vert y=0)p(y=0)+p(x \vert y=1)p(y=1)\).&lt;/p&gt;
+
+&lt;p&gt;Actually, if we we’re calculating \(p(y \vert x)\) in order to make a prediction, then we don’t need to calculate the denominator, since&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\arg\underset{y}{\max} p(y \vert x) &amp; = \arg \underset{y}{\max} \frac{p(x \vert y)p(y)}{p(x)} \\
+&amp; = \arg \underset{y}{\max} p(x \vert y)p(y).
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;h2 id=&quot;2-gaussian-discriminant-analysis-gda&quot;&gt;2. Gaussian Discriminant Analysis (GDA)&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;(01/23/2019)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;In this model (GDA), we assume that \(p(x \vert y)\) is distributed according to a &lt;strong&gt;multivariate normal distribution&lt;/strong&gt;. First let’s talk briefly about the properties of multivariate normal distributions.&lt;/p&gt;
+
+&lt;h3 id=&quot;21-the-multivariate-normal-distribution&quot;&gt;2.1. The multivariate normal distribution&lt;/h3&gt;
+&lt;p&gt;The Definition of so-called &lt;em&gt;multivariate normal distribution&lt;/em&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A distribution with a &lt;strong&gt;mean vector&lt;/strong&gt; \(\mu \in \mathbb{R}^n\) and a &lt;strong&gt;covariance matrix&lt;/strong&gt; \(\Sigma \in \mathbb{R}^{n \times n}\), where \(\Sigma \geq 0\) is symmetric and positive semi-definite. Also written “\(\mathcal{N}(\mu, \Sigma)\)”, it’s density is given by:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;p(x; \mu, \Sigma) = \frac{1}{(2\pi)^{n/2}|\Sigma|^{1/2}}\exp\left(-\frac{1}{2}(x-\mu)^T\Sigma^{-1}(x-\mu)\right).&lt;/script&gt;
+
+&lt;p&gt;where “\(\vert\Sigma\vert\)” denotes the determinant of the matrix \(\Sigma\).&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;For a random variable \(X\) distributed \(\mathcal{N}(\mu, \Sigma)\), the mean is given by \(\mu\):&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\text{E}[X] = \int_x x\ p(x;\mu,\Sigma)dx = \mu&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The &lt;strong&gt;covariance&lt;/strong&gt; of a vector-valued random variable \(Z\) is defined as \(\text{Cov}(Z) = \text{E}[(Z-\text{E}[Z])(Z-\text{E}[Z])^T]\), which can also be written as \(\text{Cov}(Z) = \text{E}[ZZ^T]-(\text{E}[Z])(\text{E}[Z])^T\). If \(X \sim \mathcal{N}(\mu, \Sigma)\), then:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\text{Cov}(X) = \Sigma.&lt;/script&gt;
+
+&lt;h3 id=&quot;22-the-gaussian-discriminant-analysis-model&quot;&gt;2.2. The Gaussian Discriminant Analysis model&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;(02/18/2019)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;When $x$ are continuous-valued variables, we can use the so-called &lt;em&gt;Gaussian Discriminant Analysis (GDA)&lt;/em&gt; which using &lt;strong&gt;multivariate normal distribution&lt;/strong&gt; to model the different cases:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+y &amp;\sim \mbox{Bernoulli}(\phi) \\
+x \vert y=0 &amp;\sim \mathcal{N}(\mu_0, \Sigma) \\
+x \vert y=1 &amp;\sim \mathcal{N}(\mu_1, \Sigma)
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;which can be written as:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+p(y) &amp;= \phi^y(1-\phi)^{1-y} \\
+p(x\vert y=0) &amp;= \frac{1}{(2\pi)^{n/2} \vert\Sigma\vert^{1/2}}\exp\left(-\frac{1}{2}(x-\mu_0)^T\Sigma^{-1}(x-\mu_0)\right) \\
+p(x\vert y=1) &amp;= \frac{1}{(2\pi)^{n/2} \vert\Sigma\vert^{1/2}}\exp\left(-\frac{1}{2}(x-\mu_1)^T\Sigma^{-1}(x-\mu_1)\right) 
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Now the parameters are: $\phi, \mu_0, \mu_1, \Sigma$. Apply maximum likelihood estimate, the log-likelihood would be:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+l(\phi, \mu_0,\mu_1,\Sigma) &amp;= \log\prod_{i=1}^m p(x^{(i)}, y^{(i)}; \phi,\mu_0,\mu_1,\Sigma) \\
+&amp;= \log\prod_{i=1}^m p(x^{(i)} \vert y^{(i)};\mu_0,\mu_1,\Sigma)p(y^{(i)};\phi)
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;h4 id=&quot;to-do-add-the-derivation&quot;&gt;&lt;em&gt;(TO DO: Add the derivation)&lt;/em&gt;&lt;/h4&gt;
+&lt;p&gt;We get the maximum likelihood estimate of these parameters:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\phi &amp;= \frac{1}{m} \sum_{i=1}^m 1\{ y^{(i)}=1 \} \\
+\mu_0 &amp;= \frac{\sum_{i=1}^m 1\{ y^{(i)}=0 \} x^{(i)}}{\sum_{i=1}m 1\{ y{(i)}=0 \}} \\
+\mu_1 &amp;= \frac{\sum_{i=1}^m 1\{ y^{(i)}=1 \} x^{(i)}}{\sum_{i=1}m 1\{ y{(i)}=1 \}} \\
+\Sigma &amp;= \frac{1}{m}\sum_{i=1}^m (x^{(i)} - \mu_{y^{(i)}})(x^{(i)} - \mu_{y^{(i)}})^T.
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;h4 id=&quot;predict&quot;&gt;Predict:&lt;/h4&gt;
+&lt;p&gt;Simply apply the rules mentioned above, with these estimates:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\arg\underset{y}{\max} p(y \vert x) &amp; = \arg \underset{y}{\max} \frac{p(x \vert y)p(y)}{p(x)} \\
+&amp; = \arg \underset{y}{\max} p(x \vert y)p(y).
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;h3 id=&quot;23-gda-and-logistic-regression&quot;&gt;2.3. GDA and logistic regression&lt;/h3&gt;
+&lt;p&gt;With the predicting rules above, we have:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;p(y=1 vert x;\phi,\Sigma,\mu_0,\mu_1) = \frac{1}{1 + \exp(-\theta^Tx)}.&lt;/script&gt;
+
+&lt;p&gt;where $\theta$ is some appropriate function of $\phi,\Sigma,\mu_0,\mu_1$. This is exactly the form that logistic regression, a discriminative algorithm, to model $p(y=1 \vert x)$.&lt;/p&gt;
+
+&lt;h4 id=&quot;assumption-relations&quot;&gt;Assumption relations:&lt;/h4&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\begin{align}
+p(x \vert y) \text{ is multivariate gaussian} &amp;\Rightarrow p(x \vert y) \text{ follows a logistic function/ExpFamily} \\
+p(x \vert y) \text{ is multivariate gaussian} &amp;\nLeftarrow p(x \vert y) \text{ follows a logistic function/ExpFamily} \\
+\end{align} %]]&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;which-is-better&quot;&gt;Which is better?&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;When $p(x \vert y)$ is really Gaussian, GDA is &lt;strong&gt;asymptotically efficient!&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;By making &lt;strong&gt;weaker assumptions&lt;/strong&gt; logistic regression is more &lt;em&gt;robust&lt;/em&gt;, especially the data is indeed non-Gaussian, then in the limit of large datasets, logistic regression will almost always do better than GDA. For this reason, in practice logistic regression is used more often than GDA.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3-naive-bayes&quot;&gt;3. Naive Bayes&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;(02/18/2019)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;As GDA is for continuous $x$ problems, here Naive Bayes is for those problems with discrete $x$.&lt;/p&gt;
+
+&lt;p&gt;Here’s the typical example: spam filter.&lt;/p&gt;
+
+&lt;p&gt;First, we present the email(text) via a feature vector whose length is the size of word dictionary (a fixed number). If the email contains the $j$-th word, $x_j=1$; otherwise $x_j=0$. The vector would like like this:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align}
+x = \left[\begin{array}{c} 1\\0\\0\\\vdots\\1\\\vdots\\0 \end{array}\right] \quad \begin{array}{l} \text{a}\\\text{aardvark}\\\text{aardwolf}\\\vdots\\\text{buy}\\\vdots\\\text{zygmurgy}\end{array} \\
+\end{align}&lt;/script&gt;
+
+&lt;p&gt;If our vocabulary size is 50000, then $x \in \{ 0, 1 \}^{50000}$ ($x$ is a 50000-dimensional vector of 0’s and 1’s). If we were to model $x$ discriminatively/explicitly with multinomial distribution over the $2^{50000}$ possible outcomes, the we’d end up with a ($2^{50000} -1$)-dimensional parameter vector, which is not appliable.&lt;/p&gt;
+
+&lt;h4 id=&quot;naive-bayes-nb-assumption&quot;&gt;Naive Bayes (NB) assumption:&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;To model $p(x \vert y)$, we have to assume that the $x_i$’s are &lt;strong&gt;conditionally independent&lt;/strong&gt; given $y$.&lt;/li&gt;
+  &lt;li&gt;Under such assumption, the resulting algorithm is called the &lt;strong&gt;Naive Bayes classifier&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Then, we have:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+&amp; p(x_1,\dots,x_{50000} \vert y) \\
+&amp;= p(x_1 \vert y)p(x_2 \vert y, x_1)p(x_3 \vert y, x_1,x_2)\cdots p(x_{50000}\vert y,x_1,\dots,x_{49999}) \\
+&amp;= p(x_1\vert y)p(x_2\vert y)p(x_3\vert y)\cdots p(x_{50000}\vert y) \\
+&amp;= \prod_{j=1}^n p(x_j\vert y)
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Our model now is parameterized by:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\left\{ 
+\begin{array}{rcl} 
+\phi_{j\vert y=1} &amp;= &amp;p(x_j=1\vert y=1) \\
+\phi_{j\vert y=0} &amp;= &amp;p(x_j=1\vert y=0) \\
+\phi_y &amp;= &amp;p(y=1)
+\end{array}
+\right. %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;The likelihood of the data:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathcal{L}(\phi_y,\phi_{j\vert y=0},\phi_{j\vert y=1}) = \prod_{i=1}^m p(x^{(i)}, y^{(i)}).&lt;/script&gt;
+
+&lt;p&gt;Then we can get the maximum likelihood estimates:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\hat\phi_{j\vert y=1} &amp;= \frac{\sum_{i=1}^m 1\{x_j^{(i)} =1 \wedge y^{(i)} = 1 \}}{\sum_{i=1}^m 1\{y^{(i)} = 1 \}} \\
+\hat\phi_{j\vert y=0} &amp;= \frac{\sum_{i=1}^m 1\{x_j^{(i)} =1 \wedge y^{(i)} = 0 \}}{\sum_{i=1}^m 1\{y^{(i)} = 0 \}} \\
+\hat\phi_y &amp;= \frac{\sum_{i=1}^m 1\{y^{(i)} = 1\}}m
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;In the equation above, the “$\wedge$” symbol means “and”. The estimates have a very natural interpretation. For instance, $\phi_{j\vert y=1}$ is just the fraction of spam $(y=1)$ emails in which word $j$ does appear.&lt;/p&gt;
+
+&lt;h4 id=&quot;predict-1&quot;&gt;Predict:&lt;/h4&gt;
+&lt;p&gt;To make a prediction on a new sample with feature $x$, we then simply calculate:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+p(y=1\vert x) &amp;= \frac{p(x\vert y=1)p(y=1)}{p(x)} \\
+&amp;= \frac{\left(\prod_{j=1}^n p(x_j\vert y=1)\right)p(y=1)}{\prod_{j=1}^n p(x_j\vert y=1)p(y=1) + \prod_{j=1}^n p(x_j\vert y=0)p(y=0)}
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;and pick the class has the higher posterior probability.&lt;/p&gt;
+
+&lt;h3 id=&quot;laplace-smoothing&quot;&gt;Laplace smoothing&lt;/h3&gt;
+&lt;p&gt;Here is a problem:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;If there is a new word ($k$-th in the dictionary) appeared in the email text, which is not included in you training set. Then,&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\prod_{j=1}^n p(x_j\vert y=1) = 0\Leftarrow p(x_k\vert y=1) = 0\\
+\prod_{j=1}^n p(x_j\vert y=0) = 0 \Leftarrow p(x_k\vert y=1) = 0&lt;/script&gt;
+
+&lt;p&gt;Then,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+p(y=1\vert x) &amp;= \frac{\left(\prod_{j=1}^n p(x_j\vert y=1)\right)p(y=1)}{\prod_{j=1}^n p(x_j\vert y=1)p(y=1) + \prod_{j=1}^n p(x_j\vert y=0)p(y=0)} \\
+&amp;= \frac0{0}.
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;To avoid this, we introduce &lt;strong&gt;Laplace smoothing&lt;/strong&gt;, which replace the estimate with:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\phi_j = \frac{\sum_{i=1}^m 1 \{z^{(i)} \} + 1}{m+k}.&lt;/script&gt;
+
+&lt;p&gt;Then the estimates is updated as:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\hat\phi_{j\vert y=1} &amp;= \frac{\sum_{i=1}^m 1\{x_j^{(i)} =1 \wedge y^{(i)} = 1 \} + 1 }{\sum_{i=1}^m 1\{y^{(i)} = 1 \} + 2 } \\
+\hat\phi_{j\vert y=0} &amp;= \frac{\sum_{i=1}^m 1\{x_j^{(i)} =1 \wedge y^{(i)} = 0 \} + 1 }{\sum_{i=1}^m 1\{y^{(i)} = 0 \} + 2 } 
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;
+In practice, it usually doesn’t matter much whether we apply Laplace smoothing to $\phi_y$ or not, since we will typically have a fair fraction each of spam and non-spam message, so $\phi_y$ will be a reasonable estimate of $p(y=1)$ and will be quite far from 0 anyway. &lt;span style=&quot;color:crimson&quot;&gt; WHY? &lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://see.stanford.edu/materials/aimlcs229/cs229-notes2.pdf&quot;&gt;» Stanford CS229 Lecture Note Part IV - Generative Learning Algorithms&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="machine learning" /><category term="cs229" /><summary type="html">Keep Updating: 2019-02-18 Merge to Lecture #5 Note 2019-01-23 Add Part 2, Gausian discriminant analysis 2019-01-22 Add Part 1, A Review of Generative Learning Algorithms.</summary></entry><entry><title type="html">Intro to HTML, CSS, Javascript</title><link href="http://localhost:4000/2019/02/15/intro-to-web-dev" rel="alternate" type="text/html" title="Intro to HTML, CSS, Javascript" /><published>2019-02-15T15:40:00+08:00</published><updated>2019-02-15T15:40:00+08:00</updated><id>http://localhost:4000/2019/02/15/intro-to-web-dev</id><content type="html" xml:base="http://localhost:4000/2019/02/15/intro-to-web-dev">&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=3JluqTojuME&quot;&gt;&lt;img src=&quot;http://img.youtube.com/vi/3JluqTojuME/0.jpg&quot; alt=&quot;IMAGE ALT TEXT HERE&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;http://img.youtube.com/vi/3JluqTojuME/0.jpg&quot;&gt;» Web Development Tutorial for Beginners (#1) - How to build webpages with HTML, CSS, Javascript&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="web development" /><category term="html" /><category term="css" /><category term="javascript" /><summary type="html">» Web Development Tutorial for Beginners (#1) - How to build webpages with HTML, CSS, Javascript</summary></entry><entry><title type="html">The Term of “Heap”</title><link href="http://localhost:4000/2019/02/15/the-term-of-heap" rel="alternate" type="text/html" title="The Term of &quot;Heap&quot;" /><published>2019-02-15T10:20:00+08:00</published><updated>2019-02-15T10:20:00+08:00</updated><id>http://localhost:4000/2019/02/15/the-term-of-heap</id><content type="html" xml:base="http://localhost:4000/2019/02/15/the-term-of-heap">&lt;blockquote&gt;
+  &lt;p&gt;The term “&lt;strong&gt;heap&lt;/strong&gt;” was originally coined in the context of heapsort, but it has since come to refer to “garbage-collected storage,” such as the programming languages Java and Lisp provide.&lt;/p&gt;
+
+  &lt;p&gt;The &lt;strong&gt;heap data structure&lt;/strong&gt; in MIT 6.006 is NOT garbage-collected storage.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Algorithms&quot;]" /><category term="algorithms" /><category term="data structure" /><summary type="html">The term “heap” was originally coined in the context of heapsort, but it has since come to refer to “garbage-collected storage,” such as the programming languages Java and Lisp provide. The heap data structure in MIT 6.006 is NOT garbage-collected storage.</summary></entry><entry><title type="html">[CS229] Lecture 4 Notes - Newton’s Method/GLMs</title><link href="http://localhost:4000/2019/02/14/cs229-lecture-4" rel="alternate" type="text/html" title="[CS229] Lecture 4 Notes - Newton's Method/GLMs" /><published>2019-02-14T10:40:00+08:00</published><updated>2019-02-14T10:40:00+08:00</updated><id>http://localhost:4000/2019/02/14/cs229-lecture-4</id><content type="html" xml:base="http://localhost:4000/2019/02/14/cs229-lecture-4">&lt;blockquote&gt;
+  &lt;ol&gt;
+    &lt;li&gt;Newton’s Method,&lt;/li&gt;
+    &lt;li&gt;Generalized Linear Models&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-newtons-method&quot; id=&quot;markdown-toc-1-newtons-method&quot;&gt;1. Newton’s Method&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#11-basic-idea-of-newtons-method&quot; id=&quot;markdown-toc-11-basic-idea-of-newtons-method&quot;&gt;1.1. Basic idea of Newton’s method&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#12-use-newtons-method-to-maximize-some-function-l&quot; id=&quot;markdown-toc-12-use-newtons-method-to-maximize-some-function-l&quot;&gt;1.2. Use Newton’s method to maximize some function \(l\)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#13-pros--cons-of-newtons-method&quot; id=&quot;markdown-toc-13-pros--cons-of-newtons-method&quot;&gt;1.3. Pros &amp;amp; Cons of Newton’s method&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-generalized-linear-models&quot; id=&quot;markdown-toc-2-generalized-linear-models&quot;&gt;2. Generalized Linear Models&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#21-the-exponential-family&quot; id=&quot;markdown-toc-21-the-exponential-family&quot;&gt;2.1. The exponential family&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#211-bernoulli-case&quot; id=&quot;markdown-toc-211-bernoulli-case&quot;&gt;2.1.1. Bernoulli case&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#212-gaussian-case&quot; id=&quot;markdown-toc-212-gaussian-case&quot;&gt;2.1.2. Gaussian case&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3-constructing-glms&quot; id=&quot;markdown-toc-3-constructing-glms&quot;&gt;3. Constructing GLMs&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#31-ordinary-least-squares&quot; id=&quot;markdown-toc-31-ordinary-least-squares&quot;&gt;3.1. Ordinary Least Squares&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#32-logistic-regression&quot; id=&quot;markdown-toc-32-logistic-regression&quot;&gt;3.2. Logistic Regression&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#33-softmax-regression&quot; id=&quot;markdown-toc-33-softmax-regression&quot;&gt;3.3. Softmax Regression&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#reference&quot; id=&quot;markdown-toc-reference&quot;&gt;Reference&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;1-newtons-method&quot;&gt;1. Newton’s Method&lt;/h2&gt;
+&lt;h3 id=&quot;11-basic-idea-of-newtons-method&quot;&gt;1.1. Basic idea of Newton’s method&lt;/h3&gt;
+&lt;p&gt;The aim of Newton’s method is &lt;strong&gt;to find a zero of a function&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Suppose we have some function that \(f: \mathbb{R}\mapsto\mathbb{R}\), and we want to find a value of \(x\) that makes \(f(x)=0\). Newton’s method performs the following updates:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;x := x - \frac{f(x)}{f'(x)}.&lt;/script&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Newton%27s_method&quot;&gt;» Newton’s Method on Wikipedia&lt;/a&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;&lt;img src=&quot;/public/img/20190214_NewtonIteration_Ani.gif&quot; alt=&quot;&quot; /&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;Figure 1.&lt;/strong&gt; The function \(f\) is shown in blue and the tangent line is in red. We see that \(x_{n + 1}\) is a better approximation than \(x_n\) for the root x of the function \(f\). (from Wikipedia)&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;12-use-newtons-method-to-maximize-some-function-l&quot;&gt;1.2. Use Newton’s method to maximize some function \(l\)&lt;/h3&gt;
+&lt;p&gt;The maxima of \(l\) correspond to points where it’s first derivative \(l’(\theta)\) is zero. Therefore, according to the definition of Newton’s method described above, to find a value of \(\theta\) that makes \(f’(\theta)=0\), we should perform the following update:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\theta := \theta - \frac{f'(\theta)}{f''(\theta)}.&lt;/script&gt;
+
+&lt;p&gt;In the logistic regression, \(\theta\) is a vector, then the update rule should be generalized as:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\theta := \theta - H^{-1}\nabla_\theta l(\theta).&lt;/script&gt;
+
+&lt;p&gt;Here \(\nabla_\theta l(\theta)\) is the vector of partial derivatives of \(l(\theta)\) w.r.t. the \(\theta\)’s; and the \(H\) is an n-by-n matrix called &lt;strong&gt;Hessian&lt;/strong&gt;, whose entries are given by&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;H_{ij} = \frac{\partial^2 l(\theta)}{\partial\theta_i\partial\theta_j}.&lt;/script&gt;
+
+&lt;h3 id=&quot;13-pros--cons-of-newtons-method&quot;&gt;1.3. Pros &amp;amp; Cons of Newton’s method&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Pros&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Newton’s method converges faster that gradient descent and requires fewer iterations to get close to the minimum.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Cons&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Each single iteration however is more expensive that the one of gradient descent, since it requires finding and inverting an n-by-n Hessian.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-generalized-linear-models&quot;&gt;2. Generalized Linear Models&lt;/h2&gt;
+&lt;p&gt;Both &lt;strong&gt;linear regression&lt;/strong&gt; and &lt;strong&gt;logistic regression&lt;/strong&gt; methods are special cases of a broader family of models, which is called &lt;strong&gt;Generalized Linear Models (GLMs)&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;21-the-exponential-family&quot;&gt;2.1. The exponential family&lt;/h3&gt;
+&lt;p&gt;Define a class of distributions in the exponential family as:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align}
+p(y;\eta) = b(y)\exp(\eta^T T(y) - a(\eta)). \tag{*}\label{eq1}
+\end{align}&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;\(\eta\) - is called the &lt;strong&gt;natural parameter&lt;/strong&gt; of the distribution;&lt;/li&gt;
+  &lt;li&gt;\(T(y)\) - is the &lt;strong&gt;sufficient statistic&lt;/strong&gt;;&lt;/li&gt;
+  &lt;li&gt;\(a(\eta)\) - is the &lt;strong&gt;log partition function&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;A family:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;A fixed choice of \(T\), \(a\) and \(b\) defines a &lt;em&gt;family&lt;/em&gt; of distributions that is parameterized by \(\eta\).&lt;/li&gt;
+  &lt;li&gt;As we vary \(\eta\), we could get different distributions within this family.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We’ll show that the Bernoulli and the Gaussian distributions are examples of exponential family distributions.&lt;/p&gt;
+
+&lt;h4 id=&quot;211-bernoulli-case&quot;&gt;2.1.1. Bernoulli case&lt;/h4&gt;
+&lt;p&gt;The Bernoulli distribution with mean \(\phi\), written Bernoulli\((\phi)\), specifies a distribution over \(y \in {0,1}\). So that&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\left\{ \begin{array}{rcl} 
+P(y=1;\phi) &amp;=&amp; \phi \\
+P(y=0;\phi) &amp;=&amp; 1-\phi
+\end{array}\right. \\ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;This class of distributions is parameterized by \(\phi\). Now we want to show that this class of Bernoulli distributions is in the “exponential family” when we choose a certain set of \(T\), \(a\) and \(b\).
+We write the Bernoulli distribution as:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+p(y;\phi) &amp;= \phi^y(1-\phi)^{1-y} \\
+&amp;= \exp(\log(\phi^y(1-\phi)^{1-y}) \\
+&amp;= \exp(y\log\phi + (1-y)\log(1-\phi)) \\
+&amp;= \exp(y\log\phi -y\log(1-\phi) + log(1-\phi)) \\
+&amp;= \exp\left(y\log\frac{\phi}{1-\phi} + \log(1-\phi)\right).
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;according to Equation \(\eqref{eq1}\), we do the following derivation:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;&lt;img src=&quot;/public/img/20190214_01.jpg&quot; alt=&quot;&quot; /&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;Figure 2.&lt;/strong&gt; Derivation of Bernoulli to GLM&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;We have&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\eta &amp;= \log\frac{\phi}{1-\phi} \\
+T(y) &amp;= y \\
+a(\eta) &amp;= \log(1+e^\eta) \\
+b(y) &amp;= 1
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;This shows that the Bernoulli distribution can be written in the form of Equation \(\eqref{eq1}\), using certain choice of \(T\), \(a\) and \(b\) above.&lt;/p&gt;
+
+&lt;h4 id=&quot;212-gaussian-case&quot;&gt;2.1.2. Gaussian case&lt;/h4&gt;
+&lt;p&gt;When deriving linear regression, the value of $\sigma^2$ had no effect on the choice of $\theta$ and $h_\theta(x)$. Thus, for simplicity, we set $\sigma^2=1$. Then for the Gaussian distribution, we have:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+p(y;\mu) &amp;= \frac{1}{\sqrt{2\pi}}\exp\left(-\frac{1}{2}(y-\mu)^2\right) \\
+&amp;= \frac{1}{\sqrt{2\pi}}\exp\left(-\frac{1}{2}y^2\right)\cdot\exp\left(y\mu-\frac{1}{2}\mu^2\right)
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;&lt;img src=&quot;/public/img/20190214_02.jpg&quot; alt=&quot;&quot; /&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;Figure 3.&lt;/strong&gt; Derivation of Gaussian to GLM&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;We have&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\eta &amp;= \mu \\
+T(y) &amp;= y \\
+a(\eta) &amp;= \frac{1}{2}\mu^2=\frac{1}{2}\eta^2 \\
+b(y) &amp;= \frac{1}{\sqrt{2\pi}}\exp\left(-\frac{1}{2}y^2\right).
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;There are a lot of other distributions that belong to the exponential family, such as:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;the multinomial;&lt;/li&gt;
+  &lt;li&gt;the Poisson (for modelling count-data);&lt;/li&gt;
+  &lt;li&gt;the gamma and the exponential (for modelling continuous, non-negative random variables, such as time-intervals);&lt;/li&gt;
+  &lt;li&gt;the beta and the Dirichlet (for distributions over probabilities).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3-constructing-glms&quot;&gt;3. Constructing GLMs&lt;/h2&gt;
+&lt;p&gt;Consider a classification or regression problem where we’d like to predict the value of some random variable $y$ as a function of $x$. To derive a GLM for this problem, we will make 3 assumptions about the conditional distribution of $y$ given $x$:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;$y \vert x; \theta \sim \text{ExponentialFamily}(\eta)$. i.e., given $x$ and $\theta$, the distribution of $y$ follows some exponential family distribution with parameter $\eta$.&lt;/li&gt;
+  &lt;li&gt;&lt;span style=&quot;color:crimson&quot;&gt;We would like the prediction $h(x)$ output to satisfy $h(x) = \mbox{E}[y\vert x]$. &lt;strong&gt;Why?&lt;/strong&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;$\eta$ and $x$ should be linearly related: $\eta=\theta^T x$.(or if $\eta$ is a vector, then $\eta_i=\theta_i^T x$).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;31-ordinary-least-squares&quot;&gt;3.1. Ordinary Least Squares&lt;/h3&gt;
+
+&lt;h3 id=&quot;32-logistic-regression&quot;&gt;3.2. Logistic Regression&lt;/h3&gt;
+
+&lt;h3 id=&quot;33-softmax-regression&quot;&gt;3.3. Softmax Regression&lt;/h3&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://see.stanford.edu/materials/aimlcs229/cs229-notes1.pdf&quot;&gt;» Stanford Lecture Note Part I &amp;amp; II&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Newton’s Method, Generalized Linear Models</summary></entry><entry><title type="html">[CS229] Lecture 3 Notes - LWR/Prob Interp/Logistic/Perceptron</title><link href="http://localhost:4000/2019/02/12/cs229-lecture-3" rel="alternate" type="text/html" title="[CS229] Lecture 3 Notes - LWR/Prob Interp/Logistic/Perceptron" /><published>2019-02-12T10:40:00+08:00</published><updated>2019-02-12T10:40:00+08:00</updated><id>http://localhost:4000/2019/02/12/cs229-lecture-3</id><content type="html" xml:base="http://localhost:4000/2019/02/12/cs229-lecture-3">&lt;blockquote&gt;
+  &lt;ol&gt;
+    &lt;li&gt;Locally Weighted Regression&lt;/li&gt;
+    &lt;li&gt;Probablistic Interpretation of LR&lt;/li&gt;
+    &lt;li&gt;Classification (Logistic Regression)&lt;/li&gt;
+    &lt;li&gt;Disgression -&amp;gt; Perceptron&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-locally-weighted-regression&quot; id=&quot;markdown-toc-1-locally-weighted-regression&quot;&gt;1. Locally Weighted Regression&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#11-the-origin&quot; id=&quot;markdown-toc-11-the-origin&quot;&gt;1.1. The origin:&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#12-detail&quot; id=&quot;markdown-toc-12-detail&quot;&gt;1.2. Detail:&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#13-parametric-vs-non-parametric-learning-algorighms&quot; id=&quot;markdown-toc-13-parametric-vs-non-parametric-learning-algorighms&quot;&gt;1.3. Parametric v.s. Non-Parametric Learning Algorighms:&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#parametric-learning-algorithm&quot; id=&quot;markdown-toc-parametric-learning-algorithm&quot;&gt;“Parametric” learning algorithm:&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#non-parametric-learning-algorithm&quot; id=&quot;markdown-toc-non-parametric-learning-algorithm&quot;&gt;“Non-Parametric” learning algorithm:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-probablistic-interpretation-of-lr&quot; id=&quot;markdown-toc-2-probablistic-interpretation-of-lr&quot;&gt;2. Probablistic Interpretation of LR&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#21-assumptions&quot; id=&quot;markdown-toc-21-assumptions&quot;&gt;2.1. Assumptions:&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#22-maximum-likelihood&quot; id=&quot;markdown-toc-22-maximum-likelihood&quot;&gt;2.2. Maximum Likelihood&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#221-there-are-two-different-basic-ideas-in-probability&quot; id=&quot;markdown-toc-221-there-are-two-different-basic-ideas-in-probability&quot;&gt;2.2.1. There are two different basic ideas in probability:&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#222-the-principle-of-maximum-likelihood&quot; id=&quot;markdown-toc-222-the-principle-of-maximum-likelihood&quot;&gt;2.2.2. The principle of maximum likelihood:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#23-find-the-best-theta-to-reach-the-maximum-likelihood&quot; id=&quot;markdown-toc-23-find-the-best-theta-to-reach-the-maximum-likelihood&quot;&gt;2.3. Find the best \(\theta\) to reach the “Maximum Likelihood”:&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3-classification-and-logistic-regression&quot; id=&quot;markdown-toc-3-classification-and-logistic-regression&quot;&gt;3. Classification and Logistic Regression&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#31-logistic-regression-for-classification-problems&quot; id=&quot;markdown-toc-31-logistic-regression-for-classification-problems&quot;&gt;3.1. Logistic regression for classification problems&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4-digression---perceptron&quot; id=&quot;markdown-toc-4-digression---perceptron&quot;&gt;4. Digression - Perceptron&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#reference&quot; id=&quot;markdown-toc-reference&quot;&gt;Reference&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;1-locally-weighted-regression&quot;&gt;1. Locally Weighted Regression&lt;/h2&gt;
+&lt;h3 id=&quot;11-the-origin&quot;&gt;1.1. The origin:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The choice of features is important to ensuring good performance of a learning algorithm.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The Locally weighted linear regression (LWR) algorithm, which assuming there is sufficient training data, makes the &lt;strong&gt;choice of features less critical&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;12-detail&quot;&gt;1.2. Detail:&lt;/h3&gt;
+&lt;p&gt;The locally weighted linear regression alogorithm does the following:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Fit \( \theta \) to minimize \(\sum_i w^{(i)} (y^{(i)} - \theta^T x^{(i)} )^2\).&lt;/li&gt;
+  &lt;li&gt;Output \(\theta^T x\).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;where \(w^{(i)} = \exp\left(-\frac{(x^{(i)} - x)^2}{2\tau^2}\right)\), \(\tau\) is called &lt;strong&gt;“bandwidth”&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Note that:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;the wights depend on the particular point \(x\) at which we’re trying to evaluate \(x\).&lt;/li&gt;
+  &lt;li&gt;if \(\vert x^{(i)} - x \vert\) is small, the \(w^{(i)}\) is close to 1;&lt;/li&gt;
+  &lt;li&gt;if \(\vert x^{(i)} - x \vert\) is large, the \(w^{(i)}\) is close to 0;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;13-parametric-vs-non-parametric-learning-algorighms&quot;&gt;1.3. Parametric v.s. Non-Parametric Learning Algorighms:&lt;/h3&gt;
+&lt;h4 id=&quot;parametric-learning-algorithm&quot;&gt;“Parametric” learning algorithm:&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Fix numbers of parameters to fit the model;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;non-parametric-learning-algorithm&quot;&gt;“Non-Parametric” learning algorithm:&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Number of parameter grows with \(m\) (\(m\) is the training size).&lt;/li&gt;
+  &lt;li&gt;To make predictions using LWR, we need to keep the entire training set around. (LWR is the first example in the class as a &lt;strong&gt;non-parametric&lt;/strong&gt; algorithm).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-probablistic-interpretation-of-lr&quot;&gt;2. Probablistic Interpretation of LR&lt;/h2&gt;
+&lt;h3 id=&quot;21-assumptions&quot;&gt;2.1. Assumptions:&lt;/h3&gt;
+&lt;p&gt;We &lt;strong&gt;assume&lt;/strong&gt; that:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;y{(i)} = \theta^T x^{(i)} + \varepsilon^{(i)}&lt;/script&gt;
+
+&lt;p&gt;where&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;\(\varepsilon^{(i)}\) is the error and \(\varepsilon^{(i)} \sim \mathcal{N}(0, \sigma^2)\), which means \(P(\varepsilon^{(i)}) = \frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{(y^{(i)} - \theta^T x^{(i)})^2}{2\sigma^2}\right)\).&lt;/li&gt;
+  &lt;li&gt;\(\varepsilon^{(i)}\) is I.I.D. (independently identically distributed).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;22-maximum-likelihood&quot;&gt;2.2. Maximum Likelihood&lt;/h3&gt;
+&lt;h4 id=&quot;221-there-are-two-different-basic-ideas-in-probability&quot;&gt;2.2.1. There are two different basic ideas in probability:&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;Frequency point of view -&amp;gt; (Applied here!)&lt;/li&gt;
+  &lt;li&gt;Bayesian point of view.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;222-the-principle-of-maximum-likelihood&quot;&gt;2.2.2. The principle of maximum likelihood:&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;To choose \(\theta\) to maximum \(L(\theta)\), \(\theta\) is NOT a random value, but a true value out there!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;23-find-the-best-theta-to-reach-the-maximum-likelihood&quot;&gt;2.3. Find the best \(\theta\) to reach the “Maximum Likelihood”:&lt;/h3&gt;
+&lt;p&gt;Then, the “Likelihood” of the \(y\) is:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+L(\theta) &amp; = P\left(\mathbf{y} \vert X;\theta\right) \\
+(i.i.d) &amp; = \prod_{i=1}^m P\left(y^{(i)} \vert x^{(i)}; \theta\right) \\
+&amp; = \prod_{i=1}^m \frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{\left(y^{(i)} - \theta^T x^{(i)}\right)^2}{2\sigma^2}\right)
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Then, for mathematical convenience, let&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+l(\theta) &amp;= \log\left(L(\theta)\right) \\
+&amp;= \log\left(\prod_{i=1}^m P\left(y^{(i)} \vert x^{(i)}; \theta\right)\right) \\
+&amp;= \sum_{i=1}^m \log P\left(y^{(i)} \vert x^{(i)}; \theta\right) \\
+&amp;= \sum_{i=1}^m \log\left(\frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{\left(y^{(i)} - \theta^T x^{(i)}\right)^2}{2\sigma^2}\right)\right) \\
+&amp;= m\cdot\log\frac{1}{\sqrt{2\pi}\sigma} + \sum_{i=1}^m \left(-\frac{\left(y^{(i)} - \theta^T x^{(i)}\right)^2}{2\sigma^2}\right).
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Therefore, to &lt;strong&gt;maximize&lt;/strong&gt; \(l(\theta)\) is to &lt;strong&gt;minimize&lt;/strong&gt; \(\sum_{i=1}^m \frac{\left(y^{(i)} - \theta^T x^{(i)}\right)^2}{2\sigma^2}\), which is the same as minimizing \(J(\theta) = \sum_{i=1}^m \frac{\left(y^{(i)} - \theta^T x^{(i)}\right)^2}{2}\) (this is the rule for Least Square).&lt;/p&gt;
+
+&lt;h2 id=&quot;3-classification-and-logistic-regression&quot;&gt;3. Classification and Logistic Regression&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Note: 
+Generally, it’s bad idea to use LR for classification problems.
+Why? It doesn’t make sence for \(h_\theta(x)\) to take values larger than 1 or smaller than 0 when we know that \(y\in{0,1}\).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;31-logistic-regression-for-classification-problems&quot;&gt;3.1. Logistic regression for classification problems&lt;/h3&gt;
+&lt;p&gt;As in a classification problem:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;y \in \{0, 1\} \\
+h_\theta(x) \in [0, 1]&lt;/script&gt;
+
+&lt;p&gt;To fix the problems when using Linear Regression, we choose another form of function for our hypothesis \(h_\theta(x)\).&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;h_\theta(x) = g(\theta^Tx) = \frac{1}{1 + e^{-\theta^T x}},&lt;/script&gt;
+
+&lt;p&gt;where&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;g(z) = \frac{1}{1 + e^{-z}}.&lt;/script&gt;
+
+&lt;p&gt;\(g(z) = \frac{1}{1 + e^{-z}}\) is called “sigmoid” function or “logistic” function.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;&lt;img src=&quot;/public/img/20190212_sigmoid_function.png&quot; alt=&quot;&quot; /&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;Figure 2.&lt;/strong&gt; Sigmoid function.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Then, we have&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\left\{ \begin{array}{rcl} 
+P(y=1 \vert x; \theta) &amp; = &amp; h_\theta(x) \\
+P(y=0 \vert x; \theta) &amp; = &amp; 1 - h_\theta(x)
+\end{array}\right. \\
+\Rightarrow P(y|x;\theta) = h_\theta(x)^y (1 - h_\theta(x))^{1-y} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Then the likelihood is&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+L(\theta) &amp; = P\left(\mathbf{y} \vert X;\theta\right) \\
+&amp; = \prod_{i=1}^m P\left(y^{(i)} \vert x^{(i)}; \theta\right)
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;For mathematical convenience, let&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+l(\theta) &amp;= \log\left(L(\theta)\right) \\
+&amp;= \log\left(\prod_{i=1}^m P\left(y^{(i)} \vert x^{(i)}; \theta\right)\right) \\
+&amp;= \sum_{i=1}^m \log P\left(y^{(i)} \vert x^{(i)}; \theta\right) \\
+&amp;= \sum_{i=1}^m \left( y^{(i)} \log h_\theta(x^{(i)}) + (1 - y^{(i)}) \log (1 - h_\theta(x^{(i)})\right)
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;To maximize the likelihood, here we use &lt;strong&gt;gradient ascent&lt;/strong&gt; by \(\theta := \theta + \alpha \nabla_\theta l(\theta)\). The derivative is (derivation omitted, can be found on Page 18 in the notes):&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\partial}{\partial\theta_j}l(\theta) = \sum_{i=1}^m \left(y^{(i)} - h_\theta\left(x^{(i)}\right)\right)\cdot x_j^{(i)}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\theta_j := \theta_j + \alpha \sum_{i=1}^m \left(y^{(i)} - h_\theta\left(x^{(i)}\right)\right)\cdot x_j^{(i)}&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;(added on 02/19/2019)&lt;/em&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;&lt;img src=&quot;/public/img/20190219_review_note1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;Note 1.&lt;/strong&gt; Review of “logistic regression” from scratch.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;4-digression---perceptron&quot;&gt;4. Digression - Perceptron&lt;/h2&gt;
+&lt;p&gt;Almost the same procedure as the logistic regression. The only difference is the \(g(z)\) used in the process.&lt;/p&gt;
+
+&lt;p&gt;The \(g(z)\) used in perceptron learning algorithm is:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+g(z) = \left\{ \begin{array}{rcl} 
+1 &amp; \mbox{if} &amp; z \ge 0 \\
+0 &amp; \mbox{if} &amp; z \lt 0
+\end{array}\right. %]]&gt;&lt;/script&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;&lt;img src=&quot;/public/img/20190212_perceptron_function.png&quot; alt=&quot;&quot; /&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;Figure 2.&lt;/strong&gt; Perceptron function.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Then, \(h_\theta(x) = g(\theta^T x)\), and the update rule for perceptron learning algorithm is almost the same:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\theta_j := \theta_j + \alpha \left(y^{(i)} - h_\theta\left(x^{(i)}\right)\right)\cdot x_j^{(i)}&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;(added on 02/19/2019)&lt;/em&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;&lt;img src=&quot;/public/img/20190219_review_note2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;Note 2.&lt;/strong&gt; Review of the “perceptron learning algorithm”.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://see.stanford.edu/materials/aimlcs229/cs229-notes1.pdf&quot;&gt;» Stanford CS229 Lecture Note Part I &amp;amp; II&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="cs229" /><category term="machine learning" /><summary type="html">Locally Weighted Regression Probablistic Interpretation of LR Classification (Logistic Regression) Disgression -&amp;gt; Perceptron</summary></entry><entry><title type="html">Random! Shuffle v.s. Permutation (Numpy)</title><link href="http://localhost:4000/2019/01/31/np-shuffle-vs-permutation" rel="alternate" type="text/html" title="Random! Shuffle v.s. Permutation (Numpy)" /><published>2019-01-31T10:40:00+08:00</published><updated>2019-01-31T10:40:00+08:00</updated><id>http://localhost:4000/2019/01/31/np-shuffle-vs-permutation</id><content type="html" xml:base="http://localhost:4000/2019/01/31/np-shuffle-vs-permutation">&lt;blockquote&gt;
+  &lt;p&gt;Generally, in Numpy, both &lt;code class=&quot;highlighter-rouge&quot;&gt;random.permutation&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;random.shuffle&lt;/code&gt; randomly shuffle elements in an array. But there are differences:&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;difference&quot;&gt;Difference:&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;np.random.permutation&lt;/code&gt; has two differences from &lt;code class=&quot;highlighter-rouge&quot;&gt;np.random.shuffle&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;if passed an array, it will return a shuffled &lt;strong&gt;copy&lt;/strong&gt; of the array; &lt;code class=&quot;highlighter-rouge&quot;&gt;np.random.shuffle&lt;/code&gt; shuffles the array &lt;strong&gt;inplace&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;if passed an integer, it will return a shuffled range i.e. &lt;code class=&quot;highlighter-rouge&quot;&gt;np.random.shuffle(np.arange(n))&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;If x is an integer, randomly permute &lt;code class=&quot;highlighter-rouge&quot;&gt;np.arange(x)&lt;/code&gt;. If x is an array, make a copy and shuffle the elements randomly.&lt;/p&gt;
+
+&lt;p&gt;The source code might help to understand this:&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;mi&quot;&gt;3280&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;permutation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;3307&lt;/span&gt;            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;isinstance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;integer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)):&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;3308&lt;/span&gt;                &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;3309&lt;/span&gt;            &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;3310&lt;/span&gt;                &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;3311&lt;/span&gt;            &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shuffle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;3312&lt;/span&gt;            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/15474159/shuffle-vs-permute-numpy&quot;&gt;» shuffle vs permute numpy - Stack Overflow&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;]" /><category term="numpy" /><category term="random" /><summary type="html">Generally, in Numpy, both random.permutation and random.shuffle randomly shuffle elements in an array. But there are differences:</summary></entry><entry><title type="html">How to Force Keras to use CPU to Run Script?</title><link href="http://localhost:4000/2019/01/23/how-to-force-keras-use-cpu" rel="alternate" type="text/html" title="How to Force Keras to use CPU to Run Script?" /><published>2019-01-23T14:00:00+08:00</published><updated>2019-01-23T14:00:00+08:00</updated><id>http://localhost:4000/2019/01/23/how-to-force-keras-use-cpu</id><content type="html" xml:base="http://localhost:4000/2019/01/23/how-to-force-keras-use-cpu">&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;The reason for such a demand:&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;p&gt;My main training program was using the GPU fully. But I needed to get a prediction with another previously trained model urgently. I tried to use the GPU but I got OOM. Therefore, using CPU for the predicting job should be a good solution, and it did solve the problem!&lt;/p&gt;
+
+  &lt;p&gt;Generally there are two ways: a short/lazy one and a lengthy but graceful one.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;option-i&quot;&gt;Option I:&lt;/h2&gt;
+&lt;p&gt;If you want to force Keras to use CPU&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;os&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;environ&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;CUDA_DEVICE_ORDER&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;PCI_BUS_ID&quot;&lt;/span&gt; 
+&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;environ&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;CUDA_VISIBLE_DEVICES&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;before Keras / Tensorflow is imported.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;option-ii&quot;&gt;Option II:&lt;/h2&gt;
+&lt;p&gt;A rather graceful and separable way of doing this is to use&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;tensorflow&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;keras&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;backend&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;K&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;num_cores&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;GPU&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;num_GPU&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;num_CPU&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CPU&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;num_CPU&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;num_GPU&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ConfigProto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;intra_op_parallelism_threads&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num_cores&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;\
+        &lt;span class=&quot;n&quot;&gt;inter_op_parallelism_threads&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num_cores&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;allow_soft_placement&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;\
+        &lt;span class=&quot;n&quot;&gt;device_count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'CPU'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num_CPU&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'GPU'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num_GPU&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;session&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Session&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;K&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set_session&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;session&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Here with &lt;code class=&quot;highlighter-rouge&quot;&gt;booleans&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;GPU&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;CPU&lt;/code&gt; you can specify whether to use a GPU or GPU when running your code.&lt;/p&gt;
+
+&lt;p&gt;The only thing to note is that you’ll need &lt;code class=&quot;highlighter-rouge&quot;&gt;tensorflow-gpu&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;cuda/cudnn&lt;/code&gt; installed because you’re always giving the option of using a GPU.&lt;/p&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/40690598/can-keras-with-tensorflow-backend-be-forced-to-use-cpu-or-gpu-at-will&quot;&gt;» Can Keras with Tensorflow backend be forced to use CPU or GPU at will? - Stack Overflow&lt;/a&gt;&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Deep Learning&quot;]" /><category term="how-to" /><category term="keras" /><category term="tensorflow" /><category term="deep learning" /><category term="gpu" /><category term="nvidia" /><category term="cuda" /><summary type="html">The reason for such a demand: My main training program was using the GPU fully. But I needed to get a prediction with another previously trained model urgently. I tried to use the GPU but I got OOM. Therefore, using CPU for the predicting job should be a good solution, and it did solve the problem! Generally there are two ways: a short/lazy one and a lengthy but graceful one. Option I: If you want to force Keras to use CPU import os os.environ[&quot;CUDA_DEVICE_ORDER&quot;] = &quot;PCI_BUS_ID&quot; os.environ[&quot;CUDA_VISIBLE_DEVICES&quot;] = &quot;&quot; before Keras / Tensorflow is imported.</summary></entry><entry><title type="html">How to Add a Table of Content to my Jekyll Blog?</title><link href="http://localhost:4000/2019/01/23/how-to-add-table-of-content-in-jekyll" rel="alternate" type="text/html" title="How to Add a Table of Content to my Jekyll Blog?" /><published>2019-01-23T11:20:00+08:00</published><updated>2019-01-23T11:20:00+08:00</updated><id>http://localhost:4000/2019/01/23/how-to-add-table-of-content-in-jekyll</id><content type="html" xml:base="http://localhost:4000/2019/01/23/how-to-add-table-of-content-in-jekyll">&lt;p&gt;In the post, simply add:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;* TOC
+{:toc} 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;in the post.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.seanbuscay.com/blog/jekyll-toc-markdown/&quot;&gt;» How I Add a Table of Contents to my Jekyll Blog Written in Markdown&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.webjeda.com/jekyll-toc/#how-to-add-toc-for-jekyll-posts&quot;&gt;» Jekyll Table Of Contents - Wikipedia Look!&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Web Developing&quot;]" /><category term="how-to" /><category term="jekyll" /><summary type="html">In the post, simply add: * TOC {:toc} in the post. » How I Add a Table of Contents to my Jekyll Blog Written in Markdown » Jekyll Table Of Contents - Wikipedia Look!</summary></entry><entry><title type="html">How to Add a Scroll Back to Top Button?</title><link href="http://localhost:4000/2019/01/23/how-to-add-back-to-top-button" rel="alternate" type="text/html" title="How to Add a Scroll Back to Top Button?" /><published>2019-01-23T09:40:00+08:00</published><updated>2019-01-23T09:40:00+08:00</updated><id>http://localhost:4000/2019/01/23/how-to-add-back-to-top-button</id><content type="html" xml:base="http://localhost:4000/2019/01/23/how-to-add-back-to-top-button">&lt;blockquote&gt;
+  &lt;p&gt;Check this below:&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;https://www.w3schools.com/howto/howto_js_scroll_to_top.asp&quot;&gt;»How To Create a Scroll To Top Button - W3Schools&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Web Developing&quot;]" /><category term="how-to" /><category term="jekyll" /><summary type="html">Check this below: »How To Create a Scroll To Top Button - W3Schools</summary></entry><entry><title type="html">How to Sort Site Tags in Jekyll?</title><link href="http://localhost:4000/2019/01/23/how-to-sort-tags-in-jekyll" rel="alternate" type="text/html" title="How to Sort Site Tags in Jekyll?" /><published>2019-01-23T09:20:00+08:00</published><updated>2019-01-23T09:20:00+08:00</updated><id>http://localhost:4000/2019/01/23/how-to-sort-tags-in-jekyll</id><content type="html" xml:base="http://localhost:4000/2019/01/23/how-to-sort-tags-in-jekyll">&lt;blockquote&gt;
+  &lt;p&gt;Check this Article:&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;https://www.codeofclimber.ru/2015/sorting-site-tags-in-jekyll/&quot;&gt;» Sorting site tags in Jekyll - by “code of climber”&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Web Developing&quot;]" /><category term="how-to" /><category term="jekyll" /><summary type="html">Check this Article: » Sorting site tags in Jekyll - by “code of climber”</summary></entry></feed>

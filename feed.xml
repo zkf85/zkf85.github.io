@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-02-28T14:23:28+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Everest</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-02-28T14:27:44+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Everest</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
 </subtitle><entry><title type="html">[CS231] K-Nearest-Neighbor Classifier</title><link href="http://localhost:4000/2019/02/28/cs231-knn" rel="alternate" type="text/html" title="[CS231] K-Nearest-Neighbor Classifier" /><published>2019-02-28T00:00:00+08:00</published><updated>2019-02-28T00:00:00+08:00</updated><id>http://localhost:4000/2019/02/28/cs231-knn</id><content type="html" xml:base="http://localhost:4000/2019/02/28/cs231-knn">&lt;blockquote&gt;
   &lt;p&gt;gist of KNN Classifier.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;img src=&quot;/public/img/20190228-knn.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
 &lt;!--more--&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/img/20190228-knn.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="cs231" /><category term="machine learning" /><category term="knn" /><summary type="html">gist of KNN Classifier.</summary></entry><entry><title type="html">[CS229] Lecture 6 Notes - Support Vector Machines I</title><link href="http://localhost:4000/2019/02/27/cs229-lecture-6-7-svm" rel="alternate" type="text/html" title="[CS229] Lecture 6 Notes - Support Vector Machines I" /><published>2019-02-27T00:00:00+08:00</published><updated>2019-02-27T00:00:00+08:00</updated><id>http://localhost:4000/2019/02/27/cs229-lecture-6-7-svm</id><content type="html" xml:base="http://localhost:4000/2019/02/27/cs229-lecture-6-7-svm">&lt;blockquote&gt;
   &lt;ul&gt;

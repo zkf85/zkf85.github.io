@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-      Stanford CS229 - Machine Learning
+      [CS229] Lecture 6 Notes - Support Vector Machines I
       
       2019
     </title>
@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="/assets/css/main.css">
     
     
-    <link rel="stylesheet" href="/assets/css/page.css">
+    <link rel="stylesheet" href="/assets/css/post.css">
     
     
     
@@ -27,15 +27,17 @@
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
     <!-- Begin Jekyll SEO tag v2.5.0 -->
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Stanford CS229 - Machine Learning" />
+<meta property="og:title" content="[CS229] Lecture 6 Notes - Support Vector Machines I" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Theme based on Materialize.css for jekyll sites." />
-<meta property="og:description" content="Theme based on Materialize.css for jekyll sites." />
-<link rel="canonical" href="http://localhost:4000/cs229" />
-<meta property="og:url" content="http://localhost:4000/cs229" />
+<meta name="description" content="Introduce Support Vector Machines (SVM) Intuition" />
+<meta property="og:description" content="Introduce Support Vector Machines (SVM) Intuition" />
+<link rel="canonical" href="http://localhost:4000/2019/02/27/cs229-lecture-6-7-svm" />
+<meta property="og:url" content="http://localhost:4000/2019/02/27/cs229-lecture-6-7-svm" />
 <meta property="og:site_name" content="Everest" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-02-27T00:00:00+08:00" />
 <script type="application/ld+json">
-{"description":"Theme based on Materialize.css for jekyll sites.","@type":"WebPage","url":"http://localhost:4000/cs229","headline":"Stanford CS229 - Machine Learning","@context":"http://schema.org"}</script>
+{"description":"Introduce Support Vector Machines (SVM) Intuition","@type":"BlogPosting","url":"http://localhost:4000/2019/02/27/cs229-lecture-6-7-svm","headline":"[CS229] Lecture 6 Notes - Support Vector Machines I","dateModified":"2019-02-27T00:00:00+08:00","datePublished":"2019-02-27T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/02/27/cs229-lecture-6-7-svm"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -110,77 +112,94 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 </script>
 
 <div class="container">
-  <div id="page-info">
-  <h1>
-  	<i class="material-icons">turned_in</i> Stanford CS229 - Machine Learning </h1> 
-</div> 
-
-
+  <div id="post-info">
+  <h1>[CS229] Lecture 6 Notes - Support Vector Machines I</h1>
+  <ul class="collapsible hoverable" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Date">date_range</i>
+           
+          Feb.
+            
+          27, 2019 - Wednesday
+          <i id="indicate" class="right material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Show extra info">info</i>
+        </span>
+      </div>
+      <div class="collapsible-body">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Categories">sort</i>
+          
+          
+          
+          <a href="/categories#notes_cap" target="_blank"><div class="chip">Notes</div></a>
+          
+        </span>
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Tags">label</i>
+          
+          
+          
+          <a href="/tags#cs229" target="_blank"><div class="chip">cs229</div></a>
+          
+          
+          
+          <a href="/tags#machine-learning" target="_blank"><div class="chip">machine learning</div></a>
+          
+        </span>
+      </div>
+    </li>
+  </ul>
+</div>
 <div class="row">
-  <div class="col s12 tag-div">
+  <div class="col s12">
+    <blockquote>
+  <ul>
+    <li>Introduce Support Vector Machines (SVM)</li>
+    <li>Intuition</li>
+  </ul>
+</blockquote>
 
-  <div class="divider"></div>
-    
-  <h3>Classic</h3>
-  
-    <a class="post-title" href="/cs229/01-course-synopsis" target="_blank" style="color: #bb0000">
-      <li>
-        01. Course Synopsis
-      </li>
-    </a>
+<!--more-->
 
-  
+<ul id="markdown-toc">
+  <li><a href="#1-margins-intuition" id="markdown-toc-1-margins-intuition">1. Margins: Intuition</a></li>
+  <li><a href="#reference" id="markdown-toc-reference">Reference</a></li>
+</ul>
 
-  <h3>Materials</h3>
-  <li><a href="/public/cs229/cs229-notes1.pdf" style="color: gray"><i class="material-icons pdf">picture_as_pdf</i> cs229-notes1.pdf</a></li>
-  <li><a href="/public/cs229/cs229-notes2.pdf" style="color: gray"><i class="material-icons pdf">picture_as_pdf</i> cs229-notes2.pdf</a></li>
-  <li><a href="/public/cs229/cs229-notes3.pdf" style="color: gray"><i class="material-icons pdf">picture_as_pdf</i> cs229-notes3.pdf</a></li>
-  <li><a href="/public/cs229/cs229-notes4.pdf" style="color: gray"><i class="material-icons pdf">picture_as_pdf</i> cs229-notes4.pdf</a></li>
-  <li><a href="/public/cs229/cs229-notes5.pdf" style="color: gray"><i class="material-icons pdf">picture_as_pdf</i> cs229-notes5.pdf</a></li>
-  <li><a href="/public/cs229/cs229-notes6.pdf" style="color: gray"><i class="material-icons pdf">picture_as_pdf</i> cs229-notes6.pdf</a></li>
-  <li><a href="/public/cs229/cs229-notes7a.pdf" style="color: gray"><i class="material-icons pdf">picture_as_pdf</i> cs229-notes7a.pdf</a></li>
-  <li><a href="/public/cs229/cs229-notes7b.pdf" style="color: gray"><i class="material-icons pdf">picture_as_pdf</i> cs229-notes7b.pdf</a></li>
-  <li><a href="/public/cs229/cs229-notes8.pdf" style="color: gray"><i class="material-icons pdf">picture_as_pdf</i> cs229-notes8.pdf</a></li>
-  <li><a href="/public/cs229/cs229-notes9.pdf" style="color: gray"><i class="material-icons pdf">picture_as_pdf</i> cs229-notes9.pdf</a></li>
-  <li><a href="/public/cs229/cs229-notes10.pdf" style="color: gray"><i class="material-icons pdf">picture_as_pdf</i> cs229-notes10.pdf</a></li>
-  <li><a href="/public/cs229/cs229-notes11.pdf" style="color: gray"><i class="material-icons pdf">picture_as_pdf</i> cs229-notes11.pdf</a></li>
-  <li><a href="/public/cs229/cs229-notes12.pdf" style="color: gray"><i class="material-icons pdf">picture_as_pdf</i> cs229-notes12.pdf</a></li>
-  <li><a href="/public/cs229/cs229-notes13.pdf" style="color: gray"><i class="material-icons pdf">picture_as_pdf</i> cs229-notes13.pdf</a></li>
+<p>Support Vector Machine (SVM) learning algorithms are among the best “off-the-shelf” supervised learning algorithm.</p>
 
-  <h3>Posts</h3>
-    
-      <a class="post-title" href="/2019/02/27/cs229-lecture-6-7-svm" target="_blank">
-        <li>
-          [CS229] Lecture 6 Notes - Support Vector Machines I
-          <small class="post-date">27 Feb 2019</small>
-        </li>
-      </a>
-      
-      <a class="post-title" href="/2019/02/18/cs229-lecture-5-generative-learning" target="_blank">
-        <li>
-          [CS229] Lecture 5 Notes - Descriminative Learning v.s. Generative Learning Algorithm
-          <small class="post-date">18 Feb 2019</small>
-        </li>
-      </a>
-      
-      <a class="post-title" href="/2019/02/14/cs229-lecture-4" target="_blank">
-        <li>
-          [CS229] Lecture 4 Notes - Newton's Method/GLMs
-          <small class="post-date">14 Feb 2019</small>
-        </li>
-      </a>
-      
-      <a class="post-title" href="/2019/02/12/cs229-lecture-3" target="_blank">
-        <li>
-          [CS229] Lecture 3 Notes - LWR/Prob Interp/Logistic/Perceptron
-          <small class="post-date">12 Feb 2019</small>
-        </li>
-      </a>
-      
+<h2 id="1-margins-intuition">1. Margins: Intuition</h2>
+<h2 id="reference">Reference</h2>
+<ol>
+  <li><a href="/public/cs229/cs229-notes3.pdf">» Stanford Lecture Note Part V</a></li>
+</ol>
 
+<p><br /><br /><strong><em>KF</em></strong></p>
+
+  </div>
 </div>
 
+
+<div>
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    this.page.url = "http://localhost:4000/2019/02/27/cs229-lecture-6-7-svm";
+    this.page.identifier = "/2019/02/27/cs229-lecture-6-7-svm";
+  };
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//zkf85githubio.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
+
+
 
 </div>
 
@@ -225,6 +244,10 @@ function topFunction() {
     </footer>
     <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+    
+    
+    <script src="/assets/js/post.js"></script>
+    
     
     
     

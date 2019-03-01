@@ -49,7 +49,7 @@
         <div class="nav-wrapper">
           <div class="container">
             <a class="page-title" href="/">Everest<sup>2019</sup></a>
-            <img class="buckeye_leaf" src="/assets/res/buckeye_leaf.png">
+            <img class="buckeye_leaf" src="/assets/res/buckeye_leaf.png" alt="buckeye_leaf">
           </div>
         </div>
       </nav>
@@ -107,12 +107,51 @@ Remember that after enabling this, you have to enter the real dollar sings with 
   });
 </script>
 
-<script type="text/javascript" async
+<script async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 
 <div class="container">
   <div class="row">
+  
+  <div class="col s12">
+    <div class="card hoverable">
+      <div class="card-content">
+        <!--<span id="post-title" class="card-title">What is DOM?</span>
+        -->
+        <a id="post-title" class="card-title" href="/2019/02/28/what-is-dom">
+        What is DOM?
+        </a>
+        
+        <p id="post-date">
+          <i class="material-icons">date_range</i>
+           
+          Feb.
+            
+          28, 2019 - Thursday
+
+        </p>
+        <p id="post-content"><blockquote>
+  <p>It’s the abbre. of <strong>Document Object Model (DOM)</strong></p>
+
+  <p>In short:</p>
+
+  <p>The Document Object Model (DOM) is an application programming interface (API) for valid HTML and well-formed XML documents. It defines the logical structure of documents and the way a document is accessed and manipulated. In the DOM specification, the term “document” is used in the broad sense - increasingly, XML is being used as a way of representing many different kinds of information that may be stored in diverse systems, and much of this would traditionally be seen as data rather than as documents. Nevertheless, XML presents this data as documents, and the DOM may be used to manage this data.</p>
+</blockquote>
+
+<h2 id="reference">Reference</h2>
+
+<p><a href="https://www.w3.org/TR/DOM-Level-2-Core/introduction.html">What is the Document Object Model? - w3.org</a>
+<br /><br /><strong><em>KF</em></strong></p>
+</p>
+      </div>
+      <div class="card-action">
+        <a href="/2019/02/28/what-is-dom">
+          Read More 
+        <i class="material-icons">keyboard_arrow_down</i></a>
+      </div>
+    </div>
+  </div>
   
   <div class="col s12">
     <div class="card hoverable">
@@ -419,49 +458,6 @@ Remember that after enabling this, you have to enter the real dollar sings with 
       </div>
       <div class="card-action">
         <a href="/2019/01/31/np-shuffle-vs-permutation">
-          Read More 
-        <i class="material-icons">keyboard_arrow_down</i></a>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col s12">
-    <div class="card hoverable">
-      <div class="card-content">
-        <!--<span id="post-title" class="card-title">How to Force Keras to use CPU to Run Script?</span>
-        -->
-        <a id="post-title" class="card-title" href="/2019/01/23/how-to-force-keras-use-cpu">
-        How to Force Keras to use CPU to Run Script?
-        </a>
-        
-        <p id="post-date">
-          <i class="material-icons">date_range</i>
-           
-          Jan.
-            
-          23, 2019 - Wednesday
-
-        </p>
-        <p id="post-content"><blockquote>
-  <p><strong>The reason for such a demand:</strong></p>
-
-  <p>My main training program was using the GPU fully. But I needed to get a prediction with another previously trained model urgently. I tried to use the GPU but I got OOM. Therefore, using CPU for the predicting job should be a good solution, and it did solve the problem!</p>
-
-  <p>Generally there are two ways: a short/lazy one and a lengthy but graceful one.</p>
-</blockquote>
-
-<h2 id="option-i">Option I:</h2>
-<p>If you want to force Keras to use CPU</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">os</span>
-<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">"CUDA_DEVICE_ORDER"</span><span class="p">]</span> <span class="o">=</span> <span class="s">"PCI_BUS_ID"</span> 
-<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">"CUDA_VISIBLE_DEVICES"</span><span class="p">]</span> <span class="o">=</span> <span class="s">""</span>
-</code></pre></div></div>
-<p>before Keras / Tensorflow is imported.</p>
-
-</p>
-      </div>
-      <div class="card-action">
-        <a href="/2019/01/23/how-to-force-keras-use-cpu">
           Read More 
         <i class="material-icons">keyboard_arrow_down</i></a>
       </div>

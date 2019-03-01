@@ -1,5 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-03-01T15:30:42+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Everest</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
-</subtitle><entry><title type="html">[Python/NumPy] Matrix(Arrays) Manipulations &amp;amp; Operations</title><link href="http://localhost:4000/2019/02/28/python-matrix-manipulations" rel="alternate" type="text/html" title="[Python/NumPy] Matrix(Arrays) Manipulations &amp; Operations" /><published>2019-02-28T00:00:00+08:00</published><updated>2019-02-28T00:00:00+08:00</updated><id>http://localhost:4000/2019/02/28/python-matrix-manipulations</id><content type="html" xml:base="http://localhost:4000/2019/02/28/python-matrix-manipulations">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-03-01T18:03:07+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Everest</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
+</subtitle><entry><title type="html">What is DOM?</title><link href="http://localhost:4000/2019/02/28/what-is-dom" rel="alternate" type="text/html" title="What is DOM?" /><published>2019-02-28T00:00:00+08:00</published><updated>2019-02-28T00:00:00+08:00</updated><id>http://localhost:4000/2019/02/28/what-is-dom</id><content type="html" xml:base="http://localhost:4000/2019/02/28/what-is-dom">&lt;blockquote&gt;
+  &lt;p&gt;It’s the abbre. of &lt;strong&gt;Document Object Model (DOM)&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;p&gt;In short:&lt;/p&gt;
+
+  &lt;p&gt;The Document Object Model (DOM) is an application programming interface (API) for valid HTML and well-formed XML documents. It defines the logical structure of documents and the way a document is accessed and manipulated. In the DOM specification, the term “document” is used in the broad sense - increasingly, XML is being used as a way of representing many different kinds of information that may be stored in diverse systems, and much of this would traditionally be seen as data rather than as documents. Nevertheless, XML presents this data as documents, and the DOM may be used to manage this data.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.w3.org/TR/DOM-Level-2-Core/introduction.html&quot;&gt;What is the Document Object Model? - w3.org&lt;/a&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Web Developing&quot;]" /><category term="javascript" /><category term="web developing" /><summary type="html">It’s the abbre. of Document Object Model (DOM) In short: The Document Object Model (DOM) is an application programming interface (API) for valid HTML and well-formed XML documents. It defines the logical structure of documents and the way a document is accessed and manipulated. In the DOM specification, the term “document” is used in the broad sense - increasingly, XML is being used as a way of representing many different kinds of information that may be stored in diverse systems, and much of this would traditionally be seen as data rather than as documents. Nevertheless, XML presents this data as documents, and the DOM may be used to manage this data. Reference What is the Document Object Model? - w3.org KF</summary></entry><entry><title type="html">[CS231] K-Nearest-Neighbor Classifier</title><link href="http://localhost:4000/2019/02/28/cs231-knn" rel="alternate" type="text/html" title="[CS231] K-Nearest-Neighbor Classifier" /><published>2019-02-28T00:00:00+08:00</published><updated>2019-02-28T00:00:00+08:00</updated><id>http://localhost:4000/2019/02/28/cs231-knn</id><content type="html" xml:base="http://localhost:4000/2019/02/28/cs231-knn">&lt;blockquote&gt;
+  &lt;p&gt;gist of KNN Classifier.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/img/20190228-knn.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="cs231" /><category term="machine learning" /><category term="knn" /><summary type="html">gist of KNN Classifier.</summary></entry><entry><title type="html">[Python/NumPy] Matrix(Arrays) Manipulations &amp;amp; Operations</title><link href="http://localhost:4000/2019/02/28/python-matrix-manipulations" rel="alternate" type="text/html" title="[Python/NumPy] Matrix(Arrays) Manipulations &amp; Operations" /><published>2019-02-28T00:00:00+08:00</published><updated>2019-02-28T00:00:00+08:00</updated><id>http://localhost:4000/2019/02/28/python-matrix-manipulations</id><content type="html" xml:base="http://localhost:4000/2019/02/28/python-matrix-manipulations">&lt;blockquote&gt;
   &lt;p&gt;A collection of frequently used python/numpy techniques on matrix (numpy arrays) manipulation and operations.&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -389,15 +408,7 @@
   &lt;li&gt;&lt;a href=&quot;https://docs.scipy.org/doc/numpy/reference/&quot;&gt;» Scipy Numpy Reference&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;]" /><category term="cs231" /><category term="python" /><category term="numpy" /><summary type="html">A collection of frequently used python/numpy techniques on matrix (numpy arrays) manipulation and operations.</summary></entry><entry><title type="html">[CS231] K-Nearest-Neighbor Classifier</title><link href="http://localhost:4000/2019/02/28/cs231-knn" rel="alternate" type="text/html" title="[CS231] K-Nearest-Neighbor Classifier" /><published>2019-02-28T00:00:00+08:00</published><updated>2019-02-28T00:00:00+08:00</updated><id>http://localhost:4000/2019/02/28/cs231-knn</id><content type="html" xml:base="http://localhost:4000/2019/02/28/cs231-knn">&lt;blockquote&gt;
-  &lt;p&gt;gist of KNN Classifier.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;&lt;img src=&quot;/public/img/20190228-knn.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="cs231" /><category term="machine learning" /><category term="knn" /><summary type="html">gist of KNN Classifier.</summary></entry><entry><title type="html">[CS229] Lecture 6 Notes - Support Vector Machines I</title><link href="http://localhost:4000/2019/02/27/cs229-lecture-6-7-svm" rel="alternate" type="text/html" title="[CS229] Lecture 6 Notes - Support Vector Machines I" /><published>2019-02-27T00:00:00+08:00</published><updated>2019-02-27T00:00:00+08:00</updated><id>http://localhost:4000/2019/02/27/cs229-lecture-6-7-svm</id><content type="html" xml:base="http://localhost:4000/2019/02/27/cs229-lecture-6-7-svm">&lt;blockquote&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;]" /><category term="cs231" /><category term="python" /><category term="numpy" /><summary type="html">A collection of frequently used python/numpy techniques on matrix (numpy arrays) manipulation and operations.</summary></entry><entry><title type="html">[CS229] Lecture 6 Notes - Support Vector Machines I</title><link href="http://localhost:4000/2019/02/27/cs229-lecture-6-7-svm" rel="alternate" type="text/html" title="[CS229] Lecture 6 Notes - Support Vector Machines I" /><published>2019-02-27T00:00:00+08:00</published><updated>2019-02-27T00:00:00+08:00</updated><id>http://localhost:4000/2019/02/27/cs229-lecture-6-7-svm</id><content type="html" xml:base="http://localhost:4000/2019/02/27/cs229-lecture-6-7-svm">&lt;blockquote&gt;
   &lt;ul&gt;
     &lt;li&gt;Introduce Support Vector Machines (SVM)&lt;/li&gt;
     &lt;li&gt;Intuition&lt;/li&gt;
@@ -744,7 +755,7 @@ In practice, it usually doesn’t matter much whether we apply Laplace smoothing
 
 &lt;!--more--&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="web development" /><category term="html" /><category term="css" /><category term="javascript" /><summary type="html">» Web Development Tutorial for Beginners (#1) - How to build webpages with HTML, CSS, Javascript</summary></entry><entry><title type="html">The Term of “Heap”</title><link href="http://localhost:4000/2019/02/15/the-term-of-heap" rel="alternate" type="text/html" title="The Term of &quot;Heap&quot;" /><published>2019-02-15T10:20:00+08:00</published><updated>2019-02-15T10:20:00+08:00</updated><id>http://localhost:4000/2019/02/15/the-term-of-heap</id><content type="html" xml:base="http://localhost:4000/2019/02/15/the-term-of-heap">&lt;blockquote&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="web developing" /><category term="html" /><category term="css" /><category term="javascript" /><summary type="html">» Web Development Tutorial for Beginners (#1) - How to build webpages with HTML, CSS, Javascript</summary></entry><entry><title type="html">The Term of “Heap”</title><link href="http://localhost:4000/2019/02/15/the-term-of-heap" rel="alternate" type="text/html" title="The Term of &quot;Heap&quot;" /><published>2019-02-15T10:20:00+08:00</published><updated>2019-02-15T10:20:00+08:00</updated><id>http://localhost:4000/2019/02/15/the-term-of-heap</id><content type="html" xml:base="http://localhost:4000/2019/02/15/the-term-of-heap">&lt;blockquote&gt;
   &lt;p&gt;The term “&lt;strong&gt;heap&lt;/strong&gt;” was originally coined in the context of heapsort, but it has since come to refer to “garbage-collected storage,” such as the programming languages Java and Lisp provide.&lt;/p&gt;
 
   &lt;p&gt;The &lt;strong&gt;heap data structure&lt;/strong&gt; in MIT 6.006 is NOT garbage-collected storage.&lt;/p&gt;
@@ -1249,51 +1260,4 @@ g(z) = \left\{ \begin{array}{rcl}
 &lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/15474159/shuffle-vs-permute-numpy&quot;&gt;» shuffle vs permute numpy - Stack Overflow&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;]" /><category term="numpy" /><category term="random" /><summary type="html">Generally, in Numpy, both random.permutation and random.shuffle randomly shuffle elements in an array. But there are differences:</summary></entry><entry><title type="html">How to Force Keras to use CPU to Run Script?</title><link href="http://localhost:4000/2019/01/23/how-to-force-keras-use-cpu" rel="alternate" type="text/html" title="How to Force Keras to use CPU to Run Script?" /><published>2019-01-23T14:00:00+08:00</published><updated>2019-01-23T14:00:00+08:00</updated><id>http://localhost:4000/2019/01/23/how-to-force-keras-use-cpu</id><content type="html" xml:base="http://localhost:4000/2019/01/23/how-to-force-keras-use-cpu">&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;The reason for such a demand:&lt;/strong&gt;&lt;/p&gt;
-
-  &lt;p&gt;My main training program was using the GPU fully. But I needed to get a prediction with another previously trained model urgently. I tried to use the GPU but I got OOM. Therefore, using CPU for the predicting job should be a good solution, and it did solve the problem!&lt;/p&gt;
-
-  &lt;p&gt;Generally there are two ways: a short/lazy one and a lengthy but graceful one.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;option-i&quot;&gt;Option I:&lt;/h2&gt;
-&lt;p&gt;If you want to force Keras to use CPU&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;os&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;environ&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;CUDA_DEVICE_ORDER&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;PCI_BUS_ID&quot;&lt;/span&gt; 
-&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;environ&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;CUDA_VISIBLE_DEVICES&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;before Keras / Tensorflow is imported.&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2 id=&quot;option-ii&quot;&gt;Option II:&lt;/h2&gt;
-&lt;p&gt;A rather graceful and separable way of doing this is to use&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;tensorflow&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;keras&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;backend&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;K&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;num_cores&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;GPU&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;num_GPU&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;num_CPU&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CPU&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;num_CPU&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;num_GPU&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ConfigProto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;intra_op_parallelism_threads&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num_cores&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;\
-        &lt;span class=&quot;n&quot;&gt;inter_op_parallelism_threads&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num_cores&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;allow_soft_placement&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;\
-        &lt;span class=&quot;n&quot;&gt;device_count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'CPU'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num_CPU&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'GPU'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num_GPU&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;session&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Session&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;K&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set_session&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;session&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Here with &lt;code class=&quot;highlighter-rouge&quot;&gt;booleans&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;GPU&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;CPU&lt;/code&gt; you can specify whether to use a GPU or GPU when running your code.&lt;/p&gt;
-
-&lt;p&gt;The only thing to note is that you’ll need &lt;code class=&quot;highlighter-rouge&quot;&gt;tensorflow-gpu&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;cuda/cudnn&lt;/code&gt; installed because you’re always giving the option of using a GPU.&lt;/p&gt;
-
-&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/40690598/can-keras-with-tensorflow-backend-be-forced-to-use-cpu-or-gpu-at-will&quot;&gt;» Can Keras with Tensorflow backend be forced to use CPU or GPU at will? - Stack Overflow&lt;/a&gt;&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Deep Learning&quot;]" /><category term="how-to" /><category term="keras" /><category term="tensorflow" /><category term="deep learning" /><category term="gpu" /><category term="nvidia" /><category term="cuda" /><summary type="html">The reason for such a demand: My main training program was using the GPU fully. But I needed to get a prediction with another previously trained model urgently. I tried to use the GPU but I got OOM. Therefore, using CPU for the predicting job should be a good solution, and it did solve the problem! Generally there are two ways: a short/lazy one and a lengthy but graceful one. Option I: If you want to force Keras to use CPU import os os.environ[&quot;CUDA_DEVICE_ORDER&quot;] = &quot;PCI_BUS_ID&quot; os.environ[&quot;CUDA_VISIBLE_DEVICES&quot;] = &quot;&quot; before Keras / Tensorflow is imported.</summary></entry></feed>
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;]" /><category term="numpy" /><category term="random" /><summary type="html">Generally, in Numpy, both random.permutation and random.shuffle randomly shuffle elements in an array. But there are differences:</summary></entry></feed>

@@ -39,9 +39,9 @@ img.buckeye_leaf{
 /* Added by KF 03/01/2019 */
 img.calligraphy {
     position: absolute;
-    top:32px;
+    top:48px;
     right:12px;
-    width:96px;
+    width:72px;
     border-radius: 8px;
     box-shadow: 2px 2px 12px #333333;
 }
@@ -55,6 +55,28 @@ img.calligraphy {
   outline: none;
   border: 2px solid #bb0000;
   color: #bb0000;
+  background-color: white;
+  cursor: pointer;
+  padding: 0 8px;
+  right: 5%;
+  bottom: 10%;
+  /*width:96px;
+  height:96px;*/
+  border-radius: 18px;
+  text-align: center;
+  transition-duration: 0.4s;
+  opacity: 0.75;
+}
+
+/* Added by KF 03/01/2019 */
+#myBtn-calligraphy {
+  display: none;
+  position: fixed;
+  z-index: 99;
+  font-size: 30px;
+  outline: none;
+  border: 2px solid #333333;
+  color: #333333;
   background-color: white;
   cursor: pointer;
   padding: 0 8px;

@@ -24,12 +24,26 @@
 .ohio-state-gray{
     background-color:#666666 !important
 }
+/* Added by KF 03/01/2019 */
+.calligraphy-gray{
+    background-color: #333333 !important
+}
+
 /* Added by KF 11/28/2018 */
 img.buckeye_leaf{
 	position: absolute;
 	top:12px;
 	right:12px;
     width:96px
+}
+/* Added by KF 03/01/2019 */
+img.calligraphy {
+    position: absolute;
+    top:32px;
+    right:12px;
+    width:96px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 12px #333333;
 }
 
 /* Added by KF 02/12/2019 */

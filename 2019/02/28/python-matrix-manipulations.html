@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-      [Python/Numpy] Matrix(Arrays) Manipulations &amp; Operations
+      [Python/NumPy] Matrix(Arrays) Manipulations &amp; Operations
       
       2019
     </title>
@@ -27,7 +27,7 @@
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
     <!-- Begin Jekyll SEO tag v2.5.0 -->
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="[Python/Numpy] Matrix(Arrays) Manipulations &amp; Operations" />
+<meta property="og:title" content="[Python/NumPy] Matrix(Arrays) Manipulations &amp; Operations" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="A collection of frequently used python/numpy techniques on matrix (numpy arrays) manipulation and operations." />
 <meta property="og:description" content="A collection of frequently used python/numpy techniques on matrix (numpy arrays) manipulation and operations." />
@@ -37,7 +37,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-02-28T00:00:00+08:00" />
 <script type="application/ld+json">
-{"description":"A collection of frequently used python/numpy techniques on matrix (numpy arrays) manipulation and operations.","@type":"BlogPosting","url":"http://localhost:4000/2019/02/28/python-matrix-manipulations","headline":"[Python/Numpy] Matrix(Arrays) Manipulations &amp; Operations","dateModified":"2019-02-28T00:00:00+08:00","datePublished":"2019-02-28T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/02/28/python-matrix-manipulations"},"@context":"http://schema.org"}</script>
+{"description":"A collection of frequently used python/numpy techniques on matrix (numpy arrays) manipulation and operations.","@type":"BlogPosting","url":"http://localhost:4000/2019/02/28/python-matrix-manipulations","headline":"[Python/NumPy] Matrix(Arrays) Manipulations &amp; Operations","dateModified":"2019-02-28T00:00:00+08:00","datePublished":"2019-02-28T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/02/28/python-matrix-manipulations"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -86,6 +86,7 @@
 
         <li class="subheader">OTHERS</li>
         <li><a class="waves-effect" href="/about"><i class="material-icons">person</i>About Me</a></li>
+        <li><a class="waves-effect" href="/calligraphy"><i class="material-icons">dashboard</i>書</a></li>
         <!-- <li><a class="waves-effect" href="/contact"><i class="material-icons">email</i>Contact</a></li> -->
       </ul>
     </header>
@@ -113,7 +114,7 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 
 <div class="container">
   <div id="post-info">
-  <h1>[Python/Numpy] Matrix(Arrays) Manipulations & Operations</h1>
+  <h1>[Python/NumPy] Matrix(Arrays) Manipulations & Operations</h1>
   <ul class="collapsible hoverable" data-collapsible="accordion">
     <li>
       <div class="collapsible-header">
@@ -149,10 +150,6 @@ Remember that after enabling this, you have to enter the real dollar sings with 
           
           
           <a href="/tags#numpy" target="_blank"><div class="chip">numpy</div></a>
-          
-          
-          
-          <a href="/tags#matrix" target="_blank"><div class="chip">matrix</div></a>
           
         </span>
       </div>
@@ -205,7 +202,7 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 <h2 id="1-indexing-and-slicing">1. Indexing and Slicing</h2>
 <h3 id="11-npmay_share_memory-check-array-same-in-memory-or-not">1.1. <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.may_share_memory.html"><code class="highlighter-rouge">np.may_share_memory()</code></a>, check array same in memory or not:</h3>
 <p>A slicing operation creates a <strong>view</strong> on the original array, which is just a way of accessing array data. Thus the original array is not copied in memory. You can use <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.may_share_memory.html"><code class="highlighter-rouge">np.may_share_memory()</code></a> to check if two arrays share the same memory block. Note however, that this uses heuristics and may give you false positives.
-When modifying the view, the original array is modified as well:</p>
+<strong>When modifying the view, the original array is modified as well:</strong></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
@@ -277,8 +274,8 @@ When modifying the view, the original array is modified as well:</p>
 <h4 id="211-basic-operations">2.1.1. Basic operations</h4>
 <p><strong>All arithmetic operates (<code class="highlighter-rouge">+, -, *, /, **, ...</code>) elementwise:</strong></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">These</span> <span class="n">operations</span> <span class="n">are</span> <span class="n">of</span> <span class="n">course</span> <span class="n">much</span> <span class="n">faster</span> <span class="n">than</span> <span class="k">if</span> <span class="n">you</span> <span class="n">did</span> <span class="n">them</span> <span class="ow">in</span> <span class="n">pure</span> <span class="n">python</span><span class="p">:</span>
-<span class="o">&gt;&gt;&gt;</span>
+<p>These operations are of course much faster than if you did them in pure python:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Test NumPy elementwise op efficiency</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="o">%</span><span class="n">timeit</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">1</span>  
 <span class="mi">10000</span> <span class="n">loops</span><span class="p">,</span> <span class="n">best</span> <span class="n">of</span> <span class="mi">3</span><span class="p">:</span> <span class="mf">24.3</span> <span class="n">us</span> <span class="n">per</span> <span class="n">loop</span>
@@ -288,10 +285,8 @@ When modifying the view, the original array is modified as well:</p>
 </code></pre></div></div>
 
 <h4 id="212-other-operations">2.1.2. Other operations</h4>
-
 <p><strong>Comparisons:</strong></p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span>
 <span class="n">array</span><span class="p">([</span><span class="bp">False</span><span class="p">,</span>  <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span>  <span class="bp">True</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
@@ -318,7 +313,7 @@ When modifying the view, the original array is modified as well:</p>
 <span class="n">array</span><span class="p">([</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p><strong>Transcendental functions:</strong> <a href="https://en.wikipedia.org/wiki/Transcendental_function">(what’s transcendtal functions”?)</a></p>
+<p><strong>Transcendental functions:</strong> <a href="https://en.wikipedia.org/wiki/Transcendental_function">(what’s transcendental functions”?)</a></p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 <span class="n">array</span><span class="p">([</span> <span class="mf">0.</span>        <span class="p">,</span>  <span class="mf">0.84147098</span><span class="p">,</span>  <span class="mf">0.90929743</span><span class="p">,</span>  <span class="mf">0.14112001</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.7568025</span> <span class="p">])</span>
@@ -331,7 +326,7 @@ When modifying the view, the original array is modified as well:</p>
 <h3 id="22-reductions-sum-max-argmax-mean-median-std-any-all">2.2. Reductions (<a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.sum.html"><code class="highlighter-rouge">sum</code></a>, <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.max.html"><code class="highlighter-rouge">max</code></a>, <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.argmax.html"><code class="highlighter-rouge">argmax</code></a>, <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.mean.html"><code class="highlighter-rouge">mean</code></a>, <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.median.html"><code class="highlighter-rouge">median</code></a>, <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.std.html"><code class="highlighter-rouge">std</code></a>, <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.any.html"><code class="highlighter-rouge">any</code></a>, <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.all.html"><code class="highlighter-rouge">all</code></a>,…)</h3>
 
 <blockquote>
-  <p><strong>Reduction Rule of Thumb:</strong> the result shape should be  the original shape get axis dimension removed!</p>
+  <p><strong>Reduction - Rule of Thumb:</strong> the result shape should be the original shape get the dimension (added as argument <code class="highlighter-rouge">axis=*</code> in the op function) removed!</p>
 
   <p>(e.g.) a.shape -&gt; (2,3,4), then:</p>
   <ul>
@@ -354,7 +349,8 @@ When modifying the view, the original array is modified as well:</p>
   </tbody>
 </table>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Reduction</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
 <span class="n">array</span><span class="p">([[[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">],</span>
         <span class="p">[</span> <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">],</span>
@@ -377,7 +373,6 @@ When modifying the view, the original array is modified as well:</p>
        <span class="p">[</span><span class="mi">54</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">86</span><span class="p">]])</span>
 
 <span class="c"># 2. Extrema: (min, max, argmin, argmax)</span>
-
 <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="nb">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">array</span><span class="p">([[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">],</span>
        <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">]])</span>
@@ -426,7 +421,7 @@ When modifying the view, the original array is modified as well:</p>
 
 <h4 id="definition-of-broadcasting">Definition of “Broadcasting”:</h4>
 <ul>
-  <li>It is possible to do operations on <strong>“different-size”</strong> arrays if Numpy can transform them into same size. This transformation is call “Broadcasting”.</li>
+  <li>It is possible to do operations on <strong>“different-size”</strong> arrays if Numpy can transform them into <strong>same size</strong>. This transformation is call “Broadcasting”.</li>
 </ul>
 
 <table>
@@ -489,7 +484,7 @@ When modifying the view, the original array is modified as well:</p>
 </ol>
 
 <h4 id="242-add-dimension-to-array">2.4.2. Add Dimension to Array</h4>
-<p>There are several ways to implement this, the results are the same:</p>
+<p>There are several ways to work it out, the results are the same:</p>
 
 <ol>
   <li>simply use <code class="highlighter-rouge">None</code>;</li>

@@ -200,6 +200,9 @@
 <loc>http://localhost:4000/about</loc>
 </url>
 <url>
+<loc>http://localhost:4000/calligraphy</loc>
+</url>
+<url>
 <loc>http://localhost:4000/categories</loc>
 </url>
 <url>

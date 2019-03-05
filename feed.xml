@@ -1,5 +1,64 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-03-01T18:03:07+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Everest</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
-</subtitle><entry><title type="html">What is DOM?</title><link href="http://localhost:4000/2019/02/28/what-is-dom" rel="alternate" type="text/html" title="What is DOM?" /><published>2019-02-28T00:00:00+08:00</published><updated>2019-02-28T00:00:00+08:00</updated><id>http://localhost:4000/2019/02/28/what-is-dom</id><content type="html" xml:base="http://localhost:4000/2019/02/28/what-is-dom">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-03-04T18:09:05+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Everest</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
+</subtitle><entry><title type="html">[CS229] Properties of Trace and Matrix Derivatives</title><link href="http://localhost:4000/2019/03/04/cs229-matrix-derivatives" rel="alternate" type="text/html" title="[CS229] Properties of Trace and Matrix Derivatives" /><published>2019-03-04T00:00:00+08:00</published><updated>2019-03-04T00:00:00+08:00</updated><id>http://localhost:4000/2019/03/04/cs229-matrix-derivatives</id><content type="html" xml:base="http://localhost:4000/2019/03/04/cs229-matrix-derivatives">&lt;blockquote&gt;
+  &lt;p&gt;The trace properties and the matrix derivatives.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;li&gt;&lt;a href=&quot;/public/cs229/matrix_prop.pdf&quot; style=&quot;color: gray&quot;&gt;&lt;i class=&quot;material-icons pdf&quot;&gt;picture_as_pdf&lt;/i&gt;Properties of trace and matrix derivatives - [Stanford] John Duchi&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&quot;/public/cs229/matrix-calculus-illinois.pdf&quot; style=&quot;color: gray&quot;&gt;&lt;i class=&quot;material-icons pdf&quot;&gt;picture_as_pdf&lt;/i&gt;Matrix Calculus - Notes on Derivatives of a Trace - [Illinois] Johannes Traa&lt;/a&gt;&lt;/li&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="cs229" /><category term="linear algebra" /><summary type="html">The trace properties and the matrix derivatives. picture_as_pdfProperties of trace and matrix derivatives - [Stanford] John Duchi picture_as_pdfMatrix Calculus - Notes on Derivatives of a Trace - [Illinois] Johannes Traa KF</summary></entry><entry><title type="html">[CS229] Lecture 6 Notes - Support Vector Machines I</title><link href="http://localhost:4000/2019/03/04/cs229-lecture-6-7-svm" rel="alternate" type="text/html" title="[CS229] Lecture 6 Notes - Support Vector Machines I" /><published>2019-03-04T00:00:00+08:00</published><updated>2019-03-04T00:00:00+08:00</updated><id>http://localhost:4000/2019/03/04/cs229-lecture-6-7-svm</id><content type="html" xml:base="http://localhost:4000/2019/03/04/cs229-lecture-6-7-svm">&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Introduce Support Vector Machines (SVM)&lt;/li&gt;
+    &lt;li&gt;Intuition&lt;/li&gt;
+    &lt;li&gt;Created on 02/27/2019&lt;/li&gt;
+    &lt;li&gt;Updated on 03/04/2019&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
+
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-margins-intuition&quot; id=&quot;markdown-toc-1-margins-intuition&quot;&gt;1. Margins: Intuition&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-change-of-notation-from-logistic-regression&quot; id=&quot;markdown-toc-2-change-of-notation-from-logistic-regression&quot;&gt;2. Change of Notation (from logistic regression)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3-function-margins--geometric-margins&quot; id=&quot;markdown-toc-3-function-margins--geometric-margins&quot;&gt;3. Function Margins / Geometric Margins&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#31-function-margins&quot; id=&quot;markdown-toc-31-function-margins&quot;&gt;3.1. Function Margins&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#reference&quot; id=&quot;markdown-toc-reference&quot;&gt;Reference&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Support Vector Machine (SVM) learning algorithms are among the best “off-the-shelf” supervised learning algorithm.&lt;/p&gt;
+
+&lt;h2 id=&quot;1-margins-intuition&quot;&gt;1. Margins: Intuition&lt;/h2&gt;
+&lt;p&gt;The intuition is to find a decision boundary that allows us to make all correct and confident  (meaning far from the decision boundary) predictions on the training examples.&lt;/p&gt;
+
+&lt;h2 id=&quot;2-change-of-notation-from-logistic-regression&quot;&gt;2. Change of Notation (from logistic regression)&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;In SVM discussion, we use $y \in \{-1, 1\}$ instead of $\{0, 1\}$ to denote the class labels.&lt;/li&gt;
+  &lt;li&gt;Rather than parameterizing linear classifier with $\theta$, we use $w, b$ as parameters, and our classifier is written as:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;h_{w,b}(x) = g(w^T x + b).&lt;/script&gt;&lt;/p&gt;
+&lt;h2 id=&quot;3-function-margins--geometric-margins&quot;&gt;3. Function Margins / Geometric Margins&lt;/h2&gt;
+&lt;h3 id=&quot;31-function-margins&quot;&gt;3.1. Function Margins&lt;/h3&gt;
+&lt;p&gt;Definition of the &lt;strong&gt;functional margin&lt;/strong&gt; of $w,b$ w.r.t. the training example:
+&lt;script type=&quot;math/tex&quot;&gt;\hat \gamma^{(i)} = y^{(i)}(w^Tx+b).&lt;/script&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;where $y^{(i)} \in \{-1, 1\}$;&lt;/li&gt;
+  &lt;li&gt;if $y^{(i)}(w^Tx+b) &amp;gt; 0$, then our prediction on this example is &lt;strong&gt;correct&lt;/strong&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Given a training set $S = \{(x^{(i)}, y^{(i)}); i = 1, \ldots, m\}$, we also define the function margin of $(w,b)$ w.r.t. $S$ as the &lt;strong&gt;smallest&lt;/strong&gt; of the functional margins of the individual training examples. Denoted by $\hat{\gamma}$:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\hat \gamma = \min_{i=1, \ldots, m} \hat \gamma^{(i)}.&lt;/script&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;/public/cs229/cs229-notes3.pdf&quot;&gt;» Stanford Lecture Note Part V&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="cs229" /><category term="machine learning" /><summary type="html">Introduce Support Vector Machines (SVM) Intuition Created on 02/27/2019 Updated on 03/04/2019</summary></entry><entry><title type="html">What is DOM?</title><link href="http://localhost:4000/2019/02/28/what-is-dom" rel="alternate" type="text/html" title="What is DOM?" /><published>2019-02-28T00:00:00+08:00</published><updated>2019-02-28T00:00:00+08:00</updated><id>http://localhost:4000/2019/02/28/what-is-dom</id><content type="html" xml:base="http://localhost:4000/2019/02/28/what-is-dom">&lt;blockquote&gt;
   &lt;p&gt;It’s the abbre. of &lt;strong&gt;Document Object Model (DOM)&lt;/strong&gt;&lt;/p&gt;
 
   &lt;p&gt;In short:&lt;/p&gt;
@@ -408,29 +467,7 @@
   &lt;li&gt;&lt;a href=&quot;https://docs.scipy.org/doc/numpy/reference/&quot;&gt;» Scipy Numpy Reference&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;]" /><category term="cs231" /><category term="python" /><category term="numpy" /><summary type="html">A collection of frequently used python/numpy techniques on matrix (numpy arrays) manipulation and operations.</summary></entry><entry><title type="html">[CS229] Lecture 6 Notes - Support Vector Machines I</title><link href="http://localhost:4000/2019/02/27/cs229-lecture-6-7-svm" rel="alternate" type="text/html" title="[CS229] Lecture 6 Notes - Support Vector Machines I" /><published>2019-02-27T00:00:00+08:00</published><updated>2019-02-27T00:00:00+08:00</updated><id>http://localhost:4000/2019/02/27/cs229-lecture-6-7-svm</id><content type="html" xml:base="http://localhost:4000/2019/02/27/cs229-lecture-6-7-svm">&lt;blockquote&gt;
-  &lt;ul&gt;
-    &lt;li&gt;Introduce Support Vector Machines (SVM)&lt;/li&gt;
-    &lt;li&gt;Intuition&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;!--more--&gt;
-
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#1-margins-intuition&quot; id=&quot;markdown-toc-1-margins-intuition&quot;&gt;1. Margins: Intuition&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#reference&quot; id=&quot;markdown-toc-reference&quot;&gt;Reference&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Support Vector Machine (SVM) learning algorithms are among the best “off-the-shelf” supervised learning algorithm.&lt;/p&gt;
-
-&lt;h2 id=&quot;1-margins-intuition&quot;&gt;1. Margins: Intuition&lt;/h2&gt;
-&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;/public/cs229/cs229-notes3.pdf&quot;&gt;» Stanford Lecture Note Part V&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="cs229" /><category term="machine learning" /><summary type="html">Introduce Support Vector Machines (SVM) Intuition</summary></entry><entry><title type="html">[CS229] Lecture 5 Notes - Descriminative Learning v.s. Generative Learning Algorithm</title><link href="http://localhost:4000/2019/02/18/cs229-lecture-5-generative-learning" rel="alternate" type="text/html" title="[CS229] Lecture 5 Notes - Descriminative Learning v.s. Generative Learning Algorithm" /><published>2019-02-18T14:30:00+08:00</published><updated>2019-02-18T14:30:00+08:00</updated><id>http://localhost:4000/2019/02/18/cs229-lecture-5-generative-learning</id><content type="html" xml:base="http://localhost:4000/2019/02/18/cs229-lecture-5-generative-learning">&lt;blockquote&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;]" /><category term="cs231" /><category term="python" /><category term="numpy" /><summary type="html">A collection of frequently used python/numpy techniques on matrix (numpy arrays) manipulation and operations.</summary></entry><entry><title type="html">[CS229] Lecture 5 Notes - Descriminative Learning v.s. Generative Learning Algorithm</title><link href="http://localhost:4000/2019/02/18/cs229-lecture-5-generative-learning" rel="alternate" type="text/html" title="[CS229] Lecture 5 Notes - Descriminative Learning v.s. Generative Learning Algorithm" /><published>2019-02-18T14:30:00+08:00</published><updated>2019-02-18T14:30:00+08:00</updated><id>http://localhost:4000/2019/02/18/cs229-lecture-5-generative-learning</id><content type="html" xml:base="http://localhost:4000/2019/02/18/cs229-lecture-5-generative-learning">&lt;blockquote&gt;
   &lt;p&gt;Keep Updating:&lt;/p&gt;
   &lt;ul&gt;
     &lt;li&gt;2019-02-18 Merge to Lecture #5 Note&lt;/li&gt;
@@ -740,22 +777,7 @@ In practice, it usually doesn’t matter much whether we apply Laplace smoothing
   &lt;li&gt;&lt;a href=&quot;/public/cs229/cs229-notes2.pdf&quot;&gt;» Stanford CS229 Lecture Note Part IV - Generative Learning Algorithms&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="machine learning" /><category term="cs229" /><summary type="html">Keep Updating: 2019-02-18 Merge to Lecture #5 Note 2019-01-23 Add Part 2, Gausian discriminant analysis 2019-01-22 Add Part 1, A Review of Generative Learning Algorithms.</summary></entry><entry><title type="html">Intro to HTML, CSS, Javascript</title><link href="http://localhost:4000/2019/02/15/intro-to-web-dev" rel="alternate" type="text/html" title="Intro to HTML, CSS, Javascript" /><published>2019-02-15T15:40:00+08:00</published><updated>2019-02-15T15:40:00+08:00</updated><id>http://localhost:4000/2019/02/15/intro-to-web-dev</id><content type="html" xml:base="http://localhost:4000/2019/02/15/intro-to-web-dev">&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=3JluqTojuME&quot;&gt;&lt;img src=&quot;http://img.youtube.com/vi/3JluqTojuME/0.jpg&quot; alt=&quot;IMAGE ALT TEXT HERE&quot; /&gt;&lt;/a&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;http://img.youtube.com/vi/3JluqTojuME/0.jpg&quot;&gt;» Web Development Tutorial for Beginners (#1) - How to build webpages with HTML, CSS, Javascript&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="web developing" /><category term="html" /><category term="css" /><category term="javascript" /><summary type="html">» Web Development Tutorial for Beginners (#1) - How to build webpages with HTML, CSS, Javascript</summary></entry><entry><title type="html">The Term of “Heap”</title><link href="http://localhost:4000/2019/02/15/the-term-of-heap" rel="alternate" type="text/html" title="The Term of &quot;Heap&quot;" /><published>2019-02-15T10:20:00+08:00</published><updated>2019-02-15T10:20:00+08:00</updated><id>http://localhost:4000/2019/02/15/the-term-of-heap</id><content type="html" xml:base="http://localhost:4000/2019/02/15/the-term-of-heap">&lt;blockquote&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="machine learning" /><category term="cs229" /><summary type="html">Keep Updating: 2019-02-18 Merge to Lecture #5 Note 2019-01-23 Add Part 2, Gausian discriminant analysis 2019-01-22 Add Part 1, A Review of Generative Learning Algorithms.</summary></entry><entry><title type="html">The Term of “Heap”</title><link href="http://localhost:4000/2019/02/15/the-term-of-heap" rel="alternate" type="text/html" title="The Term of &quot;Heap&quot;" /><published>2019-02-15T10:20:00+08:00</published><updated>2019-02-15T10:20:00+08:00</updated><id>http://localhost:4000/2019/02/15/the-term-of-heap</id><content type="html" xml:base="http://localhost:4000/2019/02/15/the-term-of-heap">&lt;blockquote&gt;
   &lt;p&gt;The term “&lt;strong&gt;heap&lt;/strong&gt;” was originally coined in the context of heapsort, but it has since come to refer to “garbage-collected storage,” such as the programming languages Java and Lisp provide.&lt;/p&gt;
 
   &lt;p&gt;The &lt;strong&gt;heap data structure&lt;/strong&gt; in MIT 6.006 is NOT garbage-collected storage.&lt;/p&gt;

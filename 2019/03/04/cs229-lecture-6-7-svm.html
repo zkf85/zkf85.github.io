@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-      Intro to HTML, CSS, Javascript
+      [CS229] Lecture 6 Notes - Support Vector Machines I
       
       2019
     </title>
@@ -27,17 +27,17 @@
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
     <!-- Begin Jekyll SEO tag v2.5.0 -->
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Intro to HTML, CSS, Javascript" />
+<meta property="og:title" content="[CS229] Lecture 6 Notes - Support Vector Machines I" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="» Web Development Tutorial for Beginners (#1) - How to build webpages with HTML, CSS, Javascript" />
-<meta property="og:description" content="» Web Development Tutorial for Beginners (#1) - How to build webpages with HTML, CSS, Javascript" />
-<link rel="canonical" href="http://localhost:4000/2019/02/15/intro-to-web-dev" />
-<meta property="og:url" content="http://localhost:4000/2019/02/15/intro-to-web-dev" />
+<meta name="description" content="Introduce Support Vector Machines (SVM) Intuition Created on 02/27/2019 Updated on 03/04/2019" />
+<meta property="og:description" content="Introduce Support Vector Machines (SVM) Intuition Created on 02/27/2019 Updated on 03/04/2019" />
+<link rel="canonical" href="http://localhost:4000/2019/03/04/cs229-lecture-6-7-svm" />
+<meta property="og:url" content="http://localhost:4000/2019/03/04/cs229-lecture-6-7-svm" />
 <meta property="og:site_name" content="Everest" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-02-15T15:40:00+08:00" />
+<meta property="article:published_time" content="2019-03-04T00:00:00+08:00" />
 <script type="application/ld+json">
-{"description":"» Web Development Tutorial for Beginners (#1) - How to build webpages with HTML, CSS, Javascript","@type":"BlogPosting","url":"http://localhost:4000/2019/02/15/intro-to-web-dev","headline":"Intro to HTML, CSS, Javascript","dateModified":"2019-02-15T15:40:00+08:00","datePublished":"2019-02-15T15:40:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/02/15/intro-to-web-dev"},"@context":"http://schema.org"}</script>
+{"description":"Introduce Support Vector Machines (SVM) Intuition Created on 02/27/2019 Updated on 03/04/2019","@type":"BlogPosting","url":"http://localhost:4000/2019/03/04/cs229-lecture-6-7-svm","headline":"[CS229] Lecture 6 Notes - Support Vector Machines I","dateModified":"2019-03-04T00:00:00+08:00","datePublished":"2019-03-04T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/03/04/cs229-lecture-6-7-svm"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -114,16 +114,16 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 
 <div class="container">
   <div id="post-info">
-  <h1>Intro to HTML, CSS, Javascript</h1>
+  <h1>[CS229] Lecture 6 Notes - Support Vector Machines I</h1>
   <ul class="collapsible hoverable" data-collapsible="accordion">
     <li>
       <div class="collapsible-header">
         <span>
           <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Date">date_range</i>
            
-          Feb.
+          Mar.
             
-          15, 2019 - Friday
+          04, 2019 - Monday
           <i id="indicate" class="right material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Show extra info">info</i>
         </span>
       </div>
@@ -141,19 +141,11 @@ Remember that after enabling this, you have to enter the real dollar sings with 
           
           
           
-          <a href="/tags#web-developing" target="_blank"><div class="chip">web developing</div></a>
+          <a href="/tags#cs229" target="_blank"><div class="chip">cs229</div></a>
           
           
           
-          <a href="/tags#html" target="_blank"><div class="chip">html</div></a>
-          
-          
-          
-          <a href="/tags#css" target="_blank"><div class="chip">css</div></a>
-          
-          
-          
-          <a href="/tags#javascript" target="_blank"><div class="chip">javascript</div></a>
+          <a href="/tags#machine-learning" target="_blank"><div class="chip">machine learning</div></a>
           
         </span>
       </div>
@@ -162,20 +154,56 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 </div>
 <div class="row">
   <div class="col s12">
-    <table>
-  <thead>
-    <tr>
-      <th style="text-align: center"><a href="https://www.youtube.com/watch?v=3JluqTojuME"><img src="http://img.youtube.com/vi/3JluqTojuME/0.jpg" alt="IMAGE ALT TEXT HERE" /></a></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center"><a href="http://img.youtube.com/vi/3JluqTojuME/0.jpg">» Web Development Tutorial for Beginners (#1) - How to build webpages with HTML, CSS, Javascript</a></td>
-    </tr>
-  </tbody>
-</table>
+    <blockquote>
+  <ul>
+    <li>Introduce Support Vector Machines (SVM)</li>
+    <li>Intuition</li>
+    <li>Created on 02/27/2019</li>
+    <li>Updated on 03/04/2019</li>
+  </ul>
+</blockquote>
 
 <!--more-->
+
+<ul id="markdown-toc">
+  <li><a href="#1-margins-intuition" id="markdown-toc-1-margins-intuition">1. Margins: Intuition</a></li>
+  <li><a href="#2-change-of-notation-from-logistic-regression" id="markdown-toc-2-change-of-notation-from-logistic-regression">2. Change of Notation (from logistic regression)</a></li>
+  <li><a href="#3-function-margins--geometric-margins" id="markdown-toc-3-function-margins--geometric-margins">3. Function Margins / Geometric Margins</a>    <ul>
+      <li><a href="#31-function-margins" id="markdown-toc-31-function-margins">3.1. Function Margins</a></li>
+    </ul>
+  </li>
+  <li><a href="#reference" id="markdown-toc-reference">Reference</a></li>
+</ul>
+
+<p>Support Vector Machine (SVM) learning algorithms are among the best “off-the-shelf” supervised learning algorithm.</p>
+
+<h2 id="1-margins-intuition">1. Margins: Intuition</h2>
+<p>The intuition is to find a decision boundary that allows us to make all correct and confident  (meaning far from the decision boundary) predictions on the training examples.</p>
+
+<h2 id="2-change-of-notation-from-logistic-regression">2. Change of Notation (from logistic regression)</h2>
+<ol>
+  <li>In SVM discussion, we use $y \in \{-1, 1\}$ instead of $\{0, 1\}$ to denote the class labels.</li>
+  <li>Rather than parameterizing linear classifier with $\theta$, we use $w, b$ as parameters, and our classifier is written as:</li>
+</ol>
+
+<p><script type="math/tex">h_{w,b}(x) = g(w^T x + b).</script></p>
+<h2 id="3-function-margins--geometric-margins">3. Function Margins / Geometric Margins</h2>
+<h3 id="31-function-margins">3.1. Function Margins</h3>
+<p>Definition of the <strong>functional margin</strong> of $w,b$ w.r.t. the training example:
+<script type="math/tex">\hat \gamma^{(i)} = y^{(i)}(w^Tx+b).</script></p>
+<ul>
+  <li>where $y^{(i)} \in \{-1, 1\}$;</li>
+  <li>if $y^{(i)}(w^Tx+b) &gt; 0$, then our prediction on this example is <strong>correct</strong>!</li>
+</ul>
+
+<p>Given a training set $S = \{(x^{(i)}, y^{(i)}); i = 1, \ldots, m\}$, we also define the function margin of $(w,b)$ w.r.t. $S$ as the <strong>smallest</strong> of the functional margins of the individual training examples. Denoted by $\hat{\gamma}$:</p>
+
+<script type="math/tex; mode=display">\hat \gamma = \min_{i=1, \ldots, m} \hat \gamma^{(i)}.</script>
+
+<h2 id="reference">Reference</h2>
+<ol>
+  <li><a href="/public/cs229/cs229-notes3.pdf">» Stanford Lecture Note Part V</a></li>
+</ol>
 
 <p><br /><br /><strong><em>KF</em></strong></p>
 
@@ -188,8 +216,8 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 <div id="disqus_thread"></div>
 <script>
   var disqus_config = function () {
-    this.page.url = "http://localhost:4000/2019/02/15/intro-to-web-dev";
-    this.page.identifier = "/2019/02/15/intro-to-web-dev";
+    this.page.url = "http://localhost:4000/2019/03/04/cs229-lecture-6-7-svm";
+    this.page.identifier = "/2019/03/04/cs229-lecture-6-7-svm";
   };
   (function() { // DON'T EDIT BELOW THIS LINE
     var d = document, s = d.createElement('script');

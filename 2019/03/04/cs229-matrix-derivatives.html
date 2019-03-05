@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-      [CS229] Lecture 6 Notes - Support Vector Machines I
+      [CS229] Properties of Trace and Matrix Derivatives
       
       2019
     </title>
@@ -27,17 +27,17 @@
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
     <!-- Begin Jekyll SEO tag v2.5.0 -->
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="[CS229] Lecture 6 Notes - Support Vector Machines I" />
+<meta property="og:title" content="[CS229] Properties of Trace and Matrix Derivatives" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Introduce Support Vector Machines (SVM) Intuition" />
-<meta property="og:description" content="Introduce Support Vector Machines (SVM) Intuition" />
-<link rel="canonical" href="http://localhost:4000/2019/02/27/cs229-lecture-6-7-svm" />
-<meta property="og:url" content="http://localhost:4000/2019/02/27/cs229-lecture-6-7-svm" />
+<meta name="description" content="The trace properties and the matrix derivatives. picture_as_pdfProperties of trace and matrix derivatives - [Stanford] John Duchi picture_as_pdfMatrix Calculus - Notes on Derivatives of a Trace - [Illinois] Johannes Traa KF" />
+<meta property="og:description" content="The trace properties and the matrix derivatives. picture_as_pdfProperties of trace and matrix derivatives - [Stanford] John Duchi picture_as_pdfMatrix Calculus - Notes on Derivatives of a Trace - [Illinois] Johannes Traa KF" />
+<link rel="canonical" href="http://localhost:4000/2019/03/04/cs229-matrix-derivatives" />
+<meta property="og:url" content="http://localhost:4000/2019/03/04/cs229-matrix-derivatives" />
 <meta property="og:site_name" content="Everest" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-02-27T00:00:00+08:00" />
+<meta property="article:published_time" content="2019-03-04T00:00:00+08:00" />
 <script type="application/ld+json">
-{"description":"Introduce Support Vector Machines (SVM) Intuition","@type":"BlogPosting","url":"http://localhost:4000/2019/02/27/cs229-lecture-6-7-svm","headline":"[CS229] Lecture 6 Notes - Support Vector Machines I","dateModified":"2019-02-27T00:00:00+08:00","datePublished":"2019-02-27T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/02/27/cs229-lecture-6-7-svm"},"@context":"http://schema.org"}</script>
+{"description":"The trace properties and the matrix derivatives. picture_as_pdfProperties of trace and matrix derivatives - [Stanford] John Duchi picture_as_pdfMatrix Calculus - Notes on Derivatives of a Trace - [Illinois] Johannes Traa KF","@type":"BlogPosting","url":"http://localhost:4000/2019/03/04/cs229-matrix-derivatives","headline":"[CS229] Properties of Trace and Matrix Derivatives","dateModified":"2019-03-04T00:00:00+08:00","datePublished":"2019-03-04T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/03/04/cs229-matrix-derivatives"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -114,16 +114,16 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 
 <div class="container">
   <div id="post-info">
-  <h1>[CS229] Lecture 6 Notes - Support Vector Machines I</h1>
+  <h1>[CS229] Properties of Trace and Matrix Derivatives</h1>
   <ul class="collapsible hoverable" data-collapsible="accordion">
     <li>
       <div class="collapsible-header">
         <span>
           <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Date">date_range</i>
            
-          Feb.
+          Mar.
             
-          27, 2019 - Wednesday
+          04, 2019 - Monday
           <i id="indicate" class="right material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Show extra info">info</i>
         </span>
       </div>
@@ -145,7 +145,7 @@ Remember that after enabling this, you have to enter the real dollar sings with 
           
           
           
-          <a href="/tags#machine-learning" target="_blank"><div class="chip">machine learning</div></a>
+          <a href="/tags#linear-algebra" target="_blank"><div class="chip">linear algebra</div></a>
           
         </span>
       </div>
@@ -155,26 +155,12 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 <div class="row">
   <div class="col s12">
     <blockquote>
-  <ul>
-    <li>Introduce Support Vector Machines (SVM)</li>
-    <li>Intuition</li>
-  </ul>
+  <p>The trace properties and the matrix derivatives.</p>
 </blockquote>
 
-<!--more-->
+<li><a href="/public/cs229/matrix_prop.pdf" style="color: gray"><i class="material-icons pdf">picture_as_pdf</i>Properties of trace and matrix derivatives - [Stanford] John Duchi</a></li>
 
-<ul id="markdown-toc">
-  <li><a href="#1-margins-intuition" id="markdown-toc-1-margins-intuition">1. Margins: Intuition</a></li>
-  <li><a href="#reference" id="markdown-toc-reference">Reference</a></li>
-</ul>
-
-<p>Support Vector Machine (SVM) learning algorithms are among the best “off-the-shelf” supervised learning algorithm.</p>
-
-<h2 id="1-margins-intuition">1. Margins: Intuition</h2>
-<h2 id="reference">Reference</h2>
-<ol>
-  <li><a href="/public/cs229/cs229-notes3.pdf">» Stanford Lecture Note Part V</a></li>
-</ol>
+<li><a href="/public/cs229/matrix-calculus-illinois.pdf" style="color: gray"><i class="material-icons pdf">picture_as_pdf</i>Matrix Calculus - Notes on Derivatives of a Trace - [Illinois] Johannes Traa</a></li>
 
 <p><br /><br /><strong><em>KF</em></strong></p>
 
@@ -187,8 +173,8 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 <div id="disqus_thread"></div>
 <script>
   var disqus_config = function () {
-    this.page.url = "http://localhost:4000/2019/02/27/cs229-lecture-6-7-svm";
-    this.page.identifier = "/2019/02/27/cs229-lecture-6-7-svm";
+    this.page.url = "http://localhost:4000/2019/03/04/cs229-matrix-derivatives";
+    this.page.identifier = "/2019/03/04/cs229-matrix-derivatives";
   };
   (function() { // DON'T EDIT BELOW THIS LINE
     var d = document, s = d.createElement('script');

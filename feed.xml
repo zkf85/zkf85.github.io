@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-03-04T18:09:05+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Everest</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-03-05T11:07:42+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Everest</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
 </subtitle><entry><title type="html">[CS229] Properties of Trace and Matrix Derivatives</title><link href="http://localhost:4000/2019/03/04/cs229-matrix-derivatives" rel="alternate" type="text/html" title="[CS229] Properties of Trace and Matrix Derivatives" /><published>2019-03-04T00:00:00+08:00</published><updated>2019-03-04T00:00:00+08:00</updated><id>http://localhost:4000/2019/03/04/cs229-matrix-derivatives</id><content type="html" xml:base="http://localhost:4000/2019/03/04/cs229-matrix-derivatives">&lt;blockquote&gt;
   &lt;p&gt;The trace properties and the matrix derivatives.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -10,9 +10,9 @@
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="cs229" /><category term="linear algebra" /><summary type="html">The trace properties and the matrix derivatives. picture_as_pdfProperties of trace and matrix derivatives - [Stanford] John Duchi picture_as_pdfMatrix Calculus - Notes on Derivatives of a Trace - [Illinois] Johannes Traa KF</summary></entry><entry><title type="html">[CS229] Lecture 6 Notes - Support Vector Machines I</title><link href="http://localhost:4000/2019/03/04/cs229-lecture-6-7-svm" rel="alternate" type="text/html" title="[CS229] Lecture 6 Notes - Support Vector Machines I" /><published>2019-03-04T00:00:00+08:00</published><updated>2019-03-04T00:00:00+08:00</updated><id>http://localhost:4000/2019/03/04/cs229-lecture-6-7-svm</id><content type="html" xml:base="http://localhost:4000/2019/03/04/cs229-lecture-6-7-svm">&lt;blockquote&gt;
   &lt;ul&gt;
     &lt;li&gt;Introduce Support Vector Machines (SVM)&lt;/li&gt;
-    &lt;li&gt;Intuition&lt;/li&gt;
     &lt;li&gt;Created on 02/27/2019&lt;/li&gt;
     &lt;li&gt;Updated on 03/04/2019&lt;/li&gt;
+    &lt;li&gt;Updated on 03/05/2019&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/blockquote&gt;
 
@@ -23,14 +23,27 @@
   &lt;li&gt;&lt;a href=&quot;#2-change-of-notation-from-logistic-regression&quot; id=&quot;markdown-toc-2-change-of-notation-from-logistic-regression&quot;&gt;2. Change of Notation (from logistic regression)&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#3-function-margins--geometric-margins&quot; id=&quot;markdown-toc-3-function-margins--geometric-margins&quot;&gt;3. Function Margins / Geometric Margins&lt;/a&gt;    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#31-function-margins&quot; id=&quot;markdown-toc-31-function-margins&quot;&gt;3.1. Function Margins&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#32-geometric-margins&quot; id=&quot;markdown-toc-32-geometric-margins&quot;&gt;3.2. Geometric Margins&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#derivation-of-geometric-margins&quot; id=&quot;markdown-toc-derivation-of-geometric-margins&quot;&gt;Derivation of geometric margins:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4-the-optimal-margin-classifier&quot; id=&quot;markdown-toc-4-the-optimal-margin-classifier&quot;&gt;4. The Optimal Margin Classifier&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#41-intuition&quot; id=&quot;markdown-toc-41-intuition&quot;&gt;4.1. Intuition&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#42-describe-the-aim-in-math&quot; id=&quot;markdown-toc-42-describe-the-aim-in-math&quot;&gt;4.2. Describe the aim in math:&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#5-lagrange-duality&quot; id=&quot;markdown-toc-5-lagrange-duality&quot;&gt;5. Lagrange Duality&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#reference&quot; id=&quot;markdown-toc-reference&quot;&gt;Reference&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Support Vector Machine (SVM) learning algorithms are among the best “off-the-shelf” supervised learning algorithm.&lt;/p&gt;
 
 &lt;h2 id=&quot;1-margins-intuition&quot;&gt;1. Margins: Intuition&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;(03/04/2019)&lt;/em&gt;&lt;/p&gt;
+
 &lt;p&gt;The intuition is to find a decision boundary that allows us to make all correct and confident  (meaning far from the decision boundary) predictions on the training examples.&lt;/p&gt;
 
 &lt;h2 id=&quot;2-change-of-notation-from-logistic-regression&quot;&gt;2. Change of Notation (from logistic regression)&lt;/h2&gt;
@@ -53,12 +66,114 @@
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\hat \gamma = \min_{i=1, \ldots, m} \hat \gamma^{(i)}.&lt;/script&gt;
 
+&lt;h3 id=&quot;32-geometric-margins&quot;&gt;3.2. Geometric Margins&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;(03/04/2019)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Consider the figure below:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;img src=&quot;/public/img/20190305-geometric-margins.png&quot; alt=&quot;&quot; /&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Figure 1.&lt;/strong&gt; Geometric Margin.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The distance from a training sample $x^{(i)}$ to the decision boundary ($w^Tx+b=0$) is denoted as $\gamma^{(i)}$, it’s value is given by the line “AB” in &lt;strong&gt;Figure 1&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;derivation-of-geometric-margins&quot;&gt;Derivation of geometric margins:&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Point “B” is given by $x^{(i)} - \gamma^{(i)} \cdot w / \Vert w \Vert$.&lt;/li&gt;
+  &lt;li&gt;Point “B” is on the decision boundary $w^Tx+b=0$. Hence,&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;w^T\left(x^{(i)} - \gamma^{(i)} \cdot \frac{w}{\Vert w \Vert}\right)+b=0&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Solving for $\gamma^{(i)}$, we have:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\gamma{(i)} = \frac{w^Tx^{(i)} + b}{\Vert w \Vert} = \left(\frac{w}{\Vert w\Vert}\right)^T x^{(i)} + \frac{b}{\Vert w\Vert}.&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;In order to let both “positive” and “negative” samples satisfy, we define the &lt;strong&gt;geometric margin&lt;/strong&gt; of $(w,b)$ w.r.t. a training sample $(x^{(i)},y^{(i)})$ to be:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\gamma^{(i)} = y^{(i)}\left(\left(\frac{w}{\Vert w\Vert}\right)^T x^{(i)} + \frac{b}{\Vert w\Vert}\right).&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Finally, given a training set $S = \{(x^{(i)}, y^{(i)}); i = 1, \ldots, m\}$, we also define the function margin of $(w,b)$ w.r.t. $S$ as the &lt;strong&gt;smallest&lt;/strong&gt; of the geometric margins of the individual training examples:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\gamma = \min_{i=1,\ldots,m}\gamma^{(i)}&lt;/script&gt;
+
+&lt;h2 id=&quot;4-the-optimal-margin-classifier&quot;&gt;4. The Optimal Margin Classifier&lt;/h2&gt;
+&lt;h3 id=&quot;41-intuition&quot;&gt;4.1. Intuition&lt;/h3&gt;
+&lt;p&gt;Now, our aim is to try to &lt;strong&gt;find a decision boundary that maximizes the (geometric margin)&lt;/strong&gt;, since this would reflect &lt;strong&gt;a very confident set of predictions on the training set&lt;/strong&gt; and &lt;strong&gt;a good “fit” to the training data&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Specifically, this will result in a classifier that separates the positive and the negative training examples with a “gap” (the geometric margin).&lt;/p&gt;
+
+&lt;h3 id=&quot;42-describe-the-aim-in-math&quot;&gt;4.2. Describe the aim in math:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Assume that we are given a training set that is linearly separable. Then, our aim is to find the hyperplane $(w,b)$ to maximize the geometric margin. The optimization problem can be written as:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\max_{\gamma,w,b} &amp;\quad \gamma \\
+\mbox{s.t.} &amp;\quad y^{(i)}\left(w^T x^{(i)} + b\right) \ge \gamma,\quad i=1,\ldots,m \\
+&amp;\quad \Vert w\Vert = 1.
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;If we could solve the optimization problem, we’d be done. However, “$\Vert w\Vert=1$” constraint is nasty(non-convex), so we try to transform the problem into a nicer one:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\max_{\hat\gamma,w,b} &amp;\quad \frac{\hat\gamma}{\Vert w\Vert} \\
+\mbox{s.t.} &amp;\quad y^{(i)}\left(w^T x^{(i)} + b\right) \ge \hat\gamma,\quad i=1,\ldots,m \\
+&amp;\quad \Vert w\Vert = 1.
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;This time, we’re goint to maximize $\hat\gamma/\Vert w\Vert$, subject to the functional margins all being at least $\hat\gamma$. However, this objective function $\hat\gamma/\Vert w\Vert$ is still nasty (non-convex). Therefore, we have to continue to find a better way.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;strong&gt;key idea&lt;/strong&gt; we use here: we can add arbitrary scaling constraint on $w$ and $b$ without changing anything. Here, we introduce the scaling constraint that &lt;strong&gt;the functional margin of $w,b$ w.r.t. the training set must be 1&lt;/strong&gt;:&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\hat\gamma = 1.&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Plugging this into our problem above and noting that maximizing $\hat\gamma/\Vert w\Vert=1/\Vert w\Vert$ is the same thing as minimizing $\Vert w\Vert^2$, we now have the following optimization problem:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\min_{w,b} &amp;\quad \frac{1}{2}\Vert w\Vert^2 \\
+\mbox{s.t.} &amp;\quad y^{(i)}\left(w^Tx^{(i)} + b\right), \quad i=1,\ldots, m
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Now, the above is an optimization problem witha convex quadratic objective and only linear constraints. It’s colution gives us the &lt;strong&gt;optimal margin classifier&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;In the following, the aim is to find a good way to solve this &lt;strong&gt;“constrained optimization problem”&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;5-lagrange-duality&quot;&gt;5. Lagrange Duality&lt;/h2&gt;
+
 &lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
 &lt;ol&gt;
   &lt;li&gt;&lt;a href=&quot;/public/cs229/cs229-notes3.pdf&quot;&gt;» Stanford Lecture Note Part V&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="cs229" /><category term="machine learning" /><summary type="html">Introduce Support Vector Machines (SVM) Intuition Created on 02/27/2019 Updated on 03/04/2019</summary></entry><entry><title type="html">What is DOM?</title><link href="http://localhost:4000/2019/02/28/what-is-dom" rel="alternate" type="text/html" title="What is DOM?" /><published>2019-02-28T00:00:00+08:00</published><updated>2019-02-28T00:00:00+08:00</updated><id>http://localhost:4000/2019/02/28/what-is-dom</id><content type="html" xml:base="http://localhost:4000/2019/02/28/what-is-dom">&lt;blockquote&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="cs229" /><category term="machine learning" /><category term="svm" /><summary type="html">Introduce Support Vector Machines (SVM) Created on 02/27/2019 Updated on 03/04/2019 Updated on 03/05/2019</summary></entry><entry><title type="html">What is DOM?</title><link href="http://localhost:4000/2019/02/28/what-is-dom" rel="alternate" type="text/html" title="What is DOM?" /><published>2019-02-28T00:00:00+08:00</published><updated>2019-02-28T00:00:00+08:00</updated><id>http://localhost:4000/2019/02/28/what-is-dom</id><content type="html" xml:base="http://localhost:4000/2019/02/28/what-is-dom">&lt;blockquote&gt;
   &lt;p&gt;It’s the abbre. of &lt;strong&gt;Document Object Model (DOM)&lt;/strong&gt;&lt;/p&gt;
 
   &lt;p&gt;In short:&lt;/p&gt;

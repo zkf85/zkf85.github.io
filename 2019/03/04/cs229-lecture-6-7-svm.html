@@ -318,6 +318,26 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 <p>In the following, the aim is to find a good way to solve this <strong>“constrained optimization problem”</strong>.</p>
 
 <h2 id="5-lagrange-duality">5. Lagrange Duality</h2>
+<p>The method of <strong>Lagrange multipliers</strong> can be used to solve <em>constrained optimization problems</em> (like the problems shown in the last part).</p>
+
+<p>Consider a problem of the following form:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\min_w &\quad f(w) \\
+\mbox{s.t.} &\quad h_i(w)=0, \quad i=1, \ldots, l.
+\end{align} %]]></script>
+
+<p>To solve this constraint optimization problems, we define the <strong>Lagrangian</strong>:</p>
+
+<script type="math/tex; mode=display">\mathcal{L}(w,\beta)=f(w)+\sum_{i=1}^l \beta_i h_i(w)</script>
+
+<p>Here, the $\beta_i$’s are called the <em>(03/04/2019)</em>
+<strong>Lagrange multipliers</strong>. Then we let $\mathcal{L}$’s partial derivatives to be zero:</p>
+
+<script type="math/tex; mode=display">\frac{\partial\mathcal{L}}{\partial w_i}=0;\quad \frac{\partial\mathcal{L}}{\partial \beta_i}=0,</script>
+
+<p>and solve for $w$ and $beta$, and we’d be done.</p>
 
 <h2 id="reference">Reference</h2>
 <ol>

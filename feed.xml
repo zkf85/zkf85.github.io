@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-03-05T11:07:42+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Everest</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-03-05T11:24:18+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Everest</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
 </subtitle><entry><title type="html">[CS229] Properties of Trace and Matrix Derivatives</title><link href="http://localhost:4000/2019/03/04/cs229-matrix-derivatives" rel="alternate" type="text/html" title="[CS229] Properties of Trace and Matrix Derivatives" /><published>2019-03-04T00:00:00+08:00</published><updated>2019-03-04T00:00:00+08:00</updated><id>http://localhost:4000/2019/03/04/cs229-matrix-derivatives</id><content type="html" xml:base="http://localhost:4000/2019/03/04/cs229-matrix-derivatives">&lt;blockquote&gt;
   &lt;p&gt;The trace properties and the matrix derivatives.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -167,6 +167,26 @@
 &lt;p&gt;In the following, the aim is to find a good way to solve this &lt;strong&gt;“constrained optimization problem”&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;5-lagrange-duality&quot;&gt;5. Lagrange Duality&lt;/h2&gt;
+&lt;p&gt;The method of &lt;strong&gt;Lagrange multipliers&lt;/strong&gt; can be used to solve &lt;em&gt;constrained optimization problems&lt;/em&gt; (like the problems shown in the last part).&lt;/p&gt;
+
+&lt;p&gt;Consider a problem of the following form:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\min_w &amp;\quad f(w) \\
+\mbox{s.t.} &amp;\quad h_i(w)=0, \quad i=1, \ldots, l.
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;To solve this constraint optimization problems, we define the &lt;strong&gt;Lagrangian&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathcal{L}(w,\beta)=f(w)+\sum_{i=1}^l \beta_i h_i(w)&lt;/script&gt;
+
+&lt;p&gt;Here, the $\beta_i$’s are called the &lt;em&gt;(03/04/2019)&lt;/em&gt;
+&lt;strong&gt;Lagrange multipliers&lt;/strong&gt;. Then we let $\mathcal{L}$’s partial derivatives to be zero:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\partial\mathcal{L}}{\partial w_i}=0;\quad \frac{\partial\mathcal{L}}{\partial \beta_i}=0,&lt;/script&gt;
+
+&lt;p&gt;and solve for $w$ and $beta$, and we’d be done.&lt;/p&gt;
 
 &lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
 &lt;ol&gt;

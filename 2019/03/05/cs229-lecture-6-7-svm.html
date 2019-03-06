@@ -31,13 +31,13 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Introduce Support Vector Machines (SVM) Created on 02/27/2019 Updated on 03/04/2019 Updated on 03/05/2019" />
 <meta property="og:description" content="Introduce Support Vector Machines (SVM) Created on 02/27/2019 Updated on 03/04/2019 Updated on 03/05/2019" />
-<link rel="canonical" href="http://localhost:4000/2019/03/04/cs229-lecture-6-7-svm" />
-<meta property="og:url" content="http://localhost:4000/2019/03/04/cs229-lecture-6-7-svm" />
+<link rel="canonical" href="http://localhost:4000/2019/03/05/cs229-lecture-6-7-svm" />
+<meta property="og:url" content="http://localhost:4000/2019/03/05/cs229-lecture-6-7-svm" />
 <meta property="og:site_name" content="Everest" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-03-04T00:00:00+08:00" />
+<meta property="article:published_time" content="2019-03-05T00:00:00+08:00" />
 <script type="application/ld+json">
-{"description":"Introduce Support Vector Machines (SVM) Created on 02/27/2019 Updated on 03/04/2019 Updated on 03/05/2019","@type":"BlogPosting","url":"http://localhost:4000/2019/03/04/cs229-lecture-6-7-svm","headline":"[CS229] Lecture 6 Notes - Support Vector Machines I","dateModified":"2019-03-04T00:00:00+08:00","datePublished":"2019-03-04T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/03/04/cs229-lecture-6-7-svm"},"@context":"http://schema.org"}</script>
+{"description":"Introduce Support Vector Machines (SVM) Created on 02/27/2019 Updated on 03/04/2019 Updated on 03/05/2019","@type":"BlogPosting","url":"http://localhost:4000/2019/03/05/cs229-lecture-6-7-svm","headline":"[CS229] Lecture 6 Notes - Support Vector Machines I","dateModified":"2019-03-05T00:00:00+08:00","datePublished":"2019-03-05T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/03/05/cs229-lecture-6-7-svm"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -123,7 +123,7 @@ Remember that after enabling this, you have to enter the real dollar sings with 
            
           Mar.
             
-          04, 2019 - Monday
+          05, 2019 - Tuesday
           <i id="indicate" class="right material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Show extra info">info</i>
         </span>
       </div>
@@ -309,8 +309,8 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{align}
-\min_{w,b} &\quad \frac{1}{2}\Vert w\Vert^2 \\
-\mbox{s.t.} &\quad y^{(i)}\left(w^Tx^{(i)} + b\right), \quad i=1,\ldots, m
+\min_{w,b} &\quad \frac{1}{2}\Vert w\Vert^2 \tag{a}\label{eqa} \\
+\mbox{s.t.} &\quad y^{(i)}\left(w^Tx^{(i)} + b\right) \ge 1, \quad i=1,\ldots, m \tag{b}\label{eqb}
 \end{align} %]]></script>
 
 <p>Now, the above is an optimization problem witha convex quadratic objective and only linear constraints. It’s colution gives us the <strong>optimal margin classifier</strong>.</p>
@@ -332,12 +332,46 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 
 <script type="math/tex; mode=display">\mathcal{L}(w,\beta)=f(w)+\sum_{i=1}^l \beta_i h_i(w)</script>
 
-<p>Here, the $\beta_i$’s are called the <em>(03/04/2019)</em>
-<strong>Lagrange multipliers</strong>. Then we let $\mathcal{L}$’s partial derivatives to be zero:</p>
+<p>Here, the $\beta_i$’s are called the <strong>Lagrange multipliers</strong>. Then we let $\mathcal{L}$’s partial derivatives to be zero:</p>
 
 <script type="math/tex; mode=display">\frac{\partial\mathcal{L}}{\partial w_i}=0;\quad \frac{\partial\mathcal{L}}{\partial \beta_i}=0,</script>
 
 <p>and solve for $w$ and $beta$, and we’d be done.</p>
+
+<p>In this section, we will generalize this to constrained optimization problems in which we may have inequality as well as equality constraints.</p>
+
+<p>Consider the following, the <strong>primal</strong> optimization problem:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\min_w &\quad f(w) \\
+\mbox{s.t.} &\quad g_i(w) \le 0, \quad i=1,\ldots,k \\
+&\quad h_i(w)=0,\quad i=1,\ldots,l.
+\end{align} %]]></script>
+
+<p>To solve it, we start by defining the <strong>generalized Lagrangian</strong>:</p>
+
+<script type="math/tex; mode=display">\mathcal{L}(w,\alpha,\beta) = f(w) + \sum_{i=1}^k \alpha_i g_i(w) + \sum_{i=1}^l \beta_i h_i(w).</script>
+
+<p>Here, the $\alpha$’s and $\beta$’s arethe Lagrange multipliers. Consider the quantity:</p>
+
+<script type="math/tex; mode=display">\theta_{\mathcal{P}}(w) = \max_{\alpha,\beta:\alpha_i \ge 0} \mathcal{L}(w,\alpha,\beta).</script>
+
+<p>Here, the “$\mathcal{P}$” subscript stands for “primal”. Let some $w$ be given, if $w$ voilates any of the primal constraints (i.e., if either $g_i(w) \ge 0$ or $h_i(w) \ne 0$ for some $i$), then you should be able to verify that:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\theta_{\mathcal{P}}(w) &= \max_{\alpha,\beta:\alpha_i \ge 0} f(w) + \sum_{i=1}^k \alpha_i g_i(w) + \sum_{i=1}^l \beta_i h_i(w) \tag{1}\label{eq1} \\
+&= \infty \tag{2}\label{eq2}
+\end{align} %]]></script>
+
+<p>Conversely if the constraints are indeed satisfied for a particular value of $w$, then $\theta_\mathcal{P}(w)=f(w)$. Hence,</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\theta_{\mathcal{P}}(w) = \left\{ \begin{array}{ll}
+f(w)  & \mbox{if} \ w\  \mbox{satisfies primal constraints} \\
+\infty & \mbox{otherwise.}
+\end{array}\right. %]]></script>
 
 <h2 id="reference">Reference</h2>
 <ol>
@@ -355,8 +389,8 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 <div id="disqus_thread"></div>
 <script>
   var disqus_config = function () {
-    this.page.url = "http://localhost:4000/2019/03/04/cs229-lecture-6-7-svm";
-    this.page.identifier = "/2019/03/04/cs229-lecture-6-7-svm";
+    this.page.url = "http://localhost:4000/2019/03/05/cs229-lecture-6-7-svm";
+    this.page.identifier = "/2019/03/05/cs229-lecture-6-7-svm";
   };
   (function() { // DON'T EDIT BELOW THIS LINE
     var d = document, s = d.createElement('script');

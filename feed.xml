@@ -1,13 +1,347 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-03-05T11:24:18+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Everest</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
-</subtitle><entry><title type="html">[CS229] Properties of Trace and Matrix Derivatives</title><link href="http://localhost:4000/2019/03/04/cs229-matrix-derivatives" rel="alternate" type="text/html" title="[CS229] Properties of Trace and Matrix Derivatives" /><published>2019-03-04T00:00:00+08:00</published><updated>2019-03-04T00:00:00+08:00</updated><id>http://localhost:4000/2019/03/04/cs229-matrix-derivatives</id><content type="html" xml:base="http://localhost:4000/2019/03/04/cs229-matrix-derivatives">&lt;blockquote&gt;
-  &lt;p&gt;The trace properties and the matrix derivatives.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-03-06T18:13:40+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Everest</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
+</subtitle><entry><title type="html">First Try on PyTorch</title><link href="http://localhost:4000/2019/03/06/pytorch-first-try" rel="alternate" type="text/html" title="First Try on PyTorch" /><published>2019-03-06T00:00:00+08:00</published><updated>2019-03-06T00:00:00+08:00</updated><id>http://localhost:4000/2019/03/06/pytorch-first-try</id><content type="html" xml:base="http://localhost:4000/2019/03/06/pytorch-first-try">&lt;blockquote&gt;
+  &lt;p&gt;It turns out that lots of AI guys are fond of Pytorch over Tensorflow. Although I’m using TF all the time, why not give it a try and play with both?&lt;/p&gt;
+
+  &lt;p&gt;Let’s get started.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;li&gt;&lt;a href=&quot;/public/cs229/matrix_prop.pdf&quot; style=&quot;color: gray&quot;&gt;&lt;i class=&quot;material-icons pdf&quot;&gt;picture_as_pdf&lt;/i&gt;Properties of trace and matrix derivatives - [Stanford] John Duchi&lt;/a&gt;&lt;/li&gt;
+&lt;p&gt;&lt;img src=&quot;/public/img/20190306-pytorch-logo-dark.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;li&gt;&lt;a href=&quot;/public/cs229/matrix-calculus-illinois.pdf&quot; style=&quot;color: gray&quot;&gt;&lt;i class=&quot;material-icons pdf&quot;&gt;picture_as_pdf&lt;/i&gt;Matrix Calculus - Notes on Derivatives of a Trace - [Illinois] Johannes Traa&lt;/a&gt;&lt;/li&gt;
+&lt;!--more--&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="cs229" /><category term="linear algebra" /><summary type="html">The trace properties and the matrix derivatives. picture_as_pdfProperties of trace and matrix derivatives - [Stanford] John Duchi picture_as_pdfMatrix Calculus - Notes on Derivatives of a Trace - [Illinois] Johannes Traa KF</summary></entry><entry><title type="html">[CS229] Lecture 6 Notes - Support Vector Machines I</title><link href="http://localhost:4000/2019/03/04/cs229-lecture-6-7-svm" rel="alternate" type="text/html" title="[CS229] Lecture 6 Notes - Support Vector Machines I" /><published>2019-03-04T00:00:00+08:00</published><updated>2019-03-04T00:00:00+08:00</updated><id>http://localhost:4000/2019/03/04/cs229-lecture-6-7-svm</id><content type="html" xml:base="http://localhost:4000/2019/03/04/cs229-lecture-6-7-svm">&lt;blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pytorch.org/get-started/locally/&quot;&gt;» Get Started with PyTorch/Installation - （Official)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pytorch.org/tutorials/beginner/blitz/tensor_tutorial.html&quot;&gt;» Deep Learning with PyTorch: A 60 Minute Blitz - (Official)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Deep Learning&quot;]" /><category term="pytorch" /><category term="python" /><summary type="html">It turns out that lots of AI guys are fond of Pytorch over Tensorflow. Although I’m using TF all the time, why not give it a try and play with both? Let’s get started.</summary></entry><entry><title type="html">Python Modules and Packages</title><link href="http://localhost:4000/2019/03/06/python-module-package" rel="alternate" type="text/html" title="Python Modules and Packages" /><published>2019-03-06T00:00:00+08:00</published><updated>2019-03-06T00:00:00+08:00</updated><id>http://localhost:4000/2019/03/06/python-module-package</id><content type="html" xml:base="http://localhost:4000/2019/03/06/python-module-package">&lt;blockquote&gt;
+  &lt;p&gt;Programming in python with &lt;strong&gt;modules&lt;/strong&gt; and &lt;strong&gt;packages&lt;/strong&gt; is always good practice.&lt;/p&gt;
+
+  &lt;p&gt;There are several advantages to modularizing code in a large application:&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;strong&gt;Simplicity&lt;/strong&gt;: Rather than focusing on the entire problem at hand, a module typically focuses on one relatively small portion of the problem. If you’re working on a single module, you’ll have a smaller problem domain to wrap your head around. This makes development easier and less error-prone.&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Maintainability&lt;/strong&gt;: Modules are typically designed so that they enforce logical boundaries between different problem domains. If modules are written in a way that minimizes interdependency, there is decreased likelihood that modifications to a single module will have an impact on other parts of the program. (You may even be able to make changes to a module without having any knowledge of the application outside that module.) This makes it more viable for a team of many programmers to work collaboratively on a large application.&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Reusability&lt;/strong&gt;: Functionality defined in a single module can be easily reused (through an appropriately defined interface) by other parts of the application. This eliminates the need to recreate duplicate code.&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Scoping&lt;/strong&gt;: Modules typically define a separate namespace, which helps avoid collisions between identifiers in different areas of a program. (One of the tenets in the Zen of Python is Namespaces are one honking great idea—let’s do more of those!)&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;p&gt;Here is a collection of Python &lt;strong&gt;modules&lt;/strong&gt; and &lt;strong&gt;packages&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#0-major-reference&quot; id=&quot;markdown-toc-0-major-reference&quot;&gt;0. Major Reference&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-an-overview-of-python-modules&quot; id=&quot;markdown-toc-1-an-overview-of-python-modules&quot;&gt;1. An Overview of Python Modules&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#11-what-is-a-module&quot; id=&quot;markdown-toc-11-what-is-a-module&quot;&gt;1.1. What is a “Module”?&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#12-an-example&quot; id=&quot;markdown-toc-12-an-example&quot;&gt;1.2. An Example&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-the-module-search-path&quot; id=&quot;markdown-toc-2-the-module-search-path&quot;&gt;2. The Module Search Path&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#21-where-does-python-search&quot; id=&quot;markdown-toc-21-where-does-python-search&quot;&gt;2.1. Where does Python search?&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#22-how-to-ensure-you-module-is-found&quot; id=&quot;markdown-toc-22-how-to-ensure-you-module-is-found&quot;&gt;2.2. How to ensure you module is found?&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#23-how-to-find-the-location-of-you-module&quot; id=&quot;markdown-toc-23-how-to-find-the-location-of-you-module&quot;&gt;2.3. How to find the “location” of you module?&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3-the-import-statement&quot; id=&quot;markdown-toc-3-the-import-statement&quot;&gt;3. The &lt;code class=&quot;highlighter-rouge&quot;&gt;import&lt;/code&gt; Statement&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#31-import-module_name&quot; id=&quot;markdown-toc-31-import-module_name&quot;&gt;3.1. &lt;code class=&quot;highlighter-rouge&quot;&gt;import &amp;lt;module_name&amp;gt;&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#32-from-module_name-import-names&quot; id=&quot;markdown-toc-32-from-module_name-import-names&quot;&gt;3.2. &lt;code class=&quot;highlighter-rouge&quot;&gt;from &amp;lt;module_name&amp;gt; import &amp;lt;name(s)&amp;gt;&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#33-from-module_name-import-name-as-alt_name&quot; id=&quot;markdown-toc-33-from-module_name-import-name-as-alt_name&quot;&gt;3.3. &lt;code class=&quot;highlighter-rouge&quot;&gt;from &amp;lt;module_name&amp;gt; import &amp;lt;name&amp;gt; as &amp;lt;alt_name&amp;gt;&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#34-import-module_name-as-alt_name&quot; id=&quot;markdown-toc-34-import-module_name-as-alt_name&quot;&gt;3.4. &lt;code class=&quot;highlighter-rouge&quot;&gt;import &amp;lt;module_name&amp;gt; as &amp;lt;alt_name&amp;gt;&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;0-major-reference&quot;&gt;0. Major Reference&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://realpython.com/python-modules-packages/&quot;&gt;» Python Modules and Packages - An Introduction&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-an-overview-of-python-modules&quot;&gt;1. An Overview of Python Modules&lt;/h2&gt;
+&lt;h3 id=&quot;11-what-is-a-module&quot;&gt;1.1. What is a “Module”?&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;“Python module is a file that contains Python code. Python module’s name is the &lt;strong&gt;file name without extension&lt;/strong&gt;. Normally Python module is used to group related functions, classes and variables for better code management and avoiding name clash.  For example in the built-in module, you have a function called &lt;code class=&quot;highlighter-rouge&quot;&gt;f1()&lt;/code&gt; and in your program your also want to have function f1 as well. In this case, your need to use module to organize the code so that the function has its own namespace.”&lt;/em&gt; &lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;A module’s contents can be accessed with the &lt;code class=&quot;highlighter-rouge&quot;&gt;import&lt;/code&gt; statement.&lt;/p&gt;
+
+&lt;h3 id=&quot;12-an-example&quot;&gt;1.2. An Example&lt;/h3&gt;
+&lt;p&gt;For example, suppose you have created a file called &lt;code class=&quot;highlighter-rouge&quot;&gt;mod.py&lt;/code&gt; containing the following:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;If Comrade Napoleon says it, it must be right.&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;300&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'arg = {arg}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Several objects are defined in &lt;code class=&quot;highlighter-rouge&quot;&gt;mod.py&lt;/code&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;s&lt;/code&gt; (a string)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;a&lt;/code&gt; (a list)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;foo()&lt;/code&gt; (a function)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Foo&lt;/code&gt; (a class)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Assuming &lt;code class=&quot;highlighter-rouge&quot;&gt;mod.py&lt;/code&gt; is in an appropriate location, which you will learn more about shortly, these objects can be accessed by importing the module as follows:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; import mod
+&amp;gt;&amp;gt;&amp;gt; print(mod.s)
+If Comrade Napoleon says it, it must be right.
+&amp;gt;&amp;gt;&amp;gt; mod.a
+[100, 200, 300]
+&amp;gt;&amp;gt;&amp;gt; mod.foo(['quux', 'corge', 'grault'])
+arg = ['quux', 'corge', 'grault']
+&amp;gt;&amp;gt;&amp;gt; x = mod.Foo()
+&amp;gt;&amp;gt;&amp;gt; x
+&amp;lt;mod.Foo object at 0x03C181F0&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;2-the-module-search-path&quot;&gt;2. The Module Search Path&lt;/h2&gt;
+&lt;h3 id=&quot;21-where-does-python-search&quot;&gt;2.1. Where does Python search?&lt;/h3&gt;
+&lt;p&gt;Continuing with the above example, let’s take a look at what happens when Python executes the statement:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;mod&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;When the interpreter executes the above import statement, it searches for &lt;code class=&quot;highlighter-rouge&quot;&gt;mod.py&lt;/code&gt; in a list of directories assembled from the following sources:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The directory from which the input script was run or the &lt;strong&gt;current directory&lt;/strong&gt; if the interpreter is being run interactively&lt;/li&gt;
+  &lt;li&gt;The list of directories contained in the &lt;strong&gt;PYTHONPATH&lt;/strong&gt; environment variable, if it is set. (The format for PYTHONPATH is OS-dependent but should mimic the PATH environment variable.)&lt;/li&gt;
+  &lt;li&gt;An installation-dependent list of directories configured at the time Python is installed&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The resulting search path is accessible in the Python variable &lt;code class=&quot;highlighter-rouge&quot;&gt;sys.path&lt;/code&gt;, which is obtained from a module named sys:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; import sys
+&amp;gt;&amp;gt;&amp;gt; sys.path
+['', '/home/kefeng/anaconda3/lib/python36.zip', 
+'/home/kefeng/anaconda3/lib/python3.6', 
+'/home/kefeng/anaconda3/lib/python3.6/lib-dynload', 
+'/home/kefeng/anaconda3/lib/python3.6/site-packages']
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;22-how-to-ensure-you-module-is-found&quot;&gt;2.2. How to ensure you module is found?&lt;/h3&gt;
+&lt;p&gt;Thus, to ensure your module is found, you need to do one of the following:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Put &lt;code class=&quot;highlighter-rouge&quot;&gt;mod.py&lt;/code&gt; in the directory where the input script is located or the current directory, if interactive&lt;/li&gt;
+  &lt;li&gt;Modify the PYTHONPATH environment variable to contain the directory where &lt;code class=&quot;highlighter-rouge&quot;&gt;mod.py&lt;/code&gt; is located before starting the interpreter
+    &lt;ul&gt;
+      &lt;li&gt;Or: Put&lt;code class=&quot;highlighter-rouge&quot;&gt; mod.py&lt;/code&gt; in one of the directories already contained in the PYTHONPATH variable&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Put &lt;code class=&quot;highlighter-rouge&quot;&gt;mod.py&lt;/code&gt; in one of the installation-dependent directories, which you may or may not have write-access to, depending on the OS&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There is actually one additional option: you can put the module file in any directory of your choice and then modify sys.path at run-time so that it contains that directory. For example, in this case, you could put mod.py in directory &lt;code class=&quot;highlighter-rouge&quot;&gt;~/KFTorch&lt;/code&gt; and then issue the following statements:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; sys.path.append('/home/kefeng/KFTorch')
+&amp;gt;&amp;gt;&amp;gt; sys.path
+['', '/home/kefeng/anaconda3/lib/python36.zip', 
+'/home/kefeng/anaconda3/lib/python3.6', 
+'/home/kefeng/anaconda3/lib/python3.6/lib-dynload', 
+'/home/kefeng/anaconda3/lib/python3.6/site-packages', 
+'/home/kefeng/KFTorch']
+&amp;gt;&amp;gt;&amp;gt; import mod
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;23-how-to-find-the-location-of-you-module&quot;&gt;2.3. How to find the “location” of you module?&lt;/h3&gt;
+&lt;p&gt;Once a module has been imported, you can determine the location where it was found with the module’s &lt;code class=&quot;highlighter-rouge&quot;&gt;__file__&lt;/code&gt; attribute:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; import mod
+&amp;gt;&amp;gt;&amp;gt; mod.__file__
+'/home/kefeng/KFTorch/mod.py'
+&amp;gt;&amp;gt;&amp;gt; import re
+&amp;gt;&amp;gt;&amp;gt; re.__file__
+'/home/kefeng/anaconda3/lib/python3.6/re.py'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The directory portion of &lt;code class=&quot;highlighter-rouge&quot;&gt;__file__&lt;/code&gt; should be one of the directories in &lt;code class=&quot;highlighter-rouge&quot;&gt;sys.path&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;3-the-import-statement&quot;&gt;3. The &lt;code class=&quot;highlighter-rouge&quot;&gt;import&lt;/code&gt; Statement&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Module&lt;/strong&gt; contents are made available to the caller with the &lt;code class=&quot;highlighter-rouge&quot;&gt;import&lt;/code&gt; statement. The &lt;code class=&quot;highlighter-rouge&quot;&gt;import&lt;/code&gt; statement takes many different forms, shown below.&lt;/p&gt;
+
+&lt;h3 id=&quot;31-import-module_name&quot;&gt;3.1. &lt;code class=&quot;highlighter-rouge&quot;&gt;import &amp;lt;module_name&amp;gt;&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;The simplest form is the one already shown above:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;module_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Note that this does not make the module contents directly accessible to the caller. Each module has its &lt;strong&gt;own private symbol table&lt;/strong&gt;, which serves as the global symbol table for all objects defined in the module. Thus, a module creates a separate &lt;strong&gt;namespace&lt;/strong&gt;, as already noted.&lt;/p&gt;
+
+&lt;p&gt;The statement &lt;code class=&quot;highlighter-rouge&quot;&gt;import &amp;lt;module_name&amp;gt;&lt;/code&gt; only places &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;module_name&amp;gt;&lt;/code&gt; in the caller’s symbol table. The objects that are defined in the module remain in the module’s private symbol table.&lt;/p&gt;
+
+&lt;p&gt;From the caller, objects in the module are only accessible when prefixed with &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;module_name&amp;gt;&lt;/code&gt; via dot notation, as illustrated below.&lt;/p&gt;
+
+&lt;p&gt;After the following &lt;code class=&quot;highlighter-rouge&quot;&gt;import&lt;/code&gt; statement, &lt;code class=&quot;highlighter-rouge&quot;&gt;mod&lt;/code&gt; is placed into the local symbol table. Thus, mod has meaning in the caller’s local context:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; import mod
+&amp;gt;&amp;gt;&amp;gt; mod
+&amp;lt;module 'mod' from '/home/kefeng/KFTorch/mod.py'&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;But &lt;code class=&quot;highlighter-rouge&quot;&gt;s&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;foo&lt;/code&gt; remain in the module’s &lt;strong&gt;private symbol table&lt;/strong&gt; and are not meaningful in the local context:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; s
+NameError: name 's' is not defined
+&amp;gt;&amp;gt;&amp;gt; foo('abc')
+NameError: name 'foo' is not defined
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;To be accessed in the local context, names of objects defined in the module &lt;strong&gt;must be prefixed by &lt;code class=&quot;highlighter-rouge&quot;&gt;mod&lt;/code&gt;&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; mod.s
+'If Comrade Napoleon says it, it must be right.'
+&amp;gt;&amp;gt;&amp;gt; mod.foo('abc')
+arg = abc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Several comma-separated modules may be specified in a single &lt;code class=&quot;highlighter-rouge&quot;&gt;import&lt;/code&gt; statement:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;module_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;module_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;32-from-module_name-import-names&quot;&gt;3.2. &lt;code class=&quot;highlighter-rouge&quot;&gt;from &amp;lt;module_name&amp;gt; import &amp;lt;name(s)&amp;gt;&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;An alternate form of the &lt;code class=&quot;highlighter-rouge&quot;&gt;import&lt;/code&gt; statement allows individual objects from the module to be imported &lt;strong&gt;directly&lt;/strong&gt; into the &lt;strong&gt;caller’s symbol table&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;module_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Following execution of the above statement,&lt;code class=&quot;highlighter-rouge&quot;&gt; &amp;lt;name(s)&amp;gt;&lt;/code&gt; can be referenced in the caller’s environment without the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;module_name&amp;gt;&lt;/code&gt; prefix:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; from mod import s, foo
+&amp;gt;&amp;gt;&amp;gt; s
+'If Comrade Napoleon says it, it must be right.'
+&amp;gt;&amp;gt;&amp;gt; foo('abc')
+arg = abc
+
+&amp;gt;&amp;gt;&amp;gt; from mod import Foo
+&amp;gt;&amp;gt;&amp;gt; x = Foo()
+&amp;gt;&amp;gt;&amp;gt; x
+&amp;lt;mod.Foo object at 0x7f360cd627b8&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Because this form of &lt;code class=&quot;highlighter-rouge&quot;&gt;import&lt;/code&gt; places the object names directly into the caller’s symbol table, any objects that already exist with the same name will be overwritten:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; a = ['foo', 'bar', 'baz']
+&amp;gt;&amp;gt;&amp;gt; a
+['foo', 'bar', 'baz']
+&amp;gt;&amp;gt;&amp;gt; from mod import a
+&amp;gt;&amp;gt;&amp;gt; a
+[100, 200, 300]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;It is even possible to indiscriminately &lt;code class=&quot;highlighter-rouge&quot;&gt;import&lt;/code&gt; everything from a module at one fell swoop:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;module_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This will place the names of &lt;strong&gt;all objects&lt;/strong&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;module_name&amp;gt;&lt;/code&gt; into the &lt;strong&gt;local symbol table&lt;/strong&gt;, &lt;strong&gt;with the exception of any that begin with the underscore (_) character.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;For example:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; from mod import *
+&amp;gt;&amp;gt;&amp;gt; s
+'If Comrade Napoleon says it, it must be right.'
+&amp;gt;&amp;gt;&amp;gt; a
+[100, 200, 300]
+&amp;gt;&amp;gt;&amp;gt; foo
+&amp;lt;function foo at 0x03B449C0&amp;gt;
+&amp;gt;&amp;gt;&amp;gt; Foo
+&amp;lt;class 'mod.Foo'&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; This &lt;strong&gt;isn’t necessarily recommended&lt;/strong&gt; in large-scale production code. It’s a bit dangerous because you are entering names into the local symbol table &lt;a href=&quot;https://www.merriam-webster.com/dictionary/en%20masse&quot;&gt;en masse&lt;/a&gt;. Unless you know them all well and can be confident there won’t be a conflict, you have a decent chance of overwriting an existing name &lt;a href=&quot;https://www.merriam-webster.com/dictionary/inadvertently&quot;&gt;inadvertently&lt;/a&gt;. However, this syntax is quite handy when you are just &lt;a href=&quot;https://www.merriam-webster.com/dictionary/mucking&quot;&gt;mucking&lt;/a&gt; around with the interactive interpreter, for testing or discovery purposes, because it quickly gives you access to everything a module has to offer without a lot of typing.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;33-from-module_name-import-name-as-alt_name&quot;&gt;3.3. &lt;code class=&quot;highlighter-rouge&quot;&gt;from &amp;lt;module_name&amp;gt; import &amp;lt;name&amp;gt; as &amp;lt;alt_name&amp;gt;&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;It is also possible to import individual objects but enter them into the local symbol table with alternate names:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;module_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;alt_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;alt_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;…&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This makes it possible to place names directly into the local symbol table but avoid conflicts with previously existing names:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; s = 'foo'
+&amp;gt;&amp;gt;&amp;gt; a = ['foo', 'bar', 'baz']
+
+&amp;gt;&amp;gt;&amp;gt; from mod import s as string, a as alist
+&amp;gt;&amp;gt;&amp;gt; s
+'foo'
+&amp;gt;&amp;gt;&amp;gt; string
+'If Comrade Napoleon says it, it must be right.'
+&amp;gt;&amp;gt;&amp;gt; a
+['foo', 'bar', 'baz']
+&amp;gt;&amp;gt;&amp;gt; alist
+[100, 200, 300]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;34-import-module_name-as-alt_name&quot;&gt;3.4. &lt;code class=&quot;highlighter-rouge&quot;&gt;import &amp;lt;module_name&amp;gt; as &amp;lt;alt_name&amp;gt;&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;You can also import an entire module under an alternate name:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;module_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;alt_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; import mod as my_module
+&amp;gt;&amp;gt;&amp;gt; my_module.a
+[100, 200, 300]
+&amp;gt;&amp;gt;&amp;gt; my_module.foo('qux')
+arg = qux
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Module contents can be imported from within a function definition. In that case, the import does not occur until the function is called:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; def bar():
+...     from mod import foo
+...     foo('corge')
+...
+
+&amp;gt;&amp;gt;&amp;gt; bar()
+arg = corge
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;However, Python 3 does not allow the indiscriminate &lt;code class=&quot;highlighter-rouge&quot;&gt;import *&lt;/code&gt; syntax from within a function:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; def bar():
+...     from mod import *
+...
+SyntaxError: import * only allowed at module level
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Lastly, a &lt;code class=&quot;highlighter-rouge&quot;&gt;try&lt;/code&gt; statement with an &lt;code class=&quot;highlighter-rouge&quot;&gt;except ImportError&lt;/code&gt; clause can be used to guard against unsuccessful import attempts:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; try:
+...     # Non-existent module
+...     import baz
+... except ImportError:
+...     print('Module not found')
+...
+
+Module not found
+&amp;gt;&amp;gt;&amp;gt;
+&amp;gt;&amp;gt;&amp;gt; try:
+...     # Existing module, but non-existent object
+...     from mod import baz
+... except ImportError:
+...     print('Object not found in module')
+...
+
+Object not found in module
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://realpython.com/python-modules-packages/&quot;&gt;Python Modules and Packages - An Introduction&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;http://www.zentut.com/python-tutorial/python-module/&quot;&gt;Python Module - zentut&lt;/a&gt; &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name></name></author><category term="[&quot;Python&quot;]" /><category term="python" /><category term="module" /><summary type="html">Programming in python with modules and packages is always good practice. There are several advantages to modularizing code in a large application: Simplicity: Rather than focusing on the entire problem at hand, a module typically focuses on one relatively small portion of the problem. If you’re working on a single module, you’ll have a smaller problem domain to wrap your head around. This makes development easier and less error-prone. Maintainability: Modules are typically designed so that they enforce logical boundaries between different problem domains. If modules are written in a way that minimizes interdependency, there is decreased likelihood that modifications to a single module will have an impact on other parts of the program. (You may even be able to make changes to a module without having any knowledge of the application outside that module.) This makes it more viable for a team of many programmers to work collaboratively on a large application. Reusability: Functionality defined in a single module can be easily reused (through an appropriately defined interface) by other parts of the application. This eliminates the need to recreate duplicate code. Scoping: Modules typically define a separate namespace, which helps avoid collisions between identifiers in different areas of a program. (One of the tenets in the Zen of Python is Namespaces are one honking great idea—let’s do more of those!)1 Here is a collection of Python modules and packages. Python Modules and Packages - An Introduction &amp;#8617;</summary></entry><entry><title type="html">[CS229] Lecture 6 Notes - Support Vector Machines I</title><link href="http://localhost:4000/2019/03/05/cs229-lecture-6-7-svm" rel="alternate" type="text/html" title="[CS229] Lecture 6 Notes - Support Vector Machines I" /><published>2019-03-05T00:00:00+08:00</published><updated>2019-03-05T00:00:00+08:00</updated><id>http://localhost:4000/2019/03/05/cs229-lecture-6-7-svm</id><content type="html" xml:base="http://localhost:4000/2019/03/05/cs229-lecture-6-7-svm">&lt;blockquote&gt;
   &lt;ul&gt;
     &lt;li&gt;Introduce Support Vector Machines (SVM)&lt;/li&gt;
     &lt;li&gt;Created on 02/27/2019&lt;/li&gt;
@@ -158,8 +492,8 @@
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 \begin{align}
-\min_{w,b} &amp;\quad \frac{1}{2}\Vert w\Vert^2 \\
-\mbox{s.t.} &amp;\quad y^{(i)}\left(w^Tx^{(i)} + b\right), \quad i=1,\ldots, m
+\min_{w,b} &amp;\quad \frac{1}{2}\Vert w\Vert^2 \tag{a}\label{eqa} \\
+\mbox{s.t.} &amp;\quad y^{(i)}\left(w^Tx^{(i)} + b\right) \ge 1, \quad i=1,\ldots, m \tag{b}\label{eqb}
 \end{align} %]]&gt;&lt;/script&gt;
 
 &lt;p&gt;Now, the above is an optimization problem witha convex quadratic objective and only linear constraints. It’s colution gives us the &lt;strong&gt;optimal margin classifier&lt;/strong&gt;.&lt;/p&gt;
@@ -181,19 +515,61 @@
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathcal{L}(w,\beta)=f(w)+\sum_{i=1}^l \beta_i h_i(w)&lt;/script&gt;
 
-&lt;p&gt;Here, the $\beta_i$’s are called the &lt;em&gt;(03/04/2019)&lt;/em&gt;
-&lt;strong&gt;Lagrange multipliers&lt;/strong&gt;. Then we let $\mathcal{L}$’s partial derivatives to be zero:&lt;/p&gt;
+&lt;p&gt;Here, the $\beta_i$’s are called the &lt;strong&gt;Lagrange multipliers&lt;/strong&gt;. Then we let $\mathcal{L}$’s partial derivatives to be zero:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\partial\mathcal{L}}{\partial w_i}=0;\quad \frac{\partial\mathcal{L}}{\partial \beta_i}=0,&lt;/script&gt;
 
 &lt;p&gt;and solve for $w$ and $beta$, and we’d be done.&lt;/p&gt;
+
+&lt;p&gt;In this section, we will generalize this to constrained optimization problems in which we may have inequality as well as equality constraints.&lt;/p&gt;
+
+&lt;p&gt;Consider the following, the &lt;strong&gt;primal&lt;/strong&gt; optimization problem:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\min_w &amp;\quad f(w) \\
+\mbox{s.t.} &amp;\quad g_i(w) \le 0, \quad i=1,\ldots,k \\
+&amp;\quad h_i(w)=0,\quad i=1,\ldots,l.
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;To solve it, we start by defining the &lt;strong&gt;generalized Lagrangian&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathcal{L}(w,\alpha,\beta) = f(w) + \sum_{i=1}^k \alpha_i g_i(w) + \sum_{i=1}^l \beta_i h_i(w).&lt;/script&gt;
+
+&lt;p&gt;Here, the $\alpha$’s and $\beta$’s arethe Lagrange multipliers. Consider the quantity:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\theta_{\mathcal{P}}(w) = \max_{\alpha,\beta:\alpha_i \ge 0} \mathcal{L}(w,\alpha,\beta).&lt;/script&gt;
+
+&lt;p&gt;Here, the “$\mathcal{P}$” subscript stands for “primal”. Let some $w$ be given, if $w$ voilates any of the primal constraints (i.e., if either $g_i(w) \ge 0$ or $h_i(w) \ne 0$ for some $i$), then you should be able to verify that:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\theta_{\mathcal{P}}(w) &amp;= \max_{\alpha,\beta:\alpha_i \ge 0} f(w) + \sum_{i=1}^k \alpha_i g_i(w) + \sum_{i=1}^l \beta_i h_i(w) \tag{1}\label{eq1} \\
+&amp;= \infty \tag{2}\label{eq2}
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Conversely if the constraints are indeed satisfied for a particular value of $w$, then $\theta_\mathcal{P}(w)=f(w)$. Hence,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\theta_{\mathcal{P}}(w) = \left\{ \begin{array}{ll}
+f(w)  &amp; \mbox{if} \ w\  \mbox{satisfies primal constraints} \\
+\infty &amp; \mbox{otherwise.}
+\end{array}\right. %]]&gt;&lt;/script&gt;
 
 &lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
 &lt;ol&gt;
   &lt;li&gt;&lt;a href=&quot;/public/cs229/cs229-notes3.pdf&quot;&gt;» Stanford Lecture Note Part V&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="cs229" /><category term="machine learning" /><category term="svm" /><summary type="html">Introduce Support Vector Machines (SVM) Created on 02/27/2019 Updated on 03/04/2019 Updated on 03/05/2019</summary></entry><entry><title type="html">What is DOM?</title><link href="http://localhost:4000/2019/02/28/what-is-dom" rel="alternate" type="text/html" title="What is DOM?" /><published>2019-02-28T00:00:00+08:00</published><updated>2019-02-28T00:00:00+08:00</updated><id>http://localhost:4000/2019/02/28/what-is-dom</id><content type="html" xml:base="http://localhost:4000/2019/02/28/what-is-dom">&lt;blockquote&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="cs229" /><category term="machine learning" /><category term="svm" /><summary type="html">Introduce Support Vector Machines (SVM) Created on 02/27/2019 Updated on 03/04/2019 Updated on 03/05/2019</summary></entry><entry><title type="html">[CS229] Properties of Trace and Matrix Derivatives</title><link href="http://localhost:4000/2019/03/04/cs229-matrix-derivatives" rel="alternate" type="text/html" title="[CS229] Properties of Trace and Matrix Derivatives" /><published>2019-03-04T00:00:00+08:00</published><updated>2019-03-04T00:00:00+08:00</updated><id>http://localhost:4000/2019/03/04/cs229-matrix-derivatives</id><content type="html" xml:base="http://localhost:4000/2019/03/04/cs229-matrix-derivatives">&lt;blockquote&gt;
+  &lt;p&gt;The trace properties and the matrix derivatives.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;li&gt;&lt;a href=&quot;/public/cs229/matrix_prop.pdf&quot; style=&quot;color: gray&quot;&gt;&lt;i class=&quot;material-icons pdf&quot;&gt;picture_as_pdf&lt;/i&gt;Properties of trace and matrix derivatives - [Stanford] John Duchi&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&quot;/public/cs229/matrix-calculus-illinois.pdf&quot; style=&quot;color: gray&quot;&gt;&lt;i class=&quot;material-icons pdf&quot;&gt;picture_as_pdf&lt;/i&gt;Matrix Calculus - Notes on Derivatives of a Trace - [Illinois] Johannes Traa&lt;/a&gt;&lt;/li&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="cs229" /><category term="linear algebra" /><summary type="html">The trace properties and the matrix derivatives. picture_as_pdfProperties of trace and matrix derivatives - [Stanford] John Duchi picture_as_pdfMatrix Calculus - Notes on Derivatives of a Trace - [Illinois] Johannes Traa KF</summary></entry><entry><title type="html">What is DOM?</title><link href="http://localhost:4000/2019/02/28/what-is-dom" rel="alternate" type="text/html" title="What is DOM?" /><published>2019-02-28T00:00:00+08:00</published><updated>2019-02-28T00:00:00+08:00</updated><id>http://localhost:4000/2019/02/28/what-is-dom</id><content type="html" xml:base="http://localhost:4000/2019/02/28/what-is-dom">&lt;blockquote&gt;
   &lt;p&gt;It’s the abbre. of &lt;strong&gt;Document Object Model (DOM)&lt;/strong&gt;&lt;/p&gt;
 
   &lt;p&gt;In short:&lt;/p&gt;
@@ -1131,290 +1507,4 @@ b(y) &amp;= \frac{1}{\sqrt{2\pi}}\exp\left(-\frac{1}{2}y^2\right).
   &lt;li&gt;&lt;a href=&quot;/public/cs229/cs229-notes1.pdf&quot;&gt;» Stanford Lecture Note Part I &amp;amp; II&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="cs229" /><category term="machine learning" /><summary type="html">Newton’s Method, Generalized Linear Models</summary></entry><entry><title type="html">[CS229] Lecture 3 Notes - LWR/Prob Interp/Logistic/Perceptron</title><link href="http://localhost:4000/2019/02/12/cs229-lecture-3" rel="alternate" type="text/html" title="[CS229] Lecture 3 Notes - LWR/Prob Interp/Logistic/Perceptron" /><published>2019-02-12T10:40:00+08:00</published><updated>2019-02-12T10:40:00+08:00</updated><id>http://localhost:4000/2019/02/12/cs229-lecture-3</id><content type="html" xml:base="http://localhost:4000/2019/02/12/cs229-lecture-3">&lt;blockquote&gt;
-  &lt;ol&gt;
-    &lt;li&gt;Locally Weighted Regression&lt;/li&gt;
-    &lt;li&gt;Probablistic Interpretation of LR&lt;/li&gt;
-    &lt;li&gt;Classification (Logistic Regression)&lt;/li&gt;
-    &lt;li&gt;Disgression -&amp;gt; Perceptron&lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;!--more--&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#1-locally-weighted-regression&quot; id=&quot;markdown-toc-1-locally-weighted-regression&quot;&gt;1. Locally Weighted Regression&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#11-the-origin&quot; id=&quot;markdown-toc-11-the-origin&quot;&gt;1.1. The origin:&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#12-detail&quot; id=&quot;markdown-toc-12-detail&quot;&gt;1.2. Detail:&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#13-parametric-vs-non-parametric-learning-algorighms&quot; id=&quot;markdown-toc-13-parametric-vs-non-parametric-learning-algorighms&quot;&gt;1.3. Parametric v.s. Non-Parametric Learning Algorighms:&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#parametric-learning-algorithm&quot; id=&quot;markdown-toc-parametric-learning-algorithm&quot;&gt;“Parametric” learning algorithm:&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#non-parametric-learning-algorithm&quot; id=&quot;markdown-toc-non-parametric-learning-algorithm&quot;&gt;“Non-Parametric” learning algorithm:&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#2-probablistic-interpretation-of-lr&quot; id=&quot;markdown-toc-2-probablistic-interpretation-of-lr&quot;&gt;2. Probablistic Interpretation of LR&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#21-assumptions&quot; id=&quot;markdown-toc-21-assumptions&quot;&gt;2.1. Assumptions:&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#22-maximum-likelihood&quot; id=&quot;markdown-toc-22-maximum-likelihood&quot;&gt;2.2. Maximum Likelihood&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#221-there-are-two-different-basic-ideas-in-probability&quot; id=&quot;markdown-toc-221-there-are-two-different-basic-ideas-in-probability&quot;&gt;2.2.1. There are two different basic ideas in probability:&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#222-the-principle-of-maximum-likelihood&quot; id=&quot;markdown-toc-222-the-principle-of-maximum-likelihood&quot;&gt;2.2.2. The principle of maximum likelihood:&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#23-find-the-best-theta-to-reach-the-maximum-likelihood&quot; id=&quot;markdown-toc-23-find-the-best-theta-to-reach-the-maximum-likelihood&quot;&gt;2.3. Find the best \(\theta\) to reach the “Maximum Likelihood”:&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#3-classification-and-logistic-regression&quot; id=&quot;markdown-toc-3-classification-and-logistic-regression&quot;&gt;3. Classification and Logistic Regression&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#31-logistic-regression-for-classification-problems&quot; id=&quot;markdown-toc-31-logistic-regression-for-classification-problems&quot;&gt;3.1. Logistic regression for classification problems&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#4-digression---perceptron&quot; id=&quot;markdown-toc-4-digression---perceptron&quot;&gt;4. Digression - Perceptron&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#reference&quot; id=&quot;markdown-toc-reference&quot;&gt;Reference&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;1-locally-weighted-regression&quot;&gt;1. Locally Weighted Regression&lt;/h2&gt;
-&lt;h3 id=&quot;11-the-origin&quot;&gt;1.1. The origin:&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;The choice of features is important to ensuring good performance of a learning algorithm.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;The Locally weighted linear regression (LWR) algorithm, which assuming there is sufficient training data, makes the &lt;strong&gt;choice of features less critical&lt;/strong&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;12-detail&quot;&gt;1.2. Detail:&lt;/h3&gt;
-&lt;p&gt;The locally weighted linear regression alogorithm does the following:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;Fit \( \theta \) to minimize \(\sum_i w^{(i)} (y^{(i)} - \theta^T x^{(i)} )^2\).&lt;/li&gt;
-  &lt;li&gt;Output \(\theta^T x\).&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;where \(w^{(i)} = \exp\left(-\frac{(x^{(i)} - x)^2}{2\tau^2}\right)\), \(\tau\) is called &lt;strong&gt;“bandwidth”&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Note that:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;the wights depend on the particular point \(x\) at which we’re trying to evaluate \(x\).&lt;/li&gt;
-  &lt;li&gt;if \(\vert x^{(i)} - x \vert\) is small, the \(w^{(i)}\) is close to 1;&lt;/li&gt;
-  &lt;li&gt;if \(\vert x^{(i)} - x \vert\) is large, the \(w^{(i)}\) is close to 0;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;13-parametric-vs-non-parametric-learning-algorighms&quot;&gt;1.3. Parametric v.s. Non-Parametric Learning Algorighms:&lt;/h3&gt;
-&lt;h4 id=&quot;parametric-learning-algorithm&quot;&gt;“Parametric” learning algorithm:&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;Fix numbers of parameters to fit the model;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;non-parametric-learning-algorithm&quot;&gt;“Non-Parametric” learning algorithm:&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;Number of parameter grows with \(m\) (\(m\) is the training size).&lt;/li&gt;
-  &lt;li&gt;To make predictions using LWR, we need to keep the entire training set around. (LWR is the first example in the class as a &lt;strong&gt;non-parametric&lt;/strong&gt; algorithm).&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;2-probablistic-interpretation-of-lr&quot;&gt;2. Probablistic Interpretation of LR&lt;/h2&gt;
-&lt;h3 id=&quot;21-assumptions&quot;&gt;2.1. Assumptions:&lt;/h3&gt;
-&lt;p&gt;We &lt;strong&gt;assume&lt;/strong&gt; that:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;y{(i)} = \theta^T x^{(i)} + \varepsilon^{(i)}&lt;/script&gt;
-
-&lt;p&gt;where&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;\(\varepsilon^{(i)}\) is the error and \(\varepsilon^{(i)} \sim \mathcal{N}(0, \sigma^2)\), which means \(P(\varepsilon^{(i)}) = \frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{(y^{(i)} - \theta^T x^{(i)})^2}{2\sigma^2}\right)\).&lt;/li&gt;
-  &lt;li&gt;\(\varepsilon^{(i)}\) is I.I.D. (independently identically distributed).&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;22-maximum-likelihood&quot;&gt;2.2. Maximum Likelihood&lt;/h3&gt;
-&lt;h4 id=&quot;221-there-are-two-different-basic-ideas-in-probability&quot;&gt;2.2.1. There are two different basic ideas in probability:&lt;/h4&gt;
-&lt;ol&gt;
-  &lt;li&gt;Frequency point of view -&amp;gt; (Applied here!)&lt;/li&gt;
-  &lt;li&gt;Bayesian point of view.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;222-the-principle-of-maximum-likelihood&quot;&gt;2.2.2. The principle of maximum likelihood:&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;To choose \(\theta\) to maximum \(L(\theta)\), \(\theta\) is NOT a random value, but a true value out there!&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;23-find-the-best-theta-to-reach-the-maximum-likelihood&quot;&gt;2.3. Find the best \(\theta\) to reach the “Maximum Likelihood”:&lt;/h3&gt;
-&lt;p&gt;Then, the “Likelihood” of the \(y\) is:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{align}
-L(\theta) &amp; = P\left(\mathbf{y} \vert X;\theta\right) \\
-(i.i.d) &amp; = \prod_{i=1}^m P\left(y^{(i)} \vert x^{(i)}; \theta\right) \\
-&amp; = \prod_{i=1}^m \frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{\left(y^{(i)} - \theta^T x^{(i)}\right)^2}{2\sigma^2}\right)
-\end{align} %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;Then, for mathematical convenience, let&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{align}
-l(\theta) &amp;= \log\left(L(\theta)\right) \\
-&amp;= \log\left(\prod_{i=1}^m P\left(y^{(i)} \vert x^{(i)}; \theta\right)\right) \\
-&amp;= \sum_{i=1}^m \log P\left(y^{(i)} \vert x^{(i)}; \theta\right) \\
-&amp;= \sum_{i=1}^m \log\left(\frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{\left(y^{(i)} - \theta^T x^{(i)}\right)^2}{2\sigma^2}\right)\right) \\
-&amp;= m\cdot\log\frac{1}{\sqrt{2\pi}\sigma} + \sum_{i=1}^m \left(-\frac{\left(y^{(i)} - \theta^T x^{(i)}\right)^2}{2\sigma^2}\right).
-\end{align} %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;Therefore, to &lt;strong&gt;maximize&lt;/strong&gt; \(l(\theta)\) is to &lt;strong&gt;minimize&lt;/strong&gt; \(\sum_{i=1}^m \frac{\left(y^{(i)} - \theta^T x^{(i)}\right)^2}{2\sigma^2}\), which is the same as minimizing \(J(\theta) = \sum_{i=1}^m \frac{\left(y^{(i)} - \theta^T x^{(i)}\right)^2}{2}\) (this is the rule for Least Square).&lt;/p&gt;
-
-&lt;h2 id=&quot;3-classification-and-logistic-regression&quot;&gt;3. Classification and Logistic Regression&lt;/h2&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Note: 
-Generally, it’s bad idea to use LR for classification problems.
-Why? It doesn’t make sence for \(h_\theta(x)\) to take values larger than 1 or smaller than 0 when we know that \(y\in{0,1}\).&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;31-logistic-regression-for-classification-problems&quot;&gt;3.1. Logistic regression for classification problems&lt;/h3&gt;
-&lt;p&gt;As in a classification problem:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;y \in \{0, 1\} \\
-h_\theta(x) \in [0, 1]&lt;/script&gt;
-
-&lt;p&gt;To fix the problems when using Linear Regression, we choose another form of function for our hypothesis \(h_\theta(x)\).&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;h_\theta(x) = g(\theta^Tx) = \frac{1}{1 + e^{-\theta^T x}},&lt;/script&gt;
-
-&lt;p&gt;where&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;g(z) = \frac{1}{1 + e^{-z}}.&lt;/script&gt;
-
-&lt;p&gt;\(g(z) = \frac{1}{1 + e^{-z}}\) is called “sigmoid” function or “logistic” function.&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;&lt;img src=&quot;/public/img/20190212_sigmoid_function.png&quot; alt=&quot;&quot; /&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;Figure 2.&lt;/strong&gt; Sigmoid function.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Then, we have&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\left\{ \begin{array}{rcl} 
-P(y=1 \vert x; \theta) &amp; = &amp; h_\theta(x) \\
-P(y=0 \vert x; \theta) &amp; = &amp; 1 - h_\theta(x)
-\end{array}\right. \\
-\Rightarrow P(y|x;\theta) = h_\theta(x)^y (1 - h_\theta(x))^{1-y} %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;Then the likelihood is&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{align}
-L(\theta) &amp; = P\left(\mathbf{y} \vert X;\theta\right) \\
-&amp; = \prod_{i=1}^m P\left(y^{(i)} \vert x^{(i)}; \theta\right)
-\end{align} %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;For mathematical convenience, let&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{align}
-l(\theta) &amp;= \log\left(L(\theta)\right) \\
-&amp;= \log\left(\prod_{i=1}^m P\left(y^{(i)} \vert x^{(i)}; \theta\right)\right) \\
-&amp;= \sum_{i=1}^m \log P\left(y^{(i)} \vert x^{(i)}; \theta\right) \\
-&amp;= \sum_{i=1}^m \left( y^{(i)} \log h_\theta(x^{(i)}) + (1 - y^{(i)}) \log (1 - h_\theta(x^{(i)})\right)
-\end{align} %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;To maximize the likelihood, here we use &lt;strong&gt;gradient ascent&lt;/strong&gt; by \(\theta := \theta + \alpha \nabla_\theta l(\theta)\). The derivative is (derivation omitted, can be found on Page 18 in the notes):&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\partial}{\partial\theta_j}l(\theta) = \sum_{i=1}^m \left(y^{(i)} - h_\theta\left(x^{(i)}\right)\right)\cdot x_j^{(i)}&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\theta_j := \theta_j + \alpha \sum_{i=1}^m \left(y^{(i)} - h_\theta\left(x^{(i)}\right)\right)\cdot x_j^{(i)}&lt;/script&gt;
-
-&lt;p&gt;&lt;em&gt;(added on 02/19/2019)&lt;/em&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;&lt;img src=&quot;/public/img/20190219_review_note1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;Note 1.&lt;/strong&gt; Review of “logistic regression” from scratch.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;4-digression---perceptron&quot;&gt;4. Digression - Perceptron&lt;/h2&gt;
-&lt;p&gt;Almost the same procedure as the logistic regression. The only difference is the \(g(z)\) used in the process.&lt;/p&gt;
-
-&lt;p&gt;The \(g(z)\) used in perceptron learning algorithm is:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-g(z) = \left\{ \begin{array}{rcl} 
-1 &amp; \mbox{if} &amp; z \ge 0 \\
-0 &amp; \mbox{if} &amp; z \lt 0
-\end{array}\right. %]]&gt;&lt;/script&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;&lt;img src=&quot;/public/img/20190212_perceptron_function.png&quot; alt=&quot;&quot; /&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;Figure 2.&lt;/strong&gt; Perceptron function.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Then, \(h_\theta(x) = g(\theta^T x)\), and the update rule for perceptron learning algorithm is almost the same:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\theta_j := \theta_j + \alpha \left(y^{(i)} - h_\theta\left(x^{(i)}\right)\right)\cdot x_j^{(i)}&lt;/script&gt;
-
-&lt;p&gt;&lt;em&gt;(added on 02/19/2019)&lt;/em&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;&lt;img src=&quot;/public/img/20190219_review_note2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;Note 2.&lt;/strong&gt; Review of the “perceptron learning algorithm”.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://see.stanford.edu/materials/aimlcs229/cs229-notes1.pdf&quot;&gt;» Stanford CS229 Lecture Note Part I &amp;amp; II&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="cs229" /><category term="machine learning" /><summary type="html">Locally Weighted Regression Probablistic Interpretation of LR Classification (Logistic Regression) Disgression -&amp;gt; Perceptron</summary></entry><entry><title type="html">Random! Shuffle v.s. Permutation (Numpy)</title><link href="http://localhost:4000/2019/01/31/np-shuffle-vs-permutation" rel="alternate" type="text/html" title="Random! Shuffle v.s. Permutation (Numpy)" /><published>2019-01-31T10:40:00+08:00</published><updated>2019-01-31T10:40:00+08:00</updated><id>http://localhost:4000/2019/01/31/np-shuffle-vs-permutation</id><content type="html" xml:base="http://localhost:4000/2019/01/31/np-shuffle-vs-permutation">&lt;blockquote&gt;
-  &lt;p&gt;Generally, in Numpy, both &lt;code class=&quot;highlighter-rouge&quot;&gt;random.permutation&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;random.shuffle&lt;/code&gt; randomly shuffle elements in an array. But there are differences:&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2 id=&quot;difference&quot;&gt;Difference:&lt;/h2&gt;
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;np.random.permutation&lt;/code&gt; has two differences from &lt;code class=&quot;highlighter-rouge&quot;&gt;np.random.shuffle&lt;/code&gt;:&lt;/p&gt;
-
-&lt;p&gt;if passed an array, it will return a shuffled &lt;strong&gt;copy&lt;/strong&gt; of the array; &lt;code class=&quot;highlighter-rouge&quot;&gt;np.random.shuffle&lt;/code&gt; shuffles the array &lt;strong&gt;inplace&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;if passed an integer, it will return a shuffled range i.e. &lt;code class=&quot;highlighter-rouge&quot;&gt;np.random.shuffle(np.arange(n))&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;If x is an integer, randomly permute &lt;code class=&quot;highlighter-rouge&quot;&gt;np.arange(x)&lt;/code&gt;. If x is an array, make a copy and shuffle the elements randomly.&lt;/p&gt;
-
-&lt;p&gt;The source code might help to understand this:&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;mi&quot;&gt;3280&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;permutation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
-&lt;span class=&quot;mi&quot;&gt;3307&lt;/span&gt;            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;isinstance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;integer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)):&lt;/span&gt;
-&lt;span class=&quot;mi&quot;&gt;3308&lt;/span&gt;                &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;mi&quot;&gt;3309&lt;/span&gt;            &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-&lt;span class=&quot;mi&quot;&gt;3310&lt;/span&gt;                &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;mi&quot;&gt;3311&lt;/span&gt;            &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shuffle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;mi&quot;&gt;3312&lt;/span&gt;            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/15474159/shuffle-vs-permute-numpy&quot;&gt;» shuffle vs permute numpy - Stack Overflow&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;]" /><category term="numpy" /><category term="random" /><summary type="html">Generally, in Numpy, both random.permutation and random.shuffle randomly shuffle elements in an array. But there are differences:</summary></entry></feed>
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="cs229" /><category term="machine learning" /><summary type="html">Newton’s Method, Generalized Linear Models</summary></entry></feed>

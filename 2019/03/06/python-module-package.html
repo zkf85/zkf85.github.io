@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+      Python Modules and Packages
+      
+      2019
+    </title>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/res/favicon.ico">
+	<!--
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+	-->
+    <link rel="stylesheet" href="/assets/css/materialize.min.css">
+    <link rel="stylesheet" href="/assets/css/Material+Icons.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <link rel="stylesheet" href="/assets/css/post.css">
+    
+    
+    
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Python Modules and Packages" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Programming in python with modules and packages is always good practice. There are several advantages to modularizing code in a large application: Simplicity: Rather than focusing on the entire problem at hand, a module typically focuses on one relatively small portion of the problem. If you’re working on a single module, you’ll have a smaller problem domain to wrap your head around. This makes development easier and less error-prone. Maintainability: Modules are typically designed so that they enforce logical boundaries between different problem domains. If modules are written in a way that minimizes interdependency, there is decreased likelihood that modifications to a single module will have an impact on other parts of the program. (You may even be able to make changes to a module without having any knowledge of the application outside that module.) This makes it more viable for a team of many programmers to work collaboratively on a large application. Reusability: Functionality defined in a single module can be easily reused (through an appropriately defined interface) by other parts of the application. This eliminates the need to recreate duplicate code. Scoping: Modules typically define a separate namespace, which helps avoid collisions between identifiers in different areas of a program. (One of the tenets in the Zen of Python is Namespaces are one honking great idea—let’s do more of those!)1 Here is a collection of Python modules and packages. Python Modules and Packages - An Introduction &#8617;" />
+<meta property="og:description" content="Programming in python with modules and packages is always good practice. There are several advantages to modularizing code in a large application: Simplicity: Rather than focusing on the entire problem at hand, a module typically focuses on one relatively small portion of the problem. If you’re working on a single module, you’ll have a smaller problem domain to wrap your head around. This makes development easier and less error-prone. Maintainability: Modules are typically designed so that they enforce logical boundaries between different problem domains. If modules are written in a way that minimizes interdependency, there is decreased likelihood that modifications to a single module will have an impact on other parts of the program. (You may even be able to make changes to a module without having any knowledge of the application outside that module.) This makes it more viable for a team of many programmers to work collaboratively on a large application. Reusability: Functionality defined in a single module can be easily reused (through an appropriately defined interface) by other parts of the application. This eliminates the need to recreate duplicate code. Scoping: Modules typically define a separate namespace, which helps avoid collisions between identifiers in different areas of a program. (One of the tenets in the Zen of Python is Namespaces are one honking great idea—let’s do more of those!)1 Here is a collection of Python modules and packages. Python Modules and Packages - An Introduction &#8617;" />
+<link rel="canonical" href="http://localhost:4000/2019/03/06/python-module-package" />
+<meta property="og:url" content="http://localhost:4000/2019/03/06/python-module-package" />
+<meta property="og:site_name" content="Everest" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-03-06T00:00:00+08:00" />
+<script type="application/ld+json">
+{"description":"Programming in python with modules and packages is always good practice. There are several advantages to modularizing code in a large application: Simplicity: Rather than focusing on the entire problem at hand, a module typically focuses on one relatively small portion of the problem. If you’re working on a single module, you’ll have a smaller problem domain to wrap your head around. This makes development easier and less error-prone. Maintainability: Modules are typically designed so that they enforce logical boundaries between different problem domains. If modules are written in a way that minimizes interdependency, there is decreased likelihood that modifications to a single module will have an impact on other parts of the program. (You may even be able to make changes to a module without having any knowledge of the application outside that module.) This makes it more viable for a team of many programmers to work collaboratively on a large application. Reusability: Functionality defined in a single module can be easily reused (through an appropriately defined interface) by other parts of the application. This eliminates the need to recreate duplicate code. Scoping: Modules typically define a separate namespace, which helps avoid collisions between identifiers in different areas of a program. (One of the tenets in the Zen of Python is Namespaces are one honking great idea—let’s do more of those!)1 Here is a collection of Python modules and packages. Python Modules and Packages - An Introduction &#8617;","@type":"BlogPosting","url":"http://localhost:4000/2019/03/06/python-module-package","headline":"Python Modules and Packages","dateModified":"2019-03-06T00:00:00+08:00","datePublished":"2019-03-06T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/03/06/python-module-package"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <header>
+	  <!--
+      <nav class="top-nav teal">
+	  -->
+      <nav class="top-nav ohio-state-scarlet">
+        <div class="nav-wrapper">
+          <div class="container">
+            <a class="page-title" href="/">Everest<sup>2019</sup></a>
+            <img class="buckeye_leaf" src="/assets/res/buckeye_leaf.png" alt="buckeye_leaf">
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <a href="#" data-activates="slide-out" class="button-collapse top-nav full hide-on-large-only">
+          <i class="material-icons">menu</i>
+        </a>
+      </div>
+      <ul id="slide-out" class="side-nav fixed">
+        <li>
+          <div class="userView">
+            <div class="background"></div>
+            <a href="https://github.com/zkf85" target="_blank"><img class="circle z-depth-2" src="/assets/res/lion_king.jpg"></a>
+            <span class="white-text name">Zhu, Kefeng</span>
+			<!--
+            <span class="white-text email">zkf1985@gmail.com</span>
+			-->
+            <span class="white-text email"><i>A Programmer, An AI Practitioner</i></span>
+          </div>
+        </li>
+
+        <li class="subheader">BLOG</li>
+        <li><a class="waves-effect" href="/"><i class="material-icons">home</i>Home</a></li>
+        <li><a class="waves-effect" href="/categories"><i class="material-icons">sort</i>Categories</a></li>
+        <li><a class="waves-effect" href="/tags"><i class="material-icons">label</i>Tags</a></li>
+<!--
+<li><a class="waves-effect" href="/feed.xml" target="_blank"><i class="material-icons">rss_feed</i>RSS</a></li>
+-->        
+        <li class="subheader">COLLECTIONS</li>
+        <li><a class="waves-effect" href="/cs229"><i class="material-icons">widgets</i>CS229</a></li>
+        <li><a class="waves-effect" href="/mit6006"><i class="material-icons">storage</i>MIT6006</a></li>
+        <li><a class="waves-effect" href="/leetcode"><i class="material-icons">code</i>LeetCode</a></li>
+
+        <li class="subheader">OTHERS</li>
+        <li><a class="waves-effect" href="/about"><i class="material-icons">person</i>About Me</a></li>
+        <li><a class="waves-effect" href="/calligraphy"><i class="material-icons">dashboard</i>書</a></li>
+        <!-- <li><a class="waves-effect" href="/contact"><i class="material-icons">email</i>Contact</a></li> -->
+      </ul>
+    </header>
+    <main>
+
+<!--
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+-->
+<!-- KF 02/14/2019
+The following snippet is to allow single $ style inline mode.
+Remember that after enabling this, you have to enter the real dollar sings with `\$`
+-->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<div class="container">
+  <div id="post-info">
+  <h1>Python Modules and Packages</h1>
+  <ul class="collapsible hoverable" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Date">date_range</i>
+           
+          Mar.
+            
+          06, 2019 - Wednesday
+          <i id="indicate" class="right material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Show extra info">info</i>
+        </span>
+      </div>
+      <div class="collapsible-body">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Categories">sort</i>
+          
+          
+          
+          <a href="/categories#python_cap" target="_blank"><div class="chip">Python</div></a>
+          
+        </span>
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Tags">label</i>
+          
+          
+          
+          <a href="/tags#python" target="_blank"><div class="chip">python</div></a>
+          
+          
+          
+          <a href="/tags#module" target="_blank"><div class="chip">module</div></a>
+          
+        </span>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="row">
+  <div class="col s12">
+    <blockquote>
+  <p>Programming in python with <strong>modules</strong> and <strong>packages</strong> is always good practice.</p>
+
+  <p>There are several advantages to modularizing code in a large application:</p>
+  <ul>
+    <li><strong>Simplicity</strong>: Rather than focusing on the entire problem at hand, a module typically focuses on one relatively small portion of the problem. If you’re working on a single module, you’ll have a smaller problem domain to wrap your head around. This makes development easier and less error-prone.</li>
+    <li><strong>Maintainability</strong>: Modules are typically designed so that they enforce logical boundaries between different problem domains. If modules are written in a way that minimizes interdependency, there is decreased likelihood that modifications to a single module will have an impact on other parts of the program. (You may even be able to make changes to a module without having any knowledge of the application outside that module.) This makes it more viable for a team of many programmers to work collaboratively on a large application.</li>
+    <li><strong>Reusability</strong>: Functionality defined in a single module can be easily reused (through an appropriately defined interface) by other parts of the application. This eliminates the need to recreate duplicate code.</li>
+    <li><strong>Scoping</strong>: Modules typically define a separate namespace, which helps avoid collisions between identifiers in different areas of a program. (One of the tenets in the Zen of Python is Namespaces are one honking great idea—let’s do more of those!)<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></li>
+  </ul>
+
+  <p>Here is a collection of Python <strong>modules</strong> and <strong>packages</strong>.</p>
+</blockquote>
+
+<!--more-->
+<ul id="markdown-toc">
+  <li><a href="#0-major-reference" id="markdown-toc-0-major-reference">0. Major Reference</a></li>
+  <li><a href="#1-an-overview-of-python-modules" id="markdown-toc-1-an-overview-of-python-modules">1. An Overview of Python Modules</a>    <ul>
+      <li><a href="#11-what-is-a-module" id="markdown-toc-11-what-is-a-module">1.1. What is a “Module”?</a></li>
+      <li><a href="#12-an-example" id="markdown-toc-12-an-example">1.2. An Example</a></li>
+    </ul>
+  </li>
+  <li><a href="#2-the-module-search-path" id="markdown-toc-2-the-module-search-path">2. The Module Search Path</a>    <ul>
+      <li><a href="#21-where-does-python-search" id="markdown-toc-21-where-does-python-search">2.1. Where does Python search?</a></li>
+      <li><a href="#22-how-to-ensure-you-module-is-found" id="markdown-toc-22-how-to-ensure-you-module-is-found">2.2. How to ensure you module is found?</a></li>
+      <li><a href="#23-how-to-find-the-location-of-you-module" id="markdown-toc-23-how-to-find-the-location-of-you-module">2.3. How to find the “location” of you module?</a></li>
+    </ul>
+  </li>
+  <li><a href="#3-the-import-statement" id="markdown-toc-3-the-import-statement">3. The <code class="highlighter-rouge">import</code> Statement</a>    <ul>
+      <li><a href="#31-import-module_name" id="markdown-toc-31-import-module_name">3.1. <code class="highlighter-rouge">import &lt;module_name&gt;</code></a></li>
+      <li><a href="#32-from-module_name-import-names" id="markdown-toc-32-from-module_name-import-names">3.2. <code class="highlighter-rouge">from &lt;module_name&gt; import &lt;name(s)&gt;</code></a></li>
+      <li><a href="#33-from-module_name-import-name-as-alt_name" id="markdown-toc-33-from-module_name-import-name-as-alt_name">3.3. <code class="highlighter-rouge">from &lt;module_name&gt; import &lt;name&gt; as &lt;alt_name&gt;</code></a></li>
+      <li><a href="#34-import-module_name-as-alt_name" id="markdown-toc-34-import-module_name-as-alt_name">3.4. <code class="highlighter-rouge">import &lt;module_name&gt; as &lt;alt_name&gt;</code></a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="0-major-reference">0. Major Reference</h2>
+<p><a href="https://realpython.com/python-modules-packages/">» Python Modules and Packages - An Introduction</a></p>
+
+<h2 id="1-an-overview-of-python-modules">1. An Overview of Python Modules</h2>
+<h3 id="11-what-is-a-module">1.1. What is a “Module”?</h3>
+<p><em>“Python module is a file that contains Python code. Python module’s name is the <strong>file name without extension</strong>. Normally Python module is used to group related functions, classes and variables for better code management and avoiding name clash.  For example in the built-in module, you have a function called <code class="highlighter-rouge">f1()</code> and in your program your also want to have function f1 as well. In this case, your need to use module to organize the code so that the function has its own namespace.”</em> <sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></p>
+
+<p>A module’s contents can be accessed with the <code class="highlighter-rouge">import</code> statement.</p>
+
+<h3 id="12-an-example">1.2. An Example</h3>
+<p>For example, suppose you have created a file called <code class="highlighter-rouge">mod.py</code> containing the following:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s</span> <span class="o">=</span> <span class="s">"If Comrade Napoleon says it, it must be right."</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'arg = {arg}'</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+    <span class="k">pass</span>
+</code></pre></div></div>
+
+<p>Several objects are defined in <code class="highlighter-rouge">mod.py</code>:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">s</code> (a string)</li>
+  <li><code class="highlighter-rouge">a</code> (a list)</li>
+  <li><code class="highlighter-rouge">foo()</code> (a function)</li>
+  <li><code class="highlighter-rouge">Foo</code> (a class)</li>
+</ul>
+
+<p>Assuming <code class="highlighter-rouge">mod.py</code> is in an appropriate location, which you will learn more about shortly, these objects can be accessed by importing the module as follows:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; import mod
+&gt;&gt;&gt; print(mod.s)
+If Comrade Napoleon says it, it must be right.
+&gt;&gt;&gt; mod.a
+[100, 200, 300]
+&gt;&gt;&gt; mod.foo(['quux', 'corge', 'grault'])
+arg = ['quux', 'corge', 'grault']
+&gt;&gt;&gt; x = mod.Foo()
+&gt;&gt;&gt; x
+&lt;mod.Foo object at 0x03C181F0&gt;
+</code></pre></div></div>
+
+<h2 id="2-the-module-search-path">2. The Module Search Path</h2>
+<h3 id="21-where-does-python-search">2.1. Where does Python search?</h3>
+<p>Continuing with the above example, let’s take a look at what happens when Python executes the statement:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">mod</span>
+</code></pre></div></div>
+
+<p>When the interpreter executes the above import statement, it searches for <code class="highlighter-rouge">mod.py</code> in a list of directories assembled from the following sources:</p>
+
+<ul>
+  <li>The directory from which the input script was run or the <strong>current directory</strong> if the interpreter is being run interactively</li>
+  <li>The list of directories contained in the <strong>PYTHONPATH</strong> environment variable, if it is set. (The format for PYTHONPATH is OS-dependent but should mimic the PATH environment variable.)</li>
+  <li>An installation-dependent list of directories configured at the time Python is installed</li>
+</ul>
+
+<p>The resulting search path is accessible in the Python variable <code class="highlighter-rouge">sys.path</code>, which is obtained from a module named sys:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; import sys
+&gt;&gt;&gt; sys.path
+['', '/home/kefeng/anaconda3/lib/python36.zip', 
+'/home/kefeng/anaconda3/lib/python3.6', 
+'/home/kefeng/anaconda3/lib/python3.6/lib-dynload', 
+'/home/kefeng/anaconda3/lib/python3.6/site-packages']
+</code></pre></div></div>
+
+<h3 id="22-how-to-ensure-you-module-is-found">2.2. How to ensure you module is found?</h3>
+<p>Thus, to ensure your module is found, you need to do one of the following:</p>
+
+<ul>
+  <li>Put <code class="highlighter-rouge">mod.py</code> in the directory where the input script is located or the current directory, if interactive</li>
+  <li>Modify the PYTHONPATH environment variable to contain the directory where <code class="highlighter-rouge">mod.py</code> is located before starting the interpreter
+    <ul>
+      <li>Or: Put<code class="highlighter-rouge"> mod.py</code> in one of the directories already contained in the PYTHONPATH variable</li>
+    </ul>
+  </li>
+  <li>Put <code class="highlighter-rouge">mod.py</code> in one of the installation-dependent directories, which you may or may not have write-access to, depending on the OS</li>
+</ul>
+
+<p>There is actually one additional option: you can put the module file in any directory of your choice and then modify sys.path at run-time so that it contains that directory. For example, in this case, you could put mod.py in directory <code class="highlighter-rouge">~/KFTorch</code> and then issue the following statements:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; sys.path.append('/home/kefeng/KFTorch')
+&gt;&gt;&gt; sys.path
+['', '/home/kefeng/anaconda3/lib/python36.zip', 
+'/home/kefeng/anaconda3/lib/python3.6', 
+'/home/kefeng/anaconda3/lib/python3.6/lib-dynload', 
+'/home/kefeng/anaconda3/lib/python3.6/site-packages', 
+'/home/kefeng/KFTorch']
+&gt;&gt;&gt; import mod
+</code></pre></div></div>
+
+<h3 id="23-how-to-find-the-location-of-you-module">2.3. How to find the “location” of you module?</h3>
+<p>Once a module has been imported, you can determine the location where it was found with the module’s <code class="highlighter-rouge">__file__</code> attribute:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; import mod
+&gt;&gt;&gt; mod.__file__
+'/home/kefeng/KFTorch/mod.py'
+&gt;&gt;&gt; import re
+&gt;&gt;&gt; re.__file__
+'/home/kefeng/anaconda3/lib/python3.6/re.py'
+</code></pre></div></div>
+
+<p>The directory portion of <code class="highlighter-rouge">__file__</code> should be one of the directories in <code class="highlighter-rouge">sys.path</code>.</p>
+
+<h2 id="3-the-import-statement">3. The <code class="highlighter-rouge">import</code> Statement</h2>
+<p><strong>Module</strong> contents are made available to the caller with the <code class="highlighter-rouge">import</code> statement. The <code class="highlighter-rouge">import</code> statement takes many different forms, shown below.</p>
+
+<h3 id="31-import-module_name">3.1. <code class="highlighter-rouge">import &lt;module_name&gt;</code></h3>
+<p>The simplest form is the one already shown above:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="o">&lt;</span><span class="n">module_name</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>Note that this does not make the module contents directly accessible to the caller. Each module has its <strong>own private symbol table</strong>, which serves as the global symbol table for all objects defined in the module. Thus, a module creates a separate <strong>namespace</strong>, as already noted.</p>
+
+<p>The statement <code class="highlighter-rouge">import &lt;module_name&gt;</code> only places <code class="highlighter-rouge">&lt;module_name&gt;</code> in the caller’s symbol table. The objects that are defined in the module remain in the module’s private symbol table.</p>
+
+<p>From the caller, objects in the module are only accessible when prefixed with <code class="highlighter-rouge">&lt;module_name&gt;</code> via dot notation, as illustrated below.</p>
+
+<p>After the following <code class="highlighter-rouge">import</code> statement, <code class="highlighter-rouge">mod</code> is placed into the local symbol table. Thus, mod has meaning in the caller’s local context:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; import mod
+&gt;&gt;&gt; mod
+&lt;module 'mod' from '/home/kefeng/KFTorch/mod.py'&gt;
+</code></pre></div></div>
+
+<p>But <code class="highlighter-rouge">s</code> and <code class="highlighter-rouge">foo</code> remain in the module’s <strong>private symbol table</strong> and are not meaningful in the local context:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; s
+NameError: name 's' is not defined
+&gt;&gt;&gt; foo('abc')
+NameError: name 'foo' is not defined
+</code></pre></div></div>
+
+<p>To be accessed in the local context, names of objects defined in the module <strong>must be prefixed by <code class="highlighter-rouge">mod</code></strong>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; mod.s
+'If Comrade Napoleon says it, it must be right.'
+&gt;&gt;&gt; mod.foo('abc')
+arg = abc
+</code></pre></div></div>
+
+<p>Several comma-separated modules may be specified in a single <code class="highlighter-rouge">import</code> statement:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="o">&lt;</span><span class="n">module_name</span><span class="o">&gt;</span><span class="p">[,</span> <span class="o">&lt;</span><span class="n">module_name</span><span class="o">&gt;</span> <span class="o">...</span><span class="p">]</span>
+</code></pre></div></div>
+
+<h3 id="32-from-module_name-import-names">3.2. <code class="highlighter-rouge">from &lt;module_name&gt; import &lt;name(s)&gt;</code></h3>
+<p>An alternate form of the <code class="highlighter-rouge">import</code> statement allows individual objects from the module to be imported <strong>directly</strong> into the <strong>caller’s symbol table</strong>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">from</span> <span class="o">&lt;</span><span class="n">module_name</span><span class="o">&gt;</span> <span class="k">import</span> <span class="o">&lt;</span><span class="n">name</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>Following execution of the above statement,<code class="highlighter-rouge"> &lt;name(s)&gt;</code> can be referenced in the caller’s environment without the <code class="highlighter-rouge">&lt;module_name&gt;</code> prefix:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; from mod import s, foo
+&gt;&gt;&gt; s
+'If Comrade Napoleon says it, it must be right.'
+&gt;&gt;&gt; foo('abc')
+arg = abc
+
+&gt;&gt;&gt; from mod import Foo
+&gt;&gt;&gt; x = Foo()
+&gt;&gt;&gt; x
+&lt;mod.Foo object at 0x7f360cd627b8&gt;
+</code></pre></div></div>
+
+<p>Because this form of <code class="highlighter-rouge">import</code> places the object names directly into the caller’s symbol table, any objects that already exist with the same name will be overwritten:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; a = ['foo', 'bar', 'baz']
+&gt;&gt;&gt; a
+['foo', 'bar', 'baz']
+&gt;&gt;&gt; from mod import a
+&gt;&gt;&gt; a
+[100, 200, 300]
+</code></pre></div></div>
+
+<p>It is even possible to indiscriminately <code class="highlighter-rouge">import</code> everything from a module at one fell swoop:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">from</span> <span class="o">&lt;</span><span class="n">module_name</span><span class="o">&gt;</span> <span class="k">import</span> <span class="o">*</span>
+</code></pre></div></div>
+
+<p>This will place the names of <strong>all objects</strong> from <code class="highlighter-rouge">&lt;module_name&gt;</code> into the <strong>local symbol table</strong>, <strong>with the exception of any that begin with the underscore (_) character.</strong></p>
+
+<p>For example:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; from mod import *
+&gt;&gt;&gt; s
+'If Comrade Napoleon says it, it must be right.'
+&gt;&gt;&gt; a
+[100, 200, 300]
+&gt;&gt;&gt; foo
+&lt;function foo at 0x03B449C0&gt;
+&gt;&gt;&gt; Foo
+&lt;class 'mod.Foo'&gt;
+</code></pre></div></div>
+
+<blockquote>
+  <p><strong>Note:</strong> This <strong>isn’t necessarily recommended</strong> in large-scale production code. It’s a bit dangerous because you are entering names into the local symbol table <a href="https://www.merriam-webster.com/dictionary/en%20masse">en masse</a>. Unless you know them all well and can be confident there won’t be a conflict, you have a decent chance of overwriting an existing name <a href="https://www.merriam-webster.com/dictionary/inadvertently">inadvertently</a>. However, this syntax is quite handy when you are just <a href="https://www.merriam-webster.com/dictionary/mucking">mucking</a> around with the interactive interpreter, for testing or discovery purposes, because it quickly gives you access to everything a module has to offer without a lot of typing.</p>
+</blockquote>
+
+<h3 id="33-from-module_name-import-name-as-alt_name">3.3. <code class="highlighter-rouge">from &lt;module_name&gt; import &lt;name&gt; as &lt;alt_name&gt;</code></h3>
+<p>It is also possible to import individual objects but enter them into the local symbol table with alternate names:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">from</span> <span class="o">&lt;</span><span class="n">module_name</span><span class="o">&gt;</span> <span class="k">import</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span> <span class="k">as</span> <span class="o">&lt;</span><span class="n">alt_name</span><span class="o">&gt;</span><span class="p">[,</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span> <span class="k">as</span> <span class="o">&lt;</span><span class="n">alt_name</span><span class="o">&gt;</span> <span class="err">…</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>This makes it possible to place names directly into the local symbol table but avoid conflicts with previously existing names:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; s = 'foo'
+&gt;&gt;&gt; a = ['foo', 'bar', 'baz']
+
+&gt;&gt;&gt; from mod import s as string, a as alist
+&gt;&gt;&gt; s
+'foo'
+&gt;&gt;&gt; string
+'If Comrade Napoleon says it, it must be right.'
+&gt;&gt;&gt; a
+['foo', 'bar', 'baz']
+&gt;&gt;&gt; alist
+[100, 200, 300]
+</code></pre></div></div>
+<h3 id="34-import-module_name-as-alt_name">3.4. <code class="highlighter-rouge">import &lt;module_name&gt; as &lt;alt_name&gt;</code></h3>
+<p>You can also import an entire module under an alternate name:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="o">&lt;</span><span class="n">module_name</span><span class="o">&gt;</span> <span class="k">as</span> <span class="o">&lt;</span><span class="n">alt_name</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; import mod as my_module
+&gt;&gt;&gt; my_module.a
+[100, 200, 300]
+&gt;&gt;&gt; my_module.foo('qux')
+arg = qux
+</code></pre></div></div>
+
+<p>Module contents can be imported from within a function definition. In that case, the import does not occur until the function is called:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; def bar():
+...     from mod import foo
+...     foo('corge')
+...
+
+&gt;&gt;&gt; bar()
+arg = corge
+</code></pre></div></div>
+
+<p>However, Python 3 does not allow the indiscriminate <code class="highlighter-rouge">import *</code> syntax from within a function:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; def bar():
+...     from mod import *
+...
+SyntaxError: import * only allowed at module level
+</code></pre></div></div>
+
+<p>Lastly, a <code class="highlighter-rouge">try</code> statement with an <code class="highlighter-rouge">except ImportError</code> clause can be used to guard against unsuccessful import attempts:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; try:
+...     # Non-existent module
+...     import baz
+... except ImportError:
+...     print('Module not found')
+...
+
+Module not found
+&gt;&gt;&gt;
+&gt;&gt;&gt; try:
+...     # Existing module, but non-existent object
+...     from mod import baz
+... except ImportError:
+...     print('Object not found in module')
+...
+
+Object not found in module
+</code></pre></div></div>
+
+<p><br /><br /><strong><em>KF</em></strong></p>
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p><a href="https://realpython.com/python-modules-packages/">Python Modules and Packages - An Introduction</a> <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p><a href="http://www.zentut.com/python-tutorial/python-module/">Python Module - zentut</a> <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div>
+</div>
+
+
+<div>
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    this.page.url = "http://localhost:4000/2019/03/06/python-module-package";
+    this.page.identifier = "/2019/03/06/python-module-package";
+  };
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//zkf85githubio.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+
+
+</div>
+
+<!-- KF 02/13/2019  -->
+<!-- Add back to top button -->
+<button onclick="topFunction()" id="myBtn" title="Back to top"><i class="material-icons">vertical_align_top</i></button>
+
+<script>
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+    </main>
+    <footer class="page-footer ohio-state-scarlet">
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            <img src="/assets/res/logo.png" alt="logo"/>
+            <p class="grey-text text-lighten-4">Theme based on <a href="http://materializecss.com">Materialize.css</a> for jekyll sites.
+</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          &#xA9; 2019 Everest. All rights reserved. Powered by <a href="https://github.com/zkf85">Kefeng</a>.
+        </div>
+      </div>
+    </footer>
+    <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+    
+    
+    <script src="/assets/js/post.js"></script>
+    
+    
+    
+    
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>
+

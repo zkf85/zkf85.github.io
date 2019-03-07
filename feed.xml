@@ -1,21 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-03-06T18:13:40+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Everest</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
-</subtitle><entry><title type="html">First Try on PyTorch</title><link href="http://localhost:4000/2019/03/06/pytorch-first-try" rel="alternate" type="text/html" title="First Try on PyTorch" /><published>2019-03-06T00:00:00+08:00</published><updated>2019-03-06T00:00:00+08:00</updated><id>http://localhost:4000/2019/03/06/pytorch-first-try</id><content type="html" xml:base="http://localhost:4000/2019/03/06/pytorch-first-try">&lt;blockquote&gt;
-  &lt;p&gt;It turns out that lots of AI guys are fond of Pytorch over Tensorflow. Although I’m using TF all the time, why not give it a try and play with both?&lt;/p&gt;
-
-  &lt;p&gt;Let’s get started.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&quot;/public/img/20190306-pytorch-logo-dark.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://pytorch.org/get-started/locally/&quot;&gt;» Get Started with PyTorch/Installation - （Official)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://pytorch.org/tutorials/beginner/blitz/tensor_tutorial.html&quot;&gt;» Deep Learning with PyTorch: A 60 Minute Blitz - (Official)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Deep Learning&quot;]" /><category term="pytorch" /><category term="python" /><summary type="html">It turns out that lots of AI guys are fond of Pytorch over Tensorflow. Although I’m using TF all the time, why not give it a try and play with both? Let’s get started.</summary></entry><entry><title type="html">Python Modules and Packages</title><link href="http://localhost:4000/2019/03/06/python-module-package" rel="alternate" type="text/html" title="Python Modules and Packages" /><published>2019-03-06T00:00:00+08:00</published><updated>2019-03-06T00:00:00+08:00</updated><id>http://localhost:4000/2019/03/06/python-module-package</id><content type="html" xml:base="http://localhost:4000/2019/03/06/python-module-package">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-03-07T14:03:08+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Everest</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
+</subtitle><entry><title type="html">Python Modules and Packages</title><link href="http://localhost:4000/2019/03/07/python-module-package" rel="alternate" type="text/html" title="Python Modules and Packages" /><published>2019-03-07T00:00:00+08:00</published><updated>2019-03-07T00:00:00+08:00</updated><id>http://localhost:4000/2019/03/07/python-module-package</id><content type="html" xml:base="http://localhost:4000/2019/03/07/python-module-package">&lt;blockquote&gt;
   &lt;p&gt;Programming in python with &lt;strong&gt;modules&lt;/strong&gt; and &lt;strong&gt;packages&lt;/strong&gt; is always good practice.&lt;/p&gt;
 
   &lt;p&gt;There are several advantages to modularizing code in a large application:&lt;/p&gt;
@@ -23,11 +7,13 @@
     &lt;li&gt;&lt;strong&gt;Simplicity&lt;/strong&gt;: Rather than focusing on the entire problem at hand, a module typically focuses on one relatively small portion of the problem. If you’re working on a single module, you’ll have a smaller problem domain to wrap your head around. This makes development easier and less error-prone.&lt;/li&gt;
     &lt;li&gt;&lt;strong&gt;Maintainability&lt;/strong&gt;: Modules are typically designed so that they enforce logical boundaries between different problem domains. If modules are written in a way that minimizes interdependency, there is decreased likelihood that modifications to a single module will have an impact on other parts of the program. (You may even be able to make changes to a module without having any knowledge of the application outside that module.) This makes it more viable for a team of many programmers to work collaboratively on a large application.&lt;/li&gt;
     &lt;li&gt;&lt;strong&gt;Reusability&lt;/strong&gt;: Functionality defined in a single module can be easily reused (through an appropriately defined interface) by other parts of the application. This eliminates the need to recreate duplicate code.&lt;/li&gt;
-    &lt;li&gt;&lt;strong&gt;Scoping&lt;/strong&gt;: Modules typically define a separate namespace, which helps avoid collisions between identifiers in different areas of a program. (One of the tenets in the Zen of Python is Namespaces are one honking great idea—let’s do more of those!)&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Scoping&lt;/strong&gt;: Modules typically define a separate namespace, which helps avoid collisions between identifiers in different areas of a program. (One of the tenets in the Zen of Python is Namespaces are one honking great idea—let’s do more of those!)&lt;/li&gt;
   &lt;/ul&gt;
 
   &lt;p&gt;Here is a collection of Python &lt;strong&gt;modules&lt;/strong&gt; and &lt;strong&gt;packages&lt;/strong&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/img/20190307-python-modules-packages.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;!--more--&gt;
 &lt;ul id=&quot;markdown-toc&quot;&gt;
@@ -50,14 +36,35 @@
       &lt;li&gt;&lt;a href=&quot;#34-import-module_name-as-alt_name&quot; id=&quot;markdown-toc-34-import-module_name-as-alt_name&quot;&gt;3.4. &lt;code class=&quot;highlighter-rouge&quot;&gt;import &amp;lt;module_name&amp;gt; as &amp;lt;alt_name&amp;gt;&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4-the-dir-function&quot; id=&quot;markdown-toc-4-the-dir-function&quot;&gt;4. The &lt;code class=&quot;highlighter-rouge&quot;&gt;dir()&lt;/code&gt; Function&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#5-executing-a-module-as-a-script&quot; id=&quot;markdown-toc-5-executing-a-module-as-a-script&quot;&gt;5. Executing a Module as a Script&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#51-run-as-standalone-vs-import-as-module&quot; id=&quot;markdown-toc-51-run-as-standalone-vs-import-as-module&quot;&gt;5.1. Run as Standalone V.S. import as Module&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#52-module-design-convention&quot; id=&quot;markdown-toc-52-module-design-convention&quot;&gt;5.2. Module Design Convention&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#6-reloading-a-module&quot; id=&quot;markdown-toc-6-reloading-a-module&quot;&gt;6. Reloading a Module&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#61-yolo---you-only-load-once&quot; id=&quot;markdown-toc-61-yolo---you-only-load-once&quot;&gt;6.1. YOLO - “You Only Load Once”&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#62-reload-using-importlibreload&quot; id=&quot;markdown-toc-62-reload-using-importlibreload&quot;&gt;6.2. Reload using &lt;code class=&quot;highlighter-rouge&quot;&gt;importlib.reload()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#7-python-pachages&quot; id=&quot;markdown-toc-7-python-pachages&quot;&gt;7. Python Pachages&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#71-intuition&quot; id=&quot;markdown-toc-71-intuition&quot;&gt;7.1. Intuition:&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#72-create-a-package&quot; id=&quot;markdown-toc-72-create-a-package&quot;&gt;7.2. Create a Package:&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#73-import-modules-in-the-package&quot; id=&quot;markdown-toc-73-import-modules-in-the-package&quot;&gt;7.3. Import Modules in the Package:&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#8-package-initialization&quot; id=&quot;markdown-toc-8-package-initialization&quot;&gt;8. Package Initialization&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#9-importing--from-a-package--__all__&quot; id=&quot;markdown-toc-9-importing--from-a-package--__all__&quot;&gt;9. Importing &lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt; From a Package / &lt;code class=&quot;highlighter-rouge&quot;&gt;__all__&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#10-subpackages&quot; id=&quot;markdown-toc-10-subpackages&quot;&gt;10. Subpackages&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#11-conclusion&quot; id=&quot;markdown-toc-11-conclusion&quot;&gt;11. Conclusion&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;0-major-reference&quot;&gt;0. Major Reference&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://realpython.com/python-modules-packages/&quot;&gt;» Python Modules and Packages - An Introduction&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://realpython.com/python-modules-packages/&quot;&gt;» Python Modules and Packages - An Introduction (realpython.com)&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;1-an-overview-of-python-modules&quot;&gt;1. An Overview of Python Modules&lt;/h2&gt;
 &lt;h3 id=&quot;11-what-is-a-module&quot;&gt;1.1. What is a “Module”?&lt;/h3&gt;
-&lt;p&gt;&lt;em&gt;“Python module is a file that contains Python code. Python module’s name is the &lt;strong&gt;file name without extension&lt;/strong&gt;. Normally Python module is used to group related functions, classes and variables for better code management and avoiding name clash.  For example in the built-in module, you have a function called &lt;code class=&quot;highlighter-rouge&quot;&gt;f1()&lt;/code&gt; and in your program your also want to have function f1 as well. In this case, your need to use module to organize the code so that the function has its own namespace.”&lt;/em&gt; &lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;“Python module is a file that contains Python code. Python module’s name is the &lt;strong&gt;file name without extension&lt;/strong&gt;. Normally Python module is used to group related functions, classes and variables for better code management and avoiding name clash.  For example in the built-in module, you have a function called &lt;code class=&quot;highlighter-rouge&quot;&gt;f1()&lt;/code&gt; and in your program your also want to have function f1 as well. In this case, your need to use module to organize the code so that the function has its own namespace.”&lt;/em&gt; &lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
 &lt;p&gt;A module’s contents can be accessed with the &lt;code class=&quot;highlighter-rouge&quot;&gt;import&lt;/code&gt; statement.&lt;/p&gt;
 
@@ -331,17 +338,608 @@ Module not found
 Object not found in module
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
+&lt;h2 id=&quot;4-the-dir-function&quot;&gt;4. The &lt;code class=&quot;highlighter-rouge&quot;&gt;dir()&lt;/code&gt; Function&lt;/h2&gt;
+&lt;p&gt;The built-in function dir() returns a list of defined names in a &lt;strong&gt;namespace（命名空间）&lt;/strong&gt;. Without arguments, it produces an alphabetically sorted list of names in the current &lt;strong&gt;local symbol table&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; dir()
+['Foo', '__annotations__', '__builtins__', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'mod', 're', 'sys', 'x']
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This can be useful for identifying what exactly has been added to the namespace by an import statement:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; import sys
+&amp;gt;&amp;gt;&amp;gt; sys.path.append('/home/kefeng/KFTorch')
+&amp;gt;&amp;gt;&amp;gt; dir()
+['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'sys']
+&amp;gt;&amp;gt;&amp;gt; import mod
+&amp;gt;&amp;gt;&amp;gt; dir()
+['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'mod', 'sys']
+&amp;gt;&amp;gt;&amp;gt; mod.s
+'If Comrade Napoleon says it, it must be right.'
+&amp;gt;&amp;gt;&amp;gt; from mod import a, Foo
+&amp;gt;&amp;gt;&amp;gt; dir()
+['Foo', '__annotations__', '__builtins__', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'a', 'mod', 'sys']
+&amp;gt;&amp;gt;&amp;gt; from mod import s as string
+&amp;gt;&amp;gt;&amp;gt; dir()
+['Foo', '__annotations__', '__builtins__', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'a', 'mod', 'string', 'sys']
+&amp;gt;&amp;gt;&amp;gt; string
+'If Comrade Napoleon says it, it must be right.'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;When given an argument that is the name of a module, dir() lists the names defined in the module:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; import mod
+&amp;gt;&amp;gt;&amp;gt; dir(mod)
+['Foo', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'a', 'foo', 's']
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;5-executing-a-module-as-a-script&quot;&gt;5. Executing a Module as a Script&lt;/h2&gt;
+&lt;h3 id=&quot;51-run-as-standalone-vs-import-as-module&quot;&gt;5.1. Run as Standalone V.S. import as Module&lt;/h3&gt;
+&lt;p&gt;Any &lt;code class=&quot;highlighter-rouge&quot;&gt;.py&lt;/code&gt; file that contains a &lt;strong&gt;module&lt;/strong&gt; is essentially also a Python &lt;strong&gt;script&lt;/strong&gt;, and there isn’t any reason it can’t be executed like one.&lt;/p&gt;
+
+&lt;p&gt;When a Python module could generate some output when run as a script, as below:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;If Comrade Napoleon says it, it must be right.&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;300&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'arg = {arg}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'quux'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now when it is imported as a module, it also generates output, which we don’t want:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; import mod
+If Comrade Napoleon says it, it must be right.
+[100, 200, 300]
+arg = quux
+&amp;lt;mod.Foo object at 0x7fe0b8b11eb8&amp;gt;
+&amp;gt;&amp;gt;&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;It would be nice if we could distinguish between when the file is loaded as a module and when it is run as a standalone script.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Here is the way:&lt;/p&gt;
+
+&lt;p&gt;When a &lt;code class=&quot;highlighter-rouge&quot;&gt;.py&lt;/code&gt; file is imported as a module, Python sets the special variable &lt;code class=&quot;highlighter-rouge&quot;&gt;__name__&lt;/code&gt; to the name of the module. However, if a file is run as a standalone script, &lt;code class=&quot;highlighter-rouge&quot;&gt;__name__&lt;/code&gt; is (creatively) set to the string &lt;code class=&quot;highlighter-rouge&quot;&gt;'__main__'&lt;/code&gt;. Using this fact, you can discern which is the case at run-time and alter behavior accordingly:&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mod.py&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;If Comrade Napoleon says it, it must be right.&quot;&lt;/span&gt;                                            
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;300&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'arg = {arg}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'__main__'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Executing as standalone script'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'quux'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now, when run the script, we can get output:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;kefeng@server:~/KFTorch$ python mod.py 
+Executing as standalone script
+If Comrade Napoleon says it, it must be right.
+[100, 200, 300]
+arg = quux
+&amp;lt;__main__.Foo object at 0x7f4c44cee438&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;But if we import it as a module:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; import mod
+&amp;gt;&amp;gt;&amp;gt; mod.s
+'If Comrade Napoleon says it, it must be right.'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;52-module-design-convention&quot;&gt;5.2. Module Design Convention&lt;/h3&gt;
+&lt;p&gt;Modules are often designed with the capability to run as a standalone script for purposes of testing the functionality that is contained within the module. This is referred to as &lt;a href=&quot;https://realpython.com/python-testing/&quot;&gt;unit testing&lt;/a&gt;. For &lt;strong&gt;example&lt;/strong&gt;, suppose you have created a module &lt;code class=&quot;highlighter-rouge&quot;&gt;fact.py&lt;/code&gt; containing a &lt;code class=&quot;highlighter-rouge&quot;&gt;factorial function&lt;/code&gt;, as follows:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;fact.py&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;fact&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fact&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'__main__'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sys&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fact&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;When it’s imported as a module:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; from factorial import fact
+&amp;gt;&amp;gt;&amp;gt; fact(5)
+120
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;When it’s run as a standalone script by passing an integer argument on the command-line for testing:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;kefeng@server:~/KFTorch$ python factorial.py 5
+120
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;6-reloading-a-module&quot;&gt;6. Reloading a Module&lt;/h2&gt;
+&lt;h3 id=&quot;61-yolo---you-only-load-once&quot;&gt;6.1. YOLO - “You Only Load Once”&lt;/h3&gt;
+&lt;p&gt;For reasons of efficiency, a module is &lt;strong&gt;only loaded once per interpreter session&lt;/strong&gt;. That is fine for function and class definitions, which typically make up the bulk of a module’s contents. But a module can contain executable statements as well, usually for initialization. Be aware that these statements will &lt;strong&gt;only be executed the first time a module is imported&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Consider the following file &lt;code class=&quot;highlighter-rouge&quot;&gt;mod.py&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;mod.py&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;300&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'a ='&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; import mod
+a = [100, 200, 300]
+&amp;gt;&amp;gt;&amp;gt; import mod
+&amp;gt;&amp;gt;&amp;gt; import mod
+
+&amp;gt;&amp;gt;&amp;gt; mod.a
+[100, 200, 300]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;print()&lt;/code&gt; statement is not executed on subsequent imports. (For that matter, neither is the assignment statement, but as the final display of the value of mod.a shows, that doesn’t matter. Once the assignment is made, it sticks.)&lt;/p&gt;
+
+&lt;h3 id=&quot;62-reload-using-importlibreload&quot;&gt;6.2. Reload using &lt;code class=&quot;highlighter-rouge&quot;&gt;importlib.reload()&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;If you make a change to a module and need to reload it, you need to either restart the interpreter or use a function called &lt;code class=&quot;highlighter-rouge&quot;&gt;reload()&lt;/code&gt; from module &lt;code class=&quot;highlighter-rouge&quot;&gt;importlib&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; import mod
+a = [100, 200, 300]
+
+&amp;gt;&amp;gt;&amp;gt; import mod
+
+&amp;gt;&amp;gt;&amp;gt; import importlib
+&amp;gt;&amp;gt;&amp;gt; importlib.reload(mod)
+a = [100, 200, 300]
+&amp;lt;module 'mod' from '/home/kefeng/KFTorch/mod.py'&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;7-python-pachages&quot;&gt;7. Python Pachages&lt;/h2&gt;
+&lt;h3 id=&quot;71-intuition&quot;&gt;7.1. Intuition:&lt;/h3&gt;
+&lt;p&gt;Suppose you have developed a very large application that includes many modules. As the number of modules grows, it becomes &lt;strong&gt;difficult to keep track of them all&lt;/strong&gt; if they are dumped into one location. This is particularly so if they have similar names or functionality. You might wish for a means of grouping and organizing them. Here we introduce the concept of &lt;strong&gt;“Package”&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Packages allow for a hierarchical structuring of the module namespace using dot notation;&lt;/li&gt;
+  &lt;li&gt;Packages help avoid collisions between module names (in the same way that modules help avoid collisions between global variable names).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;72-create-a-package&quot;&gt;7.2. Create a Package:&lt;/h3&gt;
+&lt;p&gt;Creating a package is quite straightforward, since it makes use of the operating system’s inherent hierarchical file structure. Consider the following arrangement:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/img/20190307-pkg1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Here, there is a directory named pkg that contains two modules, &lt;code class=&quot;highlighter-rouge&quot;&gt;mod1.py&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;mod2.py&lt;/code&gt;. The contents of the modules are:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;mod1.py&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'[mod1] foo()'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;mod2.py&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'[mod2] bar()'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;73-import-modules-in-the-package&quot;&gt;7.3. Import Modules in the Package:&lt;/h3&gt;
+&lt;p&gt;Given this structure, if the &lt;code class=&quot;highlighter-rouge&quot;&gt;pkg&lt;/code&gt; directory resides in a location where it can be found (in one of the directories contained in &lt;code class=&quot;highlighter-rouge&quot;&gt;sys.path&lt;/code&gt;), you can refer to the two modules with dot notation (&lt;code class=&quot;highlighter-rouge&quot;&gt;pkg.mod1&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;pkg.mod2&lt;/code&gt;) and import them with the syntax you are already familiar with:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;module_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;module_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; import pkg.mod1, pkg.mod2
+&amp;gt;&amp;gt;&amp;gt; pkg.mod1.foo()
+[mod1] foo()
+&amp;gt;&amp;gt;&amp;gt; x = pkg.mod2.Bar()
+&amp;gt;&amp;gt;&amp;gt; x
+&amp;lt;pkg.mod2.Bar object at 0x033F7290&amp;gt;
+from &amp;lt;module_name&amp;gt; import &amp;lt;name(s)&amp;gt;
+&amp;gt;&amp;gt;&amp;gt;
+&amp;gt;&amp;gt;&amp;gt; from pkg.mod1 import foo
+&amp;gt;&amp;gt;&amp;gt; foo()
+[mod1] foo()
+from &amp;lt;module_name&amp;gt; import &amp;lt;name&amp;gt; as &amp;lt;alt_name&amp;gt;
+&amp;gt;&amp;gt;&amp;gt;
+&amp;gt;&amp;gt;&amp;gt; from pkg.mod2 import Bar as Qux
+&amp;gt;&amp;gt;&amp;gt; x = Qux()
+&amp;gt;&amp;gt;&amp;gt; x
+&amp;lt;pkg.mod2.Bar object at 0x036DFFD0&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You can import modules with these statements as well:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;package_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;modules_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;module_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;package_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;module_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;alt_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; from pkg import mod1
+&amp;gt;&amp;gt;&amp;gt; mod1.foo()
+[mod1] foo()
+
+&amp;gt;&amp;gt;&amp;gt; from pkg import mod2 as quux
+&amp;gt;&amp;gt;&amp;gt; quux.bar()
+[mod2] bar()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You can technically import the package as well:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; import pkg
+&amp;gt;&amp;gt;&amp;gt; pkg
+&amp;lt;module 'pkg' (namespace)&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;But this is of little avail. Though this is, strictly speaking, a syntactically correct Python statement, it doesn’t do much of anything useful. In particular, it does not place any of the modules in pkg into the local namespace:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; pkg.mod1
+Traceback (most recent call last):
+  File &quot;&amp;lt;pyshell#34&amp;gt;&quot;, line 1, in &amp;lt;module&amp;gt;
+    pkg.mod1
+AttributeError: module 'pkg' has no attribute 'mod1'
+&amp;gt;&amp;gt;&amp;gt; pkg.mod1.foo()
+Traceback (most recent call last):
+  File &quot;&amp;lt;pyshell#35&amp;gt;&quot;, line 1, in &amp;lt;module&amp;gt;
+    pkg.mod1.foo()
+AttributeError: module 'pkg' has no attribute 'mod1'
+&amp;gt;&amp;gt;&amp;gt; pkg.mod2.Bar()
+Traceback (most recent call last):
+  File &quot;&amp;lt;pyshell#36&amp;gt;&quot;, line 1, in &amp;lt;module&amp;gt;
+    pkg.mod2.Bar()
+AttributeError: module 'pkg' has no attribute 'mod2'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;To actually import the modules or their contents, you need to use one of the forms shown above.&lt;/p&gt;
+
+&lt;h2 id=&quot;8-package-initialization&quot;&gt;8. Package Initialization&lt;/h2&gt;
+&lt;p&gt;If a file named &lt;code class=&quot;highlighter-rouge&quot;&gt;__init__.py&lt;/code&gt; is present in a package directory, it is invoked when the package or a module in the package is imported. This can be used for execution of package initialization code, such as initialization of package-level data.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;__init__.py&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Invoking __init__.py for {__name__}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;                                
+&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'aaa'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'bbb'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ccc'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Add this file to the &lt;code class=&quot;highlighter-rouge&quot;&gt;pkg&lt;/code&gt; directory:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/img/20190307-pkg2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; import importlib
+&amp;gt;&amp;gt;&amp;gt; importlib.reload(KFTorch)
+Invoking __init__.py for KFTorch
+&amp;lt;module 'KFTorch' from '/home/kefeng/KFTorch/__init__.py'&amp;gt;
+&amp;gt;&amp;gt;&amp;gt; KFTorch.A
+['aaa', 'bbb', 'ccc']
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;A &lt;strong&gt;module&lt;/strong&gt; in the package can access the global by importing it in turn:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;mod1.py&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pkg&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'[mod1] foo() / A = '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; from pkg import mod1
+Invoking __init__.py for pkg
+&amp;gt;&amp;gt;&amp;gt; mod1.foo()
+[mod1] foo() / A =  ['aaa', 'bbb', 'ccc']
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;__init__.py&lt;/code&gt; can also be used to effect &lt;strong&gt;automatic importing of modules from a package&lt;/strong&gt;. For example, earlier you saw that the statement import &lt;code class=&quot;highlighter-rouge&quot;&gt;pkg&lt;/code&gt; only places the name pkg in the caller’s local symbol table and doesn’t import any modules. But if &lt;code class=&quot;highlighter-rouge&quot;&gt;__init__.py&lt;/code&gt; in the pkg directory contains the following:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;__init__.py&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Invoking __init__.py for {__name__}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pkg.mod1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pkg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mod2&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;then&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;when&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;you&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;execute&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pkg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;modules&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mod1&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mod2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;are&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;imported&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;automatically&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; import pkg
+Invoking __init__.py for pkg
+&amp;gt;&amp;gt;&amp;gt; pkg.mod1.foo()
+[mod1] foo()
+&amp;gt;&amp;gt;&amp;gt; pkg.mod2.bar()
+[mod2] bar()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Much of the Python documentation states that an &lt;code class=&quot;highlighter-rouge&quot;&gt;__init__.py&lt;/code&gt; file must be present in the package directory when creating a package. This was once true. It used to be that the very presence of &lt;code class=&quot;highlighter-rouge&quot;&gt;__init__.py&lt;/code&gt; signified to Python that a package was being defined. The file could contain initialization code or even be empty, but it had to be present.&lt;/p&gt;
+
+  &lt;p&gt;Starting with Python 3.3, Implicit Namespace Packages were introduced. These allow for the creation of a package without any &lt;code class=&quot;highlighter-rouge&quot;&gt;__init__.py&lt;/code&gt; file. Of course, it can still be present if package initialization is needed. But it is no longer required.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;9-importing--from-a-package--__all__&quot;&gt;9. Importing &lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt; From a Package / &lt;code class=&quot;highlighter-rouge&quot;&gt;__all__&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;For the purposes of the following discussion, the previously defined package is expanded to contain some additional modules:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/img/20190307-pkg3.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;There are now four modules defined in the &lt;strong&gt;pkg&lt;/strong&gt; directory. Their contents are as shown below:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;mod1.py&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'[mod1] foo()'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;mod2.py&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'[mod2] bar()'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;mod3.py&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;baz&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'[mod3] baz()'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Baz&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;mod4.py&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;qux&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'[mod4] qux()'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Qux&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You have already seen that when &lt;code class=&quot;highlighter-rouge&quot;&gt;import *&lt;/code&gt; is used for a &lt;strong&gt;module&lt;/strong&gt;, all objects from the module are imported into the local symbol table, except those whose names begin with an underscore, as always:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; dir()
+['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__',
+'__package__', '__spec__']
+
+&amp;gt;&amp;gt;&amp;gt; from pkg.mod3 import *
+
+&amp;gt;&amp;gt;&amp;gt; dir()
+['Baz', '__annotations__', '__builtins__', '__doc__', '__loader__', '__name__',
+'__package__', '__spec__', 'baz']
+&amp;gt;&amp;gt;&amp;gt; baz()
+[mod3] baz()
+&amp;gt;&amp;gt;&amp;gt; Baz
+&amp;lt;class 'pkg.mod3.Baz'&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The analogous statement for a package is this:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;package_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;What does that do?&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; dir()
+['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__',
+'__package__', '__spec__']
+
+&amp;gt;&amp;gt;&amp;gt; from pkg import *
+&amp;gt;&amp;gt;&amp;gt; dir()
+['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__',
+'__package__', '__spec__']
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Hmph. Not much. You might have expected (assuming you had any expectations at all) that Python would dive down into the package directory, find all the modules it could, and import them all. But as you can see, by default that is not what happens.&lt;/p&gt;
+
+&lt;p&gt;Instead, Python follows this &lt;strong&gt;convention&lt;/strong&gt;: if the &lt;code class=&quot;highlighter-rouge&quot;&gt;__init__.py&lt;/code&gt; file in the package directory contains a list named &lt;code class=&quot;highlighter-rouge&quot;&gt;__all__&lt;/code&gt;, it is taken to be a list of modules that should be imported when the statement &lt;code class=&quot;highlighter-rouge&quot;&gt;from &amp;lt;package_name&amp;gt; import *&lt;/code&gt; is encountered.&lt;/p&gt;
+
+&lt;p&gt;For the present example, suppose you create an &lt;code class=&quot;highlighter-rouge&quot;&gt;__init__.py&lt;/code&gt; in the &lt;code class=&quot;highlighter-rouge&quot;&gt;pkg&lt;/code&gt; directory like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;pkg/__init__.py&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;__all__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;'mod1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;'mod2'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;'mod3'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;'mod4'&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now &lt;code class=&quot;highlighter-rouge&quot;&gt;from pkg import *&lt;/code&gt; imports all four modules:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; dir()
+['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__',
+'__package__', '__spec__']
+
+&amp;gt;&amp;gt;&amp;gt; from pkg import *
+&amp;gt;&amp;gt;&amp;gt; dir()
+['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__',
+'__package__', '__spec__', 'mod1', 'mod2', 'mod3', 'mod4']
+&amp;gt;&amp;gt;&amp;gt; mod2.bar()
+[mod2] bar()
+&amp;gt;&amp;gt;&amp;gt; mod4.Qux
+&amp;lt;class 'pkg.mod4.Qux'&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Using &lt;code class=&quot;highlighter-rouge&quot;&gt;import *&lt;/code&gt; still isn’t considered terrific form, any more for packages than for modules. But this facility at least gives the creator of the package some control over what happens when &lt;code class=&quot;highlighter-rouge&quot;&gt;import *&lt;/code&gt; is specified. (In fact, it provides the capability to disallow it entirely, simply by declining to define &lt;code class=&quot;highlighter-rouge&quot;&gt;__all__&lt;/code&gt; at all. As you have seen, the default behavior for packages is to import nothing.)&lt;/p&gt;
+
+&lt;p&gt;By the way, &lt;code class=&quot;highlighter-rouge&quot;&gt;__all__&lt;/code&gt; can be &lt;strong&gt;defined in a module as well&lt;/strong&gt; and serves the same purpose: to control what is imported with &lt;code class=&quot;highlighter-rouge&quot;&gt;import *&lt;/code&gt;. For example, modify &lt;code class=&quot;highlighter-rouge&quot;&gt;mod1.py&lt;/code&gt; as follows:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;pkg/mod1.py&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;__all__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'foo'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'[mod1] foo()'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now an &lt;code class=&quot;highlighter-rouge&quot;&gt;import *&lt;/code&gt; statement &lt;code class=&quot;highlighter-rouge&quot;&gt;from pkg.mod1&lt;/code&gt; will only import what is contained in &lt;code class=&quot;highlighter-rouge&quot;&gt;__all__&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; dir()
+['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__',
+'__package__', '__spec__']
+
+&amp;gt;&amp;gt;&amp;gt; from pkg.mod1 import *
+&amp;gt;&amp;gt;&amp;gt; dir()
+['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__',
+'__package__', '__spec__', 'foo']
+
+&amp;gt;&amp;gt;&amp;gt; foo()
+[mod1] foo()
+&amp;gt;&amp;gt;&amp;gt; Foo
+Traceback (most recent call last):
+  File &quot;&amp;lt;pyshell#37&amp;gt;&quot;, line 1, in &amp;lt;module&amp;gt;
+    Foo
+NameError: name 'Foo' is not defined
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;foo()&lt;/code&gt; (the function) is now defined in the local namespace, but Foo (the class) is not, because the latter is not in &lt;code class=&quot;highlighter-rouge&quot;&gt;__all__&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;In summary, &lt;code class=&quot;highlighter-rouge&quot;&gt;__all__&lt;/code&gt; is used by &lt;strong&gt;both packages and modules&lt;/strong&gt; to control what is imported when import * is specified. But the default behavior differs:&lt;/p&gt;
+
+&lt;p&gt;For a package, when &lt;code class=&quot;highlighter-rouge&quot;&gt;__all__&lt;/code&gt; is not defined, &lt;code class=&quot;highlighter-rouge&quot;&gt;import *&lt;/code&gt; does not import anything.
+For a module, when &lt;code class=&quot;highlighter-rouge&quot;&gt;__all__&lt;/code&gt; is not defined, &lt;code class=&quot;highlighter-rouge&quot;&gt;import *&lt;/code&gt; imports everything (except—you guessed it—names starting with an underscore).&lt;/p&gt;
+
+&lt;h2 id=&quot;10-subpackages&quot;&gt;10. Subpackages&lt;/h2&gt;
+&lt;p&gt;Packages can contain nested &lt;strong&gt;subpackages&lt;/strong&gt; to arbitrary depth. For example, let’s make one more modification to the example &lt;strong&gt;package&lt;/strong&gt; directory as follows:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/img/20190307-pkg4.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The four modules (&lt;code class=&quot;highlighter-rouge&quot;&gt;mod1.py&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;mod2.py&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;mod3.py&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;mod4.py&lt;/code&gt;) are defined as previously. But now, instead of being lumped together into the &lt;code class=&quot;highlighter-rouge&quot;&gt;pkg&lt;/code&gt; directory, they are split out into two subpackage directories, &lt;code class=&quot;highlighter-rouge&quot;&gt;sub_pkg1&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;sub_pkg2&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Importing still works the same as shown previously. Syntax is similar, but &lt;strong&gt;additional dot notation&lt;/strong&gt; is used to separate package name from subpackage name:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; import pkg.sub_pkg1.mod1
+&amp;gt;&amp;gt;&amp;gt; pkg.sub_pkg1.mod1.foo()
+[mod1] foo()
+
+&amp;gt;&amp;gt;&amp;gt; from pkg.sub_pkg1 import mod2
+&amp;gt;&amp;gt;&amp;gt; mod2.bar()
+[mod2] bar()
+
+&amp;gt;&amp;gt;&amp;gt; from pkg.sub_pkg2.mod3 import baz
+&amp;gt;&amp;gt;&amp;gt; baz()
+[mod3] baz()
+
+&amp;gt;&amp;gt;&amp;gt; from pkg.sub_pkg2.mod4 import qux as grault
+&amp;gt;&amp;gt;&amp;gt; grault()
+[mod4] qux()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;In addition, a module in one subpackage can reference objects in a sibling subpackage (in the event that the sibling contains some functionality that you need). For example, suppose you want to import and execute function &lt;code class=&quot;highlighter-rouge&quot;&gt;foo()&lt;/code&gt; (defined in module &lt;code class=&quot;highlighter-rouge&quot;&gt;mod1&lt;/code&gt;) from within module &lt;code class=&quot;highlighter-rouge&quot;&gt;mod3&lt;/code&gt;. You can either use an absolute import:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;pkg/sub_pkg2/mod3.py&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;baz&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'[mod3] baz()'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Baz&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pkg.sub_pkg1.mod1&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;foo&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; from pkg.sub_pkg2 import mod3
+[mod1] foo()
+&amp;gt;&amp;gt;&amp;gt; mod3.foo()
+[mod1] foo()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Or you can use a &lt;strong&gt;relative import&lt;/strong&gt;, where &lt;code class=&quot;highlighter-rouge&quot;&gt;..&lt;/code&gt; refers to the package one level up. From within &lt;code class=&quot;highlighter-rouge&quot;&gt;mod3.py&lt;/code&gt;, which is in subpackage &lt;code class=&quot;highlighter-rouge&quot;&gt;sub_pkg2&lt;/code&gt;,&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;..&lt;/code&gt; evaluates to the parent package (&lt;code class=&quot;highlighter-rouge&quot;&gt;pkg&lt;/code&gt;), and&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;..sub_pkg1&lt;/code&gt; evaluates to subpackage &lt;code class=&quot;highlighter-rouge&quot;&gt;sub_pkg1&lt;/code&gt; of the parent package.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;pkg/sub__pkg2/mod3.py&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;baz&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'[mod3] baz()'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Baz&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;..&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sub_pkg1&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sub_pkg1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;..sub_pkg1.mod1&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;foo&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; from pkg.sub_pkg2 import mod3
+&amp;lt;module 'pkg.sub_pkg1' (namespace)&amp;gt;
+[mod1] foo()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;11-conclusion&quot;&gt;11. Conclusion&lt;/h2&gt;
+&lt;p&gt;In this article, we covered the following topics:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;How to create a Python module&lt;/li&gt;
+  &lt;li&gt;Locations where the Python interpreter searches for a module&lt;/li&gt;
+  &lt;li&gt;How to obtain access to the objects defined in a module with the import statement&lt;/li&gt;
+  &lt;li&gt;How to create a module that is executable as a standalone script&lt;/li&gt;
+  &lt;li&gt;How to organize modules into packages and subpackages&lt;/li&gt;
+  &lt;li&gt;How to control package initialization&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This will hopefully allow us to better understand how to gain access to the functionality available in the many third-party and built-in modules available in Python.&lt;/p&gt;
+
+&lt;p&gt;Additionally, if you are developing your own application, creating your own modules and packages will help you organize and modularize your code, which makes coding, maintenance, and debugging easier.&lt;/p&gt;
+
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&quot;footnotes&quot;&gt;
   &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://realpython.com/python-modules-packages/&quot;&gt;Python Modules and Packages - An Introduction&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
     &lt;li id=&quot;fn:2&quot;&gt;
       &lt;p&gt;&lt;a href=&quot;http://www.zentut.com/python-tutorial/python-module/&quot;&gt;Python Module - zentut&lt;/a&gt; &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name></name></author><category term="[&quot;Python&quot;]" /><category term="python" /><category term="module" /><summary type="html">Programming in python with modules and packages is always good practice. There are several advantages to modularizing code in a large application: Simplicity: Rather than focusing on the entire problem at hand, a module typically focuses on one relatively small portion of the problem. If you’re working on a single module, you’ll have a smaller problem domain to wrap your head around. This makes development easier and less error-prone. Maintainability: Modules are typically designed so that they enforce logical boundaries between different problem domains. If modules are written in a way that minimizes interdependency, there is decreased likelihood that modifications to a single module will have an impact on other parts of the program. (You may even be able to make changes to a module without having any knowledge of the application outside that module.) This makes it more viable for a team of many programmers to work collaboratively on a large application. Reusability: Functionality defined in a single module can be easily reused (through an appropriately defined interface) by other parts of the application. This eliminates the need to recreate duplicate code. Scoping: Modules typically define a separate namespace, which helps avoid collisions between identifiers in different areas of a program. (One of the tenets in the Zen of Python is Namespaces are one honking great idea—let’s do more of those!)1 Here is a collection of Python modules and packages. Python Modules and Packages - An Introduction &amp;#8617;</summary></entry><entry><title type="html">[CS229] Lecture 6 Notes - Support Vector Machines I</title><link href="http://localhost:4000/2019/03/05/cs229-lecture-6-7-svm" rel="alternate" type="text/html" title="[CS229] Lecture 6 Notes - Support Vector Machines I" /><published>2019-03-05T00:00:00+08:00</published><updated>2019-03-05T00:00:00+08:00</updated><id>http://localhost:4000/2019/03/05/cs229-lecture-6-7-svm</id><content type="html" xml:base="http://localhost:4000/2019/03/05/cs229-lecture-6-7-svm">&lt;blockquote&gt;
+&lt;/div&gt;</content><author><name></name></author><category term="[&quot;Python&quot;]" /><category term="python" /><category term="module" /><summary type="html">Programming in python with modules and packages is always good practice. There are several advantages to modularizing code in a large application: Simplicity: Rather than focusing on the entire problem at hand, a module typically focuses on one relatively small portion of the problem. If you’re working on a single module, you’ll have a smaller problem domain to wrap your head around. This makes development easier and less error-prone. Maintainability: Modules are typically designed so that they enforce logical boundaries between different problem domains. If modules are written in a way that minimizes interdependency, there is decreased likelihood that modifications to a single module will have an impact on other parts of the program. (You may even be able to make changes to a module without having any knowledge of the application outside that module.) This makes it more viable for a team of many programmers to work collaboratively on a large application. Reusability: Functionality defined in a single module can be easily reused (through an appropriately defined interface) by other parts of the application. This eliminates the need to recreate duplicate code. Scoping: Modules typically define a separate namespace, which helps avoid collisions between identifiers in different areas of a program. (One of the tenets in the Zen of Python is Namespaces are one honking great idea—let’s do more of those!) Here is a collection of Python modules and packages.</summary></entry><entry><title type="html">First Try on PyTorch</title><link href="http://localhost:4000/2019/03/06/pytorch-first-try" rel="alternate" type="text/html" title="First Try on PyTorch" /><published>2019-03-06T00:00:00+08:00</published><updated>2019-03-06T00:00:00+08:00</updated><id>http://localhost:4000/2019/03/06/pytorch-first-try</id><content type="html" xml:base="http://localhost:4000/2019/03/06/pytorch-first-try">&lt;blockquote&gt;
+  &lt;p&gt;It turns out that lots of AI guys are fond of Pytorch over Tensorflow. Although I’m using TF all the time, why not give it a try and play with both?&lt;/p&gt;
+
+  &lt;p&gt;Let’s get started.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/img/20190306-pytorch-logo-dark.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pytorch.org/get-started/locally/&quot;&gt;» Get Started with PyTorch/Installation - （Official)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pytorch.org/tutorials/beginner/blitz/tensor_tutorial.html&quot;&gt;» Deep Learning with PyTorch: A 60 Minute Blitz - (Official)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Deep Learning&quot;]" /><category term="pytorch" /><category term="python" /><summary type="html">It turns out that lots of AI guys are fond of Pytorch over Tensorflow. Although I’m using TF all the time, why not give it a try and play with both? Let’s get started.</summary></entry><entry><title type="html">[CS229] Lecture 6 Notes - Support Vector Machines I</title><link href="http://localhost:4000/2019/03/05/cs229-lecture-6-7-svm" rel="alternate" type="text/html" title="[CS229] Lecture 6 Notes - Support Vector Machines I" /><published>2019-03-05T00:00:00+08:00</published><updated>2019-03-05T00:00:00+08:00</updated><id>http://localhost:4000/2019/03/05/cs229-lecture-6-7-svm</id><content type="html" xml:base="http://localhost:4000/2019/03/05/cs229-lecture-6-7-svm">&lt;blockquote&gt;
   &lt;ul&gt;
     &lt;li&gt;Introduce Support Vector Machines (SVM)&lt;/li&gt;
     &lt;li&gt;Created on 02/27/2019&lt;/li&gt;
@@ -569,7 +1167,15 @@ f(w)  &amp; \mbox{if} \ w\  \mbox{satisfies primal constraints} \\
 
 &lt;li&gt;&lt;a href=&quot;/public/cs229/matrix-calculus-illinois.pdf&quot; style=&quot;color: gray&quot;&gt;&lt;i class=&quot;material-icons pdf&quot;&gt;picture_as_pdf&lt;/i&gt;Matrix Calculus - Notes on Derivatives of a Trace - [Illinois] Johannes Traa&lt;/a&gt;&lt;/li&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="cs229" /><category term="linear algebra" /><summary type="html">The trace properties and the matrix derivatives. picture_as_pdfProperties of trace and matrix derivatives - [Stanford] John Duchi picture_as_pdfMatrix Calculus - Notes on Derivatives of a Trace - [Illinois] Johannes Traa KF</summary></entry><entry><title type="html">What is DOM?</title><link href="http://localhost:4000/2019/02/28/what-is-dom" rel="alternate" type="text/html" title="What is DOM?" /><published>2019-02-28T00:00:00+08:00</published><updated>2019-02-28T00:00:00+08:00</updated><id>http://localhost:4000/2019/02/28/what-is-dom</id><content type="html" xml:base="http://localhost:4000/2019/02/28/what-is-dom">&lt;blockquote&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="cs229" /><category term="linear algebra" /><summary type="html">The trace properties and the matrix derivatives. picture_as_pdfProperties of trace and matrix derivatives - [Stanford] John Duchi picture_as_pdfMatrix Calculus - Notes on Derivatives of a Trace - [Illinois] Johannes Traa KF</summary></entry><entry><title type="html">[CS231] K-Nearest-Neighbor Classifier</title><link href="http://localhost:4000/2019/02/28/cs231-knn" rel="alternate" type="text/html" title="[CS231] K-Nearest-Neighbor Classifier" /><published>2019-02-28T00:00:00+08:00</published><updated>2019-02-28T00:00:00+08:00</updated><id>http://localhost:4000/2019/02/28/cs231-knn</id><content type="html" xml:base="http://localhost:4000/2019/02/28/cs231-knn">&lt;blockquote&gt;
+  &lt;p&gt;gist of KNN Classifier.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/img/20190228-knn.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="cs231" /><category term="machine learning" /><category term="knn" /><summary type="html">gist of KNN Classifier.</summary></entry><entry><title type="html">What is DOM?</title><link href="http://localhost:4000/2019/02/28/what-is-dom" rel="alternate" type="text/html" title="What is DOM?" /><published>2019-02-28T00:00:00+08:00</published><updated>2019-02-28T00:00:00+08:00</updated><id>http://localhost:4000/2019/02/28/what-is-dom</id><content type="html" xml:base="http://localhost:4000/2019/02/28/what-is-dom">&lt;blockquote&gt;
   &lt;p&gt;It’s the abbre. of &lt;strong&gt;Document Object Model (DOM)&lt;/strong&gt;&lt;/p&gt;
 
   &lt;p&gt;In short:&lt;/p&gt;
@@ -580,15 +1186,7 @@ f(w)  &amp; \mbox{if} \ w\  \mbox{satisfies primal constraints} \\
 &lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://www.w3.org/TR/DOM-Level-2-Core/introduction.html&quot;&gt;What is the Document Object Model? - w3.org&lt;/a&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Web Developing&quot;]" /><category term="javascript" /><category term="web developing" /><summary type="html">It’s the abbre. of Document Object Model (DOM) In short: The Document Object Model (DOM) is an application programming interface (API) for valid HTML and well-formed XML documents. It defines the logical structure of documents and the way a document is accessed and manipulated. In the DOM specification, the term “document” is used in the broad sense - increasingly, XML is being used as a way of representing many different kinds of information that may be stored in diverse systems, and much of this would traditionally be seen as data rather than as documents. Nevertheless, XML presents this data as documents, and the DOM may be used to manage this data. Reference What is the Document Object Model? - w3.org KF</summary></entry><entry><title type="html">[CS231] K-Nearest-Neighbor Classifier</title><link href="http://localhost:4000/2019/02/28/cs231-knn" rel="alternate" type="text/html" title="[CS231] K-Nearest-Neighbor Classifier" /><published>2019-02-28T00:00:00+08:00</published><updated>2019-02-28T00:00:00+08:00</updated><id>http://localhost:4000/2019/02/28/cs231-knn</id><content type="html" xml:base="http://localhost:4000/2019/02/28/cs231-knn">&lt;blockquote&gt;
-  &lt;p&gt;gist of KNN Classifier.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;&lt;img src=&quot;/public/img/20190228-knn.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="cs231" /><category term="machine learning" /><category term="knn" /><summary type="html">gist of KNN Classifier.</summary></entry><entry><title type="html">[Python/NumPy] Matrix(Arrays) Manipulations &amp;amp; Operations</title><link href="http://localhost:4000/2019/02/28/python-matrix-manipulations" rel="alternate" type="text/html" title="[Python/NumPy] Matrix(Arrays) Manipulations &amp; Operations" /><published>2019-02-28T00:00:00+08:00</published><updated>2019-02-28T00:00:00+08:00</updated><id>http://localhost:4000/2019/02/28/python-matrix-manipulations</id><content type="html" xml:base="http://localhost:4000/2019/02/28/python-matrix-manipulations">&lt;blockquote&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Web Developing&quot;]" /><category term="javascript" /><category term="web developing" /><summary type="html">It’s the abbre. of Document Object Model (DOM) In short: The Document Object Model (DOM) is an application programming interface (API) for valid HTML and well-formed XML documents. It defines the logical structure of documents and the way a document is accessed and manipulated. In the DOM specification, the term “document” is used in the broad sense - increasingly, XML is being used as a way of representing many different kinds of information that may be stored in diverse systems, and much of this would traditionally be seen as data rather than as documents. Nevertheless, XML presents this data as documents, and the DOM may be used to manage this data. Reference What is the Document Object Model? - w3.org KF</summary></entry><entry><title type="html">[Python/NumPy] Matrix(Arrays) Manipulations &amp;amp; Operations</title><link href="http://localhost:4000/2019/02/28/python-matrix-manipulations" rel="alternate" type="text/html" title="[Python/NumPy] Matrix(Arrays) Manipulations &amp; Operations" /><published>2019-02-28T00:00:00+08:00</published><updated>2019-02-28T00:00:00+08:00</updated><id>http://localhost:4000/2019/02/28/python-matrix-manipulations</id><content type="html" xml:base="http://localhost:4000/2019/02/28/python-matrix-manipulations">&lt;blockquote&gt;
   &lt;p&gt;A collection of frequently used python/numpy techniques on matrix (numpy arrays) manipulation and operations.&lt;/p&gt;
 &lt;/blockquote&gt;
 

@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+      Python Modules and Packages
+      
+      2019
+    </title>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/res/favicon.ico">
+	<!--
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+	-->
+    <link rel="stylesheet" href="/assets/css/materialize.min.css">
+    <link rel="stylesheet" href="/assets/css/Material+Icons.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <link rel="stylesheet" href="/assets/css/post.css">
+    
+    
+    
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Python Modules and Packages" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Programming in python with modules and packages is always good practice. There are several advantages to modularizing code in a large application: Simplicity: Rather than focusing on the entire problem at hand, a module typically focuses on one relatively small portion of the problem. If you’re working on a single module, you’ll have a smaller problem domain to wrap your head around. This makes development easier and less error-prone. Maintainability: Modules are typically designed so that they enforce logical boundaries between different problem domains. If modules are written in a way that minimizes interdependency, there is decreased likelihood that modifications to a single module will have an impact on other parts of the program. (You may even be able to make changes to a module without having any knowledge of the application outside that module.) This makes it more viable for a team of many programmers to work collaboratively on a large application. Reusability: Functionality defined in a single module can be easily reused (through an appropriately defined interface) by other parts of the application. This eliminates the need to recreate duplicate code. Scoping: Modules typically define a separate namespace, which helps avoid collisions between identifiers in different areas of a program. (One of the tenets in the Zen of Python is Namespaces are one honking great idea—let’s do more of those!) Here is a collection of Python modules and packages." />
+<meta property="og:description" content="Programming in python with modules and packages is always good practice. There are several advantages to modularizing code in a large application: Simplicity: Rather than focusing on the entire problem at hand, a module typically focuses on one relatively small portion of the problem. If you’re working on a single module, you’ll have a smaller problem domain to wrap your head around. This makes development easier and less error-prone. Maintainability: Modules are typically designed so that they enforce logical boundaries between different problem domains. If modules are written in a way that minimizes interdependency, there is decreased likelihood that modifications to a single module will have an impact on other parts of the program. (You may even be able to make changes to a module without having any knowledge of the application outside that module.) This makes it more viable for a team of many programmers to work collaboratively on a large application. Reusability: Functionality defined in a single module can be easily reused (through an appropriately defined interface) by other parts of the application. This eliminates the need to recreate duplicate code. Scoping: Modules typically define a separate namespace, which helps avoid collisions between identifiers in different areas of a program. (One of the tenets in the Zen of Python is Namespaces are one honking great idea—let’s do more of those!) Here is a collection of Python modules and packages." />
+<link rel="canonical" href="http://localhost:4000/2019/03/07/python-module-package" />
+<meta property="og:url" content="http://localhost:4000/2019/03/07/python-module-package" />
+<meta property="og:site_name" content="Everest" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-03-07T00:00:00+08:00" />
+<script type="application/ld+json">
+{"description":"Programming in python with modules and packages is always good practice. There are several advantages to modularizing code in a large application: Simplicity: Rather than focusing on the entire problem at hand, a module typically focuses on one relatively small portion of the problem. If you’re working on a single module, you’ll have a smaller problem domain to wrap your head around. This makes development easier and less error-prone. Maintainability: Modules are typically designed so that they enforce logical boundaries between different problem domains. If modules are written in a way that minimizes interdependency, there is decreased likelihood that modifications to a single module will have an impact on other parts of the program. (You may even be able to make changes to a module without having any knowledge of the application outside that module.) This makes it more viable for a team of many programmers to work collaboratively on a large application. Reusability: Functionality defined in a single module can be easily reused (through an appropriately defined interface) by other parts of the application. This eliminates the need to recreate duplicate code. Scoping: Modules typically define a separate namespace, which helps avoid collisions between identifiers in different areas of a program. (One of the tenets in the Zen of Python is Namespaces are one honking great idea—let’s do more of those!) Here is a collection of Python modules and packages.","@type":"BlogPosting","url":"http://localhost:4000/2019/03/07/python-module-package","headline":"Python Modules and Packages","dateModified":"2019-03-07T00:00:00+08:00","datePublished":"2019-03-07T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/03/07/python-module-package"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <header>
+	  <!--
+      <nav class="top-nav teal">
+	  -->
+      <nav class="top-nav ohio-state-scarlet">
+        <div class="nav-wrapper">
+          <div class="container">
+            <a class="page-title" href="/">Everest<sup>2019</sup></a>
+            <img class="buckeye_leaf" src="/assets/res/buckeye_leaf.png" alt="buckeye_leaf">
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <a href="#" data-activates="slide-out" class="button-collapse top-nav full hide-on-large-only">
+          <i class="material-icons">menu</i>
+        </a>
+      </div>
+      <ul id="slide-out" class="side-nav fixed">
+        <li>
+          <div class="userView">
+            <div class="background"></div>
+            <a href="https://github.com/zkf85" target="_blank"><img class="circle z-depth-2" src="/assets/res/lion_king.jpg"></a>
+            <span class="white-text name">Zhu, Kefeng</span>
+			<!--
+            <span class="white-text email">zkf1985@gmail.com</span>
+			-->
+            <span class="white-text email"><i>A Programmer, An AI Practitioner</i></span>
+          </div>
+        </li>
+
+        <li class="subheader">BLOG</li>
+        <li><a class="waves-effect" href="/"><i class="material-icons">home</i>Home</a></li>
+        <li><a class="waves-effect" href="/categories"><i class="material-icons">sort</i>Categories</a></li>
+        <li><a class="waves-effect" href="/tags"><i class="material-icons">label</i>Tags</a></li>
+<!--
+<li><a class="waves-effect" href="/feed.xml" target="_blank"><i class="material-icons">rss_feed</i>RSS</a></li>
+-->        
+        <li class="subheader">COLLECTIONS</li>
+        <li><a class="waves-effect" href="/cs229"><i class="material-icons">widgets</i>CS229</a></li>
+        <li><a class="waves-effect" href="/mit6006"><i class="material-icons">storage</i>MIT6006</a></li>
+        <li><a class="waves-effect" href="/leetcode"><i class="material-icons">code</i>LeetCode</a></li>
+
+        <li class="subheader">OTHERS</li>
+        <li><a class="waves-effect" href="/about"><i class="material-icons">person</i>About Me</a></li>
+        <li><a class="waves-effect" href="/calligraphy"><i class="material-icons">dashboard</i>書</a></li>
+        <!-- <li><a class="waves-effect" href="/contact"><i class="material-icons">email</i>Contact</a></li> -->
+      </ul>
+    </header>
+    <main>
+
+<!--
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+-->
+<!-- KF 02/14/2019
+The following snippet is to allow single $ style inline mode.
+Remember that after enabling this, you have to enter the real dollar sings with `\$`
+-->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<div class="container">
+  <div id="post-info">
+  <h1>Python Modules and Packages</h1>
+  <ul class="collapsible hoverable" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Date">date_range</i>
+           
+          Mar.
+            
+          07, 2019 - Thursday
+          <i id="indicate" class="right material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Show extra info">info</i>
+        </span>
+      </div>
+      <div class="collapsible-body">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Categories">sort</i>
+          
+          
+          
+          <a href="/categories#python_cap" target="_blank"><div class="chip">Python</div></a>
+          
+        </span>
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Tags">label</i>
+          
+          
+          
+          <a href="/tags#python" target="_blank"><div class="chip">python</div></a>
+          
+          
+          
+          <a href="/tags#module" target="_blank"><div class="chip">module</div></a>
+          
+        </span>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="row">
+  <div class="col s12">
+    <blockquote>
+  <p>Programming in python with <strong>modules</strong> and <strong>packages</strong> is always good practice.</p>
+
+  <p>There are several advantages to modularizing code in a large application:</p>
+  <ul>
+    <li><strong>Simplicity</strong>: Rather than focusing on the entire problem at hand, a module typically focuses on one relatively small portion of the problem. If you’re working on a single module, you’ll have a smaller problem domain to wrap your head around. This makes development easier and less error-prone.</li>
+    <li><strong>Maintainability</strong>: Modules are typically designed so that they enforce logical boundaries between different problem domains. If modules are written in a way that minimizes interdependency, there is decreased likelihood that modifications to a single module will have an impact on other parts of the program. (You may even be able to make changes to a module without having any knowledge of the application outside that module.) This makes it more viable for a team of many programmers to work collaboratively on a large application.</li>
+    <li><strong>Reusability</strong>: Functionality defined in a single module can be easily reused (through an appropriately defined interface) by other parts of the application. This eliminates the need to recreate duplicate code.</li>
+    <li><strong>Scoping</strong>: Modules typically define a separate namespace, which helps avoid collisions between identifiers in different areas of a program. (One of the tenets in the Zen of Python is Namespaces are one honking great idea—let’s do more of those!)</li>
+  </ul>
+
+  <p>Here is a collection of Python <strong>modules</strong> and <strong>packages</strong>.</p>
+</blockquote>
+
+<p><img src="/public/img/20190307-python-modules-packages.jpg" alt="" /></p>
+
+<!--more-->
+<ul id="markdown-toc">
+  <li><a href="#0-major-reference" id="markdown-toc-0-major-reference">0. Major Reference</a></li>
+  <li><a href="#1-an-overview-of-python-modules" id="markdown-toc-1-an-overview-of-python-modules">1. An Overview of Python Modules</a>    <ul>
+      <li><a href="#11-what-is-a-module" id="markdown-toc-11-what-is-a-module">1.1. What is a “Module”?</a></li>
+      <li><a href="#12-an-example" id="markdown-toc-12-an-example">1.2. An Example</a></li>
+    </ul>
+  </li>
+  <li><a href="#2-the-module-search-path" id="markdown-toc-2-the-module-search-path">2. The Module Search Path</a>    <ul>
+      <li><a href="#21-where-does-python-search" id="markdown-toc-21-where-does-python-search">2.1. Where does Python search?</a></li>
+      <li><a href="#22-how-to-ensure-you-module-is-found" id="markdown-toc-22-how-to-ensure-you-module-is-found">2.2. How to ensure you module is found?</a></li>
+      <li><a href="#23-how-to-find-the-location-of-you-module" id="markdown-toc-23-how-to-find-the-location-of-you-module">2.3. How to find the “location” of you module?</a></li>
+    </ul>
+  </li>
+  <li><a href="#3-the-import-statement" id="markdown-toc-3-the-import-statement">3. The <code class="highlighter-rouge">import</code> Statement</a>    <ul>
+      <li><a href="#31-import-module_name" id="markdown-toc-31-import-module_name">3.1. <code class="highlighter-rouge">import &lt;module_name&gt;</code></a></li>
+      <li><a href="#32-from-module_name-import-names" id="markdown-toc-32-from-module_name-import-names">3.2. <code class="highlighter-rouge">from &lt;module_name&gt; import &lt;name(s)&gt;</code></a></li>
+      <li><a href="#33-from-module_name-import-name-as-alt_name" id="markdown-toc-33-from-module_name-import-name-as-alt_name">3.3. <code class="highlighter-rouge">from &lt;module_name&gt; import &lt;name&gt; as &lt;alt_name&gt;</code></a></li>
+      <li><a href="#34-import-module_name-as-alt_name" id="markdown-toc-34-import-module_name-as-alt_name">3.4. <code class="highlighter-rouge">import &lt;module_name&gt; as &lt;alt_name&gt;</code></a></li>
+    </ul>
+  </li>
+  <li><a href="#4-the-dir-function" id="markdown-toc-4-the-dir-function">4. The <code class="highlighter-rouge">dir()</code> Function</a></li>
+  <li><a href="#5-executing-a-module-as-a-script" id="markdown-toc-5-executing-a-module-as-a-script">5. Executing a Module as a Script</a>    <ul>
+      <li><a href="#51-run-as-standalone-vs-import-as-module" id="markdown-toc-51-run-as-standalone-vs-import-as-module">5.1. Run as Standalone V.S. import as Module</a></li>
+      <li><a href="#52-module-design-convention" id="markdown-toc-52-module-design-convention">5.2. Module Design Convention</a></li>
+    </ul>
+  </li>
+  <li><a href="#6-reloading-a-module" id="markdown-toc-6-reloading-a-module">6. Reloading a Module</a>    <ul>
+      <li><a href="#61-yolo---you-only-load-once" id="markdown-toc-61-yolo---you-only-load-once">6.1. YOLO - “You Only Load Once”</a></li>
+      <li><a href="#62-reload-using-importlibreload" id="markdown-toc-62-reload-using-importlibreload">6.2. Reload using <code class="highlighter-rouge">importlib.reload()</code></a></li>
+    </ul>
+  </li>
+  <li><a href="#7-python-pachages" id="markdown-toc-7-python-pachages">7. Python Pachages</a>    <ul>
+      <li><a href="#71-intuition" id="markdown-toc-71-intuition">7.1. Intuition:</a></li>
+      <li><a href="#72-create-a-package" id="markdown-toc-72-create-a-package">7.2. Create a Package:</a></li>
+      <li><a href="#73-import-modules-in-the-package" id="markdown-toc-73-import-modules-in-the-package">7.3. Import Modules in the Package:</a></li>
+    </ul>
+  </li>
+  <li><a href="#8-package-initialization" id="markdown-toc-8-package-initialization">8. Package Initialization</a></li>
+  <li><a href="#9-importing--from-a-package--__all__" id="markdown-toc-9-importing--from-a-package--__all__">9. Importing <code class="highlighter-rouge">*</code> From a Package / <code class="highlighter-rouge">__all__</code></a></li>
+  <li><a href="#10-subpackages" id="markdown-toc-10-subpackages">10. Subpackages</a></li>
+  <li><a href="#11-conclusion" id="markdown-toc-11-conclusion">11. Conclusion</a></li>
+</ul>
+
+<h2 id="0-major-reference">0. Major Reference</h2>
+<p><a href="https://realpython.com/python-modules-packages/">» Python Modules and Packages - An Introduction (realpython.com)</a></p>
+
+<h2 id="1-an-overview-of-python-modules">1. An Overview of Python Modules</h2>
+<h3 id="11-what-is-a-module">1.1. What is a “Module”?</h3>
+<p><em>“Python module is a file that contains Python code. Python module’s name is the <strong>file name without extension</strong>. Normally Python module is used to group related functions, classes and variables for better code management and avoiding name clash.  For example in the built-in module, you have a function called <code class="highlighter-rouge">f1()</code> and in your program your also want to have function f1 as well. In this case, your need to use module to organize the code so that the function has its own namespace.”</em> <sup id="fnref:2"><a href="#fn:2" class="footnote">1</a></sup></p>
+
+<p>A module’s contents can be accessed with the <code class="highlighter-rouge">import</code> statement.</p>
+
+<h3 id="12-an-example">1.2. An Example</h3>
+<p>For example, suppose you have created a file called <code class="highlighter-rouge">mod.py</code> containing the following:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s</span> <span class="o">=</span> <span class="s">"If Comrade Napoleon says it, it must be right."</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'arg = {arg}'</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+    <span class="k">pass</span>
+</code></pre></div></div>
+
+<p>Several objects are defined in <code class="highlighter-rouge">mod.py</code>:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">s</code> (a string)</li>
+  <li><code class="highlighter-rouge">a</code> (a list)</li>
+  <li><code class="highlighter-rouge">foo()</code> (a function)</li>
+  <li><code class="highlighter-rouge">Foo</code> (a class)</li>
+</ul>
+
+<p>Assuming <code class="highlighter-rouge">mod.py</code> is in an appropriate location, which you will learn more about shortly, these objects can be accessed by importing the module as follows:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; import mod
+&gt;&gt;&gt; print(mod.s)
+If Comrade Napoleon says it, it must be right.
+&gt;&gt;&gt; mod.a
+[100, 200, 300]
+&gt;&gt;&gt; mod.foo(['quux', 'corge', 'grault'])
+arg = ['quux', 'corge', 'grault']
+&gt;&gt;&gt; x = mod.Foo()
+&gt;&gt;&gt; x
+&lt;mod.Foo object at 0x03C181F0&gt;
+</code></pre></div></div>
+
+<h2 id="2-the-module-search-path">2. The Module Search Path</h2>
+<h3 id="21-where-does-python-search">2.1. Where does Python search?</h3>
+<p>Continuing with the above example, let’s take a look at what happens when Python executes the statement:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">mod</span>
+</code></pre></div></div>
+
+<p>When the interpreter executes the above import statement, it searches for <code class="highlighter-rouge">mod.py</code> in a list of directories assembled from the following sources:</p>
+
+<ul>
+  <li>The directory from which the input script was run or the <strong>current directory</strong> if the interpreter is being run interactively</li>
+  <li>The list of directories contained in the <strong>PYTHONPATH</strong> environment variable, if it is set. (The format for PYTHONPATH is OS-dependent but should mimic the PATH environment variable.)</li>
+  <li>An installation-dependent list of directories configured at the time Python is installed</li>
+</ul>
+
+<p>The resulting search path is accessible in the Python variable <code class="highlighter-rouge">sys.path</code>, which is obtained from a module named sys:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; import sys
+&gt;&gt;&gt; sys.path
+['', '/home/kefeng/anaconda3/lib/python36.zip', 
+'/home/kefeng/anaconda3/lib/python3.6', 
+'/home/kefeng/anaconda3/lib/python3.6/lib-dynload', 
+'/home/kefeng/anaconda3/lib/python3.6/site-packages']
+</code></pre></div></div>
+
+<h3 id="22-how-to-ensure-you-module-is-found">2.2. How to ensure you module is found?</h3>
+<p>Thus, to ensure your module is found, you need to do one of the following:</p>
+
+<ul>
+  <li>Put <code class="highlighter-rouge">mod.py</code> in the directory where the input script is located or the current directory, if interactive</li>
+  <li>Modify the PYTHONPATH environment variable to contain the directory where <code class="highlighter-rouge">mod.py</code> is located before starting the interpreter
+    <ul>
+      <li>Or: Put<code class="highlighter-rouge"> mod.py</code> in one of the directories already contained in the PYTHONPATH variable</li>
+    </ul>
+  </li>
+  <li>Put <code class="highlighter-rouge">mod.py</code> in one of the installation-dependent directories, which you may or may not have write-access to, depending on the OS</li>
+</ul>
+
+<p>There is actually one additional option: you can put the module file in any directory of your choice and then modify sys.path at run-time so that it contains that directory. For example, in this case, you could put mod.py in directory <code class="highlighter-rouge">~/KFTorch</code> and then issue the following statements:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; sys.path.append('/home/kefeng/KFTorch')
+&gt;&gt;&gt; sys.path
+['', '/home/kefeng/anaconda3/lib/python36.zip', 
+'/home/kefeng/anaconda3/lib/python3.6', 
+'/home/kefeng/anaconda3/lib/python3.6/lib-dynload', 
+'/home/kefeng/anaconda3/lib/python3.6/site-packages', 
+'/home/kefeng/KFTorch']
+&gt;&gt;&gt; import mod
+</code></pre></div></div>
+
+<h3 id="23-how-to-find-the-location-of-you-module">2.3. How to find the “location” of you module?</h3>
+<p>Once a module has been imported, you can determine the location where it was found with the module’s <code class="highlighter-rouge">__file__</code> attribute:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; import mod
+&gt;&gt;&gt; mod.__file__
+'/home/kefeng/KFTorch/mod.py'
+&gt;&gt;&gt; import re
+&gt;&gt;&gt; re.__file__
+'/home/kefeng/anaconda3/lib/python3.6/re.py'
+</code></pre></div></div>
+
+<p>The directory portion of <code class="highlighter-rouge">__file__</code> should be one of the directories in <code class="highlighter-rouge">sys.path</code>.</p>
+
+<h2 id="3-the-import-statement">3. The <code class="highlighter-rouge">import</code> Statement</h2>
+<p><strong>Module</strong> contents are made available to the caller with the <code class="highlighter-rouge">import</code> statement. The <code class="highlighter-rouge">import</code> statement takes many different forms, shown below.</p>
+
+<h3 id="31-import-module_name">3.1. <code class="highlighter-rouge">import &lt;module_name&gt;</code></h3>
+<p>The simplest form is the one already shown above:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="o">&lt;</span><span class="n">module_name</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>Note that this does not make the module contents directly accessible to the caller. Each module has its <strong>own private symbol table</strong>, which serves as the global symbol table for all objects defined in the module. Thus, a module creates a separate <strong>namespace</strong>, as already noted.</p>
+
+<p>The statement <code class="highlighter-rouge">import &lt;module_name&gt;</code> only places <code class="highlighter-rouge">&lt;module_name&gt;</code> in the caller’s symbol table. The objects that are defined in the module remain in the module’s private symbol table.</p>
+
+<p>From the caller, objects in the module are only accessible when prefixed with <code class="highlighter-rouge">&lt;module_name&gt;</code> via dot notation, as illustrated below.</p>
+
+<p>After the following <code class="highlighter-rouge">import</code> statement, <code class="highlighter-rouge">mod</code> is placed into the local symbol table. Thus, mod has meaning in the caller’s local context:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; import mod
+&gt;&gt;&gt; mod
+&lt;module 'mod' from '/home/kefeng/KFTorch/mod.py'&gt;
+</code></pre></div></div>
+
+<p>But <code class="highlighter-rouge">s</code> and <code class="highlighter-rouge">foo</code> remain in the module’s <strong>private symbol table</strong> and are not meaningful in the local context:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; s
+NameError: name 's' is not defined
+&gt;&gt;&gt; foo('abc')
+NameError: name 'foo' is not defined
+</code></pre></div></div>
+
+<p>To be accessed in the local context, names of objects defined in the module <strong>must be prefixed by <code class="highlighter-rouge">mod</code></strong>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; mod.s
+'If Comrade Napoleon says it, it must be right.'
+&gt;&gt;&gt; mod.foo('abc')
+arg = abc
+</code></pre></div></div>
+
+<p>Several comma-separated modules may be specified in a single <code class="highlighter-rouge">import</code> statement:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="o">&lt;</span><span class="n">module_name</span><span class="o">&gt;</span><span class="p">[,</span> <span class="o">&lt;</span><span class="n">module_name</span><span class="o">&gt;</span> <span class="o">...</span><span class="p">]</span>
+</code></pre></div></div>
+
+<h3 id="32-from-module_name-import-names">3.2. <code class="highlighter-rouge">from &lt;module_name&gt; import &lt;name(s)&gt;</code></h3>
+<p>An alternate form of the <code class="highlighter-rouge">import</code> statement allows individual objects from the module to be imported <strong>directly</strong> into the <strong>caller’s symbol table</strong>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">from</span> <span class="o">&lt;</span><span class="n">module_name</span><span class="o">&gt;</span> <span class="k">import</span> <span class="o">&lt;</span><span class="n">name</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>Following execution of the above statement,<code class="highlighter-rouge"> &lt;name(s)&gt;</code> can be referenced in the caller’s environment without the <code class="highlighter-rouge">&lt;module_name&gt;</code> prefix:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; from mod import s, foo
+&gt;&gt;&gt; s
+'If Comrade Napoleon says it, it must be right.'
+&gt;&gt;&gt; foo('abc')
+arg = abc
+
+&gt;&gt;&gt; from mod import Foo
+&gt;&gt;&gt; x = Foo()
+&gt;&gt;&gt; x
+&lt;mod.Foo object at 0x7f360cd627b8&gt;
+</code></pre></div></div>
+
+<p>Because this form of <code class="highlighter-rouge">import</code> places the object names directly into the caller’s symbol table, any objects that already exist with the same name will be overwritten:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; a = ['foo', 'bar', 'baz']
+&gt;&gt;&gt; a
+['foo', 'bar', 'baz']
+&gt;&gt;&gt; from mod import a
+&gt;&gt;&gt; a
+[100, 200, 300]
+</code></pre></div></div>
+
+<p>It is even possible to indiscriminately <code class="highlighter-rouge">import</code> everything from a module at one fell swoop:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">from</span> <span class="o">&lt;</span><span class="n">module_name</span><span class="o">&gt;</span> <span class="k">import</span> <span class="o">*</span>
+</code></pre></div></div>
+
+<p>This will place the names of <strong>all objects</strong> from <code class="highlighter-rouge">&lt;module_name&gt;</code> into the <strong>local symbol table</strong>, <strong>with the exception of any that begin with the underscore (_) character.</strong></p>
+
+<p>For example:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; from mod import *
+&gt;&gt;&gt; s
+'If Comrade Napoleon says it, it must be right.'
+&gt;&gt;&gt; a
+[100, 200, 300]
+&gt;&gt;&gt; foo
+&lt;function foo at 0x03B449C0&gt;
+&gt;&gt;&gt; Foo
+&lt;class 'mod.Foo'&gt;
+</code></pre></div></div>
+
+<blockquote>
+  <p><strong>Note:</strong> This <strong>isn’t necessarily recommended</strong> in large-scale production code. It’s a bit dangerous because you are entering names into the local symbol table <a href="https://www.merriam-webster.com/dictionary/en%20masse">en masse</a>. Unless you know them all well and can be confident there won’t be a conflict, you have a decent chance of overwriting an existing name <a href="https://www.merriam-webster.com/dictionary/inadvertently">inadvertently</a>. However, this syntax is quite handy when you are just <a href="https://www.merriam-webster.com/dictionary/mucking">mucking</a> around with the interactive interpreter, for testing or discovery purposes, because it quickly gives you access to everything a module has to offer without a lot of typing.</p>
+</blockquote>
+
+<h3 id="33-from-module_name-import-name-as-alt_name">3.3. <code class="highlighter-rouge">from &lt;module_name&gt; import &lt;name&gt; as &lt;alt_name&gt;</code></h3>
+<p>It is also possible to import individual objects but enter them into the local symbol table with alternate names:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">from</span> <span class="o">&lt;</span><span class="n">module_name</span><span class="o">&gt;</span> <span class="k">import</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span> <span class="k">as</span> <span class="o">&lt;</span><span class="n">alt_name</span><span class="o">&gt;</span><span class="p">[,</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span> <span class="k">as</span> <span class="o">&lt;</span><span class="n">alt_name</span><span class="o">&gt;</span> <span class="err">…</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>This makes it possible to place names directly into the local symbol table but avoid conflicts with previously existing names:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; s = 'foo'
+&gt;&gt;&gt; a = ['foo', 'bar', 'baz']
+
+&gt;&gt;&gt; from mod import s as string, a as alist
+&gt;&gt;&gt; s
+'foo'
+&gt;&gt;&gt; string
+'If Comrade Napoleon says it, it must be right.'
+&gt;&gt;&gt; a
+['foo', 'bar', 'baz']
+&gt;&gt;&gt; alist
+[100, 200, 300]
+</code></pre></div></div>
+<h3 id="34-import-module_name-as-alt_name">3.4. <code class="highlighter-rouge">import &lt;module_name&gt; as &lt;alt_name&gt;</code></h3>
+<p>You can also import an entire module under an alternate name:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="o">&lt;</span><span class="n">module_name</span><span class="o">&gt;</span> <span class="k">as</span> <span class="o">&lt;</span><span class="n">alt_name</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; import mod as my_module
+&gt;&gt;&gt; my_module.a
+[100, 200, 300]
+&gt;&gt;&gt; my_module.foo('qux')
+arg = qux
+</code></pre></div></div>
+
+<p>Module contents can be imported from within a function definition. In that case, the import does not occur until the function is called:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; def bar():
+...     from mod import foo
+...     foo('corge')
+...
+
+&gt;&gt;&gt; bar()
+arg = corge
+</code></pre></div></div>
+
+<p>However, Python 3 does not allow the indiscriminate <code class="highlighter-rouge">import *</code> syntax from within a function:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; def bar():
+...     from mod import *
+...
+SyntaxError: import * only allowed at module level
+</code></pre></div></div>
+
+<p>Lastly, a <code class="highlighter-rouge">try</code> statement with an <code class="highlighter-rouge">except ImportError</code> clause can be used to guard against unsuccessful import attempts:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; try:
+...     # Non-existent module
+...     import baz
+... except ImportError:
+...     print('Module not found')
+...
+
+Module not found
+&gt;&gt;&gt;
+&gt;&gt;&gt; try:
+...     # Existing module, but non-existent object
+...     from mod import baz
+... except ImportError:
+...     print('Object not found in module')
+...
+
+Object not found in module
+</code></pre></div></div>
+
+<h2 id="4-the-dir-function">4. The <code class="highlighter-rouge">dir()</code> Function</h2>
+<p>The built-in function dir() returns a list of defined names in a <strong>namespace（命名空间）</strong>. Without arguments, it produces an alphabetically sorted list of names in the current <strong>local symbol table</strong>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; dir()
+['Foo', '__annotations__', '__builtins__', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'mod', 're', 'sys', 'x']
+</code></pre></div></div>
+
+<p>This can be useful for identifying what exactly has been added to the namespace by an import statement:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; import sys
+&gt;&gt;&gt; sys.path.append('/home/kefeng/KFTorch')
+&gt;&gt;&gt; dir()
+['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'sys']
+&gt;&gt;&gt; import mod
+&gt;&gt;&gt; dir()
+['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'mod', 'sys']
+&gt;&gt;&gt; mod.s
+'If Comrade Napoleon says it, it must be right.'
+&gt;&gt;&gt; from mod import a, Foo
+&gt;&gt;&gt; dir()
+['Foo', '__annotations__', '__builtins__', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'a', 'mod', 'sys']
+&gt;&gt;&gt; from mod import s as string
+&gt;&gt;&gt; dir()
+['Foo', '__annotations__', '__builtins__', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'a', 'mod', 'string', 'sys']
+&gt;&gt;&gt; string
+'If Comrade Napoleon says it, it must be right.'
+</code></pre></div></div>
+
+<p>When given an argument that is the name of a module, dir() lists the names defined in the module:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; import mod
+&gt;&gt;&gt; dir(mod)
+['Foo', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'a', 'foo', 's']
+</code></pre></div></div>
+
+<h2 id="5-executing-a-module-as-a-script">5. Executing a Module as a Script</h2>
+<h3 id="51-run-as-standalone-vs-import-as-module">5.1. Run as Standalone V.S. import as Module</h3>
+<p>Any <code class="highlighter-rouge">.py</code> file that contains a <strong>module</strong> is essentially also a Python <strong>script</strong>, and there isn’t any reason it can’t be executed like one.</p>
+
+<p>When a Python module could generate some output when run as a script, as below:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s</span> <span class="o">=</span> <span class="s">"If Comrade Napoleon says it, it must be right."</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'arg = {arg}'</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">foo</span><span class="p">(</span><span class="s">'quux'</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Now when it is imported as a module, it also generates output, which we don’t want:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; import mod
+If Comrade Napoleon says it, it must be right.
+[100, 200, 300]
+arg = quux
+&lt;mod.Foo object at 0x7fe0b8b11eb8&gt;
+&gt;&gt;&gt; 
+</code></pre></div></div>
+
+<p><strong><em>It would be nice if we could distinguish between when the file is loaded as a module and when it is run as a standalone script.</em></strong></p>
+
+<p>Here is the way:</p>
+
+<p>When a <code class="highlighter-rouge">.py</code> file is imported as a module, Python sets the special variable <code class="highlighter-rouge">__name__</code> to the name of the module. However, if a file is run as a standalone script, <code class="highlighter-rouge">__name__</code> is (creatively) set to the string <code class="highlighter-rouge">'__main__'</code>. Using this fact, you can discern which is the case at run-time and alter behavior accordingly:</p>
+
+<p><em><code class="highlighter-rouge">mod.py</code></em></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s</span> <span class="o">=</span> <span class="s">"If Comrade Napoleon says it, it must be right."</span>                                            
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'arg = {arg}'</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Executing as standalone script'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">foo</span><span class="p">(</span><span class="s">'quux'</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Now, when run the script, we can get output:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kefeng@server:~/KFTorch$ python mod.py 
+Executing as standalone script
+If Comrade Napoleon says it, it must be right.
+[100, 200, 300]
+arg = quux
+&lt;__main__.Foo object at 0x7f4c44cee438&gt;
+</code></pre></div></div>
+
+<p>But if we import it as a module:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; import mod
+&gt;&gt;&gt; mod.s
+'If Comrade Napoleon says it, it must be right.'
+</code></pre></div></div>
+
+<h3 id="52-module-design-convention">5.2. Module Design Convention</h3>
+<p>Modules are often designed with the capability to run as a standalone script for purposes of testing the functionality that is contained within the module. This is referred to as <a href="https://realpython.com/python-testing/">unit testing</a>. For <strong>example</strong>, suppose you have created a module <code class="highlighter-rouge">fact.py</code> containing a <code class="highlighter-rouge">factorial function</code>, as follows:</p>
+
+<p><strong><em>fact.py</em></strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">fact</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="n">n</span> <span class="o">*</span> <span class="n">fact</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">sys</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">fact</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])))</span>
+</code></pre></div></div>
+
+<p>When it’s imported as a module:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; from factorial import fact
+&gt;&gt;&gt; fact(5)
+120
+</code></pre></div></div>
+
+<p>When it’s run as a standalone script by passing an integer argument on the command-line for testing:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kefeng@server:~/KFTorch$ python factorial.py 5
+120
+</code></pre></div></div>
+
+<h2 id="6-reloading-a-module">6. Reloading a Module</h2>
+<h3 id="61-yolo---you-only-load-once">6.1. YOLO - “You Only Load Once”</h3>
+<p>For reasons of efficiency, a module is <strong>only loaded once per interpreter session</strong>. That is fine for function and class definitions, which typically make up the bulk of a module’s contents. But a module can contain executable statements as well, usually for initialization. Be aware that these statements will <strong>only be executed the first time a module is imported</strong>.</p>
+
+<p>Consider the following file <code class="highlighter-rouge">mod.py</code>:</p>
+
+<p><strong><em>mod.py</em></strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'a ='</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; import mod
+a = [100, 200, 300]
+&gt;&gt;&gt; import mod
+&gt;&gt;&gt; import mod
+
+&gt;&gt;&gt; mod.a
+[100, 200, 300]
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">print()</code> statement is not executed on subsequent imports. (For that matter, neither is the assignment statement, but as the final display of the value of mod.a shows, that doesn’t matter. Once the assignment is made, it sticks.)</p>
+
+<h3 id="62-reload-using-importlibreload">6.2. Reload using <code class="highlighter-rouge">importlib.reload()</code></h3>
+<p>If you make a change to a module and need to reload it, you need to either restart the interpreter or use a function called <code class="highlighter-rouge">reload()</code> from module <code class="highlighter-rouge">importlib</code>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; import mod
+a = [100, 200, 300]
+
+&gt;&gt;&gt; import mod
+
+&gt;&gt;&gt; import importlib
+&gt;&gt;&gt; importlib.reload(mod)
+a = [100, 200, 300]
+&lt;module 'mod' from '/home/kefeng/KFTorch/mod.py'&gt;
+</code></pre></div></div>
+
+<h2 id="7-python-pachages">7. Python Pachages</h2>
+<h3 id="71-intuition">7.1. Intuition:</h3>
+<p>Suppose you have developed a very large application that includes many modules. As the number of modules grows, it becomes <strong>difficult to keep track of them all</strong> if they are dumped into one location. This is particularly so if they have similar names or functionality. You might wish for a means of grouping and organizing them. Here we introduce the concept of <strong>“Package”</strong>.</p>
+
+<ul>
+  <li>Packages allow for a hierarchical structuring of the module namespace using dot notation;</li>
+  <li>Packages help avoid collisions between module names (in the same way that modules help avoid collisions between global variable names).</li>
+</ul>
+
+<h3 id="72-create-a-package">7.2. Create a Package:</h3>
+<p>Creating a package is quite straightforward, since it makes use of the operating system’s inherent hierarchical file structure. Consider the following arrangement:</p>
+
+<p><img src="/public/img/20190307-pkg1.png" alt="" /></p>
+
+<p>Here, there is a directory named pkg that contains two modules, <code class="highlighter-rouge">mod1.py</code> and <code class="highlighter-rouge">mod2.py</code>. The contents of the modules are:</p>
+
+<p><strong><em>mod1.py</em></strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'[mod1] foo()'</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+    <span class="k">pass</span>
+</code></pre></div></div>
+
+<p><strong><em>mod2.py</em></strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">bar</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'[mod2] bar()'</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Bar</span><span class="p">:</span>
+    <span class="k">pass</span>
+</code></pre></div></div>
+
+<h3 id="73-import-modules-in-the-package">7.3. Import Modules in the Package:</h3>
+<p>Given this structure, if the <code class="highlighter-rouge">pkg</code> directory resides in a location where it can be found (in one of the directories contained in <code class="highlighter-rouge">sys.path</code>), you can refer to the two modules with dot notation (<code class="highlighter-rouge">pkg.mod1</code>, <code class="highlighter-rouge">pkg.mod2</code>) and import them with the syntax you are already familiar with:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="o">&lt;</span><span class="n">module_name</span><span class="o">&gt;</span><span class="p">[,</span> <span class="o">&lt;</span><span class="n">module_name</span><span class="o">&gt;</span> <span class="o">...</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; import pkg.mod1, pkg.mod2
+&gt;&gt;&gt; pkg.mod1.foo()
+[mod1] foo()
+&gt;&gt;&gt; x = pkg.mod2.Bar()
+&gt;&gt;&gt; x
+&lt;pkg.mod2.Bar object at 0x033F7290&gt;
+from &lt;module_name&gt; import &lt;name(s)&gt;
+&gt;&gt;&gt;
+&gt;&gt;&gt; from pkg.mod1 import foo
+&gt;&gt;&gt; foo()
+[mod1] foo()
+from &lt;module_name&gt; import &lt;name&gt; as &lt;alt_name&gt;
+&gt;&gt;&gt;
+&gt;&gt;&gt; from pkg.mod2 import Bar as Qux
+&gt;&gt;&gt; x = Qux()
+&gt;&gt;&gt; x
+&lt;pkg.mod2.Bar object at 0x036DFFD0&gt;
+</code></pre></div></div>
+
+<p>You can import modules with these statements as well:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">from</span> <span class="o">&lt;</span><span class="n">package_name</span><span class="o">&gt;</span> <span class="k">import</span> <span class="o">&lt;</span><span class="n">modules_name</span><span class="o">&gt;</span><span class="p">[,</span> <span class="o">&lt;</span><span class="n">module_name</span><span class="o">&gt;</span> <span class="o">...</span><span class="p">]</span>
+<span class="k">from</span> <span class="o">&lt;</span><span class="n">package_name</span><span class="o">&gt;</span> <span class="k">import</span> <span class="o">&lt;</span><span class="n">module_name</span><span class="o">&gt;</span> <span class="k">as</span> <span class="o">&lt;</span><span class="n">alt_name</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; from pkg import mod1
+&gt;&gt;&gt; mod1.foo()
+[mod1] foo()
+
+&gt;&gt;&gt; from pkg import mod2 as quux
+&gt;&gt;&gt; quux.bar()
+[mod2] bar()
+</code></pre></div></div>
+
+<p>You can technically import the package as well:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; import pkg
+&gt;&gt;&gt; pkg
+&lt;module 'pkg' (namespace)&gt;
+</code></pre></div></div>
+
+<p>But this is of little avail. Though this is, strictly speaking, a syntactically correct Python statement, it doesn’t do much of anything useful. In particular, it does not place any of the modules in pkg into the local namespace:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; pkg.mod1
+Traceback (most recent call last):
+  File "&lt;pyshell#34&gt;", line 1, in &lt;module&gt;
+    pkg.mod1
+AttributeError: module 'pkg' has no attribute 'mod1'
+&gt;&gt;&gt; pkg.mod1.foo()
+Traceback (most recent call last):
+  File "&lt;pyshell#35&gt;", line 1, in &lt;module&gt;
+    pkg.mod1.foo()
+AttributeError: module 'pkg' has no attribute 'mod1'
+&gt;&gt;&gt; pkg.mod2.Bar()
+Traceback (most recent call last):
+  File "&lt;pyshell#36&gt;", line 1, in &lt;module&gt;
+    pkg.mod2.Bar()
+AttributeError: module 'pkg' has no attribute 'mod2'
+</code></pre></div></div>
+
+<p>To actually import the modules or their contents, you need to use one of the forms shown above.</p>
+
+<h2 id="8-package-initialization">8. Package Initialization</h2>
+<p>If a file named <code class="highlighter-rouge">__init__.py</code> is present in a package directory, it is invoked when the package or a module in the package is imported. This can be used for execution of package initialization code, such as initialization of package-level data.</p>
+
+<p><strong><em>__init__.py</em></strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Invoking __init__.py for {__name__}'</span><span class="p">)</span>                                
+<span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="s">'aaa'</span><span class="p">,</span><span class="s">'bbb'</span><span class="p">,</span><span class="s">'ccc'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Add this file to the <code class="highlighter-rouge">pkg</code> directory:</p>
+
+<p><img src="/public/img/20190307-pkg2.png" alt="" /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; import importlib
+&gt;&gt;&gt; importlib.reload(KFTorch)
+Invoking __init__.py for KFTorch
+&lt;module 'KFTorch' from '/home/kefeng/KFTorch/__init__.py'&gt;
+&gt;&gt;&gt; KFTorch.A
+['aaa', 'bbb', 'ccc']
+</code></pre></div></div>
+
+<p>A <strong>module</strong> in the package can access the global by importing it in turn:</p>
+
+<p><strong><em>mod1.py</em></strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="kn">from</span> <span class="nn">pkg</span> <span class="kn">import</span> <span class="n">A</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'[mod1] foo() / A = '</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+    <span class="k">pass</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; from pkg import mod1
+Invoking __init__.py for pkg
+&gt;&gt;&gt; mod1.foo()
+[mod1] foo() / A =  ['aaa', 'bbb', 'ccc']
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">__init__.py</code> can also be used to effect <strong>automatic importing of modules from a package</strong>. For example, earlier you saw that the statement import <code class="highlighter-rouge">pkg</code> only places the name pkg in the caller’s local symbol table and doesn’t import any modules. But if <code class="highlighter-rouge">__init__.py</code> in the pkg directory contains the following:</p>
+
+<p><strong><em>__init__.py</em></strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Invoking __init__.py for {__name__}'</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">pkg.mod1</span><span class="p">,</span> <span class="n">pkg</span><span class="o">.</span><span class="n">mod2</span>
+<span class="n">then</span> <span class="n">when</span> <span class="n">you</span> <span class="n">execute</span> <span class="kn">import</span> <span class="nn">pkg</span><span class="p">,</span> <span class="n">modules</span> <span class="n">mod1</span> <span class="ow">and</span> <span class="n">mod2</span> <span class="n">are</span> <span class="n">imported</span> <span class="n">automatically</span><span class="p">:</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; import pkg
+Invoking __init__.py for pkg
+&gt;&gt;&gt; pkg.mod1.foo()
+[mod1] foo()
+&gt;&gt;&gt; pkg.mod2.bar()
+[mod2] bar()
+</code></pre></div></div>
+
+<blockquote>
+  <p><strong>Note:</strong> Much of the Python documentation states that an <code class="highlighter-rouge">__init__.py</code> file must be present in the package directory when creating a package. This was once true. It used to be that the very presence of <code class="highlighter-rouge">__init__.py</code> signified to Python that a package was being defined. The file could contain initialization code or even be empty, but it had to be present.</p>
+
+  <p>Starting with Python 3.3, Implicit Namespace Packages were introduced. These allow for the creation of a package without any <code class="highlighter-rouge">__init__.py</code> file. Of course, it can still be present if package initialization is needed. But it is no longer required.</p>
+</blockquote>
+
+<h2 id="9-importing--from-a-package--__all__">9. Importing <code class="highlighter-rouge">*</code> From a Package / <code class="highlighter-rouge">__all__</code></h2>
+<p>For the purposes of the following discussion, the previously defined package is expanded to contain some additional modules:</p>
+
+<p><img src="/public/img/20190307-pkg3.png" alt="" /></p>
+
+<p>There are now four modules defined in the <strong>pkg</strong> directory. Their contents are as shown below:</p>
+
+<p><strong><em>mod1.py</em></strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'[mod1] foo()'</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+    <span class="k">pass</span>
+</code></pre></div></div>
+
+<p><strong><em>mod2.py</em></strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">bar</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'[mod2] bar()'</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Bar</span><span class="p">:</span>
+    <span class="k">pass</span>
+</code></pre></div></div>
+
+<p><strong><em>mod3.py</em></strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">baz</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'[mod3] baz()'</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Baz</span><span class="p">:</span>
+    <span class="k">pass</span>
+</code></pre></div></div>
+
+<p><strong><em>mod4.py</em></strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">qux</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'[mod4] qux()'</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Qux</span><span class="p">:</span>
+    <span class="k">pass</span>
+</code></pre></div></div>
+
+<p>You have already seen that when <code class="highlighter-rouge">import *</code> is used for a <strong>module</strong>, all objects from the module are imported into the local symbol table, except those whose names begin with an underscore, as always:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; dir()
+['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__',
+'__package__', '__spec__']
+
+&gt;&gt;&gt; from pkg.mod3 import *
+
+&gt;&gt;&gt; dir()
+['Baz', '__annotations__', '__builtins__', '__doc__', '__loader__', '__name__',
+'__package__', '__spec__', 'baz']
+&gt;&gt;&gt; baz()
+[mod3] baz()
+&gt;&gt;&gt; Baz
+&lt;class 'pkg.mod3.Baz'&gt;
+</code></pre></div></div>
+
+<p>The analogous statement for a package is this:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">from</span> <span class="o">&lt;</span><span class="n">package_name</span><span class="o">&gt;</span> <span class="k">import</span> <span class="o">*</span>
+</code></pre></div></div>
+
+<p>What does that do?</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; dir()
+['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__',
+'__package__', '__spec__']
+
+&gt;&gt;&gt; from pkg import *
+&gt;&gt;&gt; dir()
+['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__',
+'__package__', '__spec__']
+</code></pre></div></div>
+
+<p>Hmph. Not much. You might have expected (assuming you had any expectations at all) that Python would dive down into the package directory, find all the modules it could, and import them all. But as you can see, by default that is not what happens.</p>
+
+<p>Instead, Python follows this <strong>convention</strong>: if the <code class="highlighter-rouge">__init__.py</code> file in the package directory contains a list named <code class="highlighter-rouge">__all__</code>, it is taken to be a list of modules that should be imported when the statement <code class="highlighter-rouge">from &lt;package_name&gt; import *</code> is encountered.</p>
+
+<p>For the present example, suppose you create an <code class="highlighter-rouge">__init__.py</code> in the <code class="highlighter-rouge">pkg</code> directory like this:</p>
+
+<p><strong><em>pkg/__init__.py</em></strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s">'mod1'</span><span class="p">,</span>
+        <span class="s">'mod2'</span><span class="p">,</span>
+        <span class="s">'mod3'</span><span class="p">,</span>
+        <span class="s">'mod4'</span>
+        <span class="p">]</span>
+</code></pre></div></div>
+
+<p>Now <code class="highlighter-rouge">from pkg import *</code> imports all four modules:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; dir()
+['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__',
+'__package__', '__spec__']
+
+&gt;&gt;&gt; from pkg import *
+&gt;&gt;&gt; dir()
+['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__',
+'__package__', '__spec__', 'mod1', 'mod2', 'mod3', 'mod4']
+&gt;&gt;&gt; mod2.bar()
+[mod2] bar()
+&gt;&gt;&gt; mod4.Qux
+&lt;class 'pkg.mod4.Qux'&gt;
+</code></pre></div></div>
+
+<p>Using <code class="highlighter-rouge">import *</code> still isn’t considered terrific form, any more for packages than for modules. But this facility at least gives the creator of the package some control over what happens when <code class="highlighter-rouge">import *</code> is specified. (In fact, it provides the capability to disallow it entirely, simply by declining to define <code class="highlighter-rouge">__all__</code> at all. As you have seen, the default behavior for packages is to import nothing.)</p>
+
+<p>By the way, <code class="highlighter-rouge">__all__</code> can be <strong>defined in a module as well</strong> and serves the same purpose: to control what is imported with <code class="highlighter-rouge">import *</code>. For example, modify <code class="highlighter-rouge">mod1.py</code> as follows:</p>
+
+<p><strong><em>pkg/mod1.py</em></strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">'foo'</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'[mod1] foo()'</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+    <span class="k">pass</span>
+</code></pre></div></div>
+
+<p>Now an <code class="highlighter-rouge">import *</code> statement <code class="highlighter-rouge">from pkg.mod1</code> will only import what is contained in <code class="highlighter-rouge">__all__</code>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; dir()
+['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__',
+'__package__', '__spec__']
+
+&gt;&gt;&gt; from pkg.mod1 import *
+&gt;&gt;&gt; dir()
+['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__',
+'__package__', '__spec__', 'foo']
+
+&gt;&gt;&gt; foo()
+[mod1] foo()
+&gt;&gt;&gt; Foo
+Traceback (most recent call last):
+  File "&lt;pyshell#37&gt;", line 1, in &lt;module&gt;
+    Foo
+NameError: name 'Foo' is not defined
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">foo()</code> (the function) is now defined in the local namespace, but Foo (the class) is not, because the latter is not in <code class="highlighter-rouge">__all__</code>.</p>
+
+<p>In summary, <code class="highlighter-rouge">__all__</code> is used by <strong>both packages and modules</strong> to control what is imported when import * is specified. But the default behavior differs:</p>
+
+<p>For a package, when <code class="highlighter-rouge">__all__</code> is not defined, <code class="highlighter-rouge">import *</code> does not import anything.
+For a module, when <code class="highlighter-rouge">__all__</code> is not defined, <code class="highlighter-rouge">import *</code> imports everything (except—you guessed it—names starting with an underscore).</p>
+
+<h2 id="10-subpackages">10. Subpackages</h2>
+<p>Packages can contain nested <strong>subpackages</strong> to arbitrary depth. For example, let’s make one more modification to the example <strong>package</strong> directory as follows:</p>
+
+<p><img src="/public/img/20190307-pkg4.png" alt="" /></p>
+
+<p>The four modules (<code class="highlighter-rouge">mod1.py</code>, <code class="highlighter-rouge">mod2.py</code>, <code class="highlighter-rouge">mod3.py</code> and <code class="highlighter-rouge">mod4.py</code>) are defined as previously. But now, instead of being lumped together into the <code class="highlighter-rouge">pkg</code> directory, they are split out into two subpackage directories, <code class="highlighter-rouge">sub_pkg1</code> and <code class="highlighter-rouge">sub_pkg2</code>.</p>
+
+<p>Importing still works the same as shown previously. Syntax is similar, but <strong>additional dot notation</strong> is used to separate package name from subpackage name:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; import pkg.sub_pkg1.mod1
+&gt;&gt;&gt; pkg.sub_pkg1.mod1.foo()
+[mod1] foo()
+
+&gt;&gt;&gt; from pkg.sub_pkg1 import mod2
+&gt;&gt;&gt; mod2.bar()
+[mod2] bar()
+
+&gt;&gt;&gt; from pkg.sub_pkg2.mod3 import baz
+&gt;&gt;&gt; baz()
+[mod3] baz()
+
+&gt;&gt;&gt; from pkg.sub_pkg2.mod4 import qux as grault
+&gt;&gt;&gt; grault()
+[mod4] qux()
+</code></pre></div></div>
+
+<p>In addition, a module in one subpackage can reference objects in a sibling subpackage (in the event that the sibling contains some functionality that you need). For example, suppose you want to import and execute function <code class="highlighter-rouge">foo()</code> (defined in module <code class="highlighter-rouge">mod1</code>) from within module <code class="highlighter-rouge">mod3</code>. You can either use an absolute import:</p>
+
+<p><strong><em>pkg/sub_pkg2/mod3.py</em></strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">baz</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'[mod3] baz()'</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Baz</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="kn">from</span> <span class="nn">pkg.sub_pkg1.mod1</span> <span class="kn">import</span> <span class="n">foo</span>
+<span class="n">foo</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; from pkg.sub_pkg2 import mod3
+[mod1] foo()
+&gt;&gt;&gt; mod3.foo()
+[mod1] foo()
+</code></pre></div></div>
+
+<p>Or you can use a <strong>relative import</strong>, where <code class="highlighter-rouge">..</code> refers to the package one level up. From within <code class="highlighter-rouge">mod3.py</code>, which is in subpackage <code class="highlighter-rouge">sub_pkg2</code>,</p>
+
+<ul>
+  <li><code class="highlighter-rouge">..</code> evaluates to the parent package (<code class="highlighter-rouge">pkg</code>), and</li>
+  <li><code class="highlighter-rouge">..sub_pkg1</code> evaluates to subpackage <code class="highlighter-rouge">sub_pkg1</code> of the parent package.</li>
+</ul>
+
+<p><strong><em>pkg/sub__pkg2/mod3.py</em></strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">baz</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'[mod3] baz()'</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Baz</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">sub_pkg1</span>
+<span class="k">print</span><span class="p">(</span><span class="n">sub_pkg1</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">..sub_pkg1.mod1</span> <span class="kn">import</span> <span class="n">foo</span>
+<span class="n">foo</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; from pkg.sub_pkg2 import mod3
+&lt;module 'pkg.sub_pkg1' (namespace)&gt;
+[mod1] foo()
+</code></pre></div></div>
+
+<h2 id="11-conclusion">11. Conclusion</h2>
+<p>In this article, we covered the following topics:</p>
+
+<ul>
+  <li>How to create a Python module</li>
+  <li>Locations where the Python interpreter searches for a module</li>
+  <li>How to obtain access to the objects defined in a module with the import statement</li>
+  <li>How to create a module that is executable as a standalone script</li>
+  <li>How to organize modules into packages and subpackages</li>
+  <li>How to control package initialization</li>
+</ul>
+
+<p>This will hopefully allow us to better understand how to gain access to the functionality available in the many third-party and built-in modules available in Python.</p>
+
+<p>Additionally, if you are developing your own application, creating your own modules and packages will help you organize and modularize your code, which makes coding, maintenance, and debugging easier.</p>
+
+<p><br /><br /><strong><em>KF</em></strong></p>
+<div class="footnotes">
+  <ol>
+    <li id="fn:2">
+      <p><a href="http://www.zentut.com/python-tutorial/python-module/">Python Module - zentut</a> <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div>
+</div>
+
+
+<div>
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    this.page.url = "http://localhost:4000/2019/03/07/python-module-package";
+    this.page.identifier = "/2019/03/07/python-module-package";
+  };
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//zkf85githubio.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+
+
+</div>
+
+<!-- KF 02/13/2019  -->
+<!-- Add back to top button -->
+<button onclick="topFunction()" id="myBtn" title="Back to top"><i class="material-icons">vertical_align_top</i></button>
+
+<script>
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+    </main>
+    <footer class="page-footer ohio-state-scarlet">
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            <img src="/assets/res/logo.png" alt="logo"/>
+            <p class="grey-text text-lighten-4">Theme based on <a href="http://materializecss.com">Materialize.css</a> for jekyll sites.
+</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          &#xA9; 2019 Everest. All rights reserved. Powered by <a href="https://github.com/zkf85">Kefeng</a>.
+        </div>
+      </div>
+    </footer>
+    <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+    
+    
+    <script src="/assets/js/post.js"></script>
+    
+    
+    
+    
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>
+

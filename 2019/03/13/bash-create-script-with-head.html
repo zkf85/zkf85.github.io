@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-      Start with Technical Writing
+      Create a (Python) Script with a Head Including Information
       
       2019
     </title>
@@ -27,17 +27,17 @@
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
     <!-- Begin Jekyll SEO tag v2.5.0 -->
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Start with Technical Writing" />
+<meta property="og:title" content="Create a (Python) Script with a Head Including Information" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="As I found the opening on realpython.org for technical writing authors, I think it would be a nice goal for me on blogging, or taking their requirements as a measure to improve my technical level as well as language skills. So, it would be a good start here to collection good material about technical writing. KF" />
-<meta property="og:description" content="As I found the opening on realpython.org for technical writing authors, I think it would be a nice goal for me on blogging, or taking their requirements as a measure to improve my technical level as well as language skills. So, it would be a good start here to collection good material about technical writing. KF" />
-<link rel="canonical" href="http://localhost:4000/2019/03/07/technical-writing" />
-<meta property="og:url" content="http://localhost:4000/2019/03/07/technical-writing" />
+<meta name="description" content="Problem: Every time when you create a new script, you alway need to add some information about the script, like create time, author, description, etc. But if you type in by hand every time, it’s time consuming, and also it’s hard to make a uniformed format. Solution: Write a simple Bash script to auto-generate a new (Python) script is good way to solve the problem above. The script - kftouchpy: FILE=$1 echo &quot;\&quot;\&quot;\&quot; Filename: $FILE Created on `date` @author: Kefeng Zhu (john@doe.com) Description: \&quot;\&quot;\&quot; &quot; &gt; $FILE Usage: Simply run sh kftouchpy newfile.py, then open the newly created file newfile.py, we have: &quot;&quot;&quot; Filename: newfile.py Created on Wed Mar 13 10:37:16 CST 2019 @author: Kefeng Zhu (john@doe.com) Description: &quot;&quot;&quot; Make it More Convenient: Puth the bash script in a directory that is included in your $PATH, and also remember to make it execuable. In this way, you can directly type kftouchpy newfile. Jobs Done! KF" />
+<meta property="og:description" content="Problem: Every time when you create a new script, you alway need to add some information about the script, like create time, author, description, etc. But if you type in by hand every time, it’s time consuming, and also it’s hard to make a uniformed format. Solution: Write a simple Bash script to auto-generate a new (Python) script is good way to solve the problem above. The script - kftouchpy: FILE=$1 echo &quot;\&quot;\&quot;\&quot; Filename: $FILE Created on `date` @author: Kefeng Zhu (john@doe.com) Description: \&quot;\&quot;\&quot; &quot; &gt; $FILE Usage: Simply run sh kftouchpy newfile.py, then open the newly created file newfile.py, we have: &quot;&quot;&quot; Filename: newfile.py Created on Wed Mar 13 10:37:16 CST 2019 @author: Kefeng Zhu (john@doe.com) Description: &quot;&quot;&quot; Make it More Convenient: Puth the bash script in a directory that is included in your $PATH, and also remember to make it execuable. In this way, you can directly type kftouchpy newfile. Jobs Done! KF" />
+<link rel="canonical" href="http://localhost:4000/2019/03/13/bash-create-script-with-head" />
+<meta property="og:url" content="http://localhost:4000/2019/03/13/bash-create-script-with-head" />
 <meta property="og:site_name" content="Everest" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-03-07T00:00:00+08:00" />
+<meta property="article:published_time" content="2019-03-13T00:00:00+08:00" />
 <script type="application/ld+json">
-{"description":"As I found the opening on realpython.org for technical writing authors, I think it would be a nice goal for me on blogging, or taking their requirements as a measure to improve my technical level as well as language skills. So, it would be a good start here to collection good material about technical writing. KF","@type":"BlogPosting","url":"http://localhost:4000/2019/03/07/technical-writing","headline":"Start with Technical Writing","dateModified":"2019-03-07T00:00:00+08:00","datePublished":"2019-03-07T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/03/07/technical-writing"},"@context":"http://schema.org"}</script>
+{"description":"Problem: Every time when you create a new script, you alway need to add some information about the script, like create time, author, description, etc. But if you type in by hand every time, it’s time consuming, and also it’s hard to make a uniformed format. Solution: Write a simple Bash script to auto-generate a new (Python) script is good way to solve the problem above. The script - kftouchpy: FILE=$1 echo &quot;\\&quot;\\&quot;\\&quot; Filename: $FILE Created on `date` @author: Kefeng Zhu (john@doe.com) Description: \\&quot;\\&quot;\\&quot; &quot; &gt; $FILE Usage: Simply run sh kftouchpy newfile.py, then open the newly created file newfile.py, we have: &quot;&quot;&quot; Filename: newfile.py Created on Wed Mar 13 10:37:16 CST 2019 @author: Kefeng Zhu (john@doe.com) Description: &quot;&quot;&quot; Make it More Convenient: Puth the bash script in a directory that is included in your $PATH, and also remember to make it execuable. In this way, you can directly type kftouchpy newfile. Jobs Done! KF","@type":"BlogPosting","url":"http://localhost:4000/2019/03/13/bash-create-script-with-head","headline":"Create a (Python) Script with a Head Including Information","dateModified":"2019-03-13T00:00:00+08:00","datePublished":"2019-03-13T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/03/13/bash-create-script-with-head"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -114,7 +114,7 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 
 <div class="container">
   <div id="post-info">
-  <h1>Start with Technical Writing</h1>
+  <h1>Create a (Python) Script with a Head Including Information</h1>
   <ul class="collapsible hoverable" data-collapsible="accordion">
     <li>
       <div class="collapsible-header">
@@ -123,7 +123,7 @@ Remember that after enabling this, you have to enter the real dollar sings with 
            
           Mar.
             
-          07, 2019 - Thursday
+          13, 2019 - Wednesday
           <i id="indicate" class="right material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Show extra info">info</i>
         </span>
       </div>
@@ -133,7 +133,7 @@ Remember that after enabling this, you have to enter the real dollar sings with 
           
           
           
-          <a href="/categories#writing_cap" target="_blank"><div class="chip">Writing</div></a>
+          <a href="/categories#operating-system_cap" target="_blank"><div class="chip">Operating System</div></a>
           
         </span>
         <span>
@@ -141,7 +141,11 @@ Remember that after enabling this, you have to enter the real dollar sings with 
           
           
           
-          <a href="/tags#technical-writng" target="_blank"><div class="chip">technical writng</div></a>
+          <a href="/tags#bash" target="_blank"><div class="chip">bash</div></a>
+          
+          
+          
+          <a href="/tags#python" target="_blank"><div class="chip">python</div></a>
           
         </span>
       </div>
@@ -151,10 +155,45 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 <div class="row">
   <div class="col s12">
     <blockquote>
-  <p>As I found the opening on realpython.org for technical writing authors, I think it would be a nice goal for me on blogging, or taking their requirements as a measure to improve my technical level as well as language skills.</p>
+  <p><strong>Problem:</strong></p>
 
-  <p>So, it would be a good start here to collection good material about technical writing.</p>
+  <p>Every time when you create a new script, you alway need to add some information about the script, like create time, author, description, etc.
+But if you type in by hand every time, it’s time consuming, and also it’s hard to make a uniformed format.</p>
+
+  <p><strong>Solution:</strong></p>
+  <ul>
+    <li>Write a simple Bash script to auto-generate a new (Python) script is good way to solve the problem above.</li>
+  </ul>
 </blockquote>
+
+<h3 id="the-script---kftouchpy">The script - <code class="highlighter-rouge">kftouchpy</code>:</h3>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">FILE</span><span class="o">=</span><span class="nv">$1</span>
+<span class="nb">echo</span> <span class="s2">"</span><span class="se">\"\"\"</span><span class="s2">
+Filename: </span><span class="nv">$FILE</span><span class="s2">
+Created on </span><span class="sb">`</span>date<span class="sb">`</span><span class="s2">
+
+@author: Kefeng Zhu (john@doe.com)
+Description:
+
+</span><span class="se">\"\"\"</span><span class="s2">
+"</span> <span class="o">&gt;</span> <span class="nv">$FILE</span>
+</code></pre></div></div>
+
+<h3 id="usage">Usage:</h3>
+<p>Simply run <code class="highlighter-rouge">sh kftouchpy newfile.py</code>, then open the newly created file <code class="highlighter-rouge">newfile.py</code>, we have:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"""
+Filename: newfile.py
+Created on Wed Mar 13 10:37:16 CST 2019
+
+@author: Kefeng Zhu (john@doe.com)
+
+Description:
+
+"""</span>
+</code></pre></div></div>
+
+<h3 id="make-it-more-convenient">Make it More Convenient:</h3>
+<p>Puth the bash script in a directory that is included in your <code class="highlighter-rouge">$PATH</code>, and also remember to make it execuable. In this way, you can directly type <code class="highlighter-rouge">kftouchpy newfile</code>. Jobs Done!</p>
 
 <p><br /><br /><strong><em>KF</em></strong></p>
 
@@ -167,8 +206,8 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 <div id="disqus_thread"></div>
 <script>
   var disqus_config = function () {
-    this.page.url = "http://localhost:4000/2019/03/07/technical-writing";
-    this.page.identifier = "/2019/03/07/technical-writing";
+    this.page.url = "http://localhost:4000/2019/03/13/bash-create-script-with-head";
+    this.page.identifier = "/2019/03/13/bash-create-script-with-head";
   };
   (function() { // DON'T EDIT BELOW THIS LINE
     var d = document, s = d.createElement('script');

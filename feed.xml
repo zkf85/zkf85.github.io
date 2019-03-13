@@ -1,11 +1,46 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-03-11T10:11:05+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Everest</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
-</subtitle><entry><title type="html">Start with Technical Writing</title><link href="http://localhost:4000/2019/03/07/technical-writing" rel="alternate" type="text/html" title="Start with Technical Writing" /><published>2019-03-07T00:00:00+08:00</published><updated>2019-03-07T00:00:00+08:00</updated><id>http://localhost:4000/2019/03/07/technical-writing</id><content type="html" xml:base="http://localhost:4000/2019/03/07/technical-writing">&lt;blockquote&gt;
-  &lt;p&gt;As I found the opening on realpython.org for technical writing authors, I think it would be a nice goal for me on blogging, or taking their requirements as a measure to improve my technical level as well as language skills.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-03-13T10:46:34+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Everest</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
+</subtitle><entry><title type="html">Create a (Python) Script with a Head Including Information</title><link href="http://localhost:4000/2019/03/13/bash-create-script-with-head" rel="alternate" type="text/html" title="Create a (Python) Script with a Head Including Information" /><published>2019-03-13T00:00:00+08:00</published><updated>2019-03-13T00:00:00+08:00</updated><id>http://localhost:4000/2019/03/13/bash-create-script-with-head</id><content type="html" xml:base="http://localhost:4000/2019/03/13/bash-create-script-with-head">&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Problem:&lt;/strong&gt;&lt;/p&gt;
 
-  &lt;p&gt;So, it would be a good start here to collection good material about technical writing.&lt;/p&gt;
+  &lt;p&gt;Every time when you create a new script, you alway need to add some information about the script, like create time, author, description, etc.
+But if you type in by hand every time, it’s time consuming, and also it’s hard to make a uniformed format.&lt;/p&gt;
+
+  &lt;p&gt;&lt;strong&gt;Solution:&lt;/strong&gt;&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Write a simple Bash script to auto-generate a new (Python) script is good way to solve the problem above.&lt;/li&gt;
+  &lt;/ul&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Writing&quot;]" /><category term="technical writng" /><summary type="html">As I found the opening on realpython.org for technical writing authors, I think it would be a nice goal for me on blogging, or taking their requirements as a measure to improve my technical level as well as language skills. So, it would be a good start here to collection good material about technical writing. KF</summary></entry><entry><title type="html">Python Modules and Packages</title><link href="http://localhost:4000/2019/03/07/python-module-package" rel="alternate" type="text/html" title="Python Modules and Packages" /><published>2019-03-07T00:00:00+08:00</published><updated>2019-03-07T00:00:00+08:00</updated><id>http://localhost:4000/2019/03/07/python-module-package</id><content type="html" xml:base="http://localhost:4000/2019/03/07/python-module-package">&lt;blockquote&gt;
+&lt;h3 id=&quot;the-script---kftouchpy&quot;&gt;The script - &lt;code class=&quot;highlighter-rouge&quot;&gt;kftouchpy&lt;/code&gt;:&lt;/h3&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;FILE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;\&quot;\&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;
+Filename: &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$FILE&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;
+Created on &lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;date&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;
+
+@author: Kefeng Zhu (john@doe.com)
+Description:
+
+&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;\&quot;\&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;
+&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$FILE&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;usage&quot;&gt;Usage:&lt;/h3&gt;
+&lt;p&gt;Simply run &lt;code class=&quot;highlighter-rouge&quot;&gt;sh kftouchpy newfile.py&lt;/code&gt;, then open the newly created file &lt;code class=&quot;highlighter-rouge&quot;&gt;newfile.py&lt;/code&gt;, we have:&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+Filename: newfile.py
+Created on Wed Mar 13 10:37:16 CST 2019
+
+@author: Kefeng Zhu (john@doe.com)
+
+Description:
+
+&quot;&quot;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;make-it-more-convenient&quot;&gt;Make it More Convenient:&lt;/h3&gt;
+&lt;p&gt;Puth the bash script in a directory that is included in your &lt;code class=&quot;highlighter-rouge&quot;&gt;$PATH&lt;/code&gt;, and also remember to make it execuable. In this way, you can directly type &lt;code class=&quot;highlighter-rouge&quot;&gt;kftouchpy newfile&lt;/code&gt;. Jobs Done!&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Operating System&quot;]" /><category term="bash" /><category term="python" /><summary type="html">Problem: Every time when you create a new script, you alway need to add some information about the script, like create time, author, description, etc. But if you type in by hand every time, it’s time consuming, and also it’s hard to make a uniformed format. Solution: Write a simple Bash script to auto-generate a new (Python) script is good way to solve the problem above. The script - kftouchpy: FILE=$1 echo &quot;\&quot;\&quot;\&quot; Filename: $FILE Created on `date` @author: Kefeng Zhu (john@doe.com) Description: \&quot;\&quot;\&quot; &quot; &amp;gt; $FILE Usage: Simply run sh kftouchpy newfile.py, then open the newly created file newfile.py, we have: &quot;&quot;&quot; Filename: newfile.py Created on Wed Mar 13 10:37:16 CST 2019 @author: Kefeng Zhu (john@doe.com) Description: &quot;&quot;&quot; Make it More Convenient: Puth the bash script in a directory that is included in your $PATH, and also remember to make it execuable. In this way, you can directly type kftouchpy newfile. Jobs Done! KF</summary></entry><entry><title type="html">Python Modules and Packages</title><link href="http://localhost:4000/2019/03/07/python-module-package" rel="alternate" type="text/html" title="Python Modules and Packages" /><published>2019-03-07T00:00:00+08:00</published><updated>2019-03-07T00:00:00+08:00</updated><id>http://localhost:4000/2019/03/07/python-module-package</id><content type="html" xml:base="http://localhost:4000/2019/03/07/python-module-package">&lt;blockquote&gt;
   &lt;p&gt;Programming in python with &lt;strong&gt;modules&lt;/strong&gt; and &lt;strong&gt;packages&lt;/strong&gt; is always good practice.&lt;/p&gt;
 
   &lt;p&gt;There are several advantages to modularizing code in a large application:&lt;/p&gt;

@@ -1,5 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-03-07T14:03:08+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Everest</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
-</subtitle><entry><title type="html">Python Modules and Packages</title><link href="http://localhost:4000/2019/03/07/python-module-package" rel="alternate" type="text/html" title="Python Modules and Packages" /><published>2019-03-07T00:00:00+08:00</published><updated>2019-03-07T00:00:00+08:00</updated><id>http://localhost:4000/2019/03/07/python-module-package</id><content type="html" xml:base="http://localhost:4000/2019/03/07/python-module-package">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-03-11T10:11:05+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Everest</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
+</subtitle><entry><title type="html">Start with Technical Writing</title><link href="http://localhost:4000/2019/03/07/technical-writing" rel="alternate" type="text/html" title="Start with Technical Writing" /><published>2019-03-07T00:00:00+08:00</published><updated>2019-03-07T00:00:00+08:00</updated><id>http://localhost:4000/2019/03/07/technical-writing</id><content type="html" xml:base="http://localhost:4000/2019/03/07/technical-writing">&lt;blockquote&gt;
+  &lt;p&gt;As I found the opening on realpython.org for technical writing authors, I think it would be a nice goal for me on blogging, or taking their requirements as a measure to improve my technical level as well as language skills.&lt;/p&gt;
+
+  &lt;p&gt;So, it would be a good start here to collection good material about technical writing.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Writing&quot;]" /><category term="technical writng" /><summary type="html">As I found the opening on realpython.org for technical writing authors, I think it would be a nice goal for me on blogging, or taking their requirements as a measure to improve my technical level as well as language skills. So, it would be a good start here to collection good material about technical writing. KF</summary></entry><entry><title type="html">Python Modules and Packages</title><link href="http://localhost:4000/2019/03/07/python-module-package" rel="alternate" type="text/html" title="Python Modules and Packages" /><published>2019-03-07T00:00:00+08:00</published><updated>2019-03-07T00:00:00+08:00</updated><id>http://localhost:4000/2019/03/07/python-module-package</id><content type="html" xml:base="http://localhost:4000/2019/03/07/python-module-package">&lt;blockquote&gt;
   &lt;p&gt;Programming in python with &lt;strong&gt;modules&lt;/strong&gt; and &lt;strong&gt;packages&lt;/strong&gt; is always good practice.&lt;/p&gt;
 
   &lt;p&gt;There are several advantages to modularizing code in a large application:&lt;/p&gt;
@@ -1167,26 +1173,7 @@ f(w)  &amp; \mbox{if} \ w\  \mbox{satisfies primal constraints} \\
 
 &lt;li&gt;&lt;a href=&quot;/public/cs229/matrix-calculus-illinois.pdf&quot; style=&quot;color: gray&quot;&gt;&lt;i class=&quot;material-icons pdf&quot;&gt;picture_as_pdf&lt;/i&gt;Matrix Calculus - Notes on Derivatives of a Trace - [Illinois] Johannes Traa&lt;/a&gt;&lt;/li&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="cs229" /><category term="linear algebra" /><summary type="html">The trace properties and the matrix derivatives. picture_as_pdfProperties of trace and matrix derivatives - [Stanford] John Duchi picture_as_pdfMatrix Calculus - Notes on Derivatives of a Trace - [Illinois] Johannes Traa KF</summary></entry><entry><title type="html">[CS231] K-Nearest-Neighbor Classifier</title><link href="http://localhost:4000/2019/02/28/cs231-knn" rel="alternate" type="text/html" title="[CS231] K-Nearest-Neighbor Classifier" /><published>2019-02-28T00:00:00+08:00</published><updated>2019-02-28T00:00:00+08:00</updated><id>http://localhost:4000/2019/02/28/cs231-knn</id><content type="html" xml:base="http://localhost:4000/2019/02/28/cs231-knn">&lt;blockquote&gt;
-  &lt;p&gt;gist of KNN Classifier.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;&lt;img src=&quot;/public/img/20190228-knn.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="cs231" /><category term="machine learning" /><category term="knn" /><summary type="html">gist of KNN Classifier.</summary></entry><entry><title type="html">What is DOM?</title><link href="http://localhost:4000/2019/02/28/what-is-dom" rel="alternate" type="text/html" title="What is DOM?" /><published>2019-02-28T00:00:00+08:00</published><updated>2019-02-28T00:00:00+08:00</updated><id>http://localhost:4000/2019/02/28/what-is-dom</id><content type="html" xml:base="http://localhost:4000/2019/02/28/what-is-dom">&lt;blockquote&gt;
-  &lt;p&gt;It’s the abbre. of &lt;strong&gt;Document Object Model (DOM)&lt;/strong&gt;&lt;/p&gt;
-
-  &lt;p&gt;In short:&lt;/p&gt;
-
-  &lt;p&gt;The Document Object Model (DOM) is an application programming interface (API) for valid HTML and well-formed XML documents. It defines the logical structure of documents and the way a document is accessed and manipulated. In the DOM specification, the term “document” is used in the broad sense - increasingly, XML is being used as a way of representing many different kinds of information that may be stored in diverse systems, and much of this would traditionally be seen as data rather than as documents. Nevertheless, XML presents this data as documents, and the DOM may be used to manage this data.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.w3.org/TR/DOM-Level-2-Core/introduction.html&quot;&gt;What is the Document Object Model? - w3.org&lt;/a&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Web Developing&quot;]" /><category term="javascript" /><category term="web developing" /><summary type="html">It’s the abbre. of Document Object Model (DOM) In short: The Document Object Model (DOM) is an application programming interface (API) for valid HTML and well-formed XML documents. It defines the logical structure of documents and the way a document is accessed and manipulated. In the DOM specification, the term “document” is used in the broad sense - increasingly, XML is being used as a way of representing many different kinds of information that may be stored in diverse systems, and much of this would traditionally be seen as data rather than as documents. Nevertheless, XML presents this data as documents, and the DOM may be used to manage this data. Reference What is the Document Object Model? - w3.org KF</summary></entry><entry><title type="html">[Python/NumPy] Matrix(Arrays) Manipulations &amp;amp; Operations</title><link href="http://localhost:4000/2019/02/28/python-matrix-manipulations" rel="alternate" type="text/html" title="[Python/NumPy] Matrix(Arrays) Manipulations &amp; Operations" /><published>2019-02-28T00:00:00+08:00</published><updated>2019-02-28T00:00:00+08:00</updated><id>http://localhost:4000/2019/02/28/python-matrix-manipulations</id><content type="html" xml:base="http://localhost:4000/2019/02/28/python-matrix-manipulations">&lt;blockquote&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="cs229" /><category term="linear algebra" /><summary type="html">The trace properties and the matrix derivatives. picture_as_pdfProperties of trace and matrix derivatives - [Stanford] John Duchi picture_as_pdfMatrix Calculus - Notes on Derivatives of a Trace - [Illinois] Johannes Traa KF</summary></entry><entry><title type="html">[Python/NumPy] Matrix(Arrays) Manipulations &amp;amp; Operations</title><link href="http://localhost:4000/2019/02/28/python-matrix-manipulations" rel="alternate" type="text/html" title="[Python/NumPy] Matrix(Arrays) Manipulations &amp; Operations" /><published>2019-02-28T00:00:00+08:00</published><updated>2019-02-28T00:00:00+08:00</updated><id>http://localhost:4000/2019/02/28/python-matrix-manipulations</id><content type="html" xml:base="http://localhost:4000/2019/02/28/python-matrix-manipulations">&lt;blockquote&gt;
   &lt;p&gt;A collection of frequently used python/numpy techniques on matrix (numpy arrays) manipulation and operations.&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -1576,7 +1563,26 @@ f(w)  &amp; \mbox{if} \ w\  \mbox{satisfies primal constraints} \\
   &lt;li&gt;&lt;a href=&quot;https://docs.scipy.org/doc/numpy/reference/&quot;&gt;» Scipy Numpy Reference&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;]" /><category term="cs231" /><category term="python" /><category term="numpy" /><summary type="html">A collection of frequently used python/numpy techniques on matrix (numpy arrays) manipulation and operations.</summary></entry><entry><title type="html">[CS229] Lecture 5 Notes - Descriminative Learning v.s. Generative Learning Algorithm</title><link href="http://localhost:4000/2019/02/18/cs229-lecture-5-generative-learning" rel="alternate" type="text/html" title="[CS229] Lecture 5 Notes - Descriminative Learning v.s. Generative Learning Algorithm" /><published>2019-02-18T14:30:00+08:00</published><updated>2019-02-18T14:30:00+08:00</updated><id>http://localhost:4000/2019/02/18/cs229-lecture-5-generative-learning</id><content type="html" xml:base="http://localhost:4000/2019/02/18/cs229-lecture-5-generative-learning">&lt;blockquote&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;]" /><category term="cs231" /><category term="python" /><category term="numpy" /><summary type="html">A collection of frequently used python/numpy techniques on matrix (numpy arrays) manipulation and operations.</summary></entry><entry><title type="html">[CS231] K-Nearest-Neighbor Classifier</title><link href="http://localhost:4000/2019/02/28/cs231-knn" rel="alternate" type="text/html" title="[CS231] K-Nearest-Neighbor Classifier" /><published>2019-02-28T00:00:00+08:00</published><updated>2019-02-28T00:00:00+08:00</updated><id>http://localhost:4000/2019/02/28/cs231-knn</id><content type="html" xml:base="http://localhost:4000/2019/02/28/cs231-knn">&lt;blockquote&gt;
+  &lt;p&gt;gist of KNN Classifier.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/img/20190228-knn.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="cs231" /><category term="machine learning" /><category term="knn" /><summary type="html">gist of KNN Classifier.</summary></entry><entry><title type="html">What is DOM?</title><link href="http://localhost:4000/2019/02/28/what-is-dom" rel="alternate" type="text/html" title="What is DOM?" /><published>2019-02-28T00:00:00+08:00</published><updated>2019-02-28T00:00:00+08:00</updated><id>http://localhost:4000/2019/02/28/what-is-dom</id><content type="html" xml:base="http://localhost:4000/2019/02/28/what-is-dom">&lt;blockquote&gt;
+  &lt;p&gt;It’s the abbre. of &lt;strong&gt;Document Object Model (DOM)&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;p&gt;In short:&lt;/p&gt;
+
+  &lt;p&gt;The Document Object Model (DOM) is an application programming interface (API) for valid HTML and well-formed XML documents. It defines the logical structure of documents and the way a document is accessed and manipulated. In the DOM specification, the term “document” is used in the broad sense - increasingly, XML is being used as a way of representing many different kinds of information that may be stored in diverse systems, and much of this would traditionally be seen as data rather than as documents. Nevertheless, XML presents this data as documents, and the DOM may be used to manage this data.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.w3.org/TR/DOM-Level-2-Core/introduction.html&quot;&gt;What is the Document Object Model? - w3.org&lt;/a&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Web Developing&quot;]" /><category term="javascript" /><category term="web developing" /><summary type="html">It’s the abbre. of Document Object Model (DOM) In short: The Document Object Model (DOM) is an application programming interface (API) for valid HTML and well-formed XML documents. It defines the logical structure of documents and the way a document is accessed and manipulated. In the DOM specification, the term “document” is used in the broad sense - increasingly, XML is being used as a way of representing many different kinds of information that may be stored in diverse systems, and much of this would traditionally be seen as data rather than as documents. Nevertheless, XML presents this data as documents, and the DOM may be used to manage this data. Reference What is the Document Object Model? - w3.org KF</summary></entry><entry><title type="html">[CS229] Lecture 5 Notes - Descriminative Learning v.s. Generative Learning Algorithm</title><link href="http://localhost:4000/2019/02/18/cs229-lecture-5-generative-learning" rel="alternate" type="text/html" title="[CS229] Lecture 5 Notes - Descriminative Learning v.s. Generative Learning Algorithm" /><published>2019-02-18T14:30:00+08:00</published><updated>2019-02-18T14:30:00+08:00</updated><id>http://localhost:4000/2019/02/18/cs229-lecture-5-generative-learning</id><content type="html" xml:base="http://localhost:4000/2019/02/18/cs229-lecture-5-generative-learning">&lt;blockquote&gt;
   &lt;p&gt;Keep Updating:&lt;/p&gt;
   &lt;ul&gt;
     &lt;li&gt;2019-02-18 Merge to Lecture #5 Note&lt;/li&gt;
@@ -1894,215 +1900,4 @@ In practice, it usually doesn’t matter much whether we apply Laplace smoothing
 
 &lt;!--more--&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Algorithms&quot;]" /><category term="algorithms" /><category term="data structure" /><summary type="html">The term “heap” was originally coined in the context of heapsort, but it has since come to refer to “garbage-collected storage,” such as the programming languages Java and Lisp provide. The heap data structure in MIT 6.006 is NOT garbage-collected storage.</summary></entry><entry><title type="html">[CS229] Lecture 4 Notes - Newton’s Method/GLMs</title><link href="http://localhost:4000/2019/02/14/cs229-lecture-4" rel="alternate" type="text/html" title="[CS229] Lecture 4 Notes - Newton's Method/GLMs" /><published>2019-02-14T10:40:00+08:00</published><updated>2019-02-14T10:40:00+08:00</updated><id>http://localhost:4000/2019/02/14/cs229-lecture-4</id><content type="html" xml:base="http://localhost:4000/2019/02/14/cs229-lecture-4">&lt;blockquote&gt;
-  &lt;ol&gt;
-    &lt;li&gt;Newton’s Method,&lt;/li&gt;
-    &lt;li&gt;Generalized Linear Models&lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#1-newtons-method&quot; id=&quot;markdown-toc-1-newtons-method&quot;&gt;1. Newton’s Method&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#11-basic-idea-of-newtons-method&quot; id=&quot;markdown-toc-11-basic-idea-of-newtons-method&quot;&gt;1.1. Basic idea of Newton’s method&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#12-use-newtons-method-to-maximize-some-function-l&quot; id=&quot;markdown-toc-12-use-newtons-method-to-maximize-some-function-l&quot;&gt;1.2. Use Newton’s method to maximize some function \(l\)&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#13-pros--cons-of-newtons-method&quot; id=&quot;markdown-toc-13-pros--cons-of-newtons-method&quot;&gt;1.3. Pros &amp;amp; Cons of Newton’s method&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#2-generalized-linear-models&quot; id=&quot;markdown-toc-2-generalized-linear-models&quot;&gt;2. Generalized Linear Models&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#21-the-exponential-family&quot; id=&quot;markdown-toc-21-the-exponential-family&quot;&gt;2.1. The exponential family&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#211-bernoulli-case&quot; id=&quot;markdown-toc-211-bernoulli-case&quot;&gt;2.1.1. Bernoulli case&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#212-gaussian-case&quot; id=&quot;markdown-toc-212-gaussian-case&quot;&gt;2.1.2. Gaussian case&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#3-constructing-glms&quot; id=&quot;markdown-toc-3-constructing-glms&quot;&gt;3. Constructing GLMs&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#31-ordinary-least-squares&quot; id=&quot;markdown-toc-31-ordinary-least-squares&quot;&gt;3.1. Ordinary Least Squares&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#32-logistic-regression&quot; id=&quot;markdown-toc-32-logistic-regression&quot;&gt;3.2. Logistic Regression&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#33-softmax-regression&quot; id=&quot;markdown-toc-33-softmax-regression&quot;&gt;3.3. Softmax Regression&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#reference&quot; id=&quot;markdown-toc-reference&quot;&gt;Reference&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2 id=&quot;1-newtons-method&quot;&gt;1. Newton’s Method&lt;/h2&gt;
-&lt;h3 id=&quot;11-basic-idea-of-newtons-method&quot;&gt;1.1. Basic idea of Newton’s method&lt;/h3&gt;
-&lt;p&gt;The aim of Newton’s method is &lt;strong&gt;to find a zero of a function&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Suppose we have some function that \(f: \mathbb{R}\mapsto\mathbb{R}\), and we want to find a value of \(x\) that makes \(f(x)=0\). Newton’s method performs the following updates:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;x := x - \frac{f(x)}{f'(x)}.&lt;/script&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Newton%27s_method&quot;&gt;» Newton’s Method on Wikipedia&lt;/a&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;&lt;img src=&quot;/public/img/20190214_NewtonIteration_Ani.gif&quot; alt=&quot;&quot; /&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;Figure 1.&lt;/strong&gt; The function \(f\) is shown in blue and the tangent line is in red. We see that \(x_{n + 1}\) is a better approximation than \(x_n\) for the root x of the function \(f\). (from Wikipedia)&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;12-use-newtons-method-to-maximize-some-function-l&quot;&gt;1.2. Use Newton’s method to maximize some function \(l\)&lt;/h3&gt;
-&lt;p&gt;The maxima of \(l\) correspond to points where it’s first derivative \(l’(\theta)\) is zero. Therefore, according to the definition of Newton’s method described above, to find a value of \(\theta\) that makes \(f’(\theta)=0\), we should perform the following update:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\theta := \theta - \frac{f'(\theta)}{f''(\theta)}.&lt;/script&gt;
-
-&lt;p&gt;In the logistic regression, \(\theta\) is a vector, then the update rule should be generalized as:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\theta := \theta - H^{-1}\nabla_\theta l(\theta).&lt;/script&gt;
-
-&lt;p&gt;Here \(\nabla_\theta l(\theta)\) is the vector of partial derivatives of \(l(\theta)\) w.r.t. the \(\theta\)’s; and the \(H\) is an n-by-n matrix called &lt;strong&gt;Hessian&lt;/strong&gt;, whose entries are given by&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;H_{ij} = \frac{\partial^2 l(\theta)}{\partial\theta_i\partial\theta_j}.&lt;/script&gt;
-
-&lt;h3 id=&quot;13-pros--cons-of-newtons-method&quot;&gt;1.3. Pros &amp;amp; Cons of Newton’s method&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Pros&lt;/strong&gt;:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Newton’s method converges faster that gradient descent and requires fewer iterations to get close to the minimum.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Cons&lt;/strong&gt;:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Each single iteration however is more expensive that the one of gradient descent, since it requires finding and inverting an n-by-n Hessian.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;2-generalized-linear-models&quot;&gt;2. Generalized Linear Models&lt;/h2&gt;
-&lt;p&gt;Both &lt;strong&gt;linear regression&lt;/strong&gt; and &lt;strong&gt;logistic regression&lt;/strong&gt; methods are special cases of a broader family of models, which is called &lt;strong&gt;Generalized Linear Models (GLMs)&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;21-the-exponential-family&quot;&gt;2.1. The exponential family&lt;/h3&gt;
-&lt;p&gt;Define a class of distributions in the exponential family as:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align}
-p(y;\eta) = b(y)\exp(\eta^T T(y) - a(\eta)). \tag{*}\label{eq1}
-\end{align}&lt;/script&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;\(\eta\) - is called the &lt;strong&gt;natural parameter&lt;/strong&gt; of the distribution;&lt;/li&gt;
-  &lt;li&gt;\(T(y)\) - is the &lt;strong&gt;sufficient statistic&lt;/strong&gt;;&lt;/li&gt;
-  &lt;li&gt;\(a(\eta)\) - is the &lt;strong&gt;log partition function&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;A family:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;A fixed choice of \(T\), \(a\) and \(b\) defines a &lt;em&gt;family&lt;/em&gt; of distributions that is parameterized by \(\eta\).&lt;/li&gt;
-  &lt;li&gt;As we vary \(\eta\), we could get different distributions within this family.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;We’ll show that the Bernoulli and the Gaussian distributions are examples of exponential family distributions.&lt;/p&gt;
-
-&lt;h4 id=&quot;211-bernoulli-case&quot;&gt;2.1.1. Bernoulli case&lt;/h4&gt;
-&lt;p&gt;The Bernoulli distribution with mean \(\phi\), written Bernoulli\((\phi)\), specifies a distribution over \(y \in {0,1}\). So that&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\left\{ \begin{array}{rcl} 
-P(y=1;\phi) &amp;=&amp; \phi \\
-P(y=0;\phi) &amp;=&amp; 1-\phi
-\end{array}\right. \\ %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;This class of distributions is parameterized by \(\phi\). Now we want to show that this class of Bernoulli distributions is in the “exponential family” when we choose a certain set of \(T\), \(a\) and \(b\).
-We write the Bernoulli distribution as:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{align}
-p(y;\phi) &amp;= \phi^y(1-\phi)^{1-y} \\
-&amp;= \exp(\log(\phi^y(1-\phi)^{1-y}) \\
-&amp;= \exp(y\log\phi + (1-y)\log(1-\phi)) \\
-&amp;= \exp(y\log\phi -y\log(1-\phi) + log(1-\phi)) \\
-&amp;= \exp\left(y\log\frac{\phi}{1-\phi} + \log(1-\phi)\right).
-\end{align} %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;according to Equation \(\eqref{eq1}\), we do the following derivation:&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;&lt;img src=&quot;/public/img/20190214_01.jpg&quot; alt=&quot;&quot; /&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;Figure 2.&lt;/strong&gt; Derivation of Bernoulli to GLM&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;We have&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{align}
-\eta &amp;= \log\frac{\phi}{1-\phi} \\
-T(y) &amp;= y \\
-a(\eta) &amp;= \log(1+e^\eta) \\
-b(y) &amp;= 1
-\end{align} %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;This shows that the Bernoulli distribution can be written in the form of Equation \(\eqref{eq1}\), using certain choice of \(T\), \(a\) and \(b\) above.&lt;/p&gt;
-
-&lt;h4 id=&quot;212-gaussian-case&quot;&gt;2.1.2. Gaussian case&lt;/h4&gt;
-&lt;p&gt;When deriving linear regression, the value of $\sigma^2$ had no effect on the choice of $\theta$ and $h_\theta(x)$. Thus, for simplicity, we set $\sigma^2=1$. Then for the Gaussian distribution, we have:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{align}
-p(y;\mu) &amp;= \frac{1}{\sqrt{2\pi}}\exp\left(-\frac{1}{2}(y-\mu)^2\right) \\
-&amp;= \frac{1}{\sqrt{2\pi}}\exp\left(-\frac{1}{2}y^2\right)\cdot\exp\left(y\mu-\frac{1}{2}\mu^2\right)
-\end{align} %]]&gt;&lt;/script&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;&lt;img src=&quot;/public/img/20190214_02.jpg&quot; alt=&quot;&quot; /&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;Figure 3.&lt;/strong&gt; Derivation of Gaussian to GLM&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;We have&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{align}
-\eta &amp;= \mu \\
-T(y) &amp;= y \\
-a(\eta) &amp;= \frac{1}{2}\mu^2=\frac{1}{2}\eta^2 \\
-b(y) &amp;= \frac{1}{\sqrt{2\pi}}\exp\left(-\frac{1}{2}y^2\right).
-\end{align} %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;There are a lot of other distributions that belong to the exponential family, such as:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;the multinomial;&lt;/li&gt;
-  &lt;li&gt;the Poisson (for modelling count-data);&lt;/li&gt;
-  &lt;li&gt;the gamma and the exponential (for modelling continuous, non-negative random variables, such as time-intervals);&lt;/li&gt;
-  &lt;li&gt;the beta and the Dirichlet (for distributions over probabilities).&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;3-constructing-glms&quot;&gt;3. Constructing GLMs&lt;/h2&gt;
-&lt;p&gt;Consider a classification or regression problem where we’d like to predict the value of some random variable $y$ as a function of $x$. To derive a GLM for this problem, we will make 3 assumptions about the conditional distribution of $y$ given $x$:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;$y \vert x; \theta \sim \text{ExponentialFamily}(\eta)$. i.e., given $x$ and $\theta$, the distribution of $y$ follows some exponential family distribution with parameter $\eta$.&lt;/li&gt;
-  &lt;li&gt;&lt;span style=&quot;color:crimson&quot;&gt;We would like the prediction $h(x)$ output to satisfy $h(x) = \mbox{E}[y\vert x]$. &lt;strong&gt;Why?&lt;/strong&gt;&lt;/span&gt;&lt;/li&gt;
-  &lt;li&gt;$\eta$ and $x$ should be linearly related: $\eta=\theta^T x$.(or if $\eta$ is a vector, then $\eta_i=\theta_i^T x$).&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;31-ordinary-least-squares&quot;&gt;3.1. Ordinary Least Squares&lt;/h3&gt;
-
-&lt;h3 id=&quot;32-logistic-regression&quot;&gt;3.2. Logistic Regression&lt;/h3&gt;
-
-&lt;h3 id=&quot;33-softmax-regression&quot;&gt;3.3. Softmax Regression&lt;/h3&gt;
-
-&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;/public/cs229/cs229-notes1.pdf&quot;&gt;» Stanford Lecture Note Part I &amp;amp; II&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Notes&quot;]" /><category term="cs229" /><category term="machine learning" /><summary type="html">Newton’s Method, Generalized Linear Models</summary></entry></feed>
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Algorithms&quot;]" /><category term="algorithms" /><category term="data structure" /><summary type="html">The term “heap” was originally coined in the context of heapsort, but it has since come to refer to “garbage-collected storage,” such as the programming languages Java and Lisp provide. The heap data structure in MIT 6.006 is NOT garbage-collected storage.</summary></entry></feed>

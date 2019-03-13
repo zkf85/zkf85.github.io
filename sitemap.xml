@@ -209,6 +209,10 @@
 <lastmod>2019-03-07T00:00:00+08:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/2019/03/07/technical-writing</loc>
+<lastmod>2019-03-07T00:00:00+08:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/about</loc>
 </url>
 <url>
@@ -246,6 +250,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/page5/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page6/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/public/cs229/cs229-notes1.pdf</loc>

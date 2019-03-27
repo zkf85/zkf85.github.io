@@ -389,6 +389,18 @@ In <code class="highlighter-rouge">api_test.py</code>:</p>
 
 <p><a href="https://uwsgi-docs-additions.readthedocs.io/en/latest/">uWSGI (WSGI - Web Server Gateway Interface)</a> is used here as a tool for connecting <strong>Flask</strong> and <strong>NGINX</strong>.</p>
 
+<p>Let’s create a file that will serve as the entry point for our application. This will tell our uWSGI server how to interact with it.</p>
+
+<p>Let’s call the file <code class="highlighter-rouge">wsgi.py</code>:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nano ~/myproject/wsgi.py
+</code></pre></div></div>
+<p>In this file, let’s import the Flask instance from our application and then run it:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>from myproject import app
+
+if __name__ == "__main__":
+    app.run()
+</code></pre></div></div>
+
 <h4 id="231-create-a-uwsgi-configuration-file">2.3.1. Create a uWSGI Configuration File</h4>
 <p>Let’s place that file in our project directory and call it <code class="highlighter-rouge">myproject.ini</code>, in the file, add the following snippet:</p>
 <div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[uwsgi]</span>

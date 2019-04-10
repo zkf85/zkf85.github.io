@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+      [LeetCode] 070. Climbing Stairs
+      
+      2019
+    </title>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/res/favicon.ico">
+	<!--
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+	-->
+    <link rel="stylesheet" href="/assets/css/materialize.min.css">
+    <link rel="stylesheet" href="/assets/css/Material+Icons.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <link rel="stylesheet" href="/assets/css/post.css">
+    
+    
+    
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="[LeetCode] 070. Climbing Stairs" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Theme based on Materialize.css for jekyll sites." />
+<meta property="og:description" content="Theme based on Materialize.css for jekyll sites." />
+<link rel="canonical" href="http://localhost:4000/2019/04/10/leetcode-070-climbing-stairs" />
+<meta property="og:url" content="http://localhost:4000/2019/04/10/leetcode-070-climbing-stairs" />
+<meta property="og:site_name" content="Everest" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-04-10T00:00:00+08:00" />
+<script type="application/ld+json">
+{"description":"Theme based on Materialize.css for jekyll sites.","@type":"BlogPosting","url":"http://localhost:4000/2019/04/10/leetcode-070-climbing-stairs","headline":"[LeetCode] 070. Climbing Stairs","dateModified":"2019-04-10T00:00:00+08:00","datePublished":"2019-04-10T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/04/10/leetcode-070-climbing-stairs"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <header>
+	  <!--
+      <nav class="top-nav teal">
+	  -->
+      <nav class="top-nav ohio-state-scarlet">
+        <div class="nav-wrapper">
+          <div class="container">
+            <a class="page-title" href="/">Everest<sup>2019</sup></a>
+            <img class="buckeye_leaf" src="/assets/res/buckeye_leaf.png" alt="buckeye_leaf">
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <a href="#" data-activates="slide-out" class="button-collapse top-nav full hide-on-large-only">
+          <i class="material-icons">menu</i>
+        </a>
+      </div>
+      <ul id="slide-out" class="side-nav fixed">
+        <li>
+          <div class="userView">
+            <div class="background"></div>
+            <a href="https://github.com/zkf85" target="_blank"><img class="circle z-depth-2" src="/assets/res/lion_king.jpg"></a>
+            <span class="white-text name">Zhu, Kefeng</span>
+			<!--
+            <span class="white-text email">zkf1985@gmail.com</span>
+			-->
+            <span class="white-text email"><i>A Programmer, An AI Practitioner</i></span>
+          </div>
+        </li>
+
+        <li class="subheader">BLOG</li>
+        <li><a class="waves-effect" href="/"><i class="material-icons">home</i>Home</a></li>
+        <li><a class="waves-effect" href="/categories"><i class="material-icons">sort</i>Categories</a></li>
+        <li><a class="waves-effect" href="/tags"><i class="material-icons">label</i>Tags</a></li>
+<!--
+<li><a class="waves-effect" href="/feed.xml" target="_blank"><i class="material-icons">rss_feed</i>RSS</a></li>
+-->        
+        <li class="subheader">COLLECTIONS</li>
+        <li><a class="waves-effect" href="/cs229"><i class="material-icons">widgets</i>CS229</a></li>
+        <li><a class="waves-effect" href="/mit6006"><i class="material-icons">storage</i>MIT6006</a></li>
+        <li><a class="waves-effect" href="/leetcode"><i class="material-icons">code</i>LeetCode</a></li>
+
+        <li class="subheader">OTHERS</li>
+        <li><a class="waves-effect" href="/about"><i class="material-icons">person</i>About Me</a></li>
+        <li><a class="waves-effect" href="/calligraphy"><i class="material-icons">dashboard</i>書</a></li>
+        <!-- <li><a class="waves-effect" href="/contact"><i class="material-icons">email</i>Contact</a></li> -->
+      </ul>
+    </header>
+    <main>
+
+<!--
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+-->
+<!-- KF 02/14/2019
+The following snippet is to allow single $ style inline mode.
+Remember that after enabling this, you have to enter the real dollar sings with `\$`
+-->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<div class="container">
+  <div id="post-info">
+  <h1>[LeetCode] 070. Climbing Stairs</h1>
+  <ul class="collapsible hoverable" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Date">date_range</i>
+           
+          April
+            
+          10, 2019 - Wednesday
+          <i id="indicate" class="right material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Show extra info">info</i>
+        </span>
+      </div>
+      <div class="collapsible-body">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Categories">sort</i>
+          
+          
+          
+          <a href="/categories#algorithm_cap" target="_blank"><div class="chip">Algorithm</div></a>
+          
+        </span>
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Tags">label</i>
+          
+          
+          
+          <a href="/tags#leetcode" target="_blank"><div class="chip">leetcode</div></a>
+          
+          
+          
+          <a href="/tags#python" target="_blank"><div class="chip">python</div></a>
+          
+        </span>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="row">
+  <div class="col s12">
+    <!--more-->
+<ul id="markdown-toc">
+  <li><a href="#problem-easy" id="markdown-toc-problem-easy">Problem (Easy)</a></li>
+  <li><a href="#approach-1-my-solution---backtracking-time-limit-exceeded" id="markdown-toc-approach-1-my-solution---backtracking-time-limit-exceeded">Approach 1: (My Solution - Backtracking [Time Limit Exceeded!])</a>    <ul>
+      <li><a href="#idea" id="markdown-toc-idea">Idea</a></li>
+      <li><a href="#solution" id="markdown-toc-solution">Solution</a></li>
+      <li><a href="#complexity" id="markdown-toc-complexity">Complexity</a></li>
+    </ul>
+  </li>
+  <li><a href="#approach-2-my-solution---dynamic-programming" id="markdown-toc-approach-2-my-solution---dynamic-programming">Approach 2: (My Solution - Dynamic Programming)</a>    <ul>
+      <li><a href="#idea-1" id="markdown-toc-idea-1">Idea</a></li>
+      <li><a href="#solution-1" id="markdown-toc-solution-1">Solution</a></li>
+      <li><a href="#complexity-1" id="markdown-toc-complexity-1">Complexity</a></li>
+    </ul>
+  </li>
+  <li><a href="#approach-2-my-solution---dynamic-programming-1" id="markdown-toc-approach-2-my-solution---dynamic-programming-1">Approach 2: (My Solution - Dynamic Programming)</a>    <ul>
+      <li><a href="#idea-2" id="markdown-toc-idea-2">Idea</a></li>
+      <li><a href="#solution-2" id="markdown-toc-solution-2">Solution</a></li>
+      <li><a href="#complexity-2" id="markdown-toc-complexity-2">Complexity</a></li>
+    </ul>
+  </li>
+  <li><a href="#approach-3-fibonacci---improved" id="markdown-toc-approach-3-fibonacci---improved">Approach 3: (Fibonacci - Improved)</a>    <ul>
+      <li><a href="#idea-3" id="markdown-toc-idea-3">Idea</a></li>
+      <li><a href="#solution-3" id="markdown-toc-solution-3">Solution</a></li>
+      <li><a href="#complexity-3" id="markdown-toc-complexity-3">Complexity</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="problem-easy">Problem (Easy)</h2>
+<p><a href="https://leetcode.com/problems/climbing-stairs">070. Climbing Stairs</a></p>
+
+<ol>
+  <li>Climbing Stairs</li>
+</ol>
+
+<p>You are climbing a stair case. It takes n steps to reach to the top.</p>
+
+<p>Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?</p>
+
+<p>Note: Given n will be a positive integer.</p>
+
+<p>Example 1:</p>
+
+<ul>
+  <li>Input: 2</li>
+  <li>Output: 2</li>
+  <li>Explanation: There are two ways to climb to the top.
+    <ol>
+      <li>1 step + 1 step</li>
+      <li>2 steps</li>
+    </ol>
+  </li>
+</ul>
+
+<p>Example 2:</p>
+
+<ul>
+  <li>Input: 3</li>
+  <li>Output: 3</li>
+  <li>Explanation: There are three ways to climb to the top.
+    <ol>
+      <li>1 step + 1 step + 1 step</li>
+      <li>1 step + 2 steps</li>
+      <li>2 steps + 1 step</li>
+    </ol>
+  </li>
+</ul>
+
+<h2 id="approach-1-my-solution---backtracking-time-limit-exceeded">Approach 1: (My Solution - Backtracking [Time Limit Exceeded!])</h2>
+
+<h3 id="idea">Idea</h3>
+<p>Use Backtracking algorithm to find all possible ways.</p>
+
+<h3 id="solution">Solution</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution1</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">climbStairs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="s">"""
+        :type n: int
+        :rtype: int
+        """</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">backtrack</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">backtrack</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">step</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">step</span> <span class="o">&gt;</span> <span class="n">n</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="k">if</span> <span class="n">step</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span>
+            <span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">return</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">backtrack</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">step</span><span class="o">+</span><span class="n">i</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="complexity">Complexity</h3>
+<ul>
+  <li>Time: $O()$</li>
+  <li>Space: $O()$</li>
+</ul>
+
+<h2 id="approach-2-my-solution---dynamic-programming">Approach 2: (My Solution - Dynamic Programming)</h2>
+
+<h3 id="idea-1">Idea</h3>
+<ul>
+  <li>State update rule: (1-D dp state matrix) <code class="highlighter-rouge">dp[i] = dp[i-1] + dp[i-2]</code>;</li>
+  <li>Initial state: <code class="highlighter-rouge">dp[0] = 1, dp[1] = 2. if n == 1, return 1</code>.</li>
+</ul>
+
+<h3 id="solution-1">Solution</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python
+class Solution1:
+    def climbStairs(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        if n == 1:
+            return 1
+        dp = [0 for _ in range(n)]
+        dp[0], dp[1] = 1, 2
+        for i in range(2, n):
+            dp[i] = dp[i-1] + dp[i-2]
+        return dp[-1]
+</code></pre></div></div>
+
+<h3 id="complexity-1">Complexity</h3>
+<ul>
+  <li>Time: $O()$</li>
+  <li>Space: $O()$</li>
+</ul>
+
+<h2 id="approach-2-my-solution---dynamic-programming-1">Approach 2: (My Solution - Dynamic Programming)</h2>
+
+<h3 id="idea-2">Idea</h3>
+<ul>
+  <li>State update rule: (1-D dp state matrix) <code class="highlighter-rouge">dp[i] = dp[i-1] + dp[i-2]</code>;</li>
+  <li>Initial state: <code class="highlighter-rouge">dp[0] = 1, dp[1] = 2. if n == 1, return 1</code>.</li>
+</ul>
+
+<h3 id="solution-2">Solution</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python
+class Solution2:
+    def climbStairs(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        if n == 1:
+            return 1
+        dp = [0 for _ in range(n)]
+        dp[0], dp[1] = 1, 2
+        for i in range(2, n):
+            dp[i] = dp[i-1] + dp[i-2]
+        return dp[-1]
+</code></pre></div></div>
+
+<h3 id="complexity-2">Complexity</h3>
+<ul>
+  <li>Time: $O()$</li>
+  <li>Space: $O()$</li>
+</ul>
+
+<h2 id="approach-3-fibonacci---improved">Approach 3: (Fibonacci - Improved)</h2>
+
+<h3 id="idea-3">Idea</h3>
+<ul>
+  <li>This problem is actually a Fibonacci series.</li>
+  <li>Improve the Fibonacci generating method.</li>
+</ul>
+
+<h3 id="solution-3">Solution</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python
+class Solution3:
+    def climbStairs(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        if n == 1:
+            return 1
+        a, b = 1, 2
+        for _ in range(2, n):
+            c = a + b
+            a, b = b, c
+        return b
+</code></pre></div></div>
+
+<h3 id="complexity-3">Complexity</h3>
+<ul>
+  <li>Time: $O()$</li>
+  <li>Space: $O()$</li>
+</ul>
+
+<p><br /><br /><strong><em>KF</em></strong></p>
+
+
+  </div>
+</div>
+
+
+<div>
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    this.page.url = "http://localhost:4000/2019/04/10/leetcode-070-climbing-stairs";
+    this.page.identifier = "/2019/04/10/leetcode-070-climbing-stairs";
+  };
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//zkf85githubio.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+
+
+</div>
+
+<!-- KF 02/13/2019  -->
+<!-- Add back to top button -->
+<button onclick="topFunction()" id="myBtn" title="Back to top"><i class="material-icons">vertical_align_top</i></button>
+
+<script>
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+    </main>
+    <footer class="page-footer ohio-state-scarlet">
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            <img src="/assets/res/logo.png" alt="logo"/>
+            <p class="grey-text text-lighten-4">Theme based on <a href="http://materializecss.com">Materialize.css</a> for jekyll sites.
+</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          &#xA9; 2019 Everest. All rights reserved. Powered by <a href="https://github.com/zkf85">Kefeng</a>.
+        </div>
+      </div>
+    </footer>
+    <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+    
+    
+    <script src="/assets/js/post.js"></script>
+    
+    
+    
+    
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>
+

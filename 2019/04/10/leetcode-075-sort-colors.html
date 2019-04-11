@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+      [LeetCode] 075. Sort Colors
+      
+      2019
+    </title>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/res/favicon.ico">
+	<!--
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+	-->
+    <link rel="stylesheet" href="/assets/css/materialize.min.css">
+    <link rel="stylesheet" href="/assets/css/Material+Icons.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <link rel="stylesheet" href="/assets/css/post.css">
+    
+    
+    
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="[LeetCode] 075. Sort Colors" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Theme based on Materialize.css for jekyll sites." />
+<meta property="og:description" content="Theme based on Materialize.css for jekyll sites." />
+<link rel="canonical" href="http://localhost:4000/2019/04/10/leetcode-075-sort-colors" />
+<meta property="og:url" content="http://localhost:4000/2019/04/10/leetcode-075-sort-colors" />
+<meta property="og:site_name" content="Everest" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-04-10T00:00:00+08:00" />
+<script type="application/ld+json">
+{"description":"Theme based on Materialize.css for jekyll sites.","@type":"BlogPosting","url":"http://localhost:4000/2019/04/10/leetcode-075-sort-colors","headline":"[LeetCode] 075. Sort Colors","dateModified":"2019-04-10T00:00:00+08:00","datePublished":"2019-04-10T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/04/10/leetcode-075-sort-colors"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <header>
+	  <!--
+      <nav class="top-nav teal">
+	  -->
+      <nav class="top-nav ohio-state-scarlet">
+        <div class="nav-wrapper">
+          <div class="container">
+            <a class="page-title" href="/">Everest<sup>2019</sup></a>
+            <img class="buckeye_leaf" src="/assets/res/buckeye_leaf.png" alt="buckeye_leaf">
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <a href="#" data-activates="slide-out" class="button-collapse top-nav full hide-on-large-only">
+          <i class="material-icons">menu</i>
+        </a>
+      </div>
+      <ul id="slide-out" class="side-nav fixed">
+        <li>
+          <div class="userView">
+            <div class="background"></div>
+            <a href="https://github.com/zkf85" target="_blank"><img class="circle z-depth-2" src="/assets/res/lion_king.jpg"></a>
+            <span class="white-text name">Zhu, Kefeng</span>
+			<!--
+            <span class="white-text email">zkf1985@gmail.com</span>
+			-->
+            <span class="white-text email"><i>A Programmer, An AI Practitioner</i></span>
+          </div>
+        </li>
+
+        <li class="subheader">BLOG</li>
+        <li><a class="waves-effect" href="/"><i class="material-icons">home</i>Home</a></li>
+        <li><a class="waves-effect" href="/categories"><i class="material-icons">sort</i>Categories</a></li>
+        <li><a class="waves-effect" href="/tags"><i class="material-icons">label</i>Tags</a></li>
+<!--
+<li><a class="waves-effect" href="/feed.xml" target="_blank"><i class="material-icons">rss_feed</i>RSS</a></li>
+-->        
+        <li class="subheader">COLLECTIONS</li>
+        <li><a class="waves-effect" href="/cs229"><i class="material-icons">widgets</i>CS229</a></li>
+        <li><a class="waves-effect" href="/mit6006"><i class="material-icons">storage</i>MIT6006</a></li>
+        <li><a class="waves-effect" href="/leetcode"><i class="material-icons">code</i>LeetCode</a></li>
+
+        <li class="subheader">OTHERS</li>
+        <li><a class="waves-effect" href="/about"><i class="material-icons">person</i>About Me</a></li>
+        <li><a class="waves-effect" href="/calligraphy"><i class="material-icons">dashboard</i>書</a></li>
+        <!-- <li><a class="waves-effect" href="/contact"><i class="material-icons">email</i>Contact</a></li> -->
+      </ul>
+    </header>
+    <main>
+
+<!--
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+-->
+<!-- KF 02/14/2019
+The following snippet is to allow single $ style inline mode.
+Remember that after enabling this, you have to enter the real dollar sings with `\$`
+-->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<div class="container">
+  <div id="post-info">
+  <h1>[LeetCode] 075. Sort Colors</h1>
+  <ul class="collapsible hoverable" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Date">date_range</i>
+           
+          April
+            
+          10, 2019 - Wednesday
+          <i id="indicate" class="right material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Show extra info">info</i>
+        </span>
+      </div>
+      <div class="collapsible-body">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Categories">sort</i>
+          
+          
+          
+          <a href="/categories#algorithm_cap" target="_blank"><div class="chip">Algorithm</div></a>
+          
+        </span>
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Tags">label</i>
+          
+          
+          
+          <a href="/tags#leetcode" target="_blank"><div class="chip">leetcode</div></a>
+          
+          
+          
+          <a href="/tags#python" target="_blank"><div class="chip">python</div></a>
+          
+        </span>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="row">
+  <div class="col s12">
+    <!--more-->
+<ul id="markdown-toc">
+  <li><a href="#problem-medium" id="markdown-toc-problem-medium">Problem (Medium)</a></li>
+  <li><a href="#approach-1-my-solution---bubble-sort" id="markdown-toc-approach-1-my-solution---bubble-sort">Approach 1: (My Solution - Bubble Sort)</a>    <ul>
+      <li><a href="#idea" id="markdown-toc-idea">Idea</a></li>
+      <li><a href="#solution" id="markdown-toc-solution">Solution</a></li>
+      <li><a href="#complexity" id="markdown-toc-complexity">Complexity</a></li>
+    </ul>
+  </li>
+  <li><a href="#approach-2-two-pass-sort" id="markdown-toc-approach-2-two-pass-sort">Approach 2: Two-Pass Sort</a>    <ul>
+      <li><a href="#idea-1" id="markdown-toc-idea-1">Idea</a></li>
+      <li><a href="#solution-1" id="markdown-toc-solution-1">Solution</a></li>
+      <li><a href="#complexity-1" id="markdown-toc-complexity-1">Complexity</a></li>
+    </ul>
+  </li>
+  <li><a href="#approach-3-one-pass-" id="markdown-toc-approach-3-one-pass-">Approach 3: One-Pass *</a>    <ul>
+      <li><a href="#idea-2" id="markdown-toc-idea-2">Idea</a></li>
+      <li><a href="#solution-2" id="markdown-toc-solution-2">Solution</a></li>
+      <li><a href="#complexity-2" id="markdown-toc-complexity-2">Complexity</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="problem-medium">Problem (Medium)</h2>
+<p><a href="https://leetcode.com/problems/sort-colors">075. Sort Colors</a></p>
+
+<p>Given an array with n objects colored red, white or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white and blue.</p>
+
+<p>Here, we will use the integers 0, 1, and 2 to represent the color red, white, and blue respectively.</p>
+
+<p>Note: You are not suppose to use the library’s sort function for this problem.</p>
+
+<p>Example:</p>
+
+<ul>
+  <li>Input: [2,0,2,1,1,0]</li>
+  <li>Output: [0,0,1,1,2,2]</li>
+</ul>
+
+<p>Follow up:</p>
+
+<ul>
+  <li>A rather straight forward solution is a two-pass algorithm using counting sort.</li>
+  <li>First, iterate the array counting number of 0’s, 1’s, and 2’s, then overwrite array with total number of 0’s, then 1’s and followed by 2’s.</li>
+  <li>Could you come up with a one-pass algorithm using only constant space?</li>
+</ul>
+
+<p>The problem is known as <a href="https://en.wikipedia.org/wiki/Dutch_national_flag_problem">Dutch National Flag Problem</a> and first was proposed by Edsger W. Dijkstra. The idea is to attribute a color to each number and then to arrange them following the order of colors on the Dutch flag.</p>
+
+<p><img src="https://leetcode.com/problems/sort-colors/Figures/75/first_pic2.png" alt="" /></p>
+
+<h2 id="approach-1-my-solution---bubble-sort">Approach 1: (My Solution - Bubble Sort)</h2>
+
+<h3 id="idea">Idea</h3>
+
+<h3 id="solution">Solution</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution1</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">sortColors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">):</span>
+        <span class="s">""" 
+        :type nums: List[int]
+        :rtype: None Do not return anything, modify nums in-place instead.
+        """</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span><span class="o">-</span><span class="n">i</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+                    <span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">'i:'</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s">'j:'</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="s">'nums:'</span><span class="p">,</span> <span class="n">nums</span><span class="p">)</span>
+        <span class="k">return</span>
+</code></pre></div></div>
+
+<h3 id="complexity">Complexity</h3>
+<ul>
+  <li>Time: $O(n^2)$</li>
+  <li>Space: $O(1)$</li>
+</ul>
+
+<h2 id="approach-2-two-pass-sort">Approach 2: Two-Pass Sort</h2>
+
+<h3 id="idea-1">Idea</h3>
+<p>First, iterate the array counting number of 0’s, 1’s, and 2’s, then overwrite array with total number of 0’s, then 1’s and followed by 2’s.</p>
+
+<h3 id="solution-1">Solution</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution2</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">sortColors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">):</span>
+        <span class="s">"""
+        :type nums: List[int]
+        :rtype: None Do not return anything, modify nums in-place instead.
+        """</span>
+        <span class="n">dic</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
+            <span class="n">dic</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">dic</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">dic</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+                <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="k">continue</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">dic</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">dic</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+                <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="k">continue</span>
+            <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="k">return</span>
+</code></pre></div></div>
+
+<h3 id="complexity-1">Complexity</h3>
+<ul>
+  <li>Time: $O(n)$</li>
+  <li>Space: $O(1)$</li>
+</ul>
+
+<h2 id="approach-3-one-pass-">Approach 3: One-Pass *</h2>
+
+<h3 id="idea-2">Idea</h3>
+<p><a href="https://leetcode.com/problems/sort-colors/solution/">One Pass Solution</a></p>
+
+<p>Let’s use here three pointers to track the rightmost boundary of zeros, the leftmost boundary of twos and the current element under the consideration.</p>
+
+<p><img src="https://leetcode.com/problems/sort-colors/Figures/75/idx.png" alt="" /></p>
+
+<p>The idea of solution is to move <code class="highlighter-rouge">curr</code> pointer along the array, if <code class="highlighter-rouge">nums[curr] = 0</code> - swap it with nums[p0], if <code class="highlighter-rouge">nums[curr] = 2</code> - swap it with <code class="highlighter-rouge">nums[p2]</code>.</p>
+
+<p>Algorithm</p>
+
+<ul>
+  <li>
+    <p>Initialise the rightmost boundary of zeros : <code class="highlighter-rouge">p0 = 0</code>. During the algorithm execution <code class="highlighter-rouge">nums[idx &lt; p0] = 0</code>.</p>
+  </li>
+  <li>
+    <p>Initialise the leftmost boundary of twos : <code class="highlighter-rouge">p2 = n - 1</code>. During the algorithm execution <code class="highlighter-rouge">nums[idx &gt; p2] = 2</code>.</p>
+  </li>
+  <li>
+    <p>Initialise the index of current element to consider : <code class="highlighter-rouge">curr = 0</code>.</p>
+  </li>
+  <li>
+    <p>While <code class="highlighter-rouge">curr &lt;= p2</code> :</p>
+
+    <ul>
+      <li>
+        <p>If <code class="highlighter-rouge">nums[curr] = 0</code> : swap currth and <code class="highlighter-rouge">p0</code>th elements and move both pointers to the right.</p>
+      </li>
+      <li>
+        <p>If <code class="highlighter-rouge">nums[curr] = 2</code> : swap currth and <code class="highlighter-rouge">p2</code>th elements. Move pointer <code class="highlighter-rouge">k</code> to the left.</p>
+      </li>
+      <li>
+        <p>If <code class="highlighter-rouge">nums[curr] = 1</code> : move pointer <code class="highlighter-rouge">curr</code> to the right.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="solution-2">Solution</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution3</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">sortColors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="s">"""
+        Dutch National Flag problem solution.
+        """</span>
+        <span class="c"># for all idx &lt; p0 : nums[idx &lt; p0] = 0</span>
+        <span class="c"># curr is an index of element under consideration</span>
+        <span class="n">p0</span> <span class="o">=</span> <span class="n">curr</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="c"># for all idx &gt; p2 : nums[idx &gt; p2] = 2</span>
+        <span class="n">p2</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+
+        <span class="k">while</span> <span class="n">curr</span> <span class="o">&lt;=</span> <span class="n">p2</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">curr</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">nums</span><span class="p">[</span><span class="n">p0</span><span class="p">],</span> <span class="n">nums</span><span class="p">[</span><span class="n">curr</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">curr</span><span class="p">],</span> <span class="n">nums</span><span class="p">[</span><span class="n">p0</span><span class="p">]</span>
+                <span class="n">p0</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">curr</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="n">nums</span><span class="p">[</span><span class="n">curr</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">nums</span><span class="p">[</span><span class="n">curr</span><span class="p">],</span> <span class="n">nums</span><span class="p">[</span><span class="n">p2</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">p2</span><span class="p">],</span> <span class="n">nums</span><span class="p">[</span><span class="n">curr</span><span class="p">]</span>
+                <span class="n">p2</span> <span class="o">-=</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">curr</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<h3 id="complexity-2">Complexity</h3>
+<ul>
+  <li>Time: $O(n)$</li>
+  <li>Space: $O(1)$</li>
+</ul>
+
+<p><br /><br /><strong><em>KF</em></strong></p>
+
+
+  </div>
+</div>
+
+
+<div>
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    this.page.url = "http://localhost:4000/2019/04/10/leetcode-075-sort-colors";
+    this.page.identifier = "/2019/04/10/leetcode-075-sort-colors";
+  };
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//zkf85githubio.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+
+
+</div>
+
+<!-- KF 02/13/2019  -->
+<!-- Add back to top button -->
+<button onclick="topFunction()" id="myBtn" title="Back to top"><i class="material-icons">vertical_align_top</i></button>
+
+<script>
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+    </main>
+    <footer class="page-footer ohio-state-scarlet">
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            <img src="/assets/res/logo.png" alt="logo"/>
+            <p class="grey-text text-lighten-4">Theme based on <a href="http://materializecss.com">Materialize.css</a> for jekyll sites.
+</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          &#xA9; 2019 Everest. All rights reserved. Powered by <a href="https://github.com/zkf85">Kefeng</a>.
+        </div>
+      </div>
+    </footer>
+    <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+    
+    
+    <script src="/assets/js/post.js"></script>
+    
+    
+    
+    
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>
+

@@ -118,28 +118,32 @@ Remember that after enabling this, you have to enter the real dollar sings with 
   <div class="col s12">
     <div class="card hoverable">
       <div class="card-content">
-        <!--<span id="post-title" class="card-title">Study Plan and Checklist in the Next 3 Months</span>
+        <!--<span id="post-title" class="card-title">[CS229] Lecture 4 Notes - Newton's Method/GLMs</span>
         -->
-        <a id="post-title" class="card-title" href="/2018/12/28/3-month-study-plan">
-        Study Plan and Checklist in the Next 3 Months
+        <a id="post-title" class="card-title" href="/2019/02/14/cs229-lecture-4">
+        [CS229] Lecture 4 Notes - Newton's Method/GLMs
         </a>
         
         <p id="post-date">
           <i class="material-icons">date_range</i>
            
-          Dec.
+          Feb.
             
-          28, 2018 - Friday
+          14, 2019 - Thursday
 
         </p>
         <p id="post-content"><blockquote>
-  <p>Here is a planning for the Maching Learning/Programming Basics knowledge study in the next three month. The plan basically covers Stanford CS229, CS231 and MIT 6.006.</p>
+  <ol>
+    <li>Newton’s Method,</li>
+    <li>Generalized Linear Models</li>
+  </ol>
 </blockquote>
+
 
 </p>
       </div>
       <div class="card-action">
-        <a href="/2018/12/28/3-month-study-plan">
+        <a href="/2019/02/14/cs229-lecture-4">
           Read More 
         <i class="material-icons">keyboard_arrow_down</i></a>
       </div>
@@ -149,28 +153,33 @@ Remember that after enabling this, you have to enter the real dollar sings with 
   <div class="col s12">
     <div class="card hoverable">
       <div class="card-content">
-        <!--<span id="post-title" class="card-title">Pandas - Quick Start</span>
+        <!--<span id="post-title" class="card-title">[CS229] Lecture 3 Notes - LWR/Prob Interp/Logistic/Perceptron</span>
         -->
-        <a id="post-title" class="card-title" href="/2018/12/28/pandas-quick-start">
-        Pandas - Quick Start
+        <a id="post-title" class="card-title" href="/2019/02/12/cs229-lecture-3">
+        [CS229] Lecture 3 Notes - LWR/Prob Interp/Logistic/Perceptron
         </a>
         
         <p id="post-date">
           <i class="material-icons">date_range</i>
            
-          Dec.
+          Feb.
             
-          28, 2018 - Friday
+          12, 2019 - Tuesday
 
         </p>
         <p id="post-content"><blockquote>
-  <p><a href="https://pandas.pydata.org/index.html"><em>pandas</em></a> is an open source,  BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the <strong>Python</strong> programming language.</p>
+  <ol>
+    <li>Locally Weighted Regression</li>
+    <li>Probablistic Interpretation of LR</li>
+    <li>Classification (Logistic Regression)</li>
+    <li>Disgression -&gt; Perceptron</li>
+  </ol>
 </blockquote>
 
 </p>
       </div>
       <div class="card-action">
-        <a href="/2018/12/28/pandas-quick-start">
+        <a href="/2019/02/12/cs229-lecture-3">
           Read More 
         <i class="material-icons">keyboard_arrow_down</i></a>
       </div>
@@ -180,28 +189,28 @@ Remember that after enabling this, you have to enter the real dollar sings with 
   <div class="col s12">
     <div class="card hoverable">
       <div class="card-content">
-        <!--<span id="post-title" class="card-title">Quick Start on MySQL</span>
+        <!--<span id="post-title" class="card-title">Random! Shuffle v.s. Permutation (Numpy)</span>
         -->
-        <a id="post-title" class="card-title" href="/2018/12/12/mysql-quick-start">
-        Quick Start on MySQL
+        <a id="post-title" class="card-title" href="/2019/01/31/np-shuffle-vs-permutation">
+        Random! Shuffle v.s. Permutation (Numpy)
         </a>
         
         <p id="post-date">
           <i class="material-icons">date_range</i>
            
-          Dec.
+          Jan.
             
-          12, 2018 - Wednesday
+          31, 2019 - Thursday
 
         </p>
         <p id="post-content"><blockquote>
-  <p>A quick start and a <strong>Cheet Sheet</strong> on MySQL.</p>
+  <p>Generally, in Numpy, both <code class="highlighter-rouge">random.permutation</code> and <code class="highlighter-rouge">random.shuffle</code> randomly shuffle elements in an array. But there are differences:</p>
 </blockquote>
 
 </p>
       </div>
       <div class="card-action">
-        <a href="/2018/12/12/mysql-quick-start">
+        <a href="/2019/01/31/np-shuffle-vs-permutation">
           Read More 
         <i class="material-icons">keyboard_arrow_down</i></a>
       </div>
@@ -211,28 +220,40 @@ Remember that after enabling this, you have to enter the real dollar sings with 
   <div class="col s12">
     <div class="card hoverable">
       <div class="card-content">
-        <!--<span id="post-title" class="card-title">Understanding generators in Python</span>
+        <!--<span id="post-title" class="card-title">How to Force Keras to use CPU to Run Script?</span>
         -->
-        <a id="post-title" class="card-title" href="/2018/12/10/understand-python-generator">
-        Understanding generators in Python
+        <a id="post-title" class="card-title" href="/2019/01/23/how-to-force-keras-use-cpu">
+        How to Force Keras to use CPU to Run Script?
         </a>
         
         <p id="post-date">
           <i class="material-icons">date_range</i>
            
-          Dec.
+          Jan.
             
-          10, 2018 - Monday
+          23, 2019 - Wednesday
 
         </p>
         <p id="post-content"><blockquote>
-  <p>This post note a full understanding of a <strong><a href="http://www.python.org/dev/peps/pep-0255/">generator</a></strong> in Python.</p>
+  <p><strong>The reason for such a demand:</strong></p>
+
+  <p>My main training program was using the GPU fully. But I needed to get a prediction with another previously trained model urgently. I tried to use the GPU but I got OOM. Therefore, using CPU for the predicting job should be a good solution, and it did solve the problem!</p>
+
+  <p>Generally there are two ways: a short/lazy one and a lengthy but graceful one.</p>
 </blockquote>
+
+<h2 id="option-i">Option I:</h2>
+<p>If you want to force Keras to use CPU</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">"CUDA_DEVICE_ORDER"</span><span class="p">]</span> <span class="o">=</span> <span class="s">"PCI_BUS_ID"</span> 
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">"CUDA_VISIBLE_DEVICES"</span><span class="p">]</span> <span class="o">=</span> <span class="s">""</span>
+</code></pre></div></div>
+<p>before Keras / Tensorflow is imported.</p>
 
 </p>
       </div>
       <div class="card-action">
-        <a href="/2018/12/10/understand-python-generator">
+        <a href="/2019/01/23/how-to-force-keras-use-cpu">
           Read More 
         <i class="material-icons">keyboard_arrow_down</i></a>
       </div>
@@ -242,36 +263,182 @@ Remember that after enabling this, you have to enter the real dollar sings with 
   <div class="col s12">
     <div class="card hoverable">
       <div class="card-content">
-        <!--<span id="post-title" class="card-title">How to install Tensorflow GPU with CUDA 10.0 for python on Ubuntu</span>
+        <!--<span id="post-title" class="card-title">How to Add a Table of Content to my Jekyll Blog?</span>
         -->
-        <a id="post-title" class="card-title" href="/2018/12/10/how-to-install-cuda-10-on-ubuntu-18.04">
-        How to install Tensorflow GPU with CUDA 10.0 for python on Ubuntu
+        <a id="post-title" class="card-title" href="/2019/01/23/how-to-add-table-of-content-in-jekyll">
+        How to Add a Table of Content to my Jekyll Blog?
         </a>
         
         <p id="post-date">
           <i class="material-icons">date_range</i>
            
-          Dec.
+          Jan.
             
-          10, 2018 - Monday
+          23, 2019 - Wednesday
 
         </p>
-        <p id="post-content"><blockquote>
-  <p>As described in the title, it’s exactly what I need currently. Here is an excellent post on this:</p>
-</blockquote>
+        <p id="post-content"><p>In the post, simply add:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* TOC
+{:toc} 
+</code></pre></div></div>
+<p>in the post.</p>
 
 <ul>
-  <li><a href="https://www.python36.com/how-to-install-tensorflow-gpu-with-cuda-10-0-for-python-on-ubuntu/">» How to install Tensorflow GPU with CUDA 10.0 for python on Ubuntu</a></li>
+  <li><a href="http://www.seanbuscay.com/blog/jekyll-toc-markdown/">» How I Add a Table of Contents to my Jekyll Blog Written in Markdown</a></li>
+  <li><a href="https://blog.webjeda.com/jekyll-toc/#how-to-add-toc-for-jekyll-posts">» Jekyll Table Of Contents - Wikipedia Look!</a></li>
 </ul>
 
+</p>
+      </div>
+      <div class="card-action">
+        <a href="/2019/01/23/how-to-add-table-of-content-in-jekyll">
+          Read More 
+        <i class="material-icons">keyboard_arrow_down</i></a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col s12">
+    <div class="card hoverable">
+      <div class="card-content">
+        <!--<span id="post-title" class="card-title">How to Add a Scroll Back to Top Button?</span>
+        -->
+        <a id="post-title" class="card-title" href="/2019/01/23/how-to-add-back-to-top-button">
+        How to Add a Scroll Back to Top Button?
+        </a>
+        
+        <p id="post-date">
+          <i class="material-icons">date_range</i>
+           
+          Jan.
+            
+          23, 2019 - Wednesday
+
+        </p>
+        <p id="post-content"><blockquote>
+  <p>Check this below:</p>
+
+  <ul>
+    <li><a href="https://www.w3schools.com/howto/howto_js_scroll_to_top.asp">»How To Create a Scroll To Top Button - W3Schools</a></li>
+  </ul>
+</blockquote>
+
+</p>
+      </div>
+      <div class="card-action">
+        <a href="/2019/01/23/how-to-add-back-to-top-button">
+          Read More 
+        <i class="material-icons">keyboard_arrow_down</i></a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col s12">
+    <div class="card hoverable">
+      <div class="card-content">
+        <!--<span id="post-title" class="card-title">How to Sort Site Tags in Jekyll?</span>
+        -->
+        <a id="post-title" class="card-title" href="/2019/01/23/how-to-sort-tags-in-jekyll">
+        How to Sort Site Tags in Jekyll?
+        </a>
+        
+        <p id="post-date">
+          <i class="material-icons">date_range</i>
+           
+          Jan.
+            
+          23, 2019 - Wednesday
+
+        </p>
+        <p id="post-content"><blockquote>
+  <p>Check this Article:</p>
+
+  <ul>
+    <li><a href="https://www.codeofclimber.ru/2015/sorting-site-tags-in-jekyll/">» Sorting site tags in Jekyll - by “code of climber”</a></li>
+  </ul>
+</blockquote>
+
+</p>
+      </div>
+      <div class="card-action">
+        <a href="/2019/01/23/how-to-sort-tags-in-jekyll">
+          Read More 
+        <i class="material-icons">keyboard_arrow_down</i></a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col s12">
+    <div class="card hoverable">
+      <div class="card-content">
+        <!--<span id="post-title" class="card-title">How to Support LaTex in Jekyll?</span>
+        -->
+        <a id="post-title" class="card-title" href="/2019/01/22/how-to-render-latex-in-jekyll">
+        How to Support LaTex in Jekyll?
+        </a>
+        
+        <p id="post-date">
+          <i class="material-icons">date_range</i>
+           
+          Jan.
+            
+          22, 2019 - Tuesday
+
+        </p>
+        <p id="post-content"><blockquote>
+  <p>To render math symbols and formula using LaTex in Jekyll website, check the links below,</p>
+
+  <p>Also Remember to update the cdnjs link, which is described in the last reference link.</p>
+</blockquote>
+
+<h2 id="reference">Reference</h2>
+<ul>
+  <li><a href="https://stackoverflow.com/questions/10987992/using-mathjax-with-jekyll">» mathjax-with-jekyll on Stack Overflow</a></li>
+  <li><a href="http://www.iangoodfellow.com/blog/jekyll/markdown/tex/2016/11/07/latex-in-markdown.html">» Iangoodfellow on LaTex in Jekyll</a></li>
+  <li><a href="https://www.mathjax.org/cdn-shutting-down/">» MathJax CDN shutting down on April 30, 2017. Alternatives available.</a></li>
+</ul>
+
+</p>
+      </div>
+      <div class="card-action">
+        <a href="/2019/01/22/how-to-render-latex-in-jekyll">
+          Read More 
+        <i class="material-icons">keyboard_arrow_down</i></a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col s12">
+    <div class="card hoverable">
+      <div class="card-content">
+        <!--<span id="post-title" class="card-title">What does 'rc' Mean in Unix-like systems, or even in Matplotlib rcParams?</span>
+        -->
+        <a id="post-title" class="card-title" href="/2019/01/17/what-does-rc-mean">
+        What does 'rc' Mean in Unix-like systems, or even in Matplotlib rcParams?
+        </a>
+        
+        <p id="post-date">
+          <i class="material-icons">date_range</i>
+           
+          Jan.
+            
+          17, 2019 - Thursday
+
+        </p>
+        <p id="post-content"><blockquote>
+  <p>In the context of Unix-like systems, the term rc stands for the phrase <strong>“run commands”</strong>. It is used for any file that contains startup information for a command. It is believed to have originated somewhere in 1965 from a runcom facility from the MIT Compatible Time-Sharing System (CTSS).</p>
+</blockquote>
+
+<p>From Brian Kernighan and Dennis Ritchie:</p>
+
 <blockquote>
-  <p>There are a bunch of steps for the installation and requires a lot of time for compiling. In this post I’ll update my progress on trying it out on my own home server. Hope it works!</p>
+  <p>There was a facility that would execute a bunch of commands stored in a file; it was called runcom for “run commands”, and the file began to be called “a runcom”. rc in Unix is a fossil from that usage.</p>
 </blockquote>
 
 </p>
       </div>
       <div class="card-action">
-        <a href="/2018/12/10/how-to-install-cuda-10-on-ubuntu-18.04">
+        <a href="/2019/01/17/what-does-rc-mean">
           Read More 
         <i class="material-icons">keyboard_arrow_down</i></a>
       </div>
@@ -281,161 +448,30 @@ Remember that after enabling this, you have to enter the real dollar sings with 
   <div class="col s12">
     <div class="card hoverable">
       <div class="card-content">
-        <!--<span id="post-title" class="card-title">How to Set Static IP Address on Ubuntu 18.04 Using Netplan</span>
+        <!--<span id="post-title" class="card-title">How to Draw Contour Plot for Gradient Descent in Python</span>
         -->
-        <a id="post-title" class="card-title" href="/2018/12/10/how-to-set-static-ip-address">
-        How to Set Static IP Address on Ubuntu 18.04 Using Netplan
+        <a id="post-title" class="card-title" href="/2019/01/17/gradient-descent-plot-contour">
+        How to Draw Contour Plot for Gradient Descent in Python
         </a>
         
         <p id="post-date">
           <i class="material-icons">date_range</i>
            
-          Dec.
+          Jan.
             
-          10, 2018 - Monday
+          17, 2019 - Thursday
 
         </p>
         <p id="post-content"><blockquote>
-  <p>Recently I was struggling with tensorflow-gpu installation my home server. After couple of rounds of attempts and re-installation. I have to choose Ubuntu-18.04 only (due to my mother board version, both ubuntu-16.04 and debian-9 have network driver issues).</p>
+  <p>The contour plot that showing the path of gradient descent often appears in the introductory part of machine learning. The following plot is an classic example from Andrew Ng’s CS229. In this article, I’d like to try and take a record on how to draw such a Gradient Descent contour plot in Python.</p>
 </blockquote>
 
-<blockquote>
-  <p>During the time when re-installing the system, setting a static IP address is a common routine that make other computer in the home network easy to access the server. Here I’ll show how to configure static IP Address in Ubuntu 18.04 with netplan.</p>
-</blockquote>
+<p><img src="/public/img/20190117-contour_cs229.png" alt="" /></p>
 
 </p>
       </div>
       <div class="card-action">
-        <a href="/2018/12/10/how-to-set-static-ip-address">
-          Read More 
-        <i class="material-icons">keyboard_arrow_down</i></a>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col s12">
-    <div class="card hoverable">
-      <div class="card-content">
-        <!--<span id="post-title" class="card-title">Linux/Unix Recursively Search All Files for a String</span>
-        -->
-        <a id="post-title" class="card-title" href="/2018/12/06/search-all-files-for-a-string">
-        Linux/Unix Recursively Search All Files for a String
-        </a>
-        
-        <p id="post-date">
-          <i class="material-icons">date_range</i>
-           
-          Dec.
-            
-          06, 2018 - Thursday
-
-        </p>
-        <p id="post-content"><blockquote>
-  <p>A quick answer here:</p>
-</blockquote>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">grep</span> <span class="nt">-r</span> <span class="s2">"string"</span> <span class="nb">.</span>
-</code></pre></div></div>
-
-</p>
-      </div>
-      <div class="card-action">
-        <a href="/2018/12/06/search-all-files-for-a-string">
-          Read More 
-        <i class="material-icons">keyboard_arrow_down</i></a>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col s12">
-    <div class="card hoverable">
-      <div class="card-content">
-        <!--<span id="post-title" class="card-title">How to Save IPython Session</span>
-        -->
-        <a id="post-title" class="card-title" href="/2018/12/06/how-to-save-ipython-session">
-        How to Save IPython Session
-        </a>
-        
-        <p id="post-date">
-          <i class="material-icons">date_range</i>
-           
-          Dec.
-            
-          06, 2018 - Thursday
-
-        </p>
-        <p id="post-content"><blockquote>
-  <p>The detail of the question is described in this page <a href="https://stackoverflow.com/questions/947810/how-to-save-a-python-interactive-session">How to save a Python interactive session?</a></p>
-</blockquote>
-
-</p>
-      </div>
-      <div class="card-action">
-        <a href="/2018/12/06/how-to-save-ipython-session">
-          Read More 
-        <i class="material-icons">keyboard_arrow_down</i></a>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col s12">
-    <div class="card hoverable">
-      <div class="card-content">
-        <!--<span id="post-title" class="card-title">How to Open Jupyter Notebook via SSH</span>
-        -->
-        <a id="post-title" class="card-title" href="/2018/12/06/how-to-open-jupyter-via-ssh">
-        How to Open Jupyter Notebook via SSH
-        </a>
-        
-        <p id="post-date">
-          <i class="material-icons">date_range</i>
-           
-          Dec.
-            
-          06, 2018 - Thursday
-
-        </p>
-        <p id="post-content"><blockquote>
-  <p>The Objective is clear as described in the title. The case is usually encountered when logged in a remote server for computation but still want to use the jupyter-notebook that you’re familiar with. This article tells how.</p>
-</blockquote>
-
-</p>
-      </div>
-      <div class="card-action">
-        <a href="/2018/12/06/how-to-open-jupyter-via-ssh">
-          Read More 
-        <i class="material-icons">keyboard_arrow_down</i></a>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col s12">
-    <div class="card hoverable">
-      <div class="card-content">
-        <!--<span id="post-title" class="card-title">How to make Bootable USB from an ISO with Command Line Tools on macOS?</span>
-        -->
-        <a id="post-title" class="card-title" href="/2018/12/05/how-to-format-a-usb-on-linux">
-        How to make Bootable USB from an ISO with Command Line Tools on macOS?
-        </a>
-        
-        <p id="post-date">
-          <i class="material-icons">date_range</i>
-           
-          Dec.
-            
-          05, 2018 - Wednesday
-
-        </p>
-        <p id="post-content"><blockquote>
-  <p>Making things happen without any third party tools is joyful. In this article, I’d like to show how to make a bootable USB simply using built-in commands in a terminal on macOS.</p>
-</blockquote>
-
-<p><img src="/public/img/20181205-bootable-usb.jpg" alt="" /></p>
-
-</p>
-      </div>
-      <div class="card-action">
-        <a href="/2018/12/05/how-to-format-a-usb-on-linux">
+        <a href="/2019/01/17/gradient-descent-plot-contour">
           Read More 
         <i class="material-icons">keyboard_arrow_down</i></a>
       </div>
@@ -496,6 +532,14 @@ Remember that after enabling this, you have to enter the real dollar sings with 
       
       
       <li class="waves-effect"><a href="/page10">10</a></li>
+      
+      
+      
+      <li class="waves-effect"><a href="/page11">11</a></li>
+      
+      
+      
+      <li class="waves-effect"><a href="/page12">12</a></li>
       
       
       <li class="waves-effect">

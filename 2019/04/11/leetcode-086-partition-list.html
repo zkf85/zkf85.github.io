@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+      [LeetCode] 086. Partition List *
+      
+      2019
+    </title>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/res/favicon.ico">
+	<!--
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+	-->
+    <link rel="stylesheet" href="/assets/css/materialize.min.css">
+    <link rel="stylesheet" href="/assets/css/Material+Icons.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <link rel="stylesheet" href="/assets/css/post.css">
+    
+    
+    
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="[LeetCode] 086. Partition List *" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Theme based on Materialize.css for jekyll sites." />
+<meta property="og:description" content="Theme based on Materialize.css for jekyll sites." />
+<link rel="canonical" href="http://localhost:4000/2019/04/11/leetcode-086-partition-list" />
+<meta property="og:url" content="http://localhost:4000/2019/04/11/leetcode-086-partition-list" />
+<meta property="og:site_name" content="Everest" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-04-11T00:00:00+08:00" />
+<script type="application/ld+json">
+{"description":"Theme based on Materialize.css for jekyll sites.","@type":"BlogPosting","url":"http://localhost:4000/2019/04/11/leetcode-086-partition-list","headline":"[LeetCode] 086. Partition List *","dateModified":"2019-04-11T00:00:00+08:00","datePublished":"2019-04-11T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/04/11/leetcode-086-partition-list"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <header>
+	  <!--
+      <nav class="top-nav teal">
+	  -->
+      <nav class="top-nav ohio-state-scarlet">
+        <div class="nav-wrapper">
+          <div class="container">
+            <a class="page-title" href="/">Everest<sup>2019</sup></a>
+            <img class="buckeye_leaf" src="/assets/res/buckeye_leaf.png" alt="buckeye_leaf">
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <a href="#" data-activates="slide-out" class="button-collapse top-nav full hide-on-large-only">
+          <i class="material-icons">menu</i>
+        </a>
+      </div>
+      <ul id="slide-out" class="side-nav fixed">
+        <li>
+          <div class="userView">
+            <div class="background"></div>
+            <a href="https://github.com/zkf85" target="_blank"><img class="circle z-depth-2" src="/assets/res/lion_king.jpg"></a>
+            <span class="white-text name">Zhu, Kefeng</span>
+			<!--
+            <span class="white-text email">zkf1985@gmail.com</span>
+			-->
+            <span class="white-text email"><i>A Programmer, An AI Practitioner</i></span>
+          </div>
+        </li>
+
+        <li class="subheader">BLOG</li>
+        <li><a class="waves-effect" href="/"><i class="material-icons">home</i>Home</a></li>
+        <li><a class="waves-effect" href="/categories"><i class="material-icons">sort</i>Categories</a></li>
+        <li><a class="waves-effect" href="/tags"><i class="material-icons">label</i>Tags</a></li>
+<!--
+<li><a class="waves-effect" href="/feed.xml" target="_blank"><i class="material-icons">rss_feed</i>RSS</a></li>
+-->        
+        <li class="subheader">COLLECTIONS</li>
+        <li><a class="waves-effect" href="/cs229"><i class="material-icons">widgets</i>CS229</a></li>
+        <li><a class="waves-effect" href="/mit6006"><i class="material-icons">storage</i>MIT6006</a></li>
+        <li><a class="waves-effect" href="/leetcode"><i class="material-icons">code</i>LeetCode</a></li>
+
+        <li class="subheader">OTHERS</li>
+        <li><a class="waves-effect" href="/about"><i class="material-icons">person</i>About Me</a></li>
+        <li><a class="waves-effect" href="/calligraphy"><i class="material-icons">dashboard</i>書</a></li>
+        <!-- <li><a class="waves-effect" href="/contact"><i class="material-icons">email</i>Contact</a></li> -->
+      </ul>
+    </header>
+    <main>
+
+<!--
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+-->
+<!-- KF 02/14/2019
+The following snippet is to allow single $ style inline mode.
+Remember that after enabling this, you have to enter the real dollar sings with `\$`
+-->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<div class="container">
+  <div id="post-info">
+  <h1>[LeetCode] 086. Partition List *</h1>
+  <ul class="collapsible hoverable" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Date">date_range</i>
+           
+          April
+            
+          11, 2019 - Thursday
+          <i id="indicate" class="right material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Show extra info">info</i>
+        </span>
+      </div>
+      <div class="collapsible-body">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Categories">sort</i>
+          
+          
+          
+          <a href="/categories#algorithm_cap" target="_blank"><div class="chip">Algorithm</div></a>
+          
+        </span>
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Tags">label</i>
+          
+          
+          
+          <a href="/tags#leetcode" target="_blank"><div class="chip">leetcode</div></a>
+          
+          
+          
+          <a href="/tags#python" target="_blank"><div class="chip">python</div></a>
+          
+        </span>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="row">
+  <div class="col s12">
+    <!--more-->
+<ul id="markdown-toc">
+  <li><a href="#problem-medium" id="markdown-toc-problem-medium">Problem (Medium)</a></li>
+  <li><a href="#approach-1-solution-from-leetcode---two-pointer-approach-" id="markdown-toc-approach-1-solution-from-leetcode---two-pointer-approach-">Approach 1: Solution from LeetCode - Two Pointer Approach *</a>    <ul>
+      <li><a href="#idea" id="markdown-toc-idea">Idea</a>        <ul>
+          <li><a href="#intuition" id="markdown-toc-intuition">Intuition</a></li>
+          <li><a href="#algorithm" id="markdown-toc-algorithm">Algorithm</a></li>
+        </ul>
+      </li>
+      <li><a href="#solution" id="markdown-toc-solution">Solution</a></li>
+      <li><a href="#complexity" id="markdown-toc-complexity">Complexity</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="problem-medium">Problem (Medium)</h2>
+<p><a href="https://leetcode.com/problems/partition-list">086. Partition List</a></p>
+
+<p>Given a linked list and a value <code class="highlighter-rouge">x</code>, partition it such that all nodes less than <code class="highlighter-rouge">x</code> come before nodes greater than or equal to <code class="highlighter-rouge">x</code>.</p>
+
+<p>You should preserve the original relative order of the nodes in each of the two partitions.</p>
+
+<p>Example:</p>
+
+<ul>
+  <li>Input: <code class="highlighter-rouge">head = 1-&gt;4-&gt;3-&gt;2-&gt;5-&gt;2, x = 3</code></li>
+  <li>Output: <code class="highlighter-rouge">1-&gt;2-&gt;2-&gt;4-&gt;3-&gt;5</code></li>
+</ul>
+
+<h2 id="approach-1-solution-from-leetcode---two-pointer-approach-">Approach 1: Solution from LeetCode - Two Pointer Approach *</h2>
+
+<p>The problem wants us to reform the linked list structure, such that the elements lesser that a certain value <code class="highlighter-rouge">x</code>, come before the elements greater or equal to <code class="highlighter-rouge">x</code>. This essentially means in this reformed list, there would be a point in the linked list before which all the elements would be smaller than <code class="highlighter-rouge">x</code> and after which all the elements would be greater or equal to <code class="highlighter-rouge">x</code>. Let’s call this point as the <code class="highlighter-rouge">JOINT</code>.</p>
+
+<p><img src="https://leetcode.com/problems/partition-list/Figures/86/86_Partition_List_1.png" alt="" /></p>
+
+<p>Reverse engineering the question tells us that if we break the reformed list at the <code class="highlighter-rouge">JOINT</code>, we will get two smaller linked lists, one with lesser elements and the other with elements greater or equal to <code class="highlighter-rouge">x</code>. In the solution, our main aim is to create these two linked lists and join them.</p>
+
+<h3 id="idea">Idea</h3>
+<h4 id="intuition">Intuition</h4>
+
+<p>We can take two pointers before and after to keep track of the two linked lists as described above. These two pointers could be used two create two separate lists and then these lists could be combined to form the desired reformed list.</p>
+
+<h4 id="algorithm">Algorithm</h4>
+
+<ol>
+  <li>
+    <p>Initialize two pointers <code class="highlighter-rouge">before</code> and <code class="highlighter-rouge">after</code>. In the implementation we have initialized these two with a dummy <code class="highlighter-rouge">ListNode</code>. This helps to reduce the number of conditional checks we would need otherwise. You can try an implementation where you don’t initialize with a dummy node and see it yourself!</p>
+
+    <p><img src="https://leetcode.com/problems/partition-list/Figures/86/86_Partition_List_2.png" alt="" /></p>
+  </li>
+  <li>Iterate the original linked list, using the <code class="highlighter-rouge">head</code> pointer.</li>
+  <li>
+    <p>If the node’s value pointed by <code class="highlighter-rouge">head</code> is lesser than <code class="highlighter-rouge">x</code>, the node should be part of the <code class="highlighter-rouge">before</code> list. So we move it to <code class="highlighter-rouge">before</code> list.</p>
+
+    <p><img src="https://leetcode.com/problems/partition-list/Figures/86/86_Partition_List_3.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Else, the node should be part of <code class="highlighter-rouge">after</code> list. So we move it to <code class="highlighter-rouge">after</code> list.</p>
+
+    <p><img src="https://leetcode.com/problems/partition-list/Figures/86/86_Partition_List_4.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Once we are done with all the nodes in the original linked list, we would have two list before and <code class="highlighter-rouge">after</code>. The original list nodes are either part of <code class="highlighter-rouge">before</code> list or <code class="highlighter-rouge">after</code> list, depending on its value.</p>
+
+    <p><img src="https://leetcode.com/problems/partition-list/Figures/86/86_Partition_List_5.png" alt="" /></p>
+
+    <p><em>Note: Since we traverse the original linked list from left to right, at no point would the order of nodes change relatively in the two lists. Another important thing to note here is that we show the original linked list intact in the above diagrams. However, in the implementation, we remove the nodes from the original linked list and attach them in the before or after list. We don’t utilize any additional space. We simply move the nodes from the original list around.</em></p>
+  </li>
+  <li>
+    <p>Now, these two lists <code class="highlighter-rouge">before</code> and <code class="highlighter-rouge">after</code> can be combined to form the reformed list.</p>
+
+    <p><img src="https://leetcode.com/problems/partition-list/Figures/86/86_Partition_List_6.png" alt="" /></p>
+  </li>
+</ol>
+
+<p>We did a dummy node initialization at the start to make implementation easier, you don’t want that to be part of the returned list, hence just move ahead one node in both the lists while combining the two list. Since both before and after have an extra node at the front.</p>
+
+<h3 id="solution">Solution</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution1</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">partition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">head</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="s">"""
+        :type head: ListNode
+        :type x: int
+        :rtype: ListNode
+        """</span>
+
+        <span class="c"># before and after are the two pointers used to create two list</span>
+        <span class="c"># before_head and after_head are used to save the heads of the two lists.</span>
+        <span class="c"># All of these are initialized with the dummy nodes created.</span>
+        <span class="n">before</span> <span class="o">=</span> <span class="n">before_head</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">after</span> <span class="o">=</span> <span class="n">after_head</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="k">while</span> <span class="n">head</span><span class="p">:</span>
+            <span class="c"># If the original list node is lesser than the given x,</span>
+            <span class="c"># assign it to the before list.</span>
+            <span class="k">if</span> <span class="n">head</span><span class="o">.</span><span class="n">val</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">:</span>
+                <span class="n">before</span><span class="o">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">head</span>
+                <span class="n">before</span> <span class="o">=</span> <span class="n">before</span><span class="o">.</span><span class="nb">next</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c"># If the original list node is greater or equal to the given x,</span>
+                <span class="c"># assign it to the after list.</span>
+                <span class="n">after</span><span class="o">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">head</span>
+                <span class="n">after</span> <span class="o">=</span> <span class="n">after</span><span class="o">.</span><span class="nb">next</span>
+
+            <span class="c"># move ahead in the original list</span>
+            <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="o">.</span><span class="nb">next</span>
+
+        <span class="c"># Last node of "after" list would also be ending node of the reformed list</span>
+        <span class="n">after</span><span class="o">.</span><span class="nb">next</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="c"># Once all the nodes are correctly assigned to the two lists,</span>
+        <span class="c"># combine them to form a single list which would be returned.</span>
+        <span class="n">before</span><span class="o">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">after_head</span><span class="o">.</span><span class="nb">next</span>
+
+        <span class="k">return</span> <span class="n">before_head</span><span class="o">.</span><span class="nb">next</span>
+</code></pre></div></div>
+
+<h3 id="complexity">Complexity</h3>
+<ul>
+  <li>Time: $O(N)$</li>
+  <li>Space: $O(1)$</li>
+</ul>
+
+<p><br /><br /><strong><em>KF</em></strong></p>
+
+
+  </div>
+</div>
+
+
+<div>
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    this.page.url = "http://localhost:4000/2019/04/11/leetcode-086-partition-list";
+    this.page.identifier = "/2019/04/11/leetcode-086-partition-list";
+  };
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//zkf85githubio.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+
+
+</div>
+
+<!-- KF 02/13/2019  -->
+<!-- Add back to top button -->
+<button onclick="topFunction()" id="myBtn" title="Back to top"><i class="material-icons">vertical_align_top</i></button>
+
+<script>
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+    </main>
+    <footer class="page-footer ohio-state-scarlet">
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            <img src="/assets/res/logo.png" alt="logo"/>
+            <p class="grey-text text-lighten-4">Theme based on <a href="http://materializecss.com">Materialize.css</a> for jekyll sites.
+</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          &#xA9; 2019 Everest. All rights reserved. Powered by <a href="https://github.com/zkf85">Kefeng</a>.
+        </div>
+      </div>
+    </footer>
+    <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+    
+    
+    <script src="/assets/js/post.js"></script>
+    
+    
+    
+    
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>
+

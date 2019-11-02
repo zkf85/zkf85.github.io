@@ -37,7 +37,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2018-12-10T09:18:00+08:00" />
 <script type="application/ld+json">
-{"description":"Recently I was struggling with tensorflow-gpu installation my home server. After couple of rounds of attempts and re-installation. I have to choose Ubuntu-18.04 only (due to my mother board version, both ubuntu-16.04 and debian-9 have network driver issues). During the time when re-installing the system, setting a static IP address is a common routine that make other computer in the home network easy to access the server. Here I’ll show how to configure static IP Address in Ubuntu 18.04 with netplan.","@type":"BlogPosting","url":"http://localhost:4000/2018/12/10/how-to-set-static-ip-address","headline":"How to Set Static IP Address on Ubuntu 18.04 Using Netplan","dateModified":"2018-12-10T09:18:00+08:00","datePublished":"2018-12-10T09:18:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2018/12/10/how-to-set-static-ip-address"},"@context":"http://schema.org"}</script>
+{"url":"http://localhost:4000/2018/12/10/how-to-set-static-ip-address","headline":"How to Set Static IP Address on Ubuntu 18.04 Using Netplan","dateModified":"2018-12-10T09:18:00+08:00","datePublished":"2018-12-10T09:18:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2018/12/10/how-to-set-static-ip-address"},"description":"Recently I was struggling with tensorflow-gpu installation my home server. After couple of rounds of attempts and re-installation. I have to choose Ubuntu-18.04 only (due to my mother board version, both ubuntu-16.04 and debian-9 have network driver issues). During the time when re-installing the system, setting a static IP address is a common routine that make other computer in the home network easy to access the server. Here I’ll show how to configure static IP Address in Ubuntu 18.04 with netplan.","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -181,7 +181,7 @@ Remember that after enabling this, you have to enter the real dollar sings with 
     <p>After the installation of the system, we’ll see how to configure static IP address in Ubuntu-18.04 with <strong><a href="https://netplan.io">netplan - new network configuration tool</a></strong>.</p>
   </li>
   <li>
-    <p>Besides, a tradidional method is also shown later in the article, by using <strong><code class="highlighter-rouge">ifupdown</code></strong> for the same job.</p>
+    <p>Besides, a tradidional method is also shown later in the article, by using <strong><code class="language-plaintext highlighter-rouge">ifupdown</code></strong> for the same job.</p>
   </li>
 </ul>
 
@@ -197,7 +197,7 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 </code></pre></div></div>
 
 <p>The output would be like this:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>enp2s0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>enp2s0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
         inet 192.168.1.41 netmask 255.255.255.0  broadcast 192.168.1.255
         inet6 fe80::201:6cff:fed0:e0e9  prefixlen 64  scopeid 0x20&lt;link&gt;
         ether 00:01:6c:d0:e0:e9  txqueuelen 1000  (Ethernet)
@@ -219,13 +219,13 @@ lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt;  mtu 65536
 <p>Now, the system interface <strong>enp2s0</strong> takes IP address from DHCP server.</p>
 
 <p>In this article, I’ll configure a static IP address for enp2s0 as:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>IP address = 192.168.1.100
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>IP address = 192.168.1.100
 Netmask = 255.255.255.0
 Gateway = 192.168.1.1
 </code></pre></div></div>
 
-<h3 id="12-disable-cloud-init">1.2. Disable <code class="highlighter-rouge">cloud-init</code></h3>
-<p>In Ubuntu-18.04 server, <code class="highlighter-rouge">cloud-init</code> manages the network configuration. So you need to disable it by adding such a file:</p>
+<h3 id="12-disable-cloud-init">1.2. Disable <code class="language-plaintext highlighter-rouge">cloud-init</code></h3>
+<p>In Ubuntu-18.04 server, <code class="language-plaintext highlighter-rouge">cloud-init</code> manages the network configuration. So you need to disable it by adding such a file:</p>
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>vi /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg
 </code></pre></div></div>
 <p>Add the following line int the configuration file:</p>
@@ -233,8 +233,8 @@ Gateway = 192.168.1.1
 </code></pre></div></div>
 
 <h3 id="13-backup-default-netplan-files">1.3. Backup Default Netplan Files</h3>
-<p>Move any files present in <code class="highlighter-rouge">/etc/netplan</code> directory to a backup location:</p>
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>mv /etc/netplan/<span class="k">*</span> /root
+<p>Move any files present in <code class="language-plaintext highlighter-rouge">/etc/netplan</code> directory to a backup location:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo mv</span> /etc/netplan/<span class="k">*</span> /root
 </code></pre></div></div>
 
 <h3 id="14-create-a-new-netplan-configuration-file">1.4. Create a New Netplan Configuration File</h3>
@@ -244,7 +244,7 @@ Gateway = 192.168.1.1
 
 <p>Add the following content to the file:</p>
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">network</span><span class="pi">:</span>
-        <span class="na">version</span><span class="pi">:</span> <span class="s">2</span>
+        <span class="na">version</span><span class="pi">:</span> <span class="m">2</span>
         <span class="na">renderer</span><span class="pi">:</span> <span class="s">networkd</span>
         <span class="na">ethernets</span><span class="pi">:</span>
                 <span class="na">enp0s3</span><span class="pi">:</span>
@@ -268,7 +268,7 @@ Gateway = 192.168.1.1
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ip a
 </code></pre></div></div>
 <p>You’ll see:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>enp2s0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>enp2s0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
         inet 192.168.1.235  netmask 255.255.255.0  broadcast 192.168.1.255
         inet6 fe80::201:6cff:fed0:e0e9  prefixlen 64  scopeid 0x20&lt;link&gt;
         ether 00:01:6c:d0:e0:e9  txqueuelen 1000  (Ethernet)
@@ -278,11 +278,11 @@ Gateway = 192.168.1.1
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 </code></pre></div></div>
 
-<h2 id="2-configure-static-ip-address-using-ifupdownnetwork-manager">2. Configure Static IP Address using <code class="highlighter-rouge">ifupdown</code>/<code class="highlighter-rouge">Network Manager</code></h2>
+<h2 id="2-configure-static-ip-address-using-ifupdownnetwork-manager">2. Configure Static IP Address using <code class="language-plaintext highlighter-rouge">ifupdown</code>/<code class="language-plaintext highlighter-rouge">Network Manager</code></h2>
 
 <h3 id="21-install-packages">2.1. Install Packages</h3>
 <p>Install the below packages to support the old method of configuring static IP address:</p>
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt install ifupdown resolvconf
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>ifupdown resolvconf
 </code></pre></div></div>
 
 <h3 id="22-ethernet">2.2. Ethernet</h3>

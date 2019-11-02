@@ -37,7 +37,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2016-11-24T16:00:00+08:00" />
 <script type="application/ld+json">
-{"description":"Collection View is super powerful.” This article includes notes on reading Apple Guide Document “ Collection View Programming Guide for iOS.","@type":"BlogPosting","url":"http://localhost:4000/2016/11/24/collection-view-i","headline":"Collection View I - Intro &amp; Basics","dateModified":"2016-11-24T16:00:00+08:00","datePublished":"2016-11-24T16:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2016/11/24/collection-view-i"},"@context":"http://schema.org"}</script>
+{"url":"http://localhost:4000/2016/11/24/collection-view-i","headline":"Collection View I - Intro &amp; Basics","dateModified":"2016-11-24T16:00:00+08:00","datePublished":"2016-11-24T16:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2016/11/24/collection-view-i"},"description":"Collection View is super powerful.” This article includes notes on reading Apple Guide Document “ Collection View Programming Guide for iOS.","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -202,72 +202,72 @@ Remember that after enabling this, you have to enter the real dollar sings with 
   <tbody>
     <tr>
       <td style="text-align: left">Top-level containment <br />and management</td>
-      <td style="text-align: left"><code class="highlighter-rouge">UICollectionView</code><br /><code class="highlighter-rouge">UICollectionViewController</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">UICollectionView</code><br /><code class="language-plaintext highlighter-rouge">UICollectionViewController</code></td>
     </tr>
     <tr>
       <td style="text-align: left">Content <br />management</td>
-      <td style="text-align: left"><code class="highlighter-rouge">UICollectionViewDataSource</code> protocol<br /><code class="highlighter-rouge">UICollectionViewDelegate</code> protocol</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">UICollectionViewDataSource</code> protocol<br /><code class="language-plaintext highlighter-rouge">UICollectionViewDelegate</code> protocol</td>
     </tr>
     <tr>
       <td style="text-align: left">Presentation</td>
-      <td style="text-align: left"><code class="highlighter-rouge">UICollectionReusableView</code><br /><code class="highlighter-rouge">UICollectionViewCell</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">UICollectionReusableView</code><br /><code class="language-plaintext highlighter-rouge">UICollectionViewCell</code></td>
     </tr>
     <tr>
       <td style="text-align: left">Layout</td>
-      <td style="text-align: left"><code class="highlighter-rouge">UICollectionViewLayout</code><br /><code class="highlighter-rouge">UICollectionViewLayoutAttributes</code><br /> <code class="highlighter-rouge">UICollectionViewUpdateItem</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">UICollectionViewLayout</code><br /><code class="language-plaintext highlighter-rouge">UICollectionViewLayoutAttributes</code><br /> <code class="language-plaintext highlighter-rouge">UICollectionViewUpdateItem</code></td>
     </tr>
     <tr>
       <td style="text-align: left">Flow Layout</td>
-      <td style="text-align: left"><code class="highlighter-rouge">UICollectionViewFlowLayout</code><br /><code class="highlighter-rouge">UICollectionViewDelegateFlowLayout</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">UICollectionViewFlowLayout</code><br /><code class="language-plaintext highlighter-rouge">UICollectionViewDelegateFlowLayout</code></td>
     </tr>
   </tbody>
 </table>
 
-<h3 id="uicollectionview"><code class="highlighter-rouge">UICollectionView</code></h3>
+<h3 id="uicollectionview"><code class="language-plaintext highlighter-rouge">UICollectionView</code></h3>
 <blockquote>
-  <p>A <code class="highlighter-rouge">UICollectionView</code> object defines the visible area for your collection view’s content. This class also facilitates the presentation of your data based on the layout information it receives from its layout object.</p>
+  <p>A <code class="language-plaintext highlighter-rouge">UICollectionView</code> object defines the visible area for your collection view’s content. This class also facilitates the presentation of your data based on the layout information it receives from its layout object.</p>
 </blockquote>
 
-<h3 id="uicollectionviewcontroller"><code class="highlighter-rouge">UICollectionViewController</code></h3>
+<h3 id="uicollectionviewcontroller"><code class="language-plaintext highlighter-rouge">UICollectionViewController</code></h3>
 <blockquote>
-  <p>A <code class="highlighter-rouge">UICollectionViewController</code> object provides view controller–level management support for a collection view. Its use is optional.</p>
+  <p>A <code class="language-plaintext highlighter-rouge">UICollectionViewController</code> object provides view controller–level management support for a collection view. Its use is optional.</p>
 </blockquote>
 
-<h3 id="uicollectionviewdatasource-protocol"><code class="highlighter-rouge">UICollectionViewDataSource</code> protocol</h3>
+<h3 id="uicollectionviewdatasource-protocol"><code class="language-plaintext highlighter-rouge">UICollectionViewDataSource</code> protocol</h3>
 <blockquote>
-  <p>The data source object is the most important object associated with the collection view and is one that you must provide. The data source manages the content of the collection view and creates the views needed to present that content. To implement a data source object, you must create an object that conforms to the <code class="highlighter-rouge">UICollectionViewDataSource</code> protocol.</p>
+  <p>The data source object is the most important object associated with the collection view and is one that you must provide. The data source manages the content of the collection view and creates the views needed to present that content. To implement a data source object, you must create an object that conforms to the <code class="language-plaintext highlighter-rouge">UICollectionViewDataSource</code> protocol.</p>
 </blockquote>
 
-<h3 id="uicollectionviewdelegate-protocol"><code class="highlighter-rouge">UICollectionViewDelegate</code> protocol</h3>
+<h3 id="uicollectionviewdelegate-protocol"><code class="language-plaintext highlighter-rouge">UICollectionViewDelegate</code> protocol</h3>
 <blockquote>
   <p>The collection view delegate object lets you intercept interesting messages from the collection view and customize the view’s behavior. For example, you use a delegate object to track the selection and highlighting of items in the collection view. Unlike the data source object, the delegate object is optional.</p>
 </blockquote>
 
-<h3 id="uicollectionreusableview--uicollectionviewcell"><code class="highlighter-rouge">UICollectionReusableView</code> &amp; <code class="highlighter-rouge">UICollectionViewCell</code></h3>
+<h3 id="uicollectionreusableview--uicollectionviewcell"><code class="language-plaintext highlighter-rouge">UICollectionReusableView</code> &amp; <code class="language-plaintext highlighter-rouge">UICollectionViewCell</code></h3>
 <blockquote>
-  <p>All views displayed in a collection view must be instances of the <code class="highlighter-rouge">UICollectionReusableView</code> class. This class supports a recycling mechanism in use by collection views. Recycling views (instead of creating new ones) improves performance in general and especially improves it during scrolling.</p>
+  <p>All views displayed in a collection view must be instances of the <code class="language-plaintext highlighter-rouge">UICollectionReusableView</code> class. This class supports a recycling mechanism in use by collection views. Recycling views (instead of creating new ones) improves performance in general and especially improves it during scrolling.</p>
 </blockquote>
 
 <blockquote>
-  <p>A <code class="highlighter-rouge">UICollectionViewCell</code> object is a specific type of reusable view that you use for your main data items.</p>
+  <p>A <code class="language-plaintext highlighter-rouge">UICollectionViewCell</code> object is a specific type of reusable view that you use for your main data items.</p>
 </blockquote>
 
-<h3 id="uicollectionviewlayout-uicollectionviewlayoutattributes-uicollectionviewupdateitem"><code class="highlighter-rouge">UICollectionViewLayout</code>, <code class="highlighter-rouge">UICollectionViewLayoutAttributes</code>, <code class="highlighter-rouge">UICollectionViewUpdateItem</code></h3>
+<h3 id="uicollectionviewlayout-uicollectionviewlayoutattributes-uicollectionviewupdateitem"><code class="language-plaintext highlighter-rouge">UICollectionViewLayout</code>, <code class="language-plaintext highlighter-rouge">UICollectionViewLayoutAttributes</code>, <code class="language-plaintext highlighter-rouge">UICollectionViewUpdateItem</code></h3>
 <blockquote>
-  <p>Subclasses of <code class="highlighter-rouge">UICollectionViewLayout</code> are referred to as layout objects and are responsible for defining the location, size, and visual attributes of the cells and reusable views inside a collection view.</p>
-</blockquote>
-
-<blockquote>
-  <p>During the layout process, a layout object creates layout attribute objects (instances of the <code class="highlighter-rouge">UICollectionViewLayoutAttributes</code> class) that tell the collection view where and how to display cells and reusable views.</p>
+  <p>Subclasses of <code class="language-plaintext highlighter-rouge">UICollectionViewLayout</code> are referred to as layout objects and are responsible for defining the location, size, and visual attributes of the cells and reusable views inside a collection view.</p>
 </blockquote>
 
 <blockquote>
-  <p>The layout object receives instances of the <code class="highlighter-rouge">UICollectionViewUpdateItem</code> class whenever data items are inserted, deleted, or moved within the collection view. You never need to create instances of this class yourself.</p>
+  <p>During the layout process, a layout object creates layout attribute objects (instances of the <code class="language-plaintext highlighter-rouge">UICollectionViewLayoutAttributes</code> class) that tell the collection view where and how to display cells and reusable views.</p>
 </blockquote>
 
-<h3 id="uicollectionviewflowlayout--uicollectionviewdelegateflowlayout-protocol"><code class="highlighter-rouge">UICollectionViewFlowLayout</code> &amp; <code class="highlighter-rouge">UICollectionViewDelegateFlowLayout</code> protocol</h3>
 <blockquote>
-  <p>The <code class="highlighter-rouge">UICollectionViewFlowLayout</code> class is a concrete layout object that you use to implement grids or other line-based layouts. You can use the class as-is or in conjunction with the flow delegate object, which allows you to customize the layout information dynamically.</p>
+  <p>The layout object receives instances of the <code class="language-plaintext highlighter-rouge">UICollectionViewUpdateItem</code> class whenever data items are inserted, deleted, or moved within the collection view. You never need to create instances of this class yourself.</p>
+</blockquote>
+
+<h3 id="uicollectionviewflowlayout--uicollectionviewdelegateflowlayout-protocol"><code class="language-plaintext highlighter-rouge">UICollectionViewFlowLayout</code> &amp; <code class="language-plaintext highlighter-rouge">UICollectionViewDelegateFlowLayout</code> protocol</h3>
+<blockquote>
+  <p>The <code class="language-plaintext highlighter-rouge">UICollectionViewFlowLayout</code> class is a concrete layout object that you use to implement grids or other line-based layouts. You can use the class as-is or in conjunction with the flow delegate object, which allows you to customize the layout information dynamically.</p>
 </blockquote>
 
 <p><strong>Figure 1-1</strong> shows the relationship between the core objects associated with a collection view. The collection view gets information about the cells to display from its data source. The data source and delegate objects are custom objects provided by your app and used to manage the content, including the selection and highlighting of cells. The layout object is responsible for deciding where those cells belong and for sending that information to the collection view in the form of one or more layout attribute objects. The collection view then merges the layout information with the actual cells (and other views) to create the final visual presentation.</p>
@@ -278,12 +278,12 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 <p>When creating a collection view interface, you first add a UICollectionView object to your storyboard or nib file. Think of the collection view as the central hub, from which all other objects emanate. After adding that object, you can begin to configure any related objects, such as the data source or delegate. All configurations are centered around the collection view itself. For example, you never create a layout object without also creating a collection view object.</p>
 
 <h2 id="reusable-views-improve-performance">Reusable Views Improve Performance</h2>
-<p>Collection views employ a view recycling program to improve efficiency. As views move offscreen, they are removed from view and placed in a <strong>reuse queue</strong> instead of being deleted. As new content is scrolled onscreen, views are removed from the queue and repurposed with new content. To facilitate this recycling and reuse, all views displayed by the collection view must descend from the <code class="highlighter-rouge">UICollectionReusableView</code> class.</p>
+<p>Collection views employ a view recycling program to improve efficiency. As views move offscreen, they are removed from view and placed in a <strong>reuse queue</strong> instead of being deleted. As new content is scrolled onscreen, views are removed from the queue and repurposed with new content. To facilitate this recycling and reuse, all views displayed by the collection view must descend from the <code class="language-plaintext highlighter-rouge">UICollectionReusableView</code> class.</p>
 
 <p>Collection views support three distinct types of reusable views, each of which has a specific intended usage:</p>
 
 <ul>
-  <li><em>Cells</em> present the main content of your collection view. The job of a cell is to present the content for a single item from your data source object. Each cell must be an instance of the <code class="highlighter-rouge">UICollectionViewCell</code> class, which you may subclass as needed to present your content. Cell objects provide inherent support for managing their own selection and highlight state. To actually apply a highlight to a cell, you must write some custom code. For information on implementing cell highlighting/selecting, see Managing the Visual State for Selections and Highlights.</li>
+  <li><em>Cells</em> present the main content of your collection view. The job of a cell is to present the content for a single item from your data source object. Each cell must be an instance of the <code class="language-plaintext highlighter-rouge">UICollectionViewCell</code> class, which you may subclass as needed to present your content. Cell objects provide inherent support for managing their own selection and highlight state. To actually apply a highlight to a cell, you must write some custom code. For information on implementing cell highlighting/selecting, see Managing the Visual State for Selections and Highlights.</li>
   <li><em>Supplementary</em> views display information about a section. Like cells, supplementary views are data driven. Unlike cells, supplementary views are not mandatory, and their usage and placement is controlled by the layout object being used. For example, the flow layout supports <strong>headers</strong> and <strong>footers</strong> as optional supplementary views.</li>
   <li><em>Decoration</em> views are visual adornments that are wholly owned by the layout object and are not tied to any data in your data source object. For example, a layout object might use decoration views to implement a custom background appearance.</li>
 </ul>

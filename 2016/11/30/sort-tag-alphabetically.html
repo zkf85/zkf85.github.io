@@ -37,7 +37,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2016-11-30T20:32:00+08:00" />
 <script type="application/ld+json">
-{"description":"Unordered tags make a Jekyll tag list look sloppy, so if you care about the details, you likely want your tag list to be alphabetized.","@type":"BlogPosting","url":"http://localhost:4000/2016/11/30/sort-tag-alphabetically","headline":"Sort Tags Alphabetically","dateModified":"2016-11-30T20:32:00+08:00","datePublished":"2016-11-30T20:32:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2016/11/30/sort-tag-alphabetically"},"@context":"http://schema.org"}</script>
+{"url":"http://localhost:4000/2016/11/30/sort-tag-alphabetically","headline":"Sort Tags Alphabetically","dateModified":"2016-11-30T20:32:00+08:00","datePublished":"2016-11-30T20:32:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2016/11/30/sort-tag-alphabetically"},"description":"Unordered tags make a Jekyll tag list look sloppy, so if you care about the details, you likely want your tag list to be alphabetized.","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -185,7 +185,7 @@ Remember that after enabling this, you have to enter the real dollar sings with 
   <li><a href="https://www.siteleaf.com/blog/advanced-liquid-sort/">Advanced Liquid: Sort</a></li>
 </ul>
 
-<p>Based on the notes from <a href="https://blog.lanyonm.org">Michael Lanyon</a>, I modified my <code class="highlighter-rouge">tags.html</code> to the version below:</p>
+<p>Based on the notes from <a href="https://blog.lanyonm.org">Michael Lanyon</a>, I modified my <code class="language-plaintext highlighter-rouge">tags.html</code> to the version below:</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
 layout: page
@@ -223,9 +223,9 @@ title: Tags
 <span class="nt">&lt;/div&gt;</span>
 </code></pre></div></div>
 
-<p>For <code class="highlighter-rouge">categories.html</code> the basic idea is the same.</p>
+<p>For <code class="language-plaintext highlighter-rouge">categories.html</code> the basic idea is the same.</p>
 
-<p>When Adding the code block above, I came across a curious problem when writing liquid template code in this markdown file. When Jekyll compiles the static web files, it tries to process all the curly brackets like: <code class="highlighter-rouge">{{</code> and <code class="highlighter-rouge">{%</code>.</p>
+<p>When Adding the code block above, I came across a curious problem when writing liquid template code in this markdown file. When Jekyll compiles the static web files, it tries to process all the curly brackets like: <code class="language-plaintext highlighter-rouge">{{</code> and <code class="language-plaintext highlighter-rouge">{%</code>.</p>
 
 <p>This is not a bug , but a <a href="https://github.com/jekyll/jekyll/issues/814">caveat of using a templating language with markdown</a>. The workarounds are provided by</p>
 
@@ -233,7 +233,7 @@ title: Tags
   <li><a href="http://ozzieliu.com/2016/04/26/writing-liquid-template-in-markdown-with-jekyll/">Ozzie Liu - Writing Liquid Template in Markdown Code Blocks with Jekyll</a>.</li>
 </ul>
 
-<p><strong>Simply put, just add<code class="highlighter-rouge">{% raw %}</code> and <code class="highlighter-rouge">{% endraw %}</code> on the both end when <code class="highlighter-rouge">{{</code> or <code class="highlighter-rouge">{%</code> appears.</strong></p>
+<p><strong>Simply put, just add<code class="language-plaintext highlighter-rouge">{% raw %}</code> and <code class="language-plaintext highlighter-rouge">{% endraw %}</code> on the both end when <code class="language-plaintext highlighter-rouge">{{</code> or <code class="language-plaintext highlighter-rouge">{%</code> appears.</strong></p>
 
 <blockquote>
   <p>It is pretty confused to render the above line!!!</p>
@@ -251,7 +251,7 @@ title: Tags
 <h3 id="solution-is-simple">Solution is simple:</h3>
 
 <ul>
-  <li><code class="highlighter-rouge">some_list | sort: 'downcase'</code> for strings</li>
+  <li><code class="language-plaintext highlighter-rouge">some_list | sort: 'downcase'</code> for strings</li>
 </ul>
 
 <p><br /><br />

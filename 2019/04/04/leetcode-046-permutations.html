@@ -37,7 +37,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-04-04T00:00:00+08:00" />
 <script type="application/ld+json">
-{"description":"Theme based on Materialize.css for jekyll sites.","@type":"BlogPosting","url":"http://localhost:4000/2019/04/04/leetcode-046-permutations","headline":"[LeetCode] 046. Permutations","dateModified":"2019-04-04T00:00:00+08:00","datePublished":"2019-04-04T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/04/04/leetcode-046-permutations"},"@context":"http://schema.org"}</script>
+{"url":"http://localhost:4000/2019/04/04/leetcode-046-permutations","headline":"[LeetCode] 046. Permutations","dateModified":"2019-04-04T00:00:00+08:00","datePublished":"2019-04-04T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/04/04/leetcode-046-permutations"},"description":"Theme based on Materialize.css for jekyll sites.","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -196,8 +196,8 @@ Output:
         """</span>
         <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dfs</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="p">[],</span> <span class="n">res</span><span class="p">)</span>
-        <span class="c">#return set([tuple(i) for i in res])</span>
-        <span class="k">return</span> <span class="n">res</span>
+        <span class="c1">#return set([tuple(i) for i in res])
+</span>        <span class="k">return</span> <span class="n">res</span>
 
     <span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">res</span><span class="p">):</span> 
         <span class="k">if</span>  <span class="nb">len</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>

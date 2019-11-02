@@ -37,7 +37,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-04-04T00:00:00+08:00" />
 <script type="application/ld+json">
-{"description":"Theme based on Materialize.css for jekyll sites.","@type":"BlogPosting","url":"http://localhost:4000/2019/04/04/leetcode-050-powx-n","headline":"[LeetCode] 050. Pow(x, n)","dateModified":"2019-04-04T00:00:00+08:00","datePublished":"2019-04-04T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/04/04/leetcode-050-powx-n"},"@context":"http://schema.org"}</script>
+{"url":"http://localhost:4000/2019/04/04/leetcode-050-powx-n","headline":"[LeetCode] 050. Pow(x, n)","dateModified":"2019-04-04T00:00:00+08:00","datePublished":"2019-04-04T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/04/04/leetcode-050-powx-n"},"description":"Theme based on Materialize.css for jekyll sites.","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -157,7 +157,7 @@ Remember that after enabling this, you have to enter the real dollar sings with 
     <!--more-->
 <ul id="markdown-toc">
   <li><a href="#problem-medium" id="markdown-toc-problem-medium">Problem (Medium)</a></li>
-  <li><a href="#approach-1-my-solution-4186-use-the-binary-of-n" id="markdown-toc-approach-1-my-solution-4186-use-the-binary-of-n">Approach 1: (My Solution 41.86%) Use the Binary of <code class="highlighter-rouge">n</code></a>    <ul>
+  <li><a href="#approach-1-my-solution-4186-use-the-binary-of-n" id="markdown-toc-approach-1-my-solution-4186-use-the-binary-of-n">Approach 1: (My Solution 41.86%) Use the Binary of <code class="language-plaintext highlighter-rouge">n</code></a>    <ul>
       <li><a href="#idea" id="markdown-toc-idea">Idea</a></li>
       <li><a href="#solution" id="markdown-toc-solution">Solution</a></li>
       <li><a href="#complexity" id="markdown-toc-complexity">Complexity</a></li>
@@ -168,7 +168,7 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 <h2 id="problem-medium">Problem (Medium)</h2>
 <p><a href="https://leetcode.com/problems/powx-n">050. Pow(x, n)</a></p>
 
-<p>Implement <code class="highlighter-rouge">pow(x, n)</code>, which calculates <code class="highlighter-rouge">x</code> raised to the power n (x^n).</p>
+<p>Implement <code class="language-plaintext highlighter-rouge">pow(x, n)</code>, which calculates <code class="language-plaintext highlighter-rouge">x</code> raised to the power n (x^n).</p>
 
 <p>Example 1:</p>
 
@@ -199,14 +199,14 @@ Remember that after enabling this, you have to enter the real dollar sings with 
   <li>n is a 32-bit signed integer, within the range [−2^31, 2^31 − 1]</li>
 </ul>
 
-<h2 id="approach-1-my-solution-4186-use-the-binary-of-n">Approach 1: (My Solution 41.86%) Use the Binary of <code class="highlighter-rouge">n</code></h2>
+<h2 id="approach-1-my-solution-4186-use-the-binary-of-n">Approach 1: (My Solution 41.86%) Use the Binary of <code class="language-plaintext highlighter-rouge">n</code></h2>
 
 <h3 id="idea">Idea</h3>
 <p>The purpose of this problem to try to find better ways to save computation in the possible multplication loops.
 My strategy:</p>
 <ul>
-  <li>Convert the <code class="highlighter-rouge">n</code> to binary. e.g. n=10 -&gt; <code class="highlighter-rouge">0b1010</code>;</li>
-  <li>Thus, <code class="highlighter-rouge">pow(2, 10)</code> equals to <code class="highlighter-rouge">(2x2)^3 * (2x2)^1</code>;</li>
+  <li>Convert the <code class="language-plaintext highlighter-rouge">n</code> to binary. e.g. n=10 -&gt; <code class="language-plaintext highlighter-rouge">0b1010</code>;</li>
+  <li>Thus, <code class="language-plaintext highlighter-rouge">pow(2, 10)</code> equals to <code class="language-plaintext highlighter-rouge">(2x2)^3 * (2x2)^1</code>;</li>
 </ul>
 
 <h3 id="solution">Solution</h3>

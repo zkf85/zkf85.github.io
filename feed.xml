@@ -1,14 +1,454 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-04-12T17:35:36+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Everest</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
-</subtitle><entry><title type="html">[LeetCode] 089. Gray Code *</title><link href="http://localhost:4000/2019/04/12/leetcode-089-gray-code" rel="alternate" type="text/html" title="[LeetCode] 089. Gray Code *" /><published>2019-04-12T00:00:00+08:00</published><updated>2019-04-12T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/12/leetcode-089-gray-code</id><content type="html" xml:base="http://localhost:4000/2019/04/12/leetcode-089-gray-code">&lt;!--more--&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-11-02T19:39:14+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Everest</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
+</subtitle><entry><title type="html">NodeJS vs Django</title><link href="http://localhost:4000/2019/11/01/nodejs-vs-django" rel="alternate" type="text/html" title="NodeJS vs Django" /><published>2019-11-01T00:00:00+08:00</published><updated>2019-11-01T00:00:00+08:00</updated><id>http://localhost:4000/2019/11/01/nodejs-vs-django</id><content type="html" xml:base="http://localhost:4000/2019/11/01/nodejs-vs-django">&lt;blockquote&gt;
+  &lt;p&gt;Node.js, Django, which is better?&lt;/p&gt;
+
+  &lt;p&gt;Node.js has a “JavaScript everywhere” motive to ensure JavaScript is used on the server-side and client-side of web applications and Django has a “framework for perfectionists with deadlines” motive to help developers build applications quickly.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
 &lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#problem-medium&quot; id=&quot;markdown-toc-problem-medium&quot;&gt;Problem (Medium)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#approach-1-leetcode-yuyibestman&quot; id=&quot;markdown-toc-approach-1-leetcode-yuyibestman&quot;&gt;Approach 1: LeetCode &lt;code class=&quot;highlighter-rouge&quot;&gt;yuyibestman&lt;/code&gt;&lt;/a&gt;    &lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#nodejs&quot; id=&quot;markdown-toc-nodejs&quot;&gt;Node.js&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#pros&quot; id=&quot;markdown-toc-pros&quot;&gt;Pros:&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#cons&quot; id=&quot;markdown-toc-cons&quot;&gt;Cons&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#django&quot; id=&quot;markdown-toc-django&quot;&gt;Django&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#pros-1&quot; id=&quot;markdown-toc-pros-1&quot;&gt;Pros&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#cons-1&quot; id=&quot;markdown-toc-cons-1&quot;&gt;Cons&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;nodejs&quot;&gt;Node.js&lt;/h2&gt;
+
+&lt;p&gt;JavaScript is known mainly for its strengths in client-side development, but Node.js is doing the exact opposite by working wonders on the server-side.&lt;/p&gt;
+
+&lt;h3 id=&quot;pros&quot;&gt;Pros:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Availability of great libraries.&lt;/li&gt;
+  &lt;li&gt;High performance.&lt;/li&gt;
+  &lt;li&gt;Awesome for building APIs.&lt;/li&gt;
+  &lt;li&gt;It has an awesome package manager.&lt;/li&gt;
+  &lt;li&gt;Huge user community.&lt;/li&gt;
+  &lt;li&gt;Handles concurrent requests easily.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;cons&quot;&gt;Cons&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Asynchronous programming could be difficult to work with.&lt;/li&gt;
+  &lt;li&gt;Not great with CPU intensive apps due to its single thread.&lt;/li&gt;
+  &lt;li&gt;Callbacks result in tons of nested callbacks.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;django&quot;&gt;Django&lt;/h2&gt;
+&lt;p&gt;Django is a very robust open source Python web framework. It is very high-level, as most of the low-level stuff has been abstracted out. It is known for having a “batteries included” philosophy, therefore it’s ready to be used out-of-the-box.&lt;/p&gt;
+
+&lt;h3 id=&quot;pros-1&quot;&gt;Pros&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Little to no security loopholes.&lt;/li&gt;
+  &lt;li&gt;Works fine with relational databases.&lt;/li&gt;
+  &lt;li&gt;Easy to learn.&lt;/li&gt;
+  &lt;li&gt;Speedy development process.&lt;/li&gt;
+  &lt;li&gt;Very scalable.&lt;/li&gt;
+  &lt;li&gt;Huge user community.&lt;/li&gt;
+  &lt;li&gt;Has great documentation.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;cons-1&quot;&gt;Cons&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Django is monolithic, i.e. a single-tiered software application.&lt;/li&gt;
+  &lt;li&gt;Not great for small-scale apps.&lt;/li&gt;
+  &lt;li&gt;A full understanding of the framework is needed.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://dzone.com/articles/nodejs-vs-djangois-javascript-better-than-python&quot;&gt;» Node.js vs. Django:  Is JavaScript Better Than Python?&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Web Developing&quot;]" /><category term="nodejs" /><category term="django" /><summary type="html">Node.js, Django, which is better? Node.js has a “JavaScript everywhere” motive to ensure JavaScript is used on the server-side and client-side of web applications and Django has a “framework for perfectionists with deadlines” motive to help developers build applications quickly.</summary></entry><entry><title type="html">How to Customize Bash Colors and Content</title><link href="http://localhost:4000/2019/10/31/how-to-customize-bash-colors-and-content" rel="alternate" type="text/html" title="How to Customize Bash Colors and Content" /><published>2019-10-31T00:00:00+08:00</published><updated>2019-10-31T00:00:00+08:00</updated><id>http://localhost:4000/2019/10/31/how-to-customize-bash-colors-and-content</id><content type="html" xml:base="http://localhost:4000/2019/10/31/how-to-customize-bash-colors-and-content">&lt;blockquote&gt;
+  &lt;p&gt;How to Customize Bash Colors and Content in Linux Terminal Prompt&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;https://www.tecmint.com/customize-bash-colors-terminal-prompt-linux/&quot;&gt;» How to Customize Bash Colors and Content in Linux Terminal Prompt&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Operating Oystem&quot;]" /><category term="shell" /><category term="bash" /><category term="prompt color" /><summary type="html">How to Customize Bash Colors and Content in Linux Terminal Prompt » How to Customize Bash Colors and Content in Linux Terminal Prompt</summary></entry><entry><title type="html">linux-system-administration</title><link href="http://localhost:4000/2019/10/26/linux-system-administration" rel="alternate" type="text/html" title="linux-system-administration" /><published>2019-10-26T00:00:00+08:00</published><updated>2019-10-26T00:00:00+08:00</updated><id>http://localhost:4000/2019/10/26/linux-system-administration</id><content type="html" xml:base="http://localhost:4000/2019/10/26/linux-system-administration">&lt;blockquote&gt;
+  &lt;p&gt;Haven’t posted anything for a long time. Let the notes go on.&lt;/p&gt;
+
+  &lt;p&gt;In this post, I’d collect all (if possible) necessary knowledge and information about linux account and permission administration.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#understanding-linux-file-permissions&quot; id=&quot;markdown-toc-understanding-linux-file-permissions&quot;&gt;Understanding Linux File Permissions&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#1-basic-file-permission&quot; id=&quot;markdown-toc-1-basic-file-permission&quot;&gt;1. Basic File Permission&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#2-permission-types&quot; id=&quot;markdown-toc-2-permission-types&quot;&gt;2. Permission Types&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;understanding-linux-file-permissions&quot;&gt;Understanding Linux File Permissions&lt;/h2&gt;
+
+&lt;p&gt;In linux system, granting proper permissions to files and directories is crucial. This part is an overview of assigning and modifying permissions with examples.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.linux.com/tutorials/understanding-linux-file-permissions/&quot;&gt;» Understanding Linux File Permission&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;1-basic-file-permission&quot;&gt;1. Basic File Permission&lt;/h3&gt;
+&lt;p&gt;Each file and directory has 3 user based permission groups:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;owner&lt;/strong&gt; - the permissions apply only the owner of the file or directory, will not affect actions of other users;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;group&lt;/strong&gt; - the permissions applys only to the group that has been assigned to the file or directory, will not affect actions of other users;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;all users&lt;/strong&gt; - the permissions apply to &lt;strong&gt;all other users&lt;/strong&gt; on the system, this is the permission group that you want to &lt;em&gt;watch the most&lt;/em&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-permission-types&quot;&gt;2. Permission Types&lt;/h3&gt;
+&lt;p&gt;Each file or directory has 3 basic permission types:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;read&lt;/strong&gt; - permission refers to a user’s capability to read the content of the file;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;write&lt;/strong&gt; - permission refers to a user’s capability to write or modify a file or directory;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;execute&lt;/strong&gt; - permission affects a user’s capability to execute a file or &lt;strong&gt;view the contents of a directory&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can simply using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ls -l&lt;/code&gt; to view the permissions of the files and directories in the working directory. The output is like:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;drwxrwxr-x+ 28 root  admin   896 Oct  9 22:21 Applications
+drwxr-xr-x  68 root  wheel  2176 Oct 10 10:31 Library
+drwxr-xr-x@  8 root  wheel   256 Sep 30 04:23 System
+drwxr-xr-x   5 root  admin   160 Sep 30 04:22 Users
+drwxr-xr-x   3 root  wheel    96 Oct 24 21:22 Volumes
+-rw-r--r--@  1 kefengzhu  staff   1160859 Jan 13  2019 1404.7828.pdf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Operating System&quot;]" /><category term="linux" /><category term="permission" /><summary type="html">Haven’t posted anything for a long time. Let the notes go on. In this post, I’d collect all (if possible) necessary knowledge and information about linux account and permission administration.</summary></entry><entry><title type="html">[LeetCode] 094. Binary Tree Inorder Traversal *</title><link href="http://localhost:4000/2019/04/16/leetcode-094-binary-tree-inorder-traversal" rel="alternate" type="text/html" title="[LeetCode] 094. Binary Tree Inorder Traversal *" /><published>2019-04-16T00:00:00+08:00</published><updated>2019-04-16T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/16/leetcode-094-binary-tree-inorder-traversal</id><content type="html" xml:base="http://localhost:4000/2019/04/16/leetcode-094-binary-tree-inorder-traversal">&lt;!--more--&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#problem-medium&quot; id=&quot;markdown-toc-problem-medium&quot;&gt;Problem (Medium)&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#tree-traversals-inorder-preorder-and-postorder&quot; id=&quot;markdown-toc-tree-traversals-inorder-preorder-and-postorder&quot;&gt;Tree Traversals (Inorder, Preorder and Postorder)&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#approach-1-recursive-&quot; id=&quot;markdown-toc-approach-1-recursive-&quot;&gt;Approach 1: Recursive *&lt;/a&gt;    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#idea&quot; id=&quot;markdown-toc-idea&quot;&gt;Idea&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#solution&quot; id=&quot;markdown-toc-solution&quot;&gt;Solution&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#complexity&quot; id=&quot;markdown-toc-complexity&quot;&gt;Complexity&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#approach-2-solution-from-byronyi&quot; id=&quot;markdown-toc-approach-2-solution-from-byronyi&quot;&gt;Approach 2: Solution from &lt;code class=&quot;highlighter-rouge&quot;&gt;byronyi&lt;/code&gt;&lt;/a&gt;    &lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#approach-2--iterating-method-using-stack-&quot; id=&quot;markdown-toc-approach-2--iterating-method-using-stack-&quot;&gt;Approach 2:  Iterating method using Stack *&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#idea-1&quot; id=&quot;markdown-toc-idea-1&quot;&gt;Idea&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#solution-1&quot; id=&quot;markdown-toc-solution-1&quot;&gt;Solution&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#complexity-1&quot; id=&quot;markdown-toc-complexity-1&quot;&gt;Complexity&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;problem-medium&quot;&gt;Problem (Medium)&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/binary-tree-inorder-traversal&quot;&gt;094. Binary Tree Inorder Traversal&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Given a binary tree, return the &lt;em&gt;inorder&lt;/em&gt; traversal of its nodes’ values.&lt;/p&gt;
+
+&lt;p&gt;Example:&lt;/p&gt;
+
+&lt;p&gt;Input: [1,null,2,3]&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   1
+    \
+     2
+    /
+   3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Output: [1,3,2]
+Follow up: Recursive solution is trivial, could you do it iteratively?&lt;/p&gt;
+
+&lt;h3 id=&quot;tree-traversals-inorder-preorder-and-postorder&quot;&gt;&lt;a href=&quot;https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder/&quot;&gt;Tree Traversals (Inorder, Preorder and Postorder)&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/img/2019-04-16-tree12.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Depth First Traversals:
+(a) Inorder (Left, Root, Right) : 4 2 5 1 3
+(b) Preorder (Root, Left, Right) : 1 2 4 5 3
+(c) Postorder (Left, Right, Root) : 4 5 2 3 1&lt;/p&gt;
+
+&lt;h2 id=&quot;approach-1-recursive-&quot;&gt;Approach 1: Recursive *&lt;/h2&gt;
+
+&lt;h3 id=&quot;idea&quot;&gt;Idea&lt;/h3&gt;
+&lt;p&gt;The first method to solve this problem is using recursion. This is the classical method and is straightforward. We can define a helper function to implement recursion.&lt;/p&gt;
+
+&lt;h3 id=&quot;solution&quot;&gt;Solution&lt;/h3&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;complexity&quot;&gt;Complexity&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Time: $O(n)$&lt;/li&gt;
+  &lt;li&gt;Space: $O(n)$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;approach-2--iterating-method-using-stack-&quot;&gt;Approach 2:  Iterating method using Stack *&lt;/h2&gt;
+
+&lt;h3 id=&quot;idea-1&quot;&gt;Idea&lt;/h3&gt;
+&lt;p&gt;The strategy is very similiar to the first method, the different is using stack.&lt;/p&gt;
+
+&lt;h3 id=&quot;solution-1&quot;&gt;Solution&lt;/h3&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Solution2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;inorderTraversal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+        :type root: TreeNode
+        :rtype: List[int]
+        &quot;&quot;&quot;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;complexity-1&quot;&gt;Complexity&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Time: $O(n)$&lt;/li&gt;
+  &lt;li&gt;Space: $O(n)$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Algorithm&quot;]" /><category term="leetcode" /><category term="python" /><summary type="html"></summary></entry><entry><title type="html">[LeetCode] 093. Restore IP Addresses</title><link href="http://localhost:4000/2019/04/16/leetcode-093-restore-ip-addresses" rel="alternate" type="text/html" title="[LeetCode] 093. Restore IP Addresses" /><published>2019-04-16T00:00:00+08:00</published><updated>2019-04-16T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/16/leetcode-093-restore-ip-addresses</id><content type="html" xml:base="http://localhost:4000/2019/04/16/leetcode-093-restore-ip-addresses">&lt;!--more--&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#problem-medium&quot; id=&quot;markdown-toc-problem-medium&quot;&gt;Problem (Medium)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#approach-1-my-solution---backtracking&quot; id=&quot;markdown-toc-approach-1-my-solution---backtracking&quot;&gt;Approach 1: (My Solution - Backtracking)&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#idea&quot; id=&quot;markdown-toc-idea&quot;&gt;Idea&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#solution&quot; id=&quot;markdown-toc-solution&quot;&gt;Solution&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#complexity&quot; id=&quot;markdown-toc-complexity&quot;&gt;Complexity&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;problem-medium&quot;&gt;Problem (Medium)&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/restore-ip-addresses&quot;&gt;093. Restore IP Addresses&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Given a string containing only digits, restore it by returning all possible valid IP address combinations.&lt;/p&gt;
+
+&lt;p&gt;Example:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Input: “25525511135”&lt;/li&gt;
+  &lt;li&gt;Output: [“255.255.11.135”, “255.255.111.35”]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;approach-1-my-solution---backtracking&quot;&gt;Approach 1: (My Solution - Backtracking)&lt;/h2&gt;
+
+&lt;h3 id=&quot;idea&quot;&gt;Idea&lt;/h3&gt;
+&lt;p&gt;Pretty straight forward backtracking intuition.&lt;/p&gt;
+
+&lt;h3 id=&quot;solution&quot;&gt;Solution&lt;/h3&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Backtracking
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Solution1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;restoreIpAddresses&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+        :type s: str
+        :rtype: List[str]
+        &quot;&quot;&quot;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backtrack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;backtrack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'.'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backtrack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:])&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backtrack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:])&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;99&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;256&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backtrack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:])&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;complexity&quot;&gt;Complexity&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Time: $O()$&lt;/li&gt;
+  &lt;li&gt;Space: $O()$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Algorithm&quot;]" /><category term="leetcode" /><category term="python" /><summary type="html"></summary></entry><entry><title type="html">[LeetCode] 095. Unique Binary Search Trees II *</title><link href="http://localhost:4000/2019/04/16/leetcode-095-unique-binary-search-trees-ii" rel="alternate" type="text/html" title="[LeetCode] 095. Unique Binary Search Trees II *" /><published>2019-04-16T00:00:00+08:00</published><updated>2019-04-16T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/16/leetcode-095-unique-binary-search-trees-ii</id><content type="html" xml:base="http://localhost:4000/2019/04/16/leetcode-095-unique-binary-search-trees-ii">&lt;!--more--&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#problem-medium&quot; id=&quot;markdown-toc-problem-medium&quot;&gt;Problem (Medium)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#approach-1-recursive-solution-&quot; id=&quot;markdown-toc-approach-1-recursive-solution-&quot;&gt;Approach 1: Recursive Solution *&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#idea&quot; id=&quot;markdown-toc-idea&quot;&gt;Idea&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#solution&quot; id=&quot;markdown-toc-solution&quot;&gt;Solution&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#complexity&quot; id=&quot;markdown-toc-complexity&quot;&gt;Complexity&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;problem-medium&quot;&gt;Problem (Medium)&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/unique-binary-search-trees-ii&quot;&gt;095. Unique Binary Search Trees II&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Given an integer n, generate all structurally unique &lt;strong&gt;BST&lt;/strong&gt;’s (binary search trees) that store values 1 … n.&lt;/p&gt;
+
+&lt;p&gt;Example:&lt;/p&gt;
+
+&lt;p&gt;Input: 3
+Output:
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[
+  [1,null,3,2],
+  [3,2,null,1],
+  [3,1,null,null,2],
+  [2,1,3],
+  [1,null,2,null,3]
+]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Explanation:
+The above output corresponds to the 5 unique BST’s shown below:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   1         3     3      2      1
+    \       /     /      / \      \
+     3     2     1      1   3      2
+    /     /       \                 \
+   2     1         2                 3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;approach-1-recursive-solution-&quot;&gt;Approach 1: Recursive Solution *&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/unique-binary-search-trees-ii/discuss/31592/Recursive-python-solution&quot;&gt;Python Solution Recursive&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;idea&quot;&gt;Idea&lt;/h3&gt;
+
+&lt;h3 id=&quot;solution&quot;&gt;Solution&lt;/h3&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;generateTrees&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+        :type n: int
+        :rtype: List[TreeNode]
+        &quot;&quot;&quot;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dfs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;dfs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;start&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;xrange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dfs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dfs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;complexity&quot;&gt;Complexity&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Time: $O()$&lt;/li&gt;
+  &lt;li&gt;Space: $O()$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Algorithm&quot;]" /><category term="leetcode" /><category term="python" /><summary type="html"></summary></entry><entry><title type="html">[LeetCode] 092. Reverse Linked List II *</title><link href="http://localhost:4000/2019/04/12/leetcode-092-reverse-linked-list-ii" rel="alternate" type="text/html" title="[LeetCode] 092. Reverse Linked List II *" /><published>2019-04-12T00:00:00+08:00</published><updated>2019-04-12T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/12/leetcode-092-reverse-linked-list-ii</id><content type="html" xml:base="http://localhost:4000/2019/04/12/leetcode-092-reverse-linked-list-ii">&lt;!--more--&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#problem-medium&quot; id=&quot;markdown-toc-problem-medium&quot;&gt;Problem (Medium)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#approach-1-recursion-&quot; id=&quot;markdown-toc-approach-1-recursion-&quot;&gt;Approach 1: Recursion *&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#idea&quot; id=&quot;markdown-toc-idea&quot;&gt;Idea&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#solution&quot; id=&quot;markdown-toc-solution&quot;&gt;Solution&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#complexity&quot; id=&quot;markdown-toc-complexity&quot;&gt;Complexity&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;problem-medium&quot;&gt;Problem (Medium)&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/reverse-linked-list-ii&quot;&gt;092. Reverse Linked List II&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Reverse a linked list from position m to n. Do it in one-pass.&lt;/p&gt;
+
+&lt;p&gt;Note: 1 ≤ m ≤ n ≤ length of list.&lt;/p&gt;
+
+&lt;p&gt;Example:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Input: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL, m = 2, n = 4&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Output: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1-&amp;gt;4-&amp;gt;3-&amp;gt;2-&amp;gt;5-&amp;gt;NULL&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;approach-1-recursion-&quot;&gt;Approach 1: Recursion *&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/reverse-linked-list-ii/solution/&quot;&gt;LeetCode Solution&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;idea&quot;&gt;Idea&lt;/h3&gt;
+
+&lt;h3 id=&quot;solution&quot;&gt;Solution&lt;/h3&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Solution1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;reverseBetween&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+        :type head: ListNode
+        :type m: int
+        :type n: int
+        :rtype: ListNode
+        &quot;&quot;&quot;&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;
+
+        &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;stop&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;recurseAndReverse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;nonlocal&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stop&lt;/span&gt;
+
+            &lt;span class=&quot;c1&quot;&gt;# base case. Don't proceed any further
+&lt;/span&gt;            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;
+
+            &lt;span class=&quot;c1&quot;&gt;# Keep moving the right pointer one step forward until (n == 1)
+&lt;/span&gt;            &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;
+
+            &lt;span class=&quot;c1&quot;&gt;# Keep moving left pointer to the right until we reach the proper node
+&lt;/span&gt;            &lt;span class=&quot;c1&quot;&gt;# from where the reversal is to start.
+&lt;/span&gt;            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;
+
+            &lt;span class=&quot;c1&quot;&gt;# Recurse with m and n reduced.
+&lt;/span&gt;            &lt;span class=&quot;n&quot;&gt;recurseAndReverse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+            &lt;span class=&quot;c1&quot;&gt;# In case both the pointers cross each other or become equal, we
+&lt;/span&gt;            &lt;span class=&quot;c1&quot;&gt;# stop i.e. don't swap data any further. We are done reversing at this
+&lt;/span&gt;            &lt;span class=&quot;c1&quot;&gt;# point.
+&lt;/span&gt;            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;stop&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
+
+            &lt;span class=&quot;c1&quot;&gt;# Until the boolean stop is false, swap data between the two pointers     
+&lt;/span&gt;            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;
+
+                &lt;span class=&quot;c1&quot;&gt;# Move left one step to the right.
+&lt;/span&gt;                &lt;span class=&quot;c1&quot;&gt;# The right pointer moves one step back via backtracking.
+&lt;/span&gt;                &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;           
+
+        &lt;span class=&quot;n&quot;&gt;recurseAndReverse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;complexity&quot;&gt;Complexity&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Time: $O(N)$&lt;/li&gt;
+  &lt;li&gt;Space: $O(N)$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Algorithm&quot;]" /><category term="leetcode" /><category term="python" /><category term="linked list" /><summary type="html"></summary></entry><entry><title type="html">[LeetCode] 089. Gray Code *</title><link href="http://localhost:4000/2019/04/12/leetcode-089-gray-code" rel="alternate" type="text/html" title="[LeetCode] 089. Gray Code *" /><published>2019-04-12T00:00:00+08:00</published><updated>2019-04-12T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/12/leetcode-089-gray-code</id><content type="html" xml:base="http://localhost:4000/2019/04/12/leetcode-089-gray-code">&lt;!--more--&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#problem-medium&quot; id=&quot;markdown-toc-problem-medium&quot;&gt;Problem (Medium)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#approach-1-leetcode-yuyibestman&quot; id=&quot;markdown-toc-approach-1-leetcode-yuyibestman&quot;&gt;Approach 1: LeetCode &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;yuyibestman&lt;/code&gt;&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#idea&quot; id=&quot;markdown-toc-idea&quot;&gt;Idea&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#solution&quot; id=&quot;markdown-toc-solution&quot;&gt;Solution&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#complexity&quot; id=&quot;markdown-toc-complexity&quot;&gt;Complexity&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#approach-2-solution-from-byronyi&quot; id=&quot;markdown-toc-approach-2-solution-from-byronyi&quot;&gt;Approach 2: Solution from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;byronyi&lt;/code&gt;&lt;/a&gt;    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#idea-1&quot; id=&quot;markdown-toc-idea-1&quot;&gt;Idea&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#solution-1&quot; id=&quot;markdown-toc-solution-1&quot;&gt;Solution&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#complexity-1&quot; id=&quot;markdown-toc-complexity-1&quot;&gt;Complexity&lt;/a&gt;&lt;/li&gt;
@@ -56,7 +496,7 @@
   &lt;li&gt;Therefore, for n = 0 the gray code sequence is [0].&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;approach-1-leetcode-yuyibestman&quot;&gt;Approach 1: LeetCode &lt;code class=&quot;highlighter-rouge&quot;&gt;yuyibestman&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;approach-1-leetcode-yuyibestman&quot;&gt;Approach 1: LeetCode &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;yuyibestman&lt;/code&gt;&lt;/h2&gt;
 
 &lt;h3 id=&quot;idea&quot;&gt;Idea&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/gray-code/discuss/29891/Share-my-solution&quot;&gt;bit operation solution&lt;/a&gt;&lt;/p&gt;
@@ -84,7 +524,7 @@
   &lt;li&gt;Space: $O()$&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;approach-2-solution-from-byronyi&quot;&gt;Approach 2: Solution from &lt;code class=&quot;highlighter-rouge&quot;&gt;byronyi&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;approach-2-solution-from-byronyi&quot;&gt;Approach 2: Solution from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;byronyi&lt;/code&gt;&lt;/h2&gt;
 
 &lt;h3 id=&quot;idea-1&quot;&gt;Idea&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/gray-code/discuss/29893/One-liner-Python-solution-(with-demo-in-comments)&quot;&gt;One-liner Python solution (with demo in comments)&lt;/a&gt;&lt;/p&gt;
@@ -150,7 +590,7 @@
 
 &lt;p&gt;A message containing letters from A-Z is being encoded to numbers using the following mapping:&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;'A' -&amp;gt; 1
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'A' -&amp;gt; 1
 'B' -&amp;gt; 2
 ...
 'Z' -&amp;gt; 26&lt;/code&gt;&lt;/p&gt;
@@ -252,13 +692,13 @@
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Algorithm&quot;]" /><category term="leetcode" /><category term="python" /><category term="dynamic programming" /><summary type="html"></summary></entry><entry><title type="html">[LeetCode] 088. Merge Sorted Array</title><link href="http://localhost:4000/2019/04/11/leetcode-088-merge-sorted-array" rel="alternate" type="text/html" title="[LeetCode] 088. Merge Sorted Array" /><published>2019-04-11T00:00:00+08:00</published><updated>2019-04-11T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/11/leetcode-088-merge-sorted-array</id><content type="html" xml:base="http://localhost:4000/2019/04/11/leetcode-088-merge-sorted-array">&lt;!--more--&gt;
 &lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#problem-easy&quot; id=&quot;markdown-toc-problem-easy&quot;&gt;Problem (Easy)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#approach-1-my-solution---use-listsort&quot; id=&quot;markdown-toc-approach-1-my-solution---use-listsort&quot;&gt;Approach 1: (My Solution - Use &lt;code class=&quot;highlighter-rouge&quot;&gt;list.sort()&lt;/code&gt;)&lt;/a&gt;    &lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#approach-1-my-solution---use-listsort&quot; id=&quot;markdown-toc-approach-1-my-solution---use-listsort&quot;&gt;Approach 1: (My Solution - Use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;list.sort()&lt;/code&gt;)&lt;/a&gt;    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#idea&quot; id=&quot;markdown-toc-idea&quot;&gt;Idea&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#solution&quot; id=&quot;markdown-toc-solution&quot;&gt;Solution&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#complexity&quot; id=&quot;markdown-toc-complexity&quot;&gt;Complexity&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#approach-1-without-listsort-&quot; id=&quot;markdown-toc-approach-1-without-listsort-&quot;&gt;Approach 1: Without &lt;code class=&quot;highlighter-rouge&quot;&gt;list.sort()&lt;/code&gt; *&lt;/a&gt;    &lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#approach-1-without-listsort-&quot; id=&quot;markdown-toc-approach-1-without-listsort-&quot;&gt;Approach 1: Without &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;list.sort()&lt;/code&gt; *&lt;/a&gt;    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#idea-1&quot; id=&quot;markdown-toc-idea-1&quot;&gt;Idea&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#solution-1&quot; id=&quot;markdown-toc-solution-1&quot;&gt;Solution&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#complexity-1&quot; id=&quot;markdown-toc-complexity-1&quot;&gt;Complexity&lt;/a&gt;&lt;/li&gt;
@@ -290,7 +730,7 @@
   &lt;li&gt;Output: [1,2,2,3,5,6]&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;approach-1-my-solution---use-listsort&quot;&gt;Approach 1: (My Solution - Use &lt;code class=&quot;highlighter-rouge&quot;&gt;list.sort()&lt;/code&gt;)&lt;/h2&gt;
+&lt;h2 id=&quot;approach-1-my-solution---use-listsort&quot;&gt;Approach 1: (My Solution - Use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;list.sort()&lt;/code&gt;)&lt;/h2&gt;
 
 &lt;h3 id=&quot;idea&quot;&gt;Idea&lt;/h3&gt;
 
@@ -315,7 +755,7 @@
   &lt;li&gt;Space: $O()$&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;approach-1-without-listsort-&quot;&gt;Approach 1: Without &lt;code class=&quot;highlighter-rouge&quot;&gt;list.sort()&lt;/code&gt; *&lt;/h2&gt;
+&lt;h2 id=&quot;approach-1-without-listsort-&quot;&gt;Approach 1: Without &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;list.sort()&lt;/code&gt; *&lt;/h2&gt;
 
 &lt;h3 id=&quot;idea-1&quot;&gt;Idea&lt;/h3&gt;
 
@@ -344,630 +784,6 @@
 &lt;ul&gt;
   &lt;li&gt;Time: $O()$&lt;/li&gt;
   &lt;li&gt;Space: $O()$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Algorithm&quot;]" /><category term="leetcode" /><category term="python" /><summary type="html"></summary></entry><entry><title type="html">[LeetCode] 083. Remove Duplicates from Sorted List</title><link href="http://localhost:4000/2019/04/11/leetcode-083-remove-duplicates-from-sorted-list" rel="alternate" type="text/html" title="[LeetCode] 083. Remove Duplicates from Sorted List" /><published>2019-04-11T00:00:00+08:00</published><updated>2019-04-11T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/11/leetcode-083-remove-duplicates-from-sorted-list</id><content type="html" xml:base="http://localhost:4000/2019/04/11/leetcode-083-remove-duplicates-from-sorted-list">&lt;!--more--&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#problem-easy&quot; id=&quot;markdown-toc-problem-easy&quot;&gt;Problem (Easy)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#approach-1-my-solution&quot; id=&quot;markdown-toc-approach-1-my-solution&quot;&gt;Approach 1: (My Solution)&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#idea&quot; id=&quot;markdown-toc-idea&quot;&gt;Idea&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#solution&quot; id=&quot;markdown-toc-solution&quot;&gt;Solution&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#complexity&quot; id=&quot;markdown-toc-complexity&quot;&gt;Complexity&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;problem-easy&quot;&gt;Problem (Easy)&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/remove-duplicates-from-sorted-list&quot;&gt;083. Remove Duplicates from Sorted List&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Given a sorted linked list, delete all duplicates such that each element appear only once.&lt;/p&gt;
-
-&lt;p&gt;Example 1:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Input: 1-&amp;gt;1-&amp;gt;2&lt;/li&gt;
-  &lt;li&gt;Output: 1-&amp;gt;2&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Example 2:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Input: 1-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;3&lt;/li&gt;
-  &lt;li&gt;Output: 1-&amp;gt;2-&amp;gt;3&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;approach-1-my-solution&quot;&gt;Approach 1: (My Solution)&lt;/h2&gt;
-
-&lt;h3 id=&quot;idea&quot;&gt;Idea&lt;/h3&gt;
-
-&lt;h3 id=&quot;solution&quot;&gt;Solution&lt;/h3&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Solution1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;deleteDuplicates&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot; 
-        :type head: ListNode
-        :rtype: ListNode
-        &quot;&quot;&quot;&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;prev&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; 
-            &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;complexity&quot;&gt;Complexity&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Time: $O(n)$&lt;/li&gt;
-  &lt;li&gt;Space: $O(1)$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Algorithm&quot;]" /><category term="leetcode" /><category term="python" /><category term="linked list" /><summary type="html"></summary></entry><entry><title type="html">[LeetCode] 082. Remove Duplicates from Sorted List II *</title><link href="http://localhost:4000/2019/04/11/leetcode-082-remove-duplicates-from-sorted-list-ii" rel="alternate" type="text/html" title="[LeetCode] 082. Remove Duplicates from Sorted List II *" /><published>2019-04-11T00:00:00+08:00</published><updated>2019-04-11T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/11/leetcode-082-remove-duplicates-from-sorted-list-ii</id><content type="html" xml:base="http://localhost:4000/2019/04/11/leetcode-082-remove-duplicates-from-sorted-list-ii">&lt;!--more--&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#problem-medium&quot; id=&quot;markdown-toc-problem-medium&quot;&gt;Problem (Medium)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#approach-1-top-solution-from-leetcode-discussion---dummy-head&quot; id=&quot;markdown-toc-approach-1-top-solution-from-leetcode-discussion---dummy-head&quot;&gt;Approach 1: Top Solution from LeetCode Discussion - Dummy Head!!!&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#idea&quot; id=&quot;markdown-toc-idea&quot;&gt;Idea&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#solution&quot; id=&quot;markdown-toc-solution&quot;&gt;Solution&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#complexity&quot; id=&quot;markdown-toc-complexity&quot;&gt;Complexity&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;problem-medium&quot;&gt;Problem (Medium)&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii&quot;&gt;082. Remove Duplicates from Sorted List II&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Given a sorted linked list, delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list.&lt;/p&gt;
-
-&lt;p&gt;Example 1:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Input: 1-&amp;gt;2-&amp;gt;3-&amp;gt;3-&amp;gt;4-&amp;gt;4-&amp;gt;5&lt;/li&gt;
-  &lt;li&gt;Output: 1-&amp;gt;2-&amp;gt;5&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Example 2:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Input: 1-&amp;gt;1-&amp;gt;1-&amp;gt;2-&amp;gt;3&lt;/li&gt;
-  &lt;li&gt;Output: 2-&amp;gt;3&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;approach-1-top-solution-from-leetcode-discussion---dummy-head&quot;&gt;Approach 1: Top Solution from LeetCode Discussion - Dummy Head!!!&lt;/h2&gt;
-
-&lt;h3 id=&quot;idea&quot;&gt;Idea&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/discuss/28335/My-accepted-Java-code&quot;&gt;Accepted Java code from snowfish&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;solution&quot;&gt;Solution&lt;/h3&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Solution1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;deleteDuplicates&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
-        :type head: ListNode
-        :rtype: ListNode
-        &quot;&quot;&quot;&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;fakeHead&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ListNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;fakeHead&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;pre&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fakeHead&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pre&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;pre&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pre&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;pre&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fakeHead&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;complexity&quot;&gt;Complexity&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Time: $O(n)$&lt;/li&gt;
-  &lt;li&gt;Space: $O()$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Algorithm&quot;]" /><category term="leetcode" /><category term="python" /><category term="linked list" /><summary type="html"></summary></entry><entry><title type="html">[LeetCode] 081. Search in Rotated Sorted Array II *</title><link href="http://localhost:4000/2019/04/11/leetcode-081-search-in-rotated-sorted-array-ii" rel="alternate" type="text/html" title="[LeetCode] 081. Search in Rotated Sorted Array II *" /><published>2019-04-11T00:00:00+08:00</published><updated>2019-04-11T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/11/leetcode-081-search-in-rotated-sorted-array-ii</id><content type="html" xml:base="http://localhost:4000/2019/04/11/leetcode-081-search-in-rotated-sorted-array-ii">&lt;!--more--&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#problem-medium&quot; id=&quot;markdown-toc-problem-medium&quot;&gt;Problem (Medium)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#approach-1-binary-search-&quot; id=&quot;markdown-toc-approach-1-binary-search-&quot;&gt;Approach 1: Binary Search *&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#idea&quot; id=&quot;markdown-toc-idea&quot;&gt;Idea&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#solution&quot; id=&quot;markdown-toc-solution&quot;&gt;Solution&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#complexity&quot; id=&quot;markdown-toc-complexity&quot;&gt;Complexity&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;problem-medium&quot;&gt;Problem (Medium)&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/search-in-rotated-sorted-array-ii&quot;&gt;081. Search in Rotated Sorted Array II&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.&lt;/p&gt;
-
-&lt;p&gt;(i.e., &lt;code class=&quot;highlighter-rouge&quot;&gt;[0,0,1,2,2,5,6]&lt;/code&gt; might become &lt;code class=&quot;highlighter-rouge&quot;&gt;[2,5,6,0,0,1,2]&lt;/code&gt;).&lt;/p&gt;
-
-&lt;p&gt;You are given a target value to search. If found in the array return &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;, otherwise return &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Example 1:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Input: &lt;code class=&quot;highlighter-rouge&quot;&gt;nums = [2,5,6,0,0,1,2]&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;target = 0&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Output: &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Example 2:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Input: &lt;code class=&quot;highlighter-rouge&quot;&gt;nums = [2,5,6,0,0,1,2]&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;target = 3&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Output: &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Follow up:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;This is a follow up problem to Search in Rotated Sorted Array, where nums may contain duplicates.&lt;/li&gt;
-  &lt;li&gt;Would this affect the run-time complexity? How and why?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;approach-1-binary-search-&quot;&gt;Approach 1: Binary Search *&lt;/h2&gt;
-
-&lt;h3 id=&quot;idea&quot;&gt;Idea&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/search-in-rotated-sorted-array-ii/discuss/28195/Python-easy-to-understand-solution-(with-comments).&quot;&gt;Python easy to understand solution (with comments).&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;solution&quot;&gt;Solution&lt;/h3&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Solution1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot; 
-        :type nums: List[int]
-        :type target: int
-        :rtype: bool
-        &quot;&quot;&quot;&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# tricky part&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-            &lt;span class=&quot;c&quot;&gt;# the first half is ordered&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
-                &lt;span class=&quot;c&quot;&gt;# target is in the first half&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;target&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; 
-                &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; 
-            &lt;span class=&quot;c&quot;&gt;# the second half is ordered&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;c&quot;&gt;# target is in the second half&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;target&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; 
-                &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; 
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;complexity&quot;&gt;Complexity&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Time: $O(\log n)$&lt;/li&gt;
-  &lt;li&gt;Space: $O(1)$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Algorithm&quot;]" /><category term="leetcode" /><category term="python" /><category term="binary search" /><summary type="html"></summary></entry><entry><title type="html">[LeetCode] 080. Remove Duplicates from Sorted Array II</title><link href="http://localhost:4000/2019/04/11/leetcode-080-remove-duplicates-from-sorted-array-ii" rel="alternate" type="text/html" title="[LeetCode] 080. Remove Duplicates from Sorted Array II" /><published>2019-04-11T00:00:00+08:00</published><updated>2019-04-11T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/11/leetcode-080-remove-duplicates-from-sorted-array-ii</id><content type="html" xml:base="http://localhost:4000/2019/04/11/leetcode-080-remove-duplicates-from-sorted-array-ii">&lt;!--more--&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#problem-medium&quot; id=&quot;markdown-toc-problem-medium&quot;&gt;Problem (Medium)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#approach-1-my-solution---single-loop&quot; id=&quot;markdown-toc-approach-1-my-solution---single-loop&quot;&gt;Approach 1: (My Solution - Single Loop)&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#idea&quot; id=&quot;markdown-toc-idea&quot;&gt;Idea&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#solution&quot; id=&quot;markdown-toc-solution&quot;&gt;Solution&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#complexity&quot; id=&quot;markdown-toc-complexity&quot;&gt;Complexity&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#approach-2-brilliant-solution-&quot; id=&quot;markdown-toc-approach-2-brilliant-solution-&quot;&gt;Approach 2: Brilliant Solution *&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#idea-1&quot; id=&quot;markdown-toc-idea-1&quot;&gt;Idea&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#solution-1&quot; id=&quot;markdown-toc-solution-1&quot;&gt;Solution&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#complexity-1&quot; id=&quot;markdown-toc-complexity-1&quot;&gt;Complexity&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;problem-medium&quot;&gt;Problem (Medium)&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii&quot;&gt;080. Remove Duplicates from Sorted Array II&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Given a sorted array nums, remove the duplicates &lt;strong&gt;in-place&lt;/strong&gt; such that duplicates appeared at most twice and return the new length.&lt;/p&gt;
-
-&lt;p&gt;Do not allocate extra space for another array, you must do this by &lt;strong&gt;modifying the input array&lt;/strong&gt; in-place with O(1) extra memory.&lt;/p&gt;
-
-&lt;p&gt;Example 1:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Given nums = [1,1,1,2,2,3],&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Your function should return length = 5, with the first five elements of nums being 1, 1, 2, 2 and 3 respectively.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;It doesn’t matter what you leave beyond the returned length.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Example 2:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Given nums = [0,0,1,1,1,1,2,3,3],&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Your function should return length = 7, with the first seven elements of nums being modified to 0, 0, 1, 1, 2, 3 and 3 respectively.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;It doesn’t matter what values are set beyond the returned length.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Clarification:&lt;/p&gt;
-
-&lt;p&gt;Confused why the returned value is an integer but your answer is an array?&lt;/p&gt;
-
-&lt;p&gt;Note that the input array is passed in by &lt;strong&gt;reference&lt;/strong&gt;, which means modification to the input array will be known to the caller as well.&lt;/p&gt;
-
-&lt;p&gt;Internally you can think of this:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// nums is passed in by reference. (i.e., without making a copy)
-int len = removeDuplicates(nums);
-
-// any modification to nums in your function would be known by the caller.
-// using the length returned by your function, it prints the first len elements.
-for (int i = 0; i &amp;lt; len; i++) {
-    print(nums[i]);
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;approach-1-my-solution---single-loop&quot;&gt;Approach 1: (My Solution - Single Loop)&lt;/h2&gt;
-
-&lt;h3 id=&quot;idea&quot;&gt;Idea&lt;/h3&gt;
-&lt;p&gt;Use several helper variables:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;current position;&lt;/li&gt;
-  &lt;li&gt;current number;&lt;/li&gt;
-  &lt;li&gt;current number’s count.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;solution&quot;&gt;Solution&lt;/h3&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Solution1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;removeDuplicates&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot; 
-        :type nums: List[int]
-        :rtype: int
-        &quot;&quot;&quot;&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'pos:'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'num:'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'ct:'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
-                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ct&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;ct&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;pos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;ct&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;pos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-            
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;complexity&quot;&gt;Complexity&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Time: $O(n)$&lt;/li&gt;
-  &lt;li&gt;Space: $O(1)$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;approach-2-brilliant-solution-&quot;&gt;Approach 2: Brilliant Solution *&lt;/h2&gt;
-
-&lt;h3 id=&quot;idea-1&quot;&gt;Idea&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/discuss/27976/3-6-easy-lines-C%2B%2B-Java-Python-Ruby&quot;&gt;3-6 easy lines, C++, Java, Python, Ruby&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Same simple solution written in several languages. Just go through the numbers and include those in the result that haven’t been included twice already.&lt;/p&gt;
-
-&lt;h3 id=&quot;solution-1&quot;&gt;Solution&lt;/h3&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Solution1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;removeDuplicates&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot; 
-        :type nums: List[int]
-        :rtype: int
-        &quot;&quot;&quot;&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;complexity-1&quot;&gt;Complexity&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Time: $O(n)$&lt;/li&gt;
-  &lt;li&gt;Space: $O(1)$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Algorithm&quot;]" /><category term="leetcode" /><category term="python" /><summary type="html"></summary></entry><entry><title type="html">[LeetCode] 079. Word Search *</title><link href="http://localhost:4000/2019/04/11/leetcode-079-word-search" rel="alternate" type="text/html" title="[LeetCode] 079. Word Search *" /><published>2019-04-11T00:00:00+08:00</published><updated>2019-04-11T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/11/leetcode-079-word-search</id><content type="html" xml:base="http://localhost:4000/2019/04/11/leetcode-079-word-search">&lt;!--more--&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#problem-medium&quot; id=&quot;markdown-toc-problem-medium&quot;&gt;Problem (Medium)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#approach-1--backtracking&quot; id=&quot;markdown-toc-approach-1--backtracking&quot;&gt;Approach 1:  Backtracking&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#idea&quot; id=&quot;markdown-toc-idea&quot;&gt;Idea&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#solution&quot; id=&quot;markdown-toc-solution&quot;&gt;Solution&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#complexity&quot; id=&quot;markdown-toc-complexity&quot;&gt;Complexity&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;problem-medium&quot;&gt;Problem (Medium)&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/word-search&quot;&gt;079. Word Search&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Given a 2D board and a word, find if the word exists in the grid.&lt;/p&gt;
-
-&lt;p&gt;The word can be constructed from letters of sequentially adjacent cell, where “adjacent” cells are those horizontally or vertically neighboring. The same letter cell may not be used more than once.&lt;/p&gt;
-
-&lt;p&gt;Example:&lt;/p&gt;
-
-&lt;p&gt;board =
-&lt;code class=&quot;highlighter-rouge&quot;&gt;[
-  ['A','B','C','E'],
-  ['S','F','C','S'],
-  ['A','D','E','E']
-]&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Given word = “&lt;strong&gt;ABCCED&lt;/strong&gt;”, return &lt;strong&gt;true&lt;/strong&gt;.
-Given word = “&lt;strong&gt;SEE&lt;/strong&gt;”, return &lt;strong&gt;true&lt;/strong&gt;.
-Given word = “&lt;strong&gt;ABCB&lt;/strong&gt;”, return &lt;strong&gt;false&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;approach-1--backtracking&quot;&gt;Approach 1:  Backtracking&lt;/h2&gt;
-
-&lt;h3 id=&quot;idea&quot;&gt;Idea&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/word-search/discuss/27658/Accepted-very-short-Java-solution.-No-additional-space.&quot;&gt;Accepted very short Java solution. No additional space.&lt;/a&gt;
-&lt;a href=&quot;https://leetcode.com/problems/word-search/discuss/27660/Python-dfs-solution-with-comments.&quot;&gt;Python dfs solution with comments.&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;solution&quot;&gt;Solution&lt;/h3&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;exist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;board&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot; 
-        :type board: List[List[str]]
-        :type word: str
-        :rtype: bool
-        &quot;&quot;&quot;&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;w&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;height&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;board&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]),&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;board&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;helper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;board&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; 
-                    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;helper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;board&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; 
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;board&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;board&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]):&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;board&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;board&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; 
-        &lt;span class=&quot;n&quot;&gt;exist&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;helper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;board&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; \
-             &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;helper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;board&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; \
-             &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;helper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;board&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; \
-             &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;helper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;board&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;board&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; 
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exist&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;complexity&quot;&gt;Complexity&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Time: $O()$&lt;/li&gt;
-  &lt;li&gt;Space: $O()$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Algorithm&quot;]" /><category term="leetcode" /><category term="python" /><summary type="html"></summary></entry><entry><title type="html">[LeetCode] 086. Partition List *</title><link href="http://localhost:4000/2019/04/11/leetcode-086-partition-list" rel="alternate" type="text/html" title="[LeetCode] 086. Partition List *" /><published>2019-04-11T00:00:00+08:00</published><updated>2019-04-11T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/11/leetcode-086-partition-list</id><content type="html" xml:base="http://localhost:4000/2019/04/11/leetcode-086-partition-list">&lt;!--more--&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#problem-medium&quot; id=&quot;markdown-toc-problem-medium&quot;&gt;Problem (Medium)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#approach-1-solution-from-leetcode---two-pointer-approach-&quot; id=&quot;markdown-toc-approach-1-solution-from-leetcode---two-pointer-approach-&quot;&gt;Approach 1: Solution from LeetCode - Two Pointer Approach *&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#idea&quot; id=&quot;markdown-toc-idea&quot;&gt;Idea&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#intuition&quot; id=&quot;markdown-toc-intuition&quot;&gt;Intuition&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#algorithm&quot; id=&quot;markdown-toc-algorithm&quot;&gt;Algorithm&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#solution&quot; id=&quot;markdown-toc-solution&quot;&gt;Solution&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#complexity&quot; id=&quot;markdown-toc-complexity&quot;&gt;Complexity&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;problem-medium&quot;&gt;Problem (Medium)&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/partition-list&quot;&gt;086. Partition List&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Given a linked list and a value &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt;, partition it such that all nodes less than &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; come before nodes greater than or equal to &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;You should preserve the original relative order of the nodes in each of the two partitions.&lt;/p&gt;
-
-&lt;p&gt;Example:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Input: &lt;code class=&quot;highlighter-rouge&quot;&gt;head = 1-&amp;gt;4-&amp;gt;3-&amp;gt;2-&amp;gt;5-&amp;gt;2, x = 3&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Output: &lt;code class=&quot;highlighter-rouge&quot;&gt;1-&amp;gt;2-&amp;gt;2-&amp;gt;4-&amp;gt;3-&amp;gt;5&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;approach-1-solution-from-leetcode---two-pointer-approach-&quot;&gt;Approach 1: Solution from LeetCode - Two Pointer Approach *&lt;/h2&gt;
-
-&lt;p&gt;The problem wants us to reform the linked list structure, such that the elements lesser that a certain value &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt;, come before the elements greater or equal to &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt;. This essentially means in this reformed list, there would be a point in the linked list before which all the elements would be smaller than &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; and after which all the elements would be greater or equal to &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt;. Let’s call this point as the &lt;code class=&quot;highlighter-rouge&quot;&gt;JOINT&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://leetcode.com/problems/partition-list/Figures/86/86_Partition_List_1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Reverse engineering the question tells us that if we break the reformed list at the &lt;code class=&quot;highlighter-rouge&quot;&gt;JOINT&lt;/code&gt;, we will get two smaller linked lists, one with lesser elements and the other with elements greater or equal to &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt;. In the solution, our main aim is to create these two linked lists and join them.&lt;/p&gt;
-
-&lt;h3 id=&quot;idea&quot;&gt;Idea&lt;/h3&gt;
-&lt;h4 id=&quot;intuition&quot;&gt;Intuition&lt;/h4&gt;
-
-&lt;p&gt;We can take two pointers before and after to keep track of the two linked lists as described above. These two pointers could be used two create two separate lists and then these lists could be combined to form the desired reformed list.&lt;/p&gt;
-
-&lt;h4 id=&quot;algorithm&quot;&gt;Algorithm&lt;/h4&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Initialize two pointers &lt;code class=&quot;highlighter-rouge&quot;&gt;before&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;after&lt;/code&gt;. In the implementation we have initialized these two with a dummy &lt;code class=&quot;highlighter-rouge&quot;&gt;ListNode&lt;/code&gt;. This helps to reduce the number of conditional checks we would need otherwise. You can try an implementation where you don’t initialize with a dummy node and see it yourself!&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://leetcode.com/problems/partition-list/Figures/86/86_Partition_List_2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Iterate the original linked list, using the &lt;code class=&quot;highlighter-rouge&quot;&gt;head&lt;/code&gt; pointer.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;If the node’s value pointed by &lt;code class=&quot;highlighter-rouge&quot;&gt;head&lt;/code&gt; is lesser than &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt;, the node should be part of the &lt;code class=&quot;highlighter-rouge&quot;&gt;before&lt;/code&gt; list. So we move it to &lt;code class=&quot;highlighter-rouge&quot;&gt;before&lt;/code&gt; list.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://leetcode.com/problems/partition-list/Figures/86/86_Partition_List_3.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Else, the node should be part of &lt;code class=&quot;highlighter-rouge&quot;&gt;after&lt;/code&gt; list. So we move it to &lt;code class=&quot;highlighter-rouge&quot;&gt;after&lt;/code&gt; list.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://leetcode.com/problems/partition-list/Figures/86/86_Partition_List_4.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Once we are done with all the nodes in the original linked list, we would have two list before and &lt;code class=&quot;highlighter-rouge&quot;&gt;after&lt;/code&gt;. The original list nodes are either part of &lt;code class=&quot;highlighter-rouge&quot;&gt;before&lt;/code&gt; list or &lt;code class=&quot;highlighter-rouge&quot;&gt;after&lt;/code&gt; list, depending on its value.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://leetcode.com/problems/partition-list/Figures/86/86_Partition_List_5.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;em&gt;Note: Since we traverse the original linked list from left to right, at no point would the order of nodes change relatively in the two lists. Another important thing to note here is that we show the original linked list intact in the above diagrams. However, in the implementation, we remove the nodes from the original linked list and attach them in the before or after list. We don’t utilize any additional space. We simply move the nodes from the original list around.&lt;/em&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Now, these two lists &lt;code class=&quot;highlighter-rouge&quot;&gt;before&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;after&lt;/code&gt; can be combined to form the reformed list.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://leetcode.com/problems/partition-list/Figures/86/86_Partition_List_6.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;We did a dummy node initialization at the start to make implementation easier, you don’t want that to be part of the returned list, hence just move ahead one node in both the lists while combining the two list. Since both before and after have an extra node at the front.&lt;/p&gt;
-
-&lt;h3 id=&quot;solution&quot;&gt;Solution&lt;/h3&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Solution1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;partition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
-        :type head: ListNode
-        :type x: int
-        :rtype: ListNode
-        &quot;&quot;&quot;&lt;/span&gt;
-
-        &lt;span class=&quot;c&quot;&gt;# before and after are the two pointers used to create two list&lt;/span&gt;
-        &lt;span class=&quot;c&quot;&gt;# before_head and after_head are used to save the heads of the two lists.&lt;/span&gt;
-        &lt;span class=&quot;c&quot;&gt;# All of these are initialized with the dummy nodes created.&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;before&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;before_head&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ListNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;after&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;after_head&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ListNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;c&quot;&gt;# If the original list node is lesser than the given x,&lt;/span&gt;
-            &lt;span class=&quot;c&quot;&gt;# assign it to the before list.&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;before&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;before&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;before&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;c&quot;&gt;# If the original list node is greater or equal to the given x,&lt;/span&gt;
-                &lt;span class=&quot;c&quot;&gt;# assign it to the after list.&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;after&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;after&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;after&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;
-
-            &lt;span class=&quot;c&quot;&gt;# move ahead in the original list&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;
-
-        &lt;span class=&quot;c&quot;&gt;# Last node of &quot;after&quot; list would also be ending node of the reformed list&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;after&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;
-        &lt;span class=&quot;c&quot;&gt;# Once all the nodes are correctly assigned to the two lists,&lt;/span&gt;
-        &lt;span class=&quot;c&quot;&gt;# combine them to form a single list which would be returned.&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;before&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;after_head&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;
-
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;before_head&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;complexity&quot;&gt;Complexity&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Time: $O(N)$&lt;/li&gt;
-  &lt;li&gt;Space: $O(1)$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Algorithm&quot;]" /><category term="leetcode" /><category term="python" /><summary type="html"></summary></entry><entry><title type="html">[LeetCode] 074. Search a 2D Matrix</title><link href="http://localhost:4000/2019/04/10/leetcode-074-search-a-2d-matrix" rel="alternate" type="text/html" title="[LeetCode] 074. Search a 2D Matrix" /><published>2019-04-10T00:00:00+08:00</published><updated>2019-04-10T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/10/leetcode-074-search-a-2d-matrix</id><content type="html" xml:base="http://localhost:4000/2019/04/10/leetcode-074-search-a-2d-matrix">&lt;!--more--&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#problem-medium&quot; id=&quot;markdown-toc-problem-medium&quot;&gt;Problem (Medium)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#approach-1-binary-search-&quot; id=&quot;markdown-toc-approach-1-binary-search-&quot;&gt;Approach 1: Binary Search *&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#idea&quot; id=&quot;markdown-toc-idea&quot;&gt;Idea&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#solution&quot; id=&quot;markdown-toc-solution&quot;&gt;Solution&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#complexity&quot; id=&quot;markdown-toc-complexity&quot;&gt;Complexity&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;problem-medium&quot;&gt;Problem (Medium)&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/search-a-2d-matrix&quot;&gt;074. Search a 2D Matrix&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties:&lt;/p&gt;
-
-&lt;p&gt;Integers in each row are sorted from left to right.
-The first integer of each row is greater than the last integer of the previous row.
-Example 1:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input:
-matrix = [
-  [1,   3,  5,  7],
-  [10, 11, 16, 20],
-  [23, 30, 34, 50]
-]
-target = 3
-Output: true
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Example 2:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input:
-matrix = [
-  [1,   3,  5,  7],
-  [10, 11, 16, 20],
-  [23, 30, 34, 50]
-]
-target = 13
-Output: false
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;approach-1-binary-search-&quot;&gt;Approach 1: Binary Search *&lt;/h2&gt;
-
-&lt;h3 id=&quot;idea&quot;&gt;Idea&lt;/h3&gt;
-&lt;p&gt;A typical binary search problem.&lt;/p&gt;
-
-&lt;h3 id=&quot;solution&quot;&gt;Solution&lt;/h3&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Solution1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;searchMatrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
-        :type matrix: List[List[int]]
-        :type target: int
-        :rtype: bool
-        &quot;&quot;&quot;&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]):&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;row_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col_num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;begin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row_num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col_num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;begin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;begin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;mid_val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;col_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;col_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mid_val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mid_val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;begin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;complexity&quot;&gt;Complexity&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Time: $O(\log (MN))$ where $M,N$ are the width and height of the input matrix.&lt;/li&gt;
-  &lt;li&gt;Space: $O(1)$&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Algorithm&quot;]" /><category term="leetcode" /><category term="python" /><summary type="html"></summary></entry></feed>

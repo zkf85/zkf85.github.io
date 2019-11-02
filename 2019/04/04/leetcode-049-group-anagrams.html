@@ -37,7 +37,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-04-04T00:00:00+08:00" />
 <script type="application/ld+json">
-{"description":"Theme based on Materialize.css for jekyll sites.","@type":"BlogPosting","url":"http://localhost:4000/2019/04/04/leetcode-049-group-anagrams","headline":"[LeetCode] 049. Group Anagrams","dateModified":"2019-04-04T00:00:00+08:00","datePublished":"2019-04-04T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/04/04/leetcode-049-group-anagrams"},"@context":"http://schema.org"}</script>
+{"url":"http://localhost:4000/2019/04/04/leetcode-049-group-anagrams","headline":"[LeetCode] 049. Group Anagrams","dateModified":"2019-04-04T00:00:00+08:00","datePublished":"2019-04-04T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/04/04/leetcode-049-group-anagrams"},"description":"Theme based on Materialize.css for jekyll sites.","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -171,7 +171,7 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 <p>Given an array of strings, group anagrams together.</p>
 
 <p>Example:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: ["eat", "tea", "tan", "ate", "nat", "bat"],
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: ["eat", "tea", "tan", "ate", "nat", "bat"],
 Output:
 [
   ["ate","eat","tea"],
@@ -188,7 +188,7 @@ The order of your output does not matter.</p>
 <h2 id="approach-1-my-solution---beat-10000-python-create-a-dictionary">Approach 1: (My Solution - Beat 100.00% Python) Create a Dictionary</h2>
 
 <h3 id="idea">Idea</h3>
-<p>Create dictionary to save the anagrams’ characters (sorted) as the keys, and the strings in <code class="highlighter-rouge">str</code> that satisfying anagrams rule as the values.</p>
+<p>Create dictionary to save the anagrams’ characters (sorted) as the keys, and the strings in <code class="language-plaintext highlighter-rouge">str</code> that satisfying anagrams rule as the values.</p>
 
 <h3 id="solution">Solution</h3>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution1</span><span class="p">:</span>
@@ -209,7 +209,7 @@ The order of your output does not matter.</p>
 
 <h3 id="complexity">Complexity</h3>
 <ul>
-  <li>Time: $O(NK\log K)$ where $N$ is the length of <code class="highlighter-rouge">strs</code>, and $K$ is the maximum length of a string in <code class="highlighter-rouge">strs</code>.</li>
+  <li>Time: $O(NK\log K)$ where $N$ is the length of <code class="language-plaintext highlighter-rouge">strs</code>, and $K$ is the maximum length of a string in <code class="language-plaintext highlighter-rouge">strs</code>.</li>
   <li>Space: $O(NK)$</li>
 </ul>
 

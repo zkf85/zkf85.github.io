@@ -37,7 +37,7 @@
 <link rel="prev" href="http://localhost:4000/page8" />
 <link rel="next" href="http://localhost:4000/page10" />
 <script type="application/ld+json">
-{"description":"Theme based on Materialize.css for jekyll sites.","@type":"WebPage","url":"http://localhost:4000/page9/","headline":"Everest","@context":"http://schema.org"}</script>
+{"url":"http://localhost:4000/page9/","headline":"Everest","description":"Theme based on Materialize.css for jekyll sites.","@type":"WebPage","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -114,6 +114,264 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 
 <div class="container">
   <div class="row">
+  
+  <div class="col s12">
+    <div class="card hoverable">
+      <div class="card-content">
+        <!--<span id="post-title" class="card-title">[CS229] Lecture 3 Notes - LWR/Prob Interp/Logistic/Perceptron</span>
+        -->
+        <a id="post-title" class="card-title" href="/2019/02/12/cs229-lecture-3">
+        [CS229] Lecture 3 Notes - LWR/Prob Interp/Logistic/Perceptron
+        </a>
+        
+        <p id="post-date">
+          <i class="material-icons">date_range</i>
+           
+          Feb.
+            
+          12, 2019 - Tuesday
+
+        </p>
+        <p id="post-content"><blockquote>
+  <ol>
+    <li>Locally Weighted Regression</li>
+    <li>Probablistic Interpretation of LR</li>
+    <li>Classification (Logistic Regression)</li>
+    <li>Disgression -&gt; Perceptron</li>
+  </ol>
+</blockquote>
+
+</p>
+      </div>
+      <div class="card-action">
+        <a href="/2019/02/12/cs229-lecture-3">
+          Read More 
+        <i class="material-icons">keyboard_arrow_down</i></a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col s12">
+    <div class="card hoverable">
+      <div class="card-content">
+        <!--<span id="post-title" class="card-title">Random! Shuffle v.s. Permutation (Numpy)</span>
+        -->
+        <a id="post-title" class="card-title" href="/2019/01/31/np-shuffle-vs-permutation">
+        Random! Shuffle v.s. Permutation (Numpy)
+        </a>
+        
+        <p id="post-date">
+          <i class="material-icons">date_range</i>
+           
+          Jan.
+            
+          31, 2019 - Thursday
+
+        </p>
+        <p id="post-content"><blockquote>
+  <p>Generally, in Numpy, both <code class="language-plaintext highlighter-rouge">random.permutation</code> and <code class="language-plaintext highlighter-rouge">random.shuffle</code> randomly shuffle elements in an array. But there are differences:</p>
+</blockquote>
+
+</p>
+      </div>
+      <div class="card-action">
+        <a href="/2019/01/31/np-shuffle-vs-permutation">
+          Read More 
+        <i class="material-icons">keyboard_arrow_down</i></a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col s12">
+    <div class="card hoverable">
+      <div class="card-content">
+        <!--<span id="post-title" class="card-title">How to Force Keras to use CPU to Run Script?</span>
+        -->
+        <a id="post-title" class="card-title" href="/2019/01/23/how-to-force-keras-use-cpu">
+        How to Force Keras to use CPU to Run Script?
+        </a>
+        
+        <p id="post-date">
+          <i class="material-icons">date_range</i>
+           
+          Jan.
+            
+          23, 2019 - Wednesday
+
+        </p>
+        <p id="post-content"><blockquote>
+  <p><strong>The reason for such a demand:</strong></p>
+
+  <p>My main training program was using the GPU fully. But I needed to get a prediction with another previously trained model urgently. I tried to use the GPU but I got OOM. Therefore, using CPU for the predicting job should be a good solution, and it did solve the problem!</p>
+
+  <p>Generally there are two ways: a short/lazy one and a lengthy but graceful one.</p>
+</blockquote>
+
+<h2 id="option-i">Option I:</h2>
+<p>If you want to force Keras to use CPU</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">"CUDA_DEVICE_ORDER"</span><span class="p">]</span> <span class="o">=</span> <span class="s">"PCI_BUS_ID"</span> 
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">"CUDA_VISIBLE_DEVICES"</span><span class="p">]</span> <span class="o">=</span> <span class="s">""</span>
+</code></pre></div></div>
+<p>before Keras / Tensorflow is imported.</p>
+
+</p>
+      </div>
+      <div class="card-action">
+        <a href="/2019/01/23/how-to-force-keras-use-cpu">
+          Read More 
+        <i class="material-icons">keyboard_arrow_down</i></a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col s12">
+    <div class="card hoverable">
+      <div class="card-content">
+        <!--<span id="post-title" class="card-title">How to Add a Table of Content to my Jekyll Blog?</span>
+        -->
+        <a id="post-title" class="card-title" href="/2019/01/23/how-to-add-table-of-content-in-jekyll">
+        How to Add a Table of Content to my Jekyll Blog?
+        </a>
+        
+        <p id="post-date">
+          <i class="material-icons">date_range</i>
+           
+          Jan.
+            
+          23, 2019 - Wednesday
+
+        </p>
+        <p id="post-content"><p>In the post, simply add:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* TOC
+{:toc} 
+</code></pre></div></div>
+<p>in the post.</p>
+
+<ul>
+  <li><a href="http://www.seanbuscay.com/blog/jekyll-toc-markdown/">» How I Add a Table of Contents to my Jekyll Blog Written in Markdown</a></li>
+  <li><a href="https://blog.webjeda.com/jekyll-toc/#how-to-add-toc-for-jekyll-posts">» Jekyll Table Of Contents - Wikipedia Look!</a></li>
+</ul>
+
+</p>
+      </div>
+      <div class="card-action">
+        <a href="/2019/01/23/how-to-add-table-of-content-in-jekyll">
+          Read More 
+        <i class="material-icons">keyboard_arrow_down</i></a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col s12">
+    <div class="card hoverable">
+      <div class="card-content">
+        <!--<span id="post-title" class="card-title">How to Add a Scroll Back to Top Button?</span>
+        -->
+        <a id="post-title" class="card-title" href="/2019/01/23/how-to-add-back-to-top-button">
+        How to Add a Scroll Back to Top Button?
+        </a>
+        
+        <p id="post-date">
+          <i class="material-icons">date_range</i>
+           
+          Jan.
+            
+          23, 2019 - Wednesday
+
+        </p>
+        <p id="post-content"><blockquote>
+  <p>Check this below:</p>
+
+  <ul>
+    <li><a href="https://www.w3schools.com/howto/howto_js_scroll_to_top.asp">»How To Create a Scroll To Top Button - W3Schools</a></li>
+  </ul>
+</blockquote>
+
+</p>
+      </div>
+      <div class="card-action">
+        <a href="/2019/01/23/how-to-add-back-to-top-button">
+          Read More 
+        <i class="material-icons">keyboard_arrow_down</i></a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col s12">
+    <div class="card hoverable">
+      <div class="card-content">
+        <!--<span id="post-title" class="card-title">How to Sort Site Tags in Jekyll?</span>
+        -->
+        <a id="post-title" class="card-title" href="/2019/01/23/how-to-sort-tags-in-jekyll">
+        How to Sort Site Tags in Jekyll?
+        </a>
+        
+        <p id="post-date">
+          <i class="material-icons">date_range</i>
+           
+          Jan.
+            
+          23, 2019 - Wednesday
+
+        </p>
+        <p id="post-content"><blockquote>
+  <p>Check this Article:</p>
+
+  <ul>
+    <li><a href="https://www.codeofclimber.ru/2015/sorting-site-tags-in-jekyll/">» Sorting site tags in Jekyll - by “code of climber”</a></li>
+  </ul>
+</blockquote>
+
+</p>
+      </div>
+      <div class="card-action">
+        <a href="/2019/01/23/how-to-sort-tags-in-jekyll">
+          Read More 
+        <i class="material-icons">keyboard_arrow_down</i></a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col s12">
+    <div class="card hoverable">
+      <div class="card-content">
+        <!--<span id="post-title" class="card-title">How to Support LaTex in Jekyll?</span>
+        -->
+        <a id="post-title" class="card-title" href="/2019/01/22/how-to-render-latex-in-jekyll">
+        How to Support LaTex in Jekyll?
+        </a>
+        
+        <p id="post-date">
+          <i class="material-icons">date_range</i>
+           
+          Jan.
+            
+          22, 2019 - Tuesday
+
+        </p>
+        <p id="post-content"><blockquote>
+  <p>To render math symbols and formula using LaTex in Jekyll website, check the links below,</p>
+
+  <p>Also Remember to update the cdnjs link, which is described in the last reference link.</p>
+</blockquote>
+
+<h2 id="reference">Reference</h2>
+<ul>
+  <li><a href="https://stackoverflow.com/questions/10987992/using-mathjax-with-jekyll">» mathjax-with-jekyll on Stack Overflow</a></li>
+  <li><a href="http://www.iangoodfellow.com/blog/jekyll/markdown/tex/2016/11/07/latex-in-markdown.html">» Iangoodfellow on LaTex in Jekyll</a></li>
+  <li><a href="https://www.mathjax.org/cdn-shutting-down/">» MathJax CDN shutting down on April 30, 2017. Alternatives available.</a></li>
+</ul>
+
+</p>
+      </div>
+      <div class="card-action">
+        <a href="/2019/01/22/how-to-render-latex-in-jekyll">
+          Read More 
+        <i class="material-icons">keyboard_arrow_down</i></a>
+      </div>
+    </div>
+  </div>
   
   <div class="col s12">
     <div class="card hoverable">
@@ -208,243 +466,18 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 
 <p><a href="https://stackoverflow.com/questions/3166413/execute-a-script-directly-within-vim-mvim-gvim">» Answer from Stack Overflow</a></p>
 
-<p>You can do this in vim using the <code class="highlighter-rouge">!</code> command. For instance to count the number of words in the current file you can do:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:! wc %
+<p>You can do this in vim using the <code class="language-plaintext highlighter-rouge">!</code> command. For instance to count the number of words in the current file you can do:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:! wc %
 </code></pre></div></div>
 
-<p>The <code class="highlighter-rouge">%</code> is replaced by the current filename. To run a script you could call the interpreter on the file - for instance if you are writing a python script:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:! python %
+<p>The <code class="language-plaintext highlighter-rouge">%</code> is replaced by the current filename. To run a script you could call the interpreter on the file - for instance if you are writing a python script:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:! python %
 </code></pre></div></div>
 
 </p>
       </div>
       <div class="card-action">
         <a href="/2019/01/16/execute-script-directly-in-vim">
-          Read More 
-        <i class="material-icons">keyboard_arrow_down</i></a>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col s12">
-    <div class="card hoverable">
-      <div class="card-content">
-        <!--<span id="post-title" class="card-title">I Don't Like Jupyter Notebook</span>
-        -->
-        <a id="post-title" class="card-title" href="/2019/01/16/i-dont-like-jupyter-notebook">
-        I Don't Like Jupyter Notebook
-        </a>
-        
-        <p id="post-date">
-          <i class="material-icons">date_range</i>
-           
-          Jan.
-            
-          16, 2019 - Wednesday
-
-        </p>
-        <p id="post-content"><blockquote>
-  <p>I’ve struggled with Jupyter Notebook for a long time and I have to write it down this time - I don’t like it! And I feel relieved when I found that I’m not alone. And here’re the reasons …</p>
-</blockquote>
-
-</p>
-      </div>
-      <div class="card-action">
-        <a href="/2019/01/16/i-dont-like-jupyter-notebook">
-          Read More 
-        <i class="material-icons">keyboard_arrow_down</i></a>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col s12">
-    <div class="card hoverable">
-      <div class="card-content">
-        <!--<span id="post-title" class="card-title">Python random.seed()</span>
-        -->
-        <a id="post-title" class="card-title" href="/2019/01/14/python-random-seed">
-        Python random.seed()
-        </a>
-        
-        <p id="post-date">
-          <i class="material-icons">date_range</i>
-           
-          Jan.
-            
-          14, 2019 - Monday
-
-        </p>
-        <p id="post-content"><blockquote>
-  <p>Use Python <code class="highlighter-rouge">random</code> library to initialize the pseudo-random number generator.</p>
-</blockquote>
-
-</p>
-      </div>
-      <div class="card-action">
-        <a href="/2019/01/14/python-random-seed">
-          Read More 
-        <i class="material-icons">keyboard_arrow_down</i></a>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col s12">
-    <div class="card hoverable">
-      <div class="card-content">
-        <!--<span id="post-title" class="card-title">Study Plan and Checklist in the Next 3 Months</span>
-        -->
-        <a id="post-title" class="card-title" href="/2018/12/28/3-month-study-plan">
-        Study Plan and Checklist in the Next 3 Months
-        </a>
-        
-        <p id="post-date">
-          <i class="material-icons">date_range</i>
-           
-          Dec.
-            
-          28, 2018 - Friday
-
-        </p>
-        <p id="post-content"><blockquote>
-  <p>Here is a planning for the Maching Learning/Programming Basics knowledge study in the next three month. The plan basically covers Stanford CS229, CS231 and MIT 6.006.</p>
-</blockquote>
-
-</p>
-      </div>
-      <div class="card-action">
-        <a href="/2018/12/28/3-month-study-plan">
-          Read More 
-        <i class="material-icons">keyboard_arrow_down</i></a>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col s12">
-    <div class="card hoverable">
-      <div class="card-content">
-        <!--<span id="post-title" class="card-title">Pandas - Quick Start</span>
-        -->
-        <a id="post-title" class="card-title" href="/2018/12/28/pandas-quick-start">
-        Pandas - Quick Start
-        </a>
-        
-        <p id="post-date">
-          <i class="material-icons">date_range</i>
-           
-          Dec.
-            
-          28, 2018 - Friday
-
-        </p>
-        <p id="post-content"><blockquote>
-  <p><a href="https://pandas.pydata.org/index.html"><em>pandas</em></a> is an open source,  BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the <strong>Python</strong> programming language.</p>
-</blockquote>
-
-</p>
-      </div>
-      <div class="card-action">
-        <a href="/2018/12/28/pandas-quick-start">
-          Read More 
-        <i class="material-icons">keyboard_arrow_down</i></a>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col s12">
-    <div class="card hoverable">
-      <div class="card-content">
-        <!--<span id="post-title" class="card-title">Quick Start on MySQL</span>
-        -->
-        <a id="post-title" class="card-title" href="/2018/12/12/mysql-quick-start">
-        Quick Start on MySQL
-        </a>
-        
-        <p id="post-date">
-          <i class="material-icons">date_range</i>
-           
-          Dec.
-            
-          12, 2018 - Wednesday
-
-        </p>
-        <p id="post-content"><blockquote>
-  <p>A quick start and a <strong>Cheet Sheet</strong> on MySQL.</p>
-</blockquote>
-
-</p>
-      </div>
-      <div class="card-action">
-        <a href="/2018/12/12/mysql-quick-start">
-          Read More 
-        <i class="material-icons">keyboard_arrow_down</i></a>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col s12">
-    <div class="card hoverable">
-      <div class="card-content">
-        <!--<span id="post-title" class="card-title">Understanding generators in Python</span>
-        -->
-        <a id="post-title" class="card-title" href="/2018/12/10/understand-python-generator">
-        Understanding generators in Python
-        </a>
-        
-        <p id="post-date">
-          <i class="material-icons">date_range</i>
-           
-          Dec.
-            
-          10, 2018 - Monday
-
-        </p>
-        <p id="post-content"><blockquote>
-  <p>This post note a full understanding of a <strong><a href="http://www.python.org/dev/peps/pep-0255/">generator</a></strong> in Python.</p>
-</blockquote>
-
-</p>
-      </div>
-      <div class="card-action">
-        <a href="/2018/12/10/understand-python-generator">
-          Read More 
-        <i class="material-icons">keyboard_arrow_down</i></a>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col s12">
-    <div class="card hoverable">
-      <div class="card-content">
-        <!--<span id="post-title" class="card-title">How to install Tensorflow GPU with CUDA 10.0 for python on Ubuntu</span>
-        -->
-        <a id="post-title" class="card-title" href="/2018/12/10/how-to-install-cuda-10-on-ubuntu-18.04">
-        How to install Tensorflow GPU with CUDA 10.0 for python on Ubuntu
-        </a>
-        
-        <p id="post-date">
-          <i class="material-icons">date_range</i>
-           
-          Dec.
-            
-          10, 2018 - Monday
-
-        </p>
-        <p id="post-content"><blockquote>
-  <p>As described in the title, it’s exactly what I need currently. Here is an excellent post on this:</p>
-</blockquote>
-
-<ul>
-  <li><a href="https://www.python36.com/how-to-install-tensorflow-gpu-with-cuda-10-0-for-python-on-ubuntu/">» How to install Tensorflow GPU with CUDA 10.0 for python on Ubuntu</a></li>
-</ul>
-
-<blockquote>
-  <p>There are a bunch of steps for the installation and requires a lot of time for compiling. In this post I’ll update my progress on trying it out on my own home server. Hope it works!</p>
-</blockquote>
-
-</p>
-      </div>
-      <div class="card-action">
-        <a href="/2018/12/10/how-to-install-cuda-10-on-ubuntu-18.04">
           Read More 
         <i class="material-icons">keyboard_arrow_down</i></a>
       </div>

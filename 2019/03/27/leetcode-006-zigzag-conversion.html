@@ -37,7 +37,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-03-27T00:00:00+08:00" />
 <script type="application/ld+json">
-{"description":"Theme based on Materialize.css for jekyll sites.","@type":"BlogPosting","url":"http://localhost:4000/2019/03/27/leetcode-006-zigzag-conversion","headline":"[LeetCode] 006. Zigzag Conversion","dateModified":"2019-03-27T00:00:00+08:00","datePublished":"2019-03-27T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/03/27/leetcode-006-zigzag-conversion"},"@context":"http://schema.org"}</script>
+{"url":"http://localhost:4000/2019/03/27/leetcode-006-zigzag-conversion","headline":"[LeetCode] 006. Zigzag Conversion","dateModified":"2019-03-27T00:00:00+08:00","datePublished":"2019-03-27T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/03/27/leetcode-006-zigzag-conversion"},"description":"Theme based on Materialize.css for jekyll sites.","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -180,18 +180,18 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 <h2 id="problem-medium">Problem (Medium)</h2>
 <p><a href="https://leetcode.com/problems/zigzag-conversion/">006. ZigZag Conversion</a></p>
 
-<p>The string <code class="highlighter-rouge">"PAYPALISHIRING"</code> is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)</p>
+<p>The string <code class="language-plaintext highlighter-rouge">"PAYPALISHIRING"</code> is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>P   A   H   N
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>P   A   H   N
 A P L S I I G
 Y   I   R
 </code></pre></div></div>
 
-<p>And then read line by line: <code class="highlighter-rouge">"PAHNAPLSIIGYIR"</code></p>
+<p>And then read line by line: <code class="language-plaintext highlighter-rouge">"PAHNAPLSIIGYIR"</code></p>
 
 <p>Write the code that will take a string and make this conversion given a number of rows:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>string convert(string s, int numRows);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>string convert(string s, int numRows);
 </code></pre></div></div>
 
 <p>Example 1:</p>
@@ -210,7 +210,7 @@ Y   I   R
 
 <p>Explanation:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>P     I    N
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>P     I    N
 A   L S  I G
 Y A   H R
 P     I
@@ -220,7 +220,7 @@ P     I
 <h3 id="idea">Idea</h3>
 <p>Straight forward idea as stated in the problem:</p>
 <ul>
-  <li>create a 2-D array with <code class="highlighter-rouge">numRows</code> rows and <code class="highlighter-rouge">width</code> withd, where <code class="highlighter-rouge">width</code> is roughly <code class="highlighter-rouge">len(s) // (numRows-1) + 2</code>.</li>
+  <li>create a 2-D array with <code class="language-plaintext highlighter-rouge">numRows</code> rows and <code class="language-plaintext highlighter-rouge">width</code> withd, where <code class="language-plaintext highlighter-rouge">width</code> is roughly <code class="language-plaintext highlighter-rouge">len(s) // (numRows-1) + 2</code>.</li>
   <li>Put the string character by character into the 2-D array in the zigzag order.</li>
   <li>Concatenate the characters back to a new string based on the order stated in the problem.</li>
 </ul>

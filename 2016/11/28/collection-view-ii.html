@@ -37,7 +37,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2016-11-28T14:00:00+08:00" />
 <script type="application/ld+json">
-{"description":"Continue - Collection View learning notes on reading Apple Guide Document “ Collection View Programming Guide for iOS”.","@type":"BlogPosting","url":"http://localhost:4000/2016/11/28/collection-view-ii","headline":"Collection View II - Designing Your Data Source and Delegate","dateModified":"2016-11-28T14:00:00+08:00","datePublished":"2016-11-28T14:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2016/11/28/collection-view-ii"},"@context":"http://schema.org"}</script>
+{"url":"http://localhost:4000/2016/11/28/collection-view-ii","headline":"Collection View II - Designing Your Data Source and Delegate","dateModified":"2016-11-28T14:00:00+08:00","datePublished":"2016-11-28T14:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2016/11/28/collection-view-ii"},"description":"Continue - Collection View learning notes on reading Apple Guide Document “ Collection View Programming Guide for iOS”.","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -175,7 +175,7 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 <p>The <strong>delegate object</strong> is an optional (but recommended) object that manages aspects related to the presentation of and interaction with your content.  Although the delegate’s main job is to manage cell highlighting and selection, it can be extended to provide additional information. For example, the flow layout extends the basic delegate behavior to customize layout metrics, such as the size of cells and the spacing between them.</p>
 
 <h2 id="the-data-source-manages-your-content">The Data Source Manages Your Content</h2>
-<p>The data source object is the object responsible for managing the content you are presenting using a collection view. The data source object must conform to the <code class="highlighter-rouge">UICollectionViewDataSource</code> protocol, which defines the basic behavior and methods that you must support. The job of the data source is to provide the collection view with answers to the following questions:</p>
+<p>The data source object is the object responsible for managing the content you are presenting using a collection view. The data source object must conform to the <code class="language-plaintext highlighter-rouge">UICollectionViewDataSource</code> protocol, which defines the basic behavior and methods that you must support. The job of the data source is to provide the collection view with answers to the following questions:</p>
 
 <ul>
   <li>How many sections does the collection view contain?</li>
@@ -216,17 +216,17 @@ A collection view typically has <strong>at least one section</strong> and may co
 <ul>
   <li>The collection view is displayed for the first time.</li>
   <li>You assign a different data source object to the collection view.</li>
-  <li>You explicitly call the collection view’s <code class="highlighter-rouge">reloadData</code> method.</li>
-  <li>The collection view delegate executes a block using <code class="highlighter-rouge">performBatchUpdates:completion:</code> or any of the move, insert, or delete methods.</li>
+  <li>You explicitly call the collection view’s <code class="language-plaintext highlighter-rouge">reloadData</code> method.</li>
+  <li>The collection view delegate executes a block using <code class="language-plaintext highlighter-rouge">performBatchUpdates:completion:</code> or any of the move, insert, or delete methods.</li>
 </ul>
 
-<p>You provide the number of sections using the <code class="highlighter-rouge">numberOfSectionsInCollectionView:</code> method, and the number of items in each section using the <code class="highlighter-rouge">collectionView:numberOfItemsInSection:</code> method. You must implement the <code class="highlighter-rouge">collectionView:numberOfItemsInSection:</code> method, but if your collection view has only one section, implementing the <code class="highlighter-rouge">numberOfSectionsInCollectionView:</code> method is optional. Both methods return integer values with the appropriate information.</p>
+<p>You provide the number of sections using the <code class="language-plaintext highlighter-rouge">numberOfSectionsInCollectionView:</code> method, and the number of items in each section using the <code class="language-plaintext highlighter-rouge">collectionView:numberOfItemsInSection:</code> method. You must implement the <code class="language-plaintext highlighter-rouge">collectionView:numberOfItemsInSection:</code> method, but if your collection view has only one section, implementing the <code class="language-plaintext highlighter-rouge">numberOfSectionsInCollectionView:</code> method is optional. Both methods return integer values with the appropriate information.</p>
 
 <p>If you implemented your data source as shown in Figure 2-2, the implementation of your data source methods could be as simple as those shown below:</p>
 
 <div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nf">numberOfSectionsInCollectionView</span><span class="p">:(</span><span class="n">UICollectionView</span><span class="o">*</span><span class="p">)</span><span class="nv">collectionView</span> <span class="p">{</span>
-    <span class="c1">// _data is a class member variable that contains one array per section.
-</span>    <span class="k">return</span> <span class="p">[</span><span class="n">_data</span> <span class="nf">count</span><span class="p">];</span>
+    <span class="c1">// _data is a class member variable that contains one array per section.</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">_data</span> <span class="nf">count</span><span class="p">];</span>
 <span class="p">}</span>
  
 <span class="k">-</span> <span class="p">(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nf">collectionView</span><span class="p">:(</span><span class="n">UICollectionView</span><span class="o">*</span><span class="p">)</span><span class="nv">collectionView</span> <span class="nf">numberOfItemsInSection</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">section</span> <span class="p">{</span>

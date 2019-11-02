@@ -37,7 +37,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-04-04T00:00:00+08:00" />
 <script type="application/ld+json">
-{"description":"Theme based on Materialize.css for jekyll sites.","@type":"BlogPosting","url":"http://localhost:4000/2019/04/04/leetcode-040-combination-sum-ii","headline":"[LeetCode] 040. Combination Sum II","dateModified":"2019-04-04T00:00:00+08:00","datePublished":"2019-04-04T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/04/04/leetcode-040-combination-sum-ii"},"@context":"http://schema.org"}</script>
+{"url":"http://localhost:4000/2019/04/04/leetcode-040-combination-sum-ii","headline":"[LeetCode] 040. Combination Sum II","dateModified":"2019-04-04T00:00:00+08:00","datePublished":"2019-04-04T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/04/04/leetcode-040-combination-sum-ii"},"description":"Theme based on Materialize.css for jekyll sites.","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -204,7 +204,7 @@ A solution set is:
 <h2 id="approach-1-depth-first-search-my-solution">Approach 1: Depth First Search (My Solution)</h2>
 
 <h3 id="idea">Idea</h3>
-<p>Same idea with the last problem the <strong>only</strong> difference that in the recursion call:, change the index to <code class="highlighter-rouge">i+1</code> to jump to the next item to avoid repeat.</p>
+<p>Same idea with the last problem the <strong>only</strong> difference that in the recursion call:, change the index to <code class="language-plaintext highlighter-rouge">i+1</code> to jump to the next item to avoid repeat.</p>
 
 <h3 id="solution">Solution</h3>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution1</span><span class="p">:</span>
@@ -242,35 +242,35 @@ A solution set is:
 <h3 id="solution-1">Solution</h3>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution2</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">combinationSum2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">candidates</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
-        <span class="c"># Sorting is really helpful, se we can avoid over counting easily</span>
-        <span class="n">candidates</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>                      
+        <span class="c1"># Sorting is really helpful, se we can avoid over counting easily
+</span>        <span class="n">candidates</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>                      
         <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">combine_sum_2</span><span class="p">(</span><span class="n">candidates</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[],</span> <span class="n">result</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">result</span>
 
     <span class="k">def</span> <span class="nf">combine_sum_2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
-        <span class="c"># Base case: if the sum of the path satisfies the target, we will consider </span>
-        <span class="c"># it as a solution, and stop there</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">target</span><span class="p">:</span>
+        <span class="c1"># Base case: if the sum of the path satisfies the target, we will consider 
+</span>        <span class="c1"># it as a solution, and stop there
+</span>        <span class="k">if</span> <span class="ow">not</span> <span class="n">target</span><span class="p">:</span>
             <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
             <span class="k">return</span>
 
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)):</span>
-            <span class="c"># Very important here! We don't use `i &gt; 0` because we always want </span>
-            <span class="c"># to count the first element in this recursive step even if it is the same </span>
-            <span class="c"># as one before. To avoid overcounting, we just ignore the duplicates</span>
-            <span class="c"># after the first element.</span>
-            <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">start</span> <span class="ow">and</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]:</span>
+            <span class="c1"># Very important here! We don't use `i &gt; 0` because we always want 
+</span>            <span class="c1"># to count the first element in this recursive step even if it is the same 
+</span>            <span class="c1"># as one before. To avoid overcounting, we just ignore the duplicates
+</span>            <span class="c1"># after the first element.
+</span>            <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">start</span> <span class="ow">and</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]:</span>
                 <span class="k">continue</span>
 
-            <span class="c"># If the current element is bigger than the assigned target, there is </span>
-            <span class="c"># no need to keep searching, since all the numbers are positive</span>
-            <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">target</span><span class="p">:</span>
+            <span class="c1"># If the current element is bigger than the assigned target, there is 
+</span>            <span class="c1"># no need to keep searching, since all the numbers are positive
+</span>            <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">target</span><span class="p">:</span>
                 <span class="k">break</span>
 
-            <span class="c"># We change the start to `i + 1` because one element only could</span>
-            <span class="c"># be used once</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">combine_sum_2</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">path</span> <span class="o">+</span> <span class="p">[</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> 
+            <span class="c1"># We change the start to `i + 1` because one element only could
+</span>            <span class="c1"># be used once
+</span>            <span class="bp">self</span><span class="o">.</span><span class="n">combine_sum_2</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">path</span> <span class="o">+</span> <span class="p">[</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> 
                                <span class="n">result</span><span class="p">,</span> <span class="n">target</span> <span class="o">-</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>  
 </code></pre></div></div>
 

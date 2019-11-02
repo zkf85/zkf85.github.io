@@ -37,7 +37,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-04-01T00:00:00+08:00" />
 <script type="application/ld+json">
-{"description":"Theme based on Materialize.css for jekyll sites.","@type":"BlogPosting","url":"http://localhost:4000/2019/04/01/leetcode-020-valid-parentheses","headline":"[LeetCode] 020. Valid Parentheses","dateModified":"2019-04-01T00:00:00+08:00","datePublished":"2019-04-01T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/04/01/leetcode-020-valid-parentheses"},"@context":"http://schema.org"}</script>
+{"url":"http://localhost:4000/2019/04/01/leetcode-020-valid-parentheses","headline":"[LeetCode] 020. Valid Parentheses","dateModified":"2019-04-01T00:00:00+08:00","datePublished":"2019-04-01T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/04/01/leetcode-020-valid-parentheses"},"description":"Theme based on Materialize.css for jekyll sites.","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -214,8 +214,8 @@ Note that an empty string is also considered valid.</p>
 <h2 id="approach-1-use-an-auxilliary-stack">Approach 1: Use an Auxilliary Stack</h2>
 
 <h3 id="idea">Idea</h3>
-<p>Use a variable string <code class="highlighter-rouge">check</code> to store the current process of the input. Loop the input string, if the looping character is a valid left char, append it to <code class="highlighter-rouge">check</code>, if the looping character is a valid right and it’s the correct counterpart of the last element in <code class="highlighter-rouge">check</code>, remove the pair from <code class="highlighter-rouge">check</code>, else it’s false. 
-If the loop ends succesfully and the length of <code class="highlighter-rouge">check</code> not zero, it’s also false, else true.</p>
+<p>Use a variable string <code class="language-plaintext highlighter-rouge">check</code> to store the current process of the input. Loop the input string, if the looping character is a valid left char, append it to <code class="language-plaintext highlighter-rouge">check</code>, if the looping character is a valid right and it’s the correct counterpart of the last element in <code class="language-plaintext highlighter-rouge">check</code>, remove the pair from <code class="language-plaintext highlighter-rouge">check</code>, else it’s false. 
+If the loop ends succesfully and the length of <code class="language-plaintext highlighter-rouge">check</code> not zero, it’s also false, else true.</p>
 
 <h3 id="solution">Solution</h3>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution1</span><span class="p">:</span>

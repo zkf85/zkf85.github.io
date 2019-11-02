@@ -37,7 +37,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-03-26T00:00:00+08:00" />
 <script type="application/ld+json">
-{"description":"Theme based on Materialize.css for jekyll sites.","@type":"BlogPosting","url":"http://localhost:4000/2019/03/26/leetcode-005-longest-palindrome","headline":"[LeetCode] 005. Longest Palindrome","dateModified":"2019-03-26T00:00:00+08:00","datePublished":"2019-03-26T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/03/26/leetcode-005-longest-palindrome"},"@context":"http://schema.org"}</script>
+{"url":"http://localhost:4000/2019/03/26/leetcode-005-longest-palindrome","headline":"[LeetCode] 005. Longest Palindrome","dateModified":"2019-03-26T00:00:00+08:00","datePublished":"2019-03-26T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/03/26/leetcode-005-longest-palindrome"},"description":"Theme based on Materialize.css for jekyll sites.","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -207,14 +207,14 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 
 <p>Example 1:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: "babad"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: "babad"
 Output: "bab"
 Note: "aba" is also a valid answer.
 </code></pre></div></div>
 
 <p>Example 2:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: "cbbd"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: "cbbd"
 Output: "bb"
 </code></pre></div></div>
 
@@ -289,15 +289,15 @@ Output: "bb"
         <span class="n">max_len</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="n">max_end</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span>
-            <span class="c"># Updated the loop order</span>
-            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="c1"># Updated the loop order
+</span>            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
                 <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">rev</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
                     <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
                         <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
                     <span class="k">else</span><span class="p">:</span>
                         <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
-                <span class="c"># Updated here - new columns should be updated on conditions</span>
-                <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># Updated here - new columns should be updated on conditions
+</span>                <span class="k">else</span><span class="p">:</span>
                     <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
                 <span class="k">if</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">max_len</span><span class="p">:</span>
                     <span class="k">if</span> <span class="n">i</span><span class="o">-</span><span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">j</span><span class="p">:</span>
@@ -472,35 +472,35 @@ Check out <a href="https://www.geeksforgeeks.org/manachers-algorithm-linear-time
         <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> 
         <span class="k">if</span> <span class="n">N</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span> 
             <span class="k">return</span> <span class="n">s</span>
-        <span class="n">N</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span>    <span class="c"># Position count </span>
-        <span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">N</span> 
+        <span class="n">N</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span>    <span class="c1"># Position count 
+</span>        <span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">N</span> 
         <span class="n">L</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="n">L</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-        <span class="n">C</span> <span class="o">=</span> <span class="mi">1</span>     <span class="c"># centerPosition </span>
-        <span class="n">R</span> <span class="o">=</span> <span class="mi">2</span>     <span class="c"># centerRightPosition </span>
-        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>    <span class="c"># currentRightPosition </span>
-        <span class="n">iMirror</span> <span class="o">=</span> <span class="mi">0</span>     <span class="c"># currentLeftPosition </span>
-        <span class="n">maxLPSLength</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">C</span> <span class="o">=</span> <span class="mi">1</span>     <span class="c1"># centerPosition 
+</span>        <span class="n">R</span> <span class="o">=</span> <span class="mi">2</span>     <span class="c1"># centerRightPosition 
+</span>        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>    <span class="c1"># currentRightPosition 
+</span>        <span class="n">iMirror</span> <span class="o">=</span> <span class="mi">0</span>     <span class="c1"># currentLeftPosition 
+</span>        <span class="n">maxLPSLength</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="n">maxLPSCenterPosition</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="n">start</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
         <span class="n">end</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
         <span class="n">diff</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
    
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span> 
-            <span class="c"># get currentLeftPosition iMirror for currentRightPosition i </span>
-            <span class="n">iMirror</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">C</span><span class="o">-</span><span class="n">i</span> 
+            <span class="c1"># get currentLeftPosition iMirror for currentRightPosition i 
+</span>            <span class="n">iMirror</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">C</span><span class="o">-</span><span class="n">i</span> 
             <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
             <span class="n">diff</span> <span class="o">=</span> <span class="n">R</span> <span class="o">-</span> <span class="n">i</span> 
-            <span class="c"># If currentRightPosition i is within centerRightPosition R </span>
-            <span class="k">if</span> <span class="n">diff</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span> 
+            <span class="c1"># If currentRightPosition i is within centerRightPosition R 
+</span>            <span class="k">if</span> <span class="n">diff</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span> 
                 <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="n">iMirror</span><span class="p">],</span> <span class="n">diff</span><span class="p">)</span> 
    
-            <span class="c"># Attempt to expand palindrome centered at currentRightPosition i </span>
-            <span class="c"># Here for odd positions, we compare characters and </span>
-            <span class="c"># if match then increment LPS Length by ONE </span>
-            <span class="c"># If even position, we just increment LPS by ONE without </span>
-            <span class="c"># any character comparison </span>
-            <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># Attempt to expand palindrome centered at currentRightPosition i 
+</span>            <span class="c1"># Here for odd positions, we compare characters and 
+</span>            <span class="c1"># if match then increment LPS Length by ONE 
+</span>            <span class="c1"># If even position, we just increment LPS by ONE without 
+</span>            <span class="c1"># any character comparison 
+</span>            <span class="k">try</span><span class="p">:</span>
                 <span class="k">while</span> <span class="p">((</span><span class="n">i</span> <span class="o">+</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&lt;</span> <span class="n">N</span> <span class="ow">and</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> \ 
                     <span class="p">(((</span><span class="n">i</span> <span class="o">+</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> \ 
                     <span class="p">(</span><span class="n">s</span><span class="p">[(</span><span class="n">i</span> <span class="o">+</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="n">s</span><span class="p">[(</span><span class="n">i</span> <span class="o">-</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">])):</span> 
@@ -508,14 +508,14 @@ Check out <a href="https://www.geeksforgeeks.org/manachers-algorithm-linear-time
             <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                 <span class="k">pass</span>
                 
-            <span class="k">if</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">maxLPSLength</span><span class="p">:</span>        <span class="c"># Track maxLPSLength </span>
-                <span class="n">maxLPSLength</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> 
+            <span class="k">if</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">maxLPSLength</span><span class="p">:</span>        <span class="c1"># Track maxLPSLength 
+</span>                <span class="n">maxLPSLength</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> 
                 <span class="n">maxLPSCenterPosition</span> <span class="o">=</span> <span class="n">i</span> 
    
-            <span class="c"># If palindrome centered at currentRightPosition i </span>
-            <span class="c"># expand beyond centerRightPosition R, </span>
-            <span class="c"># adjust centerPosition C based on expanded palindrome. </span>
-            <span class="k">if</span> <span class="n">i</span> <span class="o">+</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">R</span><span class="p">:</span> 
+            <span class="c1"># If palindrome centered at currentRightPosition i 
+</span>            <span class="c1"># expand beyond centerRightPosition R, 
+</span>            <span class="c1"># adjust centerPosition C based on expanded palindrome. 
+</span>            <span class="k">if</span> <span class="n">i</span> <span class="o">+</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">R</span><span class="p">:</span> 
                 <span class="n">C</span> <span class="o">=</span> <span class="n">i</span> 
                 <span class="n">R</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> 
    

@@ -37,7 +37,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2018-10-09T09:00:00+08:00" />
 <script type="application/ld+json">
-{"description":"After experiencing google cloud for couple of week, I’d like to write something down here. On the one hand, there’re lots of tips, necessary knowledge and pitfalls to remember and check. One the other hand, just cannot resist to complain about this giant and complicated service system.","@type":"BlogPosting","url":"http://localhost:4000/2018/10/09/google-cloud","headline":"Experiencing google cloud","dateModified":"2018-10-09T09:00:00+08:00","datePublished":"2018-10-09T09:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2018/10/09/google-cloud"},"@context":"http://schema.org"}</script>
+{"url":"http://localhost:4000/2018/10/09/google-cloud","headline":"Experiencing google cloud","dateModified":"2018-10-09T09:00:00+08:00","datePublished":"2018-10-09T09:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2018/10/09/google-cloud"},"description":"After experiencing google cloud for couple of week, I’d like to write something down here. On the one hand, there’re lots of tips, necessary knowledge and pitfalls to remember and check. One the other hand, just cannot resist to complain about this giant and complicated service system.","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -193,10 +193,10 @@ To make it clear in a few words, this computing engine provides <strong>computin
 <h4 id="22-cloud-storage">2.2 Cloud Storage</h4>
 <p>It’s object storage, in the actual use, each cloud storage block is  called a ‘bucket’.</p>
 <ul>
-  <li>You can access this kind of storage by using their <code class="highlighter-rouge">gsutil</code> tool from cloud shell or even from your computer using google cloud sdk.</li>
+  <li>You can access this kind of storage by using their <code class="language-plaintext highlighter-rouge">gsutil</code> tool from cloud shell or even from your computer using google cloud sdk.</li>
   <li>You do not need to start any VM to access your data stored in the ‘buckets’.</li>
-  <li>It’s a great tool for uploading and downloading files from google cloud. Multi-thread <code class="highlighter-rouge">gsutil -m scp</code> makes it much faster than normal <code class="highlighter-rouge">scp</code> in POSIX file system.</li>
-  <li>You have to use <code class="highlighter-rouge">gsutil</code> to access and manipulate the data in the storage, which is a little bit awkward when you need to treate the files and folders in your ‘traditional’ mindset.</li>
+  <li>It’s a great tool for uploading and downloading files from google cloud. Multi-thread <code class="language-plaintext highlighter-rouge">gsutil -m scp</code> makes it much faster than normal <code class="language-plaintext highlighter-rouge">scp</code> in POSIX file system.</li>
+  <li>You have to use <code class="language-plaintext highlighter-rouge">gsutil</code> to access and manipulate the data in the storage, which is a little bit awkward when you need to treate the files and folders in your ‘traditional’ mindset.</li>
   <li>the cloud storage charges with its own rates, roughly based on the amount of storage and the inward/outward stream amout.</li>
 </ul>
 
@@ -320,7 +320,7 @@ gcloud compute scp <span class="o">[</span><span class="nt">--recurse</span><spa
     <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>lsblk
 </code></pre></div>    </div>
   </li>
-  <li>Format the disk: (usually, the <code class="highlighter-rouge">DEVICE_ID</code> is <code class="highlighter-rouge">sdb</code>)
+  <li>Format the disk: (usually, the <code class="language-plaintext highlighter-rouge">DEVICE_ID</code> is <code class="language-plaintext highlighter-rouge">sdb</code>)
     <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>mkfs.ext4 <span class="nt">-m</span> 0 <span class="nt">-F</span> <span class="nt">-E</span> <span class="nv">lazy_itable_init</span><span class="o">=</span>0,lazy_journal_init<span class="o">=</span>0,discard /dev/&lt;DEVICE_ID&gt;
 </code></pre></div>    </div>
   </li>
@@ -329,40 +329,40 @@ gcloud compute scp <span class="o">[</span><span class="nt">--recurse</span><spa
 </code></pre></div>    </div>
     <p>where</p>
     <ul>
-      <li>the <code class="highlighter-rouge">DEVICE_ID</code> is often <code class="highlighter-rouge">sdb</code></li>
-      <li><code class="highlighter-rouge">mnt_dir</code> is the directory where you want the disk to be mounted, usually you create such folder before this <code class="highlighter-rouge">mount</code> command.</li>
+      <li>the <code class="language-plaintext highlighter-rouge">DEVICE_ID</code> is often <code class="language-plaintext highlighter-rouge">sdb</code></li>
+      <li><code class="language-plaintext highlighter-rouge">mnt_dir</code> is the directory where you want the disk to be mounted, usually you create such folder before this <code class="language-plaintext highlighter-rouge">mount</code> command.</li>
     </ul>
   </li>
   <li>Grant write access to the device for all users:
-    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chmod a+w &lt;mnt_dir&gt;
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod </span>a+w &lt;mnt_dir&gt;
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Add the persistent disk to <code class="highlighter-rouge">etc/fstab</code> file so t hat the device automatically mounts again when the instance restarts.</p>
+    <p>Add the persistent disk to <code class="language-plaintext highlighter-rouge">etc/fstab</code> file so t hat the device automatically mounts again when the instance restarts.</p>
 
     <ol>
       <li>Create a backup of your current
-        <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nb">sudo </span>cp /etc/fstab /etc/fstab.backup
+        <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nb">sudo cp</span> /etc/fstab /etc/fstab.backup
 </code></pre></div>        </div>
       </li>
       <li>Use the blkid command to find the UUID for the persistent disk. The system generates this UUID when you format the disk. Use UUIDs to mount persistent disks because UUIDs do not change when you move disks between systems.</li>
-      <li>Create a backup of your current <code class="highlighter-rouge">/etc/fstab</code> file.
+      <li>Create a backup of your current <code class="language-plaintext highlighter-rouge">/etc/fstab</code> file.
         <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span><span class="nb">sudo </span>blkid /dev/[DEVICE_ID] /dev/[DEVICE_ID]: <span class="nv">UUID</span><span class="o">=</span><span class="s2">"[UUID_VALUE]"</span> <span class="nv">TYPE</span><span class="o">=</span><span class="s2">"ext4"</span>
 </code></pre></div>        </div>
         <p>where:</p>
         <ul>
-          <li><code class="highlighter-rouge">[DEVICE_ID]</code> is the device ID of the persistent disk that you want to automatically mount. If you created a partition table on the disk, specify the partition that you want to mount.</li>
-          <li><code class="highlighter-rouge">[UUID_VALUE]</code> is the UUID of the persistent disk that you must include in the <code class="highlighter-rouge">/etc/fstab</code> file.</li>
+          <li><code class="language-plaintext highlighter-rouge">[DEVICE_ID]</code> is the device ID of the persistent disk that you want to automatically mount. If you created a partition table on the disk, specify the partition that you want to mount.</li>
+          <li><code class="language-plaintext highlighter-rouge">[UUID_VALUE]</code> is the UUID of the persistent disk that you must include in the <code class="language-plaintext highlighter-rouge">/etc/fstab</code> file.</li>
         </ul>
       </li>
-      <li>Open the <code class="highlighter-rouge">/etc/fstab</code> file in a text editor and create an entry that includes the UUID. For example:
+      <li>Open the <code class="language-plaintext highlighter-rouge">/etc/fstab</code> file in a text editor and create an entry that includes the UUID. For example:
         <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">UUID</span><span class="o">=[</span>UUID_VALUE] /mnt/disks/[MNT_DIR] ext4 discard,defaults,[NOFAIL_OPTION] 0 2
 </code></pre></div>        </div>
         <p>where:</p>
         <ul>
-          <li><code class="highlighter-rouge">[UUID_VALUE]</code> is the UUID of the persistent disk that you must include in the <code class="highlighter-rouge">/etc/fstab</code> file.</li>
-          <li><code class="highlighter-rouge">[MNT_DIR]</code> is the directory where you mounted your persistent disk.</li>
-          <li><code class="highlighter-rouge">[NOFAIL_OPTION]</code> is a variable that specifies what the operating system should do if it cannot mount the persistent disk at boot time. To allow the system to continue booting even when it cannot mount the persistent disk, specify this option. For most distributions, specify the nofail option. For Ubuntu 12.04 or Ubuntu 14.04, specify the nobootwait option.</li>
+          <li><code class="language-plaintext highlighter-rouge">[UUID_VALUE]</code> is the UUID of the persistent disk that you must include in the <code class="language-plaintext highlighter-rouge">/etc/fstab</code> file.</li>
+          <li><code class="language-plaintext highlighter-rouge">[MNT_DIR]</code> is the directory where you mounted your persistent disk.</li>
+          <li><code class="language-plaintext highlighter-rouge">[NOFAIL_OPTION]</code> is a variable that specifies what the operating system should do if it cannot mount the persistent disk at boot time. To allow the system to continue booting even when it cannot mount the persistent disk, specify this option. For most distributions, specify the nofail option. For Ubuntu 12.04 or Ubuntu 14.04, specify the nobootwait option.</li>
         </ul>
       </li>
     </ol>
@@ -374,29 +374,29 @@ gcloud compute scp <span class="o">[</span><span class="nt">--recurse</span><spa
 <a href="https://cloud.google.com/storage/docs/quickstart-gsutil#create">Quickstart: Using the gsutil Tool</a></p>
 
 <ol>
-  <li>Create a bucket by using <code class="highlighter-rouge">gsutil mb</code> command:
+  <li>Create a bucket by using <code class="language-plaintext highlighter-rouge">gsutil mb</code> command:
     <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gsutil mb <span class="nt">-l</span> us-east1 gs://my-awesome-bucket/
 </code></pre></div>    </div>
     <p>note that the bucket name should be globally-unique.</p>
   </li>
-  <li>Copy local file to the bucket using <code class="highlighter-rouge">gsutil cp</code> command:
-    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gsutil <span class="o">[</span><span class="nt">-m</span><span class="o">]</span> cp <span class="o">[</span><span class="nt">-r</span><span class="o">]</span> &lt;file-name&gt; gs://my-awesome-bucket
+  <li>Copy local file to the bucket using <code class="language-plaintext highlighter-rouge">gsutil cp</code> command:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gsutil <span class="o">[</span><span class="nt">-m</span><span class="o">]</span> <span class="nb">cp</span> <span class="o">[</span><span class="nt">-r</span><span class="o">]</span> &lt;file-name&gt; gs://my-awesome-bucket
 </code></pre></div>    </div>
-    <p><strong>Remember</strong>: using <code class="highlighter-rouge">-m</code> flag to activate multi-thread will increase the transfer speed dramatically.</p>
+    <p><strong>Remember</strong>: using <code class="language-plaintext highlighter-rouge">-m</code> flag to activate multi-thread will increase the transfer speed dramatically.</p>
   </li>
-  <li>Download file from bucket using <code class="highlighter-rouge">gsutil cp</code> command:
-    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gsutil <span class="o">[</span><span class="nt">-m</span><span class="o">]</span> cp <span class="o">[</span><span class="nt">-r</span><span class="o">]</span> gs://my-awesome-bucket/&lt;file-name&gt; &lt;local-dir&gt;
+  <li>Download file from bucket using <code class="language-plaintext highlighter-rouge">gsutil cp</code> command:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gsutil <span class="o">[</span><span class="nt">-m</span><span class="o">]</span> <span class="nb">cp</span> <span class="o">[</span><span class="nt">-r</span><span class="o">]</span> gs://my-awesome-bucket/&lt;file-name&gt; &lt;local-dir&gt;
 </code></pre></div>    </div>
   </li>
-  <li>Delete an object using <code class="highlighter-rouge">gsutil rm</code>:
+  <li>Delete an object using <code class="language-plaintext highlighter-rouge">gsutil rm</code>:
     <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Delete file</span>
-gsutil rm gs://my-awesome-bucket/&lt;file-name&gt;
+gsutil <span class="nb">rm </span>gs://my-awesome-bucket/&lt;file-name&gt;
 <span class="c"># Delete folder</span>
-gsutil rm <span class="nt">-r</span> gs://my-awesome-bucket/&lt;folder-name&gt;
+gsutil <span class="nb">rm</span> <span class="nt">-r</span> gs://my-awesome-bucket/&lt;folder-name&gt;
 </code></pre></div>    </div>
   </li>
   <li>Remove the bucket
-    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gsutil rm <span class="nt">-r</span> gs://my-awesome-bucket
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gsutil <span class="nb">rm</span> <span class="nt">-r</span> gs://my-awesome-bucket
 </code></pre></div>    </div>
   </li>
 </ol>

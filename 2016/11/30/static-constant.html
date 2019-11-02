@@ -37,7 +37,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2016-11-30T14:42:00+08:00" />
 <script type="application/ld+json">
-{"description":"Static VS. Constant","@type":"BlogPosting","url":"http://localhost:4000/2016/11/30/static-constant","headline":"What is the difference between a static and const variable","dateModified":"2016-11-30T14:42:00+08:00","datePublished":"2016-11-30T14:42:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2016/11/30/static-constant"},"@context":"http://schema.org"}</script>
+{"url":"http://localhost:4000/2016/11/30/static-constant","headline":"What is the difference between a static and const variable","dateModified":"2016-11-30T14:42:00+08:00","datePublished":"2016-11-30T14:42:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2016/11/30/static-constant"},"description":"Static VS. Constant","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -160,11 +160,11 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 
 <!--more-->
 
-<p>A <code class="highlighter-rouge">static</code> variable means that the object’s lifetime is the entire execution of the program and it’s value is initialized only once before the program startup. All statics are initialized if you do not explicitly set a value to them.The manner and timing of static initialization is unspecified.</p>
+<p>A <code class="language-plaintext highlighter-rouge">static</code> variable means that the object’s lifetime is the entire execution of the program and it’s value is initialized only once before the program startup. All statics are initialized if you do not explicitly set a value to them.The manner and timing of static initialization is unspecified.</p>
 
-<p>A <code class="highlighter-rouge">const</code> is a promise that you will not try to modify the value once set.</p>
+<p>A <code class="language-plaintext highlighter-rouge">const</code> is a promise that you will not try to modify the value once set.</p>
 
-<p><code class="highlighter-rouge">const</code> is equivalent to <code class="highlighter-rouge">#define</code> but only for value statements(e.g. <code class="highlighter-rouge">#define myvalue 2</code>). The value declared replaces the name of the variable before compilation.</p>
+<p><code class="language-plaintext highlighter-rouge">const</code> is equivalent to <code class="language-plaintext highlighter-rouge">#define</code> but only for value statements(e.g. <code class="language-plaintext highlighter-rouge">#define myvalue 2</code>). The value declared replaces the name of the variable before compilation.</p>
 
 <h3 id="reference">Reference:</h3>
 <p><a href="https://msdn.microsoft.com/en-us/library/y5f6w579.aspx#static">Static (C++) - on MSDN</a></p>

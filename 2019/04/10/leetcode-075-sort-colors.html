@@ -37,7 +37,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-04-10T00:00:00+08:00" />
 <script type="application/ld+json">
-{"description":"Theme based on Materialize.css for jekyll sites.","@type":"BlogPosting","url":"http://localhost:4000/2019/04/10/leetcode-075-sort-colors","headline":"[LeetCode] 075. Sort Colors","dateModified":"2019-04-10T00:00:00+08:00","datePublished":"2019-04-10T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/04/10/leetcode-075-sort-colors"},"@context":"http://schema.org"}</script>
+{"url":"http://localhost:4000/2019/04/10/leetcode-075-sort-colors","headline":"[LeetCode] 075. Sort Colors","dateModified":"2019-04-10T00:00:00+08:00","datePublished":"2019-04-10T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/04/10/leetcode-075-sort-colors"},"description":"Theme based on Materialize.css for jekyll sites.","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -272,32 +272,32 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 
 <p><img src="https://leetcode.com/problems/sort-colors/Figures/75/idx.png" alt="" /></p>
 
-<p>The idea of solution is to move <code class="highlighter-rouge">curr</code> pointer along the array, if <code class="highlighter-rouge">nums[curr] = 0</code> - swap it with nums[p0], if <code class="highlighter-rouge">nums[curr] = 2</code> - swap it with <code class="highlighter-rouge">nums[p2]</code>.</p>
+<p>The idea of solution is to move <code class="language-plaintext highlighter-rouge">curr</code> pointer along the array, if <code class="language-plaintext highlighter-rouge">nums[curr] = 0</code> - swap it with nums[p0], if <code class="language-plaintext highlighter-rouge">nums[curr] = 2</code> - swap it with <code class="language-plaintext highlighter-rouge">nums[p2]</code>.</p>
 
 <p>Algorithm</p>
 
 <ul>
   <li>
-    <p>Initialise the rightmost boundary of zeros : <code class="highlighter-rouge">p0 = 0</code>. During the algorithm execution <code class="highlighter-rouge">nums[idx &lt; p0] = 0</code>.</p>
+    <p>Initialise the rightmost boundary of zeros : <code class="language-plaintext highlighter-rouge">p0 = 0</code>. During the algorithm execution <code class="language-plaintext highlighter-rouge">nums[idx &lt; p0] = 0</code>.</p>
   </li>
   <li>
-    <p>Initialise the leftmost boundary of twos : <code class="highlighter-rouge">p2 = n - 1</code>. During the algorithm execution <code class="highlighter-rouge">nums[idx &gt; p2] = 2</code>.</p>
+    <p>Initialise the leftmost boundary of twos : <code class="language-plaintext highlighter-rouge">p2 = n - 1</code>. During the algorithm execution <code class="language-plaintext highlighter-rouge">nums[idx &gt; p2] = 2</code>.</p>
   </li>
   <li>
-    <p>Initialise the index of current element to consider : <code class="highlighter-rouge">curr = 0</code>.</p>
+    <p>Initialise the index of current element to consider : <code class="language-plaintext highlighter-rouge">curr = 0</code>.</p>
   </li>
   <li>
-    <p>While <code class="highlighter-rouge">curr &lt;= p2</code> :</p>
+    <p>While <code class="language-plaintext highlighter-rouge">curr &lt;= p2</code> :</p>
 
     <ul>
       <li>
-        <p>If <code class="highlighter-rouge">nums[curr] = 0</code> : swap currth and <code class="highlighter-rouge">p0</code>th elements and move both pointers to the right.</p>
+        <p>If <code class="language-plaintext highlighter-rouge">nums[curr] = 0</code> : swap currth and <code class="language-plaintext highlighter-rouge">p0</code>th elements and move both pointers to the right.</p>
       </li>
       <li>
-        <p>If <code class="highlighter-rouge">nums[curr] = 2</code> : swap currth and <code class="highlighter-rouge">p2</code>th elements. Move pointer <code class="highlighter-rouge">k</code> to the left.</p>
+        <p>If <code class="language-plaintext highlighter-rouge">nums[curr] = 2</code> : swap currth and <code class="language-plaintext highlighter-rouge">p2</code>th elements. Move pointer <code class="language-plaintext highlighter-rouge">k</code> to the left.</p>
       </li>
       <li>
-        <p>If <code class="highlighter-rouge">nums[curr] = 1</code> : move pointer <code class="highlighter-rouge">curr</code> to the right.</p>
+        <p>If <code class="language-plaintext highlighter-rouge">nums[curr] = 1</code> : move pointer <code class="language-plaintext highlighter-rouge">curr</code> to the right.</p>
       </li>
     </ul>
   </li>
@@ -309,11 +309,11 @@ Remember that after enabling this, you have to enter the real dollar sings with 
         <span class="s">"""
         Dutch National Flag problem solution.
         """</span>
-        <span class="c"># for all idx &lt; p0 : nums[idx &lt; p0] = 0</span>
-        <span class="c"># curr is an index of element under consideration</span>
-        <span class="n">p0</span> <span class="o">=</span> <span class="n">curr</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="c"># for all idx &gt; p2 : nums[idx &gt; p2] = 2</span>
-        <span class="n">p2</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="c1"># for all idx &lt; p0 : nums[idx &lt; p0] = 0
+</span>        <span class="c1"># curr is an index of element under consideration
+</span>        <span class="n">p0</span> <span class="o">=</span> <span class="n">curr</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="c1"># for all idx &gt; p2 : nums[idx &gt; p2] = 2
+</span>        <span class="n">p2</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
 
         <span class="k">while</span> <span class="n">curr</span> <span class="o">&lt;=</span> <span class="n">p2</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">curr</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>

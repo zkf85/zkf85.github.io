@@ -37,7 +37,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-04-09T00:00:00+08:00" />
 <script type="application/ld+json">
-{"description":"Theme based on Materialize.css for jekyll sites.","@type":"BlogPosting","url":"http://localhost:4000/2019/04/09/leetcode-064-minimum-path-sum","headline":"[LeetCode] 064. Minimum Path Sum","dateModified":"2019-04-09T00:00:00+08:00","datePublished":"2019-04-09T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/04/09/leetcode-064-minimum-path-sum"},"@context":"http://schema.org"}</script>
+{"url":"http://localhost:4000/2019/04/09/leetcode-064-minimum-path-sum","headline":"[LeetCode] 064. Minimum Path Sum","dateModified":"2019-04-09T00:00:00+08:00","datePublished":"2019-04-09T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/04/09/leetcode-064-minimum-path-sum"},"description":"Theme based on Materialize.css for jekyll sites.","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -187,7 +187,7 @@ Explanation: Because the path 1→3→1→1→1 minimizes the sum.</p>
 
 <h3 id="idea">Idea</h3>
 <ul>
-  <li>State update: <code class="highlighter-rouge">dp[i][j] = grid[i][j] + min(dp[i-1][j], dp[i][j-1])</code>;</li>
+  <li>State update: <code class="language-plaintext highlighter-rouge">dp[i][j] = grid[i][j] + min(dp[i-1][j], dp[i][j-1])</code>;</li>
   <li>Initial state: each item is the sum from the first to current index items in grid.</li>
 </ul>
 

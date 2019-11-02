@@ -37,7 +37,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-04-11T00:00:00+08:00" />
 <script type="application/ld+json">
-{"description":"Theme based on Materialize.css for jekyll sites.","@type":"BlogPosting","url":"http://localhost:4000/2019/04/11/leetcode-086-partition-list","headline":"[LeetCode] 086. Partition List *","dateModified":"2019-04-11T00:00:00+08:00","datePublished":"2019-04-11T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/04/11/leetcode-086-partition-list"},"@context":"http://schema.org"}</script>
+{"url":"http://localhost:4000/2019/04/11/leetcode-086-partition-list","headline":"[LeetCode] 086. Partition List *","dateModified":"2019-04-11T00:00:00+08:00","datePublished":"2019-04-11T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/04/11/leetcode-086-partition-list"},"description":"Theme based on Materialize.css for jekyll sites.","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -172,24 +172,24 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 <h2 id="problem-medium">Problem (Medium)</h2>
 <p><a href="https://leetcode.com/problems/partition-list">086. Partition List</a></p>
 
-<p>Given a linked list and a value <code class="highlighter-rouge">x</code>, partition it such that all nodes less than <code class="highlighter-rouge">x</code> come before nodes greater than or equal to <code class="highlighter-rouge">x</code>.</p>
+<p>Given a linked list and a value <code class="language-plaintext highlighter-rouge">x</code>, partition it such that all nodes less than <code class="language-plaintext highlighter-rouge">x</code> come before nodes greater than or equal to <code class="language-plaintext highlighter-rouge">x</code>.</p>
 
 <p>You should preserve the original relative order of the nodes in each of the two partitions.</p>
 
 <p>Example:</p>
 
 <ul>
-  <li>Input: <code class="highlighter-rouge">head = 1-&gt;4-&gt;3-&gt;2-&gt;5-&gt;2, x = 3</code></li>
-  <li>Output: <code class="highlighter-rouge">1-&gt;2-&gt;2-&gt;4-&gt;3-&gt;5</code></li>
+  <li>Input: <code class="language-plaintext highlighter-rouge">head = 1-&gt;4-&gt;3-&gt;2-&gt;5-&gt;2, x = 3</code></li>
+  <li>Output: <code class="language-plaintext highlighter-rouge">1-&gt;2-&gt;2-&gt;4-&gt;3-&gt;5</code></li>
 </ul>
 
 <h2 id="approach-1-solution-from-leetcode---two-pointer-approach-">Approach 1: Solution from LeetCode - Two Pointer Approach *</h2>
 
-<p>The problem wants us to reform the linked list structure, such that the elements lesser that a certain value <code class="highlighter-rouge">x</code>, come before the elements greater or equal to <code class="highlighter-rouge">x</code>. This essentially means in this reformed list, there would be a point in the linked list before which all the elements would be smaller than <code class="highlighter-rouge">x</code> and after which all the elements would be greater or equal to <code class="highlighter-rouge">x</code>. Let’s call this point as the <code class="highlighter-rouge">JOINT</code>.</p>
+<p>The problem wants us to reform the linked list structure, such that the elements lesser that a certain value <code class="language-plaintext highlighter-rouge">x</code>, come before the elements greater or equal to <code class="language-plaintext highlighter-rouge">x</code>. This essentially means in this reformed list, there would be a point in the linked list before which all the elements would be smaller than <code class="language-plaintext highlighter-rouge">x</code> and after which all the elements would be greater or equal to <code class="language-plaintext highlighter-rouge">x</code>. Let’s call this point as the <code class="language-plaintext highlighter-rouge">JOINT</code>.</p>
 
 <p><img src="https://leetcode.com/problems/partition-list/Figures/86/86_Partition_List_1.png" alt="" /></p>
 
-<p>Reverse engineering the question tells us that if we break the reformed list at the <code class="highlighter-rouge">JOINT</code>, we will get two smaller linked lists, one with lesser elements and the other with elements greater or equal to <code class="highlighter-rouge">x</code>. In the solution, our main aim is to create these two linked lists and join them.</p>
+<p>Reverse engineering the question tells us that if we break the reformed list at the <code class="language-plaintext highlighter-rouge">JOINT</code>, we will get two smaller linked lists, one with lesser elements and the other with elements greater or equal to <code class="language-plaintext highlighter-rouge">x</code>. In the solution, our main aim is to create these two linked lists and join them.</p>
 
 <h3 id="idea">Idea</h3>
 <h4 id="intuition">Intuition</h4>
@@ -200,30 +200,30 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 
 <ol>
   <li>
-    <p>Initialize two pointers <code class="highlighter-rouge">before</code> and <code class="highlighter-rouge">after</code>. In the implementation we have initialized these two with a dummy <code class="highlighter-rouge">ListNode</code>. This helps to reduce the number of conditional checks we would need otherwise. You can try an implementation where you don’t initialize with a dummy node and see it yourself!</p>
+    <p>Initialize two pointers <code class="language-plaintext highlighter-rouge">before</code> and <code class="language-plaintext highlighter-rouge">after</code>. In the implementation we have initialized these two with a dummy <code class="language-plaintext highlighter-rouge">ListNode</code>. This helps to reduce the number of conditional checks we would need otherwise. You can try an implementation where you don’t initialize with a dummy node and see it yourself!</p>
 
     <p><img src="https://leetcode.com/problems/partition-list/Figures/86/86_Partition_List_2.png" alt="" /></p>
   </li>
-  <li>Iterate the original linked list, using the <code class="highlighter-rouge">head</code> pointer.</li>
+  <li>Iterate the original linked list, using the <code class="language-plaintext highlighter-rouge">head</code> pointer.</li>
   <li>
-    <p>If the node’s value pointed by <code class="highlighter-rouge">head</code> is lesser than <code class="highlighter-rouge">x</code>, the node should be part of the <code class="highlighter-rouge">before</code> list. So we move it to <code class="highlighter-rouge">before</code> list.</p>
+    <p>If the node’s value pointed by <code class="language-plaintext highlighter-rouge">head</code> is lesser than <code class="language-plaintext highlighter-rouge">x</code>, the node should be part of the <code class="language-plaintext highlighter-rouge">before</code> list. So we move it to <code class="language-plaintext highlighter-rouge">before</code> list.</p>
 
     <p><img src="https://leetcode.com/problems/partition-list/Figures/86/86_Partition_List_3.png" alt="" /></p>
   </li>
   <li>
-    <p>Else, the node should be part of <code class="highlighter-rouge">after</code> list. So we move it to <code class="highlighter-rouge">after</code> list.</p>
+    <p>Else, the node should be part of <code class="language-plaintext highlighter-rouge">after</code> list. So we move it to <code class="language-plaintext highlighter-rouge">after</code> list.</p>
 
     <p><img src="https://leetcode.com/problems/partition-list/Figures/86/86_Partition_List_4.png" alt="" /></p>
   </li>
   <li>
-    <p>Once we are done with all the nodes in the original linked list, we would have two list before and <code class="highlighter-rouge">after</code>. The original list nodes are either part of <code class="highlighter-rouge">before</code> list or <code class="highlighter-rouge">after</code> list, depending on its value.</p>
+    <p>Once we are done with all the nodes in the original linked list, we would have two list before and <code class="language-plaintext highlighter-rouge">after</code>. The original list nodes are either part of <code class="language-plaintext highlighter-rouge">before</code> list or <code class="language-plaintext highlighter-rouge">after</code> list, depending on its value.</p>
 
     <p><img src="https://leetcode.com/problems/partition-list/Figures/86/86_Partition_List_5.png" alt="" /></p>
 
     <p><em>Note: Since we traverse the original linked list from left to right, at no point would the order of nodes change relatively in the two lists. Another important thing to note here is that we show the original linked list intact in the above diagrams. However, in the implementation, we remove the nodes from the original linked list and attach them in the before or after list. We don’t utilize any additional space. We simply move the nodes from the original list around.</em></p>
   </li>
   <li>
-    <p>Now, these two lists <code class="highlighter-rouge">before</code> and <code class="highlighter-rouge">after</code> can be combined to form the reformed list.</p>
+    <p>Now, these two lists <code class="language-plaintext highlighter-rouge">before</code> and <code class="language-plaintext highlighter-rouge">after</code> can be combined to form the reformed list.</p>
 
     <p><img src="https://leetcode.com/problems/partition-list/Figures/86/86_Partition_List_6.png" alt="" /></p>
   </li>
@@ -240,32 +240,32 @@ Remember that after enabling this, you have to enter the real dollar sings with 
         :rtype: ListNode
         """</span>
 
-        <span class="c"># before and after are the two pointers used to create two list</span>
-        <span class="c"># before_head and after_head are used to save the heads of the two lists.</span>
-        <span class="c"># All of these are initialized with the dummy nodes created.</span>
-        <span class="n">before</span> <span class="o">=</span> <span class="n">before_head</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="c1"># before and after are the two pointers used to create two list
+</span>        <span class="c1"># before_head and after_head are used to save the heads of the two lists.
+</span>        <span class="c1"># All of these are initialized with the dummy nodes created.
+</span>        <span class="n">before</span> <span class="o">=</span> <span class="n">before_head</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
         <span class="n">after</span> <span class="o">=</span> <span class="n">after_head</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
         <span class="k">while</span> <span class="n">head</span><span class="p">:</span>
-            <span class="c"># If the original list node is lesser than the given x,</span>
-            <span class="c"># assign it to the before list.</span>
-            <span class="k">if</span> <span class="n">head</span><span class="o">.</span><span class="n">val</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">:</span>
+            <span class="c1"># If the original list node is lesser than the given x,
+</span>            <span class="c1"># assign it to the before list.
+</span>            <span class="k">if</span> <span class="n">head</span><span class="o">.</span><span class="n">val</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">:</span>
                 <span class="n">before</span><span class="o">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">head</span>
                 <span class="n">before</span> <span class="o">=</span> <span class="n">before</span><span class="o">.</span><span class="nb">next</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="c"># If the original list node is greater or equal to the given x,</span>
-                <span class="c"># assign it to the after list.</span>
-                <span class="n">after</span><span class="o">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">head</span>
+                <span class="c1"># If the original list node is greater or equal to the given x,
+</span>                <span class="c1"># assign it to the after list.
+</span>                <span class="n">after</span><span class="o">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">head</span>
                 <span class="n">after</span> <span class="o">=</span> <span class="n">after</span><span class="o">.</span><span class="nb">next</span>
 
-            <span class="c"># move ahead in the original list</span>
-            <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="o">.</span><span class="nb">next</span>
+            <span class="c1"># move ahead in the original list
+</span>            <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="o">.</span><span class="nb">next</span>
 
-        <span class="c"># Last node of "after" list would also be ending node of the reformed list</span>
-        <span class="n">after</span><span class="o">.</span><span class="nb">next</span> <span class="o">=</span> <span class="bp">None</span>
-        <span class="c"># Once all the nodes are correctly assigned to the two lists,</span>
-        <span class="c"># combine them to form a single list which would be returned.</span>
-        <span class="n">before</span><span class="o">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">after_head</span><span class="o">.</span><span class="nb">next</span>
+        <span class="c1"># Last node of "after" list would also be ending node of the reformed list
+</span>        <span class="n">after</span><span class="o">.</span><span class="nb">next</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="c1"># Once all the nodes are correctly assigned to the two lists,
+</span>        <span class="c1"># combine them to form a single list which would be returned.
+</span>        <span class="n">before</span><span class="o">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">after_head</span><span class="o">.</span><span class="nb">next</span>
 
         <span class="k">return</span> <span class="n">before_head</span><span class="o">.</span><span class="nb">next</span>
 </code></pre></div></div>

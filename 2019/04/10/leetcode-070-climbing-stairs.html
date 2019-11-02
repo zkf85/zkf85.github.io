@@ -37,7 +37,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-04-10T00:00:00+08:00" />
 <script type="application/ld+json">
-{"description":"Theme based on Materialize.css for jekyll sites.","@type":"BlogPosting","url":"http://localhost:4000/2019/04/10/leetcode-070-climbing-stairs","headline":"[LeetCode] 070. Climbing Stairs","dateModified":"2019-04-10T00:00:00+08:00","datePublished":"2019-04-10T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/04/10/leetcode-070-climbing-stairs"},"@context":"http://schema.org"}</script>
+{"url":"http://localhost:4000/2019/04/10/leetcode-070-climbing-stairs","headline":"[LeetCode] 070. Climbing Stairs","dateModified":"2019-04-10T00:00:00+08:00","datePublished":"2019-04-10T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/04/10/leetcode-070-climbing-stairs"},"description":"Theme based on Materialize.css for jekyll sites.","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -259,12 +259,12 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 
 <h3 id="idea-1">Idea</h3>
 <ul>
-  <li>State update rule: (1-D dp state matrix) <code class="highlighter-rouge">dp[i] = dp[i-1] + dp[i-2]</code>;</li>
-  <li>Initial state: <code class="highlighter-rouge">dp[0] = 1, dp[1] = 2. if n == 1, return 1</code>.</li>
+  <li>State update rule: (1-D dp state matrix) <code class="language-plaintext highlighter-rouge">dp[i] = dp[i-1] + dp[i-2]</code>;</li>
+  <li>Initial state: <code class="language-plaintext highlighter-rouge">dp[0] = 1, dp[1] = 2. if n == 1, return 1</code>.</li>
 </ul>
 
 <h3 id="solution-1">Solution</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python
 class Solution1:
     def climbStairs(self, n):
         """
@@ -290,12 +290,12 @@ class Solution1:
 
 <h3 id="idea-2">Idea</h3>
 <ul>
-  <li>State update rule: (1-D dp state matrix) <code class="highlighter-rouge">dp[i] = dp[i-1] + dp[i-2]</code>;</li>
-  <li>Initial state: <code class="highlighter-rouge">dp[0] = 1, dp[1] = 2. if n == 1, return 1</code>.</li>
+  <li>State update rule: (1-D dp state matrix) <code class="language-plaintext highlighter-rouge">dp[i] = dp[i-1] + dp[i-2]</code>;</li>
+  <li>Initial state: <code class="language-plaintext highlighter-rouge">dp[0] = 1, dp[1] = 2. if n == 1, return 1</code>.</li>
 </ul>
 
 <h3 id="solution-2">Solution</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python
 class Solution2:
     def climbStairs(self, n):
         """
@@ -326,7 +326,7 @@ class Solution2:
 </ul>
 
 <h3 id="solution-3">Solution</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python
 class Solution3:
     def climbStairs(self, n):
         """

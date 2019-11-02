@@ -37,7 +37,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-04-04T00:00:00+08:00" />
 <script type="application/ld+json">
-{"description":"Theme based on Materialize.css for jekyll sites.","@type":"BlogPosting","url":"http://localhost:4000/2019/04/04/leetcode-047-permutations-ii","headline":"[LeetCode] 047. Permutations II","dateModified":"2019-04-04T00:00:00+08:00","datePublished":"2019-04-04T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/04/04/leetcode-047-permutations-ii"},"@context":"http://schema.org"}</script>
+{"url":"http://localhost:4000/2019/04/04/leetcode-047-permutations-ii","headline":"[LeetCode] 047. Permutations II","dateModified":"2019-04-04T00:00:00+08:00","datePublished":"2019-04-04T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/04/04/leetcode-047-permutations-ii"},"description":"Theme based on Materialize.css for jekyll sites.","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -190,8 +190,8 @@ Output:
 
 <h3 id="idea">Idea</h3>
 <ul>
-  <li>Same idea as the last problem, add another paramter in the backtracking recursion: <code class="highlighter-rouge">index_pool</code> to differentiate the duplicates.</li>
-  <li>In the last step, remove duplicate items by <code class="highlighter-rouge">set()</code>.</li>
+  <li>Same idea as the last problem, add another paramter in the backtracking recursion: <code class="language-plaintext highlighter-rouge">index_pool</code> to differentiate the duplicates.</li>
+  <li>In the last step, remove duplicate items by <code class="language-plaintext highlighter-rouge">set()</code>.</li>
 </ul>
 
 <h3 id="solution">Solution</h3>
@@ -237,8 +237,8 @@ Output:
         <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">ans</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
                 <span class="n">new_ans</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">l</span><span class="p">[:</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">+</span><span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">:])</span>
-                <span class="k">if</span> <span class="n">i</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="ow">and</span> <span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="n">n</span><span class="p">:</span> <span class="k">break</span>              <span class="c">#handles duplication</span>
-        <span class="n">ans</span> <span class="o">=</span> <span class="n">new_ans</span>
+                <span class="k">if</span> <span class="n">i</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="ow">and</span> <span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="n">n</span><span class="p">:</span> <span class="k">break</span>              <span class="c1">#handles duplication
+</span>        <span class="n">ans</span> <span class="o">=</span> <span class="n">new_ans</span>
     <span class="k">return</span> <span class="n">ans</span>
 </code></pre></div></div>
 

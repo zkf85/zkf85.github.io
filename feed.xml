@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-11-02T19:39:14+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Everest</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-11-02T19:41:14+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Everest</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
 </subtitle><entry><title type="html">NodeJS vs Django</title><link href="http://localhost:4000/2019/11/01/nodejs-vs-django" rel="alternate" type="text/html" title="NodeJS vs Django" /><published>2019-11-01T00:00:00+08:00</published><updated>2019-11-01T00:00:00+08:00</updated><id>http://localhost:4000/2019/11/01/nodejs-vs-django</id><content type="html" xml:base="http://localhost:4000/2019/11/01/nodejs-vs-django">&lt;blockquote&gt;
   &lt;p&gt;Node.js, Django, which is better?&lt;/p&gt;
 
@@ -8,7 +8,7 @@
 &lt;!--more--&gt;
 &lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#nodejs&quot; id=&quot;markdown-toc-nodejs&quot;&gt;Node.js&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#pros&quot; id=&quot;markdown-toc-pros&quot;&gt;Pros:&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#pros&quot; id=&quot;markdown-toc-pros&quot;&gt;Pros&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#cons&quot; id=&quot;markdown-toc-cons&quot;&gt;Cons&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
@@ -17,13 +17,14 @@
       &lt;li&gt;&lt;a href=&quot;#cons-1&quot; id=&quot;markdown-toc-cons-1&quot;&gt;Cons&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#reference&quot; id=&quot;markdown-toc-reference&quot;&gt;Reference&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;nodejs&quot;&gt;Node.js&lt;/h2&gt;
 
 &lt;p&gt;JavaScript is known mainly for its strengths in client-side development, but Node.js is doing the exact opposite by working wonders on the server-side.&lt;/p&gt;
 
-&lt;h3 id=&quot;pros&quot;&gt;Pros:&lt;/h3&gt;
+&lt;h3 id=&quot;pros&quot;&gt;Pros&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;Availability of great libraries.&lt;/li&gt;
   &lt;li&gt;High performance.&lt;/li&gt;
@@ -61,6 +62,7 @@
   &lt;li&gt;A full understanding of the framework is needed.&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://dzone.com/articles/nodejs-vs-djangois-javascript-better-than-python&quot;&gt;» Node.js vs. Django:  Is JavaScript Better Than Python?&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Web Developing&quot;]" /><category term="nodejs" /><category term="django" /><summary type="html">Node.js, Django, which is better? Node.js has a “JavaScript everywhere” motive to ensure JavaScript is used on the server-side and client-side of web applications and Django has a “framework for perfectionists with deadlines” motive to help developers build applications quickly.</summary></entry><entry><title type="html">How to Customize Bash Colors and Content</title><link href="http://localhost:4000/2019/10/31/how-to-customize-bash-colors-and-content" rel="alternate" type="text/html" title="How to Customize Bash Colors and Content" /><published>2019-10-31T00:00:00+08:00</published><updated>2019-10-31T00:00:00+08:00</updated><id>http://localhost:4000/2019/10/31/how-to-customize-bash-colors-and-content</id><content type="html" xml:base="http://localhost:4000/2019/10/31/how-to-customize-bash-colors-and-content">&lt;blockquote&gt;

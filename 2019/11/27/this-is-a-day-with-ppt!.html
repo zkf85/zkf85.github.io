@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-      linux-system-administration
+      This is a day with PPT!
       
       2019
     </title>
@@ -27,17 +27,17 @@
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
     <!-- Begin Jekyll SEO tag v2.5.0 -->
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="linux-system-administration" />
+<meta property="og:title" content="This is a day with PPT!" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Haven’t posted anything for a long time. Let the notes go on. In this post, I’d collect all (if possible) necessary knowledge and information about linux account and permission administration." />
-<meta property="og:description" content="Haven’t posted anything for a long time. Let the notes go on. In this post, I’d collect all (if possible) necessary knowledge and information about linux account and permission administration." />
-<link rel="canonical" href="http://localhost:4000/2019/10/26/linux-system-administration" />
-<meta property="og:url" content="http://localhost:4000/2019/10/26/linux-system-administration" />
+<meta name="description" content="Theme based on Materialize.css for jekyll sites." />
+<meta property="og:description" content="Theme based on Materialize.css for jekyll sites." />
+<link rel="canonical" href="http://localhost:4000/2019/11/27/this-is-a-day-with-ppt!" />
+<meta property="og:url" content="http://localhost:4000/2019/11/27/this-is-a-day-with-ppt!" />
 <meta property="og:site_name" content="Everest" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-10-26T00:00:00+08:00" />
+<meta property="article:published_time" content="2019-11-27T00:00:00+08:00" />
 <script type="application/ld+json">
-{"url":"http://localhost:4000/2019/10/26/linux-system-administration","headline":"linux-system-administration","dateModified":"2019-10-26T00:00:00+08:00","datePublished":"2019-10-26T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/10/26/linux-system-administration"},"description":"Haven’t posted anything for a long time. Let the notes go on. In this post, I’d collect all (if possible) necessary knowledge and information about linux account and permission administration.","@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"url":"http://localhost:4000/2019/11/27/this-is-a-day-with-ppt!","headline":"This is a day with PPT!","dateModified":"2019-11-27T00:00:00+08:00","datePublished":"2019-11-27T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/11/27/this-is-a-day-with-ppt!"},"description":"Theme based on Materialize.css for jekyll sites.","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -114,16 +114,16 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 
 <div class="container">
   <div id="post-info">
-  <h1>linux-system-administration</h1>
+  <h1>This is a day with PPT!</h1>
   <ul class="collapsible hoverable" data-collapsible="accordion">
     <li>
       <div class="collapsible-header">
         <span>
           <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Date">date_range</i>
            
-          Oct.
+          Nov.
             
-          26, 2019 - Saturday
+          27, 2019 - Wednesday
           <i id="indicate" class="right material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Show extra info">info</i>
         </span>
       </div>
@@ -131,21 +131,9 @@ Remember that after enabling this, you have to enter the real dollar sings with 
         <span>
           <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Categories">sort</i>
           
-          
-          
-          <a href="/categories#operating-system_cap" target="_blank"><div class="chip">Operating System</div></a>
-          
         </span>
         <span>
           <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Tags">label</i>
-          
-          
-          
-          <a href="/tags#linux" target="_blank"><div class="chip">linux</div></a>
-          
-          
-          
-          <a href="/tags#permission" target="_blank"><div class="chip">permission</div></a>
           
         </span>
       </div>
@@ -154,65 +142,9 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 </div>
 <div class="row">
   <div class="col s12">
-    <blockquote>
-  <p>Haven’t posted anything for a long time. Let the notes go on.</p>
+    <!--more-->
 
-  <p>In this post, I’d collect all (if possible) necessary knowledge and information about linux account and permission administration.</p>
-</blockquote>
-
-<!--more-->
-<ul id="markdown-toc">
-  <li><a href="#understanding-linux-file-permissions" id="markdown-toc-understanding-linux-file-permissions">Understanding Linux File Permissions</a>    <ul>
-      <li><a href="#1-basic-file-permission" id="markdown-toc-1-basic-file-permission">1. Basic File Permission</a></li>
-      <li><a href="#2-permission-types" id="markdown-toc-2-permission-types">2. Permission Types</a></li>
-    </ul>
-  </li>
-  <li><a href="#user-administration" id="markdown-toc-user-administration">User Administration</a></li>
-</ul>
-
-<h2 id="understanding-linux-file-permissions">Understanding Linux File Permissions</h2>
-
-<p>In linux system, granting proper permissions to files and directories is crucial. This part is an overview of assigning and modifying permissions with examples.</p>
-
-<p><a href="https://www.linux.com/tutorials/understanding-linux-file-permissions/">» Understanding Linux File Permission</a></p>
-
-<h3 id="1-basic-file-permission">1. Basic File Permission</h3>
-<p>Each file and directory has 3 user based permission groups:</p>
-
-<ul>
-  <li>
-    <p><strong>owner</strong> - the permissions apply only the owner of the file or directory, will not affect actions of other users;</p>
-  </li>
-  <li>
-    <p><strong>group</strong> - the permissions applys only to the group that has been assigned to the file or directory, will not affect actions of other users;</p>
-  </li>
-  <li>
-    <p><strong>all users</strong> - the permissions apply to <strong>all other users</strong> on the system, this is the permission group that you want to <em>watch the most</em>.</p>
-  </li>
-</ul>
-
-<h3 id="2-permission-types">2. Permission Types</h3>
-<p>Each file or directory has 3 basic permission types:</p>
-
-<ul>
-  <li><strong>read</strong> - permission refers to a user’s capability to read the content of the file;</li>
-  <li><strong>write</strong> - permission refers to a user’s capability to write or modify a file or directory;</li>
-  <li><strong>execute</strong> - permission affects a user’s capability to execute a file or <strong>view the contents of a directory</strong>.</li>
-</ul>
-
-<p>You can simply using <code class="language-plaintext highlighter-rouge">ls -l</code> to view the permissions of the files and directories in the working directory. The output is like:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>drwxrwxr-x+ 28 root  admin   896 Oct  9 22:21 Applications
-drwxr-xr-x  68 root  wheel  2176 Oct 10 10:31 Library
-drwxr-xr-x@  8 root  wheel   256 Sep 30 04:23 System
-drwxr-xr-x   5 root  admin   160 Sep 30 04:22 Users
-drwxr-xr-x   3 root  wheel    96 Oct 24 21:22 Volumes
--rw-r--r--@  1 kefengzhu  staff   1160859 Jan 13  2019 1404.7828.pdf
-</code></pre></div></div>
-
-<h2 id="user-administration">User Administration</h2>
-
-<p><a href="https://www.guru99.com/linux-admin.html">» Tutorial: adduser, usermod, userdel</a></p>
+<p>Hello world!!!!!</p>
 
 <p><br /><br /><strong><em>KF</em></strong></p>
 
@@ -226,8 +158,8 @@ drwxr-xr-x   3 root  wheel    96 Oct 24 21:22 Volumes
 <div id="disqus_thread"></div>
 <script>
   var disqus_config = function () {
-    this.page.url = "http://localhost:4000/2019/10/26/linux-system-administration";
-    this.page.identifier = "/2019/10/26/linux-system-administration";
+    this.page.url = "http://localhost:4000/2019/11/27/this-is-a-day-with-ppt!";
+    this.page.identifier = "/2019/11/27/this-is-a-day-with-ppt!";
   };
   (function() { // DON'T EDIT BELOW THIS LINE
     var d = document, s = d.createElement('script');

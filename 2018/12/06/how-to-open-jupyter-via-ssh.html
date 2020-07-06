@@ -208,6 +208,16 @@ to login with a token:
 
 <p>And we’re done!</p>
 
+<h2 id="save-the-annoying-token-stuff-added-on-thu-mar-19-172743-cst-2020">Save the annoying token stuff (added on Thu Mar 19 17:27:43 CST 2020)</h2>
+<p>If you do not care about the security of the server, you can first create a jupyer config file with:
+cd ~/.jupyter
+jupyter notebook –generate-config
+Then set the c.NotebookApp.token parameter to an empty string in the configuration file created
+c.NotebookApp.token = ‘’
+As said in comment, Setting to an empty string disables authentication altogether, which is NOT RECOMMENDED.</p>
+
+<p><a href="https://github.com/jupyter/notebook/issues/2254">from here</a></p>
+
 <h2 id="reference">Reference:</h2>
 <ul>
   <li><a href="https://techtalktone.wordpress.com/2017/03/28/running-jupyter-notebooks-on-a-remote-server-via-ssh/">» RUNNING JUPYTER NOTEBOOKS ON A REMOTE SERVER VIA SSH</a></li>
@@ -276,7 +286,7 @@ function topFunction() {
       </div>
       <div class="footer-copyright">
         <div class="container">
-          &#xA9; 2019 Everest. All rights reserved. Powered by <a href="https://github.com/zkf85">Kefeng</a>.
+          &#xA9; 2020 Everest. All rights reserved. Powered by <a href="https://github.com/zkf85">Kefeng</a>.
         </div>
       </div>
     </footer>

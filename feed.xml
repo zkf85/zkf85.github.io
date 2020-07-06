@@ -1,9 +1,144 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-11-27T20:37:53+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Everest</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
-</subtitle><entry><title type="html">This is a day with PPT!</title><link href="http://localhost:4000/2019/11/27/this-is-a-day-with-ppt!" rel="alternate" type="text/html" title="This is a day with PPT!" /><published>2019-11-27T00:00:00+08:00</published><updated>2019-11-27T00:00:00+08:00</updated><id>http://localhost:4000/2019/11/27/this-is-a-day-with-ppt!</id><content type="html" xml:base="http://localhost:4000/2019/11/27/this-is-a-day-with-ppt!">&lt;!--more--&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-04-27T14:54:13+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Everest</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
+</subtitle><entry><title type="html">How to Setup a GIT server</title><link href="http://localhost:4000/2020/04/27/how-to-setup-a-git-server" rel="alternate" type="text/html" title="How to Setup a GIT server" /><published>2020-04-27T00:00:00+08:00</published><updated>2020-04-27T00:00:00+08:00</updated><id>http://localhost:4000/2020/04/27/how-to-setup-a-git-server</id><content type="html" xml:base="http://localhost:4000/2020/04/27/how-to-setup-a-git-server">&lt;blockquote&gt;
+  &lt;p&gt;remote git repo is actually no difference from a local one. Here’s how to setup a LOCAL git server.&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;Hello world!!!!!&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-install-git&quot; id=&quot;markdown-toc-1-install-git&quot;&gt;1. Install Git&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2add-a-git-user&quot; id=&quot;markdown-toc-2add-a-git-user&quot;&gt;2.Add a “git” user&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3-create-ssh-certified-login&quot; id=&quot;markdown-toc-3-create-ssh-certified-login&quot;&gt;3. Create SSH Certified Login&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4-initialize-a-git-repo&quot; id=&quot;markdown-toc-4-initialize-a-git-repo&quot;&gt;4. Initialize a Git Repo&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#5-ban-the-shell-login-optional&quot; id=&quot;markdown-toc-5-ban-the-shell-login-optional&quot;&gt;5. Ban the Shell Login (Optional)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#6-clone-remote-repository&quot; id=&quot;markdown-toc-6-clone-remote-repository&quot;&gt;6. Clone Remote Repository&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#7-git-remote&quot; id=&quot;markdown-toc-7-git-remote&quot;&gt;7. Git Remote&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#reference&quot; id=&quot;markdown-toc-reference&quot;&gt;Reference:&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[]" /><summary type="html"></summary></entry><entry><title type="html">What is the Difference Between Using source and sh</title><link href="http://localhost:4000/2019/11/12/what-is-the-difference-between-using-source-and-sh" rel="alternate" type="text/html" title="What is the Difference Between Using source and sh" /><published>2019-11-12T00:00:00+08:00</published><updated>2019-11-12T00:00:00+08:00</updated><id>http://localhost:4000/2019/11/12/what-is-the-difference-between-using-source-and-sh</id><content type="html" xml:base="http://localhost:4000/2019/11/12/what-is-the-difference-between-using-source-and-sh">&lt;h2 id=&quot;short-answer&quot;&gt;Short Answer:&lt;/h2&gt;
+&lt;h2 id=&quot;1-install-git&quot;&gt;1. Install Git&lt;/h2&gt;
+&lt;p&gt;After setting up a linux system, e.g. Ubuntu server 16.06, install git:&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;2add-a-git-user&quot;&gt;2.Add a “git” user&lt;/h2&gt;
+&lt;p&gt;Create a git user by:&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;adduser git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;3-create-ssh-certified-login&quot;&gt;3. Create SSH Certified Login&lt;/h2&gt;
+&lt;p&gt;Collect all the public keys of possible users/machines (in their &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;id_rsa.pub&lt;/code&gt; respectively). Put all the collected public keys in file &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/git/.ssh/authorized_keys&lt;/code&gt;.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;e.g. on a remote server, type &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ssh-copy-id git@[you-git-server-ip-address]&lt;/code&gt; to automatically add the current server’s public key to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;authorized_keys&lt;/code&gt; of the git server.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;4-initialize-a-git-repo&quot;&gt;4. Initialize a Git Repo&lt;/h2&gt;
+&lt;p&gt;After logging in with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git&lt;/code&gt;, select a folder, e.g. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/sample&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cd&lt;/code&gt; into this folder and type:&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;git init &lt;span class=&quot;nt&quot;&gt;--bare&lt;/span&gt; sample.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;With the command above, Git will generate a bare repository.
+Since the Git repo on this server only aim for sharing, it doesn’t allow other users to login into the server and make changes. Therefore, we should set the owner:group of the repo as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo chown&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-R&lt;/span&gt; git:git sample.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;5-ban-the-shell-login-optional&quot;&gt;5. Ban the Shell Login (Optional)&lt;/h2&gt;
+&lt;p&gt;Based on the security concern, our git account is not supposed to allow SSH login. So we can acheive this by modifying &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/etc/passwd&lt;/code&gt; file, in which we may find:&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git:x:1001:1001:,,,:/home/git:bin/bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;we change this to:&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git:x:1001:1001:,,,:/home/git:/usr/bin/git-shell
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;6-clone-remote-repository&quot;&gt;6. Clone Remote Repository&lt;/h2&gt;
+&lt;p&gt;Now we are able to clone remote git repo(s) on you local computer by:&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone git@[you-git-server-ip]:/sample/sample.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;7-git-remote&quot;&gt;7. Git Remote&lt;/h2&gt;
+&lt;p&gt;On the remote computer, just try pull/push etc. to use the remote repository.&lt;/p&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference:&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.liaoxuefeng.com/wiki/896043488029600/899998870925664&quot;&gt;» 搭建GIT服务器&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Git&quot;]" /><category term="git" /><category term="ubuntu" /><summary type="html">remote git repo is actually no difference from a local one. Here’s how to setup a LOCAL git server.</summary></entry><entry><title type="html">How to Use Selenium to Auto Login</title><link href="http://localhost:4000/2020/04/26/how-to-use-selenium-to-auto-login" rel="alternate" type="text/html" title="How to Use Selenium to Auto Login" /><published>2020-04-26T00:00:00+08:00</published><updated>2020-04-26T00:00:00+08:00</updated><id>http://localhost:4000/2020/04/26/how-to-use-selenium-to-auto-login</id><content type="html" xml:base="http://localhost:4000/2020/04/26/how-to-use-selenium-to-auto-login">&lt;blockquote&gt;
+  &lt;blockquote&gt;
+    &lt;p&gt;使用Selenium自动化操作网页，以自动登陆（办公网）系统。&lt;/p&gt;
+  &lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-selenium-and-chromedriver&quot; id=&quot;markdown-toc-1-selenium-and-chromedriver&quot;&gt;1. Selenium and ChromeDriver&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-开机自动启动&quot; id=&quot;markdown-toc-2-开机自动启动&quot;&gt;2. 开机自动启动&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3-每12小时定时执行程序&quot; id=&quot;markdown-toc-3-每12小时定时执行程序&quot;&gt;3. 每12小时定时执行程序&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;1-selenium-and-chromedriver&quot;&gt;1. Selenium and ChromeDriver&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/qiaotong1/article/details/50541099&quot;&gt;» selenium调用chrome&lt;/a&gt;
+selenium操作chrome浏览器需要有ChromeDriver驱动来协助。&lt;/p&gt;
+
+&lt;h2 id=&quot;2-开机自动启动&quot;&gt;2. 开机自动启动&lt;/h2&gt;
+&lt;p&gt;在/etc/rc.local文件中添加：&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;su - &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;username] &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;/absolute/path/to/your/script/to/auto/run]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;3-每12小时定时执行程序&quot;&gt;3. 每12小时定时执行程序&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.cnblogs.com/thinksasa/archive/2013/06/06/3121030.html&quot;&gt;» linux 定时执行任务&lt;/a&gt;
+执行&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;crontab -e&lt;/code&gt;命令，在弹出的文件中添加下面的代码：&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;/12 &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;/absolute/path/to/your/script/to/auto/run]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;其中&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*/12&lt;/code&gt;表示每12小时执行一次。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[]" /><category term="selenium" /><summary type="html">使用Selenium自动化操作网页，以自动登陆（办公网）系统。</summary></entry><entry><title type="html">Frequently used linux commands</title><link href="http://localhost:4000/2020/03/06/frequently-used-linux-commands" rel="alternate" type="text/html" title="Frequently used linux commands" /><published>2020-03-06T00:00:00+08:00</published><updated>2020-03-06T00:00:00+08:00</updated><id>http://localhost:4000/2020/03/06/frequently-used-linux-commands</id><content type="html" xml:base="http://localhost:4000/2020/03/06/frequently-used-linux-commands">&lt;!--more--&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#check-hardware-info&quot; id=&quot;markdown-toc-check-hardware-info&quot;&gt;Check Hardware Info:&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;check-hardware-info&quot;&gt;Check Hardware Info:&lt;/h1&gt;
+
+&lt;p&gt;Check CPU:
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;lscpu&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;or check the file &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/proc/cpu&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[]" /><summary type="html"></summary></entry><entry><title type="html">How To Open A Port In CentOS 7 With Fiewalld</title><link href="http://localhost:4000/2019/12/02/how-to-open-a-port-in-centos-7-with-fiewalld" rel="alternate" type="text/html" title="How To Open A Port In CentOS 7 With Fiewalld" /><published>2019-12-02T00:00:00+08:00</published><updated>2019-12-02T00:00:00+08:00</updated><id>http://localhost:4000/2019/12/02/how-to-open-a-port-in-centos-7-with-fiewalld</id><content type="html" xml:base="http://localhost:4000/2019/12/02/how-to-open-a-port-in-centos-7-with-fiewalld">&lt;h2 id=&quot;open-specific-port&quot;&gt;Open Specific Port&lt;/h2&gt;
+
+&lt;p&gt;Opening a port in firewalld is fairly straightforward, in the below example we allow traffic in from any source IP address to TCP port 100. First we modify the persistent configuration, then we reload firewall-cmd to load this change into the running configuration.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[root@centos7 ~]# firewall-cmd --permanent --add-port=100/tcp
+success
+[root@centos7 ~]# firewall-cmd --reload
+success
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If the –permanent flag is not specified, this will only change the running configuration but will not be saved.&lt;/p&gt;
+
+&lt;p&gt;We can check the ports that are opened in the current default zone with ‘–list-ports’.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[root@centos7 ~]# firewall-cmd --list-ports
+100/tcp
+As expected we see that TCP port 100 is open.
+
+Should we wish to remove a port, we can use ‘--remove-port=’ instead.
+
+We can also open a range of ports in the same way.
+
+[root@centos7 ~]# firewall-cmd --permanent --add-port=200-300/tcp
+success
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;!--more--&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#open-specific-port&quot; id=&quot;markdown-toc-open-specific-port&quot;&gt;Open Specific Port&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#reference&quot; id=&quot;markdown-toc-reference&quot;&gt;Reference&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.rootusers.com/how-to-open-a-port-in-centos-7-with-firewalld/&quot;&gt;» Check this link&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[]" /><summary type="html">Open Specific Port Opening a port in firewalld is fairly straightforward, in the below example we allow traffic in from any source IP address to TCP port 100. First we modify the persistent configuration, then we reload firewall-cmd to load this change into the running configuration. [root@centos7 ~]# firewall-cmd --permanent --add-port=100/tcp success [root@centos7 ~]# firewall-cmd --reload success If the –permanent flag is not specified, this will only change the running configuration but will not be saved. We can check the ports that are opened in the current default zone with ‘–list-ports’. [root@centos7 ~]# firewall-cmd --list-ports 100/tcp As expected we see that TCP port 100 is open. Should we wish to remove a port, we can use ‘--remove-port=’ instead. We can also open a range of ports in the same way. [root@centos7 ~]# firewall-cmd --permanent --add-port=200-300/tcp success</summary></entry><entry><title type="html">What is the Difference Between Using source and sh</title><link href="http://localhost:4000/2019/11/12/what-is-the-difference-between-using-source-and-sh" rel="alternate" type="text/html" title="What is the Difference Between Using source and sh" /><published>2019-11-12T00:00:00+08:00</published><updated>2019-11-12T00:00:00+08:00</updated><id>http://localhost:4000/2019/11/12/what-is-the-difference-between-using-source-and-sh</id><content type="html" xml:base="http://localhost:4000/2019/11/12/what-is-the-difference-between-using-source-and-sh">&lt;h2 id=&quot;short-answer&quot;&gt;Short Answer:&lt;/h2&gt;
 &lt;p&gt;When you call source (or its alias .), you insert the script in the &lt;strong&gt;current&lt;/strong&gt; bash process. So you could read variables set by the script.&lt;/p&gt;
 
 &lt;p&gt;When you call sh, you initiate a fork (sub-process) that runs a new session of /bin/sh, which is usually a symbolic link to bash. In this case, environment variables set by the sub-script would be dropped when the sub-script finishes.&lt;/p&gt;
@@ -227,245 +362,4 @@ The above output corresponds to the 5 unique BST’s shown below:&lt;/p&gt;
   &lt;li&gt;Space: $O()$&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Algorithm&quot;]" /><category term="leetcode" /><category term="python" /><summary type="html"></summary></entry><entry><title type="html">[LeetCode] 094. Binary Tree Inorder Traversal *</title><link href="http://localhost:4000/2019/04/16/leetcode-094-binary-tree-inorder-traversal" rel="alternate" type="text/html" title="[LeetCode] 094. Binary Tree Inorder Traversal *" /><published>2019-04-16T00:00:00+08:00</published><updated>2019-04-16T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/16/leetcode-094-binary-tree-inorder-traversal</id><content type="html" xml:base="http://localhost:4000/2019/04/16/leetcode-094-binary-tree-inorder-traversal">&lt;!--more--&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#problem-medium&quot; id=&quot;markdown-toc-problem-medium&quot;&gt;Problem (Medium)&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#tree-traversals-inorder-preorder-and-postorder&quot; id=&quot;markdown-toc-tree-traversals-inorder-preorder-and-postorder&quot;&gt;Tree Traversals (Inorder, Preorder and Postorder)&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#approach-1-recursive-&quot; id=&quot;markdown-toc-approach-1-recursive-&quot;&gt;Approach 1: Recursive *&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#idea&quot; id=&quot;markdown-toc-idea&quot;&gt;Idea&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#solution&quot; id=&quot;markdown-toc-solution&quot;&gt;Solution&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#complexity&quot; id=&quot;markdown-toc-complexity&quot;&gt;Complexity&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#approach-2--iterating-method-using-stack-&quot; id=&quot;markdown-toc-approach-2--iterating-method-using-stack-&quot;&gt;Approach 2:  Iterating method using Stack *&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#idea-1&quot; id=&quot;markdown-toc-idea-1&quot;&gt;Idea&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#solution-1&quot; id=&quot;markdown-toc-solution-1&quot;&gt;Solution&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#complexity-1&quot; id=&quot;markdown-toc-complexity-1&quot;&gt;Complexity&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;problem-medium&quot;&gt;Problem (Medium)&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/binary-tree-inorder-traversal&quot;&gt;094. Binary Tree Inorder Traversal&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Given a binary tree, return the &lt;em&gt;inorder&lt;/em&gt; traversal of its nodes’ values.&lt;/p&gt;
-
-&lt;p&gt;Example:&lt;/p&gt;
-
-&lt;p&gt;Input: [1,null,2,3]&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   1
-    \
-     2
-    /
-   3
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Output: [1,3,2]
-Follow up: Recursive solution is trivial, could you do it iteratively?&lt;/p&gt;
-
-&lt;h3 id=&quot;tree-traversals-inorder-preorder-and-postorder&quot;&gt;&lt;a href=&quot;https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder/&quot;&gt;Tree Traversals (Inorder, Preorder and Postorder)&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;/public/img/2019-04-16-tree12.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Depth First Traversals:
-(a) Inorder (Left, Root, Right) : 4 2 5 1 3
-(b) Preorder (Root, Left, Right) : 1 2 4 5 3
-(c) Postorder (Left, Right, Root) : 4 5 2 3 1&lt;/p&gt;
-
-&lt;h2 id=&quot;approach-1-recursive-&quot;&gt;Approach 1: Recursive *&lt;/h2&gt;
-
-&lt;h3 id=&quot;idea&quot;&gt;Idea&lt;/h3&gt;
-&lt;p&gt;The first method to solve this problem is using recursion. This is the classical method and is straightforward. We can define a helper function to implement recursion.&lt;/p&gt;
-
-&lt;h3 id=&quot;solution&quot;&gt;Solution&lt;/h3&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;complexity&quot;&gt;Complexity&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Time: $O(n)$&lt;/li&gt;
-  &lt;li&gt;Space: $O(n)$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;approach-2--iterating-method-using-stack-&quot;&gt;Approach 2:  Iterating method using Stack *&lt;/h2&gt;
-
-&lt;h3 id=&quot;idea-1&quot;&gt;Idea&lt;/h3&gt;
-&lt;p&gt;The strategy is very similiar to the first method, the different is using stack.&lt;/p&gt;
-
-&lt;h3 id=&quot;solution-1&quot;&gt;Solution&lt;/h3&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Solution2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;inorderTraversal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
-        :type root: TreeNode
-        :rtype: List[int]
-        &quot;&quot;&quot;&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;complexity-1&quot;&gt;Complexity&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Time: $O(n)$&lt;/li&gt;
-  &lt;li&gt;Space: $O(n)$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Algorithm&quot;]" /><category term="leetcode" /><category term="python" /><summary type="html"></summary></entry><entry><title type="html">[LeetCode] 093. Restore IP Addresses</title><link href="http://localhost:4000/2019/04/16/leetcode-093-restore-ip-addresses" rel="alternate" type="text/html" title="[LeetCode] 093. Restore IP Addresses" /><published>2019-04-16T00:00:00+08:00</published><updated>2019-04-16T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/16/leetcode-093-restore-ip-addresses</id><content type="html" xml:base="http://localhost:4000/2019/04/16/leetcode-093-restore-ip-addresses">&lt;!--more--&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#problem-medium&quot; id=&quot;markdown-toc-problem-medium&quot;&gt;Problem (Medium)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#approach-1-my-solution---backtracking&quot; id=&quot;markdown-toc-approach-1-my-solution---backtracking&quot;&gt;Approach 1: (My Solution - Backtracking)&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#idea&quot; id=&quot;markdown-toc-idea&quot;&gt;Idea&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#solution&quot; id=&quot;markdown-toc-solution&quot;&gt;Solution&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#complexity&quot; id=&quot;markdown-toc-complexity&quot;&gt;Complexity&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;problem-medium&quot;&gt;Problem (Medium)&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/restore-ip-addresses&quot;&gt;093. Restore IP Addresses&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Given a string containing only digits, restore it by returning all possible valid IP address combinations.&lt;/p&gt;
-
-&lt;p&gt;Example:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Input: “25525511135”&lt;/li&gt;
-  &lt;li&gt;Output: [“255.255.11.135”, “255.255.111.35”]&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;approach-1-my-solution---backtracking&quot;&gt;Approach 1: (My Solution - Backtracking)&lt;/h2&gt;
-
-&lt;h3 id=&quot;idea&quot;&gt;Idea&lt;/h3&gt;
-&lt;p&gt;Pretty straight forward backtracking intuition.&lt;/p&gt;
-
-&lt;h3 id=&quot;solution&quot;&gt;Solution&lt;/h3&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Backtracking
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Solution1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;restoreIpAddresses&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
-        :type s: str
-        :rtype: List[str]
-        &quot;&quot;&quot;&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backtrack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;backtrack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'.'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;
-
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backtrack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:])&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backtrack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:])&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;99&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;256&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backtrack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:])&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;complexity&quot;&gt;Complexity&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Time: $O()$&lt;/li&gt;
-  &lt;li&gt;Space: $O()$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Algorithm&quot;]" /><category term="leetcode" /><category term="python" /><summary type="html"></summary></entry><entry><title type="html">[LeetCode] 092. Reverse Linked List II *</title><link href="http://localhost:4000/2019/04/12/leetcode-092-reverse-linked-list-ii" rel="alternate" type="text/html" title="[LeetCode] 092. Reverse Linked List II *" /><published>2019-04-12T00:00:00+08:00</published><updated>2019-04-12T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/12/leetcode-092-reverse-linked-list-ii</id><content type="html" xml:base="http://localhost:4000/2019/04/12/leetcode-092-reverse-linked-list-ii">&lt;!--more--&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#problem-medium&quot; id=&quot;markdown-toc-problem-medium&quot;&gt;Problem (Medium)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#approach-1-recursion-&quot; id=&quot;markdown-toc-approach-1-recursion-&quot;&gt;Approach 1: Recursion *&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#idea&quot; id=&quot;markdown-toc-idea&quot;&gt;Idea&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#solution&quot; id=&quot;markdown-toc-solution&quot;&gt;Solution&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#complexity&quot; id=&quot;markdown-toc-complexity&quot;&gt;Complexity&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;problem-medium&quot;&gt;Problem (Medium)&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/reverse-linked-list-ii&quot;&gt;092. Reverse Linked List II&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Reverse a linked list from position m to n. Do it in one-pass.&lt;/p&gt;
-
-&lt;p&gt;Note: 1 ≤ m ≤ n ≤ length of list.&lt;/p&gt;
-
-&lt;p&gt;Example:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Input: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL, m = 2, n = 4&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Output: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1-&amp;gt;4-&amp;gt;3-&amp;gt;2-&amp;gt;5-&amp;gt;NULL&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;approach-1-recursion-&quot;&gt;Approach 1: Recursion *&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/reverse-linked-list-ii/solution/&quot;&gt;LeetCode Solution&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;idea&quot;&gt;Idea&lt;/h3&gt;
-
-&lt;h3 id=&quot;solution&quot;&gt;Solution&lt;/h3&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Solution1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;reverseBetween&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
-        :type head: ListNode
-        :type m: int
-        :type n: int
-        :rtype: ListNode
-        &quot;&quot;&quot;&lt;/span&gt;
-
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;
-
-        &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;stop&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;recurseAndReverse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;nonlocal&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stop&lt;/span&gt;
-
-            &lt;span class=&quot;c1&quot;&gt;# base case. Don't proceed any further
-&lt;/span&gt;            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;
-
-            &lt;span class=&quot;c1&quot;&gt;# Keep moving the right pointer one step forward until (n == 1)
-&lt;/span&gt;            &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;
-
-            &lt;span class=&quot;c1&quot;&gt;# Keep moving left pointer to the right until we reach the proper node
-&lt;/span&gt;            &lt;span class=&quot;c1&quot;&gt;# from where the reversal is to start.
-&lt;/span&gt;            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;
-
-            &lt;span class=&quot;c1&quot;&gt;# Recurse with m and n reduced.
-&lt;/span&gt;            &lt;span class=&quot;n&quot;&gt;recurseAndReverse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-            &lt;span class=&quot;c1&quot;&gt;# In case both the pointers cross each other or become equal, we
-&lt;/span&gt;            &lt;span class=&quot;c1&quot;&gt;# stop i.e. don't swap data any further. We are done reversing at this
-&lt;/span&gt;            &lt;span class=&quot;c1&quot;&gt;# point.
-&lt;/span&gt;            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;stop&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
-
-            &lt;span class=&quot;c1&quot;&gt;# Until the boolean stop is false, swap data between the two pointers     
-&lt;/span&gt;            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;
-
-                &lt;span class=&quot;c1&quot;&gt;# Move left one step to the right.
-&lt;/span&gt;                &lt;span class=&quot;c1&quot;&gt;# The right pointer moves one step back via backtracking.
-&lt;/span&gt;                &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;           
-
-        &lt;span class=&quot;n&quot;&gt;recurseAndReverse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;complexity&quot;&gt;Complexity&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Time: $O(N)$&lt;/li&gt;
-  &lt;li&gt;Space: $O(N)$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Algorithm&quot;]" /><category term="leetcode" /><category term="python" /><category term="linked list" /><summary type="html"></summary></entry></feed>
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Algorithm&quot;]" /><category term="leetcode" /><category term="python" /><summary type="html"></summary></entry></feed>

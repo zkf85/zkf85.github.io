@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-      This is a day with PPT!
+      How To Open A Port In CentOS 7 With Fiewalld
       
       2019
     </title>
@@ -27,17 +27,17 @@
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
     <!-- Begin Jekyll SEO tag v2.5.0 -->
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="This is a day with PPT!" />
+<meta property="og:title" content="How To Open A Port In CentOS 7 With Fiewalld" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Theme based on Materialize.css for jekyll sites." />
-<meta property="og:description" content="Theme based on Materialize.css for jekyll sites." />
-<link rel="canonical" href="http://localhost:4000/2019/11/27/this-is-a-day-with-ppt!" />
-<meta property="og:url" content="http://localhost:4000/2019/11/27/this-is-a-day-with-ppt!" />
+<meta name="description" content="Open Specific Port Opening a port in firewalld is fairly straightforward, in the below example we allow traffic in from any source IP address to TCP port 100. First we modify the persistent configuration, then we reload firewall-cmd to load this change into the running configuration. [root@centos7 ~]# firewall-cmd --permanent --add-port=100/tcp success [root@centos7 ~]# firewall-cmd --reload success If the –permanent flag is not specified, this will only change the running configuration but will not be saved. We can check the ports that are opened in the current default zone with ‘–list-ports’. [root@centos7 ~]# firewall-cmd --list-ports 100/tcp As expected we see that TCP port 100 is open. Should we wish to remove a port, we can use ‘--remove-port=’ instead. We can also open a range of ports in the same way. [root@centos7 ~]# firewall-cmd --permanent --add-port=200-300/tcp success" />
+<meta property="og:description" content="Open Specific Port Opening a port in firewalld is fairly straightforward, in the below example we allow traffic in from any source IP address to TCP port 100. First we modify the persistent configuration, then we reload firewall-cmd to load this change into the running configuration. [root@centos7 ~]# firewall-cmd --permanent --add-port=100/tcp success [root@centos7 ~]# firewall-cmd --reload success If the –permanent flag is not specified, this will only change the running configuration but will not be saved. We can check the ports that are opened in the current default zone with ‘–list-ports’. [root@centos7 ~]# firewall-cmd --list-ports 100/tcp As expected we see that TCP port 100 is open. Should we wish to remove a port, we can use ‘--remove-port=’ instead. We can also open a range of ports in the same way. [root@centos7 ~]# firewall-cmd --permanent --add-port=200-300/tcp success" />
+<link rel="canonical" href="http://localhost:4000/2019/12/02/how-to-open-a-port-in-centos-7-with-fiewalld" />
+<meta property="og:url" content="http://localhost:4000/2019/12/02/how-to-open-a-port-in-centos-7-with-fiewalld" />
 <meta property="og:site_name" content="Everest" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-11-27T00:00:00+08:00" />
+<meta property="article:published_time" content="2019-12-02T00:00:00+08:00" />
 <script type="application/ld+json">
-{"url":"http://localhost:4000/2019/11/27/this-is-a-day-with-ppt!","headline":"This is a day with PPT!","dateModified":"2019-11-27T00:00:00+08:00","datePublished":"2019-11-27T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/11/27/this-is-a-day-with-ppt!"},"description":"Theme based on Materialize.css for jekyll sites.","@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"url":"http://localhost:4000/2019/12/02/how-to-open-a-port-in-centos-7-with-fiewalld","headline":"How To Open A Port In CentOS 7 With Fiewalld","dateModified":"2019-12-02T00:00:00+08:00","datePublished":"2019-12-02T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/12/02/how-to-open-a-port-in-centos-7-with-fiewalld"},"description":"Open Specific Port Opening a port in firewalld is fairly straightforward, in the below example we allow traffic in from any source IP address to TCP port 100. First we modify the persistent configuration, then we reload firewall-cmd to load this change into the running configuration. [root@centos7 ~]# firewall-cmd --permanent --add-port=100/tcp success [root@centos7 ~]# firewall-cmd --reload success If the –permanent flag is not specified, this will only change the running configuration but will not be saved. We can check the ports that are opened in the current default zone with ‘–list-ports’. [root@centos7 ~]# firewall-cmd --list-ports 100/tcp As expected we see that TCP port 100 is open. Should we wish to remove a port, we can use ‘--remove-port=’ instead. We can also open a range of ports in the same way. [root@centos7 ~]# firewall-cmd --permanent --add-port=200-300/tcp success","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -114,16 +114,16 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 
 <div class="container">
   <div id="post-info">
-  <h1>This is a day with PPT!</h1>
+  <h1>How To Open A Port In CentOS 7 With Fiewalld</h1>
   <ul class="collapsible hoverable" data-collapsible="accordion">
     <li>
       <div class="collapsible-header">
         <span>
           <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Date">date_range</i>
            
-          Nov.
+          Dec.
             
-          27, 2019 - Wednesday
+          02, 2019 - Monday
           <i id="indicate" class="right material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Show extra info">info</i>
         </span>
       </div>
@@ -142,9 +142,41 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 </div>
 <div class="row">
   <div class="col s12">
-    <!--more-->
+    <h2 id="open-specific-port">Open Specific Port</h2>
 
-<p>Hello world!!!!!</p>
+<p>Opening a port in firewalld is fairly straightforward, in the below example we allow traffic in from any source IP address to TCP port 100. First we modify the persistent configuration, then we reload firewall-cmd to load this change into the running configuration.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@centos7 ~]# firewall-cmd --permanent --add-port=100/tcp
+success
+[root@centos7 ~]# firewall-cmd --reload
+success
+</code></pre></div></div>
+
+<p>If the –permanent flag is not specified, this will only change the running configuration but will not be saved.</p>
+
+<p>We can check the ports that are opened in the current default zone with ‘–list-ports’.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@centos7 ~]# firewall-cmd --list-ports
+100/tcp
+As expected we see that TCP port 100 is open.
+
+Should we wish to remove a port, we can use ‘--remove-port=’ instead.
+
+We can also open a range of ports in the same way.
+
+[root@centos7 ~]# firewall-cmd --permanent --add-port=200-300/tcp
+success
+</code></pre></div></div>
+
+<!--more-->
+<ul id="markdown-toc">
+  <li><a href="#open-specific-port" id="markdown-toc-open-specific-port">Open Specific Port</a></li>
+  <li><a href="#reference" id="markdown-toc-reference">Reference</a></li>
+</ul>
+
+<h2 id="reference">Reference</h2>
+
+<p><a href="https://www.rootusers.com/how-to-open-a-port-in-centos-7-with-firewalld/">» Check this link</a></p>
 
 <p><br /><br /><strong><em>KF</em></strong></p>
 
@@ -158,8 +190,8 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 <div id="disqus_thread"></div>
 <script>
   var disqus_config = function () {
-    this.page.url = "http://localhost:4000/2019/11/27/this-is-a-day-with-ppt!";
-    this.page.identifier = "/2019/11/27/this-is-a-day-with-ppt!";
+    this.page.url = "http://localhost:4000/2019/12/02/how-to-open-a-port-in-centos-7-with-fiewalld";
+    this.page.identifier = "/2019/12/02/how-to-open-a-port-in-centos-7-with-fiewalld";
   };
   (function() { // DON'T EDIT BELOW THIS LINE
     var d = document, s = d.createElement('script');
@@ -210,7 +242,7 @@ function topFunction() {
       </div>
       <div class="footer-copyright">
         <div class="container">
-          &#xA9; 2019 Everest. All rights reserved. Powered by <a href="https://github.com/zkf85">Kefeng</a>.
+          &#xA9; 2020 Everest. All rights reserved. Powered by <a href="https://github.com/zkf85">Kefeng</a>.
         </div>
       </div>
     </footer>

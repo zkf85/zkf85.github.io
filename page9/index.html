@@ -118,6 +118,78 @@ Remember that after enabling this, you have to enter the real dollar sings with 
   <div class="col s12">
     <div class="card hoverable">
       <div class="card-content">
+        <!--<span id="post-title" class="card-title">[CS229] Lecture 6 Notes - Support Vector Machines I</span>
+        -->
+        <a id="post-title" class="card-title" href="/2019/03/05/cs229-lecture-6-7-svm">
+        [CS229] Lecture 6 Notes - Support Vector Machines I
+        </a>
+        
+        <p id="post-date">
+          <i class="material-icons">date_range</i>
+           
+          Mar.
+            
+          05, 2019 - Tuesday
+
+        </p>
+        <p id="post-content"><blockquote>
+  <ul>
+    <li>Introduce Support Vector Machines (SVM)</li>
+    <li>Created on 02/27/2019</li>
+    <li>Updated on 03/04/2019</li>
+    <li>Updated on 03/05/2019</li>
+  </ul>
+</blockquote>
+
+</p>
+      </div>
+      <div class="card-action">
+        <a href="/2019/03/05/cs229-lecture-6-7-svm">
+          Read More 
+        <i class="material-icons">keyboard_arrow_down</i></a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col s12">
+    <div class="card hoverable">
+      <div class="card-content">
+        <!--<span id="post-title" class="card-title">[CS229] Properties of Trace and Matrix Derivatives</span>
+        -->
+        <a id="post-title" class="card-title" href="/2019/03/04/cs229-matrix-derivatives">
+        [CS229] Properties of Trace and Matrix Derivatives
+        </a>
+        
+        <p id="post-date">
+          <i class="material-icons">date_range</i>
+           
+          Mar.
+            
+          04, 2019 - Monday
+
+        </p>
+        <p id="post-content"><blockquote>
+  <p>The trace properties and the matrix derivatives.</p>
+</blockquote>
+
+<li><a href="/public/cs229/matrix_prop.pdf" style="color: gray"><i class="material-icons pdf">picture_as_pdf</i>Properties of trace and matrix derivatives - [Stanford] John Duchi</a></li>
+
+<li><a href="/public/cs229/matrix-calculus-illinois.pdf" style="color: gray"><i class="material-icons pdf">picture_as_pdf</i>Matrix Calculus - Notes on Derivatives of a Trace - [Illinois] Johannes Traa</a></li>
+
+<p><br /><br /><strong><em>KF</em></strong></p>
+</p>
+      </div>
+      <div class="card-action">
+        <a href="/2019/03/04/cs229-matrix-derivatives">
+          Read More 
+        <i class="material-icons">keyboard_arrow_down</i></a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col s12">
+    <div class="card hoverable">
+      <div class="card-content">
         <!--<span id="post-title" class="card-title">What is DOM?</span>
         -->
         <a id="post-title" class="card-title" href="/2019/02/28/what-is-dom">
@@ -385,87 +457,6 @@ Remember that after enabling this, you have to enter the real dollar sings with 
       </div>
       <div class="card-action">
         <a href="/2019/01/31/np-shuffle-vs-permutation">
-          Read More 
-        <i class="material-icons">keyboard_arrow_down</i></a>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col s12">
-    <div class="card hoverable">
-      <div class="card-content">
-        <!--<span id="post-title" class="card-title">How to Force Keras to use CPU to Run Script?</span>
-        -->
-        <a id="post-title" class="card-title" href="/2019/01/23/how-to-force-keras-use-cpu">
-        How to Force Keras to use CPU to Run Script?
-        </a>
-        
-        <p id="post-date">
-          <i class="material-icons">date_range</i>
-           
-          Jan.
-            
-          23, 2019 - Wednesday
-
-        </p>
-        <p id="post-content"><blockquote>
-  <p><strong>The reason for such a demand:</strong></p>
-
-  <p>My main training program was using the GPU fully. But I needed to get a prediction with another previously trained model urgently. I tried to use the GPU but I got OOM. Therefore, using CPU for the predicting job should be a good solution, and it did solve the problem!</p>
-
-  <p>Generally there are two ways: a short/lazy one and a lengthy but graceful one.</p>
-</blockquote>
-
-<h2 id="option-i">Option I:</h2>
-<p>If you want to force Keras to use CPU</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">os</span>
-<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">"CUDA_DEVICE_ORDER"</span><span class="p">]</span> <span class="o">=</span> <span class="s">"PCI_BUS_ID"</span> 
-<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">"CUDA_VISIBLE_DEVICES"</span><span class="p">]</span> <span class="o">=</span> <span class="s">""</span>
-</code></pre></div></div>
-<p>before Keras / Tensorflow is imported.</p>
-
-</p>
-      </div>
-      <div class="card-action">
-        <a href="/2019/01/23/how-to-force-keras-use-cpu">
-          Read More 
-        <i class="material-icons">keyboard_arrow_down</i></a>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col s12">
-    <div class="card hoverable">
-      <div class="card-content">
-        <!--<span id="post-title" class="card-title">How to Add a Table of Content to my Jekyll Blog?</span>
-        -->
-        <a id="post-title" class="card-title" href="/2019/01/23/how-to-add-table-of-content-in-jekyll">
-        How to Add a Table of Content to my Jekyll Blog?
-        </a>
-        
-        <p id="post-date">
-          <i class="material-icons">date_range</i>
-           
-          Jan.
-            
-          23, 2019 - Wednesday
-
-        </p>
-        <p id="post-content"><p>In the post, simply add:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* TOC
-{:toc} 
-</code></pre></div></div>
-<p>in the post.</p>
-
-<ul>
-  <li><a href="http://www.seanbuscay.com/blog/jekyll-toc-markdown/">» How I Add a Table of Contents to my Jekyll Blog Written in Markdown</a></li>
-  <li><a href="https://blog.webjeda.com/jekyll-toc/#how-to-add-toc-for-jekyll-posts">» Jekyll Table Of Contents - Wikipedia Look!</a></li>
-</ul>
-
-</p>
-      </div>
-      <div class="card-action">
-        <a href="/2019/01/23/how-to-add-table-of-content-in-jekyll">
           Read More 
         <i class="material-icons">keyboard_arrow_down</i></a>
       </div>

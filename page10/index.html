@@ -118,6 +118,87 @@ Remember that after enabling this, you have to enter the real dollar sings with 
   <div class="col s12">
     <div class="card hoverable">
       <div class="card-content">
+        <!--<span id="post-title" class="card-title">How to Force Keras to use CPU to Run Script?</span>
+        -->
+        <a id="post-title" class="card-title" href="/2019/01/23/how-to-force-keras-use-cpu">
+        How to Force Keras to use CPU to Run Script?
+        </a>
+        
+        <p id="post-date">
+          <i class="material-icons">date_range</i>
+           
+          Jan.
+            
+          23, 2019 - Wednesday
+
+        </p>
+        <p id="post-content"><blockquote>
+  <p><strong>The reason for such a demand:</strong></p>
+
+  <p>My main training program was using the GPU fully. But I needed to get a prediction with another previously trained model urgently. I tried to use the GPU but I got OOM. Therefore, using CPU for the predicting job should be a good solution, and it did solve the problem!</p>
+
+  <p>Generally there are two ways: a short/lazy one and a lengthy but graceful one.</p>
+</blockquote>
+
+<h2 id="option-i">Option I:</h2>
+<p>If you want to force Keras to use CPU</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">"CUDA_DEVICE_ORDER"</span><span class="p">]</span> <span class="o">=</span> <span class="s">"PCI_BUS_ID"</span> 
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">"CUDA_VISIBLE_DEVICES"</span><span class="p">]</span> <span class="o">=</span> <span class="s">""</span>
+</code></pre></div></div>
+<p>before Keras / Tensorflow is imported.</p>
+
+</p>
+      </div>
+      <div class="card-action">
+        <a href="/2019/01/23/how-to-force-keras-use-cpu">
+          Read More 
+        <i class="material-icons">keyboard_arrow_down</i></a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col s12">
+    <div class="card hoverable">
+      <div class="card-content">
+        <!--<span id="post-title" class="card-title">How to Add a Table of Content to my Jekyll Blog?</span>
+        -->
+        <a id="post-title" class="card-title" href="/2019/01/23/how-to-add-table-of-content-in-jekyll">
+        How to Add a Table of Content to my Jekyll Blog?
+        </a>
+        
+        <p id="post-date">
+          <i class="material-icons">date_range</i>
+           
+          Jan.
+            
+          23, 2019 - Wednesday
+
+        </p>
+        <p id="post-content"><p>In the post, simply add:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* TOC
+{:toc} 
+</code></pre></div></div>
+<p>in the post.</p>
+
+<ul>
+  <li><a href="http://www.seanbuscay.com/blog/jekyll-toc-markdown/">» How I Add a Table of Contents to my Jekyll Blog Written in Markdown</a></li>
+  <li><a href="https://blog.webjeda.com/jekyll-toc/#how-to-add-toc-for-jekyll-posts">» Jekyll Table Of Contents - Wikipedia Look!</a></li>
+</ul>
+
+</p>
+      </div>
+      <div class="card-action">
+        <a href="/2019/01/23/how-to-add-table-of-content-in-jekyll">
+          Read More 
+        <i class="material-icons">keyboard_arrow_down</i></a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col s12">
+    <div class="card hoverable">
+      <div class="card-content">
         <!--<span id="post-title" class="card-title">How to Add a Scroll Back to Top Button?</span>
         -->
         <a id="post-title" class="card-title" href="/2019/01/23/how-to-add-back-to-top-button">
@@ -392,68 +473,6 @@ Remember that after enabling this, you have to enter the real dollar sings with 
       </div>
       <div class="card-action">
         <a href="/2019/01/14/python-random-seed">
-          Read More 
-        <i class="material-icons">keyboard_arrow_down</i></a>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col s12">
-    <div class="card hoverable">
-      <div class="card-content">
-        <!--<span id="post-title" class="card-title">Study Plan and Checklist in the Next 3 Months</span>
-        -->
-        <a id="post-title" class="card-title" href="/2018/12/28/3-month-study-plan">
-        Study Plan and Checklist in the Next 3 Months
-        </a>
-        
-        <p id="post-date">
-          <i class="material-icons">date_range</i>
-           
-          Dec.
-            
-          28, 2018 - Friday
-
-        </p>
-        <p id="post-content"><blockquote>
-  <p>Here is a planning for the Maching Learning/Programming Basics knowledge study in the next three month. The plan basically covers Stanford CS229, CS231 and MIT 6.006.</p>
-</blockquote>
-
-</p>
-      </div>
-      <div class="card-action">
-        <a href="/2018/12/28/3-month-study-plan">
-          Read More 
-        <i class="material-icons">keyboard_arrow_down</i></a>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col s12">
-    <div class="card hoverable">
-      <div class="card-content">
-        <!--<span id="post-title" class="card-title">Pandas - Quick Start</span>
-        -->
-        <a id="post-title" class="card-title" href="/2018/12/28/pandas-quick-start">
-        Pandas - Quick Start
-        </a>
-        
-        <p id="post-date">
-          <i class="material-icons">date_range</i>
-           
-          Dec.
-            
-          28, 2018 - Friday
-
-        </p>
-        <p id="post-content"><blockquote>
-  <p><a href="https://pandas.pydata.org/index.html"><em>pandas</em></a> is an open source,  BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the <strong>Python</strong> programming language.</p>
-</blockquote>
-
-</p>
-      </div>
-      <div class="card-action">
-        <a href="/2018/12/28/pandas-quick-start">
           Read More 
         <i class="material-icons">keyboard_arrow_down</i></a>
       </div>

@@ -1,5 +1,39 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-04-27T14:54:13+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Everest</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
-</subtitle><entry><title type="html">How to Setup a GIT server</title><link href="http://localhost:4000/2020/04/27/how-to-setup-a-git-server" rel="alternate" type="text/html" title="How to Setup a GIT server" /><published>2020-04-27T00:00:00+08:00</published><updated>2020-04-27T00:00:00+08:00</updated><id>http://localhost:4000/2020/04/27/how-to-setup-a-git-server</id><content type="html" xml:base="http://localhost:4000/2020/04/27/how-to-setup-a-git-server">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-07-06T21:41:23+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Everest</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
+</subtitle><entry><title type="html">PPT Resolution Problem with 3D Format</title><link href="http://localhost:4000/2020/07/06/ppt-resolution-problem-with-3d-format" rel="alternate" type="text/html" title="PPT Resolution Problem with 3D Format" /><published>2020-07-06T00:00:00+08:00</published><updated>2020-07-06T00:00:00+08:00</updated><id>http://localhost:4000/2020/07/06/ppt-resolution-problem-with-3d-format</id><content type="html" xml:base="http://localhost:4000/2020/07/06/ppt-resolution-problem-with-3d-format">&lt;p&gt;PPT can normally export as PDF with very high resolution (the vectorized file). However, I encounter a weird problem today that cannot export a high resolution PDF. After “debugging” and “doing experiments”, I’ve finally found the problem. It’s because of the 3D format settings.&lt;/p&gt;
+
+&lt;!--more--&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#the-problem&quot; id=&quot;markdown-toc-the-problem&quot;&gt;The Problem:&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#solution&quot; id=&quot;markdown-toc-solution&quot;&gt;Solution:&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;#To Make a long story short: Don’t use 3D formatting, if you want a vetor-quality PDF.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-problem&quot;&gt;The Problem:&lt;/h2&gt;
+&lt;p&gt;According to the need of a recent task, I need to design and draw a figure for a proposal. I did all the procedures as normal, but in the last step. I got the problem as mentioned above, the exported PDF file was with unacceptable quality. It looks obvious that the vector objects in the PPT was rasterized before saving. But I don’t know why.&lt;/p&gt;
+
+&lt;h2 id=&quot;solution&quot;&gt;Solution:&lt;/h2&gt;
+&lt;p&gt;After at least one hour of various trials and analysis, I finally found that the PPT object will get rasterized when the &lt;strong&gt;3D format&lt;/strong&gt; is added to it.&lt;/p&gt;
+
+&lt;p&gt;Therefore, BEWARE when you have to use 3D format to get some special designs when you using PPT, remember that it will sacrafice the vector property of the objects.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Design&quot;]" /><category term="ppt" /><summary type="html">PPT can normally export as PDF with very high resolution (the vectorized file). However, I encounter a weird problem today that cannot export a high resolution PDF. After “debugging” and “doing experiments”, I’ve finally found the problem. It’s because of the 3D format settings.</summary></entry><entry><title type="html">Setup Checklist on Windows PC</title><link href="http://localhost:4000/2020/04/28/setup-checklist-on-windows-pc" rel="alternate" type="text/html" title="Setup Checklist on Windows PC" /><published>2020-04-28T00:00:00+08:00</published><updated>2020-04-28T00:00:00+08:00</updated><id>http://localhost:4000/2020/04/28/setup-checklist-on-windows-pc</id><content type="html" xml:base="http://localhost:4000/2020/04/28/setup-checklist-on-windows-pc">&lt;blockquote&gt;
+  &lt;p&gt;Just got a new working laptop with Windows 10. Here make a checklist of essential tools and software to be installed and configured on it.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#cygwin&quot; id=&quot;markdown-toc-cygwin&quot;&gt;Cygwin&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#mobaxterm&quot; id=&quot;markdown-toc-mobaxterm&quot;&gt;MobaXTerm&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;cygwin&quot;&gt;Cygwin&lt;/h2&gt;
+&lt;p&gt;Get Linux feeling on windows. Download &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;setup-x86_64.exe&lt;/code&gt; from it’s offical website, then use the tsinghua TUNA url: &lt;a href=&quot;https://mirrors.tuna.tsinghua.edu.cn/cygwin&quot;&gt;https://mirrors.tuna.tsinghua.edu.cn/cygwin&lt;/a&gt; as the download source.&lt;/p&gt;
+
+&lt;h2 id=&quot;mobaxterm&quot;&gt;MobaXTerm&lt;/h2&gt;
+&lt;p&gt;SSH client. It’s free, it’s good.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Windows&quot;]" /><category term="windows" /><category term="checklist" /><summary type="html">Just got a new working laptop with Windows 10. Here make a checklist of essential tools and software to be installed and configured on it.</summary></entry><entry><title type="html">How to Setup a GIT server</title><link href="http://localhost:4000/2020/04/27/how-to-setup-a-git-server" rel="alternate" type="text/html" title="How to Setup a GIT server" /><published>2020-04-27T00:00:00+08:00</published><updated>2020-04-27T00:00:00+08:00</updated><id>http://localhost:4000/2020/04/27/how-to-setup-a-git-server</id><content type="html" xml:base="http://localhost:4000/2020/04/27/how-to-setup-a-git-server">&lt;blockquote&gt;
   &lt;p&gt;remote git repo is actually no difference from a local one. Here’s how to setup a LOCAL git server.&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -11,7 +45,10 @@
   &lt;li&gt;&lt;a href=&quot;#4-initialize-a-git-repo&quot; id=&quot;markdown-toc-4-initialize-a-git-repo&quot;&gt;4. Initialize a Git Repo&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#5-ban-the-shell-login-optional&quot; id=&quot;markdown-toc-5-ban-the-shell-login-optional&quot;&gt;5. Ban the Shell Login (Optional)&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#6-clone-remote-repository&quot; id=&quot;markdown-toc-6-clone-remote-repository&quot;&gt;6. Clone Remote Repository&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#7-git-remote&quot; id=&quot;markdown-toc-7-git-remote&quot;&gt;7. Git Remote&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#7-git-remote&quot; id=&quot;markdown-toc-7-git-remote&quot;&gt;7. Git Remote&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#71-how-to-upload-a-local-directory-to-remote-repo&quot; id=&quot;markdown-toc-71-how-to-upload-a-local-directory-to-remote-repo&quot;&gt;7.1 How to upload a local directory to remote repo&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#reference&quot; id=&quot;markdown-toc-reference&quot;&gt;Reference:&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -52,11 +89,13 @@ Since the Git repo on this server only aim for sharing, it doesn’t allow other
 
 &lt;h2 id=&quot;6-clone-remote-repository&quot;&gt;6. Clone Remote Repository&lt;/h2&gt;
 &lt;p&gt;Now we are able to clone remote git repo(s) on you local computer by:&lt;/p&gt;
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone git@[you-git-server-ip]:/sample/sample.git
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone git@[you-git-server-ip]:sample/sample.git
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;7-git-remote&quot;&gt;7. Git Remote&lt;/h2&gt;
 &lt;p&gt;On the remote computer, just try pull/push etc. to use the remote repository.&lt;/p&gt;
+
+&lt;h3 id=&quot;71-how-to-upload-a-local-directory-to-remote-repo&quot;&gt;7.1 How to upload a local directory to remote repo&lt;/h3&gt;
 
 &lt;h2 id=&quot;reference&quot;&gt;Reference:&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://www.liaoxuefeng.com/wiki/896043488029600/899998870925664&quot;&gt;» 搭建GIT服务器&lt;/a&gt;&lt;/p&gt;
@@ -230,136 +269,4 @@ success
 
 &lt;!--more--&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Operating Oystem&quot;]" /><category term="shell" /><category term="bash" /><category term="prompt color" /><summary type="html">How to Customize Bash Colors and Content in Linux Terminal Prompt » How to Customize Bash Colors and Content in Linux Terminal Prompt</summary></entry><entry><title type="html">linux-system-administration</title><link href="http://localhost:4000/2019/10/26/linux-system-administration" rel="alternate" type="text/html" title="linux-system-administration" /><published>2019-10-26T00:00:00+08:00</published><updated>2019-10-26T00:00:00+08:00</updated><id>http://localhost:4000/2019/10/26/linux-system-administration</id><content type="html" xml:base="http://localhost:4000/2019/10/26/linux-system-administration">&lt;blockquote&gt;
-  &lt;p&gt;Haven’t posted anything for a long time. Let the notes go on.&lt;/p&gt;
-
-  &lt;p&gt;In this post, I’d collect all (if possible) necessary knowledge and information about linux account and permission administration.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;!--more--&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#understanding-linux-file-permissions&quot; id=&quot;markdown-toc-understanding-linux-file-permissions&quot;&gt;Understanding Linux File Permissions&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#1-basic-file-permission&quot; id=&quot;markdown-toc-1-basic-file-permission&quot;&gt;1. Basic File Permission&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#2-permission-types&quot; id=&quot;markdown-toc-2-permission-types&quot;&gt;2. Permission Types&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#user-administration&quot; id=&quot;markdown-toc-user-administration&quot;&gt;User Administration&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;understanding-linux-file-permissions&quot;&gt;Understanding Linux File Permissions&lt;/h2&gt;
-
-&lt;p&gt;In linux system, granting proper permissions to files and directories is crucial. This part is an overview of assigning and modifying permissions with examples.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.linux.com/tutorials/understanding-linux-file-permissions/&quot;&gt;» Understanding Linux File Permission&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;1-basic-file-permission&quot;&gt;1. Basic File Permission&lt;/h3&gt;
-&lt;p&gt;Each file and directory has 3 user based permission groups:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;owner&lt;/strong&gt; - the permissions apply only the owner of the file or directory, will not affect actions of other users;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;group&lt;/strong&gt; - the permissions applys only to the group that has been assigned to the file or directory, will not affect actions of other users;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;all users&lt;/strong&gt; - the permissions apply to &lt;strong&gt;all other users&lt;/strong&gt; on the system, this is the permission group that you want to &lt;em&gt;watch the most&lt;/em&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;2-permission-types&quot;&gt;2. Permission Types&lt;/h3&gt;
-&lt;p&gt;Each file or directory has 3 basic permission types:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;read&lt;/strong&gt; - permission refers to a user’s capability to read the content of the file;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;write&lt;/strong&gt; - permission refers to a user’s capability to write or modify a file or directory;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;execute&lt;/strong&gt; - permission affects a user’s capability to execute a file or &lt;strong&gt;view the contents of a directory&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;You can simply using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ls -l&lt;/code&gt; to view the permissions of the files and directories in the working directory. The output is like:&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;drwxrwxr-x+ 28 root  admin   896 Oct  9 22:21 Applications
-drwxr-xr-x  68 root  wheel  2176 Oct 10 10:31 Library
-drwxr-xr-x@  8 root  wheel   256 Sep 30 04:23 System
-drwxr-xr-x   5 root  admin   160 Sep 30 04:22 Users
-drwxr-xr-x   3 root  wheel    96 Oct 24 21:22 Volumes
--rw-r--r--@  1 kefengzhu  staff   1160859 Jan 13  2019 1404.7828.pdf
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;user-administration&quot;&gt;User Administration&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.guru99.com/linux-admin.html&quot;&gt;» Tutorial: adduser, usermod, userdel&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Operating System&quot;]" /><category term="linux" /><category term="permission" /><summary type="html">Haven’t posted anything for a long time. Let the notes go on. In this post, I’d collect all (if possible) necessary knowledge and information about linux account and permission administration.</summary></entry><entry><title type="html">[LeetCode] 095. Unique Binary Search Trees II *</title><link href="http://localhost:4000/2019/04/16/leetcode-095-unique-binary-search-trees-ii" rel="alternate" type="text/html" title="[LeetCode] 095. Unique Binary Search Trees II *" /><published>2019-04-16T00:00:00+08:00</published><updated>2019-04-16T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/16/leetcode-095-unique-binary-search-trees-ii</id><content type="html" xml:base="http://localhost:4000/2019/04/16/leetcode-095-unique-binary-search-trees-ii">&lt;!--more--&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#problem-medium&quot; id=&quot;markdown-toc-problem-medium&quot;&gt;Problem (Medium)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#approach-1-recursive-solution-&quot; id=&quot;markdown-toc-approach-1-recursive-solution-&quot;&gt;Approach 1: Recursive Solution *&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#idea&quot; id=&quot;markdown-toc-idea&quot;&gt;Idea&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#solution&quot; id=&quot;markdown-toc-solution&quot;&gt;Solution&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#complexity&quot; id=&quot;markdown-toc-complexity&quot;&gt;Complexity&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;problem-medium&quot;&gt;Problem (Medium)&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/unique-binary-search-trees-ii&quot;&gt;095. Unique Binary Search Trees II&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Given an integer n, generate all structurally unique &lt;strong&gt;BST&lt;/strong&gt;’s (binary search trees) that store values 1 … n.&lt;/p&gt;
-
-&lt;p&gt;Example:&lt;/p&gt;
-
-&lt;p&gt;Input: 3
-Output:
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[
-  [1,null,3,2],
-  [3,2,null,1],
-  [3,1,null,null,2],
-  [2,1,3],
-  [1,null,2,null,3]
-]&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Explanation:
-The above output corresponds to the 5 unique BST’s shown below:&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   1         3     3      2      1
-    \       /     /      / \      \
-     3     2     1      1   3      2
-    /     /       \                 \
-   2     1         2                 3
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;approach-1-recursive-solution-&quot;&gt;Approach 1: Recursive Solution *&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/unique-binary-search-trees-ii/discuss/31592/Recursive-python-solution&quot;&gt;Python Solution Recursive&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;idea&quot;&gt;Idea&lt;/h3&gt;
-
-&lt;h3 id=&quot;solution&quot;&gt;Solution&lt;/h3&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;generateTrees&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
-        :type n: int
-        :rtype: List[TreeNode]
-        &quot;&quot;&quot;&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dfs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;dfs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;start&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;xrange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dfs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dfs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;complexity&quot;&gt;Complexity&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Time: $O()$&lt;/li&gt;
-  &lt;li&gt;Space: $O()$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Algorithm&quot;]" /><category term="leetcode" /><category term="python" /><summary type="html"></summary></entry></feed>
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Operating Oystem&quot;]" /><category term="shell" /><category term="bash" /><category term="prompt color" /><summary type="html">How to Customize Bash Colors and Content in Linux Terminal Prompt » How to Customize Bash Colors and Content in Linux Terminal Prompt</summary></entry></feed>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-      RNN LSTM - Notes
+      Python Logging Export to File
       
       2020
     </title>
@@ -27,17 +27,17 @@
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
     <!-- Begin Jekyll SEO tag v2.5.0 -->
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="RNN LSTM - Notes" />
+<meta property="og:title" content="Python Logging Export to File" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="“Deep Learning” Reading note" />
-<meta property="og:description" content="“Deep Learning” Reading note" />
-<link rel="canonical" href="http://localhost:4000/2018/06/12/RNN-LSTM" />
-<meta property="og:url" content="http://localhost:4000/2018/06/12/RNN-LSTM" />
+<meta name="description" content="As for the need for logging from Python program, here is a memo for the use of the Python built-in module logging" />
+<meta property="og:description" content="As for the need for logging from Python program, here is a memo for the use of the Python built-in module logging" />
+<link rel="canonical" href="http://localhost:4000/2020/09/01/python-logging-export-to-file" />
+<meta property="og:url" content="http://localhost:4000/2020/09/01/python-logging-export-to-file" />
 <meta property="og:site_name" content="Everest" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-06-12T14:00:00+08:00" />
+<meta property="article:published_time" content="2020-09-01T00:00:00+08:00" />
 <script type="application/ld+json">
-{"url":"http://localhost:4000/2018/06/12/RNN-LSTM","headline":"RNN LSTM - Notes","dateModified":"2018-06-12T14:00:00+08:00","datePublished":"2018-06-12T14:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2018/06/12/RNN-LSTM"},"description":"“Deep Learning” Reading note","@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"url":"http://localhost:4000/2020/09/01/python-logging-export-to-file","headline":"Python Logging Export to File","dateModified":"2020-09-01T00:00:00+08:00","datePublished":"2020-09-01T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2020/09/01/python-logging-export-to-file"},"description":"As for the need for logging from Python program, here is a memo for the use of the Python built-in module logging","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -114,16 +114,16 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 
 <div class="container">
   <div id="post-info">
-  <h1>RNN LSTM - Notes</h1>
+  <h1>Python Logging Export to File</h1>
   <ul class="collapsible hoverable" data-collapsible="accordion">
     <li>
       <div class="collapsible-header">
         <span>
           <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Date">date_range</i>
            
-          June
+          Sept.
             
-          12, 2018 - Tuesday
+          01, 2020 - Tuesday
           <i id="indicate" class="right material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Show extra info">info</i>
         </span>
       </div>
@@ -133,11 +133,7 @@ Remember that after enabling this, you have to enter the real dollar sings with 
           
           
           
-          <a href="/categories#deep-learning_cap" target="_blank"><div class="chip">Deep Learning</div></a>
-          
-          
-          
-          <a href="/categories#notes_cap" target="_blank"><div class="chip">Notes</div></a>
+          <a href="/categories#python_cap" target="_blank"><div class="chip">Python</div></a>
           
         </span>
         <span>
@@ -145,15 +141,11 @@ Remember that after enabling this, you have to enter the real dollar sings with 
           
           
           
-          <a href="/tags#rnn" target="_blank"><div class="chip">rnn</div></a>
+          <a href="/tags#python" target="_blank"><div class="chip">python</div></a>
           
           
           
-          <a href="/tags#lstm" target="_blank"><div class="chip">lstm</div></a>
-          
-          
-          
-          <a href="/tags#deep-learning" target="_blank"><div class="chip">deep learning</div></a>
+          <a href="/tags#logging" target="_blank"><div class="chip">logging</div></a>
           
         </span>
       </div>
@@ -163,120 +155,41 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 <div class="row">
   <div class="col s12">
     <blockquote>
-  <p><em>“Deep Learning”</em> Reading note</p>
+  <p>As for the need for logging from Python program, here is a memo for the use of the Python built-in module <code class="language-plaintext highlighter-rouge">logging</code></p>
 </blockquote>
 
 <!--more-->
-
-<h3 id="10-sequence-modeling-recurrent-and-recursive-nets">10. Sequence Modeling: Recurrent and Recursive nets</h3>
-
-<h4 id="101-unfolding-computational-graphs">10.1 Unfolding Computational Graphs</h4>
-
-<ul>
-  <li>
-    <p><strong>What is a Computational Graph?</strong></p>
-
-    <p>A computational graph is a way to formalize the structure of a set of computations.</p>
-  </li>
+<ul id="markdown-toc">
+  <li><a href="#out-of-the-box-python-snippet" id="markdown-toc-out-of-the-box-python-snippet">Out-of-the-Box Python snippet</a></li>
+  <li><a href="#reference" id="markdown-toc-reference">Reference:</a></li>
 </ul>
 
-<p>Considering a classical form of a dynamic system:</p>
+<h2 id="out-of-the-box-python-snippet">Out-of-the-Box Python snippet</h2>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">logging</span>
 
-<script type="math/tex; mode=display">s^{(t)} = f \left( s^{(t-1)} ; \theta \right), \tag{10.1}</script>
+<span class="n">log_save_dir</span> <span class="o">=</span> <span class="s">'/home'</span>
+<span class="c1"># Setup Logging
+# create a logger
+</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">KFZ</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="n">formatter</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s">'</span><span class="si">%(asctime)</span><span class="s">s - </span><span class="si">%(name)</span><span class="s">s - </span><span class="si">%(message)</span><span class="s">s'</span><span class="p">)</span>
+<span class="c1"># set file handler
+</span><span class="n">handler</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">FileHandler</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">log_save_dir</span><span class="p">,</span> <span class="s">'log.txt'</span><span class="p">))</span>
+<span class="n">handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">handler</span><span class="p">)</span>
+<span class="c1"># set stream handler
+</span><span class="n">console</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">()</span>
+<span class="n">console</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">console</span><span class="p">)</span>
+</code></pre></div></div>
 
-<p>where $s$ is called the state of the system. And it is a recurrent.</p>
+<h2 id="reference">Reference:</h2>
+<p><a href="https://docs.python.org/3/library/logging.html">Official Doc</a>
+<a href="https://www.jianshu.com/p/feb86c06c4f4">https://www.jianshu.com/p/feb86c06c4f4</a>
+<a href="https://www.cnblogs.com/liujiacai/p/7804848.html">https://www.cnblogs.com/liujiacai/p/7804848.html</a></p>
 
-<p>For a finite number of $\tau$ steps, we can unfold the equation. For example, when $\tau = 3$, we have</p>
+<p><br /><br /><strong><em>KF</em></strong></p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{eqnarray*}
-s^{(3)} &=& f\left( s^{(2)}; \theta \right) \tag{10.2} \\
- &=& f\left(f\left( s^{(1)}; \theta \right);\theta\right) \tag{10.3}
- \end{eqnarray*} %]]></script>
-
-<p>Another example, considering a dynamic system driven by an external signal $x^{(t)}$,
-<script type="math/tex">s^{(t)} = f\left( s^{(t-1)}, x^{(t)};\theta \right) \tag{10.4}</script></p>
-
-<p>To indicate the state  is the hidden units of the network, we rewrite equation 10.4 using $h$ to represent the state,
-<script type="math/tex">h^{(t)} = f\left(h^{(t-1)}, x^{(t)}; \theta \right) \tag{10.5}</script></p>
-
-<p>We can represent the unfolded recurrence after $t$ steps with a function $g^{(t)}$:
-<script type="math/tex">% <![CDATA[
-\begin{eqnarray*}
-h^{(t)} &=& g^{(t)}\left(x^{(t)}, x^{(t-1)}, x^{(t-2)}, ..., x^{(2)}, x^{(1)}\right) \tag{10.6} \\
-&=& f\left(h^{(t-1)}, x^{(t)};\theta\right). \tag{10.7}
-\end{eqnarray*} %]]></script></p>
-
-<p>The function $ g^{(t)} $ takes the whole past sequence $\left(x^{(t)}, x^{(t-1)}, x^{(t-2)}, …, x^{(2)}, x^{(1)} \right)$ as input and produces the current state. But the unfolded recurrent structure allows us to factorize the function into repeated application of a function $f$, the unfolding process introduces two major advantages:</p>
-
-<ul>
-  <li>
-    <ol>
-      <li>The learned model always has the same input size, which specified in terms of transition from one state to another.</li>
-    </ol>
-  </li>
-  <li>
-    <ol>
-      <li>It is possible to use the <em>same</em> transition function $f$ with the same parameters at every time step.</li>
-    </ol>
-  </li>
-</ul>
-
-<h4 id="102-recurrent-neural-networks-循环神经网络">10.2 Recurrent Neural Networks （循环神经网络）</h4>
-<blockquote>
-  <p>Based on the basic idea of parameter-sharing, we can build a variety of neural networks. 3 typical designs are presented in the book:</p>
-</blockquote>
-
-<ul>
-  <li>
-    <ol>
-      <li>RNN produce an output at each time step, and have connections between hidden unit. (Page 368, fig. 10.3)</li>
-    </ol>
-  </li>
-  <li>
-    <ol>
-      <li>RNN produce an output at each time step and have connections from <em>the output at one time step</em> to <em>the hidden units at the next time step</em>. (Page 370, fig. 10.4)</li>
-    </ol>
-  </li>
-  <li>
-    <ol>
-      <li>RNN connections between hidden units, that read an entire sequence and then produce a single output (page. 371, fig. 10.5)</li>
-    </ol>
-  </li>
-</ul>
-
-<blockquote>
-  <p>The RNN of figure 10.3 (p.368) and equation 10.8 (p.369) is universal in the sense that (从…意义上来说）<em>any</em>function computable by a Turing machine can be computed by such a recurrent network of a finite size.</p>
-</blockquote>
-
-<p>In the book, case 1 is chosen as a throughout example. 
-Figure 10.3 (p.369) or say equation 10.8 (p. 370) defines forward propagation in this model.</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\DeclareMathOperator{\softmax}{softmax}
-\begin{eqnarray*}
-\pmb{a}^{(t)} &=& \pmb{b} + \pmb{W}\pmb{h}^{(t-1)} + \pmb{U}\pmb{x}, \tag{10.8} \\
-\pmb{h}^{(t)} &=& \tanh\left(\pmb{a}^{(t)}\right), \tag{10.9} \\
-\pmb{o}^{(t)} &=& \pmb{c} + \pmb{V}\pmb{h}^{(t)}, \tag{10.10} \\
-\hat{\pmb{y}} ^{(t)} &=& \softmax \left(\pmb{o}^{(t)} \right), \tag{10.11}
-\end{eqnarray*} %]]></script>
-
-<p>Parameters: bias vecters $\pmb{b}$, $\pmb{c}$, weight matrices $\pmb{U}$, $\pmb{V}$ and $\pmb{W}$.</p>
-
-<ul>
-  <li>$\pmb W$ is the hidden-to-hidden recurrent weight matrix</li>
-  <li>$\pmb V$ is the hidden-to-output weight matrix</li>
-  <li>
-    <p>$\pmb U$ is the input-to-hidden weight matrix</p>
-  </li>
-  <li>This is an example of a recurrent network that maps an input sequence $\pmb{x}^{(t)}$ to an output sequence $\pmb{y}^{(t)}$ of the same length $t$ in a range of $(1, \tau)$.</li>
-</ul>
-
-<blockquote>
-  <p>The Loss Function:</p>
-</blockquote>
-
-<p><br /><strong><em>KF</em></strong></p>
 
   </div>
 </div>
@@ -287,8 +200,8 @@ Figure 10.3 (p.369) or say equation 10.8 (p. 370) defines forward propagation in
 <div id="disqus_thread"></div>
 <script>
   var disqus_config = function () {
-    this.page.url = "http://localhost:4000/2018/06/12/RNN-LSTM";
-    this.page.identifier = "/2018/06/12/RNN-LSTM";
+    this.page.url = "http://localhost:4000/2020/09/01/python-logging-export-to-file";
+    this.page.identifier = "/2020/09/01/python-logging-export-to-file";
   };
   (function() { // DON'T EDIT BELOW THIS LINE
     var d = document, s = d.createElement('script');

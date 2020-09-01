@@ -1,5 +1,39 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-08-20T14:43:04+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Everest</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
-</subtitle><entry><title type="html">Git Remove All Commit Clear Git History</title><link href="http://localhost:4000/2020/08/20/git-remove-all-commit-clear-git-history" rel="alternate" type="text/html" title="Git Remove All Commit Clear Git History" /><published>2020-08-20T00:00:00+08:00</published><updated>2020-08-20T00:00:00+08:00</updated><id>http://localhost:4000/2020/08/20/git-remove-all-commit-clear-git-history</id><content type="html" xml:base="http://localhost:4000/2020/08/20/git-remove-all-commit-clear-git-history">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-09-01T19:50:38+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Everest</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
+</subtitle><entry><title type="html">Python Logging Export to File</title><link href="http://localhost:4000/2020/09/01/python-logging-export-to-file" rel="alternate" type="text/html" title="Python Logging Export to File" /><published>2020-09-01T00:00:00+08:00</published><updated>2020-09-01T00:00:00+08:00</updated><id>http://localhost:4000/2020/09/01/python-logging-export-to-file</id><content type="html" xml:base="http://localhost:4000/2020/09/01/python-logging-export-to-file">&lt;blockquote&gt;
+  &lt;p&gt;As for the need for logging from Python program, here is a memo for the use of the Python built-in module &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;logging&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#out-of-the-box-python-snippet&quot; id=&quot;markdown-toc-out-of-the-box-python-snippet&quot;&gt;Out-of-the-Box Python snippet&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#reference&quot; id=&quot;markdown-toc-reference&quot;&gt;Reference:&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;out-of-the-box-python-snippet&quot;&gt;Out-of-the-Box Python snippet&lt;/h2&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;logging&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;log_save_dir&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'/home'&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Setup Logging
+# create a logger
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;logger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getLogger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;KFZ&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setLevel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;level&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;INFO&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;formatter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Formatter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%(asctime)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s - &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%(name)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s - &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%(message)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# set file handler
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FileHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;log_save_dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'log.txt'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setFormatter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;formatter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# set stream handler
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;console&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;StreamHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setFormatter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;formatter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference:&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.python.org/3/library/logging.html&quot;&gt;Official Doc&lt;/a&gt;
+&lt;a href=&quot;https://www.jianshu.com/p/feb86c06c4f4&quot;&gt;https://www.jianshu.com/p/feb86c06c4f4&lt;/a&gt;
+&lt;a href=&quot;https://www.cnblogs.com/liujiacai/p/7804848.html&quot;&gt;https://www.cnblogs.com/liujiacai/p/7804848.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Python&quot;]" /><category term="python" /><category term="logging" /><summary type="html">As for the need for logging from Python program, here is a memo for the use of the Python built-in module logging</summary></entry><entry><title type="html">Git Remove All Commit Clear Git History</title><link href="http://localhost:4000/2020/08/20/git-remove-all-commit-clear-git-history" rel="alternate" type="text/html" title="Git Remove All Commit Clear Git History" /><published>2020-08-20T00:00:00+08:00</published><updated>2020-08-20T00:00:00+08:00</updated><id>http://localhost:4000/2020/08/20/git-remove-all-commit-clear-git-history</id><content type="html" xml:base="http://localhost:4000/2020/08/20/git-remove-all-commit-clear-git-history">&lt;blockquote&gt;
   &lt;p&gt;In this article i am showing how to clear Git history by removing all commits. You may need this if you want to delete sensitive data from the history of Git commits. After such cleanup you will have the latest version of your Git repository, but with the one commit only. Be aware that after resetting all the history of changes in your Git repository will be deleted as well.&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -236,70 +270,4 @@ success
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Operating System&quot;]" /><category term="linux" /><category term="bash" /><summary type="html">Short Answer: When you call source (or its alias .), you insert the script in the current bash process. So you could read variables set by the script. When you call sh, you initiate a fork (sub-process) that runs a new session of /bin/sh, which is usually a symbolic link to bash. In this case, environment variables set by the sub-script would be dropped when the sub-script finishes. Caution: sh could be a symlink to another shell.</summary></entry><entry><title type="html">English Writing Materials</title><link href="http://localhost:4000/2019/11/11/english-writing-materials" rel="alternate" type="text/html" title="English Writing Materials" /><published>2019-11-11T00:00:00+08:00</published><updated>2019-11-11T00:00:00+08:00</updated><id>http://localhost:4000/2019/11/11/english-writing-materials</id><content type="html" xml:base="http://localhost:4000/2019/11/11/english-writing-materials">&lt;!--more--&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[]" /><summary type="html"></summary></entry><entry><title type="html">NodeJS vs Django</title><link href="http://localhost:4000/2019/11/01/nodejs-vs-django" rel="alternate" type="text/html" title="NodeJS vs Django" /><published>2019-11-01T00:00:00+08:00</published><updated>2019-11-01T00:00:00+08:00</updated><id>http://localhost:4000/2019/11/01/nodejs-vs-django</id><content type="html" xml:base="http://localhost:4000/2019/11/01/nodejs-vs-django">&lt;blockquote&gt;
-  &lt;p&gt;Node.js, Django, which is better?&lt;/p&gt;
-
-  &lt;p&gt;Node.js has a “JavaScript everywhere” motive to ensure JavaScript is used on the server-side and client-side of web applications and Django has a “framework for perfectionists with deadlines” motive to help developers build applications quickly.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;!--more--&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#nodejs&quot; id=&quot;markdown-toc-nodejs&quot;&gt;Node.js&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#pros&quot; id=&quot;markdown-toc-pros&quot;&gt;Pros&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#cons&quot; id=&quot;markdown-toc-cons&quot;&gt;Cons&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#django&quot; id=&quot;markdown-toc-django&quot;&gt;Django&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#pros-1&quot; id=&quot;markdown-toc-pros-1&quot;&gt;Pros&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#cons-1&quot; id=&quot;markdown-toc-cons-1&quot;&gt;Cons&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#reference&quot; id=&quot;markdown-toc-reference&quot;&gt;Reference&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;nodejs&quot;&gt;Node.js&lt;/h2&gt;
-
-&lt;p&gt;JavaScript is known mainly for its strengths in client-side development, but Node.js is doing the exact opposite by working wonders on the server-side.&lt;/p&gt;
-
-&lt;h3 id=&quot;pros&quot;&gt;Pros&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Availability of great libraries.&lt;/li&gt;
-  &lt;li&gt;High performance.&lt;/li&gt;
-  &lt;li&gt;Awesome for building APIs.&lt;/li&gt;
-  &lt;li&gt;It has an awesome package manager.&lt;/li&gt;
-  &lt;li&gt;Huge user community.&lt;/li&gt;
-  &lt;li&gt;Handles concurrent requests easily.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;cons&quot;&gt;Cons&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Asynchronous programming could be difficult to work with.&lt;/li&gt;
-  &lt;li&gt;Not great with CPU intensive apps due to its single thread.&lt;/li&gt;
-  &lt;li&gt;Callbacks result in tons of nested callbacks.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;django&quot;&gt;Django&lt;/h2&gt;
-&lt;p&gt;Django is a very robust open source Python web framework. It is very high-level, as most of the low-level stuff has been abstracted out. It is known for having a “batteries included” philosophy, therefore it’s ready to be used out-of-the-box.&lt;/p&gt;
-
-&lt;h3 id=&quot;pros-1&quot;&gt;Pros&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Little to no security loopholes.&lt;/li&gt;
-  &lt;li&gt;Works fine with relational databases.&lt;/li&gt;
-  &lt;li&gt;Easy to learn.&lt;/li&gt;
-  &lt;li&gt;Speedy development process.&lt;/li&gt;
-  &lt;li&gt;Very scalable.&lt;/li&gt;
-  &lt;li&gt;Huge user community.&lt;/li&gt;
-  &lt;li&gt;Has great documentation.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;cons-1&quot;&gt;Cons&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Django is monolithic, i.e. a single-tiered software application.&lt;/li&gt;
-  &lt;li&gt;Not great for small-scale apps.&lt;/li&gt;
-  &lt;li&gt;A full understanding of the framework is needed.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://dzone.com/articles/nodejs-vs-djangois-javascript-better-than-python&quot;&gt;» Node.js vs. Django:  Is JavaScript Better Than Python?&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Web Developing&quot;]" /><category term="nodejs" /><category term="django" /><summary type="html">Node.js, Django, which is better? Node.js has a “JavaScript everywhere” motive to ensure JavaScript is used on the server-side and client-side of web applications and Django has a “framework for perfectionists with deadlines” motive to help developers build applications quickly.</summary></entry></feed>
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[]" /><summary type="html"></summary></entry></feed>

@@ -133,7 +133,7 @@ Remember that after enabling this, you have to enter the real dollar sings with 
           
           
           
-          <a href="/categories#operating-oystem_cap" target="_blank"><div class="chip">Operating Oystem</div></a>
+          <a href="/categories#operating-system_cap" target="_blank"><div class="chip">Operating System</div></a>
           
         </span>
         <span>
@@ -165,6 +165,47 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 </blockquote>
 
 <!--more-->
+<ul id="markdown-toc">
+  <li><a href="#the-ps1-bash-environment-variable" id="markdown-toc-the-ps1-bash-environment-variable">The PS1 Bash Environment Variable</a></li>
+  <li><a href="#customizing-the-ps1-format" id="markdown-toc-customizing-the-ps1-format">Customizing the PS1 Format</a></li>
+  <li><a href="#reference" id="markdown-toc-reference">Reference</a></li>
+</ul>
+<h2 id="the-ps1-bash-environment-variable">The PS1 Bash Environment Variable</h2>
+
+<p>The command prompt and terminal appearance are governed by an environment variable called PS1. According to the Bash man page, PS1 represents the primary prompt string which is displayed when the shell is ready to read a command.</p>
+
+<p>The allowed content in PS1 consists of several backslash-escaped special characters whose meaning is listed in the PROMPTING section of the man page.</p>
+
+<p>To illustrate, let’s display the current content of PS1 in our system (this may be somewhat different in your case):</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="nv">$PS1</span>
+
+<span class="o">[</span><span class="se">\u</span>@<span class="se">\h</span> <span class="se">\W</span><span class="o">]</span><span class="err">$</span>
+</code></pre></div></div>
+
+<h2 id="customizing-the-ps1-format">Customizing the PS1 Format</h2>
+
+<p>According to the PROMPTING section in the man page, this is the meaning of each special character:</p>
+
+<ul>
+  <li>\u: the username of the current user.</li>
+  <li>\h: the hostname up to the first dot (.) in the Fully-Qualified Domain Name.</li>
+  <li>\W: the basename of the current working directory, with $HOME abbreviated with a tilde (~).</li>
+  <li>$: If the current user is root, display #, $ otherwise.</li>
+</ul>
+
+<p>For example, we may want to consider adding <code class="language-plaintext highlighter-rouge">\!</code> If we want to display the history number of the current command, or <code class="language-plaintext highlighter-rouge">\H</code> if we want to display the FQDN instead of the short server name.</p>
+
+<p>In the following example we will import both into our current environment by executing this command:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">PS1</span><span class="o">=</span><span class="s2">"[</span><span class="se">\u</span><span class="s2">@</span><span class="se">\H</span><span class="s2"> </span><span class="se">\W</span><span class="s2"> </span><span class="se">\!</span><span class="s2">]$"</span>
+</code></pre></div></div>
+
+<h2 id="reference">Reference</h2>
+
+<p>For more information, see the reference link.</p>
+<blockquote>
+  <p><a href="https://www.tecmint.com/customize-bash-colors-terminal-prompt-linux/">» How to Customize Bash Colors and Content in Linux Terminal Prompt</a></p>
+</blockquote>
 
 <p><br /><br /><strong><em>KF</em></strong></p>
 

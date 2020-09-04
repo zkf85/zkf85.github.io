@@ -117,6 +117,46 @@ Remember that after enabling this, you have to enter the real dollar sings with 
   <div class="col s12">
     <div class="card hoverable">
       <div class="card-content">
+        <!--<span id="post-title" class="card-title">Run Docker as Non-root User in Linux</span>
+        -->
+        <a id="post-title" class="card-title" href="/2020/09/04/run-docker-as-non-root-user-in-linux">
+        Run Docker as Non-root User in Linux
+        </a>
+        
+        <p id="post-date">
+          <i class="material-icons">date_range</i>
+           
+          Sept.
+            
+          04, 2020 - Friday
+
+        </p>
+        <p id="post-content"><blockquote>
+  <p>The solution is simple:</p>
+</blockquote>
+
+<p>To fix the Docker permission denied error and use Docker as non-root user, create a group called “docker” with the following command:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>groupadd docker
+</code></pre></div></div>
+
+<p>Next, add your user to the docker group:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>usermod <span class="nt">-aG</span> docker <span class="nv">$USER</span>
+</code></pre></div></div>
+<p>After adding the user to the docker group, <em>log out</em> and <em>log back</em> in to take effect the changes.</p>
+
+</p>
+      </div>
+      <div class="card-action">
+        <a href="/2020/09/04/run-docker-as-non-root-user-in-linux">
+          Read More 
+        <i class="material-icons">keyboard_arrow_down</i></a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col s12">
+    <div class="card hoverable">
+      <div class="card-content">
         <!--<span id="post-title" class="card-title">Python Logging Export to File</span>
         -->
         <a id="post-title" class="card-title" href="/2020/09/01/python-logging-export-to-file">
@@ -415,34 +455,6 @@ success
     </div>
   </div>
   
-  <div class="col s12">
-    <div class="card hoverable">
-      <div class="card-content">
-        <!--<span id="post-title" class="card-title">English Writing Materials</span>
-        -->
-        <a id="post-title" class="card-title" href="/2019/11/11/english-writing-materials">
-        English Writing Materials
-        </a>
-        
-        <p id="post-date">
-          <i class="material-icons">date_range</i>
-           
-          Nov.
-            
-          11, 2019 - Monday
-
-        </p>
-        <p id="post-content">
-</p>
-      </div>
-      <div class="card-action">
-        <a href="/2019/11/11/english-writing-materials">
-          Read More 
-        <i class="material-icons">keyboard_arrow_down</i></a>
-      </div>
-    </div>
-  </div>
-  
   <div class="col s12 center-align">
     <ul class="pagination">
       <li class="disabled">
@@ -507,6 +519,10 @@ success
       
       
       <li class="waves-effect"><a href="/page13">13</a></li>
+      
+      
+      
+      <li class="waves-effect"><a href="/page14">14</a></li>
       
       
       <li class="waves-effect">

@@ -1,5 +1,49 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-09-04T10:52:43+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Everest</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
-</subtitle><entry><title type="html">Run Docker as Non-root User in Linux</title><link href="http://localhost:4000/2020/09/04/run-docker-as-non-root-user-in-linux" rel="alternate" type="text/html" title="Run Docker as Non-root User in Linux" /><published>2020-09-04T00:00:00+08:00</published><updated>2020-09-04T00:00:00+08:00</updated><id>http://localhost:4000/2020/09/04/run-docker-as-non-root-user-in-linux</id><content type="html" xml:base="http://localhost:4000/2020/09/04/run-docker-as-non-root-user-in-linux">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-09-09T14:43:34+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Everest</title><subtitle>Theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites.
+</subtitle><entry><title type="html">Vundle Usage Memo</title><link href="http://localhost:4000/2020/09/09/vundle-usage-memo" rel="alternate" type="text/html" title="Vundle Usage Memo" /><published>2020-09-09T00:00:00+08:00</published><updated>2020-09-09T00:00:00+08:00</updated><id>http://localhost:4000/2020/09/09/vundle-usage-memo</id><content type="html" xml:base="http://localhost:4000/2020/09/09/vundle-usage-memo">&lt;blockquote&gt;
+  &lt;p&gt;Some Vundle basic usage tips.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#install-plugin&quot; id=&quot;markdown-toc-install-plugin&quot;&gt;Install Plugin&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#list-all-plugins&quot; id=&quot;markdown-toc-list-all-plugins&quot;&gt;List all Plugins&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#clean-plugin&quot; id=&quot;markdown-toc-clean-plugin&quot;&gt;Clean Plugin&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#update-plugin&quot; id=&quot;markdown-toc-update-plugin&quot;&gt;Update Plugin&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#reference&quot; id=&quot;markdown-toc-reference&quot;&gt;Reference&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;install-plugin&quot;&gt;Install Plugin&lt;/h2&gt;
+&lt;p&gt;Launch vim and run&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;:PluginInstall
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;To install from command line: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;vim +PluginInstall +qall&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;list-all-plugins&quot;&gt;List all Plugins&lt;/h2&gt;
+&lt;p&gt;Launch vim and run&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;:PluginList
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;clean-plugin&quot;&gt;Clean Plugin&lt;/h2&gt;
+&lt;p&gt;Launch vim and run&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;:PluginClean
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;It will remove all unused plugin folders in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.vim/bundle&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;update-plugin&quot;&gt;Update Plugin&lt;/h2&gt;
+&lt;p&gt;Launch vim and run&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;:PluginUpdate
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;It will update all the installed plugins.&lt;/p&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/VundleVim/Vundle.vim&quot;&gt;github - vundle&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://linux.cn/article-9416-1.html&quot;&gt;vundle tutorial - cn&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;VIM&quot;]" /><category term="vim" /><category term="vundle" /><summary type="html">Some Vundle basic usage tips.</summary></entry><entry><title type="html">Run Docker as Non-root User in Linux</title><link href="http://localhost:4000/2020/09/04/run-docker-as-non-root-user-in-linux" rel="alternate" type="text/html" title="Run Docker as Non-root User in Linux" /><published>2020-09-04T00:00:00+08:00</published><updated>2020-09-04T00:00:00+08:00</updated><id>http://localhost:4000/2020/09/04/run-docker-as-non-root-user-in-linux</id><content type="html" xml:base="http://localhost:4000/2020/09/04/run-docker-as-non-root-user-in-linux">&lt;blockquote&gt;
   &lt;p&gt;The solution is simple:&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -273,20 +317,4 @@ success
 
 &lt;p&gt;&lt;a href=&quot;https://www.rootusers.com/how-to-open-a-port-in-centos-7-with-firewalld/&quot;&gt;» Check this link&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[]" /><summary type="html">Open Specific Port Opening a port in firewalld is fairly straightforward, in the below example we allow traffic in from any source IP address to TCP port 100. First we modify the persistent configuration, then we reload firewall-cmd to load this change into the running configuration. [root@centos7 ~]# firewall-cmd --permanent --add-port=100/tcp success [root@centos7 ~]# firewall-cmd --reload success If the –permanent flag is not specified, this will only change the running configuration but will not be saved. We can check the ports that are opened in the current default zone with ‘–list-ports’. [root@centos7 ~]# firewall-cmd --list-ports 100/tcp As expected we see that TCP port 100 is open. Should we wish to remove a port, we can use ‘--remove-port=’ instead. We can also open a range of ports in the same way. [root@centos7 ~]# firewall-cmd --permanent --add-port=200-300/tcp success</summary></entry><entry><title type="html">What is the Difference Between Using source and sh</title><link href="http://localhost:4000/2019/11/12/what-is-the-difference-between-using-source-and-sh" rel="alternate" type="text/html" title="What is the Difference Between Using source and sh" /><published>2019-11-12T00:00:00+08:00</published><updated>2019-11-12T00:00:00+08:00</updated><id>http://localhost:4000/2019/11/12/what-is-the-difference-between-using-source-and-sh</id><content type="html" xml:base="http://localhost:4000/2019/11/12/what-is-the-difference-between-using-source-and-sh">&lt;h2 id=&quot;short-answer&quot;&gt;Short Answer:&lt;/h2&gt;
-&lt;p&gt;When you call source (or its alias .), you insert the script in the &lt;strong&gt;current&lt;/strong&gt; bash process. So you could read variables set by the script.&lt;/p&gt;
-
-&lt;p&gt;When you call sh, you initiate a fork (sub-process) that runs a new session of /bin/sh, which is usually a symbolic link to bash. In this case, environment variables set by the sub-script would be dropped when the sub-script finishes.&lt;/p&gt;
-
-&lt;p&gt;Caution: sh could be a symlink to another shell.&lt;/p&gt;
-
-&lt;!--more--&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#short-answer&quot; id=&quot;markdown-toc-short-answer&quot;&gt;Short Answer:&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#reference&quot; id=&quot;markdown-toc-reference&quot;&gt;Reference&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/13786499/what-is-the-difference-between-using-sh-and-source&quot;&gt;» what is the difference between using source and sh?&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[&quot;Operating System&quot;]" /><category term="linux" /><category term="bash" /><summary type="html">Short Answer: When you call source (or its alias .), you insert the script in the current bash process. So you could read variables set by the script. When you call sh, you initiate a fork (sub-process) that runs a new session of /bin/sh, which is usually a symbolic link to bash. In this case, environment variables set by the sub-script would be dropped when the sub-script finishes. Caution: sh could be a symlink to another shell.</summary></entry></feed>
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;&lt;em&gt;KF&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="[]" /><summary type="html">Open Specific Port Opening a port in firewalld is fairly straightforward, in the below example we allow traffic in from any source IP address to TCP port 100. First we modify the persistent configuration, then we reload firewall-cmd to load this change into the running configuration. [root@centos7 ~]# firewall-cmd --permanent --add-port=100/tcp success [root@centos7 ~]# firewall-cmd --reload success If the –permanent flag is not specified, this will only change the running configuration but will not be saved. We can check the ports that are opened in the current default zone with ‘–list-ports’. [root@centos7 ~]# firewall-cmd --list-ports 100/tcp As expected we see that TCP port 100 is open. Should we wish to remove a port, we can use ‘--remove-port=’ instead. We can also open a range of ports in the same way. [root@centos7 ~]# firewall-cmd --permanent --add-port=200-300/tcp success</summary></entry></feed>

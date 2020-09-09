@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
+
+    <!-- Add jQuery - KFZ on Wed Sep  9 14:42:25 CST 2020
+    -->
+    <script src="/assets/js/jquery-3.5.1.min.js"></script>
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
@@ -113,6 +118,37 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 
 <div class="container">
   <div class="row">
+  
+  <div class="col s12">
+    <div class="card hoverable">
+      <div class="card-content">
+        <!--<span id="post-title" class="card-title">Vundle Usage Memo</span>
+        -->
+        <a id="post-title" class="card-title" href="/2020/09/09/vundle-usage-memo">
+        Vundle Usage Memo
+        </a>
+        
+        <p id="post-date">
+          <i class="material-icons">date_range</i>
+           
+          Sept.
+            
+          09, 2020 - Wednesday
+
+        </p>
+        <p id="post-content"><blockquote>
+  <p>Some Vundle basic usage tips.</p>
+</blockquote>
+
+</p>
+      </div>
+      <div class="card-action">
+        <a href="/2020/09/09/vundle-usage-memo">
+          Read More 
+        <i class="material-icons">keyboard_arrow_down</i></a>
+      </div>
+    </div>
+  </div>
   
   <div class="col s12">
     <div class="card hoverable">
@@ -415,40 +451,6 @@ success
       </div>
       <div class="card-action">
         <a href="/2019/12/02/how-to-open-a-port-in-centos-7-with-fiewalld">
-          Read More 
-        <i class="material-icons">keyboard_arrow_down</i></a>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col s12">
-    <div class="card hoverable">
-      <div class="card-content">
-        <!--<span id="post-title" class="card-title">What is the Difference Between Using source and sh</span>
-        -->
-        <a id="post-title" class="card-title" href="/2019/11/12/what-is-the-difference-between-using-source-and-sh">
-        What is the Difference Between Using source and sh
-        </a>
-        
-        <p id="post-date">
-          <i class="material-icons">date_range</i>
-           
-          Nov.
-            
-          12, 2019 - Tuesday
-
-        </p>
-        <p id="post-content"><h2 id="short-answer">Short Answer:</h2>
-<p>When you call source (or its alias .), you insert the script in the <strong>current</strong> bash process. So you could read variables set by the script.</p>
-
-<p>When you call sh, you initiate a fork (sub-process) that runs a new session of /bin/sh, which is usually a symbolic link to bash. In this case, environment variables set by the sub-script would be dropped when the sub-script finishes.</p>
-
-<p>Caution: sh could be a symlink to another shell.</p>
-
-</p>
-      </div>
-      <div class="card-action">
-        <a href="/2019/11/12/what-is-the-difference-between-using-source-and-sh">
           Read More 
         <i class="material-icons">keyboard_arrow_down</i></a>
       </div>

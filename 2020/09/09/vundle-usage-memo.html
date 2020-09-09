@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-      What is the Difference Between Using source and sh
+      Vundle Usage Memo
       
       2020
     </title>
@@ -32,17 +32,17 @@
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
     <!-- Begin Jekyll SEO tag v2.5.0 -->
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="What is the Difference Between Using source and sh" />
+<meta property="og:title" content="Vundle Usage Memo" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Short Answer: When you call source (or its alias .), you insert the script in the current bash process. So you could read variables set by the script. When you call sh, you initiate a fork (sub-process) that runs a new session of /bin/sh, which is usually a symbolic link to bash. In this case, environment variables set by the sub-script would be dropped when the sub-script finishes. Caution: sh could be a symlink to another shell." />
-<meta property="og:description" content="Short Answer: When you call source (or its alias .), you insert the script in the current bash process. So you could read variables set by the script. When you call sh, you initiate a fork (sub-process) that runs a new session of /bin/sh, which is usually a symbolic link to bash. In this case, environment variables set by the sub-script would be dropped when the sub-script finishes. Caution: sh could be a symlink to another shell." />
-<link rel="canonical" href="http://localhost:4000/2019/11/12/what-is-the-difference-between-using-source-and-sh" />
-<meta property="og:url" content="http://localhost:4000/2019/11/12/what-is-the-difference-between-using-source-and-sh" />
+<meta name="description" content="Some Vundle basic usage tips." />
+<meta property="og:description" content="Some Vundle basic usage tips." />
+<link rel="canonical" href="http://localhost:4000/2020/09/09/vundle-usage-memo" />
+<meta property="og:url" content="http://localhost:4000/2020/09/09/vundle-usage-memo" />
 <meta property="og:site_name" content="Everest" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-11-12T00:00:00+08:00" />
+<meta property="article:published_time" content="2020-09-09T00:00:00+08:00" />
 <script type="application/ld+json">
-{"url":"http://localhost:4000/2019/11/12/what-is-the-difference-between-using-source-and-sh","headline":"What is the Difference Between Using source and sh","dateModified":"2019-11-12T00:00:00+08:00","datePublished":"2019-11-12T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/11/12/what-is-the-difference-between-using-source-and-sh"},"description":"Short Answer: When you call source (or its alias .), you insert the script in the current bash process. So you could read variables set by the script. When you call sh, you initiate a fork (sub-process) that runs a new session of /bin/sh, which is usually a symbolic link to bash. In this case, environment variables set by the sub-script would be dropped when the sub-script finishes. Caution: sh could be a symlink to another shell.","@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"url":"http://localhost:4000/2020/09/09/vundle-usage-memo","headline":"Vundle Usage Memo","dateModified":"2020-09-09T00:00:00+08:00","datePublished":"2020-09-09T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2020/09/09/vundle-usage-memo"},"description":"Some Vundle basic usage tips.","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -119,16 +119,16 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 
 <div class="container">
   <div id="post-info">
-  <h1>What is the Difference Between Using source and sh</h1>
+  <h1>Vundle Usage Memo</h1>
   <ul class="collapsible hoverable" data-collapsible="accordion">
     <li>
       <div class="collapsible-header">
         <span>
           <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Date">date_range</i>
            
-          Nov.
+          Sept.
             
-          12, 2019 - Tuesday
+          09, 2020 - Wednesday
           <i id="indicate" class="right material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Show extra info">info</i>
         </span>
       </div>
@@ -138,7 +138,7 @@ Remember that after enabling this, you have to enter the real dollar sings with 
           
           
           
-          <a href="/categories#operating-system_cap" target="_blank"><div class="chip">Operating System</div></a>
+          <a href="/categories#vim_cap" target="_blank"><div class="chip">VIM</div></a>
           
         </span>
         <span>
@@ -146,11 +146,11 @@ Remember that after enabling this, you have to enter the real dollar sings with 
           
           
           
-          <a href="/tags#linux" target="_blank"><div class="chip">linux</div></a>
+          <a href="/tags#vim" target="_blank"><div class="chip">vim</div></a>
           
           
           
-          <a href="/tags#bash" target="_blank"><div class="chip">bash</div></a>
+          <a href="/tags#vundle" target="_blank"><div class="chip">vundle</div></a>
           
         </span>
       </div>
@@ -159,21 +159,49 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 </div>
 <div class="row">
   <div class="col s12">
-    <h2 id="short-answer">Short Answer:</h2>
-<p>When you call source (or its alias .), you insert the script in the <strong>current</strong> bash process. So you could read variables set by the script.</p>
-
-<p>When you call sh, you initiate a fork (sub-process) that runs a new session of /bin/sh, which is usually a symbolic link to bash. In this case, environment variables set by the sub-script would be dropped when the sub-script finishes.</p>
-
-<p>Caution: sh could be a symlink to another shell.</p>
+    <blockquote>
+  <p>Some Vundle basic usage tips.</p>
+</blockquote>
 
 <!--more-->
 <ul id="markdown-toc">
-  <li><a href="#short-answer" id="markdown-toc-short-answer">Short Answer:</a></li>
+  <li><a href="#install-plugin" id="markdown-toc-install-plugin">Install Plugin</a></li>
+  <li><a href="#list-all-plugins" id="markdown-toc-list-all-plugins">List all Plugins</a></li>
+  <li><a href="#clean-plugin" id="markdown-toc-clean-plugin">Clean Plugin</a></li>
+  <li><a href="#update-plugin" id="markdown-toc-update-plugin">Update Plugin</a></li>
   <li><a href="#reference" id="markdown-toc-reference">Reference</a></li>
 </ul>
 
+<h2 id="install-plugin">Install Plugin</h2>
+<p>Launch vim and run</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:PluginInstall
+</code></pre></div></div>
+<p>To install from command line: <code class="language-plaintext highlighter-rouge">vim +PluginInstall +qall</code>.</p>
+
+<h2 id="list-all-plugins">List all Plugins</h2>
+<p>Launch vim and run</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:PluginList
+</code></pre></div></div>
+
+<h2 id="clean-plugin">Clean Plugin</h2>
+<p>Launch vim and run</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:PluginClean
+</code></pre></div></div>
+
+<p>It will remove all unused plugin folders in <code class="language-plaintext highlighter-rouge">.vim/bundle</code>.</p>
+
+<h2 id="update-plugin">Update Plugin</h2>
+<p>Launch vim and run</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:PluginUpdate
+</code></pre></div></div>
+
+<p>It will update all the installed plugins.</p>
+
 <h2 id="reference">Reference</h2>
-<p><a href="https://stackoverflow.com/questions/13786499/what-is-the-difference-between-using-sh-and-source">» what is the difference between using source and sh?</a></p>
+<ul>
+  <li><a href="https://github.com/VundleVim/Vundle.vim">github - vundle</a></li>
+  <li><a href="https://linux.cn/article-9416-1.html">vundle tutorial - cn</a></li>
+</ul>
 
 <p><br /><br /><strong><em>KF</em></strong></p>
 
@@ -187,8 +215,8 @@ Remember that after enabling this, you have to enter the real dollar sings with 
 <div id="disqus_thread"></div>
 <script>
   var disqus_config = function () {
-    this.page.url = "http://localhost:4000/2019/11/12/what-is-the-difference-between-using-source-and-sh";
-    this.page.identifier = "/2019/11/12/what-is-the-difference-between-using-source-and-sh";
+    this.page.url = "http://localhost:4000/2020/09/09/vundle-usage-memo";
+    this.page.identifier = "/2020/09/09/vundle-usage-memo";
   };
   (function() { // DON'T EDIT BELOW THIS LINE
     var d = document, s = d.createElement('script');
